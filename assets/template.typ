@@ -109,14 +109,6 @@
   
   // Pagina indice con outline nestato
   page()[    
-    #outline(
-      title: [Indice],
-      indent: true,
-      depth: 3  // Mostra fino a 3 livelli di nesting
-    )
-    // versionamento
-    \
-    
     #if versionamento != () {
       text(size: 1.4em, weight: "bold")[Registro dei cambiamenti]
       table(
@@ -132,6 +124,14 @@
         ..versionamento
       )
     }
+    
+    #outline(
+      title: [Indice],
+      indent: true,
+      depth: 3  // Mostra fino a 3 livelli di nesting
+    )
+    // versionamento
+    \
   ]
   
   pagebreak()
