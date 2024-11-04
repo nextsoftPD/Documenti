@@ -10,8 +10,8 @@
   version: "1.1",
   date: "30/10/2024",
   versionamento: (
-    "1.1", "30/10/2024", "Luca Parise", "Modifica alla data di consegna e alla suddivisione dei ruoli",
-    "1.0", "28/10/2024", "Luca Parise", "Stesura prima versione",
+    "1.1", "30/10/2024", "Luca Parise", "Modifica alla data di consegna e alla suddivisione dei ruoli", "", "",
+    "1.0", "28/10/2024", "Luca Parise", "Stesura prima versione", "", "",
   )
 )
 

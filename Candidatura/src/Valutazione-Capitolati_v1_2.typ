@@ -13,9 +13,9 @@
   //timebegin: "21:30",
   //timeend: "23:15",
   versionamento: (
-    "1.2", "30/10/2024", "Stefano Baso\nMaria Fuensanta Trigueros Hernandez", "Revisione finale",
-    "1.1", "29/10/2024", "Stefano Baso\nMalik Giafar Mohamed", "Revisione e aggiunta capitolato C1",
-    "1.0", "28/10/2024", "Stefano Baso\nMaria Fuensanta Trigueros Hernandez", "Stesura prima versione",
+    "1.2", "30/10/2024", "Stefano Baso\nMaria Fuensanta Trigueros Hernandez", "Revisione finale", "", "",
+    "1.1", "29/10/2024", "Stefano Baso\nMalik Giafar Mohamed", "Revisione e aggiunta capitolato C1", "", "",
+    "1.0", "28/10/2024", "Stefano Baso\nMaria Fuensanta Trigueros Hernandez", "Stesura prima versione", "", "",
   )
 )
 

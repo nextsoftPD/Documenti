@@ -124,9 +124,9 @@
         row-gutter: 0.5em,
         align: auto,
         inset: 8pt,
-        columns: (auto, auto, auto, 1fr),
+        columns: (auto, auto, auto, auto, auto, auto),
         table.header(
-          [*Versione*], [*Data*], [*Autore*], [*Descrizione*]  // Intestazioni
+          [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*], [*Approvazione*]  // Intestazioni
         ),
         // Righe di dati
         ..versionamento
