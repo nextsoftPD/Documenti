@@ -8,15 +8,10 @@
   verifica: ("Ion Cainareanu",),
   approvazione: ("Maria Fuensanta Trigueros Hernandez", "Stefano Baso", "Luca Parise"),
   uso: "Esterno",
-  version: "1.1",
+  version: "1.0",
   date: "30/10/2024", 
   // timebegin: "21:30",
   // timeend: "23:30",
-  versionamento: (
-    "1.1", "30/10/2024", "Ion Cainareanu", "Aggiornamento dei dati relativi a Ergon dopo colloquio",
-    "1.0", "29/10/2024", "Marco Perazzolo", "Correzione stile di visualizzazione",
-    "0.1", "28/10/2024", "Malik Giafar\nMarco Perazzolo", "Stesura prima versione",
-  )  
 )    
 
 = Presentazione
