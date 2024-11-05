@@ -7,8 +7,8 @@
   verifica: ("Malik Giafar Mohamed","Ion Cainareanu","Marco Perazzolo"),
   approvazione: ("Maria Fuensanta Trigueros Hernandez", "Stefano Baso"),
   uso: "Esterno",
-  version: "1.1",
-  date: "30/10/2024",
+  version: "1.2",
+  date: "05/11/2024",
   versionamento: (
     "1.2", "05/11/2024", "Malik Giafar Mohamed", "Modifica capitolato scelto e data di consenga","Luca Parise","Ion Cainareanu",
     "1.1", "30/10/2024", "Luca Parise", "Modifica alla data di consegna e alla suddivisione dei ruoli","","",
