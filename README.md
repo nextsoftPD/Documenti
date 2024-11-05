@@ -4,7 +4,7 @@ In questa repository sono contenuti tutti i documenti prodotti dal gruppo NextSo
 
 ## Candidatura
 
-- [Lettera di Presentazione](/Candidatura/Lettera_di_Presentazione.pdf) (V1.0)
+- [Lettera di Presentazione](/Candidatura/Seconda_Lettera_di_Presentazione.pdf) (Aggiornata)
 - [Preventivo dei costi ed impegni orari](/Candidatura/Preventivo_costi_e_impegni_v1_1.pdf) (V1.1)
 - [Valutazione dei Capitolati](/Candidatura/Valutazione-Capitolati_v1_2.pdf) (V1.2)
   

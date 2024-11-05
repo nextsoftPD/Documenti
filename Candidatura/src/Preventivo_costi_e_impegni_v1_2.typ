@@ -2,7 +2,7 @@
 
 // Esempio di utilizzo
 #show: project.with(
-  title: "Preventivo Costi e\nAssuzione Impegni",
+  title: "Preventivo Costi e\nAssunzione Impegni",
   redattori: ("Luca Parise",),
   verifica: ("Malik Giafar Mohamed","Ion Cainareanu","Marco Perazzolo"),
   approvazione: ("Maria Fuensanta Trigueros Hernandez", "Stefano Baso"),
