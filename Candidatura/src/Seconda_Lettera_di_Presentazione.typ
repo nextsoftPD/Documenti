@@ -98,7 +98,8 @@ I verbali interni ed esterni sono sempre consultabili al seguente link:
     "Verbale del 16/10/2024",
     "Verbale del 23/10/2024",
     "Verbale del 26/10/2024",
-    "Verbale del 30/10/2024"
+    "Verbale del 30/10/2024",
+    "Verbale del 05/11/2024"
   )
   
 - *Verbali Esterni*
