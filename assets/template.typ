@@ -109,14 +109,6 @@
   
   // Pagina indice con outline nestato
   page()[    
-    #outline(
-      title: [Indice],
-      indent: true,
-      depth: 3  // Mostra fino a 3 livelli di nesting
-    )
-    // versionamento
-    \
-    
     #if versionamento != () {
       text(size: 1.4em, weight: "bold")[Registro dei cambiamenti]
       table(
@@ -124,14 +116,22 @@
         row-gutter: 0.5em,
         align: auto,
         inset: 8pt,
-        columns: (auto, auto, auto, 1fr),
+        columns: (auto, auto, auto, auto, auto, auto),
         table.header(
-          [*Versione*], [*Data*], [*Autore*], [*Descrizione*]  // Intestazioni
+          [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*], [*Approvazione*]  // Intestazioni
         ),
         // Righe di dati
         ..versionamento
       )
     }
+    
+    #outline(
+      title: [Indice],
+      indent: true,
+      depth: 3  // Mostra fino a 3 livelli di nesting
+    )
+    // versionamento
+    \
   ]
   
   pagebreak()
