@@ -14,6 +14,7 @@ In questa repository sono contenuti tutti i documenti prodotti dal gruppo NextSo
     - [Verbale del 23 Ottobre 2024](/Candidatura/Verbali/Interni/2024-10-23.pdf)
     - [Verbale del 26 Ottobre 2024](/Candidatura/Verbali/Interni/2024-10-26.pdf)
     - [Verbale del 30 Ottobre 2024](/Candidatura/Verbali/Interni/2024-10-30.pdf)
+    - [Verbale del 5 Novembre 2024](/Candidatura/Verbali/Interni/2024-11-05.pdf)
   - Esterni
     - [Verbale esterno del 23 Ottobre 2024](/Candidatura/Verbali/Esterni/2024-10-23_firmato.pdf)
     - [Verbale esterno del 30 Ottobre 2024](/Candidatura/Verbali/Esterni/2024-10-23_firmato.pdf)
