@@ -4,8 +4,8 @@ In questa repository sono contenuti tutti i documenti prodotti dal gruppo NextSo
 
 ## Candidatura
 
-- [Lettera di Presentazione](/Candidatura/Seconda_Lettera_di_Presentazione.pdf) (Aggiornata)
-- [Preventivo dei costi ed impegni orari](/Candidatura/Preventivo_costi_e_impegni_v1_2.pdf) (V1.2)
+- [Lettera di Presentazione](/Candidatura/Terza_Lettera_di_Presentazione.pdf) (Aggiornata)
+- [Preventivo dei costi ed impegni orari](/Candidatura/Preventivo_costi_e_impegni_v1_3.pdf) (Aggiornato: V1.3)
 - [Valutazione dei Capitolati](/Candidatura/Valutazione-Capitolati_v1_2.pdf) (V1.2)
   
 - Verbali
@@ -15,6 +15,7 @@ In questa repository sono contenuti tutti i documenti prodotti dal gruppo NextSo
     - [Verbale del 26 Ottobre 2024](/Candidatura/Verbali/Interni/2024-10-26.pdf)
     - [Verbale del 30 Ottobre 2024](/Candidatura/Verbali/Interni/2024-10-30.pdf)
     - [Verbale del 5 Novembre 2024](/Candidatura/Verbali/Interni/2024-11-05.pdf)
+    - [Verbale del 6 Novembre 2024](/Candidatura/Verbali/Interni/2024-11-06.pdf)
   - Esterni
     - [Verbale esterno del 23 Ottobre 2024](/Candidatura/Verbali/Esterni/2024-10-23_firmato.pdf)
     - [Verbale esterno del 30 Ottobre 2024](/Candidatura/Verbali/Esterni/2024-10-23_firmato.pdf)

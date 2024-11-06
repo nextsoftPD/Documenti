@@ -10,7 +10,7 @@
   approvazione: ("Stefano Baso", "Luca Parise","Malik Giafar Mohamed"),
   uso: "Interno",
   version: "1.0",
-  date: "05/11/2024",
+  date: "06/11/2024",
   timebegin: "19:00",
   timeend: "19:30"
 )
@@ -28,7 +28,7 @@ e non avendo trovato un accordo, si è deciso di rivolgersi al committente,
 il quale ha deciso di non assegnare il capitolato al nostro gruppo.
 
 = Scelta di un nuovo capitolato
-Di seguito alla decisione del committente, abbiamo valutato il capitplato C8 *Requirement Tracker - Plug-in VS Code* come
+Di seguito alla decisione del committente, abbiamo valutato il capitplato C8 *Requirement Tracker - VS Code Plug-in* come
 alternativa migliore a causa della disponibilità residua di uno slot per tale capitolato.
 
 = Terza Lettera di Presentazione e Preventivo Costi e Assunzione Impegni.
@@ -40,4 +40,4 @@ A seguito della sollecitazione del committente, abbiamo deciso di utilizzare Git
 = Conclusioni
 Il tentativo di risoluzione pacifica con gli altri gruppi purtroppo non è andato a buon fine, risultando nella scelta del committente sul gruppo
 definitivo per l'implementazione del capitolato. A seguito della decisione del committente di non selezionare il nostro gruppo,
-Abbiamo valutato e scelto il capitolato più adatto per il nostro gruppo, *Requirement Tracker - Plug-in VS Code*.
+abbiamo valutato e scelto il capitolato più adatto per il nostro gruppo: *Requirement Tracker - VS Code Plug-in*.

@@ -9,9 +9,9 @@
   approvazione: ("Stefano Baso","Maria Fuensanta Trigueros Hernandez","Luca Parise"),
   uso: "Esterno",
   version: "1.0",
-  date: "5/11/2024", 
-  timebegin: "15:00",
-  timeend: "15:30",
+  date: "6/11/2024", 
+  timebegin: "19:00",
+  timeend: "19:30",
 )    
 
 = Presentazione
@@ -41,7 +41,7 @@ Con la presente il gruppo NextSoft, composto dai seguenti membri:
   width: 100%,
   inset: (y: 0.6em),
   align(center)[
-    #text(size: 1.7em, weight: "bold")[Requirement Tracker - Plug-in VS Code]
+    #text(size: 1.7em, weight: "bold")[Requirement Tracker - VS Code Plug-in]
   ]
 )
 #block(
@@ -63,7 +63,7 @@ Con la presente il gruppo NextSoft, composto dai seguenti membri:
 \
 
 = Motivazione della scelta
-Dopo la decisione del Proponente, abbiamo dovuto scegliere un capitolato di con maggiori slot di disponibilità. Di conseguenza il gruppo ritiene di avere le competenze necessarie per portare a termine il suddetto progetto e di poterlo svolgere con successo.
+Dopo la decisione del Proponente, abbiamo dovuto scegliere un capitolato con maggiori slot di disponibilità. Di conseguenza il gruppo ritiene di avere le competenze necessarie per portare a termine il suddetto progetto e di poterlo svolgere con successo.
 
 = Piano di Progetto
 
