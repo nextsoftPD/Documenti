@@ -33,7 +33,7 @@
       gutter: 0.8em,
       
       align(center)[
-        #image("../../../../assets/logo.png", width: 30em)
+        #image("../../../assets/logo.png", width: 30em)
         #v(0.8em)
         #text(weight: 700, 2.8em, title)
         #v(-1em)
