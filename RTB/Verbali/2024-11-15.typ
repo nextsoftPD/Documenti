@@ -4,8 +4,8 @@
 #show: project.with(
   title: "Incontro",
   redattori: ("Malik Giafar Mohamed","Ion Cainareanu"),
-  verifica: (),
-  approvazione: (),
+  verifica: ("Marco Perazzolo",),
+  approvazione: ("Marco Perazzolo",),
   uso: "Interno",
   version: "1.0",
   timebegin: "15:00",
