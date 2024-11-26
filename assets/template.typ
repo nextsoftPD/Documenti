@@ -29,7 +29,7 @@
   )
 
   // Impostazione dei paragrafi giustificati
-  set par(justify: true)
+  set par(justify: false)
 
   // Impostazione heading con numerazione gerarchica
   set heading(
