@@ -139,7 +139,7 @@
   email: "nextsoftpadova@gmail.com",
   version: "0.1.0",
   versionamento: (
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "", "",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu", "",
   )
 )
 

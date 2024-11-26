@@ -5,12 +5,12 @@
   title: "Piano di Qualifica",
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: (),
+  verifica: ("Ion Cainareanu",),
   approvazione: (),
   uso: "Esterno",
   version: "0.1.0",
   date: "23/11/2024",
   versionamento: (
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "", "",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu", "",
   )
 )
