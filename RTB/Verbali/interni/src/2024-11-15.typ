@@ -1,4 +1,4 @@
-#import "../../assets/template.typ": project;
+#import "../../../../assets/template.typ": project;
 
 // Esempio di utilizzo
 #show: project.with(
