@@ -1,6 +1,9 @@
 #import "../../../../assets/template.typ": project;
+<<<<<<<< HEAD:RTB/Verbali/interni/src/2024-11-15.typ
+========
 
-// Esempio di utilizzo
+>>>>>>>> main:RTB/Documentazione Interna/Verbali/src/2024-11-15.typ
+
 #show: project.with(
   title: "Incontro",
   redattori: ("Malik Giafar Mohamed","Ion Cainareanu"),

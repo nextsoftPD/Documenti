@@ -1,18 +1,12 @@
 #let project(
   lang: "it",
-  title: "",
-  subtitle: "",
+  title: "Glossario",
+  subtitle: "Glossario Tecnico del capitolato\ndi Ing. del Software 2024-2025",
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
   version: "",
-  redattori: (),
-  verifica: (),
-  approvazione: (),
-  uso: (),
-  date: "",
-  timebegin: "",
-  timeend: "",
   versionamento: (),
+  date: "26/11/2024",
   body
 ) = {
   // Definizione colori
@@ -25,16 +19,12 @@
     margin: (left: 20mm, right: 20mm, top: 20mm, bottom: 20mm),
     numbering: "1",
     number-align: right,
-    
   )
 
   // Impostazione dei paragrafi giustificati
   set par(justify: false)
 
   // Impostazione heading con numerazione gerarchica
-  set heading(
-    numbering: "1.1.1",
-  )
   
   // Frontespizio
   page()[
@@ -43,44 +33,39 @@
       gutter: 0.8em,
       
       align(center)[
-        #image("logo.png", width: 30em)
+        #image("../../../assets/logo.png", width: 30em)
         #v(0.8em)
         #text(weight: 700, 2.8em, title)
         #v(-1em)
-        #if versionamento == (){ text(2em, subtitle)}
+        #text(2em, subtitle)
       ],
 
       align(center)[
         #v(2em)
         #if versionamento == () {
-          
           grid(
             columns: (1fr,1fr,1fr,1fr),
             [],
             align(center)[
-              #text(1em, "Ora Inizio: " + timebegin)
-              #linebreak()
-              #text(1em, "Ora Fine: " + timeend)
+              #text(1em, "Versione: " + version)
             ],
             align(center)[
               #text(1em, date)
-              #linebreak()
-              #text(1em, "Versione: " + version)
             ],[]
           )
-          }else{
-            set text(1.4em)
-            grid(
-              columns: (1fr,1fr,1fr,1fr),
-              [],
-              align(center)[
-                #text(1em, "Versione: " + version)
-              ],
-              align(center)[
-                #text(1em, date)
-              ],[]
-            )
-          }
+        } else {
+          set text(1.4em)
+          grid(
+            columns: (1fr,1fr,1fr,1fr),
+            [],
+            align(center)[
+              #text(1em, "Versione: " + version)
+            ],
+            align(center)[
+              #text(1em, date)
+            ],[]
+          )
+        }
 
         #v(2em)
 
@@ -95,10 +80,6 @@
           }
           line(length: 100%, stroke: 0.5pt)
         }
-        #align(left)[#render-names("Redattori", redattori)]
-        #align(left)[#render-names("Verifica", verifica)]
-        #align(left)[#render-names("Approvazione", approvazione)]
-        #align(left)[#strong([Uso]) #h(1fr) #uso]
 
         #v(3em)
         #link(email)
@@ -120,7 +101,6 @@
         table.header(
           [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*], [*Approvazione*]  // Intestazioni
         ),
-        // Righe di dati
         ..versionamento
       )
     }
@@ -130,8 +110,6 @@
       indent: true,
       depth: 3  // Mostra fino a 3 livelli di nesting
     )
-    // versionamento
-    \
   ]
   
   pagebreak()
@@ -149,5 +127,45 @@
       line(length: 100%, stroke: 0.3pt + gray)
     }
   )
+  
   body
 }
+
+// Esempio di utilizzo
+#show: project.with(
+  title: "Glossario",
+  subtitle: "Glossario Tecnico del capitolato\ndi Ing. del Software 2024-2025",
+  company: "NextSoft",
+  email: "nextsoftpadova@gmail.com",
+  version: "0.1.0",
+  versionamento: (
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez" , "Maria Fuensanta Trigueros Hernandez",
+  )
+)
+
+= A
+= B
+= C
+= D
+= E
+= F
+= G
+= H
+= I
+= J
+= K
+= L
+= M
+= N
+= O
+= P
+= Q
+= R
+= S
+= T
+= U
+= V
+= W
+= X
+= Y
+= Z
