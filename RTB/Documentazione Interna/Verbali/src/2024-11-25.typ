@@ -1,4 +1,4 @@
-#import "../../../assets/template.typ": project;
+#import "../../../../assets/template.typ": project;
 
 #show: project.with(
   title: "Incontro",
