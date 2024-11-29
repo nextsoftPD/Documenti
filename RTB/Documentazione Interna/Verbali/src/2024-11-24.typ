@@ -9,7 +9,7 @@
   version: "1.0",
   timebegin: "15:30",
   timeend: "16:30",
-  date: "26/11/2024",
+  date: "24/11/2024",
 )
 
 = Ordine del giorno
