@@ -1,14 +1,10 @@
 #import "../../../../assets/template.typ": project;
-<<<<<<<< HEAD:RTB/Verbali/interni/src/2024-11-15.typ
-========
-
->>>>>>>> main:RTB/Documentazione Interna/Verbali/src/2024-11-15.typ
 
 #show: project.with(
-  title: "Incontro",
+  title: "Incontro di avviamento\nalla Milestone RTB",
   redattori: ("Malik Giafar Mohamed","Ion Cainareanu"),
-  verifica: ("Marco Perazzolo",),
-  approvazione: ("Marco Perazzolo",),
+  verifica: ("Marco Perazzolo","Luca Parise",),
+  approvazione: ("Marco Perazzolo","Luca parise",),
   uso: "Interno",
   version: "1.0",
   timebegin: "15:00",
