@@ -3,8 +3,8 @@
 #show: project.with(
   title: "Incontro di avviamento\nalla Milestone RTB",
   redattori: ("Malik Giafar Mohamed","Ion Cainareanu"),
-  verifica: ("Marco Perazzolo",),
-  approvazione: ("Marco Perazzolo",),
+  verifica: ("Marco Perazzolo","Luca Parise",),
+  approvazione: ("Marco Perazzolo","Luca parise",),
   uso: "Interno",
   version: "1.0",
   timebegin: "15:00",
