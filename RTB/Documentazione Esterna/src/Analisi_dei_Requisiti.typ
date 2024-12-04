@@ -16,14 +16,14 @@
   title: "Analisi dei Requisiti",
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Luca Parise",),
-  verifica: (""),
-  approvazione: (""),
+  verifica: ("Malik Giafar Mohamed",),
+  approvazione: ("Malik Giafar Mohamed",),
   uso: "Esterno",
   version: "0.1.1",
   date: "04/12/2024",
   versionamento: (
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
-    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "","",
+    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed","Malik Giafar Mohamed",
   )
 )
 
