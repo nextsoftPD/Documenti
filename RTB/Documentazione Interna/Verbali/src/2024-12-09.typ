@@ -3,8 +3,8 @@
 #show: project.with(
   title: "Incontro",
   redattori: ("Stefano Baso",),
-  verifica: ("",),
-  approvazione: ("",),
+  verifica: ("Maria Fuensanta Trigueros Hernández",),
+  approvazione: ("Maria Fuensanta Trigueros Hernández ",),
   uso: "Interno",
   version: "1.0",
   timebegin: "21:30",
