@@ -15,9 +15,9 @@
 #show: project.with(
   title: "Analisi dei Requisiti",
   //subtitle: "Sottotitolo del Documento",
-  redattori: ("Luca Parise",),
-  verifica: ("Malik Giafar Mohamed",),
-  approvazione: ("Malik Giafar Mohamed",),
+  redattori: ("Malik Giafar Mohamed",),
+  verifica: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
+  approvazione: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
   uso: "Esterno",
   version: "0.1.1",
   date: "04/12/2024",
