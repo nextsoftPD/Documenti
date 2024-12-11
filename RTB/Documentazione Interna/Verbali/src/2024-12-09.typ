@@ -13,7 +13,7 @@
 )
 
 = Ordine del Giorno
-- Continuo definizione continua del way of working interno
+- Continuo definizione del way of working interno
 - Suddivisione del lavoro
 - Primi test delle tecnologie
 - Proposta di incontro con l'Azienda
