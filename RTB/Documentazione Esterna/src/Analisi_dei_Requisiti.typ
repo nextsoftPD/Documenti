@@ -16,10 +16,10 @@
   title: "Analisi dei Requisiti",
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
+  verifica: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez, Stefano Baso",),
+  approvazione: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez, Stefano Baso",),
   uso: "Esterno",
-  version: "0.1.1",
+  version: "0.2.0",
   date: "04/12/2024",
   versionamento: (
     "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "", "",
