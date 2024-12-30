@@ -11,6 +11,7 @@
   version: "0.1.0",
   date: "23/11/2024",
   versionamento: (
+    "0.2.1", "23/12/2024", "Maria Fuensanta Trigueros Hernandez", "Sviluppo di sezioni incomplete", "", "",
     "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu", "Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Maria Fuensanta Trigueros Hernandez",
   )
@@ -23,6 +24,7 @@
 Questo documento descrive la pianificazione dello sviluppo del plugin Requirement Tracker per Visual Studio Code. Ha lo scopo di fornire un quadro chiaro per comprendere come verrà realizzato il progetto, comprese le strategie, i rischi e le risorse necessarie per l'implementazione. 
 
 == Scopo del capitolato
+Il capitolato scelto si concentra sullo sviluppo di un plug-in avanzato per il tracciamento dei requisiti all'interno di Visual Studio Code. Questo strumento è progettato per semplificare il lavoro di analisti, progettisti e sviluppatori, migliorando la gestione dei requisiti durante il ciclo di vita di un progetto software. 
 
 == Struttura del documento
 
@@ -148,6 +150,33 @@ Manca il piano di contingenza
 La scelta di un approccio metodologico adeguato garantisce che le attività del progetto siano organizzate in modo strutturato e produttivo. Vengono stabiliti i principi e le tecniche operative per assicurare un avanzamento coerente con gli obiettivi.
 = Pianificazione
 La pianificazione permette di suddividere il progetto in fasi operative chiare, definendo risorse, tempistiche e responsabilità. Questo approccio assicura il coordinamento tra i membri del team e il rispetto delle scadenze.
+
+== Fasi del progetto
+
+=== Analisi iniziale e definizione dei requisiti
+
+- Periodo: Novembre 2024 - Dicembre 2024
+
+- Obiettivi:
++ Identificare e analizzare i requisiti funzionali e non funzionali.
++ Creare una visione condivisa del progetto con gli stakeholder.
+
+- Attività principali:
++ Conduzione di incontri iniziali con il cliente per chiarire i requisiti.
++ Redazione dei documenti iniziali: Analisi dei Requisiti, Glossario e Norme di Progetto.
++ Creazione del piano preliminare delle attività.
+
+#table (
+  columns: 3;
+  [*Milestone*],[*Data*],[*Obiettivi raggiunti*],
+  [Fine analisi iniziale],[Dicembre 2024/Gennaio 2025],[Conclusione della definizione dei requisiti.],
+  [Progettazione completata],[Marzo 2025],[],
+  [Proof of Concept completato],[Marzo 2025],[],
+  [Sviluppo completato],[Marzo 2025/Aprile 2025],[Implementazione di tutte le funzionalità.],
+  [Testing e validazione completati],[Aprile 2025],[Prodotto pronto per il rilascio.],
+  [Consegna finale],[Aprile 2025],[Consegna al cliente],
+
+)
 = Preventivo
 La definizione del budget è cruciale per allocare correttamente le risorse e mantenere il progetto nei limiti economici previsti. Una stima accurata consente di monitorare i costi e di ottimizzare gli investimenti.
 = Consuntivo
@@ -155,5 +184,52 @@ Questa sezione confronta la pianificazione iniziale con i risultati effettivi ot
 = Organigramma
 La struttura organizzativa definisce i ruoli e le responsabilità dei membri del team, facilitando la comunicazione e la gestione delle attività. Una chiara assegnazione dei compiti aiuta a ottimizzare la collaborazione e a garantire l’efficienza operativa.
 = Mitigazione dei Rischi 
-Questa sezione dettaglia le strategie messe in atto per gestire i rischi individuati. Vengono evidenziate le azioni preventive e correttive adottate per ridurre l’impatto dei problemi durante lo sviluppo.
+Questa sezione dettaglia le strategie messe in atto per gestire i rischi individuati. Vengono evidenziate le azioni preventive adottate per ridurre l’impatto dei problemi durante lo sviluppo.
+== Rischi tecnologici
+Disponibilità e compatibilità con le API di IA
+- Descrizione: L'integrazione con modelli di IA potrebbe fallire a causa di limitazioni tecniche.
+- Mitigazione: Creare un livello di astrazione tra il sistema e le API esterne per ridurre la dipendenza e pianificare test periodici per garantire l'affidabilità.
+
+Compatibilità con Visual Studio Code
+- Descrizione: Le modifiche a Visual Studio Code potrebbero causare incompatibilità.
+- Mitigazione: Monitorare regolarmente gli aggiornamenti di Visual Studio Code e mantenere la documentazione aggiornata. Condurre test di regressione per ogni aggiornamento.
+
+
+== Rischi legati ai requisiti
+Ambiguità dei requisiti
+- Descrizione: Requisiti mal definiti possono complicare l'implementazione.
+- Mitigazione: Utilizzare tecniche di elicitation e convalidare regolarmente i requisiti con il cliente. Aggiornare la documentazione con revisioni iterative.
+
+Modifiche frequenti ai requisiti
+- Descrizione: Cambiamenti continui ai requisiti possono aumentare i costi e i tempi.
+- Mitigazione: Progettare un'architettura modulare e adottare strumenti di versionamento per tracciare e gestire i cambiamenti.
+
+== Rischi organizzativi
+Mancanza di coordinamento del team
+- Descrizione: La scarsa comunicazione può rallentare il progetto.
+- Mitigazione: Utilizzare piattaforme di collaborazione (ad esempio Slack, Trello) per centralizzare le comunicazioni e organizzare riunioni settimanali per aggiornare il progresso del progetto.
+
+Dipendenza da risorse chiave
+- Descrizione: L'assenza di membri chiave del team può causare ritardi.
+- Mitigazione: Pianificare risorse di backup per i ruoli critici e documentare dettagliatamente i processi.
+
+== Rischi legati al team
+Disponibilità del team
+- Descrizione: Impegni personali dei membri del team possono influire negativamente sul lavoro.
+- Mitigazione: Creare un calendario flessibile e assegnare prioritarie responsabilità critiche a risorse disponibili.
+
+Mancanza di competenze tecniche
+- Descrizione: Alcuni membri del team potrebbero non possedere le competenze richieste.
+- Mitigazione: Fornire formazione mirata, materiali di apprendimento e sessioni di mentoring per migliorare le competenze del team.
+
+== Rischi finanziari
+Superamento dei costi di sviluppo
+- Descrizione: Le funzionalità avanzate possono richiedere risorse aggiuntive.
+- Mitigazione: Monitorare regolarmente il budget e rivedere le priorità in caso di eccedenze. Concentrarsi sulle funzionalità essenziali per rispettare il budget.
+
+
+== Rischi per l’utente finale
+Bassa usabilità del plug-in
+- Descrizione: Interfaccia poco intuitiva potrebbe ridurre l'adozione.
+- Mitigazione: Condurre test di usabilità con utenti target e incorporare il feedback per migliorare il design dell'interfaccia e l'esperienza utente.
 
