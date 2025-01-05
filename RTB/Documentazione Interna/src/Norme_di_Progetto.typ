@@ -11,7 +11,7 @@
   version: "0.3.0",
   date: "23/11/2024",
   versionamento: (
-    "0.3.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu","",
+    "0.3.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu, Stefano Baso","",
     "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2", "Ion Cainareanu","Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Stesura Prima Versione", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu",
 
@@ -116,11 +116,11 @@ Dove:
 
 ==== Progettazione
 ===== Scopo
-L'attività di progettazione è legata al ruolo dei Progettisti#super("G"), e consiste nel definire l'architettura del sistema e degli standard qualitativi da perseguire durante lo sviluppo. In questa sezione vengono descritte le attività, le norme e le convenzioni adottate per la realizzazione di tale processo.
+L'attività di progettazione è legata al ruolo dei Progettisti#super("G"), consiste nel definire l'architettura del sistema e degli standard qualitativi da perseguire durante lo sviluppo. In questa sezione vengono descritte le attività, le norme e le convenzioni adottate per la realizzazione di tale processo.
 
 ==== Codifica
 ===== Scopo e aspettative
-L'attività di codifica è legata al ruolo dei Programmatori#super("G"), e consiste nell'implementare le soluzioni progettate dai Progettisti#super("G"). In questa sezione vengono descritte le attività, le norme e le convenzioni adottate per la realizzazione di tale processo.
+L'attività di codifica è legata al ruolo dei Programmatori#super("G"), consiste nell'implementare le soluzioni progettate dai Progettisti#super("G"). In questa sezione vengono descritte le attività, le norme e le convenzioni adottate per la realizzazione di tale processo.
 Il gruppo si aspetta una codifica chiara e ben strutturata, che rispetti le norme e gli standard definiti nella progettazione.
 ===== Strumenti
 Per la codifica del prodotto Il principale strumento adottato sarà *Visual Studio Code*, in quanto è l'ambiente di sviluppo più consigliato nello sviluppo di estensioni dello stesso .
@@ -215,7 +215,5 @@ I verbali sono documenti che riportano le decisioni prese durante le riunioni de
 ==== Ricerca delle tecnologie
 I componenti di NextSoft si diveranno in due macrogruppi,
 uno dedito alla ricerca delle tecnologie necessarie per il Capitolato e l'altro dedito al processo di stesura della documentazione e alla discussione delle scelte progettuali proposte.
-L'assegnazione ad un macrogruppo avviene 
-in base alle preferenze dei singoli membri e sulle eventuali competenze pregresse sui requisiti obbligatori del capitolato.
-Tale approccio permette una divisione del lavoro equa e una maggiore efficienza nella ricerca delle tecnologie,
-mantenendo comunque un alto ritmo di tracciabilità delle scelte progettuali.
+L'assegnazione ad un macrogruppo avviene in base alle preferenze dei singoli membri e sulle eventuali competenze pregresse sui requisiti obbligatori del capitolato.
+Tale approccio permette una divisione del lavoro equa e una maggiore efficienza nella ricerca delle tecnologie, mantenendo comunque un alto ritmo di tracciabilità delle scelte progettuali.
