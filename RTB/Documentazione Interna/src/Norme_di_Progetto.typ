@@ -8,9 +8,10 @@
   verifica: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
   approvazione: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
   uso: "Interno",
-  version: "0.1.0",
+  version: "0.3.0",
   date: "23/11/2024",
   versionamento: (
+    "0.3.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "","",
     "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2", "Ion Cainareanu","Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Stesura Prima Versione", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu",
 
