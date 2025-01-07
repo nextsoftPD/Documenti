@@ -3,8 +3,8 @@
 #show: project.with(
   title: "Incontro",
   redattori: ("Stefano Baso",),
-  verifica: ("",),
-  approvazione: ("",),
+  verifica: ("Malik Giafar Mohamed",),
+  approvazione: ("Malik Giafar Mohamed",),
   uso: "Interno",
   version: "1.0",
   timebegin: "21:30",
