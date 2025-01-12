@@ -135,7 +135,7 @@ Questi indicatori consentono di monitorare l’andamento del progetto in termini
 
 - *SFIN* (Structural Fan-In) Indice di utilità = indice di quantità di componenti che utilizzano un determinato modulo, un indice alto indica un maggior utilizzo del componente.
 
-- *SFOUT* (Structural Fan-Out) Indice di dipendenza = indica il numero di componenti utilizzati dal componente in oggetto, un indice alto indica un alto accoppiamento del componente.
+- *SFOUT* (Structural Fan-Out) Indice di dipendenza = indica il numero di componenti utilizzati dal modulo in oggetto, un indice alto indica un alto accoppiamento.
 
 #figure(
   table(
@@ -229,7 +229,7 @@ La manutenibilità del software è la facilità con cui può essere modificato, 
     columns: 4,
     table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
     [OPDS02], [Analizzabilità del prodotto], [Una facile analisi del codice permette di localizzare in tempi minimi il blocco di codice che riguarda l'errore o l'aggiornamento], [MPDS03 \ MPDS04 \ MPDS06],
-    [OPDS03], [Modificabilità del prodotto], [Permette una manutenzione più agevolata per la correzzione ], [MPDS05 \ MPDS02],
+    [OPDS03], [Modificabilità del prodotto], [Permette una manutenzione più agevolata per la correzione ], [MPDS05 \ MPDS02],
   ),
   caption: [Obiettivo di manutenibilità],
 )
@@ -243,7 +243,7 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
     columns: 4,
     table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
     [OPDS04], [Prodotto maturo], [Evita errori o malfunzionamenti durante l'utilizzo], [MPDS07 \ MPDS10],
-    [OPDS05], [Tolleranza agli errori], [Mantiene il livello di prestanzioni anche durante un uso scorretto o in presenza di errori], [MPDS11 \ MPDS08 \ MPDS09],
+    [OPDS05], [Tolleranza agli errori], [Mantiene il livello di prestazioni anche durante un uso scorretto o in presenza di errori], [MPDS11 \ MPDS08 \ MPDS09],
   ),
   caption: [Obiettivo di affidabilità],
 )
@@ -252,13 +252,13 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
 
 - Code Coverage: percentuale di codice eseguito nei test. Un indice di copertura del codice alto significa che è stato testato più codice, riducendo quindi la presenza di bug.
 
-- Brach Coverage: percentuale di copertura di tutti i branch all'esecuzione del codice. IL compito dei test è anche quello di verificare tutti i rami esistenti per verificarne la correttezza.
+- Branch Coverage: percentuale di copertura di tutti i branch all'esecuzione del codice. Il compito dei test è anche quello di verificare tutti i rami esistenti per verificarne la correttezza.
 
 - Presenza di vulnerabilità: indice per il numero di vulnerabilità ancora presenti nel codice.
 
 - Presenza di bug: indice per il numero di bug ancora presenti nel codice.
 
-- Successo dei test: indice percentuale per il successo dei test definiti dai programmatori.
+- Successo dei test: indice in percentuale relativo al successo dei test definiti dai programmatori.
 
 #figure(
   table(
