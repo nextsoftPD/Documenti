@@ -11,7 +11,7 @@
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
-    "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazioni parti mancanti del documento","","",
+    "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo","",
     "0.3.0", "05/01/2025", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu, Stefano Baso","",
     "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2", "Ion Cainareanu","Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Stesura Prima Versione", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu",
@@ -202,7 +202,7 @@ I verbali sono documenti che riportano le decisioni prese durante le riunioni de
 === Norme Tipografiche
 ==== Nome del documento
 Ogni documento ha una denominazione omogenea.
-I verbali come nome file hanno la data del realtivo incontro in formato YYYY-MM-DD, mentre gli altri documenti sarano denominati nel seguente modo:
+I verbali come nome file hanno la data del relativo incontro in formato YYYY-MM-DD, mentre gli altri documenti sarano denominati nel seguente modo:
 #align(center)[#strong[Nome_File-vX.Y.Z]]
 
 Per la denominazione dei file si fa riferimento alla convenzione "CamelCase#super("G")", le parole verranno separate dal carattere "\_" (underscore) e la versione sarà indicata con la lettera "v" seguita dal numero di versione, specificato a sua volta nel paragrafo _Versionamento_.
@@ -276,7 +276,6 @@ Per il versionamento si è scelto di utilizzare un repository GitHub, che, a sua
 ==== Documenti
 La repository utilizzata dal gruppo per la creazione dei documenti è strutturata nel seguente modo:
 - Una cartella chiamata "Candidatura" contenente i documenti relativi alla candidatura del gruppo per il capitolato. Al suo interno ci sono i verbali, la lettera di presentazione, il preventivo dei costi e assuzione degli impegni e la valutazione dei capitolati.
-  
 - Una cartella chiamata "RTB" contenente i documenti relativi alla milestone RTB.
 - una cartella "assets" contenente il template principale e immagini varie.
 
@@ -289,7 +288,7 @@ La repository inoltre è suddivisa in più branch#super("G") così definiti:
 La repository è pubblica e si può facilmente trovare al seguente link:
 - https://github.com/nextsoftPD/Documenti
 ==== PoC
-La repository del PoC è ancora da cerare.
+La repository del PoC è ancora da creare.
 === Branch, Issues e Pull Request
 Non è consentito fare commit#super("G") direttamente sul branch main di nessuna repository, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G"). Potrà essere modificato solo tramite il meccanismo di pull request#super("G") con verifica obbligatoria, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Nel branch nome_documento invece ogni membro può fare commit a patto che siano relativi solo ai configuration items#super("G") modificabili nel branch. Ogni commit deve referenziare la issue#super("G") da cui è derivata e quindi, in generale, potranno effettuare modifiche sul branch solo gli assegnatari di issue che la trattano quel documento specifico. Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte di qualsiasi membro del gruppo e non è necessario referenziare nessuna issue.
 == Gestione della Qualità
@@ -370,7 +369,7 @@ Esegue delle procedure di controllo e amministrazione dell'ambiente di lavoro. I
 Possiede maggiori competenze riguardo il dominio applicativo del problema. Si occupa di:
 - Studiare il problema e il relativo contesto applicativo
 - Comprendere il problema e definire la complessità e i requisiti
-- Svolgere l'Analisi dei Requisiti e regidere relativo documento
+- Svolgere l'Analisi dei Requisiti e redigere relativo documento
 
 *Progettista*
 \
@@ -425,7 +424,7 @@ I verbali delle riunioni vengono archiviati e resi disponibili a tutti i membri 
 ==== Comunicazioni
 Le comunicazioni all'interno del gruppo avvengono principalmente attraverso i seguenti canali:
 - *Whatsapp*: per fissare le riunioni
-- *Discord*: per prendere discutere eventuali problemi e definire delle azioni da intraprendere di coneguenza
+- *Discord*: per prendere discutere eventuali problemi e definire delle azioni da intraprendere di conseguenza
 
 Per le comunicazioni formali con il proponente o altre parti interessate, si utilizzano principalmente:
 - *Email*: per fissare riunioni o per lo scambio di risorse e documenti
