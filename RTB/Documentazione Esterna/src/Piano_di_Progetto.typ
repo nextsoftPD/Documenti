@@ -11,7 +11,7 @@
   version: "0.3.0",
   date: "23/11/2024",
   versionamento: (
-    "0.3.0", "4/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "", "",
+    "0.3.0", "4/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo", "",
     "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu", "Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Maria Fuensanta Trigueros Hernandez",
   )
@@ -51,7 +51,7 @@ Il contenuto del documento è organizzato nelle seguenti sezioni:
 
 - *Preventivo:*  dettagli sui costi stimati per ogni fase del progetto, evidenziando risorse e allocazioni di budget.
 
-- *Consuntivo di periodo:* dettagli sule variazioni di pianificazione e costi rispetto alle stime iniziali, spiegando le cause degli scostamenti e le misure correttive adottate.
+- *Consuntivo di periodo:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, spiegando le cause degli scostamenti e le misure correttive adottate.
 
 - *Caso di studio:* esempio pratico di utilizzo del plugin in un ambiente reale.
 
@@ -78,7 +78,7 @@ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
 
 === Riferimenti informativi
 
-- T02 - Procesi di ciclo di vita
+- T02 - Processi di ciclo di vita
 https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
 - T04 - Gestione di progetto 
 https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
@@ -458,7 +458,7 @@ Obiettivi:
 
 === Fase 4: Testing e Validazione
 
-Periodo: Febbrario 2025 - Aprile 2025
+Periodo: Febbraio 2025 - Aprile 2025
 
 Obiettivi:
 
