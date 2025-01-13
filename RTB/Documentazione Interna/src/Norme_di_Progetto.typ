@@ -11,7 +11,7 @@
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
-    "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo","",
+    "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo, Stefano Baso","",
     "0.3.0", "05/01/2025", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu, Stefano Baso","",
     "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2", "Ion Cainareanu","Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Stesura Prima Versione", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu",
@@ -78,7 +78,7 @@ Il gruppo si aspetta di:
 
 //=== Attività
 === Analisi dei Requisiti
-L'attività di analisi dei requisiti è compito degli Analisti#super("G"), e consiste nell'analizzare ogni singolo requisito e caso d'uso del progetto. Ha lo scopo di:
+L'attività di analisi dei requisiti è compito degli Analisti#super("G"), consiste nell'analizzare ogni singolo requisito e caso d'uso del progetto. Ha lo scopo di:
 
 - Comprendere a fondo le necessità del proponente
 - Aiutare i progettisti#super("G")
@@ -197,7 +197,7 @@ In ogni pagina del documento sono presenti i seguenti elementi:
   - Numero di pagina: posizionato in basso al centro della pagina
 
 ==== Verbali
-I verbali sono documenti che riportano le decisioni prese durante le riunioni del gruppo di progetto. I verbali differiscono leggermento nello stile grafico del frontespizio degli altri documenti, e non contengono il registro dei cambiamenti.
+I verbali sono documenti che riportano le decisioni prese durante le riunioni del gruppo di progetto. I verbali differiscono leggermente nello stile grafico del frontespizio degli altri documenti, e non contengono il registro dei cambiamenti.
 
 === Norme Tipografiche
 ==== Nome del documento
@@ -210,7 +210,7 @@ Per la denominazione dei file si fa riferimento alla convenzione "CamelCase#supe
 ==== Stile del testo
 Il testo dei documenti deve essere scritto in lingua italiana utilizzerà i seguenti formati di testo:
 - *Grassetto*: per evidenziare i titoli di sezioni
-- *Crosivo*: per far riferimento ad una sezione del documento
+- *Corsivo*: per far riferimento ad una sezione del documento
 
 ==== Elenchi
 Gli elenchi puntati seguono le seguenti norme:
