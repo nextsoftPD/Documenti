@@ -3,10 +3,10 @@
 #show: project.with(
   title: "Preparazione all'incontro AdR",
   redattori: ("Marco Perazzolo",),
-  verifica: ("Stefano Baso",),
-  approvazione: ("",),
+  verifica: ("Stefano Baso","",),
+  approvazione: ("Malik Giafar Mohamed",),
   uso: "Interno",
-  version: "1.2",
+  version: "1.3",
   timebegin: "21:30",
   timeend: "23:30",
   date: "10/01/2025",
