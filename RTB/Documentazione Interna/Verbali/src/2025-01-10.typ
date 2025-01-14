@@ -6,7 +6,7 @@
   verifica: ("Stefano Baso",),
   approvazione: ("",),
   uso: "Interno",
-  version: "1.1",
+  version: "1.2",
   timebegin: "21:30",
   timeend: "23:30",
   date: "10/01/2025",
@@ -37,7 +37,7 @@ Sono stati mostrati e discussi i documenti relativi alle Norme di Progetto, al P
 == Modifiche retroattive ai documenti della Milestone RTB
 Sono state concordate alcune modifiche retroattive ai documenti già inseriti nella milestone RTB:
 - Modifica della denominazione dei file per il versionamento.
-- Adozione di un nuovo template per i documenti, dal quale è stata rimossa la colonna "Approvazione" nella tabella dei versionamenti. La colonna verrà inserita solo nella versione finale del documento.
+- Adozione di un nuovo template per i documenti, dal quale è stata rimossa la colonna "Approvazione" nella tabella dei versionamenti.
 
 == Presentazione delle Metriche nel Piano di Qualifica
 Nel documento di Piano di Qualifica sono state presentate le metriche che verranno utilizzate per valutare la qualità dei documenti (indice di Gulpease). È stato spiegato brevemente il funzionamento dell’indice, mentre le metriche relative alla qualità del codice saranno studiate e approfondite in seguito.
@@ -46,7 +46,7 @@ Nel documento di Piano di Qualifica sono state presentate le metriche che verran
 Per prepararsi all’incontro con il professor Cardin, il gruppo ha definito una rotazione dei ruoli. Lo sviluppo dell'integrazione del PoC tra frontend e backend è stato temporaneamente sospeso per dare priorità alla finalizzazione dell'Analisi dei Requisiti, che riprenderà dopo l’incontro con il docente.
 
 == Assegnazione compiti
-I membri incaricati della finalizzazione dei documenti hanno concordato di completare le ultime modifiche entro il 12 gennaio. Successivamente, inizieranno a collaborare all'Analisi dei Requisiti. Inoltre, un membro del gruppo è stato incaricato della preparazione del PowerPoint e della discussione durante il Diario di Bordo previsto per il 13 gennaio.
+I membri incaricati della finalizzazione dei documenti, una volta completate le ultime modifiche, inizieranno a collaborare all'Analisi dei Requisiti. Inoltre, un membro del gruppo è stato incaricato della preparazione del PowerPoint e della discussione durante il Diario di Bordo previsto per il 13 gennaio.
 
 = Conclusioni
 La riunione ha permesso di fare il punto sui progressi tecnici e documentali, con particolare attenzione al backend, agli use cases e ai documenti per l’RTB. È stato fissato il prossimo incontro per venerdì 17 gennaio, alle ore 21:30 su Discord.
