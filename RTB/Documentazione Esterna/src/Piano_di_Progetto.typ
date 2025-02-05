@@ -11,6 +11,7 @@
   version: "0.3.1",
   date: "23/11/2024",
   versionamento: (
+    "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "", "",
     "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo", "",
     "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu", "Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Maria Fuensanta Trigueros Hernandez",
@@ -95,7 +96,7 @@ Questa sezione descrive i rischi potenziali associati al progetto e le relative 
 
 Questi rischi derivano da problemi tecnici o limitazioni delle tecnologie utilizzate nel progetto, che possono influenzare negativamente il progresso o la qualità del prodotto finale.
 
-- *Disponibilità e compatibilità con le API di IA*
+- *Compatibilità Delle API di IA*
 
 #figure(
   table(
@@ -105,7 +106,7 @@ Questi rischi derivano da problemi tecnici o limitazioni delle tecnologie utiliz
   [
     *Descrizione* 
   ],
-  [L'integrazione di modelli di IA tramite API REST può fallire a causa dell'accessibilità o della compatibilità.],
+  [L'integrazione di modelli di IA tramite API REST può fallire a causa dell'incompatibilità tra le versioni di Ollama],
   [
     *Probabilità*
   ],
@@ -118,7 +119,7 @@ Questi rischi derivano da problemi tecnici o limitazioni delle tecnologie utiliz
   [
     *Precauzioni*
   ],
-[ Progettare un livello di astrazione, eseguire test controllati]
+[Utilizzare versioni specifiche dei modelli di IA e monitorare gli aggiornamenti alle API di Ollama]
 
 ),
 caption: [Rischi tecnologici:Disponibilità e compatibilità con le API di IA],
@@ -133,7 +134,7 @@ table(
   [
     *Descrizione*
   ],
-  [I modelli di IA potrebbero non elaborare dati specifici o di bassa qualità.],
+  [I modelli di IA potrebbero non essere sufficientemente performanti],
   [
     *Probabilità*
   ],
@@ -145,7 +146,7 @@ table(
   [
     *Precauzioni*
   ],
-  [Addestrare i modelli con dati pertinenti, eseguire convalide manuali.]
+  [Condurre un'analisi su un modello ottimale in base alle infrastrutture disponobili]
 ),
 caption: [Rischi tecnologici: Limitazioni dei modelli di intelligenza artificiale],
 )
@@ -170,7 +171,7 @@ caption: [Rischi tecnologici: Limitazioni dei modelli di intelligenza artificial
   [
     *Precauzioni*
   ],
-  [Eseguire test di regressione, mantenere aggiornata la documentazione.]
+  [Monitorare gli aggiornamenti di Visual Studio Ccode]
 ),
 caption: [Rischi tecnologici: Compatibilità con Visual Studio Code],
 )
@@ -187,7 +188,7 @@ Questi rischi emergono quando i requisiti non sono chiari, ben definiti o subisc
   [
     *Descrizione*
   ],
-  [Requisiti mal definiti rendono difficile l'implementazione.],
+  [Alcuni requisiti mal definiti possono rendere difficile l'implementazione.],
   [
     *Probabilità*
   ],
@@ -199,9 +200,9 @@ Questi rischi emergono quando i requisiti non sono chiari, ben definiti o subisc
   [
     *Precauzioni*
   ],
-  [Utilizzare validatori automatici, condurre revisioni collaborative.]
+  [Condurre molteplici revisioni collettive ed interviste con il proponente al fine di ottentere dei requisiti ottimali]
 ),
-caption: [Rischi legati ai requisiti:Ambiguità dei requisiti],
+caption: [Rischi legati ai requisiti: Ambiguità dei requisiti],
 )
 #v(2cm)
 - *Modifiche frequenti dei requisiti*
@@ -213,7 +214,7 @@ caption: [Rischi legati ai requisiti:Ambiguità dei requisiti],
   [
     *Descrizione*
   ],
-  [Le continue modifiche generano rilavorazioni e aumentano i costi.],
+  [La difficoltà nell'individuazione di requisiti plausibili può portare alla generazione di ambiguità ],
   [
     *Probabilità*
   ],
@@ -225,7 +226,7 @@ caption: [Rischi legati ai requisiti:Ambiguità dei requisiti],
   [
     *Precauzioni*
   ],
-  [Progettare un'architettura modulare.]
+  [Condurre l'analisi più persone]
 ),
 caption: [Rischi legati ai requisiti: Modifiche frequenti dei requisiti],
 )
@@ -242,7 +243,7 @@ I rischi organizzativi riguardano la gestione del progetto e il coordinamento de
   [
     *Descrizione*
   ],
-  [Le riunioni poco frequenti possono influenzare la comunicazione.],
+  [Le riunioni poco frequenti e la scarsa coordinazione possono influenzare la produttività.],
   [
     *Probabilità*
   ],
@@ -254,7 +255,7 @@ I rischi organizzativi riguardano la gestione del progetto e il coordinamento de
   [
     *Precauzioni*
   ],
-  [Programmare riunioni regolari, utilizzare strumenti di collaborazione.]
+  [Programmare riunioni ad intervalli di tempo regolari]
 ),
 caption: [Rischi organizzativi: Mancanza di coordinamento del team],
 )
@@ -267,7 +268,7 @@ caption: [Rischi organizzativi: Mancanza di coordinamento del team],
   [
     *Descrizione*
   ],
-  [L'assenza di risorse tecniche o umane essenziali causa ritardi.],
+  [Ritardi causati da un'errata rotazione dei ruoli],
   [
     *Probabilità*
   ],
@@ -279,12 +280,12 @@ caption: [Rischi organizzativi: Mancanza di coordinamento del team],
   [
     *Precauzioni*
   ],
-  [Documentare i processi critici.]
+  [Documentare i processi critici per permettere ad altri membri del gruppo di proseguire con le task]
 ),
 caption: [Rischi organizzativi: Dipendenza da risorse chiave],
 )
 
-Un esempio di questo caso potrebbe essere l'assenza del verificatore nel momento in cui questa attività è necessaria, rendendo impossibile portare avanti il ​​progetto o costringendo diverse persone a dover assumere il loro ruolo, causando un ritardo.
+Un esempio di questo caso potrebbe essere l'assenza del verificatore nel momento in cui questa attività è necessaria, rendendo impossibile portare avanti il ​​progetto o costringendo diverse persone a dover assumere tale ruolo e informarsi su come svolgerlo al meglio, causando un ritardo.
 #v(0.5cm)
 == Rischi legati alle persone 
 Questi rischi si riferiscono alle limitazioni o ai problemi legati al personale coinvolto, come disponibilità ridotta o mancanza di competenze specifiche.
@@ -298,7 +299,7 @@ Questi rischi si riferiscono alle limitazioni o ai problemi legati al personale 
   [
     *Descrizione*
   ],
-  [Gli impegni esterni dei membri del team potrebbero influire negativamente sulla loro capacità di partecipare al progetto.],
+  [Gli impegni personali dei membri del team potrebbero influire negativamente sulla loro capacità di partecipare al progetto.],
   [
     *Probabilità*
   ],
@@ -310,7 +311,7 @@ Questi rischi si riferiscono alle limitazioni o ai problemi legati al personale 
   [
     *Precauzioni*
   ],
-  [Pianificare un programma flessibile che consenta di adattarsi agli impegni dei membri e assegnare priorità ai compiti fondamentali.]
+  [Pianificare un programma flessibile che consenta di adattarsi agli impegni dei membri del gruppo.]
 ),
 caption: [Rischi legati alle persone: Disponibilità del team],
 )
@@ -336,7 +337,7 @@ caption: [Rischi legati alle persone: Disponibilità del team],
   [
     *Precauzioni*
   ],
-  [Fornire formazione e materiale didattico al team.]
+  [Ogni membro del team condividerà le proprie conoscenze con gli altri membri del gruppo nelle modalità stabilite nelle norme di progetto]
 ),
 caption: [Rischi legati alle persone: Mancanza di competenze tecniche],
 )
@@ -353,7 +354,7 @@ I rischi finanziari si manifestano quando i costi del progetto superano il budge
   [
     *Descrizione*
   ],
-  [Le funzionalità avanzate possono superare il budget.],
+  [Si potrebbe andare in contro ad un superamento del budget],
   [
     *Probabilità*
   ],
@@ -365,7 +366,7 @@ I rischi finanziari si manifestano quando i costi del progetto superano il budge
   [
     *Precauzioni*
   ],
-  [Definire l'ambito dell'MVP, dare priorità alle funzionalità essenziali.]
+  [Rendicontazione oraria delle figure del progetto in modo da monitorare i costi]
 ),
 caption: [Rischi finanziari: Superamento dei costi di sviluppo],
 )
@@ -383,7 +384,7 @@ Questi rischi riguardano l'esperienza dell'utente finale, come difficoltà nell'
   [
     *Descrizione*
   ],
-  [Un'interfaccia non intuitiva scoraggia l'adozione.],
+  [Un'interfaccia poco intuitiva può influire sull'usabilità del prodotto.],
   [
     *Probabilità*
   ],
@@ -405,10 +406,9 @@ caption: [Rischi per l'utente finale: Bassa usabilità del plug-in],
 
 La scelta di un approccio metodologico adeguato garantisce che le attività del progetto siano organizzate in modo strutturato e produttivo. Vengono stabiliti i principi e le tecniche operative per assicurare un avanzamento coerente con gli obiettivi.
 
+Per il progetto è stato scelto il modello di sviluppo agile....
 
-Per il progetto è stato scelto un approccio incrementale e iterativo per garantire la flessibilità necessaria nella gestione dei requisiti e delle modifiche. Questo modello consente di suddividere lo sviluppo in cicli successivi, ognuno dei quali include fasi di progettazione, sviluppo, verifica e rilascio di versioni parziali del prodotto.
-
-- Scelta del Modello Incrementale:
+- Scelta del Modello Agile:
         + Ogni fase del progetto produce un incremento funzionale del prodotto.
         + Le iterazioni permettono di integrare continuamente il feedback.
         + La modularità del plug-in permette di sviluppare le componenti in modo indipendente, riducendo il rischio di blocchi.
@@ -417,6 +417,8 @@ Per il progetto è stato scelto un approccio incrementale e iterativo per garant
 
         + Utilizzo di GitHub Projects per la gestione dei task e la pianificazione.
         + Strumenti di collaborazione come Discord e Notion per mantenere una comunicazione fluida tra i membri del team.
+
+(da migliorare)
 
 = Pianificazione
 
@@ -429,10 +431,10 @@ La pianificazione permette di suddividere il progetto in fasi operative chiare, 
 Periodo: Novembre 2024 - Dicembre 2024
 
 Obiettivi:
-- Identificare e analizzare i requisiti funzionali e non funzionali.
-- Creare una visione condivisa del progetto con gli stakeholder.
-- Iniziare dei documenti iniziali: Analisi dei Requisiti, Glossario e Norme di Progetto.
-- Creazione del piano preliminare delle attività.
+- Definizione del way of working del gruppo
+- Creare una visione condivisa del progetto con gli stakeholder
+- Iniziare l'analisi dei requisiti
+- Iniziare la stesura dei documenti RTB
 
 === Fase 2: Progettazione
 
