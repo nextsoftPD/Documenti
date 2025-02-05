@@ -139,13 +139,22 @@
   email: "nextsoftpadova@gmail.com",
   version: "0.1.0",
   versionamento: (
+    "0.1.1", "06/02/2025", "Malik Giafar Mohamed", "Aggiunta termimi presenti nel documento AdR", "", "",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez" , "Maria Fuensanta Trigueros Hernandez",
   )
 )
-
 = A
+== AI
+L'intelligenza artificiale (AI) si riferisce alla simulazione dell'intelligenza umana nelle macchine che sono programmate per pensare e apprendere come gli esseri umani.
+
+== API REST
+RESTful API (Representational State Transfer) è uno stile architettonico per la progettazione di applicazioni di rete, basato su comunicazioni stateless client-server.
+
 = B
 = C
+== CSV
+CSV (Comma-Separated Values) è un semplice formato di file utilizzato per memorizzare dati tabulari, come un foglio di calcolo o un database.
+
 = D
 = E
 = F
@@ -155,9 +164,15 @@
 = J
 = K
 = L
+== LLM
+Large Language Model (LLM) è un tipo di modello di intelligenza artificiale addestrato su grandi quantità di dati testuali per comprendere e generare testo simile a quello umano.
+
 = M
 = N
 = O
+== Ollama
+Ollama è un termine usato per descrivere un concetto o un'entità specifica (fornire qui la definizione effettiva).
+
 = P
 = Q
 = R
