@@ -22,7 +22,7 @@
   version: "0.2.0",
   date: "04/12/2024",
   versionamento: (
-    "0.3.0", "06/12/2024", "Ion Cainareanu", "Stesura  degli Use Case", "", "",
+    "0.3.0", "06/01/2025", "Ion Cainareanu", "Stesura  degli Use Case", "Marco Perazzolo, Luca Parise", "",
     "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed", "Stefano Baso, Malik Giafar Mohamed",
     "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed","Malik Giafar Mohamed",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
