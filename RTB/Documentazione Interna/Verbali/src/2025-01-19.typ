@@ -1,9 +1,9 @@
-#import "../../../../assets/template.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 #show: project.with(
   title: "Verbale incontro interno",
   redattori: ("Luca Parise",),
-  verifica: ("","",),
+  verifica: ("Malik Giafar Mohamed",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0",
