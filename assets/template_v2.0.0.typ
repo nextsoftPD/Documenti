@@ -1,16 +1,18 @@
 #let project(
   lang: "it",
-  title: "Glossario",
-  subtitle: "Glossario Tecnico del capitolato\ndi Ing. del Software 2024-2025",
+  title: "",
+  subtitle: "",
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
-  version: "",
   redattori: (),
+  version: "",
   verifica: (),
   approvazione: "",
-  uso: "",
+  uso: (),
+  date: "",
+  timebegin: "",
+  timeend: "",
   versionamento: (),
-  date: "26/11/2024",
   body
 ) = {
   // Definizione colori
@@ -23,6 +25,7 @@
     margin: (left: 20mm, right: 20mm, top: 20mm, bottom: 20mm),
     numbering: "1",
     number-align: right,
+    
   )
 
   // Impostazione dei paragrafi giustificati
@@ -47,6 +50,15 @@
     text()[#p]
   }
 
+  // Impostazione heading con numerazione gerarchica
+  set heading(
+    numbering: "1.1.1",
+  )
+
+  // show heading: it => {
+  //   text()[#it.numbering #h(0.5em) #it.body]
+  //   body
+  // }
   // Frontespizio
   page()[
     #grid(
@@ -54,26 +66,46 @@
       gutter: 0.8em,
       
       align(center)[
-        #image("../../../assets/logo.png", width: 30em)
+        #image("logo.png", width: 30em)
         #v(0.8em)
         #text(weight: 700, 2.8em, title)
         #v(-1em)
-        #text(2em, subtitle)
+        #if versionamento == (){ text(2em, subtitle)}
       ],
 
       align(center)[
         #v(2em)
-        #grid(
-          columns: (1fr,1fr,1fr,1fr),
-          [],
-          align(center)[
-            #text(1em, "Versione: " + versionamento.at(0))
-          ],
-          align(center)[
-            #text(1em, date)
-          ],[]
-        )
-        
+        #if versionamento == () {
+          version = "1.0"
+          grid(
+            columns: (1fr,1fr,1fr,1fr),
+            [],
+            align(center)[
+              #text(1em, "Ora Inizio: " + timebegin)
+              #linebreak()
+              #text(1em, "Ora Fine: " + timeend)
+            ],
+            align(center)[
+              #text(1em, date)
+              #linebreak()
+              #text(1em, "Versione: " + version)
+            ],[]
+          )
+          }else{
+            version = versionamento.at(0)
+            set text(1.4em)
+            grid(
+              columns: (1fr,1fr,1fr,1fr),
+              [],
+              align(center)[
+                #text(1em, "Versione: " + version)
+              ],
+              align(center)[
+                #text(1em, date)
+              ],[]
+            )
+          }
+
         #v(2em)
 
         #let render-names = (title, names) => {
@@ -114,15 +146,18 @@
         table.header(
           [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*]  // Intestazioni
         ),
+        // Righe di dati
         ..versionamento
       )
     }
-    
+
     #outline(
       title: [Indice],
       indent: true,
       depth: 3  // Mostra fino a 3 livelli di nesting
     )
+    // versionamento
+    \
   ]
   
   pagebreak()
@@ -140,49 +175,22 @@
       line(length: 100%, stroke: 0.3pt + gray)
     }
   )
-  
   body
 }
 
-// Esempio di utilizzo
 #show: project.with(
-  title: "Glossario",
-  subtitle: "Glossario Tecnico del capitolato\ndi Ing. del Software 2024-2025",
-  company: "NextSoft",
-  email: "nextsoftpadova@gmail.com",
-  version: "0.1.0",
-  redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Ion Cainareanu","Maria Fuensanta Trigueros Hernandez"),
-  approvazione: (),
+  title: "Analisi dei Requisiti",
+  //subtitle: "Sottotitolo del Documento",
+  redattori: ("Malik Giafar Mohamed","Ion Cainareanu","Luca Parise"),
+  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez","Malik Giafar Mohamed",),
+  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez",),
   uso: "Esterno",
+  version: "0.2.0",
+  date: "04/12/2024",
   versionamento: (
+    "0.3.0", "06/12/2024", "Ion Cainareanu", "Stesura  degli Use Case", "",
+    "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed",
+    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
-
-= A
-= B
-= C
-= D
-= E
-= F
-= G
-= H
-= I
-= J
-= K
-= L
-= M
-= N
-= O
-= P
-= Q
-= R
-= S
-= T
-= U
-= V
-= W
-= X
-= Y
-= Z
