@@ -8,9 +8,10 @@
   verifica: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
   approvazione: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
   uso: "Interno",
-  version: "0.4.0",
+  version: "0.4.1",
   date: "23/11/2024",
   versionamento: (
+    "0.4.1", "11/02/2025", "Malik Giafar Mohamed","Integrazione di alcune specifiche relative al way of working","","",
     "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo, Stefano Baso","",
     "0.3.0", "05/01/2025", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu, Stefano Baso","",
     "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2", "Ion Cainareanu","Ion Cainareanu",
@@ -107,8 +108,8 @@ Dove:
   - *F*: requisito funzionale
   - *P*: requisito prestazionale
   - *Q*: requisito qualitativo
-- *Tipologia*: descrive la natura del requisito
   - *V*: vincolo
+- *Tipologia*: descrive la natura del requisito
   - *D*: requisito desiderabile
   - *O*: requisito obbligatorio
   - *F*: requisito facoltativo
@@ -155,7 +156,7 @@ I documenti esterni sono destinati all'uso del committente e agli stakeholders. 
 - Verbali esterni
 
 === Template
-Sono stati creati dei template per facilitare la stesura dei documenti.
+Sono stati creati dei template per facilitare la stesura dei documenti. Ogni template contiene uno stile unico utilizzato da tutti i documenti che lo importano. Possono esistere molteplici template contemporaneamente; attualmente i principali template sono quello della Candidatura e quello dell'RTB
 
 === Struttura del documento
 ==== Frontespizio
@@ -167,7 +168,7 @@ La prima pagina di ogni documento contiene le seguenti informazioni:
 - Versione del documento
 - Nome e cognome dei redattori
 - Nome e cognome dei verificatori
-- Nome e cognome degli approvatori
+- Nome e cognome del responsabile di progetto che ha approvato quel documento
 - Uso del documento (interno/esterno)
 - Email del gruppo
 
@@ -207,10 +208,12 @@ I verbali come nome file hanno la data del relativo incontro in formato YYYY-MM-
 
 Per la denominazione dei file si fa riferimento alla convenzione "CamelCase#super("G")", le parole verranno separate dal carattere "\_" (underscore) e la versione sarà indicata con la lettera "v" seguita dal numero di versione, specificato a sua volta nel paragrafo _Versionamento_.
 
+Per questioni di praticità, questo tipo di nomenclatura vale solo per i documenti interni ed esterni, non viene applicata ai template, alle immagini e altri tipi di documento. La nomenclatura dei documenti senza versionamento utilizza sempre gli underscore al posto degli spazi, e senza utilizzare il CamelCase.
+
 ==== Stile del testo
 Il testo dei documenti deve essere scritto in lingua italiana utilizzerà i seguenti formati di testo:
 - *Grassetto*: per evidenziare i titoli di sezioni
-- *Corsivo*: per far riferimento ad una sezione del documento
+- *Corsivo*: per far riferimento ad un un termine utilizzato all'interno del documento o ad un paragrafo,
 
 ==== Elenchi
 Gli elenchi puntati seguono le seguenti norme:
@@ -218,7 +221,9 @@ Gli elenchi puntati seguono le seguenti norme:
 - Le voci iniziano per lettera Maiuscola
 - Le liste del tipo "Termine: descrizione" presentano il termine in grassetto con la prima lettera in maiuscolo
 ==== sigle
-Nella stesura della documentazione verranno utilizzate le seguenti sigle per favorire maggiore scorrevolezza:
+Nella documentazione verranno utilizzate delle sigle per facilitare l'identificazione di un documento, ruolo o revisione senza doverne scrivere il nome per intero. Queste sono rivelate utili soprattutto nell'utilizzo di tabelle.
+
+Le sigle utilizzate sono le seguenti:
 - Sigle relative ai documenti:
   - *AdR*: Analisi dei Requisiti
   - *NdP*: Norme di Progetto
@@ -267,7 +272,7 @@ dove:
 - *X*, *Y* e *Z* sono numeri interi positivi
 - *X* corrisponde ad una versione approvata dal Responsabile di Progetto. La numerazione parte da 0.
 - *Y* indica l'aggiunta di un incremento, senza però essere arrivati ad avere una versione rilasciabile del prodotto. La numerazione parte da 0 e si azzera ad ogni incremento di *X*.
-- *Z* viene incrementato ad ogni piccola modifica o correzione. La numerazione parte da 0 e si azzera ad ogni incremento di *X* o *Y*.
+- *Z* viene incrementato ad ogni piccola modifica o correzione, questo tipo di versione assume il nome di _minor_. La numerazione parte da 0 e si azzera ad ogni incremento di *X* o *Y*.
 
 === Strumenti
 Per il versionamento si è scelto di utilizzare un repository GitHub, che, a sua volta, implementa il software di controllo versione distribuito Git.
@@ -275,11 +280,13 @@ Per il versionamento si è scelto di utilizzare un repository GitHub, che, a sua
 === Struttura delle repository
 ==== Documenti
 La repository utilizzata dal gruppo per la creazione dei documenti è strutturata nel seguente modo:
-- Una cartella chiamata "Candidatura" contenente i documenti relativi alla candidatura del gruppo per il capitolato. Al suo interno ci sono i verbali, la lettera di presentazione, il preventivo dei costi e assuzione degli impegni e la valutazione dei capitolati.
-- Una cartella chiamata "RTB" contenente i documenti relativi alla milestone RTB.
-- una cartella "assets" contenente il template principale e immagini varie.
+- Una cartella chiamata _Candidatura_ contenente i documenti relativi alla candidatura del gruppo per il capitolato. 
+- Una cartella chiamata _RTB_ contenente i documenti relativi alla milestone RTB, quindi le norme di progetto, il piando di progetto e di qualifica, l'analisi dei requisiti e il glossario.
+- una cartella "assets" contenente i vari template utilizzati dalla documentazione e immagini varie usate nella candidatura.
 
-Ogni cartella ad eccezione di "assets" contiene un'altra cartella denominata "src" contenente il codice sorgente utilizzato per la generazione dei documenti in formato pdf. 
+Nelle cartelle _Candidatura_ e _RTB_ sono contenuti anche i verbali effettuati in quei periodi.
+
+Ogni cartella ad eccezione di "assets" contiene un'altra cartella denominata "src" contenente il codice sorgente utilizzato per la generazione dei documenti in formato pdf.
 \
 La repository inoltre è suddivisa in più branch#super("G") così definiti:
 
@@ -290,7 +297,17 @@ La repository è pubblica e si può facilmente trovare al seguente link:
 ==== PoC
 La repository del PoC è ancora da creare.
 === Branch, Issues e Pull Request
-Non è consentito fare commit#super("G") direttamente sul branch main di nessuna repository, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G"). Potrà essere modificato solo tramite il meccanismo di pull request#super("G") con verifica obbligatoria, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Nel branch nome_documento invece ogni membro può fare commit a patto che siano relativi solo ai configuration items#super("G") modificabili nel branch. Ogni commit deve referenziare la issue#super("G") da cui è derivata e quindi, in generale, potranno effettuare modifiche sul branch solo gli assegnatari di issue che la trattano quel documento specifico. Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte di qualsiasi membro del gruppo e non è necessario referenziare nessuna issue.
+Non è consentito fare commit#super("G") direttamente sul branch main di nessuna repository, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G").
+Si potranno applicare modifiche solo tramite il meccanismo di pull request#super("G"), con verifica obbligatoria da parte di un verificatore, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Non è obbligatoria la verifica nel caso di una minor.
+
+
+Nel branch _nome_documento_ invece ogni membro può fare delle modifiche a patto che siano relativi solo ai configuration items#super("G") modificabili in quello specifico branch, ad esempio, non sarà possibile modificare il glossario dentro al branch del piano di progetto, ma drovrà essere modificato nel branch dedicato al glossario.
+
+
+Potranno effettuare modifiche sul branch solo le persone assegnate alla issue che tratta quel configuration item specifico. Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei modificatori, a pattto che sia solo allo scopo di risolvere errori ortoggrafici o a migliorare la comprensibilità alcune frasi senza modificarne il signficicato logico.
+
+
+Una volta verificata, una pull request può essere approvata dalla persona che l'ha creata, oppure dall'amministratore di progetto in caso sia rimasta aperta per troppo tempo.  
 == Gestione della Qualità
 === Scopo
 La gestione della qualità di progetto è l'insieme delle attività che vengono eseguite
@@ -335,6 +352,7 @@ La documentazione è considerata valida quando:
 Il processo di validazione è necessario per determinare se il prodotto finale è pronto per l'utilizzo,
 sono quindi necessari vari test per assicurare che il prodotto contenga tutte le funzionalità richieste dal proponente.
 Le aspettative del gruppo sono di avere un prodotto che soddisfi i requisiti del proponente e che sia pronto per l'utilizzo.
+
 
 = Processi Organizzativi
 == Gestione dei Processi
