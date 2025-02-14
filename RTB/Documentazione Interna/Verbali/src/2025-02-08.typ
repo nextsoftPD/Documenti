@@ -1,3 +1,5 @@
+#import "../../../../assets/template.typ": project;
+
 #show: project.with(
   title: "Incontro interno",
   redattori: ("Stefano Baso",),
