@@ -7,6 +7,7 @@
 )
 /* senza la regola seguente le tabelle degli use case avrebbero 
  le linee interne che sono brutte da vedere */
+
 #set table(
   fill: (rgb("#ffffff"), none),
   stroke: frame(rgb("21222C")),
@@ -22,6 +23,7 @@
   version: "0.4.0",
   date: "11/02/2025",
   versionamento: (
+    "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","","",
     "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "", "",
     "0.3.1", "06/02/2025", "Marco Perazzolo", "Finalizzazione Use Case testuali", "", "",
     "0.3.0", "06/01/2025", "Ion Cainareanu", "Stesura iniziale degli Use Case", "Marco Perazzolo, Luca Parise", "",
@@ -69,20 +71,6 @@ In seguito a un incontro con il proponente, è stato discusso come il plug-in po
 #pagebreak()
 
 = Use Case 
-
-/*
-tabella per uno use case, basta fare copia incolla 
-
-#table(
-  columns: (auto,1fr),
-  [*codice uc*], [*Titolo uc*],
-  [Attore primario], [],
-  [Precondizioni], [],
-  [Postcondizioni], [],
-  [Scenario principale], [],
-  [Estensioni], [(Scenari alternativi)]
-)
-*/
 
 #figure(
   image("./img/AdR/GeneralUC.png", width: 80%),
@@ -902,6 +890,292 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 #pagebreak()
 
+= Requisiti
+
+== Introduzione
+Il gruppo NextSoft, a seguita di una attenta analisi dichiara che i requisiti che il prodotto finale andrà a soddisfare sono i seguenti. Questi vengono mostrati di seguito in forma tabellare, seguendo quanto detto all'interno del documento #text(style: "italic", [Norme di Progetto])
+
+
+== Requisiti Funzionali 
+
+Questi requisiti descrivono cosa il sistema deve fare 
+#table(
+
+
+  columns: (0.5fr,1fr,3.5fr,1fr),
+  /*----------------------------------------------------*/
+  table.header([*Codice*], [*Classificazione*],[*Descrizione*],[*Fonti*]),
+  /*----------------------------------------------------*/
+  [RFO001],
+  [Obbligatorio],
+  [Il sistema deve caricare il file dei requisiti in formato CSV dal filesystem],
+  [Capitolato, UC_1, UC_1.1, UC_1.2, UC_1.3, Committente],
+  /*----------------------------------------------------*/
+  [RFO002],
+  [Obbligatorio],
+  [Il sistema deve visualizzare i requisiti caricati in una vista strutturata],
+  [UC_9, UC_9.1, UC_9.1.1, UC_9.1.2, UC_9.1.3, UC_9.1.4, UC_9.1.5, UC_9.1.6, UC_9.1.7, UC_9.1.8, UC_9.2],
+  /*----------------------------------------------------*/
+  [RFO003],
+  [Obbligatorio],
+  [Il sistema deve validare i requisiti inseriti all'interno del file CSV],
+  [UC_1, UC_1.5],
+  /*----------------------------------------------------*/
+  [RFO004],
+  [Obbligatorio],
+  [Il sistema deve informare l'utente se il file CSV caricato non è valido ],
+  [UC_1.5],
+  /*----------------------------------------------------*/
+  [RFO005],
+  [Obbligatorio],
+  [Il sistema deve fornire una valutazione dei requisiti],
+  [UC_2, UC_2.1, UC_2.2, Capitolato],
+  /*----------------------------------------------------*/
+  [RFO006],
+  [Obbligatorio],
+  [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
+  [UC_2],
+  /*----------------------------------------------------*/
+  [RFO007],
+  [Obbligatorio],
+  [Il sistema deve verificare e visualizzare il grado di implementazione dei requisiti nel codice],
+  [UC_2, UC_2.2, UC_4, Capitolato],
+  /*----------------------------------------------------*/
+  [RFO008],
+  [Obbligatorio ],
+  [Il sistema deve tracciare l'implementazione dei requisiti nel codice e verificarne la copertura ],
+  [Capitolato, UC_2.2, UC_7],
+  /*----------------------------------------------------*/
+  
+  [RFO009],
+  [Obbligatorio],
+  [Il sistema deve essere in grado di esportare i risultati dell'analisi in formato CSV],
+  [UC_3],
+  
+  /*----------------------------------------------------*/
+  [RFO010],
+  [Obbligatorio],
+  [Il sistema deve visualizzare graficamente i risultati delle analisi per migliorarne la comprensione],
+  [UC_4, UC_4.1, UC_4.1.1, UC_4.1.2, UC_4.1.5, UC_4.1.6, UC_4.1.10],
+  /*----------------------------------------------------*/
+  [RFO011],
+  [Obbligatorio],
+  [Il sistema deve filtrare i risultati delle analisi in base ai criteri specificati dall'utente],
+  [UC_5, UC_5.1, UC_5.2],
+  /*----------------------------------------------------*/
+  [RFO012],
+  [Obbligatorio],
+  [Il sistema deve consentire l'analisi di un singolo requisito],
+  [UC_6],
+  /*----------------------------------------------------*/
+  [RFO013],
+  [Obbligatorio],
+  [Il sistema deve informare l'utente nel caso, a seguito di un analisi, non ci siano risultati],
+  [UC_4.1.10],
+  /*----------------------------------------------------*/
+  [RFO014],
+  [Obbligatorio],
+  [Il sistema deve informare l'utente e consentire modifiche ai filtri in caso di assenza di risultati filtrati],
+  [UC_5.1],
+)
+
+\
+
+
+== Requisiti di qualità
+Questi requisiti riguardano le caratteristiche qualitative del sistema
+#table(
+  columns: (0.5fr,1fr,3.5fr,1fr),
+  /*----------------------------------------------------*/
+  table.header(
+  [*Codice*],
+  [*Classificazione*],
+  [*Descrizione*],
+  [*Fonti*],
+  ),
+  /*----------------------------------------------------*/
+  [RQO015],
+  [Obbligatorio],
+  [Il plug-in deve essere modulare per consentire l'aggiunta di nuove funzionalità senza interventi complessi],
+  [Capitolato],
+  /*----------------------------------------------------*/
+  [RQO016],
+  [Obbligatorio],
+  [Il plug-in deve consentire l'aggiunta di nuove feature in base a esigenze o aggiornamenti futuri del progetto],
+  [Capitolato],
+  /*----------------------------------------------------*/
+  [RQO017],
+  [Obbligatorio],
+  [L'utente deve ricevere suggerimenti per migliorare la chiarezza e la qualità dei requisiti],
+  [Capitolato, UC_4.1.6],
+  /*----------------------------------------------------*/
+  [RQO018],
+  [Obbligatorio],
+  [Il plug-in deve essere in grado di visualizzare graficamente i risultati dell'analisi al fine di migliorare la comprensione],
+  [UC_4],
+  /*----------------------------------------------------*/
+  [RQO019],
+  [Obbligatorio],
+  [Il sistema deve garantire un'interfaccia grafica per navigare e filtrare i risultati per nome del requisito, codice o sezione del codice],
+  [Capitolato],
+  /*----------------------------------------------------*/
+  [RQO020],
+  [Obbligatorio],
+  [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme di Progetto]],
+  [#text(style:"italic")[Norme di Progetto]],
+)
+
+
+
+
+\
+\
+#pagebreak()
+== Requisiti di vincolo 
+Questi requisiti specificano limiti tecnici o di conformità 
+#table(
+  columns: (0.5fr,1fr,3.5fr,1fr),
+  /*----------------------------------------------------*/
+  table.header(
+  [*Codice*],
+  [*Classificazione*],
+  [*Descrizione*],
+  [*Fonti*],
+  ),
+  /*----------------------------------------------------*/
+  [RVO021],
+  [Obbligatorio],
+  [Deve supportare i linguaggi C/C++],
+  [Capitolato],
+  /*----------------------------------------------------*/
+  [RVF022],
+  [Facoltativo],
+  [Deve supportare altri linguaggi oltre a C/C++],
+  [Capitolato],
+  /*----------------------------------------------------*/
+  [RVF023],
+  [Facoltativo],
+  [Il sistema deve fornire valutazioni conformi alle normative sulla sicurezza funzionale (ISO 26262 o IEC 61508)],
+  [Capitolato],
+  /*----------------------------------------------------*/
+  [RVO024],
+  [Obbligatorio],
+  [Il sistema deve comunicare con un modello LLM attraverso una REST API ],
+  [UC_2],
+  /*----------------------------------------------------*/
+  [RVO025],
+  [Obbligatorio],
+  [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
+  [UC_2.6],
+  
+)
+\
+\
+\
+
+== Requisiti Prestazionali 
+
+Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del sistema.
+
+#table(
+  columns: (0.5fr,1fr,3.5fr,1fr),
+  /*----------------------------------------------------*/
+  table.header(
+  [*Codice*],
+  [*Classificazione*],
+  [*Descrizione*],
+  [*Fonti*],
+  ),
+  /*----------------------------------------------------*/
+  [RPD026],
+  [Desiderabile],
+  [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta o a un modello troppo grande],
+  [UC_2.4, UC_2.5],
+  /*----------------------------------------------------*/
+  [RPO027],
+  [Obbligatorio],
+  [Il sistema deve informare l'utente in caso di errore di connessione e consentire di riprovare],
+  [UC_2.4],
+  
+)
+
+#pagebreak()
+== Tracciamento 
+#figure(
+  align(center)[
+    #table(
+    align:(left),
+    columns: (auto,auto),
+
+    table.header([*Fonte*], [*Requisiti*]),
+
+    [UC_1], [RFO001, RFO003],
+    [UC_1.2], [RFO001],
+    [UC_1.3], [RFO001],
+    [UC_1.4], [RFO001],
+    [UC_1.5], [RFO003, RFO004],
+
+    [UC_2], [RFO005, RFO006, RFO007, RVO024],
+    [UC_2.1], [RFO005],
+    [UC_2.2], [RFO005, RFO007, RFO008],
+    [UC_2.3], [],
+    [UC_2.4], [RPD026, RPO027],
+    [UC_2.5], [RPD026],
+    [UC_2.6], [RVO025],
+    
+    [UC_3], [RFO009],
+    [UC_3.1], [],
+    
+    [UC_4], [RFO007, RFO010, RQO018],
+    [UC_4.1], [RFO010],
+    [UC_4.1.1], [RFO010],
+    [UC_4.1.2], [RFO010],
+    [UC_4.1.5], [RFO010],
+    [UC_4.1.6], [RFO010, RQO017],
+    [UC_4.1.10], [RFO010, RFO013],
+      
+    [UC_5], [RFO011],
+    [UC_5.1], [RFO011, RFO014],
+    [UC_5.2], [RFO011],
+    
+    [UC_6], [RFO012],
+    
+    [UC_7], [RFO008],
+    
+    [UC_8], [],
+    [UC_8.1], [],
+    
+    [UC_9], [RFO002],
+    [UC_9.1], [RFO002],
+    [UC_9.1.1], [RFO002],
+    [UC_9.1.2], [RFO002],
+    [UC_9.1.3], [RFO002],
+    [UC_9.1.4], [RFO002],
+    [UC_9.1.5], [RFO002],
+    [UC_9.1.6], [RFO002],
+    [UC_9.1.7], [RFO002],
+    [UC_9.1.8], [RFO002],
+    [UC_9.2], [RFO002]
+    )
+  ]
+)
+
+
+
+== Riepilogo 
+#table(
+  columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
+  [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Opzionale*],[*Totale*],
+  [Funzionale],   
+  [RFO001, RFO002, RFO003, RFO004, RFO005, RFO006, RFO007, RFO008, RFO009, RFO010, RFO011, RFO012, RFO013, RFO014],               [],               [],           [],
+  [Di Qualità],   
+  [RQO015, RQO016, RQO017, RQO018, RQO019, RQO020],               [],               [],           [],
+  [Di Vincolo],   [RVO021, RVO024, RVO025],               [],               [RVF022, RVF023],           [],
+  [Prestazionale],[RPO027],               [RPD026],               [],           [],
+)
+
+#pagebreak()
+
 = Elenco delle immagini
 - Figure 1:  Panoramica delle funzionalità principali del plugin.
 - Figure 2: UC_1 - Importazione dei requisiti da file
@@ -925,3 +1199,10 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 
 = Elenco delle tabelle 
+
+- Requisiti funzionali
+- Requisiti di qualità 
+- Requisiti di vincolo
+- Requisiti Prestazionali
+- Tracciamento 
+- Riepilogo 
