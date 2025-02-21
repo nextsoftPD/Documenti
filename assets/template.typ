@@ -127,7 +127,7 @@
     
     #outline(
       title: [Indice],
-      indent: true,
+      indent: auto,
       depth: 3  // Mostra fino a 3 livelli di nesting
     )
     // versionamento

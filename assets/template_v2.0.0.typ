@@ -153,7 +153,7 @@
 
     #outline(
       title: [Indice],
-      indent: true,
+      indent: auto,
       depth: 3  // Mostra fino a 3 livelli di nesting
     )
     // versionamento
@@ -177,20 +177,3 @@
   )
   body
 }
-
-#show: project.with(
-  title: "Analisi dei Requisiti",
-  //subtitle: "Sottotitolo del Documento",
-  redattori: ("Malik Giafar Mohamed","Ion Cainareanu","Luca Parise"),
-  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez","Malik Giafar Mohamed",),
-  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez",),
-  uso: "Esterno",
-  version: "0.2.0",
-  date: "04/12/2024",
-  versionamento: (
-    "0.3.0", "06/12/2024", "Ion Cainareanu", "Stesura  degli Use Case", "",
-    "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed",
-    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
-  )
-)
