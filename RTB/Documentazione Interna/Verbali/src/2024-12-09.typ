@@ -1,10 +1,10 @@
-#import "../../../../assets/template.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 #show: project.with(
   title: "Incontro",
   redattori: ("Stefano Baso",),
   verifica: ("Maria Fuensanta Trigueros Hernández",),
-  approvazione: ("Maria Fuensanta Trigueros Hernández ",),
+  approvazione: ("",),
   uso: "Interno",
   version: "1.0",
   timebegin: "21:30",
