@@ -1,4 +1,4 @@
-#import "../../../assets/template.typ": project;
+#import "../../../assets/template_v2.0.0.typ": project;
 #let frame(stroke) = (x, y) => (
   left: if x > 0 { 0pt } else { stroke },
   right: stroke,
@@ -17,19 +17,19 @@
   title: "Analisi dei Requisiti",
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
+  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez",),
+  approvazione: ("",),
   uso: "Esterno",
   version: "0.4.0",
   date: "11/02/2025",
   versionamento: (
-    "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","","",
-    "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "", "",
-    "0.3.1", "06/02/2025", "Marco Perazzolo", "Finalizzazione Use Case testuali", "", "",
-    "0.3.0", "06/01/2025", "Ion Cainareanu", "Stesura iniziale degli Use Case", "Marco Perazzolo, Luca Parise", "",
-    "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed", "Stefano Baso, Malik Giafar Mohamed",
-    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed","Malik Giafar Mohamed",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
+    "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","",
+    "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "",
+    "0.3.1", "06/02/2025", "Marco Perazzolo", "Finalizzazione Use Case testuali", "",
+    "0.3.0", "06/01/2025", "Ion Cainareanu", "Stesura iniziale degli Use Case", "Marco Perazzolo, Luca Parise",
+    "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed",
+    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 

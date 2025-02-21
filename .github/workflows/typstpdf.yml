@@ -29,10 +29,8 @@ jobs:
       - name: Compile all Typst files to PDF
         run: |
           find . -name "*.typ" -print0 | while IFS= read -r -d '' file; do
-            # Ignora il file template.typ
-            if [[ "$(basename "$file")" == "template.typ" ]]; then
-              continue
-            fi
+            # se il file contiene template nel nome, ignoralo
+            if [[ "$file" == *template* ]]; then continue; fi
             typst compile --root . "$file" "${file%.typ}.pdf"
           done
       
