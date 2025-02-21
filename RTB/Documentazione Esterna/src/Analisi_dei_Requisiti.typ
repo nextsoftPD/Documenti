@@ -46,7 +46,7 @@ Questo documento comprende tutti i termini tecnici scelti dai membri del gruppo 
 vari documenti con le relative definizioni. Tutti i termini inclusi in questo glossario vengono segnalati
 all'interno del documento con l'apice #super("G") accanto alla parola.
 
-#pagebreak()
+
 
 = Descrizione
 == Obiettivi del prodotto 
@@ -59,16 +59,16 @@ Le funzionalità implementate nell'applicazione includono:
 - Valutazione qualitativa dei requisiti;
 - Visualizzazione grafica dei risultati dell'analisi;
 - Filtraggio dei risultati dell'analisi;
-- Possibilità di ripetere l'analisi di un requisito specifico;
+- Possibilità di eseguire l'analisi su un requisito specifico;
 - Esportazione dei risultati dell'analisi in formato CSV;
-- Verifica dell'implementazione dei requisiti nel codice sorgente;
+- Ricerca dell'implementazione dei requisiti nel codice sorgente;
 - Analisi semantica dei requisiti e del codice sorgente;
 - Suggerimenti per migliorare la qualità dei requisiti e del codice.
 
 == Utenti e caratteristiche 
 In seguito a un incontro con il proponente, è stato discusso come il plug-in possa essere utilizzato principalmente da un utente che ricopre il ruolo di programmatore. Di conseguenza, si è deciso di focalizzare le funzionalità del plug-in per rispondere alle esigenze di questa categoria di utenti. È stato inoltre specificato che non devono essere fatte assunzioni sulle competenze tecniche dell'utente riguardo all'uso di Visual Studio Code. Pertanto, il plug-in deve essere progettato per essere il più intuitivo possibile, con un processo di installazione semplice e accessibile.\
 
-#pagebreak()
+
 
 = Use Case 
 
@@ -84,7 +84,7 @@ Questa sezione si propone di identificare e descrivere i casi d'uso derivati dal
 == Attori 
 L’applicazione è progettata con un unico attore, il *Programmatore*, esso rappresenta un utente che utilizza il plug-in _Requirement Tracker - VS Code Plug-in_ per importare, analizzare e tracciare l'implementazione dei requisiti software all'interno del codice sorgente di un progetto.
 
-#pagebreak()
+
 
 == UC_1 - Importazione da file CSV
 
@@ -106,36 +106,14 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Scenario principale:*  
 1. In base all'opzione di importazione selezionata dall'utente, il sistema applica una delle seguenti specializzazioni:  
-    - Se l'utente seleziona la voce "Importa requisiti", il flusso procede con [UC_1.3].  
-    - Se l'utente seleziona la voce "Importa requisiti con tracciamento", il flusso procede con [UC_1.4].  
-2. Il sistema apre un file explorer per la selezione del file.  
-3. L'utente seleziona il file CSV da importare [UC_1.2].  
-4. Il sistema verifica la validità del file.  
-5. In base al contenuto del file, il sistema importa i requisiti ed eventualmente il relativo tracciamento.
-6. I requisiti importati vengono mostrati in una vista strutturata [UC_9].
+    - Se l'utente seleziona la voce "Importa requisiti", il flusso procede con [UC_1.1].  
+    - Se l'utente seleziona la voce "Importa requisiti con tracciamento", il flusso procede con [UC_1.2].
 
 *Estensioni:*
-- *UC_1.5 - Visualizza errore file* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
+- *UC_1.4 - Visualizza errore file* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
 
 
-== UC_1.2 - Selezione del file
-
-*Attori:* Programmatore.
-
-*Precondizioni:*
-- Il file explorer è stato aperto dal sistema.
-
-*Postcondizioni:*
-- Il file CSV scelto dall'utente viene registrato per l'importazione.
-
-*Scenario principale:*
-1. Il sistema apre il file explorer.
-2. L'utente naviga tra le cartelle e individua il file CSV desiderato.
-3. L'utente seleziona il file CSV.
-4. Il sistema registra la scelta e procede con l'importazione scelta [UC_1.3] oppure [UC_1.4].
-
-
-== UC_1.3 - Importazione dei requisiti da file CSV
+== UC_1.1 - Importazione dei requisiti da file CSV
 
 *Attori:* Programmatore.
 
@@ -150,12 +128,12 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Scenario principale:*  
 1. L'utente seleziona l'opzione "Importa requisiti".
 2. Il sistema apre un file explorer.
-3. L'utente seleziona il file CSV da importare [UC_1.2] 
+3. L'utente seleziona il file CSV da importare [UC_1.3] 
 4. Il sistema verifica la validità del file e importa i dati (ID, titolo, testo, di ogni requisito).
 5. I requisiti importati vengono mostrati in una vista strutturata [UC_9].
 
 
-== UC_1.4 - Importazione dei requisiti e del tracciamento da file CSV
+== UC_1.2 - Importazione dei requisiti e del tracciamento da file CSV
 
 *Attori:* Programmatore.
 
@@ -170,17 +148,34 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Scenario principale:*  
 1. L'utente seleziona l'opzione "Importa requisiti con tracciamento".
 2. Il sistema apre un file explorer.
-3. L'utente seleziona il file CSV da importare [UC_1.2] 
+3. L'utente seleziona il file CSV da importare [UC_1.3] 
 4. Il sistema verifica la validità del file e importa i dati (ID, titolo, testo, file, intervallo righe, di ogni requisito).
 5. I requisiti importati vengono mostrati in una vista strutturata [UC_9].
 
 
-== UC_1.5 - Visualizza errore file importazione
+== UC_1.3 - Selezione del file
+
+*Attori:* Programmatore.
+
+*Precondizioni:*
+- Il file explorer è stato aperto dal sistema.
+
+*Postcondizioni:*
+- Il file CSV scelto dall'utente viene registrato per l'importazione.
+
+*Scenario principale:*
+1. Il sistema apre il file explorer.
+2. L'utente naviga tra le cartelle e individua il file CSV desiderato.
+3. L'utente seleziona il file CSV.
+4. Il sistema registra la scelta e procede con l'importazione scelta [UC_1.1] oppure [UC_1.2].
+
+
+== UC_1.4 - Visualizza errore file importazione
 
 *Attori:* Programmatore.
 
 *Precondizioni:*  
-- L'utente ha selezionato un file CSV da importare [UC_1.2].
+- L'utente ha selezionato un file CSV da importare [UC_1.3].
 
 *Postcondizioni:*  
 - L'utente viene informato che il file non è valido.
@@ -189,6 +184,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema verifica il file e rileva che è malformato o non valido.
 2. L'importazione del file fallisce
 3. Il sistema mostra un messaggio di errore esplicativo e richiede di selezionare un file valido.
+
 
 #pagebreak()
 
@@ -206,7 +202,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Precondizioni:* 
 - I requisiti sono stati importati [UC_1].
-- Il tracciamento dei requisiti nel codice è disponibile, ottenuto direttamente da [UC_1.4] oppure dopo [UC_7].
+- Il tracciamento dei requisiti nel codice è disponibile, ottenuto direttamente da [UC_1.2] oppure dopo [UC_7].
 - La connessione con le API REST di Ollama è attiva e disponibile.
 
 *Postcondizioni:*  
@@ -214,7 +210,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Scenario principale:*  
 1. L'utente seleziona "Analisi requisiti".
-2. Il sistema verifica che siano disponibili sia i requisiti che il relativo tracciamento (da [UC_1.4] o [UC_7]).
+2. Il sistema verifica che siano disponibili sia i requisiti che il relativo tracciamento (da [UC_1.2] o [UC_7]).
 3. Il sistema esegue l'analisi semantica di ogni requisito [UC_2.1] inviandoli al modello.
 4. Il sistema esegue la verifica e la valutazione dell'implementazione del requisito nel codice [UC_2.2] inviandoli al modello.
 7. Il modello restituisce i risultati complessivi delle precedenti analisi.
@@ -226,6 +222,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - *UC_2.5 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_2.6 - Visualizzazione errore codice sorgente non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente, il sistema informa l'utente e consente di riprovare.
 
+#pagebreak()
 
 == UC_2.1 - Analisi semantica dei requisiti
 
@@ -255,7 +252,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Precondizioni:*  
 - I requisiti sono stati importati [UC_1].  
-- È disponibile il mapping dei requisiti nel codice (ottenuto da [UC_1.4] oppure dopo [UC_7]).
+- È disponibile il mapping dei requisiti nel codice (ottenuto da [UC_1.2] oppure dopo [UC_7]).
 
 *Postcondizioni:*  
 - Il sistema verifica se le porzioni di codice associate implementano correttamente i requisiti, assegnando un punteggio, dei suggerimenti ed eventualmente dei problemi.  
@@ -330,13 +327,13 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 3. Il sistema rileva che non è configurato correttamente o non è presente.
 4. Il sistema mostra un messaggio di errore.
 
-#pagebreak()
+
 
 == UC_3 - Esportazione dei risultati in formato CSV
 
 #figure(
   image("./img/AdR/UC_3.png", width: 80%),
-  caption: [UC_3 - Analisi dei requisiti e dell'implementazione]
+  caption: [UC_3 - Esportazione dei requisiti su file]
 )
 \
 
@@ -374,7 +371,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 3. Si verifica un errore durante il salvataggio.  
 4. Il sistema mostra un messaggio d'errore e consente di riprovare.
 
-#pagebreak()
+
 
 == UC_4 - Visualizzazione dei risultati
 
@@ -403,12 +400,12 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 2. Il sistema espande il menu con la visualizzazione del requisito [UC_9.1] e la visualizzazione del risultato [UC_4.1].
 3. L'utente seleziona la voce relativa alla visualizzazione del risultato [UC_4.1]
 4. Il sistema espande la visualizzazione in dettaglio del risultato [UC_4.1.1] contenente i seguenti sottocasi:
-    - [UC_4.1.2] Stato di conformità (_passed_/_not passed_).  
-    - [UC_4.1.5] Valutazione del codice in centesimi (0-100).  
-    - [UC_4.1.6] Suggerimenti generati.
-    - [UC_4.1.10] Problemi riscontrati.  
+    - [UC_4.1.1.1] Stato di conformità (_passed_/_not passed_).  
+    - [UC_4.1.1.4] Valutazione del codice in centesimi (0-100).  
+    - [UC_4.1.1.5] Suggerimenti generati.
+    - [UC_4.1.1.6] Problemi riscontrati.  
 
-#pagebreak()
+
 
 == UC_4.1 - Visualizzazione singolo risultato
 
@@ -432,7 +429,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 2. L'utente seleziona la voce relativa alla visualizzazione del risultato [UC_4.1]
 3. Il sistema espande la visualizzazione in dettaglio del risultato [UC_4.1.1].
 
-#pagebreak()
+
 
 == UC_4.1.1 - Visualizzazione dettaglio singolo risultato
 
@@ -453,13 +450,13 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Scenario principale:*  
 1. Il sistema visualizza i seguenti elementi nel dettaglio:  
-    - [UC_4.1.2] Stato di conformità (_passed_/_not passed_).  
-    - [UC_4.1.5] Valutazione del codice in centesimi (0-100).  
-    - [UC_4.1.6] Suggerimenti generati.  
-    - [UC_4.1.10] Problemi riscontrati.  
+    - [UC_4.1.1.1] Stato di conformità (_passed_/_not passed_).  
+    - [UC_4.1.1.4] Valutazione del codice in centesimi (0-100).  
+    - [UC_4.1.1.5] Suggerimenti generati.  
+    - [UC_4.1.1.6] Problemi riscontrati.  
 
 
-== UC_4.1.2 - Visualizzazione stato di conformità
+== UC_4.1.1.1 - Visualizzazione stato di conformità
 
 *Attori:* Programmatore.
 
@@ -472,11 +469,11 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Scenario principale:*  
 1. Il sistema mostra, per ogni requisito, lo stato di conformità basato sul punteggio ottenuto:
-    - Se il risultato è _passed_, visualizza lo stato conforme [UC_4.1.3]
-    - Se il risultato è _not-passed_, visualizza lo stato non conforme [UC_4.1.4]
+    - Se il risultato è _passed_, visualizza lo stato conforme [UC_4.1.1.2]
+    - Se il risultato è _not-passed_, visualizza lo stato non conforme [UC_4.1.1.3]
 
 
-== UC_4.1.5 - Visualizzazione punteggio in centesimi
+== UC_4.1.1.4 - Visualizzazione punteggio in centesimi
 
 *Attori:* Programmatore.
 
@@ -491,11 +488,11 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema visualizza il punteggio relativo all'aderenza del codice al requisito.
 
 
-== UC_4.1.6 - Visualizzazione suggerimenti
+== UC_4.1.1.5 - Visualizzazione suggerimenti
 
 #figure(
-  image("./img/AdR/UC_4.1.6 Detail.png", width: 100%),
-  caption: [UC_4.1.6 - Visualizzazione dei suggerimenti]
+  image("./img/AdR/UC_4.1.1.5 Detail.png", width: 100%),
+  caption: [UC_4.1.1.5 - Visualizzazione dei suggerimenti]
 )
 \
 
@@ -506,18 +503,17 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - Il menu ad albero relativo alla visualizzazione in dettaglio dei risultati è stato aperto [UC_4.1.1]
 
 *Postcondizioni:*  
-- Il sistema mostra un elenco strutturato dei suggerimenti relativi al requisito [UC_4.1.8] e al codice [UC_4.1.9].
+- Il sistema mostra un elenco strutturato dei suggerimenti relativi al requisito [UC_4.1.1.5.2] e al codice [UC_4.1.1.5.3].
 
 *Scenario principale:*  
 1. Il sistema raccoglie i suggerimenti generati e li visualizza in forma di elenco.
 
-#pagebreak()
 
-== UC_4.1.10 - Visualizzazione problemi
+== UC_4.1.1.6 - Visualizzazione problemi
 
 #figure(
-  image("./img/AdR/UC_4.1.10 Detail.png", width: 95%),
-  caption: [UC_4.1.10 - Visualizzazione dei problemi]
+  image("./img/AdR/UC_4.1.1.6 Detail.png", width: 95%),
+  caption: [UC_4.1.1.6 - Visualizzazione dei problemi]
 )
 \
 
@@ -528,12 +524,12 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - Il menu ad albero relativo alla visualizzazione in dettaglio dei risultati è stato aperto [UC_4.1.1]
 
 *Postcondizioni:*  
-- Il sistema mostra un elenco strutturato dei problemi relativi al requisito [UC_4.1.12] e al codice [UC_4.1.13].
+- Il sistema mostra un elenco strutturato dei problemi relativi al requisito [UC_4.1.1.6.2] e al codice [UC_4.1.1.6.3].
 
 *Scenario principale:*  
 1. Il sistema raccoglie i problemi generati e li visualizza in forma di elenco.
 
-#pagebreak()
+
 
 == UC_5 - Filtraggio dei requisiti
 
@@ -553,50 +549,13 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Scenario principale:*  
 1. L'utente inserisce l'_ID_ del requisito da ricercare tramite la barra di ricerca.  
 2. Il sistema filtra la lista dei requisiti in base al campo inserito.  
-3. Il sistema visualizza la lista dei requisiti filtrati [UC_5.2].
-
-*Estensioni:*  
-- *UC_5.1 - Visualizzazione lista vuota*: Se nessun requisito soddisfa i criteri, il sistema visualizza una lista vuota e consente di modificare il filtro.
+3. Il sistema visualizza la lista dei requisiti filtrati.
 
 
-== UC_5.1 - Visualizzazione lista vuota
-
-*Attori:* Programmatore.  
-
-*Precondizioni:*  
-- I criteri di filtro inseriti nel filtraggio [UC_5] non corrispondono a nessun requisito.
-
-*Postcondizioni:*  
-- Il sistema visualizza una lista di requisiti vuota.  
-
-*Scenario principale:*  
-1. L'utente applica un filtro utilizzando la barra di ricerca.  
-2. Il sistema verifica i risultati e non trova corrispondenze.  
-3. Viene visualizzata una lista vuota.  
-4. L'utente ha la possibilità di modificare il filtro o di rimuoverlo completamente, tornando alla visualizzazione di tutti i requisiti [UC_9].  
-
-
-== UC_5.2 - Visualizzazione lista requisiti filtrati
-
-*Attori:* Programmatore.
-
-*Precondizioni:*  
-- I requisiti sono stati importati e visualizzati.
-- I criteri di filtro inseriti nel filtraggio [UC_5] generano una lista di corrispondenze.
-
-*Postcondizioni:*  
-- Il sistema mostra la lista dei requisiti che soddisfano i criteri di filtro.
-
-*Scenario principale:*  
-1. Il sistema applica i filtri inseriti dall'utente.  
-2. La lista dei requisiti viene aggiornata per mostrare solo quelli filtrati.
-
-#pagebreak()
-
-== UC_6 - Ripetizione analisi singolo requisito
+== UC_6 - Analisi di un singolo requisito
 #figure(
   image("./img/AdR/UC_6.png", width: 100%),
-  caption: [UC_6 - Ripetizione dell'analisi di un singolo requisito]
+  caption: [UC_6 - Analisi di un singolo requisito]
 )
 \
 
@@ -606,15 +565,14 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Precondizioni:*
 - Il requisito è visualizzato nell'elenco dei requisiti [UC_9].
-- I risultati dei requisiti sono stati generati [UC_2].
-- È stata selezionata la funzione di ripetizione dell'analisi [UC_4.1.15] visualizzata accanto al menu di visualizzazione dettaglio risultato [UC_4.1.1]
+- È stata selezionata la funzione di ripetizione dell'analisi
 
 *Postcondizioni:*  
 - Viene fornita una nuova valutazione per il requisito selezionato.  
 
 *Scenario principale:*  
 1. L'utente apre la visualizzazione del singolo requisito.  
-2. L'utente clicca sull'icona relativa alla funzione di ripetizione analisi [UC_4.1.15].
+2. L'utente clicca sull'icona relativa alla funzione di ripetizione analisi.
 3. Il sistema invia il requisito ed il relativo codice al modello LLM per una nuova analisi, analogamente ad [UC_2].  
 4. I risultati aggiornati vengono registrati e visualizzati per il requisito selezionato [UC_4.1].  
 
@@ -635,12 +593,12 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Attore secondario:* Modello LLM.
 
 *Precondizioni:*  
-- I requisiti sono stati importati senza informazioni di tracciamento [UC_1.3].
+- I requisiti sono stati importati senza informazioni di tracciamento [UC_1.1].
 - È disponibile il codice sorgente nel progetto.
 
 *Postcondizioni:*  
 - Il sistema esegue una ricerca nel codice sorgente per associare, a ciascun requisito, la porzione di codice che lo implementa.
-- Il tracciamento ottenuto viene registrato e reso disponibile nella vista dei requisiti [UC_9.1.5].
+- Il tracciamento ottenuto viene registrato e reso disponibile nella vista dei requisiti [UC_9.1.2].
 
 *Scenario principale:*  
 1. L'utente, notando l'assenza del mapping, seleziona l'opzione "Tracciamento dei requisiti".  
@@ -698,16 +656,16 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 3. Il sistema notifica l'utente dell'errore e fornisce dettagli sul path non valido.  
 4. Il sistema ignora l'entry non valida e considera solo i path configurati correttamente.
 
-#pagebreak()
+
 
 == UC_9 - Visualizzazione dei requisiti
 #figure(
-  image("./img/AdR/UC_9.png", width: 100%),
+  image("./img/AdR/UC_9.png", width: 90%),
   caption: [UC_9 - Visualizzazione dei requisiti]
 )
 #figure(
-  image("./img/AdR/UC_9 Detail.png", width: 80%),
-  caption: [UC_9 - Deettaglio sulla visualizzazione dei requisiti]
+  image("./img/AdR/UC_9 Detail.png", width: 65%),
+  caption: [UC_9 - Dettaglio sulla visualizzazione dei requisiti]
 )
 \
 *Attori:* Programmatore.
@@ -722,15 +680,12 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema visualizza una lista dei requisiti.
 2. L'utente può selezionare un requisito per visualizzarne il dettaglio [UC_9.1.1].
 
-*Estensioni:*  
-- *UC_9.2 - Visualizzazione lista vuota*: Se non sono presenti requisiti da visualizzare, il sistema visualizza una lista vuota.
 
-#pagebreak()
 
 == UC_9.1 - Visualizzazione singolo requisito
 #figure(
-  image("./img/AdR/UC_9.1 Detail.png", width: 100%),
-  caption: [UC_4.1.6 - Visualizzazione di un singolo requisito]
+  image("./img/AdR/UC_9.1 Detail.png", width: 90%),
+  caption: [UC_9.1 - Visualizzazione di un singolo requisito]
 )
 \
 *Attori:* Programmatore.
@@ -759,18 +714,18 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Postcondizioni:*  
 - Il sistema mostra il dettaglio completo del requisito, includendo:  
-  - Identificativo del requisito [UC_9.1.2]
-  - Titolo del requisito [UC_9.1.3]
-  - Testo descrittivo del requisito [UC_9.1.4]
-  - (Opzionale) Informazioni di tracciamento [UC_9.1.5]
+  - Identificativo del requisito [UC_9.1.1.1]
+  - Titolo del requisito [UC_9.1.1.2]
+  - Testo descrittivo del requisito [UC_9.1.1.3]
+  - (Opzionale) Informazioni di tracciamento [UC_9.1.2]
 
 *Scenario principale:* 
 1. L'utente preme sulla voce "Requisito"
 2. Il sistema espande il sottomenu di dettaglio, visualizzando tutte le informazioni relative al requisito.
-3. Se sono disponibili dati di tracciamento, il sistema visualizza anche il dettaglio del tracciamento [UC_9.1.5].
+3. Se sono disponibili dati di tracciamento, il sistema visualizza anche il dettaglio del tracciamento [UC_9.1.2].
 
 
-== UC_9.1.2 - Visualizzazione ID requisito
+== UC_9.1.1.1 - Visualizzazione ID requisito
 
 *Attori:* Programmatore.
 
@@ -784,7 +739,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema visualizza l'identificativo univoco del requisito.
 
 
-== UC_9.1.3 - Visualizzazione titolo requisito
+== UC_9.1.1.2 - Visualizzazione titolo requisito
 
 *Attori:* Programmatore.
 
@@ -798,7 +753,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema visualizza il titolo del requisito.
 
 
-== UC_9.1.4 - Visualizzazione testo requisito
+== UC_9.1.1.3 - Visualizzazione testo requisito
 
 *Attori:* Programmatore.
 
@@ -811,34 +766,34 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Scenario principale:*  
 1. Il sistema visualizza il testo descrittivo del requisito.
 
-#pagebreak()
 
-== UC_9.1.5 - Visualizzazione tracciamento singolo requisito
+
+== UC_9.1.2 - Visualizzazione tracciamento singolo requisito
 #figure(
-  image("./img/AdR/UC_9.1.5 Detail.png", width: 70%),
-  caption: [UC_9.1.5 - Visualizzazione delle informazioni di tracciamento di un requisito]
+  image("./img/AdR/UC_9.1.2 Detail.png", width: 70%),
+  caption: [UC_9.1.2 - Visualizzazione delle informazioni di tracciamento di un requisito]
 )
 \
 *Attori:* Programmatore.
 
 *Precondizioni:*  
 - Il requisito selezionato è espanso nella vista di dettaglio [UC_9.1.1].
-- Il requisito selezionato dispone di informazioni di tracciamento, importate da [UC_1.4] oppure generate da [UC_7].
+- Il requisito selezionato dispone di informazioni di tracciamento, importate da [UC_1.2] oppure generate da [UC_7].
 
 *Postcondizioni:*  
 - Il sistema visualizza una menu di tracciamento espandibile che comprende i dettagli del tracciamento.
 
 *Scenario principale:* 
 1. Nella vista di dettaglio del requisito [UC_9.1.1], il sistema verifica la presenza di dati di tracciamento.  
-2. Se presenti, il sistema espande la sezione "Tracciamento" mostrando i dettagli attraverso i sottocasi [UC_9.1.6], [UC_9.1.7] e [UC_9.1.8].
+2. Se presenti, il sistema espande la sezione "Tracciamento" mostrando i dettagli attraverso i sottocasi [UC_9.1.2.1], [UC_9.1.2.2] e [UC_9.1.2.3].
 
 
-== UC_9.1.6 - Visualizzazione nome file
+== UC_9.1.2.1 - Visualizzazione nome file
 
 *Attori:* Programmatore.
 
 *Precondizioni:*  
-- La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_9.1.5].
+- La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_9.1.2].
 
 *Postcondizioni:*  
 - Il sistema mostra il campo "Nome File" relativo al file che contiene il codice relativo all'implementazione del requisito.
@@ -847,48 +802,35 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema visualizza il nome del file associato al tracciamento del requisito.
 
 
-== UC_9.1.7 - Visualizzazione riga inizio
+== UC_9.1.2.2 - Visualizzazione riga inizio
 
 *Attori:* Programmatore.
 
 *Precondizioni:*  
-- La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_9.1.5].
+- La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_9.1.2].
 
 *Postcondizioni:*  
-- Il sistema mostra il campo "Riga Inizio" dell'intervallo di codice nel file indicato [UC_9.1.6] relativo all'implementazione del requisito.
+- Il sistema mostra il campo "Riga Inizio" dell'intervallo di codice nel file indicato [UC_9.1.2.1] relativo all'implementazione del requisito.
 
 *Scenario principale:*  
 1. Il sistema visualizza la riga di inizio del tracciamento del requisito.
 
 
-== UC_9.1.8 - Visualizzazione riga fine
+== UC_9.1.2.3 - Visualizzazione riga fine
 
 *Attori:* Programmatore.
 
 *Precondizioni:*  
-- La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_9.1.5].
+- La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_9.1.2].
 
 *Postcondizioni:*  
-- Il sistema mostra il campo "Riga Fine" dell'intervallo di codice nel file indicato [UC_9.1.6] relativo all'implementazione del requisito.
+- Il sistema mostra il campo "Riga Fine" dell'intervallo di codice nel file indicato [UC_9.1.2.1] relativo all'implementazione del requisito.
 
 *Scenario principale:*  
 1. Il sistema visualizza la riga di fine del tracciamento del requisito.
 
 
-== UC_9.2 - Visualizzazione lista vuota
 
-*Attori:* Programmatore.
-
-*Precondizioni:*  
-- Non sono presenti requisiti da visualizzare.
-
-*Postcondizioni:*  
-- Il sistema visualizza una lista vuota.
-
-*Scenario principale:*  
-1. Il sistema rileva l'assenza di dati e visualizza una lista vuota.
-
-#pagebreak()
 
 = Requisiti
 
@@ -909,22 +851,22 @@ Questi requisiti descrivono cosa il sistema deve fare
   [RFO001],
   [Obbligatorio],
   [Il sistema deve caricare il file dei requisiti in formato CSV dal filesystem],
-  [Capitolato, UC_1, UC_1.1, UC_1.2, UC_1.3, Committente],
+  [Capitolato, UC_1, UC_1.1, UC_1.3, UC_1.1, Committente],
   /*----------------------------------------------------*/
   [RFO002],
   [Obbligatorio],
   [Il sistema deve visualizzare i requisiti caricati in una vista strutturata],
-  [UC_9, UC_9.1, UC_9.1.1, UC_9.1.2, UC_9.1.3, UC_9.1.4, UC_9.1.5, UC_9.1.6, UC_9.1.7, UC_9.1.8, UC_9.2],
+  [UC_9, UC_9.1, UC_9.1.1, UC_9.1.1.1, UC_9.1.1.2, UC_9.1.1.3, UC_9.1.2, UC_9.1.2.1, UC_9.1.2.2, UC_9.1.2.3],
   /*----------------------------------------------------*/
   [RFO003],
   [Obbligatorio],
   [Il sistema deve validare i requisiti inseriti all'interno del file CSV],
-  [UC_1, UC_1.5],
+  [UC_1, UC_1.4],
   /*----------------------------------------------------*/
   [RFO004],
   [Obbligatorio],
   [Il sistema deve informare l'utente se il file CSV caricato non è valido ],
-  [UC_1.5],
+  [UC_1.4],
   /*----------------------------------------------------*/
   [RFO005],
   [Obbligatorio],
@@ -956,12 +898,12 @@ Questi requisiti descrivono cosa il sistema deve fare
   [RFO010],
   [Obbligatorio],
   [Il sistema deve visualizzare graficamente i risultati delle analisi per migliorarne la comprensione],
-  [UC_4, UC_4.1, UC_4.1.1, UC_4.1.2, UC_4.1.5, UC_4.1.6, UC_4.1.10],
+  [UC_4, UC_4.1, UC_4.1.1, UC_4.1.1.1, UC_4.1.1.4, UC_4.1.1.5, UC_4.1.1.6],
   /*----------------------------------------------------*/
   [RFO011],
   [Obbligatorio],
   [Il sistema deve filtrare i risultati delle analisi in base ai criteri specificati dall'utente],
-  [UC_5, UC_5.1, UC_5.2],
+  [UC_5],
   /*----------------------------------------------------*/
   [RFO012],
   [Obbligatorio],
@@ -971,12 +913,8 @@ Questi requisiti descrivono cosa il sistema deve fare
   [RFO013],
   [Obbligatorio],
   [Il sistema deve informare l'utente nel caso, a seguito di un analisi, non ci siano risultati],
-  [UC_4.1.10],
+  [UC_4.1.1.6],
   /*----------------------------------------------------*/
-  [RFO014],
-  [Obbligatorio],
-  [Il sistema deve informare l'utente e consentire modifiche ai filtri in caso di assenza di risultati filtrati],
-  [UC_5.1],
 )
 
 \
@@ -994,32 +932,32 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
   [*Fonti*],
   ),
   /*----------------------------------------------------*/
-  [RQO015],
+  [RQO014],
   [Obbligatorio],
   [Il plug-in deve essere modulare per consentire l'aggiunta di nuove funzionalità senza interventi complessi],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RQO016],
+  [RQO015],
   [Obbligatorio],
   [Il plug-in deve consentire l'aggiunta di nuove feature in base a esigenze o aggiornamenti futuri del progetto],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RQO017],
+  [RQO016],
   [Obbligatorio],
   [L'utente deve ricevere suggerimenti per migliorare la chiarezza e la qualità dei requisiti],
-  [Capitolato, UC_4.1.6],
+  [Capitolato, UC_4.1.1.5],
   /*----------------------------------------------------*/
-  [RQO018],
+  [RQO017],
   [Obbligatorio],
   [Il plug-in deve essere in grado di visualizzare graficamente i risultati dell'analisi al fine di migliorare la comprensione],
   [UC_4],
   /*----------------------------------------------------*/
-  [RQO019],
+  [RQO018],
   [Obbligatorio],
   [Il sistema deve garantire un'interfaccia grafica per navigare e filtrare i risultati per nome del requisito, codice o sezione del codice],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RQO020],
+  [RQO019],
   [Obbligatorio],
   [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme di Progetto]],
   [#text(style:"italic")[Norme di Progetto]],
@@ -1030,7 +968,7 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
 
 \
 \
-#pagebreak()
+
 == Requisiti di vincolo 
 Questi requisiti specificano limiti tecnici o di conformità 
 #table(
@@ -1043,27 +981,27 @@ Questi requisiti specificano limiti tecnici o di conformità
   [*Fonti*],
   ),
   /*----------------------------------------------------*/
-  [RVO021],
+  [RVO020],
   [Obbligatorio],
   [Deve supportare i linguaggi C/C++],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RVF022],
+  [RVF021],
   [Facoltativo],
   [Deve supportare altri linguaggi oltre a C/C++],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RVF023],
+  [RVF022],
   [Facoltativo],
   [Il sistema deve fornire valutazioni conformi alle normative sulla sicurezza funzionale (ISO 26262 o IEC 61508)],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RVO024],
+  [RVO023],
   [Obbligatorio],
   [Il sistema deve comunicare con un modello LLM attraverso una REST API ],
   [UC_2],
   /*----------------------------------------------------*/
-  [RVO025],
+  [RVO024],
   [Obbligatorio],
   [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
   [UC_2.6],
@@ -1087,19 +1025,19 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
   [*Fonti*],
   ),
   /*----------------------------------------------------*/
-  [RPD026],
+  [RPD025],
   [Desiderabile],
   [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta o a un modello troppo grande],
   [UC_2.4, UC_2.5],
   /*----------------------------------------------------*/
-  [RPO027],
+  [RPO026],
   [Obbligatorio],
   [Il sistema deve informare l'utente in caso di errore di connessione e consentire di riprovare],
   [UC_2.4],
   
 )
 
-#pagebreak()
+
 == Tracciamento 
 #figure(
   align(center)[
@@ -1110,33 +1048,30 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     table.header([*Fonte*], [*Requisiti*]),
 
     [UC_1], [RFO001, RFO003],
-    [UC_1.2], [RFO001],
     [UC_1.3], [RFO001],
-    [UC_1.4], [RFO001],
-    [UC_1.5], [RFO003, RFO004],
+    [UC_1.1], [RFO001],
+    [UC_1.2], [RFO001],
+    [UC_1.4], [RFO003, RFO004],
 
-    [UC_2], [RFO005, RFO006, RFO007, RVO024],
+    [UC_2], [RFO005, RFO006, RFO007, RVO023],
     [UC_2.1], [RFO005],
     [UC_2.2], [RFO005, RFO007, RFO008],
     [UC_2.3], [],
-    [UC_2.4], [RPD026, RPO027],
-    [UC_2.5], [RPD026],
-    [UC_2.6], [RVO025],
-    
+    [UC_2.4], [RPD025, RPO026],
+    [UC_2.5], [RPD025],
+    [UC_2.6], [RVO024],
     [UC_3], [RFO009],
     [UC_3.1], [],
     
-    [UC_4], [RFO007, RFO010, RQO018],
+    [UC_4], [RFO007, RFO010, RQO017],
     [UC_4.1], [RFO010],
     [UC_4.1.1], [RFO010],
-    [UC_4.1.2], [RFO010],
-    [UC_4.1.5], [RFO010],
-    [UC_4.1.6], [RFO010, RQO017],
-    [UC_4.1.10], [RFO010, RFO013],
+    [UC_4.1.1.1], [RFO010],
+    [UC_4.1.1.4], [RFO010],
+    [UC_4.1.1.5], [RFO010, RQO016],
+    [UC_4.1.1.6], [RFO010, RFO013],
       
     [UC_5], [RFO011],
-    [UC_5.1], [RFO011, RFO014],
-    [UC_5.2], [RFO011],
     
     [UC_6], [RFO012],
     
@@ -1148,14 +1083,13 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [UC_9], [RFO002],
     [UC_9.1], [RFO002],
     [UC_9.1.1], [RFO002],
+    [UC_9.1.1.1], [RFO002],
+    [UC_9.1.1.2], [RFO002],
+    [UC_9.1.1.3], [RFO002],
     [UC_9.1.2], [RFO002],
-    [UC_9.1.3], [RFO002],
-    [UC_9.1.4], [RFO002],
-    [UC_9.1.5], [RFO002],
-    [UC_9.1.6], [RFO002],
-    [UC_9.1.7], [RFO002],
-    [UC_9.1.8], [RFO002],
-    [UC_9.2], [RFO002]
+    [UC_9.1.2.1], [RFO002],
+    [UC_9.1.2.2], [RFO002],
+    [UC_9.1.2.3], [RFO002]
     )
   ]
 )
@@ -1169,33 +1103,33 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
   [Funzionale],   
   [RFO001, RFO002, RFO003, RFO004, RFO005, RFO006, RFO007, RFO008, RFO009, RFO010, RFO011, RFO012, RFO013, RFO014],               [],               [],           [],
   [Di Qualità],   
-  [RQO015, RQO016, RQO017, RQO018, RQO019, RQO020],               [],               [],           [],
-  [Di Vincolo],   [RVO021, RVO024, RVO025],               [],               [RVF022, RVF023],           [],
-  [Prestazionale],[RPO027],               [RPD026],               [],           [],
+  [RQO014, RQO015, RQO016, RQO017, RQO018, RQO019],               [],               [],           [],
+  [Di Vincolo],   [RVO020, RVO023, RVO024],               [],               [RVF021, RVF022],           [],
+  [Prestazionale],[RPO026],               [RPD025],               [],           [],
 )
 
-#pagebreak()
+
 
 = Elenco delle immagini
 - Figure 1:  Panoramica delle funzionalità principali del plugin.
 - Figure 2: UC_1 - Importazione dei requisiti da file
 - Figure 3: UC_2 - Analisi dei requisiti e dell’implementazione
-- Figure 4: UC_3 - Analisi dei requisiti e dell’implementazione
+- Figure 4: UC_3 - Esportazione dei requisiti su file
 - Figure 5: UC_4 - Visualizzazione dei risultati
 - Figure 6: UC_4 - Diagramma di dettaglio sulla visualizzazione dei risultati
 - Figure 7: UC_4.1 - Visualizzazione di un singolo risultato
 - Figure 8: UC_4.1 - Visualizzazione di un singolo risultato
-- Figure 9: UC_4.1.6 - Visualizzazione dei suggerimenti
-- Figure 10: UC_4.1.10 - Visualizzazione dei problemi
+- Figure 9: UC_4.1.1.5 - Visualizzazione dei suggerimenti
+- Figure 10: UC_4.1.1.6 - Visualizzazione dei problemi
 - Figure 11: UC_5 - Filtraggio dei requisiti
-- Figure 12: UC_6 - Ripetizione dell’analisi di un singolo requisito
+- Figure 12: UC_6 - Analisi di un singolo requisito
 - Figure 13: UC_7 - Funzione di tracciamento dei requisiti
 - Figure 14: UC_8 - Configurazione dei path da ignorare
 - Figure 15: UC_9 - Visualizzazione dei requisiti
 - Figure 16: UC_9 - Deettaglio sulla visualizzazione dei requisiti
-- Figure 17: UC_4.1.6 - Visualizzazione di un singolo requisito
+- Figure 17: UC_9.1 - Visualizzazione di un singolo requisito
 - Figure 18: UC_9.1.1 - Visualizzazione in dettaglio di un singolo requisito
-- Figure 19: UC_9.1.5 - Visualizzazione delle informazioni di tracciamento di un requisito
+- Figure 19: UC_9.1.2 - Visualizzazione delle informazioni di tracciamento di un requisito
 
 
 = Elenco delle tabelle 
