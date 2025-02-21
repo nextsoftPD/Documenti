@@ -1,10 +1,10 @@
-#import "../../../../assets/template.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 #show: project.with(
   title: "Incontro",
   redattori: ("Stefano Baso",),
   verifica: ("Luca Parise",),
-  approvazione: ("Luca Parise",),
+  approvazione: ("",),
   uso: "Interno",
   version: "1.0",
   timebegin: "15:30",

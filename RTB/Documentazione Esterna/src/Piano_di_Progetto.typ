@@ -1,4 +1,4 @@
-#import "../../../assets/template.typ": project;
+#import "../../../assets/template_v2.0.0.typ": project;
 
 // Esempio di utilizzo
 #show: project.with(
@@ -6,15 +6,15 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed", "Maria Fuensanta Trigueros Hernandez", ),
   verifica: ("Ion Cainareanu" , "Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
+  approvazione: (""),
   uso: "Esterno",
   version: "0.3.1",
   date: "23/11/2024",
   versionamento: (
-    "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "", "",
-    "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo", "",
-    "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu", "Ion Cainareanu",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Maria Fuensanta Trigueros Hernandez",
+    "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "",
+    "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
+    "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 

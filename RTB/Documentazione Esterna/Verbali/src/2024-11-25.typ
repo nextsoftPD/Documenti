@@ -1,11 +1,11 @@
-#import "../../../../assets/template.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 // Esempio di utilizzo
 #show: project.with(
   title: "Incontro con Bluewind s.r.l",
   redattori: ("Luca Parise",),
   verifica: ("Ion Cainareanu",),
-  approvazione: ("Ion Cainareanu",),
+  approvazione: ("",),
   uso: "Esterno",
   version: "1.0",
   timebegin: "14:00",
