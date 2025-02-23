@@ -1,9 +1,9 @@
-#import "../../../../assets/template.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 #show: project.with(
   title: "Secondo Incontro con\nBluewind s.r.l",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Marco Perazzolo, Luca Parise",),
+  verifica: ("Marco Perazzolo","Luca Parise",),
   approvazione: ("Ion Cainareanu",),
   uso: "Esterno",
   version: "1.0",

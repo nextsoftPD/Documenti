@@ -1,4 +1,4 @@
-#import "../../../assets/template.typ": project;
+#import "../../../assets/template_v2.0.0.typ": project;
 
 // Esempio di utilizzo
 #show: project.with(
@@ -6,13 +6,13 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed", "Maria Fuensanta Trigueros Hernandez", ),
   verifica: ("Ion Cainareanu" , "Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
+  approvazione: (""),
   uso: "Esterno",
   version: "0.1.0",
   date: "23/11/2024",
   versionamento: (
-    "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu", "Ion Cainareanu",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Maria Fuensanta Trigueros Hernandez",
+    "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 
