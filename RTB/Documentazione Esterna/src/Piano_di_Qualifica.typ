@@ -11,10 +11,10 @@
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
-    "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "", "",
-    "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo", "",
-    "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu", "Ion Cainareanu",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Maria Fuensanta Trigueros Hernandez",
+    "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "",
+    "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
+    "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 
