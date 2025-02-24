@@ -1,4 +1,4 @@
-#import "../../../assets/template.typ": project;
+#import "../../../assets/template_v2.0.0.typ": project;
 
 // Esempio di utilizzo
 #show: project.with(
@@ -6,7 +6,7 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
-  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
+  approvazione: (""),
   uso: "Esterno",
   version: "0.4.0",
   date: "23/11/2024",

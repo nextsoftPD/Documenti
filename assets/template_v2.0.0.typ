@@ -4,10 +4,10 @@
   subtitle: "",
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
-  version: "",
   redattori: (),
+  version: "",
   verifica: (),
-  approvazione: (),
+  approvazione: "",
   uso: (),
   date: "",
   timebegin: "",
@@ -31,11 +31,34 @@
   // Impostazione dei paragrafi giustificati
   set par(justify: false)
 
+  // abbellimento grafico delle liste puntate
+  set list(
+    marker: ([•], [-], [‣]),
+    indent: 1em,
+    spacing: 1em
+  )
+
+  set enum(
+    indent: 1em,
+    spacing: 1em
+  )
+
+  // Impostazione dei link con sottolineatura
+  show link: p => {
+    set text(fill: primary-color)
+    //underline(text()[#p])
+    text()[#p]
+  }
+
   // Impostazione heading con numerazione gerarchica
   set heading(
     numbering: "1.1.1",
   )
-  
+
+  // show heading: it => {
+  //   text()[#it.numbering #h(0.5em) #it.body]
+  //   body
+  // }
   // Frontespizio
   page()[
     #grid(
@@ -53,7 +76,7 @@
       align(center)[
         #v(2em)
         #if versionamento == () {
-          
+          version = "1.0"
           grid(
             columns: (1fr,1fr,1fr,1fr),
             [],
@@ -69,6 +92,7 @@
             ],[]
           )
           }else{
+            version = versionamento.at(0)
             set text(1.4em)
             grid(
               columns: (1fr,1fr,1fr,1fr),
@@ -85,14 +109,16 @@
         #v(2em)
 
         #let render-names = (title, names) => {
-          text(weight: "bold")[#title #h(1fr)];
-            
-          for name in names {
-            text()[ #name];
-            if name != names.last() {
-              text()[,];
-            }
-          }
+          grid(
+            columns: (auto, 1fr),
+            gutter: 1em,
+            text(weight: "bold")[#title],
+            align(right)[
+                #for name in names {
+                  text()[ #name #linebreak()]
+                }
+            ]
+          )
           line(length: 100%, stroke: 0.5pt)
         }
         #align(left)[#render-names("Redattori", redattori)]
@@ -116,15 +142,15 @@
         row-gutter: 0.5em,
         align: auto,
         inset: 8pt,
-        columns: (auto, auto, auto, auto, auto, auto),
+        columns: (auto, auto, auto, auto, auto),
         table.header(
-          [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*], [*Approvazione*]  // Intestazioni
+          [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*]  // Intestazioni
         ),
         // Righe di dati
         ..versionamento
       )
     }
-    
+
     #outline(
       title: [Indice],
       indent: auto,
