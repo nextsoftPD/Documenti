@@ -915,7 +915,10 @@ Questi requisiti descrivono cosa il sistema deve fare
   [Il sistema deve informare l'utente nel caso, a seguito di un analisi, non ci siano risultati],
   [UC_4.1.1.6],
   /*----------------------------------------------------*/
+
+  
 )
+#align(center, "Tab. 1");
 
 \
 
@@ -962,7 +965,7 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
   [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme di Progetto]],
   [#text(style:"italic")[Norme di Progetto]],
 )
-
+#align(center, "Tab. 2");
 
 
 
@@ -1007,6 +1010,7 @@ Questi requisiti specificano limiti tecnici o di conformità
   [UC_2.6],
   
 )
+#align(center, "Tab. 3");
 \
 \
 \
@@ -1036,6 +1040,7 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
   [UC_2.4],
   
 )
+#align(center, "Tab. 4");
 
 
 == Tracciamento 
@@ -1093,8 +1098,9 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     )
   ]
 )
+#align(center, "Tab. 5");
 
-
+#pagebreak()
 
 == Riepilogo 
 #table(
@@ -1107,6 +1113,7 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
   [Di Vincolo],   [RVO020, RVO023, RVO024],               [],               [RVF021, RVF022],           [],
   [Prestazionale],[RPO026],               [RPD025],               [],           [],
 )
+#align(center, "Tab. 6");
 
 
 
@@ -1131,12 +1138,13 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
 - Figure 18: UC_9.1.1 - Visualizzazione in dettaglio di un singolo requisito
 - Figure 19: UC_9.1.2 - Visualizzazione delle informazioni di tracciamento di un requisito
 
+#pagebreak()
 
 = Elenco delle tabelle 
 
-- Requisiti funzionali
-- Requisiti di qualità 
-- Requisiti di vincolo
-- Requisiti Prestazionali
-- Tracciamento 
-- Riepilogo 
+- Requisiti funzionali - Tab. 1
+- Requisiti di qualità - Tab. 2
+- Requisiti di vincolo - Tab. 3
+- Requisiti Prestazionali - Tab. 4
+- Tracciamento - Tab. 5
+- Riepilogo - Tab. 6
