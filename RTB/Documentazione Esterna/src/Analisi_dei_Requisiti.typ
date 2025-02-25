@@ -1,4 +1,4 @@
-#import "../../../assets/template.typ": project;
+#import "../../../assets/template_v2.0.0.typ": project;
 #let frame(stroke) = (x, y) => (
   left: if x > 0 { 0pt } else { stroke },
   right: stroke,
@@ -16,15 +16,16 @@
   title: "Analisi dei Requisiti",
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",),
+  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez",),
+  approvazione: ("",),
   uso: "Esterno",
   version: "0.2.0",
   date: "04/12/2024",
   versionamento: (
-    "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed", "Stefano Baso, Malik Giafar Mohamed",
-    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed","Malik Giafar Mohamed",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
+    "0.3.0", "06/12/2024", "Ion Cainareanu", "Stesura  degli Use Case", "",
+    "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed",
+    "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 
@@ -77,72 +78,338 @@ tabella per uno use case, basta fare copia incolla
 */
 
 == Obiettivi
+Questa sezione si propone di identificare e descrivere i casi d'uso derivati dall'analisi del capitolato d'appalto selezionato dal gruppo. In particolare, vengono definiti gli attori principali e le funzionalità ad essi associate.
 == Attori 
-//-------------------------------------------------------------------
-== UC_1 - titolo UC_1
---> qui può essere inserita una immagina utile alla spiegazione dell'use case
+L’applicazione è progettata con un unico attore, il *Programmatore*, che ha accesso a tutte le funzionalità del sistema.
 
-#table(
-  columns: (auto,1fr),
-  [*codice uc*], [*Titolo uc*],
-  [Attore primario], [],
-  [Precondizioni], [],
-  [Postcondizioni], [],
-  [Scenario principale], [],
-  [Estensioni], [(Scenari alternativi)]
-)
-//-------------------------------------------------------------------
-== UC_2 - titolo UC_2 
+== UC_1 - Importazione del file dei requisiti in formato CSV
 
-#table(
+*Attori:* Programmatore.
 
-  columns: (auto,1fr),
-  [*codice uc*], [*Titolo uc*],
-  [Attore primario], [],
-  [Precondizioni], [],
-  [Postcondizioni], [],
-  [Scenario principale], [],
-  [Estensioni], [(Scenari alternativi)]
-)
+*Precondizioni:*  
+- L'utente ha aperto un progetto in Visual Studio Code.
+- Il file dei requisiti deve essere in formato CSV valido.
+- Il plug-in deve essere installato e attivo in VS Code.
 
-== UC_3 - titolo UC_3 
-#table(
+*Postcondizioni:*  
+- I requisiti dal file CSV sono stati importati correttamente e sono visualizzabili nel sistema.
 
-  columns: (auto,1fr),
-  [*codice uc*], [*Titolo uc*],
-  [Attore primario], [],
-  [Precondizioni], [],
-  [Postcondizioni], [],
-  [Scenario principale], [],
-  [Estensioni], [(Scenari alternativi)]
-)
-#pagebreak()  //-> per andare direttamente alla pagina successiva  
-\
+*Scenario principale:*  
+1. L'utente seleziona l'opzione "Importa file CSV".
+2. Il sistema apre un file explorer.
+3. L'utente seleziona il file CSV da importare.
+4. Il sistema verifica la validità del file.
+5. I requisiti vengono importati e mostrati in una vista strutturata.
 
-=== UC_3.1 
-#table(
+*Estensioni:*  
+- *UC_1.1:* File CSV non valido: il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
 
-  columns: (auto,1fr),
-  [*codice uc*], [*Titolo uc*],
-  [Attore primario], [],
-  [Precondizioni], [],
-  [Postcondizioni], [],
-  [Scenario principale], [],
-  [Estensioni], [(Scenari alternativi)]
-)
-== UC_i 
-#table(
+== UC_1.1 - File CSV non valido
 
-  columns: (auto,1fr),
-  [*codice uc*], [*Titolo uc*],
-  [Attore primario], [],
-  [Precondizioni], [],
-  [Postcondizioni], [],
-  [Scenario principale], [],
-  [Estensioni], [(Scenari alternativi)]
-)
-== UC_n
+*Attori:* Programmatore.
 
-= Requisiti 
+*Precondizioni:*  
+- L'utente ha selezionato un file CSV non valido o malformato.
+
+*Postcondizioni:*  
+- L'utente viene informato che il file non è valido.
+
+*Scenario principale:*  
+1. L'utente seleziona un file CSV da importare.
+2. Il sistema verifica il file e rileva che è malformato o non valido.
+3. Il sistema mostra un messaggio di errore esplicativo e richiede di selezionare un file valido.
+
+== UC_2 - Analisi automatizzata dei requisiti
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Il file dei requisiti è stato importato con successo.
+- La connessione con le API REST di Ollama è attiva.
+
+*Postcondizioni:*  
+- Il sistema fornisce una valutazione dei requisiti.
+
+*Scenario principale:*  
+1. L'utente seleziona "Analizza requisiti".
+2. Il sistema invia i requisiti a un modello LLM tramite API REST.
+3. Il modello restituisce i risultati dell'analisi.
+4. Il sistema visualizza i risultati nella UI con suggerimenti.
+
+*Estensioni:*  
+- *UC_2.1:* Errore di connessione alle API: il sistema informa l'utente e permette di riprovare.
+- *UC_2.2:* Il sistema sta sottoperformando per connessione lenta o modello troppo grande: il sistema informa l'utente con messaggi esplicativi.
+- *UC_2.3:* Verifica dell'implementazione dei requisiti.
+
+== UC_2.1 - Errore di connessione alle API
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- La connessione internet è instabile o assente.
+
+*Postcondizioni:*  
+- Il sistema informa l'utente dell'errore e fornisce indicazioni per ripristinare la connessione.
+
+*Scenario principale:*  
+1. L'utente avvia l'analisi dei requisiti.
+2. Il sistema tenta di connettersi alle API REST.
+3. La connessione fallisce.
+4. Il sistema mostra un messaggio di errore e suggerisce di verificare la connessione.
+
+== UC_2.2 - Sistema in sottoperformance
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- La connessione è lenta o il modello richiede risorse computazionali elevate.
+
+*Postcondizioni:*  
+- Il sistema notifica all'utente il problema.
+
+*Scenario principale:*  
+1. L'utente avvia l'analisi dei requisiti.
+2. Il sistema rileva che il tempo di risposta delle API è eccessivo o il modello richiede troppo tempo per l'elaborazione.
+3. Il sistema informa l'utente del ritardo.
+
+== UC_2.3 - Verifica dell'implementazione dei requisiti
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- I requisiti sono stati importati.
+- È disponibile il codice sorgente da analizzare.
+
+*Postcondizioni:*  
+- Il sistema verifica e visualizza il grado di implementazione dei requisiti nel codice.
+
+*Scenario principale:*  
+1. L'utente seleziona "Analizza requisiti".
+2. Il sistema analizza il codice sorgente utilizzando modelli semantici.
+3. I risultati dell'analisi vengono presentati con indicazioni sulle discrepanze.
+
+*Estensioni:*  
+- *UC_2.3.1:* Codice sorgente non disponibile: il sistema notifica l'errore e richiede di configurare il progetto.
+
+== UC_2.3.1 - Codice sorgente non disponibile
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Il progetto non contiene file sorgente o non è configurato correttamente.
+
+*Postcondizioni:*  
+- Il sistema informa l'utente e guida nella configurazione del progetto.
+
+*Scenario principale:*  
+1. L'utente avvia la verifica dell'implementazione dei requisiti.
+2. Il sistema verifica la presenza del codice sorgente.
+3. Il sistema rileva che non è configurato correttamente o non è presente.
+4. Il sistema mostra un messaggio di errore.
+
+== UC_3 - Esportazione dei risultati in formato CSV
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- I risultati di un'analisi devono essere disponibili.
+
+*Postcondizioni:*  
+- I risultati vengono esportati correttamente in un file CSV.
+
+*Scenario principale:*  
+1. L'utente seleziona "Esporta risultati".
+2. Il sistema apre un file explorer per scegliere il percorso di salvataggio.
+3. L'utente conferma la posizione e il nome del file.
+4. Il sistema salva i risultati nel formato CSV.
+
+*Estensioni:*  
+- *UC_3.1:* Mancato salvataggio: il sistema notifica l'errore e permette di riprovare.
+
+== UC_3.1 - Mancato salvataggio
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- L'utente tenta di esportare i risultati ma il salvataggio fallisce.
+
+*Postcondizioni:*  
+- Il sistema informa l'utente dell'errore e consente di riprovare l'operazione.
+
+*Scenario principale:*  
+1. L'utente seleziona "Esporta risultati".
+2. Il sistema tenta di salvare il file.
+3. Si verifica un errore durante il salvataggio (es. mancanza di permessi o spazio insufficiente).
+4. Il sistema mostra un messaggio di errore.
+5. L'utente ha la possibilità di riprovare o cambiare il percorso di salvataggio.
+
+== UC_4 - Visualizzazione grafica dei risultati dell'analisi
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- I risultati dell'analisi dei requisiti sono stati generati.
+
+*Postcondizioni:*  
+- I risultati vengono rappresentati graficamente per migliorare la comprensione.
+
+*Scenario principale:*  
+1. L'utente seleziona la voce dei requisiti.
+2. Il sistema espande un menu ad albero con i risultati dell'analisi.
+3. L'utente può selezionare ed espandere i risultati sui requisiti di suo interesse.
+
+*Estensioni:*  
+- *UC_4.1:* Nessun risultato disponibile: il sistema informa l'utente che non ci sono requisiti analizzabili.
+
+== UC_4.1 - Nessun risultato disponibile
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Non ci sono risultati generati dall'analisi.
+
+*Postcondizioni:*  
+- Il sistema notifica l'utente dell'assenza di risultati e fornisce indicazioni per avviare una nuova analisi.
+
+*Scenario principale:*  
+1. L'utente accede alla visualizzazione dei risultati.
+2. Il sistema rileva che non ci sono dati da mostrare.
+3. Il sistema visualizza un messaggio informativo e suggerisce di controllare i requisiti o avviare una nuova analisi.
+
+== UC_5 - Filtraggio dei risultati dell'analisi
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- I risultati dell'analisi sono stati generati e visualizzati.
+
+*Postcondizioni:*  
+- I risultati vengono filtrati in base ai criteri scelti dall'utente.
+
+*Scenario principale:*  
+1. L'utente utilizza la barra di ricerca.
+2. Il sistema filtra la lista dei requisiti in base al testo del requisito, nome del requisito o percorso del codice associato al requisito.
+3. Il sistema applica la ricerca e aggiorna la visualizzazione.
+
+*Estensioni:*  
+- *UC_5.1:* Nessun risultato corrisponde ai filtri: il sistema informa l'utente e consente di modificare i criteri.
+
+== UC_5.1 - Nessun risultato corrisponde ai filtri
+*Attori:* Programmatore.  
+
+*Precondizioni:*  
+- Non ci sono risultati che soddisfano i criteri di filtro applicati dall'utente.  
+
+*Postcondizioni:*  
+- Il sistema informa l'utente che nessun risultato corrisponde ai criteri e consente di modificare il filtro.  
+
+*Scenario principale:*  
+1. L'utente applica un filtro utilizzando la barra di ricerca.  
+2. Il sistema verifica i risultati rispetto ai criteri inseriti.  
+3. Nessun risultato corrisponde ai criteri.  
+4. Il sistema mostra un messaggio informativo indicando che non ci sono risultati disponibili.  
+5. L'utente ha la possibilità di modificare i criteri di filtro o di rimuoverli completamente.  
+
+== UC_6 - Ripetizione dell'analisi di un requisito specifico
+*Attori:* Programmatore.  
+
+*Precondizioni:*  
+- Il requisito da analizzare è stato selezionato.  
+
+*Postcondizioni:*  
+- Viene fornito un nuovo risultato per il requisito selezionato.  
+
+*Scenario principale:*  
+1. L'utente seleziona un requisito dalla lista.  
+2. L'utente clicca su "Ripeti analisi".  
+3. Il sistema invia il requisito al modello LLM per una nuova analisi.  
+4. I risultati aggiornati vengono visualizzati per il requisito selezionato.  
+
+*Estensioni:*  
+- *UC6_1:* Errore nella comunicazione con il modello: il sistema notifica l'utente e consente di riprovare.  
+
+== UC_6.1 - Errore nella comunicazione con il modello
+*Attori:* Programmatore.  
+
+*Precondizioni:*  
+- Il sistema non riesce a stabilire una connessione con il modello LLM per l'analisi del requisito.  
+
+*Postcondizioni:*  
+- Il sistema informa l'utente dell'errore e permette di riprovare l'operazione.  
+
+*Scenario principale:*  
+1. L'utente avvia la ripetizione dell'analisi di un requisito.  
+2. Il sistema tenta di inviare il requisito al modello LLM.  
+3. La comunicazione con il modello fallisce.  
+4. Il sistema mostra un messaggio di errore dettagliato con opzioni per riprovare o controllare la configurazione della connessione.  
+
+== UC_7 - Importazione del codice sorgente per l'analisi
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Il progetto deve essere configurato in Visual Studio Code.  
+
+*Postcondizioni:*  
+- Il codice sorgente è pronto per essere analizzato dal sistema.  
+
+*Scenario principale:*  
+1. L'utente seleziona "Analisi requisiti".  
+2. Il sistema verifica i file del progetto aperto in Visual Studio Code.  
+3. Il sistema carica i file necessari per l'analisi dei requisiti e del codice associato.  
+4. Il sistema fa partire l'analisi dei requisiti inviando la richiesta all'API.  
+
+*Estensioni:*  
+- *UC7_1:* Progetto non configurato correttamente: il sistema fornisce un errore e suggerisce di configurare il progetto.  
+
+== UC_7.1 - Progetto non configurato correttamente
+*Attori:* Programmatore.  
+
+*Precondizioni:*  
+- Il progetto aperto in Visual Studio Code non è configurato in modo corretto o mancano file necessari (ad esempio l'uso del linguaggio di programmazione non supportato).  
+
+*Postcondizioni:*  
+- Il sistema informa l'utente e fornisce una guida per configurare correttamente il progetto.  
+
+*Scenario principale:*  
+1. L'utente avvia l'importazione del codice sorgente per l'analisi.  
+2. Il sistema verifica la configurazione del progetto.  
+3. Il sistema rileva che la configurazione è incompleta o errata.  
+4. Il sistema visualizza un messaggio di errore con una guida dettagliata per configurare correttamente il progetto.  
+5. L'utente può correggere la configurazione e riprovare l'operazione.
+
+== UC_8 - Configurazione dei path da ignorare per la ricerca dei requisiti
+*Attori:* Programmatore.  
+
+*Precondizioni:*  
+- Il progetto è stato configurato in Visual Studio Code.
+- Il plug-in è attivo e funzionante.  
+
+*Postcondizioni:*  
+- I path specificati nel file .ignore vengono esclusi dalla ricerca dei requisiti nel codice sorgente.  
+
+*Scenario principale:*  
+1. L'utente crea o modifica un file .ignore nel progetto.  
+2. L'utente inserisce nel file .ignore i path o pattern relativi ai file o directory da escludere.  
+3. Il sistema rileva automaticamente le modifiche al file .ignore.  
+4. Durante la ricerca dei requisiti nel codice sorgente, il sistema esclude i path specificati nel file .ignore.  
+5. L'utente avvia l'analisi e i path ignorati non vengono considerati.  
+
+*Estensioni:*  
+- *UC_8.1:* Path specificato non valido: il sistema notifica l'utente e ignora l'entry errata mantenendo valide le altre.  
+
+== UC_8.1 - Path specificato non valido
+*Attori:* Programmatore.  
+
+*Precondizioni:*  
+- L'utente inserisce un path o pattern non valido nel file .ignore.  
+
+*Postcondizioni:*  
+- Il sistema ignora il path non valido e prosegue con le configurazioni valide.  
+
+*Scenario principale:*  
+1. L'utente modifica il file .ignore e inserisce un path o pattern non valido.  
+2. Il sistema rileva l'entry non valida durante la verifica del file.  
+3. Il sistema notifica l'utente dell'errore e fornisce dettagli sul path non valido.  
+4. Il sistema ignora l'entry non valida e considera solo i path configurati correttamente.
 = Elenco delle immagini 
 = Elenco delle tabelle 
