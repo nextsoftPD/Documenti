@@ -850,7 +850,7 @@ Questi requisiti descrivono cosa il sistema deve fare
   /*----------------------------------------------------*/
   [RFO001],
   [Obbligatorio],
-  [Il sistema deve caricare il file dei requisiti in formato CSV dal filesystem],
+  [Il sistema deve essere in grado caricare il file dei requisiti in formato CSV dal filesystem],
   [Capitolato, UC_1, UC_1.1, UC_1.3, UC_1.1, Committente],
   /*----------------------------------------------------*/
   [RFO002],
@@ -1008,6 +1008,11 @@ Questi requisiti specificano limiti tecnici o di conformità
   [Obbligatorio],
   [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
   [UC_2.6],
+    /*----------------------------------------------------*/
+  [RVO027],
+  [Obbligatorio],
+  [L'estensione di Visual Studio Code deve essere in inglese],
+  [Committente], 
   
 )
 #align(center, "Tab. 3");
