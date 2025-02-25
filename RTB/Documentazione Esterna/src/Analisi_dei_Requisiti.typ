@@ -23,9 +23,9 @@
   version: "0.4.0",
   date: "11/02/2025",
   versionamento: (
-    "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","",
-    "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "",
-    "0.3.1", "06/02/2025", "Marco Perazzolo", "Finalizzazione Use Case testuali", "",
+    "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","Ion Cainareanu",
+    "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "Ion Cainareanu",
+    "0.3.1", "06/02/2025", "Marco Perazzolo", "Finalizzazione Use Case testuali", "Malik Giafar Mohamed",
     "0.3.0", "06/01/2025", "Ion Cainareanu", "Stesura iniziale degli Use Case", "Marco Perazzolo, Luca Parise",
     "0.2.0", "30/12/2024", "Ion Cainareanu", "Stesura  dell'Introduzione e Descrizione", "Stefano Baso, Malik Giafar Mohamed",
     "0.1.1", "04/12/2024", "Luca Parise", "Aggiunta indice e creazione struttura tabella per use case", "Malik Giafar Mohamed",
