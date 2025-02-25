@@ -23,6 +23,7 @@
   version: "0.4.0",
   date: "11/02/2025",
   versionamento: (
+    "0.6.0","25/02/2025","Luca Parise, Ion Cainareanu, Marco Perazzolo","Modifiche post incontro con l'azienda","",
     "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","Ion Cainareanu",
     "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "Ion Cainareanu",
     "0.3.1", "06/02/2025", "Marco Perazzolo", "Finalizzazione Use Case testuali", "Malik Giafar Mohamed",
@@ -63,7 +64,10 @@ Le funzionalità implementate nell'applicazione includono:
 - Esportazione dei risultati dell'analisi in formato CSV;
 - Ricerca dell'implementazione dei requisiti nel codice sorgente;
 - Analisi semantica dei requisiti e del codice sorgente;
-- Suggerimenti per migliorare la qualità dei requisiti e del codice.
+- Suggerimenti per migliorare la qualità dei requisiti e del codice;
+- Possibilità di modificare il modello LLM che analizza i requisiti ed il codice;
+- Possibilità di modificare l'endpoint di collegamento al server Ollama;
+- Possibilità di modificare la soglia di accettazione relativa alla qualità del codice.
 
 == Utenti e caratteristiche 
 In seguito a un incontro con il proponente, è stato discusso come il plug-in possa essere utilizzato principalmente da un utente che ricopre il ruolo di programmatore. Di conseguenza, si è deciso di focalizzare le funzionalità del plug-in per rispondere alle esigenze di questa categoria di utenti. È stato inoltre specificato che non devono essere fatte assunzioni sulle competenze tecniche dell'utente riguardo all'uso di Visual Studio Code. Pertanto, il plug-in deve essere progettato per essere il più intuitivo possibile, con un processo di installazione semplice e accessibile.\
@@ -129,7 +133,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. L'utente seleziona l'opzione "Importa requisiti".
 2. Il sistema apre un file explorer.
 3. L'utente seleziona il file CSV da importare [UC_1.3] 
-4. Il sistema verifica la validità del file e importa i dati (ID, titolo, testo, di ogni requisito).
+4. Il sistema verifica la validità del file e importa i dati (ID, testo, di ogni requisito).
 5. I requisiti importati vengono mostrati in una vista strutturata [UC_9].
 
 
@@ -149,7 +153,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. L'utente seleziona l'opzione "Importa requisiti con tracciamento".
 2. Il sistema apre un file explorer.
 3. L'utente seleziona il file CSV da importare [UC_1.3] 
-4. Il sistema verifica la validità del file e importa i dati (ID, titolo, testo, file, intervallo righe, di ogni requisito).
+4. Il sistema verifica la validità del file e importa i dati (ID, testo, file, intervallo righe, di ogni requisito).
 5. I requisiti importati vengono mostrati in una vista strutturata [UC_9].
 
 
@@ -329,33 +333,78 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 
 
-== UC_3 - Esportazione dei risultati in formato CSV
+== UC_3 - Esportazione su file CSV
 
 #figure(
   image("./img/AdR/UC_3.png", width: 80%),
-  caption: [UC_3 - Esportazione dei requisiti su file]
+  caption: [UC_3 - Esportazione su file CSV]
 )
 \
 
 *Attori:* Programmatore.
 
 *Precondizioni:*  
-- I risultati dell'analisi [UC_2] sono stati generati e registrati.
+- È disponibile il mapping dei requisiti nel codice (ottenuto da [UC_1.2] oppure dopo [UC_7]).
 
 *Postcondizioni:*  
-- I risultati vengono esportati correttamente in un file CSV nel percorso specificato dall'utente.
+- I requisiti ed il tracciamento (e, opzionalmente, anche i risultati dell'analisi), vengono esportati correttamente in un file CSV nel percorso specificato dall'utente.
 
-*Scenario principale:*  
-1. L'utente seleziona "Esporta risultati".
-2. Il sistema apre un file explorer per scegliere il percorso di salvataggio.
-3. L'utente conferma la posizione e il nome del file.
-4. Il sistema salva i risultati nel formato CSV.
+*Scenario principale:*
+1. In base all'opzione di importazione selezionata dall'utente, il sistema applica una delle seguenti specializzazioni:  
+    - Se l'utente seleziona la voce "Esporta tracciamento", il flusso procede con [UC_3.1].  
+    - Se l'utente seleziona la voce "Esporta tracciamento e risultati", il flusso procede con [UC_3.2].
 
 *Estensioni:*
+- *UC_3.3 - Visualizza errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
+- *UC_3.4 - Visualizza errore risultati non disponibili*: Se i risultati dell'analisi non sono disponibili, il sistema visualizza un messaggio d'errore specifico.
+- *UC_2.3 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.  
+
+
+== UC_3.1 - Esportazione del tracciamento del codice
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- I requisiti e il loro mapping (tracciamento) sono disponibili (ottenuti da [UC_1.4] o da [UC_7]).  
+- Non è richiesto l'esportazione dei risultati dell'analisi.
+
+*Postcondizioni:*  
+- Il sistema esporta in un file CSV i dati relativi al tracciamento dei requisiti (es. nome del file, intervallo di righe).
+
+*Scenario principale:*
+1. L'utente seleziona la voce "Esporta tracciamento" nell'interfaccia di esportazione.  
+2. Il sistema apre un file explorer per la scelta del percorso di salvataggio.  
+3. L'utente conferma il percorso e il nome del file.  
+4. Il sistema salva un file CSV contenente esclusivamente i requisiti ed i relativi dati di tracciamento.
+
+*Estensioni:*  
+- *UC_3.3 - Visualizza errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
+
+
+== UC_3.2 - Esportazione del tracciamento e dei risultati
+
+*Attori:* Programmatore.
+
+*Precondizioni:*
+- I requisiti sono disponibili [UC_1].  
+- Il mapping (tracciamento) dei requisiti è disponibile (ottenuto da [UC_1.4] o da [UC_7]).  
+- I risultati dell'analisi sono stati generati [UC_2].
+
+*Postcondizioni:*
+- Il sistema esporta in un file CSV tutti i dati: requisiti, tracciamento e risultati dell'analisi.
+
+*Scenario principale:*
+1. L'utente seleziona la voce "Esporta tracciamento e risultati".  
+2. Il sistema apre un file explorer per la scelta del percorso di salvataggio.  
+3. L'utente conferma il percorso e il nome del file.  
+4. Il sistema salva un file CSV contenente i dati relativi ai requisiti, al mapping e ai risultati.
+
+*Estensioni:*
+- *UC_3.4 - Visualizza errore risultati non disponibili*: Se i risultati dell'analisi non sono disponibili, il sistema mostra un messaggio d'errore specifico.  
 - *UC_3.1 - Visualizza errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
 
 
-== UC_3.1 - Visualizza errore di salvataggio
+== UC_3.3 - Visualizza errore di salvataggio
 
 *Attori:* Programmatore.
 
@@ -371,6 +420,20 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 3. Si verifica un errore durante il salvataggio.  
 4. Il sistema mostra un messaggio d'errore e consente di riprovare.
 
+
+== UC_3.4 - Visualizza errore risultati non disponibili
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Durante l'esportazione del tracciamento e dei risultati [UC_3.2], il sistema rileva che i risultati non sono disponibili.
+
+*Postcondizioni:*  
+- Il sistema visualizza un messaggio d'errore che informa l'utente dell'assenza dei risultati.
+
+*Scenario principale:*  
+1. Durante l'esecuzione di [UC_3.2], il sistema verifica la presenza dei risultati dell'analisi.  
+2. Se i risultati sono mancanti, il sistema mostra un messaggio d'errore specifico.
 
 
 == UC_4 - Visualizzazione dei risultati
@@ -648,7 +711,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - L'utente inserisce un path o pattern non valido nel file .ignore.  
 
 *Postcondizioni:*
-- Il sistema ignora il path non valido e prosegue con le configurazioni valide.  
+- Il sistema ignora il path non valido e prosegue con le configurazioni valide.
 
 *Scenario principale:*  
 1. L'utente modifica il file .ignore e inserisce un path o pattern non valido.  
@@ -715,11 +778,10 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Postcondizioni:*  
 - Il sistema mostra il dettaglio completo del requisito, includendo:  
   - Identificativo del requisito [UC_9.1.1.1]
-  - Titolo del requisito [UC_9.1.1.2]
-  - Testo descrittivo del requisito [UC_9.1.1.3]
+  - Testo descrittivo del requisito [UC_9.1.1.2]
   - (Opzionale) Informazioni di tracciamento [UC_9.1.2]
 
-*Scenario principale:* 
+*Scenario principale:*
 1. L'utente preme sulla voce "Requisito"
 2. Il sistema espande il sottomenu di dettaglio, visualizzando tutte le informazioni relative al requisito.
 3. Se sono disponibili dati di tracciamento, il sistema visualizza anche il dettaglio del tracciamento [UC_9.1.2].
@@ -739,21 +801,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema visualizza l'identificativo univoco del requisito.
 
 
-== UC_9.1.1.2 - Visualizzazione titolo requisito
-
-*Attori:* Programmatore.
-
-*Precondizioni:*  
-- Il requisito selezionato è espanso nella vista di dettaglio [UC_9.1.1].
-
-*Postcondizioni:*  
-- Il sistema mostra il campo "Titolo" del requisito.
-
-*Scenario principale:*  
-1. Il sistema visualizza il titolo del requisito.
-
-
-== UC_9.1.1.3 - Visualizzazione testo requisito
+== UC_9.1.1.2 - Visualizzazione testo requisito
 
 *Attori:* Programmatore.
 
@@ -830,6 +878,99 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 1. Il sistema visualizza la riga di fine del tracciamento del requisito.
 
 
+== UC_10 - Configurazione del modello LLM
+
+#figure(
+  image("./img/AdR/UC_10.png", width: 90%),
+  caption: [UC_10 - Configurazione del modello LLM per l'analisi]
+)
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.  
+- L'utente ha accesso alle impostazioni di VS Code nel menu "Extensions".
+
+*Postcondizioni:*  
+- Il modello LLM configurato viene salvato e verrà utilizzato dal plug-in per le analisi dei requisiti e del codice [UC_2].
+
+*Scenario principale:*
+1. L'utente apre le impostazioni di VS Code e naviga nel menu "Extensions".  
+2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
+3. All'interno delle impostazioni del plug-in, l'utente seleziona il campo affianco la voce "Model".  
+4. L'utente inserisce il nome del modello LLM desiderato (es. "llama3.2:3b" o "deepseek-coder:7b").  
+5. Il sistema salva la configurazione e la utilizza per le analisi successive.
+
+
+== UC_11 - Configurazione dell'endpoint del server Ollama
+
+#figure(
+  image("./img/AdR/UC_11.png", width: 90%),
+  caption: [UC_11 - Configurazione dell'endpoint di Ollama]
+)
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in VS Code.  
+- L'utente ha accesso alle impostazioni nel menu "Extensions" di VS Code.
+
+*Postcondizioni:*
+- L'endpoint del server Ollama viene salvato e utilizzato dal plug-in per le chiamate API.
+
+*Scenario principale:*  
+1. L'utente apre le impostazioni di VS Code e naviga nel menu "Extensions".  
+2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
+3. All'interno delle impostazioni, l'utente seleziona la voce "Ollama Endpoint".  
+4. L'utente inserisce l'indirizzo IP o il link del server Ollama.
+5. Il sistema salva l'endpoint e lo utilizza per le chiamate API durante le analisi.
+
+
+== UC_12 - Configurazione della soglia di conformità
+
+#figure(
+  image("./img/AdR/UC_12.png", width: 90%),
+  caption: [UC_12 - Configurazione della soglia del quality score]
+)
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in VS Code.  
+- L'utente ha accesso alle impostazioni nel menu "Extensions" di VS Code.
+
+*Postcondizioni:*  
+- La soglia di qualità viene salvata e utilizzata dal plug-in per determinare lo stato "passed" (true/false) dei requisiti [UC_2.2].
+
+*Scenario principale:*
+1. L'utente apre le impostazioni di VS Code e naviga nel menu "Extensions".  
+2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
+3. All'interno delle impostazioni, l'utente seleziona la voce "Quality threshold".  
+4. L'utente inserisce il valore soglia desiderato (es. 80).  
+5. Il sistema salva la soglia e la utilizza per valutare i risultati dell'analisi dei requisiti.
+
+*Estensioni:*
+- *UC_12.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
+
+
+== UC_12.1 - Visualizzazione errore valore soglia non valido
+
+*Attori:* Programmatore.
+
+*Precondizioni:*  
+- Durante la configurazione della soglia di conformità in [UC_12], l'utente inserisce un valore non numerico o un valore che non rientra nei limiti previsti.
+
+*Postcondizioni:*
+- Il sistema visualizza un messaggio d'errore che informa l'utente dell'inserimento non valido e richiede la correzione del valore.
+
+*Scenario principale:*  
+1. L'utente inserisce il valore per la soglia di conformità nella sezione "Quality threshold" delle impostazioni del plug-in.  
+2. Il sistema verifica il valore inserito.  
+3. Se il valore non è numerico o non rientra nei limiti previsti, il sistema visualizza un messaggio d'errore specifico.  
+4. Il sistema richiede all'utente di inserire un valore corretto.
+
+
+- *UC_1.4 - Visualizza errore file* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
 
 
 = Requisiti
@@ -850,13 +991,14 @@ Questi requisiti descrivono cosa il sistema deve fare
   /*----------------------------------------------------*/
   [RFO001],
   [Obbligatorio],
-  [Il sistema deve essere in grado caricare il file dei requisiti in formato CSV dal filesystem],
-  [Capitolato, UC_1, UC_1.1, UC_1.3, UC_1.1, Committente],
+  [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal filesystem],
+  [Capitolato, UC_1, UC_1.1, UC_1.3, Committente],
   /*----------------------------------------------------*/
   [RFO002],
   [Obbligatorio],
-  [Il sistema deve visualizzare i requisiti caricati in una vista strutturata],
-  [UC_9, UC_9.1, UC_9.1.1, UC_9.1.1.1, UC_9.1.1.2, UC_9.1.1.3, UC_9.1.2, UC_9.1.2.1, UC_9.1.2.2, UC_9.1.2.3],
+  [Il sistema deve visualizzare i requisiti caricati in una vista strutturata ad albero],
+  [UC_9, UC_9.1, UC_9.1.1, UC_9.1.1.1, UC_9.1.1.2, UC_9.1.2, UC_9.1.2.1, UC_9.1.2.2, UC_9.1.2.3],
+
   /*----------------------------------------------------*/
   [RFO003],
   [Obbligatorio],
@@ -865,44 +1007,45 @@ Questi requisiti descrivono cosa il sistema deve fare
   /*----------------------------------------------------*/
   [RFO004],
   [Obbligatorio],
-  [Il sistema deve informare l'utente se il file CSV caricato non è valido ],
+  [Il sistema deve informare l'utente se il file CSV caricato non è valido in caso di colonne id e descrizione mancanti],
   [UC_1.4],
   /*----------------------------------------------------*/
   [RFO005],
   [Obbligatorio],
-  [Il sistema deve fornire una valutazione dei requisiti],
+  [Il sistema deve fornire una valutazione dei requisiti in termini di completezza, coerenza e adderenza al codice],
   [UC_2, UC_2.1, UC_2.2, Capitolato],
   /*----------------------------------------------------*/
   [RFO006],
   [Obbligatorio],
-  [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
-  [UC_2],
+  [L'utente deve ricevere suggerimenti su come rendere i requisiti più specifici, misurabili, realizzabili e pertinenti],
+  [Capitolato, UC_4.1.1.5],
   /*----------------------------------------------------*/
   [RFO007],
   [Obbligatorio],
-  [Il sistema deve verificare e visualizzare il grado di implementazione dei requisiti nel codice],
-  [UC_2, UC_2.2, UC_4, Capitolato],
+  [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
+  [UC_2],
+
   /*----------------------------------------------------*/
   [RFO008],
   [Obbligatorio ],
-  [Il sistema deve tracciare l'implementazione dei requisiti nel codice e verificarne la copertura ],
+  [Il sistema deve tracciare l'implementazione dei requisiti nel codice e verificarne la copertura],
   [Capitolato, UC_2.2, UC_7],
   /*----------------------------------------------------*/
   
   [RFO009],
   [Obbligatorio],
-  [Il sistema deve essere in grado di esportare i risultati dell'analisi in formato CSV],
-  [UC_3],
+  [Il sistema deve consentire l'esportazione dei dati in formato CSV ],
+  [UC_3, UC_3.1, UC_3.2],
   
   /*----------------------------------------------------*/
   [RFO010],
   [Obbligatorio],
-  [Il sistema deve visualizzare graficamente i risultati delle analisi per migliorarne la comprensione],
+  [Il sistema deve visualizzare graficamente i risultati delle analisi integrandoli nella lista dei requisiti],
   [UC_4, UC_4.1, UC_4.1.1, UC_4.1.1.1, UC_4.1.1.4, UC_4.1.1.5, UC_4.1.1.6],
   /*----------------------------------------------------*/
   [RFO011],
   [Obbligatorio],
-  [Il sistema deve filtrare i risultati delle analisi in base ai criteri specificati dall'utente],
+  [Il sistema deve filtrare i risultati delle analisi in base ai criteri specificati dall'utente (ID, descrizione, file di implementazione)],
   [UC_5],
   /*----------------------------------------------------*/
   [RFO012],
@@ -915,13 +1058,49 @@ Questi requisiti descrivono cosa il sistema deve fare
   [Il sistema deve informare l'utente nel caso, a seguito di un analisi, non ci siano risultati],
   [UC_4.1.1.6],
   /*----------------------------------------------------*/
+  [RFF014],
+  [Facoltativo],
+  [Il codice relativo ad un requisito da analizzare può essere presente in file diversi],
+  [Committente],
+  /*----------------------------------------------------*/
+  [RFO015],
+  [Obbligatorio],
+  [L'utente deve essere in grado di scegliere il modello da utilizzare prima dell'analisi],
+  [UC_10, Committente],
+    /*----------------------------------------------------*/
+  [RFF016],
+  [Facoltativo],
+  [L'utente deve essere in grado di configurare il modello utilizzato per l'analisi],
+  [Committente],
 
-  
+  /*----------------------------------------------------*/
+  [RFO017],
+  [Obbligatorio],
+  [L'utente deve essere in grado di configurare l'endpoint di ollama ],
+  [UC_11, Committente],
+  /*----------------------------------------------------*/
+  [RFO018],
+  [Obbligatorio],
+  [L'utente deve essere in grado di configurare la soglia del quality score accettabile],
+  [UC_12, Committente],
+  /*----------------------------------------------------*/
+  [RVF019],
+  [Facoltativo],
+  [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
+  [UC_2.6],
+  /*----------------------------------------------------*/
+  [RFO020],
+  [Obbligatorio],
+  [Il sistema deve permettere l'esclusione dall'analisi di alcuni file, indicati all'interno di un documento (file .ignore)],
+  [UC_8, Committente],
+
 )
 #align(center, "Tab. 1");
 
-\
 
+
+\
+#pagebreak()
 
 == Requisiti di qualità
 Questi requisiti riguardano le caratteristiche qualitative del sistema
@@ -935,35 +1114,20 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
   [*Fonti*],
   ),
   /*----------------------------------------------------*/
-  [RQO014],
+  [RQO001],
   [Obbligatorio],
-  [Il plug-in deve essere modulare per consentire l'aggiunta di nuove funzionalità senza interventi complessi],
+  [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove feature in base a esigenze o aggiornamenti futuri del progetto],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RQO015],
-  [Obbligatorio],
-  [Il plug-in deve consentire l'aggiunta di nuove feature in base a esigenze o aggiornamenti futuri del progetto],
-  [Capitolato],
-  /*----------------------------------------------------*/
-  [RQO016],
-  [Obbligatorio],
-  [L'utente deve ricevere suggerimenti per migliorare la chiarezza e la qualità dei requisiti],
-  [Capitolato, UC_4.1.1.5],
-  /*----------------------------------------------------*/
-  [RQO017],
-  [Obbligatorio],
-  [Il plug-in deve essere in grado di visualizzare graficamente i risultati dell'analisi al fine di migliorare la comprensione],
-  [UC_4],
-  /*----------------------------------------------------*/
-  [RQO018],
-  [Obbligatorio],
-  [Il sistema deve garantire un'interfaccia grafica per navigare e filtrare i risultati per nome del requisito, codice o sezione del codice],
-  [Capitolato],
-  /*----------------------------------------------------*/
-  [RQO019],
+  [RQO002],
   [Obbligatorio],
   [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme di Progetto]],
   [#text(style:"italic")[Norme di Progetto]],
+  /*----------------------------------------------------*/
+  [RQO003],
+  [Obbligatorio],
+  [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Piano di Progetto]],
+  [#text(style:"italic")[Piano di Progettoo]],
 )
 #align(center, "Tab. 2");
 
@@ -984,35 +1148,30 @@ Questi requisiti specificano limiti tecnici o di conformità
   [*Fonti*],
   ),
   /*----------------------------------------------------*/
-  [RVO020],
+  [RVO001],
   [Obbligatorio],
   [Deve supportare i linguaggi C/C++],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RVF021],
+  [RVF002],
   [Facoltativo],
   [Deve supportare altri linguaggi oltre a C/C++],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RVF022],
+  [RVF003],
   [Facoltativo],
   [Il sistema deve fornire valutazioni conformi alle normative sulla sicurezza funzionale (ISO 26262 o IEC 61508)],
   [Capitolato],
   /*----------------------------------------------------*/
-  [RVO023],
+  [RVO004],
   [Obbligatorio],
   [Il sistema deve comunicare con un modello LLM attraverso una REST API ],
   [UC_2],
-  /*----------------------------------------------------*/
-  [RVO024],
-  [Obbligatorio],
-  [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
-  [UC_2.6],
     /*----------------------------------------------------*/
-  [RVO027],
+  [RVO005],
   [Obbligatorio],
   [L'estensione di Visual Studio Code deve essere in inglese],
-  [Committente], 
+  [Committente],
   
 )
 #align(center, "Tab. 3");
@@ -1034,89 +1193,96 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
   [*Fonti*],
   ),
   /*----------------------------------------------------*/
-  [RPD025],
+  [RPD001],
   [Desiderabile],
-  [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta o a un modello troppo grande],
+  [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta (risposte con tempo di attesa >20s)  o a un modello troppo grande (prompt maggiore di 6000 token e/o velocità di risposta < 20 token/s)],
   [UC_2.4, UC_2.5],
   /*----------------------------------------------------*/
-  [RPO026],
+  [RPO002],
   [Obbligatorio],
   [Il sistema deve informare l'utente in caso di errore di connessione e consentire di riprovare],
   [UC_2.4],
   
 )
 #align(center, "Tab. 4");
-
-
+#pagebreak()
 == Tracciamento 
-#figure(
-  align(center)[
-    #table(
-    align:(left),
-    columns: (auto,auto),
 
+
+
+#align(center)[
+  #table(
+    columns: (auto, auto),
     table.header([*Fonte*], [*Requisiti*]),
-
-    [UC_1], [RFO001, RFO003],
+    [UC_1],   [RFO001, RFO003],
     [UC_1.3], [RFO001],
     [UC_1.1], [RFO001],
-    [UC_1.2], [RFO001],
+    [UC_1.2], [],
     [UC_1.4], [RFO003, RFO004],
-
-    [UC_2], [RFO005, RFO006, RFO007, RVO023],
-    [UC_2.1], [RFO005],
-    [UC_2.2], [RFO005, RFO007, RFO008],
+    [UC_2],   [RFO005],
+    [UC_2.1], [RFO001, RF002],
+    [UC_2.2], [RFO008],
     [UC_2.3], [],
-    [UC_2.4], [RPD025, RPO026],
-    [UC_2.5], [RPD025],
-    [UC_2.6], [RVO024],
-    [UC_3], [RFO009],
-    [UC_3.1], [],
-    
-    [UC_4], [RFO007, RFO010, RQO017],
-    [UC_4.1], [RFO010],
+    [UC_2.4], [],
+    [UC_2.5], [],
+    [UC_2.6], [RVF019],
+    [UC_3],   [RFO009],
+    [UC_3.1], [RFO009],
+    [UC_3.2], [RFO009],
+    [UC_3.3], [],
+    [UC_4],   [RFO010],
+    [UC_4.1], [RF010],
     [UC_4.1.1], [RFO010],
     [UC_4.1.1.1], [RFO010],
+    [UC_4.1.1.2], [],
+    [UC_4.1.1.3], [],
     [UC_4.1.1.4], [RFO010],
-    [UC_4.1.1.5], [RFO010, RQO016],
+    [UC_4.1.1.5], [RFO006, RFO010],
     [UC_4.1.1.6], [RFO010, RFO013],
-      
-    [UC_5], [RFO011],
-    
-    [UC_6], [RFO012],
-    
-    [UC_7], [RFO008],
-    
-    [UC_8], [],
+    [UC_4.1.1.5.1], [],
+    [UC_4.1.1.5.2], [],
+    [UC_4.1.1.5.3], [],
+    [UC_4.1.1.6.1], [],
+    [UC_4.1.1.6.2], [],
+    [UC_4.1.1.6.3], [],
+    [UC_5],   [RFO011],
+    [UC_6],   [RFO012],
+    [UC_7],   [RFO008],
+    [UC_8],   [RFO020],
     [UC_8.1], [],
-    
-    [UC_9], [RFO002],
+    [UC_9],   [RFO002],
     [UC_9.1], [RFO002],
     [UC_9.1.1], [RFO002],
     [UC_9.1.1.1], [RFO002],
     [UC_9.1.1.2], [RFO002],
-    [UC_9.1.1.3], [RFO002],
     [UC_9.1.2], [RFO002],
     [UC_9.1.2.1], [RFO002],
     [UC_9.1.2.2], [RFO002],
-    [UC_9.1.2.3], [RFO002]
-    )
-  ]
-)
+    [UC_9.1.2.3], [RFO003],
+    [UC_10],[RFO015],
+    [UC_11],[RFO017],
+    [UC_12],[RF018],
+    [UC_12.1],[]
+  )
+]
+
 #align(center, "Tab. 5");
 
-#pagebreak()
 
+\
+\
 == Riepilogo 
 #table(
+  align: (center),
   columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
-  [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Opzionale*],[*Totale*],
-  [Funzionale],   
-  [RFO001, RFO002, RFO003, RFO004, RFO005, RFO006, RFO007, RFO008, RFO009, RFO010, RFO011, RFO012, RFO013, RFO014],               [],               [],           [],
-  [Di Qualità],   
-  [RQO014, RQO015, RQO016, RQO017, RQO018, RQO019],               [],               [],           [],
-  [Di Vincolo],   [RVO020, RVO023, RVO024],               [],               [RVF021, RVF022],           [],
-  [Prestazionale],[RPO026],               [RPD025],               [],           [],
+  [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Facoltativo*],[*Totale*],
+  [Funzionale],   [18],               [],               [2],           [20],
+
+  [Di Qualità],   [3],               [],               [],           [3],
+
+  [Di Vincolo],    [3],               [],               [3],           [6],
+  
+  [Prestazionale],  [1],               [1],               [],           [2],
 )
 #align(center, "Tab. 6");
 
@@ -1142,8 +1308,13 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
 - Figure 17: UC_9.1 - Visualizzazione di un singolo requisito
 - Figure 18: UC_9.1.1 - Visualizzazione in dettaglio di un singolo requisito
 - Figure 19: UC_9.1.2 - Visualizzazione delle informazioni di tracciamento di un requisito
+- Figure 20: UC_10 - Configurazione del modello LLM per l'analisi
+- Figure 21: UC_11 - Configurazione dell'endpoint di Ollama
+- Figure 22: UC_12 - Configurazione della soglia del quality score
 
-#pagebreak()
+
+
+\
 
 = Elenco delle tabelle 
 
