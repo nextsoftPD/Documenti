@@ -155,6 +155,8 @@ Questo documento servirà come riferimento per evitare fraintendimenti, migliora
 Processo che identifica, documenta e gestisce i requisiti di un sistema software.
 == Attore:
 Persona o sistema che interagisce con il software nei casi d’uso.
+== Analisi dei Rischi:
+ Processo di identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo del progetto.
 #pagebreak()
 = B
 == Bug:
@@ -165,6 +167,8 @@ Allocazione delle risorse finanziarie necessarie per lo sviluppo del progetto.
 Conjunto di linee guida e metodologie raccomandate per migliorare la qualità e l’efficienza del lavoro.
 == Branch:
 Nel contesto del controllo di versione (ad esempio, in Git), un branch è una linea indipendente di sviluppo che permette di lavorare su nuove funzionalità o correzioni di bug senza modificare direttamente il ramo principale. I branch consentono agli sviluppatori di sperimentare, collaborare e implementare cambiamenti in modo sicuro, prima di unirli al codice principale attraverso un'operazione di merge.
+== Bassa Usabilità:
+ Situazione in cui un'interfaccia non intuitiva riduce l'adozione da parte degli utenti.
 #pagebreak()
 = C
 == Commit:
@@ -176,17 +180,37 @@ Documento ufficiale che descrive i requisiti e le specifiche di un progetto soft
 == Codifica:
 Processo di scrittura del codice sorgente secondo le specifiche definite nella fase di progettazione.
 == Ciclo di Vita del Documento:
-Processo che regola la creazione, revisione, verifica e approvazione di un documento
+Processo che regola la creazione, revisione, verifica e approvazione di un documento.
+== Caso di Studio: 
+Esempio pratico di utilizzo del software per verificarne l’efficacia in un ambiente reale.
+== Compatibilità con API di IA: 
+Capacità del software di interfacciarsi correttamente con servizi di intelligenza artificiale tramite API REST.
+== Compatibilità con Visual Studio Code: 
+Capacità del software di mantenere la compatibilità con le versioni aggiornate di Visual Studio Code per evitare problemi di incompatibilità.
+== Consuntivo di Periodo: 
+Analisi delle variazioni di pianificazione e costi rispetto alle stime iniziali, con indicazione delle misure correttive adottate.
 #pagebreak()
 = D
 == Diagramma UML:
 Rappresentazione grafica della struttura e del comportamento di un sistema software.
 == Deployment:
 Processo di rilascio e installazione del software in un ambiente di produzione.
+== Dipendenza da Risorse Chiave: 
+Rischio che si verifica quando il progetto è fortemente legato alla disponibilità di specifiche competenze o tecnologie.
+== Disponibilità del Team: 
+Capacità dei membri del team di dedicare tempo e risorse al progetto, considerando eventuali impegni esterni.
+
 
 #pagebreak()
 = E
-
+== Efficienza: 
+Capacità del software di eseguire le operazioni richieste utilizzando un numero minimo di risorse (tempo, memoria, CPU).
+== EAC (Estimated At Completion):
+ Stima del costo totale di completamento del progetto basata sulle prestazioni attuali.
+== EV (Earned Value):
+ Valore del lavoro effettivamente completato in un determinato momento rispetto alla pianificazione.
+== ETC (Estimated To Completion):
+ Stima del costo rimanente per completare il progetto
 #pagebreak()
 = F
 == Fornitura: 
@@ -200,6 +224,8 @@ Processo di consegna del software al cliente, inclusi test finali e rilascio del
 = H
 #pagebreak()
 = I
+== Issue: 
+Ticket utilizzato in strumenti di gestione dei progetti per tracciare problemi, attività o richieste di miglioramento.
 #pagebreak()
 = J
 #pagebreak()
@@ -214,6 +240,15 @@ Modelli di intelligenza artificiale addestrati per comprendere ed elaborare il l
  Versione minima di un prodotto con funzionalità essenziali per testarne la fattibilità.
 == Metrica:
 Misura quantitativa utilizzata per valutare aspetti del software, come performance, affidabilità o manutenibilità.
+== MPC (Minimum Predictive Capability):
+ Metrica che valuta la capacità minima di previsione di un modello o sistema.
+ == MPDS (Metriche di Processo e Sviluppo): 
+ Insieme di metriche utilizzate per valutare la qualità del software nei suoi vari aspetti.
+ == Mitigazione dei Rischi: 
+ Strategie applicate per ridurre o eliminare l’impatto dei rischi identificati nel progetto.
+== Modello di Sviluppo: 
+Approccio metodologico utilizzato per organizzare il lavoro e garantire un avanzamento strutturato del progetto.
+
 #pagebreak()
 = N
 == NodeJS: 
@@ -224,6 +259,8 @@ Attività di definizione e aggiornamento delle norme e convenzioni del progetto.
 = O
 == Ollama:
 Piattaforma per l’integrazione di modelli LLM (Large Language Models) nel processo di analisi dei requisiti.
+== Organigramma: 
+Struttura organizzativa del progetto che definisce ruoli e responsabilità dei membri del team.
 #pagebreak()
 = P
 == Plug-in:
@@ -232,8 +269,21 @@ Estensione di un software che aggiunge nuove funzionalità senza modificarne il 
 Stato richiesto affinché un caso d’uso possa essere eseguito correttamente.
 == Postcondizione:
 Stato atteso dopo l’esecuzione di un caso d’uso.
+== PV (Planned Value): 
+Valore pianificato del lavoro da completare fino a una determinata data di riferimento.
+== Piano di Contingenza: 
+Strategia alternativa da applicare in caso di problemi imprevisti nel progetto.
+== Pianificazione: 
+Processo di suddivisione del progetto in fasi operative con definizione di risorse, tempistiche e responsabilità.
+== Preventivo: 
+Stima dei costi del progetto con allocazione delle risorse economiche necessarie.
+== Proof of Concept (PoC): 
+Implementazione preliminare del progetto per verificarne la fattibilità.
 #pagebreak()
 = Q
+== Qualità di Processo: 
+Misura dell’efficienza e dell’efficacia dei processi seguiti nello sviluppo del software.
+
 #pagebreak()
 = R
 == Requisito Funzionale:
@@ -244,7 +294,11 @@ Specifica vincoli sulle prestazioni, sicurezza, usabilità e scalabilità del so
 Plug-in per Visual Studio Code che automatizza il tracciamento dei requisiti nel codice sorgente.
 
 == Repository:
- Archivio di codice sorgente gestito con strumenti come GitHu
+ Archivio di codice sorgente gestito con strumenti come GitHub
+==  RC (Requirement Coverage): 
+Percentuale di requisiti soddisfatti rispetto al totale.
+== Requisiti Obbligatori Soddisfatti: 
+Percentuale di requisiti obbligatori che sono stati implementati con successo.
 #pagebreak()
 = S
 == Stakeholder:
@@ -253,12 +307,17 @@ Persona o gruppo interessato all’andamento e ai risultati del progetto.
 Sequenza di passaggi che descrive il normale flusso di esecuzione di un caso d’uso.
 == Scenari Alternativi:
 Possibili variazioni nel flusso di esecuzione di un caso d’uso.
+== Successo dei Test:
+ Percentuale di test che hanno avuto esito positivo rispetto al totale eseguito.
+== SV (Schedule Variance):
+ Differenza tra il valore guadagnato (EV) e il valore pianificato (PV), indica eventuali ritardi o anticipi.
 #pagebreak()
 = T
 == TypeScript:
  Linguaggio di programmazione che estende JavaScript con tipi statici.
 == Tracciamento dei Requisiti:
  Processo che collega ogni requisito alla sua implementazione nel codice per garantirne la copertura.
+ == Task: Unità di lavoro assegnata a un membro del team per il completamento di un'attività specifica.
 #pagebreak()
 = U
 == Usabilità:
@@ -275,6 +334,10 @@ Linguaggio standard per la modellazione grafica di sistemi software.
  Processo per determinare se il prodotto è stato sviluppato correttamente rispetto ai requisiti specificati.
 == Validazione:
 Processo che assicura che il prodotto soddisfi i bisogni e le aspettative dell'utente finale.
+== VLN (Presenza di Vulnerabilità): 
+Numero di vulnerabilità di sicurezza ancora presenti nel codice.
+== Versionamento: 
+Processo di gestione delle versioni di un software o documento.
 #pagebreak()
 = W
 == Way of Working:
