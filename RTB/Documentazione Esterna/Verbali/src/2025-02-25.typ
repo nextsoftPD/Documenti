@@ -3,7 +3,7 @@
 #show: project.with(
   title: "Terzo Incontro con\nBluewind s.r.l",
   redattori: ("Ion Cainareanu",),
-  verifica: ("",),
+  verifica: ("Luca Parise",),
   approvazione: ("",),
   uso: "Esterno",
   version: "1.0",
