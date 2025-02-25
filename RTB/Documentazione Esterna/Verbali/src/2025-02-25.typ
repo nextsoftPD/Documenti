@@ -4,7 +4,7 @@
   title: "Terzo Incontro con\nBluewind s.r.l",
   redattori: ("Ion Cainareanu",),
   verifica: ("Luca Parise",),
-  approvazione: ("",),
+  approvazione: ("Stefano Baso",),
   uso: "Esterno",
   version: "1.0",
   timebegin: "16:30",
