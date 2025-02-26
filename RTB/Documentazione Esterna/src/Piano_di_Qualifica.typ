@@ -1,16 +1,16 @@
 #import "../../../assets/template_v2.0.0.typ": project;
 
-// Esempio di utilizzo
 #show: project.with(
   title: "Piano di Qualifica",
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
-  approvazione: (""),
+  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
   uso: "Esterno",
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
+    "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "",
     "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
     "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
     "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu",
@@ -28,38 +28,36 @@
   target: figure.where(kind: table),
 )
 
-= Elenco dei grafici
-
-
 = Introduzione e scopo
 
-Il Piano di Qualifica è un documento soggetto a modifiche incrementali, finalizzate principalmente alla definizione delle metriche di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
+Il Piano di Qualifica è un documento soggetto a modifiche incrementali, finalizzate principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
 
 Il presente documento si propone di:
 
 - Definire le metriche e le metodologie di controllo e misurazione.
-- Stabilire quantità, qualità dei test e relative metriche.
+- Stabilire quantità, qualità dei #text(style: "italic")[test]#super[G] e relative metriche.
 - Descrivere l’applicazione dei test e documentarne i risultati, valutando la conformità rispetto alle attese e alle metriche definite.
 
 == Glossario
 
-Con lo scopo di rendere chiara la terminologia usata all'interno del documento, viene allegato un Glossario nel file dedicato che servirà a chiarire le terminologie usate dandone una definizione. Ogni termine la cui definizione sarà presente nel Glossario, verrà identificato con una lettera G come pedice, nel formato parola_G. 
+Con lo scopo di rendere chiara la terminologia usata all'interno del documento, viene allegato un Glossario nel file dedicato che servirà a chiarire le terminologie usate dandone una definizione. Ogni termine la cui definizione sarà presente nel Glossario, verrà identificato con una lettera G come apice, nel formato _parola_#super[G]. 
 
 == Maturità e miglioramenti
 
-Il documento in oggetto è stilato seguendo un approccio Agile, un approccio flessibile allo sviluppo software, che privilegia la collaborazione, il feedback continuo e il rilascio rapido di valore adattandosi ai cambiamenti. Con lo scopo quindi di essere aggiornato nel corso degli sviluppi e in relazione tra membri del gruppo e proponente, ad oggi non può essere considerato una versione completa.
+Il seguente documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, pertanto non può essere considerato completo e definitivo.
 
 == Riferimenti
 
 === Riferimenti normativi
 
+- Analisi dei Requisiti
 - Norme di Progetto
 
 === Riferimenti informativi
 
 Materiale didattico del corso
-- Qualità di prodotto: https://www.math.unipd.it/~tullio/IS-1/2021/Dispense/T12.pdf;
-- Qualità di processo: https://www.math.unipd.it/~tullio/IS-1/2021/Dispense/T13.pdf;
+- Qualità di prodotto: https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf
+- Qualità di processo: https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf
 - Indice di Gulpease: https://www.ilc.cnr.it/dylanlab/apps/texttools/
 
 
@@ -67,7 +65,7 @@ Materiale didattico del corso
 
 == Scopo ed obiettivi
 
-La qualità di un sistema è determinata dai processi che lo costituiscono e viene misurata attraverso l’uso di metriche specifiche, atte a valutare tali processi e verificarne il raggiungimento degli obiettivi di qualità stabiliti. Il modello di riferimento è il Ciclo PDCA (Plan - Do - Check - Act), il quale consente di avere un miglioramento continuo tramite una gestione strutturata delle attività. Questo approccio si basa su una pianificazione accurata, il monitoraggio mediante metriche definite e l’integrazione dei risultati ottenuti nella fase di produzione operativa.
+La qualità di un sistema è determinata dai processi che lo costituiscono e viene misurata attraverso luso di metriche specifiche, atte a valutare tali processi e verificarne il raggiungimento degli obiettivi di qualità stabiliti. Il modello di riferimento è il _Ciclo di Deming_#super[G] o PDCA (Plan - Do - Check - Act), il quale consente di avere un miglioramento continuo tramite una gestione strutturata delle attività. Questo approccio si basa su una pianificazione accurata, il monitoraggio mediante metriche definite e l'integrazione dei risultati ottenuti nella fase di produzione operativa.
 
 Di seguito, vengono presentati i processi identificati e i corrispondenti livelli di qualità prefissati. Per ciascuna metrica è fornita una descrizione che ne illustra le modalità di applicazione e definisce i valori considerati accettabili nel contesto delle verifiche di qualità.
 
@@ -82,24 +80,34 @@ Un concetto chiave in questo contesto è l'MPC (Minimum Predictive Capability), 
 Di seguito sono descritte le principali metriche e calcoli associati che verranno riportati nella tabella sottostante mettendo in relazione il valore plausibile e il valore ottimale:
 
 - BAC (Budget At Completion): Costo totale preventivato per il completamento del progetto.
+$ "BAC" = sum "costi previsti" $
 
 - EAC (Estimated At Completion): Valore stimato per i compiti rimanenti.
+$ "EAC" = "BAC"/"CPI" $
 
-- CPI (Cost Performance Index): Indice di prestazione dei costi, misura l'efficienza con cui il budget viene utilizzato.
+- CPI (Cost Performance Index): Indice di prestazione dei costi, misura l'#text(style: "italic")[efficienza]#super[G] con cui il budget viene utilizzato. Un valore > 1 indica che il progetto sta spendendo meno del previsto, mentre un valore < 1 indica che sta spendendo di più del previsto.
+$ "CPI" = "EV"/"AC" $
 
 - ETC (Estimated To Completion): Stima del costo finale aggiornato alla data di misurazione.
+$ "ETC" = "EAC" - "AC" $
 
-- EV (Earned Value): Valore ottenuto fino al momento attuale, calcolato come percentuale del lavoro svolto × EAC.
+- EV (Earned Value): Valore ottenuto fino al momento attuale.
+$ "EV" = ("% lavoro svolto" / 100) * "EAC" $
 
-- PV (Planned Value): Valore pianificato fino al momento attuale, calcolato come percentuale del lavoro pianificato × BAC.
+- PV (Planned Value): Valore pianificato fino al momento attuale.
+$ "PV" = ("% lavoro pianificato" / 100) * "BAC" $
 
 - AC (Actual Cost): Budget effettivamente speso fino al momento attuale.
+$ "AC" = sum "costi effettivi" $
 
-- CV (Cost Variance): Differenza tra il valore ottenuto (EV) e il costo effettivo (AC), calcolato come EV - AC.
+- CV (Cost Variance): Differenza tra il valore ottenuto (EV) e il costo effettivo (AC).
+$ "CV" = "EV" - "AC" $
 
-- SV (Schedule Variance): Differenza tra il valore ottenuto (EV) e quello pianificato (PV), calcolato come EV - PV. Un valore negativo indica un ritardo rispetto alla pianificazione.
+- SV (Schedule Variance): Differenza tra il valore ottenuto (EV) e quello pianificato (PV). Un valore negativo indica un ritardo rispetto alla pianificazione.
+$ "SV" = "EV" - "PV" $
 
-- BV (Budget Variance): Differenza rispetto al budget preventivato, calcolato come AC - CV.
+- BV (Budget Variance): Differenza rispetto al budget preventivato.
+$ "BV" = "AC" - "CV" $
 
 #figure(
   table(
@@ -117,25 +125,9 @@ Di seguito sono descritte le principali metriche e calcoli associati che verrann
   caption: [Metriche di fornitura],
 )
 
-Questi indicatori consentono di monitorare l’andamento del progetto in termini di costi, tempi e precisione delle previsioni, supportando una gestione efficiente e mirata.
+Questi indicatori consentono di monitorare l'andamento del progetto in termini di costi, tempi e precisione delle previsioni, supportando una gestione efficiente e mirata.
 
 === Sviluppo
-
-==== Progettazione architetturale
-
-- *SFIN* (Structural Fan-In) Indice di utilità = indice di quantità di componenti che utilizzano un determinato modulo, un indice alto indica un maggior utilizzo del componente.
-
-- *SFOUT* (Structural Fan-Out) Indice di dipendenza = indica il numero di componenti utilizzati dal modulo in oggetto, un indice alto indica un alto accoppiamento.
-
-#figure(
-  table(
-    columns: 4,
-    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC-SFIN], [Structural Fan-in], [/], [/],
-    [MPC-SFOUT], [Structural Fan-out], [/], [/],
-  ),
-  caption: [Metriche di sviluppo],
-)
 
 ==== Progettazione di dettaglio
 
@@ -152,7 +144,7 @@ Indice per la media del numero di metodi presenti in ogni package, un indice alt
 
 ==== Codifica
 
-- *BLC* (Bugs for Line of Code) = indice per il numero di righe di codice che possono contenere bug o errori.
+- *BLC* (Bugs for Line of Code) = indice per il numero di righe di codice che possono contenere #text(style: "italic")[bug]#super[G] o errori.
 
 - *VNUD* (Variabili Non Utilizzate o non Definite) = indice per il numero di variabili utilizzate o non definite, queste sono a tutti gli effetti errori di programmazione che possono comportare bug. Variabili non utilizzate occupano spazio inutilmente in memoria e creano confusione all'interno del codice.
 
@@ -164,6 +156,52 @@ Indice per la media del numero di metodi presenti in ogni package, un indice alt
     [MPC-VND], [Variabili non utilizzate e non definite], [0], [0],
   ),
   caption: [Metriche di codifica],
+)
+
+== Processi di supporto
+
+=== Documentazione
+
+La documentazione ha ruolo di supporto, in particolare definisce le norme da seguire durante lo sviluppo, la divisione delle risorse e responsabilità. E' necessario quindi definire una linea guida anche per la redazione dei documenti per evitare ambiguità e renderli chiari
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
+    [OPCD01], [Leggibilità dei documenti], [Per mantenere una buona comprensione, il documento deve essere leggibile], [MPC-IG],
+    [OPCD01], [Correttezza ortografica], [Numero di errori grammaticali o ortografici per documento], [MPC-EO],
+  ),
+  caption: [Obiettivo di qualità della documentazione],
+)
+
+====  Indice di leggibilità di Gulpease
+
+L'indice di leggibilità di Gulpease è una metrica che valuta la semplicità di un testo in italiano, ideata per stimare quanto sia comprensibile da lettori con livelli diversi di istruzione. L'indice si basa su tre parametri: il numero di lettere, il numero di parole e il numero di frasi. La formula è:
+
+$ "Gulpease" = 89 - "N° lettere"/"N° parole" 10 + "N° frasi"/"N° parole" 30 $
+
+Il punteggio varia da 0 a 100, dove valori alti indicano maggiore leggibilità. Tipicamente, un testo comprensibile per chi ha una licenza elementare ha un punteggio sopra 80, mentre per chi possiede una licenza media è sufficiente un punteggio superiore a 60. Il metodo è particolarmente utile per valutare documenti destinati a un pubblico ampio, come testi scolastici o burocratici.
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
+    [MPC-IG], [Indice di leggibilità di Gulpease], [GULP ≥ 40], [GULP ≥ 60],
+  ),
+  caption: [Obiettivo di leggibilità],
+)
+
+==== Indice errori ortografici
+
+Per raggiungere l'ottimo anche nella documentazione bisogna raggiungere la massima correttezza in termini di grammatica e ortografia.
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
+    [MPC-EO], [Numero errori ortografici], [0], [0],
+  ),
+  caption: [Obiettivo di leggibilità],
 )
 
 = Qualità del prodotto
@@ -186,7 +224,7 @@ L'efficienza indica il tempo di elaborazione della richiesta da parte del softwa
 
 == Usabilità
 
-L'usabilità riguarda l'esperienza dell'utente nell'interagire con il nostro prodotto, capirne il suo funzionamento e apprezzarne le sue funzioni.
+L'#text(style: "italic")[usabilità]#super[G] riguarda l'esperienza dell'utente nell'interagire con il nostro prodotto, capirne il suo funzionamento e apprezzarne le sue funzioni.
 
 #figure(
   table(
@@ -234,7 +272,7 @@ in cui:
 - N è il numero di nodi(blocchi di codice o decision points),
 - P è il numero di componenti connesse (tipicamente P = 1 per un singolo metodo o funzione)
 \
-- *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una gerarchia di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il rischio di propagazione degli errori. Per un design più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
+- *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una #text(style: "italic")[gerarchia]#super[G] di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il rischio di propagazione degli errori. Per un design più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
 
 - *Parametri per metodo*: indica il numero di parametri per metodo. Un indice basso rappresenta un numero basso di parametri richiesti dal metodo, di conseguenza risulta di più facile comprensione e utilizzo.
 
@@ -332,39 +370,34 @@ $ "RC" = (R#sub[ROS])/(R#sub[ROT]) 100 $
   caption: [Obiettivo di usabilità],
 )
 
-== Documentazione
-
-La documentazione ha ruolo di supporto, in particolare definisce le norme da seguire durante lo sviluppo, la divisione delle risorse e responsabilità. E' necessario quindi definire una linea guida anche per la redazione dei documenti per evitare ambiguità e renderli chiari
-
-#figure(
-  table(
-    columns: 4,
-    table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
-    [OPDD01], [Leggibilità dei documenti], [Per mantenere una buona comprensione, il documento deve essere leggibile], [MPDD01],
-  ),
-  caption: [Obiettivo di qualità della documentazione],
-)
-
-===  Indice di leggibilità di Gulpease
-
-L'indice di leggibilità di Gulpease è una metrica che valuta la semplicità di un testo in italiano, ideata per stimare quanto sia comprensibile da lettori con livelli diversi di istruzione. L'indice si basa su tre parametri: il numero di lettere, il numero di parole e il numero di frasi. La formula è:
-
-$ "Gulpease" = 89 - "N° lettere"/"N° parole" 10 + "N° frasi"/"N° parole" 30 $
-
-Il punteggio varia da 0 a 100, dove valori alti indicano maggiore leggibilità. Tipicamente, un testo comprensibile per chi ha una licenza elementare ha un punteggio sopra 80, mentre per chi possiede una licenza media è sufficiente un punteggio superiore a 60. Il metodo è particolarmente utile per valutare documenti destinati a un pubblico ampio, come testi scolastici o burocratici.
-
-#figure(
-  table(
-    columns: 4,
-    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDD01], [Indice di leggibilità di Gulpease], [GULP ≥ 40], [GULP ≥ 60],
-  ),
-  caption: [Obiettivo di leggibilità],
-)
-
 = Test e specifiche
 
-Il seguente capitolo presenta in maniera dettagliata le strategie e scelte di testing, atte a garantire la correttezza del prodotto e facilitarne la validazione. Viene quindi scelto l'uso del Modello a V, il quale definisce test in parallelo allo sviluppo.
+Il seguente capitolo presenta in maniera dettagliata le strategie e scelte di testing, atte a garantire la correttezza del prodotto e facilitarne la validazione. Viene adottato il Modello a V, in cui ad ogni fase di sviluppo corrisponde una fase di verifica e validazione, garantendo quindi un controllo strutturato del processo.
+
+Il modello è suddiviso in tre parti:
+
+- *Fase di sviluppo* (lato sinistro): definisce e dettaglia i requisiti e la progettazione del sistema.
+
+ - Requirements Gathering: Definizione dei requisiti.
+ - System Analysis: Analisi funzionale e tecnica.
+ - Software Design: Progettazione architetturale del sistema.
+ - Module Design: Definizione dei singoli moduli software.
+
+- *Coding*: avviene l'implementazione vera e propria del software.
+
+- *Fase di testing e validazione* (lato destro): verifica che ogni fase di sviluppo soddisfi i requisiti stabiliti.
+
+ - Unit Testing: Test sui singoli moduli.
+ - Integration Testing: Verifica dell'integrazione tra i moduli.
+ - System Testing: Validazione dell’intero sistema.
+ - Acceptance Testing: Verifica finale rispetto ai requisiti del cliente.
+
+#figure(
+  image("img/PdQ/Modello_v.jpeg", width: 70%),
+  caption: [Modello a V],
+)
+
+Questo modello prevede una stretta corrispondenza tra sviluppo e testing, assicurando che ogni fase sia verificata e validata, riducendo il rischio di errori.
 
 == Tipologie di test
 
@@ -387,13 +420,25 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
 === Test di Regressione
 
-I test di regressione servono a testare che le aggiornamenti / modifiche rilasciati nel software non incidano negativamente sulle funzioni già presenti. Ciò consiste nella ripetizione di test di unità, integrazione e sistema. 
+I test di regressione servono a testare che le aggiornamenti / modifiche rilasciati nel software non incidano negativamente sulle funzioni già presenti. Ciò consiste nella ripetizione di test di unità, integrazione e sistema.
+
+=== Sviluppo
+
+Le specifiche riguardanti i test descritti verranno definite nelle successive versioni del Piano di Qualifica
 
 = Resoconto delle attività di verifica
 
 == Fornitura
 
-==  MPDD01
+=== MPC-AC - MPC-ETC: Actual Cost e Estimated to Completion
+
+=== MPC-EV - MPC-PV: Earned Value e Planned Value
+
+=== MPC-SV: Schedule Variance
+
+=== MPC-CV: Cost Variance
+
+==  MPC-IG: Indice di Gulpease
 
 Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di Gulpease. Come metro di valutazione del documento viene esclusa la prima pagina che, trattandosi dell'intestazione, potrebbe portare ad un risultato inesatto.
 
@@ -410,6 +455,9 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
     [2024-12-09], [75], [Superato],
     [2024-12-18], [66], [Superato],
     [2025-01-03], [73], [Superato],
+    [2025-01-10], [65], [Superato],
+    [2025-01-19], [63], [Superato],
+    [2025-02-08], [65], [Superato],
     [2024-11-25], [67], [Superato],
     [2024-12-24], [64], [Superato],
   ),
@@ -418,4 +466,37 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
 
 = Valutazioni per il miglioramento
 
-Nel seguente capitolo vengono riportate delle osservazioni sulle criticità incontrate con lo scopo di adottare dei miglioramenti.
+Nel seguente capitolo vengono riportate delle osservazioni sulle criticità incontrate con lo scopo di individuare i problemi e adottare dei miglioramenti.
+
+== Valutazione sull'organizzazione
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Problema*][*Descrizione*][*Gravità*][*Soluzione*],
+    [Riunione di gruppo], [Incontri settimanali di durata molto lunga con ripetizione di argomenti], [Bassa], [Preparazione di una presentazione con punti da discutere e su cui focalizzarsi],
+  ),
+  caption: [Problemi organizzativi],
+)
+
+== Valutazione sui ruoli
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Problema*][*Descrizione*][*Gravità*][*Soluzione*],
+    [Rotazione dei ruoli], [Durante le prime fasi del lavoro la rotazione dei ruoli non era definita e a tratti assente], [Media], [Nuova ripartizione del carico di lavoro e definizione dei ruoli alle riunioni settimanali],
+  ),
+  caption: [Problemi rotazione ruoli],
+)
+
+== Valutazione degli strumenti di lavoro
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Problema*][*Descrizione*][*Gravità*][*Soluzione*],
+    [Poca conoscenza delle tecnologie richieste], [Durante lo sviluppo sono state richieste l'uso di tecnologie non conosciute dal gruppo], [Alta], [Investito tempo nello studio e formazione dei membri con prove e test pratici, uso di Notion per condividere le ricerche fatte],
+  ),
+  caption: [Problemi con strumenti di lavoro],
+)
