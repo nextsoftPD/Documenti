@@ -23,7 +23,7 @@
   version: "0.4.0",
   date: "11/02/2025",
   versionamento: (
-    "0.6.0","25/02/2025","Luca Parise, Ion Cainareanu, Marco Perazzolo","Modifiche post incontro con l'azienda","",
+    "0.6.0","25/02/2025","Luca Parise, Ion Cainareanu, Marco Perazzolo","Modifiche post incontro con l'azienda","Malik Giafar Mohamed",
     "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","Ion Cainareanu",
     "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "Ion Cainareanu",
     "0.3.1", "06/02/2025", "Marco Perazzolo", "Finalizzazione Use Case testuali", "Malik Giafar Mohamed",
@@ -37,17 +37,15 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo del presente documento è fornire una descrizione completa e dettagliata degli obiettivi, delle funzionalità e delle caratteristiche tecniche del progetto *Requirement Tracker - VS Code Plug-in*, con particolare attenzione all'utilizzo dell'UML per la modellazione dei casi d'uso. Il documento funge da riferimento per tutti gli stakeholder coinvolti, descrivendo il contesto operativo, i requisiti funzionali e non funzionali, nonché le linee guida tecnologiche necessarie per lo sviluppo del plug-in. I casi d'uso saranno descritti utilizzando una struttura standardizzata, che includerà il nominativo del caso, gli attori principali, le precondizioni, le postcondizioni, lo scenario principale e gli eventuali scenari alternativi o sottocasi. Questa struttura garantisce chiarezza e coerenza, facilitando la comprensione e la tracciabilità delle funzionalità principali del sistema. Il documento intende inoltre fornire una visione condivisa del progetto, ponendo le basi per una pianificazione e un'implementazione efficaci.
+Lo scopo del presente documento è fornire una descrizione completa e dettagliata degli obiettivi, delle funzionalità e delle caratteristiche tecniche del progetto *Requirement Tracker - Visual Studio Code Plug-in*, con particolare attenzione all'utilizzo dell'UML per la modellazione dei casi d'uso. Il documento funge da riferimento per tutti gli stakeholder coinvolti, descrivendo il contesto operativo, i requisiti funzionali e non funzionali, nonché le linee guida tecnologiche necessarie per lo sviluppo del plug-in. I casi d'uso saranno descritti utilizzando una struttura standardizzata, che includerà il nominativo del caso, gli attori principali, le precondizioni, le postcondizioni, lo scenario principale e gli eventuali scenari alternativi o sottocasi. Questa struttura garantisce chiarezza e coerenza, facilitando la comprensione e la tracciabilità delle funzionalità principali del sistema. Il documento intende inoltre fornire una visione condivisa del progetto, ponendo le basi per una pianificazione e un'implementazione efficaci.
 == Scopo del prodotto
-Lo scopo di *Requirement Tracker - VS Code Plug-in* è affrontare il problema della complessità nella gestione e nel tracciamento dei requisiti nei progetti software di grandi dimensioni. Nei codebase estesi, la verifica manuale della copertura e dell'implementazione dei requisiti è un processo lungo e soggetto a errori, spesso complicato dalla qualità insufficiente con cui i requisiti stessi vengono definiti. Questo può portare a malintesi e problemi durante l'implementazione, compromettendo l'allineamento tra specifiche e funzionalità sviluppate. 
+Lo scopo di *Requirement Tracker - Visual Studio Code Plug-in* è affrontare il problema della complessità nella gestione e nel tracciamento dei requisiti nei progetti software di grandi dimensioni. Nei codebase estesi, la verifica manuale della copertura e dell'implementazione dei requisiti è un processo lungo e soggetto a errori, spesso complicato dalla qualità insufficiente con cui i requisiti stessi vengono definiti. Questo può portare a malintesi e problemi durante l'implementazione, compromettendo l'allineamento tra specifiche e funzionalità sviluppate. 
 Il plug-in mira a risolvere queste difficoltà automatizzando il tracciamento dei requisiti nel codice sorgente, migliorando la qualità della loro definizione e semplificando l'identificazione delle aree di mancata o errata implementazione. In particolare, offre strumenti per integrare requisiti tecnici derivati da manuali e datasheet di componenti hardware, fornendo analisi automatizzate e suggerimenti per rendere i requisiti più chiari, specifici e strutturati. Grazie a questo, sviluppatori potranno garantire una gestione più efficace dei requisiti, riducendo errori e aumentando la coerenza tra specifiche e implementazione.
 == Glossario
 Per evitare ambiguità relative alle terminologie utilizzate è stato creato un documento denominato *Glossario*.
 Questo documento comprende tutti i termini tecnici scelti dai membri del gruppo e utilizzati nei
 vari documenti con le relative definizioni. Tutti i termini inclusi in questo glossario vengono segnalati
 all'interno del documento con l'apice #super("G") accanto alla parola.
-
-
 
 = Descrizione
 == Obiettivi del prodotto 
@@ -70,8 +68,7 @@ Le funzionalità implementate nell'applicazione includono:
 - Possibilità di modificare la soglia di accettazione relativa alla qualità del codice.
 
 == Utenti e caratteristiche 
-In seguito a un incontro con il proponente, è stato discusso come il plug-in possa essere utilizzato principalmente da un utente che ricopre il ruolo di programmatore. Di conseguenza, si è deciso di focalizzare le funzionalità del plug-in per rispondere alle esigenze di questa categoria di utenti. È stato inoltre specificato che non devono essere fatte assunzioni sulle competenze tecniche dell'utente riguardo all'uso di Visual Studio Code. Pertanto, il plug-in deve essere progettato per essere il più intuitivo possibile, con un processo di installazione semplice e accessibile.\
-
+In seguito a un incontro con il proponente, è stato discusso come il plug-in possa essere utilizzato principalmente da un utente che ricopre il ruolo di programmatore. Di conseguenza, si è deciso di focalizzare le funzionalità del plug-in per rispondere alle esigenze di questa categoria di utenti. È stato inoltre specificato che non devono essere fatte assunzioni sulle competenze tecniche dell'utente riguardo all'uso di _Visual Studio Code_#super("G"). Pertanto, il plug-in deve essere progettato per essere il più intuitivo possibile, con un processo di installazione semplice e accessibile.\
 
 
 = Use Case 
@@ -86,7 +83,7 @@ In seguito a un incontro con il proponente, è stato discusso come il plug-in po
 == Obiettivi
 Questa sezione si propone di identificare e descrivere i casi d'uso derivati dall'analisi del capitolato d'appalto selezionato dal gruppo. In particolare, vengono definiti gli attori principali e le funzionalità ad essi associate.
 == Attori 
-L’applicazione è progettata con un unico attore, il *Programmatore*, esso rappresenta un utente che utilizza il plug-in _Requirement Tracker - VS Code Plug-in_ per importare, analizzare e tracciare l'implementazione dei requisiti software all'interno del codice sorgente di un progetto.
+L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappresenta un utente che utilizza il plug-in _Requirement Tracker - Visual Studio Code Plug-in_ per importare, analizzare e tracciare l'implementazione dei requisiti software all'interno del codice sorgente di un progetto.
 
 
 
@@ -103,7 +100,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Precondizioni:*  
 - L'utente ha aperto un progetto in Visual Studio Code.  
 - Il file dei requisiti è in formato CSV valido.  
-- Il plug-in è installato e attivo in VS Code.
+- Il plug-in è installato e attivo in Visual Studio Code.
 
 *Postcondizioni:*  
 - I requisiti (e, se presente, il tracciamento) vengono importati e sono visualizzabili nel sistema.
@@ -124,7 +121,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Precondizioni:*  
 - L'utente ha aperto un progetto in Visual Studio Code.
 - Il file dei requisiti è in formato CSV valido.
-- Il plug-in è installato e attivo in VS Code.
+- Il plug-in è installato e attivo in Visual Studio Code.
 
 *Postcondizioni:*  
 - I requisiti sono importati e sono visualizzabili nel sistema.
@@ -144,7 +141,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Precondizioni:*  
 - L'utente ha aperto un progetto in Visual Studio Code.
 - Il file dei requisiti è in formato CSV valido, e contiene le informazioni di tracciamento.
-- Il plug-in è installato e attivo in VS Code.
+- Il plug-in è installato e attivo in Visual Studio Code.
 
 *Postcondizioni:*  
 - I requisiti e le relative informazioni di tracciamento sono importate e visualizzabili nel sistema.
@@ -185,7 +182,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - L'utente viene informato che il file non è valido.
 
 *Scenario principale:*  
-1. Il sistema verifica il file e rileva che è malformato o non valido.
+1. Il sistema verifica il file e rileva che è malformato o non valido (per esempio: mancano le colonne ID e descrizione).
 2. L'importazione del file fallisce
 3. Il sistema mostra un messaggio di errore esplicativo e richiede di selezionare un file valido.
 
@@ -224,7 +221,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - *UC_2.3 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.  
 - *UC_2.4 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_2.5 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
-- *UC_2.6 - Visualizzazione errore codice sorgente non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente, il sistema informa l'utente e consente di riprovare.
+- *UC_2.6 - Visualizzazione errore codice sorgente non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente, il sistema mostra un messaggio di errore.
 
 #pagebreak()
 
@@ -607,10 +604,10 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - I requisiti importati sono visualizzati [UC_9].
 
 *Postcondizioni:*  
-- I risultati vengono filtrati in base al campo _ID_.
+- I risultati vengono filtrati in base ai campi _ID_, _descrizione_,_file sorgente_ .
 
 *Scenario principale:*  
-1. L'utente inserisce l'_ID_ del requisito da ricercare tramite la barra di ricerca.  
+1. L'utente inserisce il testo da ricercare tramite la barra di ricerca.  
 2. Il sistema filtra la lista dei requisiti in base al campo inserito.  
 3. Il sistema visualizza la lista dei requisiti filtrati.
 
@@ -634,7 +631,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - Viene fornita una nuova valutazione per il requisito selezionato.  
 
 *Scenario principale:*  
-1. L'utente apre la visualizzazione del singolo requisito.  
+1. L'utente apre la visualizzazione del singolo requisito [UC_9.1].  
 2. L'utente clicca sull'icona relativa alla funzione di ripetizione analisi.
 3. Il sistema invia il requisito ed il relativo codice al modello LLM per una nuova analisi, analogamente ad [UC_2].  
 4. I risultati aggiornati vengono registrati e visualizzati per il requisito selezionato [UC_4.1].  
@@ -666,7 +663,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Scenario principale:*  
 1. L'utente, notando l'assenza del mapping, seleziona l'opzione "Tracciamento dei requisiti".  
 2. Il sistema invia il codice ed i requisiti al modello LLM per la mappatura.  
-3. Il modello confronta il contenuto del codice con i requisiti inviati e individua le porzioni implementative. 
+3. Il modello confronta il contenuto del codice con i requisiti inviati e individua le porzioni che li implementano. 
 4. Il modello restituisce una possibile mappatura del codice, che include il nome del file e l'intervallo di righe, per ogni requisito.
 5. Il mapping risultante viene registrato e visualizzato insieme ai requisiti.
 
@@ -690,13 +687,13 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 - Il plug-in è attivo e funzionante.  
 
 *Postcondizioni:*  
-- I path specificati nel file .ignore vengono esclusi dall'analisi [UC_2] e dal tracciamento dei requisiti [UC_7].  
+- I path specificati nel file .reqignore vengono esclusi dall'analisi [UC_2] e dal tracciamento dei requisiti [UC_7].  
 
 *Scenario principale:*  
-1. L'utente crea o modifica un file .ignore nel progetto.  
-2. L'utente inserisce nel file .ignore i path o pattern relativi ai file o directory da escludere.  
-3. Il sistema rileva automaticamente le modifiche apportate al file .ignore.  
-4. Durante la l'analisi [UC_2] ed il tracciamento [UC_7], il sistema esclude i path specificati nel file .ignore.  
+1. L'utente crea o modifica un file .reqignore nel progetto.  
+2. L'utente inserisce nel file .reqignore i path o pattern relativi ai file o directory da escludere.  
+3. Il sistema rileva automaticamente le modifiche apportate al file .reqignore.  
+4. Durante la l'analisi [UC_2] ed il tracciamento [UC_7], il sistema esclude i path specificati nel file .reqignore.  
 5. L'utente avvia l'analisi o il tracciamento e i path ignorati non vengono considerati.  
 
 *Estensioni:*  
@@ -708,13 +705,13 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Attori:* Programmatore.
 
 *Precondizioni:*
-- L'utente inserisce un path o pattern non valido nel file .ignore.  
+- L'utente inserisce un path o pattern non valido nel file .reqignore.  
 
 *Postcondizioni:*
 - Il sistema ignora il path non valido e prosegue con le configurazioni valide.
 
 *Scenario principale:*  
-1. L'utente modifica il file .ignore e inserisce un path o pattern non valido.  
+1. L'utente modifica il file .reqignore e inserisce un path o pattern non valido.  
 2. Il sistema rileva l'entry non valida durante la verifica del file.  
 3. Il sistema notifica l'utente dell'errore e fornisce dettagli sul path non valido.  
 4. Il sistema ignora l'entry non valida e considera solo i path configurati correttamente.
@@ -761,7 +758,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Scenario principale:*  
 1. L'utente seleziona un requisito dalla lista dei requisiti visualizzati in [UC_9].
-2. Il sistema apre un sottomenù contenente la voce "Requisito" che, se premuto, msotra i dettagli del requisito selezionato [UC_9.1.1].
+2. Il sistema apre un sottomenù contenente la voce "Requisito" che, se premuto, mostra i dettagli del requisito selezionato [UC_9.1.1].
 
 
 == UC_9.1.1 - Visualizzazione dettaglio singolo requisito
@@ -889,13 +886,13 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 
 *Precondizioni:*  
 - Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.  
-- L'utente ha accesso alle impostazioni di VS Code nel menu "Extensions".
+- L'utente ha accesso alle impostazioni di Visual Studio Code nel menu "Extensions".
 
 *Postcondizioni:*  
 - Il modello LLM configurato viene salvato e verrà utilizzato dal plug-in per le analisi dei requisiti e del codice [UC_2].
 
 *Scenario principale:*
-1. L'utente apre le impostazioni di VS Code e naviga nel menu "Extensions".  
+1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
 3. All'interno delle impostazioni del plug-in, l'utente seleziona il campo affianco la voce "Model".  
 4. L'utente inserisce il nome del modello LLM desiderato (es. "llama3.2:3b" o "deepseek-coder:7b").  
@@ -912,14 +909,14 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Attori:* Programmatore.
 
 *Precondizioni:*  
-- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in VS Code.  
-- L'utente ha accesso alle impostazioni nel menu "Extensions" di VS Code.
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.  
+- L'utente ha accesso alle impostazioni nel menu "Extensions" di Visual Studio Code.
 
 *Postcondizioni:*
 - L'endpoint del server Ollama viene salvato e utilizzato dal plug-in per le chiamate API.
 
 *Scenario principale:*  
-1. L'utente apre le impostazioni di VS Code e naviga nel menu "Extensions".  
+1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
 3. All'interno delle impostazioni, l'utente seleziona la voce "Ollama Endpoint".  
 4. L'utente inserisce l'indirizzo IP o il link del server Ollama.
@@ -936,14 +933,14 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 *Attori:* Programmatore.
 
 *Precondizioni:*  
-- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in VS Code.  
-- L'utente ha accesso alle impostazioni nel menu "Extensions" di VS Code.
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.  
+- L'utente ha accesso alle impostazioni nel menu "Extensions" di Visual Studio Code.
 
 *Postcondizioni:*  
 - La soglia di qualità viene salvata e utilizzata dal plug-in per determinare lo stato "passed" (true/false) dei requisiti [UC_2.2].
 
 *Scenario principale:*
-1. L'utente apre le impostazioni di VS Code e naviga nel menu "Extensions".  
+1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
 3. All'interno delle impostazioni, l'utente seleziona la voce "Quality threshold".  
 4. L'utente inserisce il valore soglia desiderato (es. 80).  
@@ -970,7 +967,7 @@ L’applicazione è progettata con un unico attore, il *Programmatore*, esso rap
 4. Il sistema richiede all'utente di inserire un valore corretto.
 
 
-- *UC_1.4 - Visualizza errore file* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
+- *UC_1.4 - Visualizza errore file importazione* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
 
 
 = Requisiti
@@ -985,117 +982,117 @@ Questi requisiti descrivono cosa il sistema deve fare
 #table(
 
 
-  columns: (0.5fr,1fr,3.5fr,1fr),
-  /*----------------------------------------------------*/
-  table.header([*Codice*], [*Classificazione*],[*Descrizione*],[*Fonti*]),
-  /*----------------------------------------------------*/
-  [RFO001],
-  [Obbligatorio],
-  [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal filesystem],
-  [Capitolato, UC_1, UC_1.1, UC_1.3, Committente],
-  /*----------------------------------------------------*/
-  [RFO002],
-  [Obbligatorio],
-  [Il sistema deve visualizzare i requisiti caricati in una vista strutturata ad albero],
-  [UC_9, UC_9.1, UC_9.1.1, UC_9.1.1.1, UC_9.1.1.2, UC_9.1.2, UC_9.1.2.1, UC_9.1.2.2, UC_9.1.2.3],
-
-  /*----------------------------------------------------*/
-  [RFO003],
-  [Obbligatorio],
-  [Il sistema deve validare i requisiti inseriti all'interno del file CSV],
-  [UC_1, UC_1.4],
-  /*----------------------------------------------------*/
-  [RFO004],
-  [Obbligatorio],
-  [Il sistema deve informare l'utente se il file CSV caricato non è valido in caso di colonne id e descrizione mancanti],
-  [UC_1.4],
-  /*----------------------------------------------------*/
-  [RFO005],
-  [Obbligatorio],
-  [Il sistema deve fornire una valutazione dei requisiti in termini di completezza, coerenza e adderenza al codice],
-  [UC_2, UC_2.1, UC_2.2, Capitolato],
-  /*----------------------------------------------------*/
-  [RFO006],
-  [Obbligatorio],
-  [L'utente deve ricevere suggerimenti su come rendere i requisiti più specifici, misurabili, realizzabili e pertinenti],
-  [Capitolato, UC_4.1.1.5],
-  /*----------------------------------------------------*/
-  [RFO007],
-  [Obbligatorio],
-  [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
-  [UC_2],
-
-  /*----------------------------------------------------*/
-  [RFO008],
-  [Obbligatorio ],
-  [Il sistema deve tracciare l'implementazione dei requisiti nel codice e verificarne la copertura],
-  [Capitolato, UC_2.2, UC_7],
-  /*----------------------------------------------------*/
-  
-  [RFO009],
-  [Obbligatorio],
-  [Il sistema deve consentire l'esportazione dei dati in formato CSV ],
-  [UC_3, UC_3.1, UC_3.2],
-  
-  /*----------------------------------------------------*/
-  [RFO010],
-  [Obbligatorio],
-  [Il sistema deve visualizzare graficamente i risultati delle analisi integrandoli nella lista dei requisiti],
-  [UC_4, UC_4.1, UC_4.1.1, UC_4.1.1.1, UC_4.1.1.4, UC_4.1.1.5, UC_4.1.1.6],
-  /*----------------------------------------------------*/
-  [RFO011],
-  [Obbligatorio],
-  [Il sistema deve filtrare i risultati delle analisi in base ai criteri specificati dall'utente (ID, descrizione, file di implementazione)],
-  [UC_5],
-  /*----------------------------------------------------*/
-  [RFO012],
-  [Obbligatorio],
-  [Il sistema deve consentire l'analisi di un singolo requisito],
-  [UC_6],
-  /*----------------------------------------------------*/
-  [RFO013],
-  [Obbligatorio],
-  [Il sistema deve informare l'utente nel caso, a seguito di un analisi, non ci siano risultati],
-  [UC_4.1.1.6],
-  /*----------------------------------------------------*/
-  [RFF014],
-  [Facoltativo],
-  [Il codice relativo ad un requisito da analizzare può essere presente in file diversi],
-  [Committente],
-  /*----------------------------------------------------*/
-  [RFO015],
-  [Obbligatorio],
-  [L'utente deve essere in grado di scegliere il modello da utilizzare prima dell'analisi],
-  [UC_10, Committente],
+    columns: (0.5fr,1fr,3.5fr,1fr),
     /*----------------------------------------------------*/
-  [RFF016],
-  [Facoltativo],
-  [L'utente deve essere in grado di configurare il modello utilizzato per l'analisi],
-  [Committente],
+    table.header([*Codice*], [*Classificazione*],[*Descrizione*],[*Fonti*]),
+    /*----------------------------------------------------*/
+    [RFO001],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal filesystem],
+    [Capitolato, UC_1, UC_1.1, UC_1.3, Proponente],
+    /*----------------------------------------------------*/
+    [RFO002],
+    [Obbligatorio],
+    [Il sistema deve visualizzare i requisiti caricati in una vista strutturata ad albero],
+    [UC_9, UC_9.1, UC_9.1.1, UC_9.1.1.1, UC_9.1.1.2, UC_9.1.2, UC_9.1.2.1, UC_9.1.2.2, UC_9.1.2.3],
 
-  /*----------------------------------------------------*/
-  [RFO017],
-  [Obbligatorio],
-  [L'utente deve essere in grado di configurare l'endpoint di ollama ],
-  [UC_11, Committente],
-  /*----------------------------------------------------*/
-  [RFO018],
-  [Obbligatorio],
-  [L'utente deve essere in grado di configurare la soglia del quality score accettabile],
-  [UC_12, Committente],
-  /*----------------------------------------------------*/
-  [RVF019],
-  [Facoltativo],
-  [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
-  [UC_2.6],
-  /*----------------------------------------------------*/
-  [RFO020],
-  [Obbligatorio],
-  [Il sistema deve permettere l'esclusione dall'analisi di alcuni file, indicati all'interno di un documento (file .ignore)],
-  [UC_8, Committente],
+    /*----------------------------------------------------*/
+    [RFO003],
+    [Obbligatorio],
+    [Il sistema deve validare i requisiti inseriti all'interno del file CSV],
+    [UC_1, UC_1.4],
+    /*----------------------------------------------------*/
+    [RFO004],
+    [Obbligatorio],
+    [Il sistema deve informare l'utente se il file CSV caricato non è valido in caso di colonne id e descrizione mancanti],
+    [UC_1.4],
+    /*----------------------------------------------------*/
+    [RFO005],
+    [Obbligatorio],
+    [Il sistema deve fornire una valutazione dei requisiti in termini di completezza, coerenza e adderenza al codice],
+    [UC_2, UC_2.1, UC_2.2, Capitolato],
+    /*----------------------------------------------------*/
+    [RFO006],
+    [Obbligatorio],
+    [L'utente deve ricevere suggerimenti su come rendere i requisiti più specifici, misurabili, realizzabili e pertinenti],
+    [Capitolato, UC_4.1.1.5],
+    /*----------------------------------------------------*/
+    [RFO007],
+    [Obbligatorio],
+    [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
+    [UC_2],
+
+    /*----------------------------------------------------*/
+    [RFO008],
+    [Obbligatorio ],
+    [Il sistema deve tracciare l'implementazione dei requisiti nel codice e verificarne la copertura],
+    [Capitolato, UC_2.2, UC_7],
+    /*----------------------------------------------------*/
+    
+    [RFO009],
+    [Obbligatorio],
+    [Il sistema deve consentire l'esportazione dei dati in formato CSV ],
+    [UC_3, UC_3.1, UC_3.2],
+    
+    /*----------------------------------------------------*/
+    [RFO010],
+    [Obbligatorio],
+    [Il sistema deve visualizzare graficamente i risultati delle analisi integrandoli nella lista dei requisiti],
+    [UC_4, UC_4.1, UC_4.1.1, UC_4.1.1.1, UC_4.1.1.4, UC_4.1.1.5, UC_4.1.1.6],
+    /*----------------------------------------------------*/
+    [RFO011],
+    [Obbligatorio],
+    [Il sistema deve filtrare i risultati delle analisi in base ai criteri specificati dall'utente (ID, descrizione, file di implementazione)],
+    [UC_5],
+    /*----------------------------------------------------*/
+    [RFO012],
+    [Obbligatorio],
+    [Il sistema deve consentire l'analisi di un singolo requisito],
+    [UC_6],
+    /*----------------------------------------------------*/
+    [RFO013],
+    [Obbligatorio],
+    [Il sistema deve informare l'utente nel caso, a seguito di un analisi, non ci siano risultati],
+    [UC_4.1.1.6],
+    /*----------------------------------------------------*/
+    [RFF014],
+    [Facoltativo],
+    [Il codice relativo ad un requisito da analizzare può essere presente in file diversi],
+    [Proponente],
+    /*----------------------------------------------------*/
+    [RFO015],
+    [Obbligatorio],
+    [L'utente deve essere in grado di scegliere il modello da utilizzare prima dell'analisi],
+    [UC_10, Proponente],
+      /*----------------------------------------------------*/
+    [RFF016],
+    [Facoltativo],
+    [L'utente deve essere in grado di configurare il modello utilizzato per l'analisi],
+    [Proponente],
+
+    /*----------------------------------------------------*/
+    [RFO017],
+    [Obbligatorio],
+    [L'utente deve essere in grado di configurare l'endpoint di ollama ],
+    [UC_11, Proponente],
+    /*----------------------------------------------------*/
+    [RFO018],
+    [Obbligatorio],
+    [L'utente deve essere in grado di configurare la soglia del quality score accettabile],
+    [UC_12, Proponente],
+    /*----------------------------------------------------*/
+    [RVF019],
+    [Facoltativo],
+    [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
+    [UC_2.6],
+    /*----------------------------------------------------*/
+    [RFO020],
+    [Obbligatorio],
+    [Il sistema deve permettere l'esclusione dall'analisi di alcuni file, indicati all'interno di un documento (file .reqignore)],
+    [UC_8, Proponente],
 
 )
-#align(center, "Tab. 1");
+#align(center, "Table 1: Requisiti Funzionali");
 
 
 
@@ -1105,31 +1102,31 @@ Questi requisiti descrivono cosa il sistema deve fare
 == Requisiti di qualità
 Questi requisiti riguardano le caratteristiche qualitative del sistema
 #table(
-  columns: (0.5fr,1fr,3.5fr,1fr),
-  /*----------------------------------------------------*/
-  table.header(
-  [*Codice*],
-  [*Classificazione*],
-  [*Descrizione*],
-  [*Fonti*],
-  ),
-  /*----------------------------------------------------*/
-  [RQO001],
-  [Obbligatorio],
-  [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove feature in base a esigenze o aggiornamenti futuri del progetto],
-  [Capitolato],
-  /*----------------------------------------------------*/
-  [RQO002],
-  [Obbligatorio],
-  [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme di Progetto]],
-  [#text(style:"italic")[Norme di Progetto]],
-  /*----------------------------------------------------*/
-  [RQO003],
-  [Obbligatorio],
-  [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Piano di Progetto]],
-  [#text(style:"italic")[Piano di Progettoo]],
+    columns: (0.5fr,1fr,3.5fr,1fr),
+    /*----------------------------------------------------*/
+    table.header(
+    [*Codice*],
+    [*Classificazione*],
+    [*Descrizione*],
+    [*Fonti*],
+    ),
+    /*----------------------------------------------------*/
+    [RQO001],
+    [Obbligatorio],
+    [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove feature in base a esigenze o aggiornamenti futuri del progetto],
+    [Capitolato],
+    /*----------------------------------------------------*/
+    [RQO002],
+    [Obbligatorio],
+    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme di Progetto]],
+    [#text(style:"italic")[Norme di Progetto]],
+    /*----------------------------------------------------*/
+    [RQO003],
+    [Obbligatorio],
+    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Piano di Progetto]],
+    [#text(style:"italic")[Piano di Progetto]],
 )
-#align(center, "Tab. 2");
+#align(center, "Table 2: Requisiti di qualità");
 
 
 
@@ -1139,42 +1136,42 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
 == Requisiti di vincolo 
 Questi requisiti specificano limiti tecnici o di conformità 
 #table(
-  columns: (0.5fr,1fr,3.5fr,1fr),
-  /*----------------------------------------------------*/
-  table.header(
-  [*Codice*],
-  [*Classificazione*],
-  [*Descrizione*],
-  [*Fonti*],
-  ),
-  /*----------------------------------------------------*/
-  [RVO001],
-  [Obbligatorio],
-  [Deve supportare i linguaggi C/C++],
-  [Capitolato],
-  /*----------------------------------------------------*/
-  [RVF002],
-  [Facoltativo],
-  [Deve supportare altri linguaggi oltre a C/C++],
-  [Capitolato],
-  /*----------------------------------------------------*/
-  [RVF003],
-  [Facoltativo],
-  [Il sistema deve fornire valutazioni conformi alle normative sulla sicurezza funzionale (ISO 26262 o IEC 61508)],
-  [Capitolato],
-  /*----------------------------------------------------*/
-  [RVO004],
-  [Obbligatorio],
-  [Il sistema deve comunicare con un modello LLM attraverso una REST API ],
-  [UC_2],
+    columns: (0.5fr,1fr,3.5fr,1fr),
     /*----------------------------------------------------*/
-  [RVO005],
-  [Obbligatorio],
-  [L'estensione di Visual Studio Code deve essere in inglese],
-  [Committente],
-  
+    table.header(
+    [*Codice*],
+    [*Classificazione*],
+    [*Descrizione*],
+    [*Fonti*],
+    ),
+    /*----------------------------------------------------*/
+    [RVO001],
+    [Obbligatorio],
+    [Deve supportare i linguaggi C/C++],
+    [Capitolato],
+    /*----------------------------------------------------*/
+    [RVF002],
+    [Facoltativo],
+    [Deve supportare altri linguaggi oltre a C/C++],
+    [Capitolato],
+    /*----------------------------------------------------*/
+    [RVF003],
+    [Facoltativo],
+    [Il sistema deve fornire valutazioni conformi alle normative sulla sicurezza funzionale (ISO 26262 o IEC 61508)],
+    [Capitolato],
+    /*----------------------------------------------------*/
+    [RVO004],
+    [Obbligatorio],
+    [Il sistema deve comunicare con un modello LLM attraverso una REST API ],
+    [UC_2],
+      /*----------------------------------------------------*/
+    [RVO005],
+    [Obbligatorio],
+    [L'estensione di Visual Studio Code deve essere in inglese],
+    [Proponente],
+    
 )
-#align(center, "Tab. 3");
+#align(center, "Table 3: Requisiti di vincolo");
 \
 \
 \
@@ -1184,31 +1181,29 @@ Questi requisiti specificano limiti tecnici o di conformità
 Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del sistema.
 
 #table(
-  columns: (0.5fr,1fr,3.5fr,1fr),
-  /*----------------------------------------------------*/
-  table.header(
-  [*Codice*],
-  [*Classificazione*],
-  [*Descrizione*],
-  [*Fonti*],
-  ),
-  /*----------------------------------------------------*/
-  [RPD001],
-  [Desiderabile],
-  [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta (risposte con tempo di attesa >20s)  o a un modello troppo grande (prompt maggiore di 6000 token e/o velocità di risposta < 20 token/s)],
-  [UC_2.4, UC_2.5],
-  /*----------------------------------------------------*/
-  [RPO002],
-  [Obbligatorio],
-  [Il sistema deve informare l'utente in caso di errore di connessione e consentire di riprovare],
-  [UC_2.4],
+    columns: (0.5fr,1fr,3.5fr,1fr),
+    /*----------------------------------------------------*/
+    table.header(
+    [*Codice*],
+    [*Classificazione*],
+    [*Descrizione*],
+    [*Fonti*],
+    ),
+    /*----------------------------------------------------*/
+    [RPD001],
+    [Desiderabile],
+    [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta (risposte con tempo di attesa >20s)  o a un modello troppo grande (prompt maggiore di 6000 token e/o velocità di risposta < 20 token/s)],
+    [UC_2.4, UC_2.5],
+    /*----------------------------------------------------*/
+    [RPO002],
+    [Obbligatorio],
+    [Il sistema deve informare l'utente in caso di errore di connessione e consentire di riprovare],
+    [UC_2.4],
   
-)
-#align(center, "Tab. 4");
+  )
+#align(center, "Table 4: Requisiti Prestazionali");
 #pagebreak()
-== Tracciamento 
-
-
+== Tracciamento dei Requisiti
 
 #align(center)[
   #table(
@@ -1219,12 +1214,12 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [UC_1.1], [RFO001],
     [UC_1.2], [],
     [UC_1.4], [RFO003, RFO004],
-    [UC_2],   [RFO005],
-    [UC_2.1], [RFO001, RF002],
-    [UC_2.2], [RFO008],
+    [UC_2],   [RFO005, RVO004],
+    [UC_2.1], [RFO005],
+    [UC_2.2], [RFO005],
     [UC_2.3], [],
-    [UC_2.4], [],
-    [UC_2.5], [],
+    [UC_2.4], [RPD001,RPO002],
+    [UC_2.5], [RPD001],
     [UC_2.6], [RVF019],
     [UC_3],   [RFO009],
     [UC_3.1], [RFO009],
@@ -1261,56 +1256,38 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [UC_9.1.2.3], [RFO003],
     [UC_10],[RFO015],
     [UC_11],[RFO017],
-    [UC_12],[RF018],
+    [UC_12],[RFO018],
     [UC_12.1],[]
-  )
+)
 ]
 
-#align(center, "Tab. 5");
-
+#align(center, "Table 5: Tracciamento dei Requisiti");
 
 \
 \
-== Riepilogo 
-#table(
-  align: (center),
-  columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
-  [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Facoltativo*],[*Totale*],
-  [Funzionale],   [18],               [],               [2],           [20],
+== Riepilogo
 
-  [Di Qualità],   [3],               [],               [],           [3],
+  #table(
+    align: (center),
+    columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
+    [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Facoltativo*],[*Totale*],
+    [Funzionale],   [18],               [],               [2],           [20],
 
-  [Di Vincolo],    [3],               [],               [3],           [6],
-  
-  [Prestazionale],  [1],               [1],               [],           [2],
+    [Di Qualità],   [3],               [],               [],           [3],
+
+    [Di Vincolo],    [3],               [],               [3],           [6],
+    
+    [Prestazionale],  [1],               [1],               [],           [2],
 )
-#align(center, "Tab. 6");
+#align(center, "Repilogo");
 
+#pagebreak()
 
+#outline(
+  title: [Elenco delle immagini],
+  target: figure.where(kind: image),
+)
 
-= Elenco delle immagini
-- Figure 1:  Panoramica delle funzionalità principali del plugin.
-- Figure 2: UC_1 - Importazione dei requisiti da file
-- Figure 3: UC_2 - Analisi dei requisiti e dell’implementazione
-- Figure 4: UC_3 - Esportazione dei requisiti su file
-- Figure 5: UC_4 - Visualizzazione dei risultati
-- Figure 6: UC_4 - Diagramma di dettaglio sulla visualizzazione dei risultati
-- Figure 7: UC_4.1 - Visualizzazione di un singolo risultato
-- Figure 8: UC_4.1 - Visualizzazione di un singolo risultato
-- Figure 9: UC_4.1.1.5 - Visualizzazione dei suggerimenti
-- Figure 10: UC_4.1.1.6 - Visualizzazione dei problemi
-- Figure 11: UC_5 - Filtraggio dei requisiti
-- Figure 12: UC_6 - Analisi di un singolo requisito
-- Figure 13: UC_7 - Funzione di tracciamento dei requisiti
-- Figure 14: UC_8 - Configurazione dei path da ignorare
-- Figure 15: UC_9 - Visualizzazione dei requisiti
-- Figure 16: UC_9 - Deettaglio sulla visualizzazione dei requisiti
-- Figure 17: UC_9.1 - Visualizzazione di un singolo requisito
-- Figure 18: UC_9.1.1 - Visualizzazione in dettaglio di un singolo requisito
-- Figure 19: UC_9.1.2 - Visualizzazione delle informazioni di tracciamento di un requisito
-- Figure 20: UC_10 - Configurazione del modello LLM per l'analisi
-- Figure 21: UC_11 - Configurazione dell'endpoint di Ollama
-- Figure 22: UC_12 - Configurazione della soglia del quality score
 
 
 
@@ -1318,9 +1295,9 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
 
 = Elenco delle tabelle 
 
-- Requisiti funzionali - Tab. 1
-- Requisiti di qualità - Tab. 2
-- Requisiti di vincolo - Tab. 3
-- Requisiti Prestazionali - Tab. 4
-- Tracciamento - Tab. 5
-- Riepilogo - Tab. 6
+- Table 1: Requisiti funzionali 
+- Table 2: Requisiti di qualità 
+- Table 3: Requisiti di vincolo
+- Table 4: Requisiti Prestazionali
+- Table 5: Tracciamento Dei Requisiti
+- Table 6: Riepilogo
