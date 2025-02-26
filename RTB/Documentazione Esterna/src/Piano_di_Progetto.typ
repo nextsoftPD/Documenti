@@ -11,6 +11,7 @@
   version: "0.3.1",
   date: "23/11/2024",
   versionamento: (
+    "0.4.0", "15/02/2024", "Stefano Baso", "Miglioramento sezione periodi", "",
     "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "",
     "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
     "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
@@ -498,31 +499,147 @@ Questa suddivisione in fasi garantisce un flusso di lavoro organizzato, con la p
 caption: "Tabella riassuntiva delle fasi del progetto"
 )
 
-== Periodi
+= Pianificazione
 
-=== Periodo 1 : Organizzazione Iniziale
+Nella seguente sezione verrà sviluppata nel dettaglio la suddivisione del periodo temporale che intercorre tra l'assegnazione dell'appalto e la consegna del RTB. Nelle varie fasi verrà elencato il periodo di svolgimento, gli obiettivi e i ruoli. Ogni sprint è bisettimanale e prevede un incontro interno a metà sprint, per fare il punto della situazione e vedere eventuali problemi, un secondo incontro verrà fatto a fine di ogni sprint per verificare i risultati ottenuti e programmare i compiti del successivo sprint. 
 
-*Durata:* 28/10/2024 - 12/11/2024
+== Sprint 1 - Acquisizione di conoscenze
 
-Durante questo periodo, il team si è concentrato sulla definizione delle basi organizzative del progetto. Sono stati definiti elementi essenziali come il nome del gruppo, il logo, l'email e i canali di comunicazione (Discord, WhatsApp), oltre alla selezione di strumenti per il versionamento (GitHub) e la documentazione (Drive, GitHub, Typst). È stata inoltre avviata un'analisi preliminare dei capitolati e sono stati redatti i primi verbali interni ed esterni. Infine, è stata strutturata la repository su GitHub e pianificato un primo incontro con l'azienda per discutere dettagli tecnici e organizzativi
+Periodo 01/12/2024 - 20/12/2024
 
-=== Periodo 2: Analisi dei Requisiti e Tecnologie
+In questo sprint iniziale, data la scarsa conoscenza delle tecnologie richieste, viene predisposto un periodo di studio di esse con lo scopo di formazione del gruppo.
 
-*Durata:* 12/11/2024 - 2/12/2024
+=== Obiettivo
 
-In questa fase, il team ha approfondito lo studio delle tecnologie richieste, come NodeJS, TypeScript, Ollama e strumenti relativi a LLM open source, utilizzando Miro per favorire la collaborazione. È stata avviata la stesura delle Norme di Progetto e l'analisi iniziale dei requisiti, integrando il feedback ricevuto durante gli incontri con l'azienda. Inoltre, sono stati implementati GitHub Projects per la gestione dei compiti e per facilitare l'organizzazione interna del lavoro.
+L'obiettivo è la ricerca delle librerie consigliate e la redazione di file usando il tool online Notion per formare tutti i membri del progetto ed arrivare ad un livello di conoscenze tale da affrontare in modo consapevole il PoC.
 
-=== Periodo 3: Consolidamento dell'Analisi e Diagrammi
+=== Ruoli richiesti
 
-*Durata:* 2/12/2024 - 18/12/2024
+I ruoli coinvolti sono:
 
-Il team si è focalizzato sulla realizzazione di una prima versione di documenti chiave, come le Norme di Progetto, il Piano di Progetto e il Piano di Qualifica. Parallelamente, sono stati sviluppati diagrammi preliminari di attività e valutati rischi organizzativi e tecnologici. È stato anche introdotto un sistema per centralizzare la conoscenza attraverso strumenti come Notion, facilitando la sincronizzazione delle informazioni all'interno del gruppo.
+- Analista
+- Progettista
 
-=== Periodo 4: Presentazione dell'Analisi e Proposta Tecnica
+=== Attività
 
-*Durata:* 18/12/2024 - 15/01/2025
+Il completamento di questo sprint prevede la chiara conoscienza da parte del gruppo delle tecnologie da usare, vengono quindi fatti dei test in locale di vari LLM testandone i parametri e risultati e chiamate API per prendere familiarità con queste tecnologie.
 
-In questa fase, il team ha organizzato un incontro con l'azienda per presentare i requisiti definiti, discutere possibili rischi e raccogliere feedback. Sulla base delle raccomandazioni ricevute, sono stati effettuati aggiustamenti ai documenti RTB, come il Piano di Progetto e il Piano di Qualifica. Infine, sono stati perfezionati aspetti tecnologici attraverso prove e studi avanzati per garantire la fattibilità tecnica del progetto.
+== Sprint 2 - Analisi e documentazione
+
+Periodo: 21/12/2024 - 03/01/2024
+
+Nel secondo sprint vengono consolidate e confermate le decisioni riguardanti l'andamento del lavoro contenute nel way of working. Vengono inoltre definite le norme da adottare al fine di raggiungere l'ottimo in termini di efficienza ed efficacia, a tal proposito è necessario fissare i requisiti principali da rispettare all'interno del progetto.
+
+=== Obiettivo
+
+L'obiettivo di questa fase è lo sviluppo di una struttura di base dei seguenti documenti, definendone inizialmente i concetti e le sezioni principali. I documenti sono:
+
+- *Analisi dei Requisiti*: compilato dagli Analisti, contiene i casi d'uso analizzati e i requisiti del prodotto
+
+- *Piano di Progetto*: compilato dal Responsabile e dagli Amministratori, contiene la divisione delle risorse, il piano di preventivo e consuntivo e la pianificazione dei periodi
+
+- *Piano di Qualifica*: compilato dagli Amministratori e Progettisti, contiene i modelli, indici e metriche scelte per raggiungere gli obiettivi di efficienza e efficacia
+
+- *Norme di Progetto*: compilato dagli Amministratori, contiene le principali decisioni riguardanti il way of working
+
+- *Glossario*: il suo contenuto viene aggiornato in parallelo con il resto dei documenti, contiene una definizione chiara di tutti i termini tecnici / ambigui presenti nei documenti
+
+=== Ruoli richiesti
+
+I ruoli coinvolti in questo sprint sono:
+
+- Responsabile
+- Amministratore
+- Analista
+- Progettista
+
+=== Attività
+
+L'attività assegnata al secondo sprint è:
+
+- Scrittura della documentazione: per ogni documento sopracitato viene redatta una struttura iniziale al fine di suddividere poi le sezioni in task e assegnarle alle relative persone di competenza. Trattandosi di una stesura iniziale del documento verranno migliorati e integrati nei successivi sprint.
+
+== Sprint 3 - Baseline documentazione
+
+Periodo: 04/01/2025 - 17/01/2025
+
+Questo sprint è dedicato al consolidamento dello sprint precedente e alla formalizzazione delle decisioni prese durante gli incontri. Vengono descritte in ottica più approfondita le norme da seguire nella stesura di tutti i documenti e le metriche riguardanti i test e il codice.
+
+=== Obiettivo
+
+In parallelo viene continuata la stesura dei documenti AdR, PdQ, PdP e NdP, verificando per tutti la coerenza con gli obiettivi decisi inizialmente. Lo scopo dunque è avere una più chiara definizione di tutte le norme e metriche per iniziare lo sviluppo del codice e procedere poi con i test.
+
+=== Ruoli richiesti
+
+I ruoli coinvolti in questo sprint sono:
+
+- Responsabile
+- Amministratore
+- Analista
+- Progettista
+- Verificatore
+
+=== Attività
+
+Le attività principali sono:
+
+- Scrittura delle metriche e indici con formule di calcolo, soglie limite e relative tabelle.
+- Applicazione del nuovo template ai documenti
+- Verifiche di ambiguità tra documenti
+
+== Sprint 4 - Baseline PoC
+
+Periodo: 07/02/2025 - 20/02/2025
+
+Questo sprint prevede l'applicazione di quanto definito finora per la progettazione del PoC. Verrà sviluppato parallelamente il frontend e il backend, e sviluppando la loro integrazione in un secondo momento.
+
+=== Obiettivo
+
+L'obiettivo è avere una grafica del plug-in funzionante integrata con le chiamate API in grado di soddisfare le prime richieste di test su requisiti d'esempio. Vengono inoltre inseriti e integrati in modo incrementale i diagrammi dei casi d'uso nel documento AdR.
+
+=== Ruoli richiesti
+
+I ruoli coinvolti in questo sprint sono:
+
+- Responsabile
+- Amministratore
+- Progettista
+- Programmatore
+
+=== Attività
+
+Le attività da svolgere per il completamento di questo sprint sono:
+
+- Sviluppo interfaccia grafica
+- Sviluppo chiamate API ai modelli LLM
+- Integrazione codice in preparazione alla fase di test
+- Scrittura nella documentazione dei diagrammi UML
+
+== Sprint 5 - Verifica finale del prodotto e documentazione
+
+Periodo: 21/02/2025 - 28/02/2025
+
+Questo sprint è focalizzato sulla validazione del prodotto finale e sulla conclusione della documentazione. Comprende la verifica della conformità del sistema ai requisiti, il testing finale, la correzione di eventuali anomalie e la preparazione della documentazione definitiva. 
+
+=== Obiettivo
+
+L'obiettivo è assicurare che il prodotto sia pronto per il rilascio e soddisfi gli standard qualitativi richiesti e definiti. Verrà richiesto un incontro con l'azienda per mostrare il PoC completo e ottenere feedback sul miglioramento.
+
+=== Ruoli richiesti
+
+I ruoli coinvolti in questo sprint sono:
+
+- Responsabile
+- Amministratore
+- Verificatore
+
+=== Attività
+
+Le attività da svolgere sono:
+
+- Testare il prodotto e verificare la sua conformità con le metriche definite. Trattandosi di un PoC, quindi un prodotto temporaneo, non verranno rispettate tutte le metriche.
+- Verificare l'ultima versione di tutta la documentazione integrata delle novità dallo sprint precedente
+- Fissare un incontro con l'azienda
 
 #pagebreak()
 = Preventivo
