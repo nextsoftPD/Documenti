@@ -23,6 +23,7 @@
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
+    "0.6.2","26/02/2025","Ion Cainareanu","Outline automatico per le tabelle","",
     "0.6.1","26/02/2025","Malik Giafar Mohamed","Aggioramento data di creazione documento","Ion Cainareanu",
     "0.6.0","25/02/2025","Luca Parise, Ion Cainareanu, Marco Perazzolo","Modifiche post incontro con l'azienda","Malik Giafar Mohamed",
     "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","Ion Cainareanu",
@@ -972,6 +973,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 
 
 = Requisiti
+#show figure: set block(breakable: true)
 
 == Introduzione
 Il gruppo NextSoft, a seguita di una attenta analisi dichiara che i requisiti che il prodotto finale andrà a soddisfare sono i seguenti. Questi vengono mostrati di seguito in forma tabellare, seguendo quanto detto all'interno del documento #text(style: "italic", [Norme di Progetto])
@@ -980,8 +982,8 @@ Il gruppo NextSoft, a seguita di una attenta analisi dichiara che i requisiti ch
 == Requisiti Funzionali 
 
 Questi requisiti descrivono cosa il sistema deve fare 
-#table(
-
+#figure(
+  table(
 
     columns: (0.5fr,1fr,3.5fr,1fr),
     /*----------------------------------------------------*/
@@ -1091,9 +1093,9 @@ Questi requisiti descrivono cosa il sistema deve fare
     [Obbligatorio],
     [Il sistema deve permettere l'esclusione dall'analisi di alcuni file, indicati all'interno di un documento (file .reqignore)],
     [UC_8, Proponente],
-
+  ),
+  caption: [Requisiti Funzionali]
 )
-#align(center, "Table 1: Requisiti Funzionali");
 
 
 
@@ -1102,7 +1104,8 @@ Questi requisiti descrivono cosa il sistema deve fare
 
 == Requisiti di qualità
 Questi requisiti riguardano le caratteristiche qualitative del sistema
-#table(
+#figure(
+  table(
     columns: (0.5fr,1fr,3.5fr,1fr),
     /*----------------------------------------------------*/
     table.header(
@@ -1126,8 +1129,9 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
     [Obbligatorio],
     [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Piano di Progetto]],
     [#text(style:"italic")[Piano di Progetto]],
+),
+  caption: [Requisiti di Qualità]
 )
-#align(center, "Table 2: Requisiti di qualità");
 
 
 
@@ -1136,7 +1140,8 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
 
 == Requisiti di vincolo 
 Questi requisiti specificano limiti tecnici o di conformità 
-#table(
+#figure(
+  table(
     columns: (0.5fr,1fr,3.5fr,1fr),
     /*----------------------------------------------------*/
     table.header(
@@ -1171,8 +1176,10 @@ Questi requisiti specificano limiti tecnici o di conformità
     [L'estensione di Visual Studio Code deve essere in inglese],
     [Proponente],
     
+  ),
+  caption: [Requisiti di Vincolo]
 )
-#align(center, "Table 3: Requisiti di vincolo");
+
 \
 \
 \
@@ -1181,7 +1188,8 @@ Questi requisiti specificano limiti tecnici o di conformità
 
 Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del sistema.
 
-#table(
+#figure(
+  table(
     columns: (0.5fr,1fr,3.5fr,1fr),
     /*----------------------------------------------------*/
     table.header(
@@ -1201,13 +1209,15 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [Il sistema deve informare l'utente in caso di errore di connessione e consentire di riprovare],
     [UC_2.4],
   
-  )
-#align(center, "Table 4: Requisiti Prestazionali");
+  ),
+  caption: [Requisiti Prestazionali]
+)
+
 #pagebreak()
 == Tracciamento dei Requisiti
 
-#align(center)[
-  #table(
+#figure(
+  table(
     columns: (auto, auto),
     table.header([*Fonte*], [*Requisiti*]),
     [UC_1],   [RFO001, RFO003],
@@ -1259,16 +1269,16 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [UC_11],[RFO017],
     [UC_12],[RFO018],
     [UC_12.1],[]
+),
+  caption: [Tracciamento dei Requisiti]
 )
-]
-
-#align(center, "Table 5: Tracciamento dei Requisiti");
 
 \
 \
 == Riepilogo
 
-  #table(
+#figure(
+  table(
     align: (center),
     columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
     [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Facoltativo*],[*Totale*],
@@ -1279,8 +1289,9 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [Di Vincolo],    [3],               [],               [3],           [6],
     
     [Prestazionale],  [1],               [1],               [],           [2],
+),
+  caption: [Repilogo]
 )
-#align(center, "Repilogo");
 
 #pagebreak()
 
@@ -1289,16 +1300,7 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
   target: figure.where(kind: image),
 )
 
-
-
-
-\
-
-= Elenco delle tabelle 
-
-- Table 1: Requisiti funzionali 
-- Table 2: Requisiti di qualità 
-- Table 3: Requisiti di vincolo
-- Table 4: Requisiti Prestazionali
-- Table 5: Tracciamento Dei Requisiti
-- Table 6: Riepilogo
+#outline(
+  title: [Elenco delle tabelle],
+  target: figure.where(kind: table),
+)
