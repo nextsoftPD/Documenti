@@ -21,8 +21,9 @@
   approvazione: ("",),
   uso: "Esterno",
   version: "0.4.0",
-  date: "11/02/2025",
+  date: "23/11/2024",
   versionamento: (
+    "0.6.1","26/02/2025","Malik Giafar Mohamed","Aggioramento data di creazione documento","Ion Cainareanu",
     "0.6.0","25/02/2025","Luca Parise, Ion Cainareanu, Marco Perazzolo","Modifiche post incontro con l'azienda","Malik Giafar Mohamed",
     "0.5.0","18/02/2025","Luca Parise","Inserimento requisiti","Ion Cainareanu",
     "0.4.0", "11/02/2025", "Marco Perazzolo", "Inserimento dei diagrammi Use Case", "Ion Cainareanu",
