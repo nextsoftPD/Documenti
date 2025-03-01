@@ -11,7 +11,7 @@
   version: "0.4.1",
   date: "23/11/2024",
   versionamento: (
-    "0.5.0", "11/02/2025", "Malik Giafar Mohamed", "Modifiche generali alle sezioni del documento", "",
+    "0.5.0", "28/02/2025", "Malik Giafar Mohamed, Stefano Baso", "Modifiche generali alle sezioni del documento", "",
     "0.4.1", "11/02/2025", "Malik Giafar Mohamed","Integrazione di alcune specifiche relative al way of working","",
     "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo, Stefano Baso",
     "0.3.0", "05/01/2025", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu, Stefano Baso",
@@ -23,21 +23,24 @@
 = Introduzione
 == Scopo del documento
 Il presente documento ha lo scopo di definire in modo dettagliato le _best practice_#super("G")
-e il _way of working_#super("G") del nostro gruppo per il progetto al fine di garantire qualità e coerenza nel lavoro svolto. Il documento sarà quindi soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e
+e il _way of working_#super("G") del nostro gruppo per il progetto al fine di garantire qualità e coerenza nel lavoro svolto. Il documento sarà quindi soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
 
 == Scopo del prodotto
 Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
-è progettato per automatizzare il tracciamento dei _reuqisiti_#super("G") nei progetti software complessi,
-con un focus
+è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
 con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
 e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
 riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
-Inoltre, supporta gli sviluppatori nell'analisi di documenti tecnici,
-come datasheet e manuali, per garantire una corretta copertura dei requisiti.
+Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come knowledge,
+ad esempio datasheet e manuali, permette di garantire una corretta copertura dei requisiti.
 
-=== Riferimenti
+== Glossario
+I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
+nel documento Glossario.
+
+== Riferimenti
 *Riferimenti Normativi* 
 - Presentazione del capitolato *Requirement Tracker - Plug-in VS Code*
   - https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
@@ -48,26 +51,26 @@ come datasheet e manuali, per garantire una corretta copertura dei requisiti.
 - Materiale didattico del corso di Ingegneria del Software
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/
 - Documentazione GitHub:
-https://help.github.com/en/github
+  - https://help.github.com/en/github
 - Documentazione git:
-https://git-scm.com/docs
+  - https://git-scm.com/docs
 - Documentazione Typst:
   - https://typst.app/docs/
 - Documentazione Visual Studio Code:
   - https://code.visualstudio.com/docs
   - https://code.visualstudio.com/api
 - Documentazione Ollama:
-  - https://ollama.com/docs
+  - https://github.com/ollama/ollama/tree/main/docs
 - Documentazione NodeJS:
   - https://nodejs.org/en/docs/
 = Processi Primari
 ==  Fornitura
 === Scopo e aspettative
 Il processo di fornitura determina le procedure e le risorse necessarie per gestire
-e garantire la consegna del _capitolato_#super("G"). Tale processo è iniziato con l'aggiudicazione dell'appalto da parte di _NextSoft_#super("G").
+e garantire la consegna del prodotto. Tale processo è iniziato con l'aggiudicazione dell'appalto da parte di _NextSoft_#super("G").
 Il nostro gruppo si aspetta quindi una comunicazione costante ed efficace con
 il _proponente_#super("G") al fine di garantire il rispetto dei vincoli progettuali definiti
-nella presentazione del capitolato e di produrre un applicativo che soddisfi le esigenze del proponente.
+nella presentazione del _capitolato_#super("G") e di produrre un applicativo che soddisfi le esigenze del proponente.
 
 === Documentazione Fornita
 Il processo di fornitura prevede la produzione dei seguenti documenti:
@@ -92,9 +95,16 @@ Il gruppo si aspetta di:
 - Consegnare il prodotto entro i tempi stabiliti senza sprecare risorse
 - Soddisfare pienamente le richieste del proponente
 
-//=== Attività
+Il processo di sviluppo prevede le seguenti attività:
+- *Analisi dei Requisiti*
+- *Progettazione*
+- *Codifica*
+
 === Analisi dei Requisiti
-L'attività di analisi dei requisiti è compito degli _Analisti_#super("G"), consiste nell'analizzare ogni singolo requisito e caso d'uso del progetto. Ha lo scopo di:
+Durante l'attività di analisi dei requisiti vengono definiti e documentati i requisiti e i casi d'uso del sistema. I requisiti rappresentano le caratteristiche e le funzionalità che il sistema deve possedere per soddisfare le esigenze degli utenti e degli stakeholder. I casi d'uso, invece, descrivono le interazioni tra gli utenti e il sistema, specificando come il sistema deve comportarsi in risposta a determinate azioni degli utenti.
+
+
+L'analisi dei requisiti è compito degli _Analisti_#super("G"), consiste nell'analizzare ogni singolo requisito e caso d'uso del progetto. Ha lo scopo di:
 
 - Comprendere a fondo le necessità del proponente
 - Aiutare i _progettisti_#super("G")
@@ -102,7 +112,7 @@ L'attività di analisi dei requisiti è compito degli _Analisti_#super("G"), con
 
 ==== Casi d'uso
 Ogni caso d'uso verrà riportato con una denominazione chiara e univoca che identifichi l'azione principale e l'attore coinvolto, il formato adottato sarà il seguente:
-#align(center)[#strong[UC\_[Numero caso d'uso].[Numero sottocaso o scenario alternativo (opzionale)] - Titolo]]
+#align(center)[#strong[UC\_[Numero caso d'uso](.[Numero sottocaso o scenario alternativo])\* - Titolo]]
 
 Mentre saranno strutturati nel seguente modo : 
 - *Denominazione*: codice identificativo del caso d'uso, stabilito come enunciato sopra
@@ -134,21 +144,27 @@ Dove:
 ==== Scopo e aspettative
 L'attività di progettazione è legata al ruolo dei _Progettisti_#super("G"), consiste nel definire l'architettura della soluzione considerando i requisiti derivanti dall'analisi fatta in precedenza.
 
-==== Aspettative
 Il gruppo si aspetta di:
 - Definire un'architettura del sistema adeguata alle esigenze del proponente
 - Assicurare che tutte le scelte progettuali siano documentate e giustificate
 - Comunicare con gli stakeholders al fine di garantire che l'architettura soddisfi le aspettative
 ==== Requirements and Technology Baseline
-in questa _baseline_#super("G") dovranno essere forniti:
+Lo scopo della Requirements and Technology Baseline è di fornire una base solida per la progettazione e lo sviluppo del prodotto, dimostrando la fattibilità delle soluzioni proposte e garantendo che le tecnologie scelte siano adeguate per soddisfare i requisiti del proponente.
+
+In questa _baseline_#super("G") dovranno essere forniti:
 - *_Proof of Concept_*#super("G"): una raccolta di implementazioni di alcune funzionalità che il prodotto dovrà avere. L'obiettivo è dimostrare la fattibilità delle richieste del proponente
 - *Scelte tecnologiche*: verranno stabilite le tecnologie da utilizzare e le motivazioni legate a tali scelte
 - *Diagrammi dei casi d'uso*: verranno inclusi i diagrammi dei casi d'uso individuati durante l'analisi dei requisiti
+- *Test*: verranno definiti i test da eseguire sul prodotto.
+
 ==== Product Baseline
-Come nel caso precedente, verranno raccolte dai Progettisti le seguenti informazioni:
+Lo scopo della Product Baseline è di fornire un prodotto finale che verrà valutato come _MVP_#super[G], dimostrando che esso soddisfi i requisiti del proponente e che l'architettura definita nella RTB è stata implementata correttamente.
+
+Questa baseline si differenzia dalla prima per le seguenti informazioni raccolte dai progettisti:
 - *Diagrammi delle classi*: verranno utilizzati per descrivere l'architettura delle classi del prodotto finale
-- *Design Pattern*: la definizione dell'architettura può essere basata sull'utilizzo di design pattern, che consentono di risolvere problemi ricorrenti in modo rapido ed efficace. I design pattern sono schemi riutilizzabili di progettazione illustrati con diagrammi che ne mostrano la struttura;
-- *Test di unità*: ovvero i risultati dei test eseguiti per verificare che il funzionamento delle classi e dei singoli moduli che implementano il sistema siano corretti e conformi ai requisiti.
+- *_Design Pattern_*#super[G]: la definizione dell'architettura può essere basata sull'utilizzo di design pattern, che consentono di risolvere problemi ricorrenti in modo rapido ed efficace. I design pattern sono schemi riutilizzabili di progettazione illustrati con diagrammi che ne mostrano la struttura;
+- *_Test di unità_*#super[G]: ovvero i risultati dei test eseguiti per verificare che il funzionamento delle classi e dei singoli moduli che implementano il sistema siano corretti e conformi ai requisiti.
+
 === Codifica
 ==== Scopo
 L'attività di codifica è legata al ruolo dei _Programmatori_#super("G"), consiste nell'implementazione del prodotto software tenendo conto della progettazione.
@@ -158,7 +174,7 @@ Per la codifica del prodotto, i principali strumenti adottati saranno:
 - *StarUML*: per la creazione dei diagrammi UML
 ==== Metodi
 I metodi di un progetto verranno considerati accettabili solamente se brevi. Risulta essere una buona pratica in quanto porta notevoli vantaggi quali:
-- *Mantenibilità*: sono più facili da mantenere rispetto a metodi lunghi e complessi in quanto il codice è più leggibile e comprensibile. Si ottiene così un codice robusto e meno suscettibile a errori.
+- *Manutenibilità*: sono più facili da mantenere rispetto a metodi lunghi e complessi in quanto il codice è più leggibile e comprensibile. Si ottiene così un codice robusto e meno suscettibile a errori.
 - *Leggibilità*: il codice è reso più accessibile a tutti gli sviluppatori che potrebbero doverlo leggere, comprendere o modificare in futuro.
 - *Debugging*: se un metodo è breve e semplice, è più facile identificare eventuali bug o problemi nel codice. Questo rende il processo di debugging più efficiente.
 
@@ -196,7 +212,7 @@ I documenti ad uso interno sono destinati all'uso esclusivo dei membri del grupp
 - Norme di Progetto
 - Verbali interni
 ==== Documenti ad uso Esterno
-I Documenti ad uso esterno sono destinati all'uso del committente e agli stakeholders. I principali documenti ad uso esterno sono:
+I documenti ad uso esterno sono destinati all'uso del committente e agli stakeholders. I principali documenti ad uso esterno sono:
 - Analisi dei Requisiti
 - Piano di Qualifica
 - Piano di Progetto
@@ -243,7 +259,7 @@ In ogni pagina del documento sono presenti i seguenti elementi:
 - *Contenuto*
   - Testo del documento
 - *Piè di pagina*
-  - Numero di pagina: posizionato in basso al centro della pagina
+  - Numero di pagina: posizionato in basso a destra della pagina
 
 ==== Verbali
 I verbali sono documenti che riportano le decisioni prese durante le riunioni del gruppo di progetto. I verbali differiscono leggermente nello stile grafico del frontespizio degli altri documenti, e non contengono il registro dei cambiamenti.
@@ -259,17 +275,17 @@ Per la denominazione dei file si fa riferimento alla convenzione "CamelCase#supe
 Per questioni di praticità, questo tipo di nomenclatura vale solo per i documenti ad uso interno ed esterno, non viene applicata ai template, alle immagini e altri tipi di documento. La nomenclatura dei documenti senza versionamento utilizza sempre gli underscore al posto degli spazi, ma senza utilizzare il CamelCase.
 
 ==== Stile del testo
-Il testo dei documenti deve essere scritto in lingua italiana utilizzerà i seguenti formati di testo:
+Il testo dei documenti deve essere scritto in lingua italiana, e utilizzerà i seguenti formati di testo:
 - *Grassetto*: per evidenziare i titoli di sezioni
-- *Corsivo*: per far riferimento ad un un termine del glossario
-- *Monospace*: per riportare nomi di file, cartelle o elementi di programmazione
+- *Corsivo*: per far riferimento alla prima occorrenza di un termine del glossario
+- *Monospace*: per riportare nomi di file, cartelle o elementi che richiamano alla stesura di codice
 ==== Elenchi
 Gli elenchi puntati seguono le seguenti norme:
-- Il simbolo che scandisce ogni elemento dell'elenco è il pallino (•), al secondo e terzo livello si trovano rispettivamente il trattino e il triangolo nero (‣)
-- Le voci iniziano per lettera Maiuscola
+- Il simbolo che scandisce ogni elemento dell'elenco è il pallino (•), al secondo e terzo livello si trovano rispettivamente il trattino(-) e il triangolo nero (‣)
+- Le voci iniziano per lettera maiuscola
 - Le liste del tipo "Termine: descrizione" presentano il termine in grassetto con la prima lettera in maiuscolo
 ==== Sigle
-Nella documentazione verranno utilizzate delle sigle per facilitare l'identificazione di un documento, ruolo o revisione senza doverne scrivere il nome per intero. Queste sono rivelate utili soprattutto nell'utilizzo di tabelle.
+Nella documentazione verranno utilizzate delle sigle per facilitare l'identificazione di un documento, ruolo o revisione senza doverne scrivere il nome per intero. Queste si sono rivelate utili soprattutto nell'utilizzo di tabelle.
 
 Le sigle utilizzate sono le seguenti:
 - Sigle relative ai documenti:
@@ -293,10 +309,6 @@ Le sigle utilizzate sono le seguenti:
   - *Ve*: Verificatore
   - *Prg*: Programmatore
 
-==== Glossario
-I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice della loro prima occorrenza nel documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
-nel documento Glossario.
-
 ==== Elementi grafici
 Vengono seguite le seguenti norme per utilizzare immagini, grafici e tabelle:
 - *Immagini*: sono centrate e accompagnate da una didascalia
@@ -311,8 +323,8 @@ Per la stesura dei documenti finora sono stati utilizzati i seguenti strumenti:
 - *GitHub Actions*: utilizzate per la generazione dei file pdf derivanti dal codice sorgente dei documenti
 == Gestione della configurazione
 === Scopo e aspettative
-Il processo di Gestione della configurazione ha lo scopo di gestire in modo ordinato e sistematico
-la produzione di documenti e codice. Per ogni oggetto sottoposto a configurazione viene garantito il versionamento e controllo sulle modifiche per permettere il mantenimento dell'integrità del prodotto. Il gruppo si aspetta di mantenere una _repository_#super("G") organizzato e ben strutturato.
+Il processo di gestione della configurazione ha lo scopo di gestire in modo ordinato e sistematico
+la produzione di documenti e codice. Per ogni oggetto sottoposto a configurazione viene garantito il versionamento e il controllo sulle modifiche per permettere il mantenimento dell'integrità del prodotto. Il gruppo si aspetta di mantenere una _repository_#super("G") organizzata e ben strutturata.
 === Versionamento
 Per poter capire lo stato di avanzamento di un prodotto derivante delle attività del progetto è necessario un identificatore. Il formato del numero di versione utilizzato è il seguente:
 #align(center)[#strong[X . Y . Z]]
@@ -330,13 +342,15 @@ Per il versionamento si è scelto di utilizzare un repository GitHub, che, a sua
 La repository utilizzata dal gruppo per la creazione dei documenti è strutturata nel seguente modo:
 - `Candidatura`: contiene i documenti relativi alla candidatura del gruppo per il capitolato.
   - `src`: contiene il codice sorgente dei file pdf.
-  - `verbali`: contiene i verbali delle riunioni relative alla candidatura.
+  - `Verbali`: contiene i verbali esterni ed interni delle riunioni relativi alla candidatura.
 - `RTB`: contiene i documenti relativi alla milestone RTB, quindi le norme di progetto, il piano di progetto e di qualifica, l'analisi dei requisiti e il glossario.
   - `Documentazione Esterna`: contiene i documenti ad uso interno relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei file pdf.
+    - `Verbali`: contiene i verbali esterni fatti con il proponente per discutere del capitolato e del PoC.
     - `img`: contiene i file delle immagini a supporto dei documenti, ogni insimeme di immagini è raggruppato in una cartella denominata con la sigla del documento al quale essa è associata.
   - `Documentazione Interna`: contiene i verbali delle riunioni relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei file pdf.
+    - `Verbali`: contiene i verbali delle riunioni relative milesone rtb.
   `assets`: contiene tutto ciò che è di supporto alla documentazione, come:
   - file di template per i documenti.
   - il logo del gruppo, utilizzato per tutta la repository.
@@ -347,24 +361,22 @@ La repository è pubblica e si può facilmente trovare al seguente link:
 ==== PoC
 La repository del PoC è ancora da creare.
 === Branch
+Tutte le repository del gruppo si compongono di più _branch_#super[G], suddivisi ad hoc, in modo da garantire una separazione da ciò che è stabile e verificato e ciò che è in fase di sviluppo. Ogni membro può fare delle modifiche in un branch specifico a patto che esse siano relative solo ai configuration items#super("G") modificabili in quello specifico branch.
+
+La suddivisione dei branch varia in base allo scopo della repository. 
+
+
+In nessuna repository è consentito fare modificare direttamente il branch principale, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G").
+Si potranno applicare modifiche solo tramite il meccanismo di pull request#super("G"), con verifica obbligatoria da parte di un verificatore, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Nel caso di una minor invece, la verifica può essere svolta nel momento stesso in cui viene aggiunta una versione "stabile".
+
+
+Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei verificatori, a patto che sia solo allo scopo di risolvere errori ortografici o per migliorare la comprensibilità alcune frasi senza modificarne il signficicato logico. Questa decisione è stata presa al fine di evitare la creazione di numerose minor e di poter proseguire più velocemente con la stesura dei documenti.
 
 La repository dei documenti è suddivisa in più branch#super("G") così definiti:
 
 - *`main`*: il branch principale, che contiene l'ultima versione verificata di ogni documento
-- *`nome_documento`*: uno per ogni documento, è dove il documento vive e viene attivamente stilato dai membri del gruppo.
+- *`nome_documento`*: branch che assume il nome del documento a cui fa riferimento, qui sarà possibile modificare solo il documento in questione.
 - *`bugfix`*: branch secondario utilizzato per la correzione di errori di vario genere.
-
-In nessuna repository è consentito fare commit#super("G") direttamente sul branch main di nessuna repository, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G").
-Si potranno applicare modifiche solo tramite il meccanismo di pull request#super("G"), con verifica obbligatoria da parte di un verificatore, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Non è obbligatoria la verifica nel caso di una minor.
-
-Nel branch `nome_documento` invece ogni membro può fare delle modifiche a patto che siano relativi solo ai configuration items#super("G") modificabili in quello specifico branch.
-
-Potranno effettuare modifiche solo le persone incaricate di portare a termine i cambiamenti relativi ad una Change Request Form. Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei verificatori, a patto che sia solo allo scopo di risolvere errori ortografici o per migliorare la comprensibilità alcune frasi senza modificarne il signficicato logico. Questa decisione è stata presa al fine di evitare la creazione di numerose minor e di poter proseguire più velocemente con la stesura dei documenti.
-
-=== Issues e Pull Request
-Una volta verificata, una pull request può essere approvata dalla persona che l'ha creata, oppure dall'amministratore di progetto in caso sia rimasta aperta per troppo tempo. 
-
-Abbiamo deciso di associare le issue alle Change Request Form, dunque per assicurare la registrazione di tali cambiamenti, ad ogni issue dovrà essere associata una pull request.
 
 == Gestione della Qualità
 === Scopo
@@ -382,9 +394,8 @@ Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del ciclo di
 
 - *Check*: si verificano i risultati ottenuti confrontandoli con gli obiettivi stabiliti nella fase di pianificazione. Si analizzano i dati raccolti per determinare se le azioni intraprese hanno portato ai miglioramenti desiderati.
 
-- *Act*: In questa fase, si decide se standardizzare le nuove pratiche o apportare ulteriori modifiche. Se i risultati della fase di verifica dimostrano che le azioni intraprese hanno portato a miglioramenti significativi, queste diventano il nuovo standard. Altrimenti, si ritorna alla fase di pianificazione per individuare nuove azioni correttive.
+- *Act*: si decide se standardizzare le nuove pratiche o apportare ulteriori modifiche. Se i risultati della fase di verifica dimostrano che le azioni intraprese hanno portato a miglioramenti significativi, queste diventano il nuovo standard. Altrimenti, si ritorna alla fase di pianificazione per individuare nuove azioni correttive.
 
-Il ciclo di Deming è un processo .
 === Denominazione Metriche
 La denominazione delle metriche segue il seguente formato:
 #align(center)[#strong[M[Categoria][TipoProdotto][Numero]]]
@@ -528,20 +539,30 @@ Il gruppo adotta GitHub Projects come Issue Tracking System (ITS). GitHub Projec
 - `Done`: contiene le task completate e verificate.
 
 Ogni volta che è necessario portare a termine un compito, si segue questa procedura:
-1. Il responsabile crea e assegna la task su GitHub Issues.
-2. L'incaricato si assegna la task spostando la issue nella colonna corrispondente. Sono possibili spostamenti in avanti di più colonne, aggiungendo un commento che ne spiega il motivo.
-3. All'inizio del lavoro di produzione, la task viene marcata come `In progress` su GitHub Issues.
-4. Finito il lavoro di produzione, viene aperta la pull request su GitHub assegnando il verificatore. Inoltre, vengono aggiornate su GitHub Issues le ore di lavoro svolte.
-5. La task viene marcata come `In review` su GitHub Issues.
-6. Il verificatore si accerta della bontà del lavoro svolto.
-  - Se la verifica ha esito positivo:
-    1. Il verificatore conferma su GitHub la bontà dei cambiamenti effettuati e approva la pull request.
-    2. La task viene marcata come `In approvazione` su GitHub Issues.
-    3. Il cambiamento viene integrato nell'apposito branch.
-    4. La task viene marcata come `Done` su GitHub Issues.
-  - Se la verifica ha esito negativo:
-    1. Il verificatore richiede dei cambiamenti sul commit della pull request.
-    2. Si ritorna al punto 4.
++ Il responsabile crea e assegna la task su GitHub Issues
+  + una task può essere creata da chiunque, ma deve essere assegnata al responsabile per essere inserita nel progetto
+  + una issue può corrispondere a più task o ad una singola parte di una task
++ L'incaricato si assegna la task spostando la issue nella colonna `In progress`, segnando l'inizio del lavoro di produzione
+  + Sono possibili spostamenti in avanti di più colonne, aggiungendo un commento che ne spiega il motivo.
++ Finito il lavoro di produzione, viene aperta la pull request su GitHub per fare il merge dal branch sul quale si stava lavorando al branch principale
+  + Una pull request può corrispondere a più issues
++ La task viene marcata come `In review` su GitHub Issues.
++ Il verificatore verifica la presenza di errori, incongruenze o bug all'interno del lavoro svolto.
+  + Se la verifica ha esito positivo:
+    + Il verificatore approva su GitHub la pull request con una review, la quale può anche essere richiesta da chi apre la pull request
+    + Il cambiamento viene integrato branch principale, facendo il merge della pull request
+    + La issue viene marcata come `Done` su GitHub Issues
+  + Se la verifica ha esito negativo:
+    + Il verificatore richiede dei cambiamenti sul commit della pull request
+    + Si ritorna al punto precedente
+
+*Considerazioni aggiuntive:*
+
+  - Una pull request può essere approvata dalla persona che l'ha creata, oppure dall'amministratore di progetto in caso sia rimasta aperta per troppo tempo. 
+  - Nel caso della verifica dei documenti, il verificatore aggiunge il suo nome nella lista dei verificatori del documento o nella colonna di verifica del versionamento
+  - Nel caso un branch contenga troppi errori, o ci siano state molte modifiche ad una pull request molto vecchia, il verificatore può richiedere all'amministratore di chiudere quella pull-request con un commento che ne spiega il motivo
+  - Nel caso in cui la verifica abbia esito negativo, quando verranno effettuate le modifiche, non sarà necessessario aumentare di una versione, poichè il configuration item verrà ritenuto valido quando "stabile" e di conseguenza privo di errori o incongruenze
+  - I cambiamenti possono essere richiesti tramite un commento su github o possono essere accordati in una riunione o una breve chiamata
 
 === Riunioni
 Le riunioni sono un momento fondamentale per coordinare le attività del gruppo e prendere decisioni importanti. Esse si dividono in:
