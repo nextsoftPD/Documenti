@@ -11,7 +11,7 @@
   version: "0.4.1",
   date: "23/11/2024",
   versionamento: (
-    "0.6.0", "01/03/2025", "Ion Cainareanu", "Miglioramenti per varie sezioni", "",
+    "0.6.0", "01/03/2025", "Ion Cainareanu", "Miglioramenti per varie sezioni", "Malik Giafar Mohamed",
     "0.5.0", "28/02/2025", "Malik Giafar Mohamed, Stefano Baso", "Modifiche generali alle sezioni del documento", "Ion Cainareanu",
     "0.4.1", "11/02/2025", "Malik Giafar Mohamed","Integrazione di alcune specifiche relative al way of working","Ion Cainareanu",
     "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo, Stefano Baso",
@@ -320,7 +320,8 @@ Vengono seguite le seguenti norme per utilizzare immagini, grafici e tabelle:
 Per la stesura dei documenti finora sono stati utilizzati i seguenti strumenti:
 - *Typst*: linguaggio di markup simile a Markdown utilizzato per la stesura di documenti
 - *Visual Studio Code*: IDE utilizzato per la scrittura del codice sorgente dei documenti
-- *Typst.app*: sito web utilizzato come alternativa per la stesura dei documenti- *GitHub Actions*: utilizzate per la generazione automatica dei file pdf derivanti dal codice sorgente dei documenti
+- *Typst.app*: sito web utilizzato come alternativa per la stesura dei document
+- *GitHub Actions*: utilizzate per la generazione automatica dei file pdf derivanti dal codice sorgente dei documenti
 == Gestione della configurazione
 === Scopo e aspettative
 Il processo di gestione della configurazione ha lo scopo di gestire in modo ordinato e sistematico
@@ -550,7 +551,7 @@ Ogni volta che è necessario portare a termine un compito, si segue questa proce
 + La task viene marcata come `In review` su GitHub Issues.
 + Il verificatore verifica la presenza di errori, incongruenze o bug all'interno del lavoro svolto.
   + Se la verifica ha esito positivo:
-    + Il verificatore approva su GitHub la pull request con una review, che può essere richiesta da chi la apre
+    + Il verificatore approva la pull request su GitHub con una review, che può essere richiesta da chi ha aperto la pull request
     + Il cambiamento viene integrato sul branch principale, facendo il merge della pull request
     + La issue viene marcata come `Done` su GitHub Issues
   + Se la verifica ha esito negativo:
