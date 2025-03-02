@@ -11,6 +11,7 @@
   version: "0.4.1",
   date: "23/11/2024",
   versionamento: (
+    "0.6.0", "01/03/2025", "Ion Cainareanu", "Miglioramenti per varie sezioni", "",
     "0.5.0", "28/02/2025", "Malik Giafar Mohamed, Stefano Baso", "Modifiche generali alle sezioni del documento", "Ion Cainareanu",
     "0.4.1", "11/02/2025", "Malik Giafar Mohamed","Integrazione di alcune specifiche relative al way of working","Ion Cainareanu",
     "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo, Stefano Baso",
@@ -178,7 +179,7 @@ I metodi di un progetto verranno considerati accettabili solamente se brevi. Ris
 - *Leggibilità*: il codice è reso più accessibile a tutti gli sviluppatori che potrebbero doverlo leggere, comprendere o modificare in futuro.
 - *Debugging*: se un metodo è breve e semplice, è più facile identificare eventuali bug o problemi nel codice. Questo rende il processo di debugging più efficiente.
 
-Per la dichiarazione dei dei metodi si fa riferimento alla convenzione "_CamelCase_#super("G")" per la scelta del nome del metodo.
+Per la dichiarazione dei metodi si fa riferimento alla convenzione "_CamelCase_#super("G")" per la scelta del nome del metodo.
 
 ==== Univocità dei nomi
 Tutte le variabili, i metodi e le classi dovranno avere un nome che li distingua univocamente, per evitare di creare confusione durante la stesura e l'analisi.
@@ -319,8 +320,7 @@ Vengono seguite le seguenti norme per utilizzare immagini, grafici e tabelle:
 Per la stesura dei documenti finora sono stati utilizzati i seguenti strumenti:
 - *Typst*: linguaggio di markup simile a Markdown utilizzato per la stesura di documenti
 - *Visual Studio Code*: IDE utilizzato per la scrittura del codice sorgente dei documenti
-- *Typst.app*: sito web utilizzato come alternativa per la stesura dei documenti
-- *GitHub Actions*: utilizzate per la generazione dei file pdf derivanti dal codice sorgente dei documenti
+- *Typst.app*: sito web utilizzato come alternativa per la stesura dei documenti- *GitHub Actions*: utilizzate per la generazione automatica dei file pdf derivanti dal codice sorgente dei documenti
 == Gestione della configurazione
 === Scopo e aspettative
 Il processo di gestione della configurazione ha lo scopo di gestire in modo ordinato e sistematico
@@ -333,6 +333,7 @@ dove:
 - *X* corrisponde ad una versione approvata dal Responsabile di Progetto. La numerazione parte da 0.
 - *Y* indica l'aggiunta di un incremento, senza però essere arrivati ad avere una versione rilasciabile del prodotto. La numerazione parte da 0 e si azzera ad ogni incremento di *X*.
 - *Z* viene incrementato ad ogni piccola modifica o correzione, questo tipo di versione assume il nome di _minor_. La numerazione parte da 0 e si azzera ad ogni incremento di *X* o *Y*.
+- Per evitare un eccessivo overhead burocratico, le versioni *Z* possono essere verificate insieme alle *Y*, mentre le versioni *X* devono sempre essere verificate prima di nuove modifiche.
 
 === Strumenti
 Per il versionamento si è scelto di utilizzare un repository GitHub, che, a sua volta, implementa il software di controllo versione distribuito Git.
@@ -347,10 +348,10 @@ La repository utilizzata dal gruppo per la creazione dei documenti è strutturat
   - `Documentazione Esterna`: contiene i documenti ad uso interno relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei file pdf.
     - `Verbali`: contiene i verbali esterni fatti con il proponente per discutere del capitolato e del PoC.
-    - `img`: contiene i file delle immagini a supporto dei documenti, ogni insimeme di immagini è raggruppato in una cartella denominata con la sigla del documento al quale essa è associata.
+    - `img`: contiene i file delle immagini a supporto dei documenti, ogni insieme di immagini è raggruppato in una cartella denominata con la sigla del documento al quale essa è associata.
   - `Documentazione Interna`: contiene i verbali delle riunioni relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei file pdf.
-    - `Verbali`: contiene i verbali delle riunioni relative milesone rtb.
+    - `Verbali`: contiene i verbali delle riunioni relative alla milestone RTB.
   `assets`: contiene tutto ciò che è di supporto alla documentazione, come:
   - file di template per i documenti.
   - il logo del gruppo, utilizzato per tutta la repository.
@@ -359,18 +360,21 @@ La repository utilizzata dal gruppo per la creazione dei documenti è strutturat
 La repository è pubblica e si può facilmente trovare al seguente link:
 - https://github.com/nextsoftPD/Documenti
 ==== PoC
-La repository del PoC è ancora da creare.
+La repository del PoC è stata creata come repository privata per garantire la riservatezza del codice e dei dati di sviluppo. Trattandosi di una demo, la sua struttura è volutamente semplice e focalizzata sulla dimostrazione delle funzionalità chiave del progetto.
+All'interno della repository è presente un file README che fornisce istruzioni dettagliate su come configurare e lanciare il PoC, includendo eventuali dipendenze richieste, comandi di avvio e linee guida per la corretta esecuzione.
+
+Il Proof of Concept è stato mostrato e condiviso con l'azienda proponente, che ha avuto modo di testarlo e fornire feedback.
 === Branch
 Tutte le repository del gruppo si compongono di più _branch_#super[G], suddivisi ad hoc, in modo da garantire una separazione da ciò che è stabile e verificato e ciò che è in fase di sviluppo. Ogni membro può fare delle modifiche in un branch specifico a patto che esse siano relative solo ai configuration items#super("G") modificabili in quello specifico branch.
 
 La suddivisione dei branch varia in base allo scopo della repository. 
 
 
-In nessuna repository è consentito fare modificare direttamente il branch principale, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G").
+In nessuna repository è consentito modificare direttamente il branch principale, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G").
 Si potranno applicare modifiche solo tramite il meccanismo di pull request#super("G"), con verifica obbligatoria da parte di un verificatore, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Nel caso di una minor invece, la verifica può essere svolta nel momento stesso in cui viene aggiunta una versione "stabile".
 
 
-Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei verificatori, a patto che sia solo allo scopo di risolvere errori ortografici o per migliorare la comprensibilità alcune frasi senza modificarne il signficicato logico. Questa decisione è stata presa al fine di evitare la creazione di numerose minor e di poter proseguire più velocemente con la stesura dei documenti.
+Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei verificatori, a patto che sia solo allo scopo di risolvere errori ortografici o per migliorare la comprensibilità alcune frasi senza modificarne il significato logico. Questa decisione è stata presa al fine di evitare la creazione di numerose minor e di poter proseguire più velocemente con la stesura dei documenti.
 
 La repository dei documenti è suddivisa in più branch#super("G") così definiti:
 
@@ -388,7 +392,7 @@ Il documento Piano di Qualifica#super("G") definisce le strategie e le metodolog
 === Ciclo di Deming
 Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del ciclo di Deming#super("G") (o PDCA),un approccio continuo e costante al miglioramento della qualità dei processi e dei prodotti, basandosi su uno schema sistematico e iterativo che consiste di quattro punti:
 
-- *Plan*: i identificano gli obiettivi di miglioramento e si pianificano le azioni necessarie per raggiungerli. Si analizzano i processi attuali, si raccolgono dati e si individuano le aree che necessitano di miglioramenti.
+- *Plan*: Si identificano gli obiettivi di miglioramento e si pianificano le azioni necessarie per raggiungerli. Si analizzano i processi attuali, si raccolgono dati e si individuano le aree che necessitano di miglioramenti.
 
 - *Do*: si implementano le azioni pianificate nella fase precedente. Si eseguono le attività necessarie per apportare i miglioramenti, raccogliendo dati e documentando i risultati ottenuti.
 
@@ -442,9 +446,6 @@ I test di regressione servono a testare che gli aggiornamenti o modifiche rilasc
 ==== Test di Accettazione
 Il test di accettazione o collaudo è un'attività esterna, supervisionata dal committente e consiste nel dimostrare il soddisfacimento dei requisiti. Al collaudo segue il rilascio del prodotto.
 
-==== Test di accettazione
-Il test di accettazione o collaudo è un'attività esterna, supervisionata dal committente#super("G") e consiste nel dimostrare il soddisfacimento dei requisiti. Al collaudo segue il rilascio del prodotto.
-
 === Strumenti
 Non sono ancora stati individuati strumenti per la verifica del codice.
 
@@ -485,7 +486,7 @@ Il processo di gestione dei processi identifica le attività e i compiti di prog
 === Ruoli di progetto
 I ruoli di progetto non sono assegnati a periodo ma ad attività, in modo da garantire una maggiore flessibilità e adattabilità alle esigenze del progetto. Questo significa che ogni membro del gruppo avrà un ruolo definito in base ad accordi presi sulla ripartizione di determinate task. 
 
-I ruoli che ciascun membro dovrà ricoprire sono i seugenti:
+I ruoli che ciascun membro dovrà ricoprire sono i seguenti:
 
 *Responsabile di Progetto*
 \
@@ -545,12 +546,12 @@ Ogni volta che è necessario portare a termine un compito, si segue questa proce
 + L'incaricato si assegna la task spostando la issue nella colonna `In progress`, segnando l'inizio del lavoro di produzione
   + Sono possibili spostamenti in avanti di più colonne, aggiungendo un commento che ne spiega il motivo.
 + Finito il lavoro di produzione, viene aperta la pull request su GitHub per fare il merge dal branch sul quale si stava lavorando al branch principale
-  + Una pull request può corrispondere a più issues
+  + Una pull request può corrispondere a più issues e quindi incorporare più task purché siano correlate tra loro
 + La task viene marcata come `In review` su GitHub Issues.
 + Il verificatore verifica la presenza di errori, incongruenze o bug all'interno del lavoro svolto.
   + Se la verifica ha esito positivo:
-    + Il verificatore approva su GitHub la pull request con una review, la quale può anche essere richiesta da chi apre la pull request
-    + Il cambiamento viene integrato branch principale, facendo il merge della pull request
+    + Il verificatore approva su GitHub la pull request con una review, che può essere richiesta da chi la apre
+    + Il cambiamento viene integrato sul branch principale, facendo il merge della pull request
     + La issue viene marcata come `Done` su GitHub Issues
   + Se la verifica ha esito negativo:
     + Il verificatore richiede dei cambiamenti sul commit della pull request
@@ -561,7 +562,7 @@ Ogni volta che è necessario portare a termine un compito, si segue questa proce
   - Una pull request può essere approvata dalla persona che l'ha creata, oppure dall'amministratore di progetto in caso sia rimasta aperta per troppo tempo. 
   - Nel caso della verifica dei documenti, il verificatore aggiunge il suo nome nella lista dei verificatori del documento o nella colonna di verifica del versionamento
   - Nel caso un branch contenga troppi errori, o ci siano state molte modifiche ad una pull request molto vecchia, il verificatore può richiedere all'amministratore di chiudere quella pull-request con un commento che ne spiega il motivo
-  - Nel caso in cui la verifica abbia esito negativo, quando verranno effettuate le modifiche, non sarà necessessario aumentare di una versione, poichè il configuration item verrà ritenuto valido quando "stabile" e di conseguenza privo di errori o incongruenze
+  - Nel caso in cui la verifica abbia esito negativo, quando verranno effettuate le modifiche, non sarà necessario aumentare di una versione, poiché il configuration item verrà ritenuto valido quando "stabile" e di conseguenza privo di errori o incongruenze
   - I cambiamenti possono essere richiesti tramite un commento su github o possono essere accordati in una riunione o una breve chiamata
 
 === Riunioni
