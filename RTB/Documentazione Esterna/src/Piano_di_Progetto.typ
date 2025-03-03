@@ -11,7 +11,7 @@
   version: "0.3.1",
   date: "23/11/2024",
   versionamento: (
-    "0.4.0", "15/02/2024", "Stefano Baso", "Miglioramento sezione periodi", "",
+    "0.4.0", "15/02/2024", "Stefano Baso", "Miglioramento sezione periodi", "Ion Cainareanu, Luca Parise",
     "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "",
     "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
     "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
@@ -81,11 +81,11 @@ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
 === Riferimenti informativi
 
 - T02 - Processi di ciclo di vita
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
 - T04 - Gestione di progetto 
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
 - T05 - Analisi dei requisiti
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
 
 #pagebreak()
 
