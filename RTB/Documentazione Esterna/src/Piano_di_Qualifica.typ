@@ -10,7 +10,7 @@
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
-    "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "",
+    "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "Ion Cainareanu",
     "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
     "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
     "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu",
@@ -65,7 +65,7 @@ Materiale didattico del corso
 
 == Scopo ed obiettivi
 
-La qualità di un sistema è determinata dai processi che lo costituiscono e viene misurata attraverso luso di metriche specifiche, atte a valutare tali processi e verificarne il raggiungimento degli obiettivi di qualità stabiliti. Il modello di riferimento è il _Ciclo di Deming_#super[G] o PDCA (Plan - Do - Check - Act), il quale consente di avere un miglioramento continuo tramite una gestione strutturata delle attività. Questo approccio si basa su una pianificazione accurata, il monitoraggio mediante metriche definite e l'integrazione dei risultati ottenuti nella fase di produzione operativa.
+La qualità di un sistema è determinata dai processi che lo costituiscono e viene misurata attraverso l'uso di metriche specifiche, atte a valutare tali processi e verificarne il raggiungimento degli obiettivi di qualità stabiliti. Il modello di riferimento è il _Ciclo di Deming_#super[G] o PDCA (Plan - Do - Check - Act), il quale consente di avere un miglioramento continuo tramite una gestione strutturata delle attività. Questo approccio si basa su una pianificazione accurata, il monitoraggio mediante metriche definite e l'integrazione dei risultati ottenuti nella fase di produzione operativa.
 
 Di seguito, vengono presentati i processi identificati e i corrispondenti livelli di qualità prefissati. Per ciascuna metrica è fornita una descrizione che ne illustra le modalità di applicazione e definisce i valori considerati accettabili nel contesto delle verifiche di qualità.
 
@@ -237,7 +237,7 @@ L'#text(style: "italic")[usabilità]#super[G] riguarda l'esperienza dell'utente 
 
 === Facilità di utilizzo
 
-Questa rappresenta la velocità con cui l'utente trova quello che sta cercando, calcolata in base al numero di click minimo che si deve effettuare per arrivare all'obbiettivo.
+Questa rappresenta la velocità con cui l'utente trova quello che sta cercando, calcolata in base al numero di click minimo che si deve effettuare per arrivare all'obiettivo.
 
 #figure(
   table(
@@ -269,7 +269,7 @@ $ V(G) = E - N +2P $
 
 in cui:
 - E è il numero di archi (transizioni tra i nodi),
-- N è il numero di nodi(blocchi di codice o decision points),
+- N è il numero di nodi (blocchi di codice o decision points),
 - P è il numero di componenti connesse (tipicamente P = 1 per un singolo metodo o funzione)
 \
 - *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una #text(style: "italic")[gerarchia]#super[G] di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il rischio di propagazione degli errori. Per un design più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
@@ -364,7 +364,7 @@ $ "RC" = (R#sub[ROS])/(R#sub[ROT]) 100 $
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS12], [Requirement coverage], [RC <= 75%], [100%],
+    [MPDS12], [Requirement coverage], [RC >= 75%], [100%],
     [MPDS13], [Requisiti obbligatori soddisfatti], [100%], [100%],
   ),
   caption: [Obiettivo di usabilità],
@@ -403,7 +403,7 @@ Questo modello prevede una stretta corrispondenza tra sviluppo e testing, assicu
 
 === Test di Unità
 
-I test di unità valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. Attualmente, nella prima versione del Piano di Qualifica, né le unità né i test corrispondenti sono stati definiti. La definizione delle unità avverrà con l'avvio del processo di progettazione e sviluppo software.
+I test di unità valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. Attualmente, nella prima versione del Piano di Qualifica, né le unità né i relativi  test corrispondenti sono stati definiti. La definizione delle unità avverrà con l'avvio del processo di progettazione e sviluppo software.
 
 === Test di Integrazione
 
@@ -420,7 +420,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
 === Test di Regressione
 
-I test di regressione servono a testare che le aggiornamenti / modifiche rilasciati nel software non incidano negativamente sulle funzioni già presenti. Ciò consiste nella ripetizione di test di unità, integrazione e sistema.
+I test di regressione servono a testare che gli aggiornamenti / modifiche rilasciati nel software non incidano negativamente sulle funzioni già presenti. Ciò consiste nella ripetizione di test di unità, integrazione e sistema.
 
 === Sviluppo
 
