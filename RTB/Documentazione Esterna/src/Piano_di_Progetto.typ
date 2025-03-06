@@ -45,7 +45,7 @@ Grazie alla sua struttura modulare, sarà possibile aggiungere nuove funzionalit
 
 Il contenuto del documento è organizzato nelle seguenti sezioni:
 
-- *Analisi dei rischi:* identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo.
+- *Rischi attesi e mitigazione:* identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo. Inoltre, viene fornita una soluzione per prevenire o mitigare questi rischi. 
 
 - *Modello di sviluppo:* descrizione delle metodologie e degli approcci adottati.
 
@@ -68,7 +68,7 @@ Per evitare possibili ambiguità, è stato incluso un glossario per definire i t
 == Maturità 
 
 Il progetto si trova in una fase preliminare, con una struttura modulare definita e un piano di sviluppo pronto. Gli obiettivi iniziali sono stati identificati, e l'approccio adottato garantisce flessibilità e adattabilità per le evoluzioni future. 
-
+#pagebreak()
 == Riferimenti
 
 === Riferimenti normativi
@@ -87,321 +87,237 @@ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
 - T05 - Analisi dei requisiti
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
 
+
+
 #pagebreak()
+= Rischi attesi e mitigazione
 
-= Analisi dei rischi
+Questa sezione identifica i potenziali rischi di diversa natura e descrive le azioni pianificate per mitigarne l'impatto qualora si verificassero, oltre alle misure preventive adottate per evitarne l’insorgenza.
+\
+I rischi si dividono nel seguente modo: 
+- *Rischi interni ed organizzativi*:
+  tutte quelle problematiche che possono sorgere all'interno del team di progetto e nella gestione del lavoro, influenzando la produttività, la comunicazione, il coordinamento e la distribuzione delle risorse. Questi rischi includono la scarsa definizione degli obiettivi, la mancanza di competenze, conflitti tra membri, difficoltà nella pianificazione e nei cambiamenti dei requisiti, con potenziali impatti negativi sulle tempistiche e sul successo del progetto.
+- *Rischi tecnologici*:
+  le problematiche legate agli strumenti, alle tecnologie e alle infrastrutture utilizzate durante lo sviluppo di un progetto. Questi rischi possono derivare da incompatibilità software, malfunzionamenti hardware, limitazioni delle tecnologie adottate, aggiornamenti non previsti, vulnerabilità di sicurezza o difficoltà nell'integrazione con sistemi esterni. Se non gestiti correttamente, possono compromettere le prestazioni, l'affidabilità e l'efficacia del prodotto finale.
+- *Rischi capitolato*: 
+  riguardano le incertezze e le problematiche derivanti dalla definizione, interpretazione e gestione dei requisiti del progetto. Questi rischi possono includere ambiguità o incompletezza delle specifiche, modifiche frequenti ai requisiti, disallineamento tra le aspettative del committente e l'implementazione, o difficoltà nella comprensione delle richieste. Una gestione inefficace di questi aspetti può portare a ritardi, aumento dei costi e necessità di revisioni significative nel progetto.
+- *Rischi finanziari*:
+  I rischi finanziari sono le incertezze legate ai costi e alle risorse economiche necessarie per 
+  lo sviluppo del progetto.
 
-Questa sezione descrive i rischi potenziali associati al progetto e le relative misure di mitigazione. L'analisi dei rischi consente di identificare e mitigare i potenziali problemi in una fase iniziale del progetto.  Ogni rischio è valutato in termini di probabilità di accadimento e di impatto potenziale.
-#v(0.25cm)
+Ogni rischio presentato di seguito è distinto univocamente da un codice nel seguente modo:
+[R][T]\_[x] 
+- R = Rischio
+- T = Tipo (I=Interno, T=Tecnologico, C=Capitolato, F=finanziario)
+- x = numero progressivo che inizia da 1 e si resetta per ogni tipo di rischio
+
+(es. RI_001 = Rischio Interno numero 001)
+
+== Rischi interni e organizzativi
+
+  #table(
+  columns: (0.5fr, 1fr, 1fr, 1fr),
+  align: center,
+  fill: (x,y) => if x == 0 {blue.lighten(90%) },
+  table.header(
+    table.cell(fill: rgb("#0096c7"))[*Codice*],
+    table.cell(fill: rgb("#0096c7"))[*Rischio*], 
+    table.cell(fill: rgb("#0096c7"))[*Descrizione*], 
+    table.cell(fill: rgb("#0096c7"))[*Mitigazione*]),
+
+  [RI_001],
+  [*Mancanza di coordinamento del gruppo di progetto* ],
+  [Una comunicazione inefficace tra i membri del team può causare ritardi nelle attività e compromettere la consegna del capitolato],
+  [Ogni membro del team deve mantenere un coinvolgimento attivo nel progetto, restando aggiornato su ogni fase dello sviluppo. In caso di assenze prolungate o inattività di alcuni membri, sarà loro responsabilità sollecitarne il contributo per garantire il rispetto degli impegni.
+  \
+  \
+  Per facilitare la comunicazione e la gestione delle attività, verranno utilizzate piattaforme di collaborazione come GitHub, WhatsApp e Discord per organizzare incontri e suddividere il lavoro in modo efficiente.
+],
+
+  [RI_002],
+  [*Abbandono di un membro del gruppo* ],
+  [Un membro del gruppo potrebbe lasciare il progetto per motivi personali o professionali, compromettendo lo svolgimento delle attività.],
+  [Il gruppo dovrà redistribuire il carico di lavoro tra i membri rimanenti. Inoltre, in collaborazione con il committente, sarà necessario ridefinire la suddivisione delle attività per non superare il monte ore stabilito e quindi ridefinire le aspettative stabilite in precedenza. ],
+
+  [RI_003],
+  [*Disponibilità dei membri del gruppo di progetto*],
+  [A causa di impegni personali o lavorativi, alcuni membri del team potrebbero essere indisponibili in determinati periodi, causando un rallentamento nel raggiungimento degli obiettivi prefissati.],
+  [ Il team si impegnerà a suddividere le attività in modo strategico, assegnando le task in base alla loro priorità e alla disponibilità dei membri, così da minimizzare eventuali ritardi.],
+
+  /*-------------------*/
+  [RI_004],
+  [*Contrasti interni al gruppo di progetto*],
+  [Durante lo svolgimento del progetto potrebbero emergere conflitti tra i membri del team, causando rallentamenti nel completamento delle attività.],
+  [I membri del gruppo cercheranno di risolvere i contrasti attraverso una discussione collettiva. Se ciò non fosse sufficiente, il responsabile del progetto interverrà per mediare il conflitto, eventualmente ricorrendo a sondaggi per facilitare la decisione. Qualora il problema persistesse, si consulterà il docente o il committente per trovare una soluzione definitiva. ],
+    
+  )
+
+#align(center, [Tab. 1] )
+
+
+
+#pagebreak() 
+
 == Rischi tecnologici
 
-Questi rischi derivano da problemi tecnici o limitazioni delle tecnologie utilizzate nel progetto, che possono influenzare negativamente il progresso o la qualità del prodotto finale.
+#table(
+  columns: (0.5fr, 1fr, 1fr, 1fr),
+  align: center,
+  fill: (x,y) => if x == 0 {blue.lighten(90%) },
+  table.header(
+    table.cell(fill: rgb("#0096c7"))[*Codice*], 
+    table.cell(fill: rgb("#0096c7"))[*Rischio*], 
+    table.cell(fill: rgb("#0096c7"))[*Descrizione*], 
+    table.cell(fill: rgb("#0096c7"))[*Mitigazione*]),
+/*-----------------------------*/
 
-- *Compatibilità Delle API di IA*
+/*-----------------------------*/
+  [RT_001],
+  [*Prestazioni dei modelli LLM*],
+  [L'utilizzo di modello di linguaggio di grandi dimensioni (LLM) potrebbe comportare tempi di risposta elevati, specialmente su macchine con risorse hardware limitate, compromettendo l'esperienza d'uso. ],
+  [Consentire all'utente di selezionare il modello LLM più adatto alle capacità del proprio sistema, offrendo opzioni più leggere per dispositivi meno performanti.],
 
-#figure(
-  table(
+/*-----------------------------*/
+  [RT_002],
+  [*Obsolescenza tecnologica*],
+  [L'uso di tecnologie non aggiornate o poco supportate potrebbe rendere difficile la manutenzione e l'espansione del progetto nel tempo.],
+  [Selezionare tecnologie con ampio supporto da parte della community,monitorare regolarmente gli aggiornamenti e mantenere la documentazione aggiornata. Condurre test di regressione per ogni aggiornamento. ],
+/*-----------------------------*/
+  [RT_003],
+  [*Problemi di compatibilità tra ambienti*],
+  [Il progetto potrebbe comportarsi in modo diverso a seconda del sistema operativo o delle dipendenze installate, creando difficoltà nella distribuzione.],
+  [Utilizzare containerizzazione (Docker) o ambienti virtuali per standardizzare l'esecuzione del software su diverse piattaforme. ],
+/*-----------------------------*/  
+  [RT_004],
+  [*Mancanza di conoscenze*],
+  [Alcuni membri del team potrebbero non possedere le competenze necessarie per svolgere il progetto in modo efficace.],
+  [Ogni membro sarà responsabile di colmare le proprie lacune attraverso studio autonomo. Inoltre, i membri più esperti forniranno supporto agli altri tramite spiegazioni individuali o collettive, oltre alla creazione di documentazione, riassunti e manuali, al fine di ridurre i tempi di apprendimento e minimizzare i ritardi nelle attività.
   
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione* 
-  ],
-  [L'integrazione di modelli di IA tramite API REST può fallire a causa dell'incompatibilità tra le versioni di Ollama],
-  [
-    *Probabilità*
-  ],
-   
-[Media], 
-[
-    *Impatto*
-  ],
-    [Alto],
-  [
-    *Precauzioni*
-  ],
-[Utilizzare versioni specifiche dei modelli di IA e monitorare gli aggiornamenti alle API di Ollama]
-
-),
-caption: [Rischi tecnologici:Disponibilità e compatibilità con le API di IA],
-) 
-
-
-- *Limitazioni dei modelli di intelligenza artificiale*
-#figure(
-table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [I modelli di IA potrebbero non essere sufficientemente performanti],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Condurre un'analisi su un modello ottimale in base alle infrastrutture disponobili]
-),
-caption: [Rischi tecnologici: Limitazioni dei modelli di intelligenza artificiale],
+  Inoltre, verranno utilizzate tecnologie di accentramento delle conoscenze come 'Notion' o 'Google Drive'. ],
+/*-----------------------------*/
+  [RT_005],
+  [*Sicurezza dei dati e delle API*],
+  [L'integrazione con API esterne e l'elaborazione di dati sensibili potrebbero esporre il sistema a vulnerabilità di sicurezza.],
+  [Implementare protocolli di autenticazione sicuri, crittografare i dati sensibili e seguire best practice di cybersecurity.],
 )
+#align(center, [Tab. 2] )
 
-- *Compatibilità con Visual Studio Code*
-#figure(
-  table(
-  columns: 2,
+
+
+
+
+== Rischi riguardanti il capitolato
+
+#table(
+  columns: (0.5fr, 1fr, 1fr, 1fr),
+  align: center,
   fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Le modifiche alle versioni di Visual Studio Code potrebbero causare incompatibilità.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Monitorare gli aggiornamenti di Visual Studio Ccode]
-),
-caption: [Rischi tecnologici: Compatibilità con Visual Studio Code],
+  table.header(
+    table.cell(fill: rgb("#0096c7"))[*Codice*], 
+    table.cell(fill: rgb("#0096c7"))[*Rischio*], 
+    table.cell(fill: rgb("#0096c7"))[*Descrizione*], 
+    table.cell(fill: rgb("#0096c7"))[*Mitigazione*]),
+
+  
+/*-----------------------------*/
+  [RC_001],
+  [*Ambiguità dei requisiti*],
+  [Il capitolato potrebbe contenere indicazioni poco chiare o ambigue, rendendo difficile la comprensione delle reali esigenze del committente],
+  [Organizzare incontri periodici con il committente e il docente per chiarire eventuali dubbi e allineare le aspettative.],
+  
+/*-----------------------------*/
+  [RC_002],
+  [*Modifiche al capitolato in corso d'opera*],
+  [Durante lo sviluppo, i requisiti inizialmente concordati potrebbero subire modifiche a causa di fattori interni (nuove esigenze del team) o esterni (richieste del committente). Questo può portare a ritardi, aumento dei costi o necessità di rivedere parti già sviluppate.],
+  [ Gli stakeholder dovranno concordare preventivamente un processo per la gestione delle modifiche ai requisiti. Sarà inoltre necessario aggiornare il preventivo e gli accordi precedentemente stabiliti per garantire il rispetto delle scadenze e delle risorse disponibili.],
+/*-----------------------------*/
+  [RC_003],
+  [*Disallineamento tra capitolato e vincoli tecnici*],
+  [Il capitolato potrebbe richiedere funzionalità difficili da implementare a causa di limitazioni tecniche o di strumenti disponibili.],
+  [Effettuare un'analisi di fattibilità prima di iniziare lo sviluppo e proporre eventuali alternative al committente.],
+/*-----------------------------*/
+  [RC_004],
+  [*Divergenze tra le aspettative del committente e l'interpretazione del gruppo*],
+  [ Il team di progetto potrebbe interpretare diversamente alcune sezioni del capitolato rispetto alle intenzioni originali del committente.],
+  [Mantenere una comunicazione costante con il committente e il docente per confermare le scelte progettuali prima di implementarle.],
+
 )
-#v(0.5cm)
-== Rischi legati ai requisiti
+#align(center, [Tab. 3] )
 
-Questi rischi emergono quando i requisiti non sono chiari, ben definiti o subiscono modifiche frequenti, compromettendo la coerenza e l'efficienza del processo di sviluppo. 
 
-- *Ambiguità dei requisiti*
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Alcuni requisiti mal definiti possono rendere difficile l'implementazione.],
-  [
-    *Probabilità*
-  ],
-  [Alta],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Condurre molteplici revisioni collettive ed interviste con il proponente al fine di ottentere dei requisiti ottimali]
-),
-caption: [Rischi legati ai requisiti: Ambiguità dei requisiti],
-)
-#v(2cm)
-- *Modifiche frequenti dei requisiti*
 
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [La difficoltà nell'individuazione di requisiti plausibili può portare alla generazione di ambiguità ],
-  [
-    *Probabilità*
-  ],
-  [Alta],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Condurre l'analisi più persone]
-),
-caption: [Rischi legati ai requisiti: Modifiche frequenti dei requisiti],
-)
-#v(0.5cm)
-== Rischi organizzativi
-I rischi organizzativi riguardano la gestione del progetto e il coordinamento del team. Possono includere problemi legati alla comunicazione interna, alla pianificazione o all'allocazione delle risorse.
 
-- *Mancanza di coordinamento del team*
 
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Le riunioni poco frequenti e la scarsa coordinazione possono influenzare la produttività.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Programmare riunioni ad intervalli di tempo regolari]
-),
-caption: [Rischi organizzativi: Mancanza di coordinamento del team],
-)
-
-- *Dipendenza da risorse chiave*
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Ritardi causati da un'errata rotazione dei ruoli],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Documentare i processi critici per permettere ad altri membri del gruppo di proseguire con le task]
-),
-caption: [Rischi organizzativi: Dipendenza da risorse chiave],
-)
-
-Un esempio di questo caso potrebbe essere l'assenza del verificatore nel momento in cui questa attività è necessaria, rendendo impossibile portare avanti il ​​progetto o costringendo diverse persone a dover assumere tale ruolo e informarsi su come svolgerlo al meglio, causando un ritardo.
-#v(0.5cm)
-== Rischi legati alle persone 
-Questi rischi si riferiscono alle limitazioni o ai problemi legati al personale coinvolto, come disponibilità ridotta o mancanza di competenze specifiche.
-
-- *Disponibilità del team*
-
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Gli impegni personali dei membri del team potrebbero influire negativamente sulla loro capacità di partecipare al progetto.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Pianificare un programma flessibile che consenta di adattarsi agli impegni dei membri del gruppo.]
-),
-caption: [Rischi legati alle persone: Disponibilità del team],
-)
- #v(2cm)
-- *Mancanza di competenze tecniche*
-
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Alcuni membri del team potrebbero non possedere una conoscenza approfondita delle tecnologie chiave necessarie per il progetto.],
-  [
-    *Probabilità*
-  ],
-  [Alta],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Ogni membro del team condividerà le proprie conoscenze con gli altri membri del gruppo nelle modalità stabilite nelle norme di progetto]
-),
-caption: [Rischi legati alle persone: Mancanza di competenze tecniche],
-)
-#v(0.5cm)
 == Rischi finanziari
-I rischi finanziari si manifestano quando i costi del progetto superano il budget previsto, compromettendo la sostenibilità economica del progetto.
 
-- *Superamento dei costi di sviluppo*
-
-#figure(
-  table(
-  columns: 2,
+#table(
+  columns: (0.5fr, 1fr, 1fr, 1fr),
+  align: center,
   fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Si potrebbe andare in contro ad un superamento del budget],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Rendicontazione oraria delle figure del progetto in modo da monitorare i costi]
-),
-caption: [Rischi finanziari: Superamento dei costi di sviluppo],
+  table.header(
+    table.cell(fill: rgb("#0096c7"))[*Codice*], 
+    table.cell(fill: rgb("#0096c7"))[*Rischio*], 
+    table.cell(fill: rgb("#0096c7"))[*Descrizione*], 
+    table.cell(fill: rgb("#0096c7"))[*Mitigazione*]),
+  [RF_001],
+  [Superamento budget],
+  [Rallentameni dovuti a cause interne o esterne potrebbero portare al superamento del monte ore preventivato],
+  [Monitorare correttamente e costantemente il lavoro dei membri del gruppo attraverso strumenti di rendicontazione oraria],
 )
+#align(center, [Tab. 4] )
 
-#v(0.5cm)
-== Rischi per l'utente finale
-Questi rischi riguardano l'esperienza dell'utente finale, come difficoltà nell'uso del prodotto o mancata soddisfazione delle aspettative.
 
-- *Bassa usabilità del plug-in*
+#pagebreak()
+== Tabella riassuntiva
+Nella seguente tabella vengono descritti: 
+- L'*occorrenza*: rappresenta la probabilità che il rischio si verifichi. Un rischio con alta occorrenza è molto probabile e deve essere monitorato con attenzione, mentre un rischio con bassa occorrenza è meno preoccupante, ma comunque da considerare.
+- L'*impatto*: misura la gravità delle conseguenze che il rischio potrebbe avere sul progetto. Un rischio con alto impatto può compromettere seriamente il raggiungimento degli obiettivi, mentre un impatto basso causa problemi gestibili senza significativi rallentamenti o costi aggiuntivi.
+- L'*efficacia*: indica quanto le azioni di mitigazione adottate siano in grado di ridurre l'impatto del rischio. Un valore alto significa che le contromisure sono efficaci e il rischio è ben gestito, mentre un valore basso indica che il rischio rimane problematico nonostante gli sforzi.
 
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Un'interfaccia poco intuitiva può influire sull'usabilità del prodotto.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Eseguire test di usabilità fin dalle prime fasi.]
-),
-caption: [Rischi per l'utente finale: Bassa usabilità del plug-in],
-)
+I valori nella tabella possono quindi dividersi in "basso", "medio" o "alto" come descritto sopra. 
 
+
+    #table(
+    columns: (0.5fr,2fr, 1fr, 1fr, 1fr),
+    align: center,
+    fill: (x,y) => if x == 0 {blue.lighten(90%) },
+    table.header( 
+      table.cell(fill: rgb("#0096c7"))[*Codice rischio*],
+      table.cell(fill: rgb("#0096c7"))[*Titolo rischio*],
+      table.cell(fill: rgb("#0096c7"))[*occorrenza*],
+      table.cell(fill: rgb("#0096c7"))[*Impatto*],
+      table.cell(fill: rgb("#0096c7"))[*Efficacia*],
+    ),
+  /*----------------------------*/
+    [RI_001],[*Mancanza di coordinamento del gruppo di progetto*],[Medio],[Alto],[Alto],
+  /*----------------------------*/
+    [RI_002],[*Abbandono di un membro del gruppo*],[Basso],[Alto],[Alto],
+    /*----------------------------*/
+    [RI_003],[*Disponibilità dei membri del gruppo di progetto*],[Alto],[Alto],[Medio],
+    /*----------------------------*/
+    [RI_004],[*Contrasti interni al gruppo di progetto*],[Medio],[Alto],[Alto],
+    /*----------------------------*/
+    [RT_001],[*Prestazioni dei modelli LLM*],[Basso],[Alto],[Alto],
+    /*----------------------------*/
+    [RT_002],[*Obsolescenza tecnologica*],[Medio],[Medio],[Medio],
+    /*----------------------------*/
+    [RT_003],[*Problemi di compatibilità tra ambienti*],[Basso],[Alto],[Alto],
+    /*----------------------------*/
+    [RT_004],[*Mancanza di conoscenze*],[Medio],[Medio],[Alto],
+    /*----------------------------*/
+    [RT_005],[*Sicurezza dei dati e delle API*],[Medio],[Alto],[Medio],
+    /*----------------------------*/
+    [RC_001],[*Ambiguità dei requisiti*],[Basso],[Alto],[Medio],
+    /*----------------------------*/
+    [RC_002],[*Modifiche al capitolato in corso d'opera*],[Basso],[Alto],[Alto],
+    /*----------------------------*/
+    [RC_003],[*Disallineamento tra capitolato e vincoli tecnici*],[Basso],[Medio],[Alto],
+    /*----------------------------*/
+    [RC_004],[*Divergenze tra le aspettative del committente e l'interpretazione del gruppo*],[Basso],[Alto],[Alto],
+    /*----------------------------*/
+    [RF_001],[*Superamento budget*], [Medio], [Alto], [Medio],
+    )
+#align(center, [Tab. 5] )
 #pagebreak()
 = Modello di sviluppo
 
@@ -733,253 +649,11 @@ caption: "Calcoli totali per RTB",
 = Consuntivo
 Questa sezione confronta la pianificazione iniziale con i risultati effettivi ottenuti durante lo sviluppo. Si analizzano eventuali variazioni di tempi e costi, insieme alle cause che le hanno determinate e alle azioni correttive adottate.
 
-== Resconto 
-#pagebreak()
-= Mitigazione dei Rischi 
-
-Questa sezione dettaglia le strategie messe in atto per gestire i rischi individuati. Vengono evidenziate le azioni preventive adottate per ridurre l'impatto dei problemi durante lo sviluppo.
-#v(0.25cm)
-== Rischi tecnologici
-- *Disponibilità e compatibilità con le API di IA* 
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      L'integrazione con modelli di IA potrebbe fallire a causa di limitazioni tecniche.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Creare un livello di astrazione tra il sistema e le API esterne per ridurre la dipendenza e pianificare test periodici per garantire l'affidabilità.
-    ]
-  ),
-  caption: [Rischio tecnologico: Disponibilità e compatibilità con le API di IA]
-)
-
-- *Limitazioni dei modelli di intelligenza artificiale*
-#figure(
-  table(
-    columns: 2,
-    fill: (x, y) => if x == 0 {blue.lighten(90%)},
-    [
-      *Descrizione*
-    ],
-    [
-      I modelli di IA potrebbero non elaborare dati specifici o di bassa qualità.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Addestrare i modelli con dati pertinenti, eseguire convalide manuali.
-    ]
-  ),
-  caption: [Rischio tecnologico: Limitazioni dei modelli di intelligenza artificiale]
-)
-
-- *Compatibilità con Visual Studio Code*
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Le modifiche a Visual Studio Code potrebbero causare incompatibilità.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Monitorare regolarmente gli aggiornamenti di Visual Studio Code e mantenere la documentazione aggiornata. Condurre test di regressione per ogni aggiornamento.
-    ]
-  ),
-  caption: [Rischio tecnologico: Compatibilità con Visual Studio Code]
-)
-
-#v(0.5cm)
-== Rischi legati ai requisiti
-
-- *Ambiguità dei requisiti*
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Requisiti mal definiti possono complicare l'implementazione.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Utilizzare tecniche di elicitation e convalidare regolarmente i requisiti con il cliente. Aggiornare la documentazione con revisioni iterative.
-    ]
-  ),
-  caption: [Rischio legato ai requisiti: Ambiguità dei requisiti]
-)
-
-- *Modifiche frequenti ai requisiti* 
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Cambiamenti continui ai requisiti possono aumentare i costi e i tempi.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Progettare un'architettura modulare e adottare strumenti di versionamento per tracciare e gestire i cambiamenti.
-    ]
-  ),
-  caption: [Rischio legato ai requisiti: Modifiche frequenti ai requisiti]
-)
-#v(0.5cm)
-== Rischi organizzativi
-- *Mancanza di coordinamento del team* 
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      La scarsa comunicazione può rallentare il progetto.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Utilizzare piattaforme di collaborazione (ad esempio Slack, Trello) per centralizzare le comunicazioni e organizzare riunioni settimanali per aggiornare il progresso del progetto.
-    ]
-  ),
-  caption: [Rischio organizzativo: Mancanza di coordinamento del team]
-)
-
-- *Dipendenza da risorse chiave*
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      L'assenza di membri chiave del team può causare ritardi.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Pianificare risorse di backup per i ruoli critici e documentare dettagliatamente i processi.
-    ]
-  ),
-  caption: [Rischio organizzativo: Dipendenza da risorse chiave]
-)
+== Resoconto 
 
 
-#v(0.5cm)
-== Rischi legati al team
 
-- *Disponibilità del team* 
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Impegni personali dei membri del team possono influire negativamente sul lavoro.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Creare un calendario flessibile e assegnare prioritarie responsabilità critiche a risorse disponibili.
-    ]
-  ),
-  caption: [Rischio legato al team: Disponibilità del team]
-)
 
-- *Mancanza di competenze tecniche*
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Alcuni membri del team potrebbero non possedere le competenze richieste.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Fornire formazione mirata, materiali di apprendimento e sessioni di mentoring per migliorare le competenze del team.
-    ]
-  ),
-  caption: [Rischio legato al team: Mancanza di competenze tecniche]
-)
-#v(0.5cm)
-== Rischi finanziari
-- *Superamento dei costi di sviluppo*
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Le funzionalità avanzate possono richiedere risorse aggiuntive.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Monitorare regolarmente il budget e rivedere le priorità in caso di eccedenze. Concentrarsi sulle funzionalità essenziali per rispettare il budget.
-    ]
-  ),
-  caption: [Rischio finanziario: Superamento dei costi di sviluppo]
-)
 
-#v(0.5cm)
-== Rischi per l'utente finale
-- *Bassa usabilità del plug-in*
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Interfaccia poco intuitiva potrebbe ridurre l'adozione.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Condurre test di usabilità con utenti target e incorporare il feedback per migliorare il design dell'interfaccia e l'esperienza utente.
-    ]
-  ),
-  caption: [Rischio per l'utente finale: Bassa usabilità del plug-in]
-)
 #pagebreak()
 = Conclusioni
