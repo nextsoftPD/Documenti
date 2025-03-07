@@ -21,7 +21,7 @@
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
-    "0.6.3","07/03/2025","Marco Perazzolo","Affinamento degli extension points nei diagrammi UML","",
+    "0.6.3","07/03/2025","Marco Perazzolo","Affinamento degli extension points nei diagrammi UML","Stefano Baso",
     "0.6.2","26/02/2025","Ion Cainareanu","Outline automatico per le tabelle","Malik Giafar Mohamed",
     "0.6.1","26/02/2025","Malik Giafar Mohamed","Aggioramento data di creazione documento","Ion Cainareanu",
     "0.6.0","25/02/2025","Luca Parise, Ion Cainareanu, Marco Perazzolo","Modifiche post incontro con l'azienda","Malik Giafar Mohamed",
