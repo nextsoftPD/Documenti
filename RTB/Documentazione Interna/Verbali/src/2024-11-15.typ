@@ -1,10 +1,10 @@
-#import "../../../../assets/template.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 #show: project.with(
   title: "Incontro di avviamento\nalla Milestone RTB",
   redattori: ("Malik Giafar Mohamed","Ion Cainareanu"),
   verifica: ("Marco Perazzolo","Luca Parise",),
-  approvazione: ("Marco Perazzolo","Luca parise",),
+  approvazione: (),
   uso: "Interno",
   version: "1.0",
   timebegin: "15:00",

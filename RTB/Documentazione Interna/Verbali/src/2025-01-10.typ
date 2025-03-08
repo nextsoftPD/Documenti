@@ -1,9 +1,9 @@
-#import "../../../../assets/template.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 #show: project.with(
   title: "Preparazione all'incontro AdR",
   redattori: ("Marco Perazzolo",),
-  verifica: ("Stefano Baso","",),
+  verifica: ("Stefano Baso",),
   approvazione: ("Malik Giafar Mohamed",),
   uso: "Interno",
   version: "1.3",

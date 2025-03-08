@@ -5,6 +5,10 @@
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
   version: "",
+  redattori: (),
+  verifica: (),
+  approvazione: "",
+  uso: "",
   versionamento: (),
   date: "26/11/2024",
   body
@@ -24,8 +28,25 @@
   // Impostazione dei paragrafi giustificati
   set par(justify: false)
 
-  // Impostazione heading con numerazione gerarchica
-  
+  // abbellimento grafico delle liste puntate
+  set list(
+    marker: ([•], [-], [‣]),
+    indent: 1em,
+    spacing: 1em
+  )
+
+  set enum(
+    indent: 1em,
+    spacing: 1em
+  )
+
+  // Impostazione dei link con sottolineatura
+  show link: p => {
+    set text(fill: primary-color)
+    //underline(text()[#p])
+    text()[#p]
+  }
+
   // Frontespizio
   page()[
     #grid(
@@ -42,44 +63,36 @@
 
       align(center)[
         #v(2em)
-        #if versionamento == () {
-          grid(
-            columns: (1fr,1fr,1fr,1fr),
-            [],
-            align(center)[
-              #text(1em, "Versione: " + version)
-            ],
-            align(center)[
-              #text(1em, date)
-            ],[]
-          )
-        } else {
-          set text(1.4em)
-          grid(
-            columns: (1fr,1fr,1fr,1fr),
-            [],
-            align(center)[
-              #text(1em, "Versione: " + version)
-            ],
-            align(center)[
-              #text(1em, date)
-            ],[]
-          )
-        }
-
+        #grid(
+          columns: (1fr,1fr,1fr,1fr),
+          [],
+          align(center)[
+            #text(1em, "Versione: " + versionamento.at(0))
+          ],
+          align(center)[
+            #text(1em, date)
+          ],[]
+        )
+        
         #v(2em)
 
         #let render-names = (title, names) => {
-          text(weight: "bold")[#title #h(1fr)];
-            
-          for name in names {
-            text()[ #name];
-            if name != names.last() {
-              text()[,];
-            }
-          }
+          grid(
+            columns: (auto, 1fr),
+            gutter: 1em,
+            text(weight: "bold")[#title],
+            align(right)[
+                #for name in names {
+                  text()[ #name #linebreak()]
+                }
+            ]
+          )
           line(length: 100%, stroke: 0.5pt)
         }
+        #align(left)[#render-names("Redattori", redattori)]
+        #align(left)[#render-names("Verifica", verifica)]
+        #align(left)[#render-names("Approvazione", approvazione)]
+        #align(left)[#strong([Uso]) #h(1fr) #uso]
 
         #v(3em)
         #link(email)
@@ -97,9 +110,9 @@
         row-gutter: 0.5em,
         align: auto,
         inset: 8pt,
-        columns: (auto, auto, auto, auto, auto, auto),
+        columns: (auto, auto, auto, auto, auto),
         table.header(
-          [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*], [*Approvazione*]  // Intestazioni
+          [*Versione*], [*Data*], [*Autore*], [*Descrizione*], [*Verifica*]  // Intestazioni
         ),
         ..versionamento
       )
@@ -138,10 +151,14 @@
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
   version: "1.0.0",
+  redattori: ("Malik Giafar Mohamed",),
+  verifica: ("Ion Cainareanu","Maria Fuensanta Trigueros Hernandez"),
+  approvazione: (),
+  uso: "Esterno",
   versionamento: (
-    "1.0.0", "08/03/2025", "Marco Perazzolo", "Aggiornamento e aggiunta di nuovi termini al glossario", "" , "",
-    "0.2.0", "25/01/2025", "Maria Fuensanta Trigueros Hernandez", "Stesura iniziale del glossario", "Marco Perazzolo" , "",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez" , "Maria Fuensanta Trigueros Hernandez",
+    "1.0.0", "08/03/2025", "Marco Perazzolo", "Aggiornamento e aggiunta di nuovi termini al glossario", "" ,
+    "0.2.0", "25/01/2025", "Maria Fuensanta Trigueros Hernandez", "Stesura iniziale del glossario", "Marco Perazzolo" ,
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 = Introduzione

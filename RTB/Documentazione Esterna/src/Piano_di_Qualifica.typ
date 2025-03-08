@@ -1,4 +1,4 @@
-#import "../../../assets/template.typ": project;
+#import "../../../assets/template_v2.0.0.typ": project;
 
 // Esempio di utilizzo
 #show: project.with(
@@ -6,48 +6,27 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
-  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
+  approvazione: (""),
   uso: "Esterno",
-  version: "0.3.1",
+  version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
-    "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo", "",
-    "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu", "Ion Cainareanu",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez", "Maria Fuensanta Trigueros Hernandez",
+    "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
+    "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
+    "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 
-= Elenco delle immagini
+#outline(
+  title: [Elenco delle immagini],
+  target: figure.where(kind: image),
+)
 
-= Elenco delle tabelle
-
-Table 1: Metriche di fornitura
-
-Table: Metriche di sviluppo
-
-Table: Metriche di progettazione di dettaglio
-
-Table: Metriche di codifica
-
-Table: Metriche di tempo medio
-
-Table: Obiettivo di funzionalità
-
-Table: Obiettivo di usabilità
-
-Table: Obiettivo di manutenibilità
-
-Table: Obiettivo di affidabilità
-
-Table: Metriche di affidabilità
-
-Table: Obiettivo di funzionalità
-
-Table: Obiettivo di usabilità
-
-Table: Obiettivo di qualità della documentazione
-
-Table: Obiettivo di leggibilità
+#outline(
+  title: [Elenco delle tabelle],
+  target: figure.where(kind: table),
+)
 
 = Elenco dei grafici
 
@@ -68,7 +47,7 @@ Con lo scopo di rendere chiara la terminologia usata all'interno del documento, 
 
 == Maturità e miglioramenti
 
-Il documento in oggetto è stilato seguendo un approccio incrementale. Con lo scopo quindi di essere aggiornato nel corso degli sviluppi e in relazione tra membri del gruppo e proponente, ad oggi non può essere considerato una versione completa.
+Il documento in oggetto è stilato seguendo un approccio Agile, un approccio flessibile allo sviluppo software, che privilegia la collaborazione, il feedback continuo e il rilascio rapido di valore adattandosi ai cambiamenti. Con lo scopo quindi di essere aggiornato nel corso degli sviluppi e in relazione tra membri del gruppo e proponente, ad oggi non può essere considerato una versione completa.
 
 == Riferimenti
 
@@ -81,6 +60,7 @@ Il documento in oggetto è stilato seguendo un approccio incrementale. Con lo sc
 Materiale didattico del corso
 - Qualità di prodotto: https://www.math.unipd.it/~tullio/IS-1/2021/Dispense/T12.pdf;
 - Qualità di processo: https://www.math.unipd.it/~tullio/IS-1/2021/Dispense/T13.pdf;
+- Indice di Gulpease: https://www.ilc.cnr.it/dylanlab/apps/texttools/
 
 
 = Qualità di processo
@@ -95,20 +75,30 @@ Di seguito, vengono presentati i processi identificati e i corrispondenti livell
 
 === Fornitura
 
-In questa fase del processo vengono analizzate tutte le scelte effettuate durante lo sviluppo, rispettando il compito preso nelle diverse fasi del progetto. Si definiscono le misure da implementare per le procedure ricorrenti nella realizzazione del progetto, in conformità con i termini e le condizioni prestabiliti.
+In questa fase del processo vengono analizzate tutte le scelte effettuate durante lo sviluppo, verificandone la conformità con gli obiettivi stabiliti nelle diverse fasi del progetto. Vengono definite le misure da implementare, assicurando il rispetto dei termini e delle condizioni prestabiliti. L'obiettivo principale è garantire che la fornitura sia allineata alle aspettative, sia in termini di risorse impiegate che di risultati ottenuti.
 
-Un acronimo chiave in questo contesto è MPC (Minimum Predictive Capability), una metrica utilizzata per valutare la capacità di un modello di previsione o apprendimento automatico di generare risultati accurati. L'MPC rappresenta il livello minimo di precisione che il modello deve raggiungere per essere accettabile.
+Un concetto chiave in questo contesto è l'MPC (Minimum Predictive Capability), una metrica fondamentale per valutare l'affidabilità di un modello di apprendimento automatico nel generare risultati accurati. L'MPC rappresenta il livello minimo di precisione che un modello deve raggiungere per essere considerato accettabile, contribuendo a garantire che le previsioni siano coerenti con gli standard richiesti.
 
 Di seguito sono descritte le principali metriche e calcoli associati che verranno riportati nella tabella sottostante mettendo in relazione il valore plausibile e il valore ottimale:
 
 - BAC (Budget At Completion): Costo totale preventivato per il completamento del progetto.
-- EAC (Estimated At Completion): Valore stimato per i compiti rimanenti, calcolato come BAC / CPI (Cost Performance Index).
+
+- EAC (Estimated At Completion): Valore stimato per i compiti rimanenti.
+
+- CPI (Cost Performance Index): Indice di prestazione dei costi, misura l'efficienza con cui il budget viene utilizzato.
+
 - ETC (Estimated To Completion): Stima del costo finale aggiornato alla data di misurazione.
+
 - EV (Earned Value): Valore ottenuto fino al momento attuale, calcolato come percentuale del lavoro svolto × EAC.
+
 - PV (Planned Value): Valore pianificato fino al momento attuale, calcolato come percentuale del lavoro pianificato × BAC.
+
 - AC (Actual Cost): Budget effettivamente speso fino al momento attuale.
+
 - CV (Cost Variance): Differenza tra il valore ottenuto (EV) e il costo effettivo (AC), calcolato come EV - AC.
+
 - SV (Schedule Variance): Differenza tra il valore ottenuto (EV) e quello pianificato (PV), calcolato come EV - PV. Un valore negativo indica un ritardo rispetto alla pianificazione.
+
 - BV (Budget Variance): Differenza rispetto al budget preventivato, calcolato come AC - CV.
 
 #figure(
@@ -234,6 +224,42 @@ La manutenibilità del software è la facilità con cui può essere modificato, 
   caption: [Obiettivo di manutenibilità],
 )
 
+=== Metriche
+- *Complessità ciclomatica*: misura la complessità strutturale di un programma basandosi sul grafo di controllo del flusso del codice. In particolare, rappresenta il numero di cammini linearmente indipendenti attraverso il codice sorgente. Viene calcolata con la seguente formula:
+
+$ V(G) = E - N +2P $
+
+in cui:
+- E è il numero di archi (transizioni tra i nodi),
+- N è il numero di nodi(blocchi di codice o decision points),
+- P è il numero di componenti connesse (tipicamente P = 1 per un singolo metodo o funzione)
+\
+- *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una gerarchia di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il rischio di propagazione degli errori. Per un design più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
+
+- *Parametri per metodo*: indica il numero di parametri per metodo. Un indice basso rappresenta un numero basso di parametri richiesti dal metodo, di conseguenza risulta di più facile comprensione e utilizzo.
+
+- *Code Smell*: indice che  rappresenta indicatori qualitativi di potenziali problemi nel codice. E' utile per valutare la leggibilità, la modificabilità, e la testabilità del codice. Si dividono in:
+  - Duplicated Code: frammenti di codice identici o simili in più punti, che aumentano i costi di manutenzione perché le modifiche devono essere replicate ovunque.
+  - Long Methods: metodi eccessivamente lunghi, che riducono la leggibilità e la comprensione del codice.
+  - God Class: una classe con troppe responsabilità (violazione del principio di Single Responsibility), difficile da testare e modificare.
+  - High Coupling: una forte dipendenza tra componenti, che rende il sistema rigido e suscettibile a errori quando una parte viene modificata.
+  - Low Cohesion: componenti con funzionalità eterogenee che non si relazionano strettamente, rendendo il codice più complesso da comprendere.
+
+- *Facilità di comprensione*: rappresenta il rapporto tra commenti presenti e codice totale per capirne il suo funzionamento.
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
+    [MPDS02], [Profondità di gerarchia], [PG <= 3], [PG <= 2],
+    [MPDS03], [Parametri per metodo], [PPM <= 8], [PPM <= 4],
+    [MPDS04], [Complessità ciclomatica], [CC <= 20], [CC <= 10],
+    [MPDS05], [Code smell], [CS <= 50], [CS <= 10],
+    [MPDS06], [Facilità di comprensione], [FC >= 0.10], [FC >= 0.20],
+  ),
+  caption: [Metriche di manutenibilità],
+)
+  
 == Affidabilità
 
 L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l'uso in determinate situazioni.
@@ -250,15 +276,15 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
 
 === Metriche
 
-- Code Coverage: percentuale di codice eseguito nei test. Un indice di copertura del codice alto significa che è stato testato più codice, riducendo quindi la presenza di bug.
+- *Code Coverage*: percentuale di codice eseguito nei test. Un indice di copertura del codice alto significa che è stato testato più codice, riducendo quindi la presenza di bug.
 
-- Branch Coverage: percentuale di copertura di tutti i branch all'esecuzione del codice. Il compito dei test è anche quello di verificare tutti i rami esistenti per verificarne la correttezza.
+- *Branch Coverage*: percentuale di copertura di tutti i branch all'esecuzione del codice. Il compito dei test è anche quello di verificare tutti i rami esistenti per verificarne la correttezza.
 
-- Presenza di vulnerabilità: indice per il numero di vulnerabilità ancora presenti nel codice.
+- *Presenza di vulnerabilità*: indice per il numero di vulnerabilità ancora presenti nel codice.
 
-- Presenza di bug: indice per il numero di bug ancora presenti nel codice.
+- *Presenza di bug*: indice per il numero di bug ancora presenti nel codice.
 
-- Successo dei test: indice in percentuale relativo al successo dei test definiti dai programmatori.
+- *Successo dei test*: indice in percentuale relativo al successo dei test definiti dai programmatori.
 
 #figure(
   table(
@@ -367,8 +393,28 @@ I test di regressione servono a testare che le aggiornamenti / modifiche rilasci
 
 == Fornitura
 
-== Documentazione
+==  MPDD01
 
+Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di Gulpease. Come metro di valutazione del documento viene esclusa la prima pagina che, trattandosi dell'intestazione, potrebbe portare ad un risultato inesatto.
+
+#figure(
+  table(
+    columns: 3,
+    table.header[*Documento*][*Risultato*][*Esito*],
+    [Analisi dei Requisiti], [], [],
+    [Piano di qualifica], [], [],
+    [Piano di Progetto], [], [],
+    [Norme di Progetto], [], [],
+    [2024-11-15], [68], [Superato],
+    [2024-11-24], [66], [Superato],
+    [2024-12-09], [75], [Superato],
+    [2024-12-18], [66], [Superato],
+    [2025-01-03], [73], [Superato],
+    [2024-11-25], [67], [Superato],
+    [2024-12-24], [64], [Superato],
+  ),
+  caption: [Valutazione documenti fase 1],
+)
 
 = Valutazioni per il miglioramento
 
