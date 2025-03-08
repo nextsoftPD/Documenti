@@ -3,7 +3,7 @@
 #show: project.with(
   title: "Verbale incontro interno",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: ("",),
+  verifica: ("Stefano Baso",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0",
