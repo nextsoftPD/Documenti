@@ -10,6 +10,7 @@
   version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
+    "1.0.1", "04/03/2025", "Stefano Baso", "Fix percorso e descrizione immagini", "",
     "1.0.0", "04/03/2025", "Stefano Baso", "Aggiunti grafici e fix nomeclatura", "",
     "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "Ion Cainareanu",
     "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
@@ -72,6 +73,7 @@ Materiale didattico del corso
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf
 - Indice di Gulpease
   - https://www.ilc.cnr.it/dylanlab/apps/texttools/
+- ISO/IEC 9126
 
 = Qualità di processo
 
@@ -440,44 +442,42 @@ Le specifiche riguardanti i test descritti verranno definite nelle successive ve
 
 = Resoconto delle attività di verifica
 
-== Fornitura
-
-=== MPC05 - MPC02: Actual Cost e Estimated to Completion
+== MPC05 - MPC02: Actual Cost e Estimated to Completion
 
 #figure(
-  image("img/PdQ/Ac_etc.jpeg", width: 70%),
-  caption: [Modello a V],
+  image("img/PdQ/Ac_etc.png", width: 70%),
+  caption: [Grafo Actual Cost e Estimated to Completion],
 )
 
-=== MPC03 - MPC04: Earned Value e Planned Value
+== MPC03 - MPC04: Earned Value e Planned Value
 
 #figure(
-  image("img/PdQ/Ev_pv.jpeg", width: 70%),
-  caption: [Modello a V],
+  image("img/PdQ/Ev_pv.png", width: 70%),
+  caption: [Grafo Earned Value e Planned Value],
 )
 
-=== MPC07: Schedule Variance
+== MPC07: Schedule Variance
 
 #figure(
-  image("img/PdQ/Sv.jpeg", width: 70%),
-  caption: [Modello a V],
+  image("img/PdQ/Sv.png", width: 70%),
+  caption: [Grafo Schedule Variance],
 )
 
-=== MPC06: Cost Variance
+== MPC06: Cost Variance
 
 #figure(
-  image("img/PdQ/Cv.jpeg", width: 70%),
-  caption: [Modello a V],
+  image("img/PdQ/Cv.png", width: 70%),
+  caption: [Grafo Cost Variance],
 )
 
-=== MPC01: Estimated at Completion
+== MPC01: Estimated at Completion
 
 #figure(
-  image("img/PdQ/Eac.jpeg", width: 70%),
-  caption: [Modello a V],
+  image("img/PdQ/Eac.png", width: 70%),
+  caption: [Grafo Estimated at Completion],
 )
 
-==  MPC-IG: Indice di Gulpease
+==  MPC12: Indice di Gulpease
 
 Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di Gulpease. Come metro di valutazione del documento viene esclusa la prima pagina che, trattandosi dell'intestazione, potrebbe portare ad un risultato inesatto.
 
@@ -486,10 +486,10 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
     columns: 3,
     table.header[*Documento*][*Risultato*][*Esito*],
     [Analisi dei Requisiti], [83], [Superato],
-    [Piano di qualifica], [], [],
+    [Piano di qualifica], [84], [Superato],
     [Piano di Progetto], [80], [Superato],
     [Norme di Progetto], [75], [Superato],
-    [Glossario], [], [],
+    [Glossario], [83], [Superato],
     [2024-11-15], [68], [Superato],
     [2024-11-24], [66], [Superato],
     [2024-12-09], [75], [Superato],
