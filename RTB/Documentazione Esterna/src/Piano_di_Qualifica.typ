@@ -7,10 +7,10 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo"),
   approvazione: ("", ""),
   uso: "Esterno",
-  version: "1.0.0",
+  version: "1.0.1",
   date: "23/11/2024",
   versionamento: (
-    "1.0.1", "04/03/2025", "Stefano Baso", "Fix percorso e descrizione immagini", "",
+    "1.0.1", "08/03/2025", "Stefano Baso", "Fix percorso e descrizione immagini", "",
     "1.0.0", "04/03/2025", "Stefano Baso", "Aggiunti grafici e fix nomeclatura", "",
     "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "Ion Cainareanu",
     "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
