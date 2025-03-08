@@ -137,10 +137,10 @@
   subtitle: "Glossario Tecnico del capitolato\ndi Ing. del Software 2024-2025",
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
-  version: "0.1.0",
+  version: "1.0.0",
   versionamento: (
-    "0.3.0", "02/03/2025", "Marco Perazzolo", "Finalizzazione del glossario", "" , "",
-     "0.2.0", "25/01/2025", "Maria Fuensanta Trigueros Hernandez", "Stesura iniziale del glossario", "Marco Perazzolo" , "",
+    "1.0.0", "08/03/2025", "Marco Perazzolo", "Aggiornamento e aggiunta di nuovi termini al glossario", "" , "",
+    "0.2.0", "25/01/2025", "Maria Fuensanta Trigueros Hernandez", "Stesura iniziale del glossario", "Marco Perazzolo" , "",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez" , "Maria Fuensanta Trigueros Hernandez",
   )
 )
@@ -148,6 +148,8 @@
 Il presente glossario ha l'obiettivo di definire e chiarire i termini chiave utilizzati in il nostro progetto. Il suo scopo è standardizzare il linguaggio e facilitare la comprensione dei concetti specifici, garantendo una comunicazione chiara ed efficace tra tutte le persone coinvolte.
 
 Questo documento servirà come riferimento per evitare fraintendimenti, migliorare la collaborazione e assicurare l'uso corretto della terminologia all'interno di nostro contesto di applicazione. I termini sono organizzati in ordine alfabetico per una ricerca rapida e semplice.
+
+
 #pagebreak()
 = A
 == API (Application Programming Interface)
@@ -172,6 +174,7 @@ Figura professionale che individua e definisce i casi d'uso ed i requisiti del p
 Creato specificamente per soddisfare una determinata esigenza.
 == AI / IA (Intelligenza Artificiale)
 Tecnologie che consentono ai sistemi di svolgere compiti che richiedono intelligenza umana.
+
 #pagebreak()
 = B
 == Baseline
@@ -184,22 +187,16 @@ Errore o malfunzionamento in un software.
 Linea indipendente di sviluppo in un sistema di controllo di versione, utilizzata per implementare nuove funzionalità o correzioni.
 == Budget di Progetto 
 Allocazione delle risorse finanziarie necessarie per lo sviluppo del progetto.
-==  Best Practices
-Conjunto di linee guida e metodologie raccomandate per migliorare la qualità e l’efficienza del lavoro.
-== Branch
-Nel contesto del controllo di versione (ad esempio, in Git), un branch è una linea indipendente di sviluppo che permette di lavorare su nuove funzionalità o correzioni di bug senza modificare direttamente il ramo principale. I branch consentono agli sviluppatori di sperimentare, collaborare e implementare cambiamenti in modo sicuro, prima di unirli al codice principale attraverso un'operazione di merge.
 == Backend
 La parte del software che gestisce la logica di business, i dati e le operazioni lato server.
-// == Bassa Usabilità
-//  Situazione in cui un'interfaccia non intuitiva riduce l'adozione da parte degli utenti.
+
+
 #pagebreak()
 = C
 == CamelCase
 Convenzione di denominazione in cui ogni parola inizia con una lettera maiuscola, senza spazi.
 == Capitolato 
 Documento ufficiale che descrive i requisiti e le specifiche di un progetto software.
-== Caso di Studio 
-Esempio pratico di utilizzo del software per verificarne l’efficacia in un ambiente reale.
 == Change Request Form
 Modulo utilizzato per richiedere modifiche alle specifiche o al progetto.
 == Checklist
@@ -214,16 +211,11 @@ Salvataggio di modifiche al codice sorgente in un sistema di controllo di versio
 La persona o l'organizzazione che commissiona il progetto.
 == Configuration items
 Elementi di configurazione che devono essere gestiti e controllati nel progetto.
-// == Ciclo di Vita del Documento
-// Processo che regola la creazione, revisione, verifica e approvazione di un documento.
-// == Compatibilità con API di IA 
-// Capacità del software di interfacciarsi correttamente con servizi di intelligenza artificiale tramite API REST.
-// == Compatibilità con Visual Studio Code 
-// Capacità del software di mantenere la compatibilità con le versioni aggiornate di Visual Studio Code per evitare problemi di incompatibilità.
 == Consuntivo di Periodo 
 Analisi delle variazioni di pianificazione e costi rispetto alle stime iniziali, con indicazione delle misure correttive adottate.
 == CSV (Comma-Separated Values)
 Formato di file utilizzato per archiviare dati strutturati, come elenchi di requisiti.
+
 #pagebreak()
 = D
 == Debugging
@@ -240,10 +232,6 @@ Relazione in cui la modifica di un modulo o componente necessita della modifica 
 Processo di rilascio e installazione del software in un ambiente di produzione.
 == Driver
 Software che controlla e gestisce l'interazione con hardware o altri sistemi.
-// == Dipendenza da Risorse Chiave 
-// Rischio che si verifica quando il progetto è fortemente legato alla disponibilità di specifiche competenze o tecnologie.
-// == Disponibilità del Team 
-// Capacità dei membri del team di dedicare tempo e risorse al progetto, considerando eventuali impegni esterni.
 
 
 #pagebreak()
@@ -257,19 +245,22 @@ Capacità del progetto di essere realizzato ed eseguito a costi contenuti.
 == Efficienza 
 Capacità del software di eseguire le operazioni richieste utilizzando un numero minimo di risorse (tempo, memoria, CPU).
 == EAC (Estimated At Completion)
- Stima del costo totale di completamento del progetto basata sulle prestazioni attuali.
+Stima del costo totale di completamento del progetto basata sulle prestazioni attuali.
 == EV (Earned Value)
- Valore del lavoro effettivamente completato in un determinato momento rispetto alla pianificazione.
+Valore del lavoro effettivamente completato in un determinato momento rispetto alla pianificazione.
 == ETC (Estimated To Completion)
- Stima del costo rimanente per completare il progetto
+Stima del costo rimanente per completare il progetto
+
 #pagebreak()
 = F
 == File explorer
-Strumento che consente all'utente di navigare tra file e cartelle.
+Strumento che permette all'utente di navigare tra file e cartelle.
 == Feature
 Funzionalità o caratteristica specifica di un software.
 == Feedback
 Informazioni fornite dagli utenti o dal sistema per migliorare il prodotto.
+== Fix
+Correzione di un errore o malfunzionamento.
 == Fornitura 
 Processo di consegna del software al cliente, inclusi test finali e rilascio della documentazione.
 == Frontend
@@ -280,13 +271,15 @@ Struttura organizzativa che gestisce la memorizzazione e l'accesso ai file in un
 #pagebreak()
 = G
 == GitHub 
- Piattaforma per il versionamento del codice e la gestione collaborativa dei progetti software.
- == Github Projects
+Piattaforma per il versionamento del codice e la gestione collaborativa dei progetti software.
+== Github Projects
 Piattaforma per la gestione dei progetti integrata in GitHub, che consente la creazione e assegnazione di issues.
 == Github Issues
 Sistema di tracciamento degli errori e delle problematiche su GitHub.
+
 #pagebreak()
 = H
+
 #pagebreak()
 = I
 == IDE
@@ -295,10 +288,15 @@ Ambiente integrato per scrivere, testare e fare debug del codice.
 Ticket utilizzato in strumenti di gestione dei progetti per tracciare problemi, attività o richieste di miglioramento.
 == ITS (Issue Tracking System)
 Sistema utilizzato per il tracciamento delle issue del progetto.
+
 #pagebreak()
 = J
+
 #pagebreak()
 = K
+== Knowledge
+Insieme di informazioni tecniche e documentazione di supporto, come datasheet, manuali e specifiche tecniche, utilizzate per migliorare la comprensione e l'implementazione dei requisiti di un sistema. Nel contesto del plug-in, il termine si riferisce alla capacità di utilizzare tali documenti per garantire un analisi efficace dei requisiti.
+
 #pagebreak()
 = L
 == Librerie
@@ -307,6 +305,7 @@ Insieme di funzioni, classi e metodi predefiniti per supportare lo sviluppo soft
 Concetto che indica che due elementi non presentano una relazione lineare diretta.
 == LLM (Large Language Model)
 Modelli di intelligenza artificiale addestrati per comprendere ed elaborare il linguaggio naturale.
+
 #pagebreak()
 = M
 == Mapping
@@ -314,31 +313,32 @@ Associazione tra requisiti e le relative porzioni di codice che li implementano.
 == Merge conflicts
 Conflitti che sorgono quando si tenta di unire modifiche in un repository di versionamento.
 == MVP (Minimum Viable Product) 
- Versione minima di un prodotto con funzionalità essenziali per testarne la fattibilità.
+Versione minima di un prodotto con funzionalità essenziali per testarne la fattibilità.
 == Metrica
 Misura quantitativa utilizzata per valutare aspetti del software, come performance, affidabilità o manutenibilità.
 == MPC (Minimum Predictive Capability)
- Metrica che valuta la capacità minima di previsione di un modello o sistema.
- == MPDS (Metriche di Processo e Sviluppo) 
- Insieme di metriche utilizzate per valutare la qualità del software nei suoi vari aspetti.
- == Mitigazione dei Rischi 
- Strategie applicate per ridurre o eliminare l’impatto dei rischi identificati nel progetto.
+Metrica che valuta la capacità minima di previsione di un modello o sistema.
+== MPDS (Metriche di Processo e Sviluppo) 
+Insieme di metriche utilizzate per valutare la qualità del software nei suoi vari aspetti.
+== Mitigazione dei Rischi 
+Strategie applicate per ridurre o eliminare l’impatto dei rischi identificati nel progetto.
 == Modello di Sviluppo 
 Approccio metodologico utilizzato per organizzare il lavoro e garantire un avanzamento strutturato del progetto.
 == Moduli software
 Componenti o parti indipendenti di un sistema che possono essere sviluppate, testate e mantenute separatamente.
+
 #pagebreak()
 = N
 == NodeJS 
 Ambiente di runtime per JavaScript lato server.
 == Normazione
 Attività di definizione e aggiornamento delle norme e convenzioni del progetto.
+
 #pagebreak()
 = O
 == Ollama
 Piattaforma per l’integrazione di modelli LLM (Large Language Models) nel processo di analisi dei requisiti.
-== Organigramma 
-Struttura organizzativa del progetto che definisce ruoli e responsabilità dei membri del team.
+
 #pagebreak()
 = P
 == Package
@@ -373,6 +373,7 @@ Stima dei costi del progetto con allocazione delle risorse economiche necessarie
 Implementazione preliminare del progetto per verificarne la fattibilità.
 == Pull Request
 Proposta di integrazione di modifiche in un repository di versionamento.
+
 #pagebreak()
 = Q
 == Qualità di Processo 
@@ -384,23 +385,32 @@ Misura dell’efficienza e dell’efficacia dei processi seguiti nello sviluppo 
 Percentuale di requisiti soddisfatti rispetto al totale.
 == Refactoring
 Processo di ristrutturazione del codice per migliorarne la struttura senza modificarne il comportamento.
-== Requisiti
-Specifiche funzionali e non funzionali che il sistema deve soddisfare.
+== Requisito
+Condizione o capacità necessaria affinché un sistema software soddisfi le esigenze degli stakeholder.
+== Requisito Obbligatorio
+Specifica una caratteristica essenziale del sistema che deve essere implementata affinché il prodotto sia conforme alle specifiche e utilizzabile secondo gli obiettivi previsti.
+== Requisito Facoltativo
+Descrive una funzionalità aggiuntiva non essenziale, la cui implementazione può essere omessa senza compromettere il funzionamento principale del sistema.
+== Requisito Desiderabile
+Requisito non indispensabile, ma la cui implementazione è raccomandata poiché apporta valore aggiunto in termini di usabilità, efficienza o qualità.
+== Requisito Prestazionale
+Definisce vincoli relativi alle prestazioni del sistema, come tempi di risposta, capacità di elaborazione, consumo di risorse e scalabilità.
+== Requisito di Qualità
+Descrive attributi qualitativi del software, come affidabilità, manutenibilità, sicurezza, usabilità e accessibilità, che ne determinano il livello di accettabilità.
 == Requisito Funzionale
-Specifica un comportamento o una funzionalità che il software deve avere.
+Specifica un comportamento o una funzionalità che il sistema deve fornire, descrivendo le interazioni tra l’utente e il software.
 == Requisito Non Funzionale
-Specifica vincoli sulle prestazioni, sicurezza, usabilità e scalabilità del software.
-== Requirement Tracker 
+Definisce caratteristiche e vincoli che il sistema deve rispettare senza specificare comportamenti, come sicurezza, usabilità, prestazioni e scalabilità.
+== Requirement Tracker
 Plug-in per Visual Studio Code che automatizza il tracciamento dei requisiti nel codice sorgente.
 == Report
 Documento che sintetizza i risultati di un'analisi o di un processo.
 == Repository
- Archivio di codice sorgente gestito con strumenti come GitHub
+Archivio di codice sorgente gestito con strumenti come GitHub
 == Responsabile di progetto
 Figura incaricata di coordinare le attività e le risorse del progetto.
 
-// == Requisiti Obbligatori Soddisfatti 
-// Percentuale di requisiti obbligatori che sono stati implementati con successo.
+
 #pagebreak()
 = S
 == Script
@@ -417,10 +427,9 @@ Principio di design che stabilisce che ogni modulo o classe deve avere un solo c
 Intervallo di tempo breve durante il quale viene sviluppata una parte del lavoro in metodologie Agile.
 == Stub
 Implementazione minima usata come sostituto per un componente durante il testing.
-== Successo dei Test
- Percentuale di test che hanno avuto esito positivo rispetto al totale eseguito.
 == SV (Schedule Variance)
- Differenza tra il valore guadagnato (EV) e il valore pianificato (PV), indica eventuali ritardi o anticipi.
+Differenza tra il valore guadagnato (EV) e il valore pianificato (PV), indica eventuali ritardi o anticipi.
+
 #pagebreak()
 = T
 == Task
@@ -455,25 +464,33 @@ Linguaggio standard per la modellazione grafica di sistemi
 software.
 == Utility
 Strumento ausiliario che semplifica compiti ripetitivi o complessi.
+
 #pagebreak()
 = V
-== Visual Studio Code (VS Code)
- Editor di codice sviluppato da Microsoft, utilizzato per la programmazione e la gestione del codice sorgente.
-== Verifica
- Processo per determinare se il prodotto è stato sviluppato correttamente rispetto ai requisiti specificati.
 == Validazione
 Processo che assicura che il prodotto soddisfi i bisogni e le aspettative dell'utente finale.
-== VLN (Presenza di Vulnerabilità) 
-Numero di vulnerabilità di sicurezza ancora presenti nel codice.
+== Visual Studio Code (VS Code)
+Editor di codice sviluppato da Microsoft, utilizzato per la programmazione e la gestione del codice sorgente.
+== Verifica
+Processo per determinare se il prodotto è stato sviluppato correttamente rispetto ai requisiti specificati.
+== Vincolo
+Impone limitazioni progettuali o implementative, come l’uso di tecnologie specifiche, la compatibilità con sistemi esistenti, il rispetto di normative o restrizioni di budget e tempistiche.
 == Versionamento 
 Processo di gestione delle versioni di un software o documento.
+== VLN (Presenza di Vulnerabilità) 
+Numero di vulnerabilità di sicurezza ancora presenti nel codice.
+
+
 #pagebreak()
 = W
 == Way of Working
 Modalità di organizzazione e gestione delle attività all'interno di un progetto.
+
 #pagebreak()
 = X
+
 #pagebreak()
 = Y
+
 #pagebreak()
 = Z
