@@ -4,13 +4,14 @@
 #show: project.with(
   title: "Norme di Progetto",
   //subtitle: "Sottotitolo del Documento",
-  redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu", "Stefano Baso"),
+  redattori: ("Malik Giafar Mohamed", "Ion Cainareanu", "Stefano Baso", "Luca Parise"),
+  verifica: ("Malik Giafar Mohamed","Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu", "Stefano Baso"),
   approvazione: (""),
   uso: "Interno",
   version: "0.4.1",
   date: "23/11/2024",
   versionamento: (
+    "1.0.0", "07/03/2025", "Malik Giafar Mohamed", "Versione finale", "",
     "0.6.0", "01/03/2025", "Ion Cainareanu", "Miglioramenti per varie sezioni", "Malik Giafar Mohamed",
     "0.5.0", "28/02/2025", "Malik Giafar Mohamed, Stefano Baso", "Modifiche generali alle sezioni del documento", "Ion Cainareanu",
     "0.4.1", "11/02/2025", "Malik Giafar Mohamed","Integrazione di alcune specifiche relative al way of working","Ion Cainareanu",
@@ -39,7 +40,7 @@ ad esempio datasheet e manuali, permette di garantire una corretta copertura dei
 
 == Glossario
 I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
-nel documento Glossario.
+nell'omonimo documento.
 
 == Riferimenti
 *Riferimenti Normativi* 
@@ -47,13 +48,13 @@ nel documento Glossario.
   - https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
 - Standard ISO/IEC 12207:1995
   - https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf
-- Documento Piano di Qualifica
+- Piano di Qualifica
 *Riferimenti Informativi*
 - Materiale didattico del corso di Ingegneria del Software
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/
-- Documentazione GitHub:
+- Documentazione _GitHub_#super[G]:
   - https://help.github.com/en/github
-- Documentazione git:
+- Documentazione _git_#super[G]:
   - https://git-scm.com/docs
 - Documentazione Typst:
   - https://typst.app/docs/
@@ -79,7 +80,7 @@ Il processo di fornitura prevede la produzione dei seguenti documenti:
 
 - *Piano di Qualifica*: definisce le strategie e le metodologie di verifica e validazione adottate dal gruppo. Include le metriche di qualità, i test pianificati e le procedure per garantire che il prodotto finale soddisfi i requisiti. Questo documento è essenziale per assicurare che il prodotto sia conforme agli standard di qualità e che tutte le funzionalità richieste siano implementate correttamente. 
 
-- *Piano di Progetto*: descrive la pianificazione temporale e le risorse necessarie per completare il progetto. Include il calendario delle attività, la suddivisione dei compiti tra i membri del gruppo e le milestone principali. Questo documento è cruciale per garantire che il progetto sia completato nei tempi previsti e che tutte le risorse siano utilizzate in modo efficiente. 
+- *Piano di Progetto*: descrive la pianificazione temporale e le risorse necessarie per completare il progetto. Esso Include gli orari sia preventivati che effettivi per tutta la durata del progetto e l'analisi, insieme la gestione dei rischi e la loro mitigazione. Questo documento è cruciale per garantire che il progetto sia completato nei tempi previsti e che tutte le risorse siano utilizzate in modo efficiente. 
 
 - *Proof of Concept*: un prodotto software temporaneo creato per dimostrare la fattibilità del progetto. Viene utilizzato per verificare che le idee e le tecnologie proposte siano in grado di soddisfare i requisiti del progetto prima di procedere con lo sviluppo del prodotto finale. 
 
@@ -281,8 +282,8 @@ Il testo dei documenti deve essere scritto in lingua italiana, e utilizzerà i s
 - *Corsivo*: per far riferimento alla prima occorrenza di un termine del glossario
 - *Monospace*: per riportare nomi di file, cartelle o elementi che richiamano alla stesura di codice
 ==== Elenchi
-Gli elenchi puntati seguono le seguenti norme:
-- Il simbolo che scandisce ogni elemento dell'elenco è il pallino (•), al secondo e terzo livello si trovano rispettivamente il trattino(-) e il triangolo nero (‣)
+Gli elenchi seguono le seguenti norme:
+- Il simbolo che scandisce ogni elemento di un elenco puntato è il pallino (•), al secondo e terzo livello si trovano rispettivamente il trattino(-) e il triangolo nero (‣); mentre per le liste numerate si utilizzano i numeri arabi, poi le lettere minuscole e infine i numeri romani
 - Le voci iniziano per lettera maiuscola
 - Le liste del tipo "Termine: descrizione" presentano il termine in grassetto con la prima lettera in maiuscolo
 ==== Sigle
@@ -320,7 +321,7 @@ Vengono seguite le seguenti norme per utilizzare immagini, grafici e tabelle:
 Per la stesura dei documenti finora sono stati utilizzati i seguenti strumenti:
 - *Typst*: linguaggio di markup simile a Markdown utilizzato per la stesura di documenti
 - *Visual Studio Code*: IDE utilizzato per la scrittura del codice sorgente dei documenti
-- *Typst.app*: sito web utilizzato come alternativa per la stesura dei document
+- *Typst.app*: sito web utilizzato come alternativa per la stesura dei documenti
 - *GitHub Actions*: utilizzate per la generazione automatica dei file pdf derivanti dal codice sorgente dei documenti
 == Gestione della configurazione
 === Scopo e aspettative
@@ -353,11 +354,12 @@ La repository utilizzata dal gruppo per la creazione dei documenti è strutturat
   - `Documentazione Interna`: contiene i verbali delle riunioni relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei file pdf.
     - `Verbali`: contiene i verbali delle riunioni relative alla milestone RTB.
-  `assets`: contiene tutto ciò che è di supporto alla documentazione, come:
+- `assets`: contiene tutto ciò che è di supporto alla documentazione, come:
   - file di template per i documenti.
   - il logo del gruppo, utilizzato per tutta la repository.
   - `utils`: creata contiene script di utility, attualmente contiene solo uno script che agevola la generazione del sito web del gruppo.
-
+- `directory_structure.xml`: file XML che contiene la struttura della repository, utilizzato per la generazione automatica del sito web del gruppo.
+- `README.md`: file che contiene le informazioni principali della repository, come la struttura e le e la lista dei membri.
 La repository è pubblica e si può facilmente trovare al seguente link:
 - https://github.com/nextsoftPD/Documenti
 ==== PoC
@@ -366,18 +368,18 @@ All'interno della repository è presente un file README che fornisce istruzioni 
 
 Il Proof of Concept è stato mostrato e condiviso con l'azienda proponente, che ha avuto modo di testarlo e fornire feedback.
 === Branch
-Tutte le repository del gruppo si compongono di più _branch_#super[G], suddivisi ad hoc, in modo da garantire una separazione da ciò che è stabile e verificato e ciò che è in fase di sviluppo. Ogni membro può fare delle modifiche in un branch specifico a patto che esse siano relative solo ai configuration items#super("G") modificabili in quello specifico branch.
+Tutte le repository del gruppo si compongono di più _branch_#super[G], suddivisi ad hoc, in modo da garantire una separazione da ciò che è stabile e verificato e ciò che è in fase di sviluppo. Ogni membro può fare delle modifiche in un branch specifico a patto che esse siano relative solo ai _configuration items_#super("G") modificabili in quello specifico branch.
 
 La suddivisione dei branch varia in base allo scopo della repository. 
 
 
-In nessuna repository è consentito modificare direttamente il branch principale, poiché porterebbe ad un elevato rischio di incongruenze e merge conflicts#super("G").
+In nessuna repository è consentito modificare direttamente il branch principale, poiché porterebbe ad un elevato rischio di incongruenze e _merge conflicts_#super("G").
 Si potranno applicare modifiche solo tramite il meccanismo di pull request#super("G"), con verifica obbligatoria da parte di un verificatore, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Nel caso di una minor invece, la verifica può essere svolta nel momento stesso in cui viene aggiunta una versione "stabile".
 
 
 Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei verificatori, a patto che sia solo allo scopo di risolvere errori ortografici o per migliorare la comprensibilità alcune frasi senza modificarne il significato logico. Questa decisione è stata presa al fine di evitare la creazione di numerose minor e di poter proseguire più velocemente con la stesura dei documenti.
 
-La repository dei documenti è suddivisa in più branch#super("G") così definiti:
+La repository dei documenti è suddivisa in più _branch_#super("G") così definiti:
 
 - *`main`*: il branch principale, che contiene l'ultima versione verificata di ogni documento
 - *`nome_documento`*: branch che assume il nome del documento a cui fa riferimento, qui sarà possibile modificare solo il documento in questione.
@@ -388,10 +390,10 @@ La repository dei documenti è suddivisa in più branch#super("G") così definit
 La gestione della qualità di progetto è l'insieme delle attività che vengono eseguite
 all'interno di un progetto per garantire qualità su prodotti e processi in modo che il prodotto finale possa soddisfare i requisiti e le aspettative degli stakeholders.
 === Piano di Qualifica
-Il documento Piano di Qualifica#super("G") definisce le strategie e le metodologie di verifica e validazione adottate dal gruppo, verrà quindi utilizzato come riferimento per garantire che il processo di gestione della qualità raggiunga l'economicità.
+Il documento _Piano di Qualifica_#super("G") definisce le strategie e le metodologie di verifica e validazione adottate dal gruppo, verrà quindi utilizzato come riferimento per garantire che il processo di gestione della qualità raggiunga l'economicità.
 
 === Ciclo di Deming
-Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del ciclo di Deming#super("G") (o PDCA),un approccio continuo e costante al miglioramento della qualità dei processi e dei prodotti, basandosi su uno schema sistematico e iterativo che consiste di quattro punti:
+Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del _ciclo di Deming_#super("G") (o PDCA),un approccio continuo e costante al miglioramento della qualità dei processi e dei prodotti, basandosi su uno schema sistematico e iterativo che consiste di quattro punti:
 
 - *Plan*: Si identificano gli obiettivi di miglioramento e si pianificano le azioni necessarie per raggiungerli. Si analizzano i processi attuali, si raccolgono dati e si individuano le aree che necessitano di miglioramenti.
 
@@ -413,7 +415,7 @@ dove:
 - *[TipoProdotto]*: indica se si riferisce a documenti o software ed è presente solo nel caso sia una metrica di prodotto. Può assumere i seguenti valori:
   - *D*: per indicare i documenti
   - *S*: per indicare i prodotti software
-- *Numero*: rappresenta il codice numerico identificativo della metrica, inizia da 01
+- *Numero*: rappresenta il codice numerico identificativo della metrica, inizia da 1 per ogni tipologia di categoria e prodotto
 
 == Verifica 
 === Scopo e aspettative
@@ -454,14 +456,14 @@ Non sono ancora stati individuati strumenti per la verifica del codice.
 I test vengono identificati dal codice
 #align(center)[#strong[T[Tipo]-[ID]]]
 dove:
-- *T*: indica che si tratta di un test;
-- *Tipo*: indica il tipo di test e può assumere i seguenti valori:
-  - *U* per i test di unità;
-  - *I* per i test d'integrazione;
-  - *S* per i test di sistema;
-  - *R* per i test di regressione;
+- *T*: indica che si tratta di un test
+- *Tipo*: indica il tipo di test e può assumere i seguenti valori
+  - *U* per i test di unità
+  - *I* per i test d'integrazione
+  - *S* per i test di sistema
+  - *R* per i test di regressione
   - *A* per i test di accettazione.
-- *ID*: codice numerico progressivo che inizia da 1.
+- *ID*: codice numerico progressivo che inizia da 1 per ogni tipo d test
 
 === Verifica della Documentazione
 La documentazione è considerata valida quando:
@@ -566,7 +568,7 @@ Ogni volta che è necessario portare a termine un compito, si segue questa proce
   - Nel caso in cui la verifica abbia esito negativo, quando verranno effettuate le modifiche, non sarà necessario aumentare di una versione, poiché il configuration item verrà ritenuto valido quando "stabile" e di conseguenza privo di errori o incongruenze
   - I cambiamenti possono essere richiesti tramite un commento su github o possono essere accordati in una riunione o una breve chiamata
 
-=== Riunioni
+=== Gestione delle riunioni
 Le riunioni sono un momento fondamentale per coordinare le attività del gruppo e prendere decisioni importanti. Esse si dividono in:
 *Riunioni interne*
 \
@@ -595,23 +597,21 @@ Per ogni riunione viene redatto un verbale che riporta:
 - Analisi delle criticità riscontrate
 
 I verbali delle riunioni vengono archiviati e resi disponibili a tutti i membri del gruppo per garantire la trasparenza e la tracciabilità delle decisioni prese.
-==== Comunicazioni
+==== Gestione delle comunicazioni
 Le comunicazioni all'interno del gruppo avvengono principalmente attraverso i seguenti canali:
 - *Whatsapp*: per fissare le riunioni
 - *Discord*: per prendere discutere eventuali problemi e definire delle azioni da intraprendere di conseguenza
 
 Per le comunicazioni formali con il proponente o altre parti interessate, si utilizzano principalmente:
 - *Email*: per fissare riunioni o per lo scambio di risorse e documenti
-- *Zoom*: per ottenere feedback sull'avanzamento del progetto e discutere eventuali dubbi 
+- *Zoom*: per ottenere feedback sull'avanzamento del progetto e discutere eventuali dubbi
 == Strumenti
-Per la gestione dei rischi sono stati utilizzati i seguenti strumenti:
-- *GitHub*: per la gestione delle issue e dei pull request
-- *Typst*: per la stesura dei documenti
-- *Discord*: per le comunicazioni interne
-- *WhatsApp*: per le comunicazioni informali e rapide
-- *Zoom*: per le riunioni online
-- *Visual Studio Code*: per la scrittura del codice sorgente
-
+Tutti gli strumenti di supporto ai processi organizzativi utilizzati sono stati i seguenti:
+- *GitHub*: per la gestione del repository e il versionamento del codice
+- *GitHub Projects*: per il tracking delle issue e la gestione delle task
+- *Zoom*: per le riunioni con il proponente e altre parti interessate
+- *Whatsapp*: per fissare le riunioni interne
+- *Discord*: per discutere eventuali problemi e definire azioni da intraprendere
 == Formazione del Personale
 I componenti di NextSoft si diveranno in due macrogruppi,
 uno dedito alla ricerca delle tecnologie necessarie per il Capitolato e l'altro dedito al processo di stesura della documentazione e alla discussione delle scelte progettuali proposte.
