@@ -14,13 +14,14 @@
 
 #show: project.with(
   title: "Analisi dei Requisiti",
-  redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez",),
+  redattori: ("Ion Cainareanu", "Luca Parise", "Marco Perazzolo", "Malik Giafar Mohamed"),
+  verifica: ("Ion Cainareanu", "Luca Parise", "Marco Perazzolo", "Malik Giafar Mohamed", "Stefano Baso", "Maria Fuensanta Trigueros Hernandez"),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.4.0",
+  version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
+    "1.0.0","08/03/2025","Ion Cainareanu","Aggiunti i termini del glossario e rilasciata la versione 1.0.0 del documento","",
     "0.6.3","07/03/2025","Marco Perazzolo","Affinamento degli extension points nei diagrammi UML","Stefano Baso",
     "0.6.2","26/02/2025","Ion Cainareanu","Outline automatico per le tabelle","Malik Giafar Mohamed",
     "0.6.1","26/02/2025","Malik Giafar Mohamed","Aggioramento data di creazione documento","Ion Cainareanu",
@@ -38,9 +39,9 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo del presente documento è fornire una descrizione completa e dettagliata degli obiettivi, delle funzionalità e delle caratteristiche tecniche del progetto *Requirement Tracker - Visual Studio Code Plug-in*, con particolare attenzione all'utilizzo dell'UML per la modellazione dei casi d'uso. Il documento funge da riferimento per tutti gli stakeholder coinvolti, descrivendo il contesto operativo, i requisiti funzionali e non funzionali, nonché le linee guida tecnologiche necessarie per lo sviluppo del plug-in. I casi d'uso saranno descritti utilizzando una struttura standardizzata, che includerà il nominativo del caso, gli attori principali, le precondizioni, le postcondizioni, lo scenario principale e gli eventuali scenari alternativi o sottocasi. Questa struttura garantisce chiarezza e coerenza, facilitando la comprensione e la tracciabilità delle funzionalità principali del sistema. Il documento intende inoltre fornire una visione condivisa del progetto, ponendo le basi per una pianificazione e un'implementazione efficaci.
+Lo scopo del presente documento è fornire una descrizione completa e dettagliata degli obiettivi, delle funzionalità e delle caratteristiche tecniche del progetto *Requirement Tracker - Visual Studio Code Plug-in*, con particolare attenzione all'utilizzo dell'_UML_#super("G") per la modellazione dei _casi d'uso_#super("G"). Il documento funge da riferimento per tutti gli _stakeholder_#super("G") coinvolti, descrivendo il contesto operativo, i requisiti funzionali e non funzionali, nonché le linee guida tecnologiche necessarie per lo sviluppo del _plug-in_#super("G"). I casi d'uso saranno descritti utilizzando una struttura standardizzata, che includerà il nominativo del caso, gli attori principali, le _precondizioni_#super("G"), le _postcondizioni_#super("G"), lo _scenario principale_#super("G") e gli eventuali _scenari alternativi_#super("G") o sottocasi. Questa struttura garantisce chiarezza e coerenza, facilitando la comprensione e la tracciabilità delle funzionalità principali del sistema. Il documento intende inoltre fornire una visione condivisa del progetto, ponendo le basi per una _pianificazione_#super("G") e un'implementazione efficaci.
 == Scopo del prodotto
-Lo scopo di *Requirement Tracker - Visual Studio Code Plug-in* è affrontare il problema della complessità nella gestione e nel tracciamento dei requisiti nei progetti software di grandi dimensioni. Nei codebase estesi, la verifica manuale della copertura e dell'implementazione dei requisiti è un processo lungo e soggetto a errori, spesso complicato dalla qualità insufficiente con cui i requisiti stessi vengono definiti. Questo può portare a malintesi e problemi durante l'implementazione, compromettendo l'allineamento tra specifiche e funzionalità sviluppate. 
+Lo scopo di *Requirement Tracker - Visual Studio Code Plug-in* è affrontare il problema della complessità nella gestione e nel _tracciamento dei requisiti_#super("G") nei progetti software di grandi dimensioni. Nei _codebase_#super("G") estesi, la verifica manuale della copertura e dell'implementazione dei requisiti è un processo lungo e soggetto a errori, spesso complicato dalla qualità insufficiente con cui i requisiti stessi vengono definiti. Questo può portare a malintesi e problemi durante l'implementazione, compromettendo l'allineamento tra specifiche e funzionalità sviluppate. 
 Il plug-in mira a risolvere queste difficoltà automatizzando il tracciamento dei requisiti nel codice sorgente, migliorando la qualità della loro definizione e semplificando l'identificazione delle aree di mancata o errata implementazione. In particolare, offre strumenti per integrare requisiti tecnici derivati da manuali e datasheet di componenti hardware, fornendo analisi automatizzate e suggerimenti per rendere i requisiti più chiari, specifici e strutturati. Grazie a questo, sviluppatori potranno garantire una gestione più efficace dei requisiti, riducendo errori e aumentando la coerenza tra specifiche e implementazione.
 == Glossario
 Per evitare ambiguità relative alle terminologie utilizzate è stato creato un documento denominato *Glossario*.
@@ -50,22 +51,22 @@ all'interno del documento con l'apice #super("G") accanto alla parola.
 
 = Descrizione
 == Obiettivi del prodotto 
-L'obiettivo del progetto è realizzare un plug-in per Visual Studio Code che consenta di tracciare e verificare l'implementazione dei requisiti di progetto, basandosi su analisi automatizzate del codice sorgente e sui requisiti tecnici espressi in documenti di riferimento, mediante l'utilizzo di tecnologie avanzate come modelli LLM#super("G") di AI#super("G"). Il plug-in sarà supportato da API REST#super("G") che si interfacciano con Ollama#super("G"), fornendo un'infrastruttura flessibile e scalabile per l'integrazione di modelli di AI e garantendo un'elaborazione efficiente e sicura delle analisi richieste.
+L'obiettivo del progetto è realizzare un plug-in per _Visual Studio Code_#super("G") che consenta di tracciare e verificare l'implementazione dei requisiti di progetto, basandosi su analisi automatizzate del codice sorgente e sui requisiti tecnici espressi in documenti di riferimento, mediante l'utilizzo di tecnologie avanzate come modelli _LLM_#super("G") di _AI_#super("G"). Il plug-in sarà supportato da _API REST_#super("G") che si interfacciano con _Ollama_#super("G"), fornendo un'infrastruttura flessibile e scalabile per l'integrazione di modelli di AI e garantendo un'elaborazione efficiente e sicura delle analisi richieste.
 == Funzionalità del prodotto
-Il plug-in sarà utilizzato dal programmatore per analizzare i requisiti implementati nel codice sorgente. Sia i requisiti che il codice saranno analizzati da vari modelli LLM reperibili attraverso la piattaforma di Ollama, grazie alle API REST che interagiscono con Ollama.\
+Il plug-in sarà utilizzato dal _programmatore_#super("G") per analizzare i requisiti implementati nel codice sorgente. Sia i requisiti che il codice saranno analizzati da vari modelli LLM reperibili attraverso la piattaforma di Ollama, grazie alle API REST che interagiscono con Ollama.\
 Le funzionalità implementate nell'applicazione includono:
-- Importazione del file dei requisiti in formato CSV#super("G");
-- Richiesta di analisi dei requisiti tramite un modello LLM;
+- Importazione del file dei requisiti in formato _CSV_#super("G");
+- Richiesta di _analisi dei requisiti_#super("G") tramite un modello LLM;
 - Valutazione qualitativa dei requisiti;
 - Visualizzazione grafica dei risultati dell'analisi;
 - Filtraggio dei risultati dell'analisi;
-- Possibilità di eseguire l'analisi su un requisito specifico;
+- Possibilità di eseguire l'analisi su un _requisito_#super("G") specifico;
 - Esportazione dei risultati dell'analisi in formato CSV;
 - Ricerca dell'implementazione dei requisiti nel codice sorgente;
-- Analisi semantica dei requisiti e del codice sorgente;
+- _Analisi semantica_#super("G") dei requisiti e del codice sorgente;
 - Suggerimenti per migliorare la qualità dei requisiti e del codice;
 - Possibilità di modificare il modello LLM che analizza i requisiti ed il codice;
-- Possibilità di modificare l'endpoint di collegamento al server Ollama;
+- Possibilità di modificare l'_endpoint_#super("G") di collegamento al server Ollama;
 - Possibilità di modificare la soglia di accettazione relativa alla qualità del codice.
 
 == Utenti e caratteristiche 
@@ -82,9 +83,9 @@ In seguito a un incontro con il proponente, è stato discusso come il plug-in po
 )
 
 == Obiettivi
-Questa sezione si propone di identificare e descrivere i casi d'uso derivati dall'analisi del capitolato d'appalto selezionato dal gruppo. In particolare, vengono definiti gli attori principali e le funzionalità ad essi associate.
+Questa sezione si propone di identificare e descrivere i casi d'uso derivati dall'analisi del _capitolato_#super("G") d'appalto selezionato dal gruppo. In particolare, vengono definiti gli attori principali e le funzionalità ad essi associate.
 == Attori 
-L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappresenta un utente che utilizza il plug-in _Requirement Tracker - Visual Studio Code Plug-in_ per importare, analizzare e tracciare l'implementazione dei requisiti software all'interno del codice sorgente di un progetto.
+L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore*, esso rappresenta un utente che utilizza il plug-in _Requirement Tracker - Visual Studio Code Plug-in_ per importare, analizzare e tracciare l'implementazione dei requisiti software all'interno del codice sorgente di un progetto.
 
 
 
@@ -129,7 +130,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 
 *Scenario principale:*  
 1. L'utente seleziona l'opzione "Importa requisiti".
-2. Il sistema apre un file explorer.
+2. Il sistema apre un _file explorer_#super("G").
 3. L'utente seleziona il file CSV da importare [UC_1.3] 
 4. Il sistema verifica la validità del file e importa i dati (ID, testo, di ogni requisito).
 5. I requisiti importati vengono mostrati in una vista strutturata [UC_9].
@@ -219,7 +220,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 8. Il sistema registra i dati e li rende disponibili per la visualizzazione ([UC_4]).
 
 *Estensioni:*  
-- *UC_2.3 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.  
+- *UC_2.3 - Visualizzazione errore tracciamento mancante*: Se il _mapping_#super("G") del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.  
 - *UC_2.4 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_2.5 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_2.6 - Visualizzazione errore codice sorgente non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente, il sistema mostra un messaggio di errore.
@@ -237,7 +238,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 
 *Postcondizioni:*  
 - Ogni requisito viene valutato semanticamente, in termini di completezza, chiarezza, correttezza e non ambiguità.  
-- I risultati dell'analisi semantica sono stati generati e verranno integrati nel report finale.
+- I risultati dell'analisi semantica sono stati generati e verranno integrati nel _report_#super("G") finale.
 
 *Scenario principale:*
 1. Il sistema estrae il testo di ciascun requisito.  
@@ -692,13 +693,13 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 
 *Scenario principale:*  
 1. L'utente crea o modifica un file .reqignore nel progetto.  
-2. L'utente inserisce nel file .reqignore i path o pattern relativi ai file o directory da escludere.  
+2. L'utente inserisce nel file .reqignore i path o _pattern_#super("G") relativi ai file o directory da escludere.  
 3. Il sistema rileva automaticamente le modifiche apportate al file .reqignore.  
 4. Durante la l'analisi [UC_2] ed il tracciamento [UC_7], il sistema esclude i path specificati nel file .reqignore.  
 5. L'utente avvia l'analisi o il tracciamento e i path ignorati non vengono considerati.  
 
 *Estensioni:*  
-- *UC_8.1 - Visualizzazione errore path non valido*: Se il path specificato non è valido, il sistema notifica l'utente e ignora l'entry errata mantenendo valide le altre.  
+- *UC_8.1 - Visualizzazione errore path non valido*: Se il path specificato non è valido, il sistema notifica l'utente e ignora l'_entry_#super("G") errata mantenendo valide le altre.  
 
 
 == UC_8.1 - Visualizzazione errore path non valido
@@ -989,8 +990,8 @@ Questi requisiti descrivono cosa il sistema deve fare
     table.header([*Codice*], [*Classificazione*],[*Descrizione*],[*Fonti*]),
     /*----------------------------------------------------*/
     [RFO001],
-    [Obbligatorio],
-    [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal filesystem],
+    [_Obbligatorio_#super("G")],
+    [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_#super("G")],
     [Capitolato, UC_1, UC_1.1, UC_1.3, Proponente],
     /*----------------------------------------------------*/
     [RFO002],
@@ -1058,7 +1059,7 @@ Questi requisiti descrivono cosa il sistema deve fare
     [UC_4.1.1.6],
     /*----------------------------------------------------*/
     [RFF014],
-    [Facoltativo],
+    [_Facoltativo_#super("G")],
     [Il codice relativo ad un requisito da analizzare può essere presente in file diversi],
     [Proponente],
     /*----------------------------------------------------*/
@@ -1115,7 +1116,7 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
     /*----------------------------------------------------*/
     [RQO001],
     [Obbligatorio],
-    [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove feature in base a esigenze o aggiornamenti futuri del progetto],
+    [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove _feature_#super("G") in base a esigenze o aggiornamenti futuri del progetto],
     [Capitolato],
     /*----------------------------------------------------*/
     [RQO002],
@@ -1197,8 +1198,8 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     ),
     /*----------------------------------------------------*/
     [RPD001],
-    [Desiderabile],
-    [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta (risposte con tempo di attesa >20s)  o a un modello troppo grande (prompt maggiore di 6000 token e/o velocità di risposta < 20 token/s)],
+    [_Desiderabile_#super("G")],
+    [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta (risposte con tempo di attesa >20s)  o a un modello troppo grande (_prompt_#super("G") maggiore di 6000 _token_#super("G") e/o velocità di risposta < 20 token/s)],
     [UC_2.4, UC_2.5],
     /*----------------------------------------------------*/
     [RPO002],
@@ -1281,11 +1282,11 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     align: (center),
     columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
     [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Facoltativo*],[*Totale*],
-    [Funzionale],   [18],               [],               [2],           [20],
+    [_Funzionale_#super("G")],   [18],               [],               [2],           [20],
 
-    [Di Qualità],   [3],               [],               [],           [3],
+    [_Di Qualità_#super("G")],   [3],               [],               [],           [3],
 
-    [Di Vincolo],    [3],               [],               [3],           [6],
+    [_Di Vincolo_#super("G")],    [3],               [],               [3],           [6],
     
     [Prestazionale],  [1],               [1],               [],           [2],
 ),
