@@ -16,7 +16,7 @@
   title: "Analisi dei Requisiti",
   redattori: ("Ion Cainareanu", "Luca Parise", "Marco Perazzolo", "Malik Giafar Mohamed"),
   verifica: ("Ion Cainareanu", "Luca Parise", "Marco Perazzolo", "Malik Giafar Mohamed", "Stefano Baso", "Maria Fuensanta Trigueros Hernandez"),
-  approvazione: ("",),
+  approvazione: ("Luca Parise",),
   uso: "Esterno",
   version: "1.0.0",
   date: "23/11/2024",
