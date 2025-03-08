@@ -3,7 +3,7 @@
 #show: project.with(
   title: "Incontro per la consegna\ndella Documentazione RTB",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: ("",),
+  verifica: ("Stefano Baso",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0",
