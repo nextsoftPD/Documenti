@@ -5,17 +5,15 @@
   top: if y < 2 { stroke } else { 0pt },
   bottom: stroke,
 )
-/* senza la regola seguente le tabelle degli use case avrebbero 
- le linee interne che sono brutte da vedere */
+
 
 #set table(
   fill: (rgb("#ffffff"), none),
   stroke: frame(rgb("21222C")),
 )
-// Esempio di utilizzo
+
 #show: project.with(
   title: "Analisi dei Requisiti",
-  //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed",),
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez",),
   approvazione: ("",),
@@ -23,6 +21,7 @@
   version: "0.4.0",
   date: "23/11/2024",
   versionamento: (
+    "0.6.3","07/03/2025","Marco Perazzolo","Affinamento degli extension points nei diagrammi UML","Stefano Baso",
     "0.6.2","26/02/2025","Ion Cainareanu","Outline automatico per le tabelle","Malik Giafar Mohamed",
     "0.6.1","26/02/2025","Malik Giafar Mohamed","Aggioramento data di creazione documento","Ion Cainareanu",
     "0.6.0","25/02/2025","Luca Parise, Ion Cainareanu, Marco Perazzolo","Modifiche post incontro con l'azienda","Malik Giafar Mohamed",
@@ -76,7 +75,7 @@ In seguito a un incontro con il proponente, è stato discusso come il plug-in po
 = Use Case 
 
 #figure(
-  image("./img/AdR/GeneralUC.png", width: 80%),
+  image("./img/AdR/GeneralUC.png", width: 70%),
   caption: [
     Panoramica delle funzionalità principali del plugin.
   ],
@@ -92,7 +91,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 == UC_1 - Importazione da file CSV
 
 #figure(
-  image("./img/AdR/UC_1.png", width: 100%),
+  image("./img/AdR/UC_1.png", width: 90%),
   caption: [UC_1 - Importazione dei requisiti da file]
 )
 \
@@ -880,7 +879,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 == UC_10 - Configurazione del modello LLM
 
 #figure(
-  image("./img/AdR/UC_10.png", width: 90%),
+  image("./img/AdR/UC_10.png", width: 70%),
   caption: [UC_10 - Configurazione del modello LLM per l'analisi]
 )
 
@@ -904,7 +903,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 == UC_11 - Configurazione dell'endpoint del server Ollama
 
 #figure(
-  image("./img/AdR/UC_11.png", width: 90%),
+  image("./img/AdR/UC_11.png", width: 70%),
   caption: [UC_11 - Configurazione dell'endpoint di Ollama]
 )
 
@@ -928,7 +927,7 @@ L'applicazione è progettata con un unico attore, il *Programmatore*, esso rappr
 == UC_12 - Configurazione della soglia di conformità
 
 #figure(
-  image("./img/AdR/UC_12.png", width: 90%),
+  image("./img/AdR/UC_12.png", width: 75%),
   caption: [UC_12 - Configurazione della soglia del quality score]
 )
 
@@ -1100,7 +1099,6 @@ Questi requisiti descrivono cosa il sistema deve fare
 
 
 \
-#pagebreak()
 
 == Requisiti di qualità
 Questi requisiti riguardano le caratteristiche qualitative del sistema
@@ -1182,7 +1180,6 @@ Questi requisiti specificano limiti tecnici o di conformità
 
 \
 \
-\
 
 == Requisiti Prestazionali 
 
@@ -1213,7 +1210,9 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
   caption: [Requisiti Prestazionali]
 )
 
-#pagebreak()
+\
+\
+
 == Tracciamento dei Requisiti
 
 #figure(
