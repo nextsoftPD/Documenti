@@ -445,35 +445,35 @@ Le specifiche riguardanti i test descritti verranno definite nelle successive ve
 == MPC05 - MPC02: Actual Cost e Estimated to Completion
 
 #figure(
-  image("img/PdQ/Ac_etc.png", width: 70%),
+  image("img/PdQ/Ac_etc.png", width: 100%),
   caption: [Grafo Actual Cost e Estimated to Completion],
 )
 
 == MPC03 - MPC04: Earned Value e Planned Value
 
 #figure(
-  image("img/PdQ/Ev_pv.png", width: 70%),
+  image("img/PdQ/Ev_pv.png", width: 100%),
   caption: [Grafo Earned Value e Planned Value],
 )
 
 == MPC07: Schedule Variance
 
 #figure(
-  image("img/PdQ/Sv.png", width: 70%),
+  image("img/PdQ/Sv.png", width: 100%),
   caption: [Grafo Schedule Variance],
 )
 
 == MPC06: Cost Variance
 
 #figure(
-  image("img/PdQ/Cv.png", width: 70%),
+  image("img/PdQ/Cv.png", width: 100%),
   caption: [Grafo Cost Variance],
 )
 
 == MPC01: Estimated at Completion
 
 #figure(
-  image("img/PdQ/Eac.png", width: 70%),
+  image("img/PdQ/Eac.png", width: 100%),
   caption: [Grafo Estimated at Completion],
 )
 
