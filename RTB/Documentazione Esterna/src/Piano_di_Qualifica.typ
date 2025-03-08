@@ -3,13 +3,14 @@
 #show: project.with(
   title: "Piano di Qualifica",
   //subtitle: "Sottotitolo del Documento",
-  redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
-  approvazione: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez"),
+  redattori: ("Malik Giafar Mohamed", "Stefano Baso"),
+  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo"),
+  approvazione: ("", ""),
   uso: "Esterno",
-  version: "0.4.0",
+  version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
+    "1.0.0", "04/03/2025", "Stefano Baso", "Aggiunti grafici e fix nomeclatura", "",
     "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "Ion Cainareanu",
     "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
     "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
@@ -28,23 +29,32 @@
   target: figure.where(kind: table),
 )
 
-= Introduzione e scopo
+= Scopo del documento
 
-Il Piano di Qualifica è un documento soggetto a modifiche incrementali, finalizzate principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
+Il _Piano di Qualifica_#super("G") è un documento soggetto a modifiche incrementali, finalizzate principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
 
 Il presente documento si propone di:
 
 - Definire le metriche e le metodologie di controllo e misurazione.
 - Stabilire quantità, qualità dei #text(style: "italic")[test]#super[G] e relative metriche.
-- Descrivere l’applicazione dei test e documentarne i risultati, valutando la conformità rispetto alle attese e alle metriche definite.
+- Descrivere l'applicazione dei test e documentarne i risultati, valutando la conformità rispetto alle attese e alle metriche definite.
+
+Il documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
+
+== Scopo del prodotto
+Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
+è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
+con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
+e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
+riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
+sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
+facilmente adattabile a nuove funzionalità o esigenze future.
+Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come knowledge,
+ad esempio datasheet e manuali, permette di garantire una corretta copertura dei requisiti.
 
 == Glossario
-
-Con lo scopo di rendere chiara la terminologia usata all'interno del documento, viene allegato un Glossario nel file dedicato che servirà a chiarire le terminologie usate dandone una definizione. Ogni termine la cui definizione sarà presente nel Glossario, verrà identificato con una lettera G come apice, nel formato _parola_#super[G]. 
-
-== Maturità e miglioramenti
-
-Il seguente documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, pertanto non può essere considerato completo e definitivo.
+I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
+nell'omonimo documento.
 
 == Riferimenti
 
@@ -56,16 +66,18 @@ Il seguente documento sarà soggetto a modifiche e integrazioni durante il corso
 === Riferimenti informativi
 
 Materiale didattico del corso
-- Qualità di prodotto: https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf
-- Qualità di processo: https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf
-- Indice di Gulpease: https://www.ilc.cnr.it/dylanlab/apps/texttools/
-
+- Qualità di prodotto
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf
+- Qualità di processo
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf
+- Indice di Gulpease
+  - https://www.ilc.cnr.it/dylanlab/apps/texttools/
 
 = Qualità di processo
 
 == Scopo ed obiettivi
 
-La qualità di un sistema è determinata dai processi che lo costituiscono e viene misurata attraverso l'uso di metriche specifiche, atte a valutare tali processi e verificarne il raggiungimento degli obiettivi di qualità stabiliti. Il modello di riferimento è il _Ciclo di Deming_#super[G] o PDCA (Plan - Do - Check - Act), il quale consente di avere un miglioramento continuo tramite una gestione strutturata delle attività. Questo approccio si basa su una pianificazione accurata, il monitoraggio mediante metriche definite e l'integrazione dei risultati ottenuti nella fase di produzione operativa.
+La qualità di un sistema è determinata dai processi che lo costituiscono e viene misurata attraverso l'uso di metriche specifiche, atte a valutare tali processi e verificarne il raggiungimento degli obiettivi di qualità stabiliti. Il modello di riferimento è il _Ciclo di Deming_#super[G] o PDCA (Plan - Do - Check - Act), il quale consente di avere un miglioramento continuo tramite una gestione strutturata delle attività. Questo approccio si basa su una _pianificazione_#super("G") accurata, il monitoraggio mediante _metriche_#super("G") definite e l'integrazione dei risultati ottenuti nella fase di produzione operativa.
 
 Di seguito, vengono presentati i processi identificati e i corrispondenti livelli di qualità prefissati. Per ciascuna metrica è fornita una descrizione che ne illustra le modalità di applicazione e definisce i valori considerati accettabili nel contesto delle verifiche di qualità.
 
@@ -73,7 +85,7 @@ Di seguito, vengono presentati i processi identificati e i corrispondenti livell
 
 === Fornitura
 
-In questa fase del processo vengono analizzate tutte le scelte effettuate durante lo sviluppo, verificandone la conformità con gli obiettivi stabiliti nelle diverse fasi del progetto. Vengono definite le misure da implementare, assicurando il rispetto dei termini e delle condizioni prestabiliti. L'obiettivo principale è garantire che la fornitura sia allineata alle aspettative, sia in termini di risorse impiegate che di risultati ottenuti.
+In questa fase del processo vengono analizzate tutte le scelte effettuate durante lo sviluppo, verificandone la conformità con gli obiettivi stabiliti nelle diverse fasi del progetto. Vengono definite le misure da implementare, assicurando il rispetto dei termini e delle condizioni prestabiliti. L'obiettivo principale è garantire che la _fornitura_#super("G") sia allineata alle aspettative, sia in termini di risorse impiegate che di risultati ottenuti.
 
 Un concetto chiave in questo contesto è l'MPC (Minimum Predictive Capability), una metrica fondamentale per valutare l'affidabilità di un modello di apprendimento automatico nel generare risultati accurati. L'MPC rappresenta il livello minimo di precisione che un modello deve raggiungere per essere considerato accettabile, contribuendo a garantire che le previsioni siano coerenti con gli standard richiesti.
 
@@ -85,7 +97,7 @@ $ "BAC" = sum "costi previsti" $
 - EAC (Estimated At Completion): Valore stimato per i compiti rimanenti.
 $ "EAC" = "BAC"/"CPI" $
 
-- CPI (Cost Performance Index): Indice di prestazione dei costi, misura l'#text(style: "italic")[efficienza]#super[G] con cui il budget viene utilizzato. Un valore > 1 indica che il progetto sta spendendo meno del previsto, mentre un valore < 1 indica che sta spendendo di più del previsto.
+- CPI (Cost Performance Index): Indice di prestazione dei costi, misura l'#text(style: "italic")[efficienza]#super("G") con cui il _budget_#super("G") viene utilizzato. Un valore > 1 indica che il progetto sta spendendo meno del previsto, mentre un valore < 1 indica che sta spendendo di più del previsto.
 $ "CPI" = "EV"/"AC" $
 
 - ETC (Estimated To Completion): Stima del costo finale aggiornato alla data di misurazione.
@@ -113,14 +125,14 @@ $ "BV" = "AC" - "CV" $
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC-EAC], [Estimated at \ Completion], [± 5% \ rispetto al preventivo], [Corrispondente al \ preventivo],
-    [MPC-ETC], [Estimated to \ Completion], [>= 0], [≤ EAC],
-    [MPC-EV], [Earned Value], [>= 0], [≤ EAC],
-    [MPC-PV], [Planned Value], [>= 0], [≤ BAC],
-    [MPC-AC], [Actual Cost], [>= 0], [≤ EAC],
-    [MPC-CV], [Cost Variance], [≥ -5%], [≥ 0%],
-    [MPC-SV], [Schedule Variance], [≥ -10%], [≥ 0%],
-    [MPC-BV], [Budget Variance], [± 10%], [≤ 0%],
+    [MPC01], [Estimated at \ Completion], [± 5% \ rispetto al _preventivo_#super("G")], [Corrispondente al \ preventivo],
+    [MPC02], [Estimated to \ Completion], [>= 0], [≤ EAC],
+    [MPC03], [Earned Value], [>= 0], [≤ EAC],
+    [MPC04], [Planned Value], [>= 0], [≤ BAC],
+    [MPC05], [Actual Cost], [>= 0], [≤ EAC],
+    [MPC06], [Cost Variance], [≥ -5%], [≥ 0%],
+    [MPC07], [Schedule Variance], [≥ -10%], [≥ 0%],
+    [MPC08], [Budget Variance], [± 10%], [≤ 0%],
   ),
   caption: [Metriche di fornitura],
 )
@@ -131,13 +143,13 @@ Questi indicatori consentono di monitorare l'andamento del progetto in termini d
 
 ==== Progettazione di dettaglio
 
-Indice per la media del numero di metodi presenti in ogni package, un indice alto potrebbe comportare il refactoring.
+Indice per la media del numero di metodi presenti in ogni _package_#super("G"), un indice alto potrebbe comportare il _refactoring_#super("G").
 
 #figure(
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC-NM], [Number of Methods], [3-11], [3-8],
+    [MPC09], [Number of Methods], [3-11], [3-8],
   ),
   caption: [Metriche di progettazione di dettaglio],
 )
@@ -152,8 +164,8 @@ Indice per la media del numero di metodi presenti in ogni package, un indice alt
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC-BLC], [Bugs for Line of Code], [0-70], [0-25],
-    [MPC-VND], [Variabili non utilizzate e non definite], [0], [0],
+    [MPC10], [Bugs for Line of Code], [0-70], [0-25],
+    [MPC11], [Variabili non utilizzate e non definite], [0], [0],
   ),
   caption: [Metriche di codifica],
 )
@@ -168,8 +180,8 @@ La documentazione ha ruolo di supporto, in particolare definisce le norme da seg
   table(
     columns: 4,
     table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
-    [OPCD01], [Leggibilità dei documenti], [Per mantenere una buona comprensione, il documento deve essere leggibile], [MPC-IG],
-    [OPCD01], [Correttezza ortografica], [Numero di errori grammaticali o ortografici per documento], [MPC-EO],
+    [OPC01], [Leggibilità dei documenti], [Per mantenere una buona comprensione, il documento deve essere leggibile], [MPC12],
+    [OPC02], [Correttezza ortografica], [Numero di errori grammaticali o ortografici per documento], [MPC13],
   ),
   caption: [Obiettivo di qualità della documentazione],
 )
@@ -186,7 +198,7 @@ Il punteggio varia da 0 a 100, dove valori alti indicano maggiore leggibilità. 
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC-IG], [Indice di leggibilità di Gulpease], [GULP ≥ 40], [GULP ≥ 60],
+    [MPC12], [Indice di leggibilità di Gulpease], [GULP ≥ 40], [GULP ≥ 60],
   ),
   caption: [Obiettivo di leggibilità],
 )
@@ -199,7 +211,7 @@ Per raggiungere l'ottimo anche nella documentazione bisogna raggiungere la massi
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC-EO], [Numero errori ortografici], [0], [0],
+    [MPC13], [Numero errori ortografici], [0], [0],
   ),
   caption: [Obiettivo di leggibilità],
 )
@@ -263,7 +275,7 @@ La manutenibilità del software è la facilità con cui può essere modificato, 
 )
 
 === Metriche
-- *Complessità ciclomatica*: misura la complessità strutturale di un programma basandosi sul grafo di controllo del flusso del codice. In particolare, rappresenta il numero di cammini linearmente indipendenti attraverso il codice sorgente. Viene calcolata con la seguente formula:
+- *Complessità ciclomatica*: misura la complessità strutturale di un programma basandosi sul grafo di controllo del flusso del codice. In particolare, rappresenta il numero di cammini _linearmente indipendenti_#super("G") attraverso il codice sorgente. Viene calcolata con la seguente formula:
 
 $ V(G) = E - N +2P $
 
@@ -272,15 +284,15 @@ in cui:
 - N è il numero di nodi (blocchi di codice o decision points),
 - P è il numero di componenti connesse (tipicamente P = 1 per un singolo metodo o funzione)
 \
-- *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una #text(style: "italic")[gerarchia]#super[G] di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il rischio di propagazione degli errori. Per un design più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
+- *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una #text(style: "italic")[gerarchia]#super[G] di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il rischio di propagazione degli errori. Per un _design_#super("G") più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
 
 - *Parametri per metodo*: indica il numero di parametri per metodo. Un indice basso rappresenta un numero basso di parametri richiesti dal metodo, di conseguenza risulta di più facile comprensione e utilizzo.
 
 - *Code Smell*: indice che  rappresenta indicatori qualitativi di potenziali problemi nel codice. E' utile per valutare la leggibilità, la modificabilità, e la testabilità del codice. Si dividono in:
   - Duplicated Code: frammenti di codice identici o simili in più punti, che aumentano i costi di manutenzione perché le modifiche devono essere replicate ovunque.
   - Long Methods: metodi eccessivamente lunghi, che riducono la leggibilità e la comprensione del codice.
-  - God Class: una classe con troppe responsabilità (violazione del principio di Single Responsibility), difficile da testare e modificare.
-  - High Coupling: una forte dipendenza tra componenti, che rende il sistema rigido e suscettibile a errori quando una parte viene modificata.
+  - God Class: una classe con troppe responsabilità (violazione del _principio di Single Responsibility_#super("G")), difficile da testare e modificare.
+  - High Coupling: una forte _dipendenza_#super("G") tra componenti, che rende il sistema rigido e suscettibile a errori quando una parte viene modificata.
   - Low Cohesion: componenti con funzionalità eterogenee che non si relazionano strettamente, rendendo il codice più complesso da comprendere.
 
 - *Facilità di comprensione*: rappresenta il rapporto tra commenti presenti e codice totale per capirne il suo funzionamento.
@@ -316,13 +328,13 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
 
 - *Code Coverage*: percentuale di codice eseguito nei test. Un indice di copertura del codice alto significa che è stato testato più codice, riducendo quindi la presenza di bug.
 
-- *Branch Coverage*: percentuale di copertura di tutti i branch all'esecuzione del codice. Il compito dei test è anche quello di verificare tutti i rami esistenti per verificarne la correttezza.
+- *Branch Coverage*: percentuale di copertura di tutti i _branch_#super("G") all'esecuzione del codice. Il compito dei test è anche quello di verificare tutti i rami esistenti per verificarne la correttezza.
 
 - *Presenza di vulnerabilità*: indice per il numero di vulnerabilità ancora presenti nel codice.
 
 - *Presenza di bug*: indice per il numero di bug ancora presenti nel codice.
 
-- *Successo dei test*: indice in percentuale relativo al successo dei test definiti dai programmatori.
+- *Successo dei test*: indice in percentuale relativo al successo dei test definiti dai _programmatori_#super("G").
 
 #figure(
   table(
@@ -352,11 +364,11 @@ La funzionalità è la capacità di fornire funzioni / azioni per ogni esigenza 
 
 === Metriche
 
--  *Requirement coverage*: indice della copertura dei requisiti descritti nell'Analisi dei Requisiti. Viene calcolato con il rapporto percentuale tra numero di requisiti rispettati e numero di requisiti totali, con la formula:
+-  *Requirement coverage*: indice della copertura dei requisiti descritti nell'_Analisi dei Requisiti_#super("G"). Viene calcolato con il rapporto percentuale tra numero di requisiti rispettati e numero di requisiti totali, con la formula:
 
 $ "RC" = (R#sub[RISP])/(R#sub[TOT]) 100 $
 
-- *Requisiti obbligatori soddisfatti*: indice della copertura dei requisiti obbligatori descritti nell'Analisi dei Requisiti. Viene calcolato con il rapporto percentuale tra numero di requisiti rispettati e numero di requisiti totali, con la formula:
+- *Requisiti obbligatori soddisfatti*: indice della copertura dei _requisiti obbligatori_#super("G") descritti nell'Analisi dei Requisiti. Viene calcolato con il rapporto percentuale tra numero di requisiti rispettati e numero di requisiti totali, con la formula:
 
 $ "RC" = (R#sub[ROS])/(R#sub[ROT]) 100 $
 
@@ -364,7 +376,7 @@ $ "RC" = (R#sub[ROS])/(R#sub[ROT]) 100 $
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS12], [Requirement coverage], [RC >= 75%], [100%],
+    [MPDS12], [_Requirement coverage_#super("G")], [RC >= 75%], [100%],
     [MPDS13], [Requisiti obbligatori soddisfatti], [100%], [100%],
   ),
   caption: [Obiettivo di usabilità],
@@ -372,7 +384,7 @@ $ "RC" = (R#sub[ROS])/(R#sub[ROT]) 100 $
 
 = Test e specifiche
 
-Il seguente capitolo presenta in maniera dettagliata le strategie e scelte di testing, atte a garantire la correttezza del prodotto e facilitarne la validazione. Viene adottato il Modello a V, in cui ad ogni fase di sviluppo corrisponde una fase di verifica e validazione, garantendo quindi un controllo strutturato del processo.
+Il seguente capitolo presenta in maniera dettagliata le strategie e scelte di testing, atte a garantire la correttezza del prodotto e facilitarne la _validazione_#super("G"). Viene adottato il Modello a V, in cui ad ogni fase di sviluppo corrisponde una fase di _verifica_#super("G") e validazione, garantendo quindi un controllo strutturato del processo.
 
 Il modello è suddiviso in tre parti:
 
@@ -381,7 +393,7 @@ Il modello è suddiviso in tre parti:
  - Requirements Gathering: Definizione dei requisiti.
  - System Analysis: Analisi funzionale e tecnica.
  - Software Design: Progettazione architetturale del sistema.
- - Module Design: Definizione dei singoli moduli software.
+ - Module Design: Definizione dei singoli _moduli software_#super("G").
 
 - *Coding*: avviene l'implementazione vera e propria del software.
 
@@ -403,7 +415,7 @@ Questo modello prevede una stretta corrispondenza tra sviluppo e testing, assicu
 
 === Test di Unità
 
-I test di unità valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. Attualmente, nella prima versione del Piano di Qualifica, né le unità né i relativi  test corrispondenti sono stati definiti. La definizione delle unità avverrà con l'avvio del processo di progettazione e sviluppo software.
+I _test di unità_#super("G") valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. Attualmente, nella prima versione del Piano di Qualifica, né le unità né i relativi  test corrispondenti sono stati definiti. La definizione delle unità avverrà con l'avvio del processo di progettazione e sviluppo software.
 
 === Test di Integrazione
 
@@ -416,7 +428,7 @@ I test di sistema verificano il sistema completo del prodotto software, prendend
 
 === Test di Accettazione
 
-I test di accettazione assicurano che il software soddisfi i requisiti e parametri stabiliti dal capitolato. Sono svolti in presenza del committente e verificano che il prodotto possa essere consegnato al committente o messo in produzione.
+I test di accettazione assicurano che il software soddisfi i requisiti e parametri stabiliti dal _capitolato_#super("G"). Sono svolti in presenza del _committente_#super("G") e verificano che il prodotto possa essere consegnato al committente o messo in produzione.
 
 === Test di Regressione
 
@@ -430,13 +442,40 @@ Le specifiche riguardanti i test descritti verranno definite nelle successive ve
 
 == Fornitura
 
-=== MPC-AC - MPC-ETC: Actual Cost e Estimated to Completion
+=== MPC05 - MPC02: Actual Cost e Estimated to Completion
 
-=== MPC-EV - MPC-PV: Earned Value e Planned Value
+#figure(
+  image("img/PdQ/Ac_etc.jpeg", width: 70%),
+  caption: [Modello a V],
+)
 
-=== MPC-SV: Schedule Variance
+=== MPC03 - MPC04: Earned Value e Planned Value
 
-=== MPC-CV: Cost Variance
+#figure(
+  image("img/PdQ/Ev_pv.jpeg", width: 70%),
+  caption: [Modello a V],
+)
+
+=== MPC07: Schedule Variance
+
+#figure(
+  image("img/PdQ/Sv.jpeg", width: 70%),
+  caption: [Modello a V],
+)
+
+=== MPC06: Cost Variance
+
+#figure(
+  image("img/PdQ/Cv.jpeg", width: 70%),
+  caption: [Modello a V],
+)
+
+=== MPC01: Estimated at Completion
+
+#figure(
+  image("img/PdQ/Eac.jpeg", width: 70%),
+  caption: [Modello a V],
+)
 
 ==  MPC-IG: Indice di Gulpease
 
@@ -446,10 +485,11 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
   table(
     columns: 3,
     table.header[*Documento*][*Risultato*][*Esito*],
-    [Analisi dei Requisiti], [], [],
+    [Analisi dei Requisiti], [83], [Superato],
     [Piano di qualifica], [], [],
-    [Piano di Progetto], [], [],
-    [Norme di Progetto], [], [],
+    [Piano di Progetto], [80], [Superato],
+    [Norme di Progetto], [75], [Superato],
+    [Glossario], [], [],
     [2024-11-15], [68], [Superato],
     [2024-11-24], [66], [Superato],
     [2024-12-09], [75], [Superato],
@@ -458,8 +498,11 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
     [2025-01-10], [65], [Superato],
     [2025-01-19], [63], [Superato],
     [2025-02-08], [65], [Superato],
+    [2025-02-20], [67], [Superato],
+    [2025-03-07], [65], [Superato],
     [2024-11-25], [67], [Superato],
     [2024-12-24], [64], [Superato],
+    [2025-02-25], [65], [Superato],
   ),
   caption: [Valutazione documenti fase 1],
 )
