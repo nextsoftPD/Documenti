@@ -6,7 +6,7 @@
   verifica: ("Luca Parise",),
   approvazione: ("Luca Parise",),
   uso: "Interno",
-  version: "1.0",
+  version: "1.0.0",
   timebegin: "15:30",
   timeend: "16:30",
   date: "24/11/2024",

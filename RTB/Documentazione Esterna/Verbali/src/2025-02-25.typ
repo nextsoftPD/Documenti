@@ -6,7 +6,7 @@
   verifica: ("Luca Parise",),
   approvazione: ("Stefano Baso",),
   uso: "Esterno",
-  version: "1.0",
+  version: "1.0.0",
   timebegin: "16:30",
   timeend: "17:15",
   date: "25/02/2025",

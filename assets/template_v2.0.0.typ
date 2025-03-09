@@ -95,7 +95,7 @@
       align(center)[
         #v(2em)
         #if versionamento == () {
-          version = "1.0"
+          version = "1.0.0"
           grid(
             columns: (1fr,1fr,1fr,1fr),
             [],
