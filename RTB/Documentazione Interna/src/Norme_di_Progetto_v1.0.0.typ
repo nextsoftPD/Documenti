@@ -272,7 +272,7 @@ I verbali sono documenti che riportano le decisioni prese durante le riunioni de
 ==== Nome del documento
 Ogni documento ha una denominazione omogenea.
 I verbali come nome file hanno la data del relativo incontro in formato YYYY-MM-DD, mentre gli altri documenti saranno denominati nel seguente modo:
-#align(center)[#strong[`Nome_File-vX.Y.Z`]]
+#align(center)[#strong[`Nome_File_vX.Y.Z`]]
 
 Per la denominazione dei file si fa riferimento alla convenzione _CamelCase_#super("G"), le parole verranno separate dal carattere "\_" (underscore) e la versione sarà indicata con la lettera "v" seguita dal numero di versione, specificato a sua volta nel paragrafo  del Versionamento.
 
