@@ -4,7 +4,7 @@
   title: "Piano di Qualifica",
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed", "Stefano Baso"),
-  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo"),
+  verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
   version: "1.0.1",
@@ -13,7 +13,7 @@
     "1.0.0", "04/03/2025", "Stefano Baso", "Aggiunti grafici e fix nomeclatura", "Malik Giafar Mohamed",
     "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "Ion Cainareanu",
     "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
-    "0.3.1", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
+    "0.3.0", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
     "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
@@ -28,7 +28,7 @@
   title: [Elenco delle tabelle],
   target: figure.where(kind: table),
 )
-
+#pagebreak()
 = Scopo del documento
 
 Il _Piano di Qualifica_#super("G") è un documento soggetto a modifiche incrementali, finalizzate principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
@@ -57,7 +57,7 @@ I termini ambigui che necessitano di una spiegazione sono contrassegnati da una 
 nell'omonimo documento.
 
 == Riferimenti
-
+#pagebreak()
 === Riferimenti normativi
 
 - Analisi dei Requisiti

@@ -6,7 +6,7 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", ),
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Luca Parise"),
+  approvazione: ("Luca Parise",),
   uso: "Esterno",
   version: "1.0.0",
   date: "23/11/2024",
@@ -28,7 +28,7 @@
   target: figure.where(kind: table),
   
 )
-
+#pagebreak()
 = Introduzione 
 
 == Scopo del documento
@@ -88,6 +88,7 @@ Questa sezione identifica i potenziali _rischi_#super[G] di diversa natura e des
 I rischi si dividono nel seguente modo: 
 - *Rischi interni ed organizzativi*:
   sono tutti i possibili rischi che possono sorgere all'interno del gruppo di progetto e nella gestione del lavoro, influenzando la produttività, la comunicazione, il coordinamento e la distribuzione delle risorse. Questi rischi includono la scarsa definizione degli obiettivi, la mancanza di competenze, conflitti tra membri, difficoltà nella pianificazione e nei cambiamenti dei requisiti, con potenziali impatti negativi sulle tempistiche e sul successo del progetto.
+#pagebreak()
 - *Rischi tecnologici*: sono legati agli strumenti, alle tecnologie e alle infrastrutture utilizzate durante lo sviluppo di un progetto. Questi rischi possono derivare da incompatibilità software, malfunzionamenti hardware, limitazioni delle tecnologie adottate, aggiornamenti non previsti, vulnerabilità di sicurezza o difficoltà nell'integrazione con sistemi esterni. Se non gestiti correttamente, possono compromettere le prestazioni, l'affidabilità e l'efficacia del prodotto finale.
 - *Rischi di capitolato*: 
   derivano dalla definizione, interpretazione e gestione dei requisiti del progetto. Questi rischi possono includere ambiguità o incompletezza delle specifiche, modifiche frequenti ai requisiti, disallineamento tra le aspettative del _proponente_#super[G] e l'implementazione, o difficoltà nella comprensione delle richieste. Una gestione inefficace di questi aspetti può portare a ritardi, aumento dei costi e necessità di revisioni significative nel progetto.
@@ -108,7 +109,6 @@ Dove:
 
 
 #show figure: set block(breakable: true)
-#pagebreak()
 
 == Rischi interni e organizzativi
 
@@ -231,6 +231,7 @@ Dove:
 Nella seguente tabella vengono descritti: 
 - L'*occorrenza*: rappresenta la probabilità che il rischio si verifichi. Un rischio con alta occorrenza è molto probabile e deve essere monitorato con attenzione, mentre un rischio con bassa occorrenza è meno preoccupante, ma comunque da considerare.
 - L'*impatto*: misura la gravità delle conseguenze che il rischio potrebbe avere sul progetto. Un rischio con alto impatto può compromettere seriamente il raggiungimento degli obiettivi, mentre un impatto basso causa problemi gestibili senza significativi rallentamenti o costi aggiuntivi.
+#pagebreak()
 - L'*_efficacia_*#super[G]: indica quanto le azioni di mitigazione adottate siano in grado di ridurre l'impatto del rischio. Un valore alto significa che le contromisure sono efficaci e il rischio è ben gestito, mentre un valore basso indica che il rischio rimane problematico nonostante gli sforzi.
 
 I possibili valori delle celle sono "Basso", "Medio" o "Alto".
@@ -289,7 +290,7 @@ La retrospettiva viene svolta nel seguente modo: si analizzano gli obiettivi del
 = Pianificazione
 
 La pianificazione permette di suddividere il progetto in fasi operative chiare, definendone risorse e tempistiche. Questo approccio assicura il coordinamento tra i membri del gruppo e il rispetto delle scadenze.
-
+#pagebreak()
 Per la pianificazione abbiamo considerato il periodo dal 16/11/2024 al 16/04/2025. Escludendo il periodo dal 17/01/2025 al 7/02/2025, nel quale ci sarà la sessione d'esami, il tempo restante per il progetto è stato suddiviso in 8 sprint bisettimanali e 2 sprint della durata di una settimana singola.
 
 L'organizazione degli sprint sarà la seguente:
@@ -349,7 +350,7 @@ Le attività principali sono:
 - Redazione delle metriche del PdQ, includendo le formule dei vari indici, le soglie limite e le relative tabelle
 - Applicazione del nuovo template alla documentazione
 - Avanzamento analisi dei requisiti
-
+#pagebreak()
 == Sprint 4 - Baseline PoC
 
 *Periodo*: 04/01/2025 - 17/01/2025
@@ -419,7 +420,7 @@ Si prevede di arrivare alla stesura delle sezioni più generiche, in quanto comu
 La principale attività di questo sprint sono:
 - L'analisi dell'architettura PoC per il suo adattamento all'MVP e avvio della stesura della specifica tecnica e del manuale utente.
 - L'avanzamento nella documentazione RTB al fine della pubblicazione della versione 2.0.0 
-
+#pagebreak()
 
 == Sprint 8 - Codifica MVP e Testing
 
@@ -859,6 +860,7 @@ In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le att
   ),
   caption: "Rendicontazione Sprint 5",
 )
+#pagebreak()
 ==== Prospetto economico
 #figure(
   table(
@@ -896,6 +898,7 @@ In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le att
   ),
   caption: "Rendicontazione Sprint 6",
 )
+#pagebreak()
 ==== Prospetto economico
 #figure(
   table(

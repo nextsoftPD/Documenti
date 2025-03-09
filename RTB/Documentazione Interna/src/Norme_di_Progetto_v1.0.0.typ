@@ -6,7 +6,7 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed", "Ion Cainareanu", "Stefano Baso", "Luca Parise"),
   verifica: ("Malik Giafar Mohamed","Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu", "Stefano Baso"),
-  approvazione: ("Luca Parise"),
+  approvazione: ("Luca Parise",),
   uso: "Interno",
   version: "0.4.1",
   date: "23/11/2024",
@@ -17,7 +17,7 @@
     "0.4.1", "11/02/2025", "Malik Giafar Mohamed","Integrazione di alcune specifiche relative al way of working","Ion Cainareanu",
     "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo, Stefano Baso",
     "0.3.0", "05/01/2025", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu, Stefano Baso",
-    "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2",
+    "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2","Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Stesura Prima Versione", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu",
 
   )
@@ -49,6 +49,7 @@ nell'omonimo documento.
 - Standard ISO/IEC 12207:1995
   - https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf
 - _Piano di Qualifica_#super("G")
+#pagebreak()
 *Riferimenti Informativi*
 - Materiale didattico del corso di Ingegneria del Software
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/
@@ -125,6 +126,7 @@ Mentre saranno strutturati nel seguente modo :
 - *Descrizione*: breve descrizione del caso d'uso
 - *Scenario principale*: elenco puntato che descrive il flusso degli eventi del caso d'uso
 - *Scenario secondario/alternativo*: elenco puntato che descrive il flusso degli eventi del caso d'uso dopo un evento imprevisto che lo ha deviato dal caso principale. Può non esserci o possono essercene più di uno
+#pagebreak()
 ==== Denominazione dei requisiti
 Ogni requisito verrà riportato nel seguente formato:
 #align(center)[#strong[R[Classificazione][Tipologia][Identificativo]]]
@@ -213,6 +215,7 @@ Ogni fase del ciclo di vita del documento è fondamentale per garantire la quali
 I documenti ad uso interno sono destinati all'uso esclusivo dei membri del gruppo di progetto e del _committente_#super("G"). I principali documenti ad uso interno sono:
 - Norme di Progetto
 - Verbali interni
+#pagebreak()
 ==== Documenti ad uso Esterno
 I documenti ad uso esterno sono destinati all'uso del committente e agli stakeholders. I principali documenti ad uso esterno sono:
 - Analisi dei Requisiti
@@ -269,7 +272,7 @@ I verbali sono documenti che riportano le decisioni prese durante le riunioni de
 ==== Nome del documento
 Ogni documento ha una denominazione omogenea.
 I verbali come nome file hanno la data del relativo incontro in formato YYYY-MM-DD, mentre gli altri documenti saranno denominati nel seguente modo:
-#align(center)[#strong[`Nome_File-vX.Y.Z`]]
+#align(center)[#strong[`Nome_File_vX.Y.Z`]]
 
 Per la denominazione dei file si fa riferimento alla convenzione _CamelCase_#super("G"), le parole verranno separate dal carattere "\_" (underscore) e la versione sarà indicata con la lettera "v" seguita dal numero di versione, specificato a sua volta nel paragrafo  del Versionamento.
 
@@ -401,12 +404,14 @@ Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del _ciclo d
 - *Check*: si verificano i risultati ottenuti confrontandoli con gli obiettivi stabiliti nella fase di pianificazione. Si analizzano i dati raccolti per determinare se le azioni intraprese hanno portato ai miglioramenti desiderati.
 
 - *Act*: si decide se standardizzare le nuove pratiche o apportare ulteriori modifiche. Se i risultati della fase di verifica dimostrano che le azioni intraprese hanno portato a miglioramenti significativi, queste diventano il nuovo standard. Altrimenti, si ritorna alla fase di pianificazione per individuare nuove azioni correttive.
-
-=== Denominazione Metriche
+#pagebreak()
+=== Denominazione Metriche e Obiettivi
 La denominazione delle metriche segue il seguente formato:
-#align(center)[#strong[M[Categoria][TipoProdotto][Numero]]]
+#align(center)[#strong[Sigla[Categoria][TipoProdotto][Numero]]]
 dove:
-- *M*: indica che si tratta di una metrica di qualità
+- *Sigla*: indica che si tratta di una metrica o un obiettivo
+  - *M*: per indicare una metrica
+  - *O*: per indicare un obiettivo
 - *[Categoria]*: indica a quale categoria appartiene la metrica, e può assumere i seguenti valori:
   - *PD*: per indicare i prodotti
   - *PC*: per indicare i processi
@@ -414,7 +419,7 @@ dove:
 - *[TipoProdotto]*: indica se si riferisce a documenti o software ed è presente solo nel caso sia una metrica di prodotto. Può assumere i seguenti valori:
   - *D*: per indicare i documenti
   - *S*: per indicare i prodotti software
-- *Numero*: rappresenta il codice numerico identificativo della metrica, inizia da 1 per ogni tipologia di categoria e prodotto
+- *Numero*: rappresenta il codice numerico identificativo della metrica o dell'obiettivo, inizia da 1 per ogni tipologia di categoria e prodotto
 
 == Verifica 
 === Scopo e aspettative
