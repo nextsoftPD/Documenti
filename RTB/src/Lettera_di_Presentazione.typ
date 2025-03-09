@@ -127,7 +127,7 @@
   redattori: ("Marco Perazzolo","Malik Giafar Mohamed"),
   version: "1.0.0",
   verifica: ("Stefano Baso",),
-  approvazione: "Luca Parise",
+  approvazione: "Luca Parise,",
   uso: ("Esterno"),
   date: "8/03/2025",
   timebegin: "",
