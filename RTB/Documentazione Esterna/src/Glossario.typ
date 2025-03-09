@@ -151,9 +151,9 @@
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
   version: "1.0.0",
-  redattori: ("Malik Giafar Mohamed",),
-  verifica: ("Ion Cainareanu","Maria Fuensanta Trigueros Hernandez"),
-  approvazione: (),
+  redattori: ("Malik Giafar Mohamed","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
+  verifica: ("Ion Cainareanu","Maria Fuensanta Trigueros Hernandez","Stefano Baso",),
+  approvazione: ("Luca Parise",),
   uso: "Esterno",
   versionamento: (
     "1.0.0", "08/03/2025", "Marco Perazzolo", "Aggiornamento e aggiunta di nuovi termini al glossario", "Stefano Baso" ,
