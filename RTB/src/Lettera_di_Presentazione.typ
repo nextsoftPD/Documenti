@@ -174,13 +174,12 @@ Inoltre, sono inclusi i verbali interni ed esterni:
 - *Verbale interno del 20/02/2025*
 - *Verbale interno del 07/03/2025*
 
-\ \
+\
 
 Viene inoltre fornito il link alla repository del PoC:
 
 #align(center)[ https://github.com/nextsoftPD/PoC ]
 
-\
 
 Si segnala che la data di consegna prevista rimane confermata per il *16/04/2025*. Si registra inoltre un lieve incremento del costo complessivo, ora pari a *10.995€*, come dettagliato nel *Piano di Progetto*.
 
