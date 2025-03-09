@@ -161,6 +161,7 @@
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
+
 = Introduzione
 Il presente glossario ha l'obiettivo di definire e chiarire i termini chiave utilizzati nel progetto *Requirement Tracker Plug-in*. Il suo scopo è standardizzare il linguaggio e facilitare la comprensione dei concetti, garantendo una comunicazione chiara ed efficace tra tutte le persone coinvolte nel progetto.
 
@@ -169,17 +170,17 @@ Questo documento servirà come riferimento per evitare fraintendimenti, migliora
 #pagebreak()
 = A
 == Ad hoc
-Creato specificamente per soddisfare una determinata esigenza.
+Creato per soddisfare una determinata esigenza.
 == Agile
 Metodologia di sviluppo iterativo che enfatizza iterazioni brevi, feedback continui e l'adattamento al cambiamento, permettendo un'elevata flessibilità.
 == AI / IA (Intelligenza Artificiale)
-Tecnologie che consentono ai sistemi di svolgere compiti che altrimenti richiederebbero intelligenza umana.
+Settore dell'informatica che si occupa di sviluppare software / computer che siano in grado di riprodurre il funzionamento di alcune capacità della mente umana.
 == Analisi dei Requisiti
 Processo che identifica, documenta e gestisce i requisiti di un sistema software.
 == Analisi dei Rischi
 Processo di identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo del progetto.
 == Analisi semantica
-Valutazione del contenuto testuale dei requisiti per verificarne chiarezza, completezza e correttezza.
+Valutazione del contenuto testuale dei requisiti per verificarne chiarezza, coerenza e correttezza.
 == Analista
 Figura professionale che individua e definisce i casi d'uso ed i requisiti del prodotto software.
 == API (Application Programming Interface)
@@ -189,18 +190,18 @@ Figura responsabile della validazione finale dei documenti e delle specifiche di
 == Artefatti
 Documenti, codice, e altri output generati durante lo sviluppo del software.
 == Attore
-Persona o sistema che interagisce con il software nei casi d’uso.
+Persona o sistema che interagisce con il software nell'ambito di un caso d’uso.
 
 #pagebreak()
 = B
 == Backend
 La parte del software che gestisce la logica di business, i dati e le operazioni lato server.
 == Baseline
-Versione di riferimento di un prodotto software, indica un punto di arrivo tecnico irreversibile, che viene stabilito come standard.
+Versione di riferimento di un prodotto software, indica un punto di arrivo tecnico irreversibile, che viene stabilito come standard. Usata come base per modifiche o sviluppi successivi.
 == Best Practices
 Insieme di linee guida e metodologie raccomandate per migliorare la qualità e l’efficienza del lavoro.
 == Branch
-Linea indipendente di sviluppo in un sistema di controllo di versione, utilizzata per implementare nuove funzionalità o correzioni.
+Ramo indipendente di sviluppo in un sistema di controllo di versione, utilizzata per implementare nuove funzionalità o correzione di bug o testing senza intaccare il codice principale funzionante.
 == Budget di Progetto
 Stima dei costi necessari per realizzare un progetto.
 == Bug
@@ -234,7 +235,7 @@ Formato di file utilizzato per archiviare dati strutturati, come elenchi di requ
 #pagebreak()
 = D
 == Debugging
-Processo di individuazione e correzione degli errori nel software.
+Processo di individuazione, analisi e correzione degli errori nel software.
 == Deployment
 Processo di rilascio e installazione del software in un ambiente di produzione.
 == Design
@@ -326,7 +327,7 @@ Modelli di intelligenza artificiale addestrati per comprendere ed elaborare il l
 == Mapping
 Associazione tra requisiti e le relative porzioni di codice che li implementano.
 == Merge conflicts
-Conflitti che sorgono quando si tenta di unire modifiche in un repository di versionamento.
+Conflitti che sorgono quando due modifiche contrastanti vengono apportate allo stesso file in un repository di versionamento e che richiede un intervento manuale per la risoluzione.
 == Metrica
 Misura quantitativa utilizzata per valutare aspetti del software, come performance, affidabilità o manutenibilità.
 == Mitigazione dei Rischi
@@ -411,9 +412,9 @@ Descrive attributi qualitativi del software, come affidabilità, manutenibilità
 == Requisito Facoltativo
 Descrive una funzionalità aggiuntiva non essenziale, la cui implementazione può essere omessa senza compromettere il funzionamento principale del sistema.
 == Requisito Funzionale
-Specifica un comportamento o una funzionalità che il sistema deve fornire, descrivendo le interazioni tra l’utente e il software e viceversa.
+Specifica un comportamento o una funzionalità che il sistema deve fornire, descrivendo le interazioni tra l’utente e il software per soddisfare un obiettivo.
 == Requisito Non Funzionale
-Definisce caratteristiche e vincoli che il sistema deve rispettare senza specificare comportamenti, come sicurezza, usabilità, prestazioni e scalabilità.
+Proprietà di tipo qualitativo che un sistema deve soddisfare, come prestazioni, sicurezza o scalabilità, non riguardante direttamente una funzionalità specifica. 
 == Requisito Obbligatorio
 Specifica una caratteristica essenziale del sistema che deve essere implementata affinché il prodotto sia conforme alle specifiche e alle richieste del proponente.
 == Requisito Prestazionale
@@ -453,7 +454,7 @@ Modello predefinito per la creazione di documenti o codice.
 == Test
 Attività per verificare il funzionamento corretto del software.
 == Test di unità
-Test che verificano il funzionamento di singole unità di codice.
+Test che verificano il funzionamento di singole componenti del codice, come moduli, classi o funzioni.
 == Test funzionali
 Test che verificano il corretto funzionamento delle funzionalità del software.
 == Token
