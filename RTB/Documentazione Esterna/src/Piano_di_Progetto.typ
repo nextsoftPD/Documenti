@@ -4,20 +4,24 @@
 #show: project.with(
   title: "Piano di Progetto",
   //subtitle: "Sottotitolo del Documento",
-  redattori: ("Malik Giafar Mohamed", "Maria Fuensanta Trigueros Hernandez", ),
-  verifica: ("Ion Cainareanu" , "Maria Fuensanta Trigueros Hernandez",),
-  approvazione: (""),
+  redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", ),
+  verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
+  approvazione: ("Luca Parise"),
   uso: "Esterno",
-  version: "0.3.1",
+  version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
-    "0.4.0", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "Stefano Baso",
-    "0.3.1", "12/1/2024", "Marco Perazzolo", "Correzione errori di battitura", "",
-    "0.3.0", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
+    "1.0.0", "08/03/2024", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
+    "0.5.0", "08/03/2024", "Stefano Baso, Malik Giafar Mohamed, Luca Parise", "Miglioramento sezione rischi, inserimento tabelle preventivo e consuntivo, miglioramento sezione pianificazione", "Ion Cainareanu",
+    "0.4.0", "15/02/2024", "Stefano Baso", "Miglioramento sezione periodi", "Ion Cainareanu, Luca Parise",
+    "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "Marco Perazzolo",
+    "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
     "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
+
+#show figure: set block(breakable: true)
 
 #outline(
   title: [Elenco delle tabelle],
@@ -25,27 +29,30 @@
   
 )
 
-#pagebreak()
-
 = Introduzione 
 
 == Scopo del documento
 
 Questo documento descrive la pianificazione dello sviluppo del plugin Requirement Tracker per Visual Studio Code. Ha lo scopo di fornire un quadro chiaro per comprendere come verrà realizzato il progetto, comprese le strategie, i rischi e le risorse necessarie per l'implementazione. 
 
-== Scopo del capitolato
+Il documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
 
-Il capitolato scelto riguarda lo sviluppo di un plug-in per Visual Studio Code pensato per facilitare il tracciamento dei requisiti durante lo sviluppo di software. Lo scopo principale è quello di semplificare il lavoro di chi si occupa di analisi, progettazione e programmazione, migliorando la gestione dei requisiti e rendendo più facile verificare che siano stati rispettati.
-
-Questo strumento aiuterà a ridurre gli errori e a risparmiare tempo, automatizzando processi che oggi richiedono molto lavoro manuale, come la verifica della copertura dei requisiti nel codice sorgente. Inoltre, il plug-in offrirà suggerimenti per migliorare i requisiti, evidenziando eventuali problemi come ambiguità o informazioni mancanti.
-
-Grazie alla sua struttura modulare, sarà possibile aggiungere nuove funzionalità in futuro, rendendolo uno strumento versatile per adattarsi a diverse esigenze e tecnologie.
+== Scopo del prodotto
+Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
+è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
+con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
+e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
+riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
+sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
+facilmente adattabile a nuove funzionalità o esigenze future.
+Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come _knowledge_#super[G],
+ad esempio datasheet e manuali, permette di garantire una corretta copertura dei requisiti.
 
 == Struttura del documento
 
 Il contenuto del documento è organizzato nelle seguenti sezioni:
 
-- *Analisi dei rischi:* identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo.
+- *Rischi Attesi e Mitigazione:* identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo, insieme alle strategie applicate per ridurre o eliminare il loro impatto.
 
 - *Modello di sviluppo:* descrizione delle metodologie e degli approcci adottati.
 
@@ -55,815 +62,872 @@ Il contenuto del documento è organizzato nelle seguenti sezioni:
 
 - *Consuntivo di periodo:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, spiegando le cause degli scostamenti e le misure correttive adottate.
 
-- *Caso di studio:* esempio pratico di utilizzo del plugin in un ambiente reale.
-
-- *Mitigazione dei rischi:* illustra le strategie applicate per ridurre o eliminare l'impatto dei rischi identificati.
-
-- *Conclusioni:* riflessione sui risultati attesi e sulla fattibilità del progetto.
-
-
 == Glossario
-Per evitare possibili ambiguità, è stato incluso un glossario per definire i termini tecnici rilevanti utilizzati nei documenti presentati. I termini sono evidenziati e spiegati nel file “Glossario”. 
-
-== Maturità 
-
-Il progetto si trova in una fase preliminare, con una struttura modulare definita e un piano di sviluppo pronto. Gli obiettivi iniziali sono stati identificati, e l'approccio adottato garantisce flessibilità e adattabilità per le evoluzioni future. 
+I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
+nell'omonimo documento.
 
 == Riferimenti
-
 === Riferimenti normativi
-
-- File Norme di Progetto
-- File Analisi dei Requisiti
 - Capitolato C8 : Requirement Tracker - Plug-in VS Code
-https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
-
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
+- Norme di Progetto
+- Analisi dei Requisiti
 === Riferimenti informativi
-
 - T02 - Processi di ciclo di vita
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
 - T04 - Gestione di progetto 
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
 - T05 - Analisi dei requisiti
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
+  - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
 
+
+= Rischi attesi e mitigazione
+
+Questa sezione identifica i potenziali _rischi_#super[G] di diversa natura e descrive le azioni pianificate per mitigarne l'impatto qualora si verificassero, oltre alle misure preventive adottate per evitarne l'insorgenza.
+\
+I rischi si dividono nel seguente modo: 
+- *Rischi interni ed organizzativi*:
+  sono tutti i possibili rischi che possono sorgere all'interno del gruppo di progetto e nella gestione del lavoro, influenzando la produttività, la comunicazione, il coordinamento e la distribuzione delle risorse. Questi rischi includono la scarsa definizione degli obiettivi, la mancanza di competenze, conflitti tra membri, difficoltà nella pianificazione e nei cambiamenti dei requisiti, con potenziali impatti negativi sulle tempistiche e sul successo del progetto.
+- *Rischi tecnologici*: sono legati agli strumenti, alle tecnologie e alle infrastrutture utilizzate durante lo sviluppo di un progetto. Questi rischi possono derivare da incompatibilità software, malfunzionamenti hardware, limitazioni delle tecnologie adottate, aggiornamenti non previsti, vulnerabilità di sicurezza o difficoltà nell'integrazione con sistemi esterni. Se non gestiti correttamente, possono compromettere le prestazioni, l'affidabilità e l'efficacia del prodotto finale.
+- *Rischi di capitolato*: 
+  derivano dalla definizione, interpretazione e gestione dei requisiti del progetto. Questi rischi possono includere ambiguità o incompletezza delle specifiche, modifiche frequenti ai requisiti, disallineamento tra le aspettative del _proponente_#super[G] e l'implementazione, o difficoltà nella comprensione delle richieste. Una gestione inefficace di questi aspetti può portare a ritardi, aumento dei costi e necessità di revisioni significative nel progetto.
+- *Rischi finanziari*:
+  I rischi finanziari sono legati ai costi e alle risorse economiche necessarie per 
+  lo sviluppo del progetto.
+== Denominazione dei rischi
+Ogni rischio presentato di seguito è distinto univocamente da un codice nel seguente modo:
+#align(center)[#strong[R[Tipo]\_[Identificativo]]]
+Dove:
+- *R*: indica che si tratta di un rischio
+- *Tipo*: specifica la categoria del rischio
+  - *I*: rischio interno
+  - *T*: rischio tecnologico
+  - *C*: rischio capitolato
+  - *F*: rischio finanziario
+- *Identificativo*: numero progressivo che inizia da 001 per ogni tipologia di rischio
+
+
+#show figure: set block(breakable: true)
 #pagebreak()
 
-= Analisi dei rischi
+== Rischi interni e organizzativi
 
-Questa sezione descrive i rischi potenziali associati al progetto e le relative misure di mitigazione. L'analisi dei rischi consente di identificare e mitigare i potenziali problemi in una fase iniziale del progetto.  Ogni rischio è valutato in termini di probabilità di accadimento e di impatto potenziale.
-#v(0.25cm)
+#figure(
+  table(
+    columns: (0.5fr, 1fr, 1fr, 1fr),
+    align: horizon,
+    fill: (x,y) => if y == 0 {blue.lighten(90%) },
+    
+    [*Codice*],
+    [*Rischio*], 
+    [*Descrizione*], 
+    [*Mitigazione*],
+    [RI_001],
+    [*Mancanza di coordinamento del gruppo di progetto*],
+    [Una comunicazione inefficace tra i membri del gruppo può causare ritardi nelle attività e compromettere la consegna del _capitolato_#super[G].],
+    [Ogni membro del gruppo deve mantenere un coinvolgimento attivo nel progetto, restando aggiornato su ogni fase dello sviluppo. Sarà responsabilità di ognuno sollecitare il contributo da parte di membri poco produttivi per garantire il rispetto degli impegni e delle scadenze.
+    ],
+    [RI_002],
+    [*Abbandono di un membro del gruppo* ],
+    [Un membro del gruppo potrebbe lasciare il progetto per motivi personali o professionali, compromettendo lo svolgimento delle attività.],
+    [Il gruppo dovrà redistribuire il carico di lavoro tra i membri rimanenti. Inoltre, in collaborazione con il proponente, sarà necessario ridefinire la suddivisione delle attività per non superare il monte ore stabilito e quindi ridefinire le aspettative stabilite in precedenza. ],
+    [RI_003],
+    [*Disponibilità dei membri del gruppo di progetto*],
+    [A causa di impegni personali o lavorativi, alcuni membri del gruppo potrebbero essere indisponibili in determinati periodi, causando un rallentamento nel raggiungimento degli obiettivi prefissati.],
+    [Il gruppo si impegnerà a suddividere le attività in modo strategico, assegnando le _task_#super[G] in base alla loro priorità e alla disponibilità dei membri, così da minimizzare eventuali ritardi.],
+    [RI_004],
+    [*Contrasti interni al gruppo di progetto*],
+    [Durante lo svolgimento del progetto potrebbero emergere conflitti tra i membri del gruppo, causando rallentamenti nel completamento delle attività.],
+    [I membri del gruppo cercheranno di risolvere i contrasti attraverso una discussione collettiva. Se ciò non fosse sufficiente, il responsabile del progetto interverrà per mediare il conflitto, eventualmente ricorrendo a sondaggi per facilitare la decisione. Qualora il problema persistesse, si consulterà il committente per trovare una soluzione definitiva.],
+  ),
+  caption: [Rischi interni e organizzativi]
+)
+
+
 == Rischi tecnologici
 
-Questi rischi derivano da problemi tecnici o limitazioni delle tecnologie utilizzate nel progetto, che possono influenzare negativamente il progresso o la qualità del prodotto finale.
+#figure(
+  table(
+    columns: (0.5fr, 1fr, 1fr, 1fr),
+    align: horizon,
+    fill: (x,y) => if y == 0 {blue.lighten(90%) },
+    
+    [*Codice*], 
+    [*Rischio*], 
+    [*Descrizione*], 
+    [*Mitigazione*],
+    [RT_001],
+    [*Prestazioni dei modelli LLM*],
+    [L'utilizzo di _LLM_#super[G] potrebbe comportare tempi di risposta elevati, specialmente su macchine con risorse hardware limitate, compromettendo l'esperienza d'uso.],
+    [Consentire all'utente di selezionare il modello LLM più adatto alle capacità del proprio sistema, offrendo opzioni più leggere per dispositivi meno performanti.\ \ Avvisare l'utente in caso di rischio di errori di connessione o rallentamenti dovuti a limitazioni hardware.],
+    [RT_002],
+    [*Obsolescenza tecnologica*],
+    [L'uso di tecnologie non aggiornate o poco supportate potrebbe rendere difficile la manutenzione del progetto e causare ritardi.],
+    [Selezionare tecnologie con ampio supporto da parte della community, monitorare regolarmente gli aggiornamenti di strumenti e tecnologie utilizzate.],  
+    [RT_003],
+    [*Mancanza di conoscenze*],
+    [Alcuni membri del gruppo potrebbero non possedere le competenze necessarie per svolgere il progetto in modo efficace.],
+    [Sarà responsabilità di ogni membro del gruppo con più conoscenze formare e supportare i colleghi meno esperti.],
+  ),
+  caption: [Rischi tecnologici]
+)
 
-- *Compatibilità Delle API di IA*
+
+== Rischi riguardanti il capitolato
 
 #figure(
   table(
-  
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione* 
-  ],
-  [L'integrazione di modelli di IA tramite API REST può fallire a causa dell'incompatibilità tra le versioni di Ollama],
-  [
-    *Probabilità*
-  ],
-   
-[Media], 
-[
-    *Impatto*
-  ],
-    [Alto],
-  [
-    *Precauzioni*
-  ],
-[Utilizzare versioni specifiche dei modelli di IA e monitorare gli aggiornamenti alle API di Ollama]
-
-),
-caption: [Rischi tecnologici:Disponibilità e compatibilità con le API di IA],
-) 
-
-
-- *Limitazioni dei modelli di intelligenza artificiale*
-#figure(
-table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [I modelli di IA potrebbero non essere sufficientemente performanti],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Condurre un'analisi su un modello ottimale in base alle infrastrutture disponobili]
-),
-caption: [Rischi tecnologici: Limitazioni dei modelli di intelligenza artificiale],
+    columns: (0.5fr, 1fr, 1fr, 1fr),
+    align: horizon,
+    fill: (x,y) => if y == 0 {blue.lighten(90%) },
+    
+    [*Codice*], 
+    [*Rischio*], 
+    [*Descrizione*], 
+    [*Mitigazione*],
+    [RC_001],
+    [*Ambiguità dei requisiti*],
+    [Il capitolato potrebbe contenere indicazioni poco chiare o ambigue, rendendo difficile la comprensione delle reali esigenze del proponente],
+    [Organizzare incontri periodici con proponente per chiarire eventuali dubbi e allineare le aspettative.],
+    [RC_002],
+    [*Modifiche al capitolato in corso d'opera*],
+    [Durante lo sviluppo, i requisiti inizialmente concordati potrebbero subire modifiche a causa di fattori interni (nuove esigenze del gruppo) o esterni (richieste del proponente). Questo può portare a ritardi, aumento dei costi o necessità di modificare ulteriormente il codice sorgente del prodotto finale.],
+    [Sarà necessario aggiornare il preventivo e rivedere gli accordi precedentemente stabiliti per garantire il rispetto delle scadenze e l’ottimizzazione delle risorse disponibili.],
+    [RC_003],
+    [*Disallineamento tra capitolato e vincoli tecnici*],
+    [Il capitolato potrebbe richiedere funzionalità difficili da implementare a causa di limitazioni tecniche o di strumenti disponibili.],
+    [Effettuare un'analisi di fattibilità prima di iniziare lo sviluppo e proporre eventuali alternative al proponente.],
+    [RC_004],
+    [*Divergenze tra le aspettative del proponente e l'interpretazione del gruppo*],
+    [Il gruppo di progetto potrebbe interpretare diversamente alcune sezioni del capitolato rispetto alle intenzioni originali del proponente.],
+    [Mantenere una comunicazione costante con il proponente per condividere e validare le scelte progettuali prima della loro implementazione.],
+  ),
+  caption: [Rischi riguardanti il capitolato]
 )
 
-- *Compatibilità con Visual Studio Code*
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Le modifiche alle versioni di Visual Studio Code potrebbero causare incompatibilità.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Monitorare gli aggiornamenti di Visual Studio Ccode]
-),
-caption: [Rischi tecnologici: Compatibilità con Visual Studio Code],
-)
-#v(0.5cm)
-== Rischi legati ai requisiti
 
-Questi rischi emergono quando i requisiti non sono chiari, ben definiti o subiscono modifiche frequenti, compromettendo la coerenza e l'efficienza del processo di sviluppo. 
-
-- *Ambiguità dei requisiti*
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Alcuni requisiti mal definiti possono rendere difficile l'implementazione.],
-  [
-    *Probabilità*
-  ],
-  [Alta],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Condurre molteplici revisioni collettive ed interviste con il proponente al fine di ottentere dei requisiti ottimali]
-),
-caption: [Rischi legati ai requisiti: Ambiguità dei requisiti],
-)
-#v(2cm)
-- *Modifiche frequenti dei requisiti*
-
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [La difficoltà nell'individuazione di requisiti plausibili può portare alla generazione di ambiguità ],
-  [
-    *Probabilità*
-  ],
-  [Alta],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Condurre l'analisi più persone]
-),
-caption: [Rischi legati ai requisiti: Modifiche frequenti dei requisiti],
-)
-#v(0.5cm)
-== Rischi organizzativi
-I rischi organizzativi riguardano la gestione del progetto e il coordinamento del team. Possono includere problemi legati alla comunicazione interna, alla pianificazione o all'allocazione delle risorse.
-
-- *Mancanza di coordinamento del team*
-
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Le riunioni poco frequenti e la scarsa coordinazione possono influenzare la produttività.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Programmare riunioni ad intervalli di tempo regolari]
-),
-caption: [Rischi organizzativi: Mancanza di coordinamento del team],
-)
-
-- *Dipendenza da risorse chiave*
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Ritardi causati da un'errata rotazione dei ruoli],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Documentare i processi critici per permettere ad altri membri del gruppo di proseguire con le task]
-),
-caption: [Rischi organizzativi: Dipendenza da risorse chiave],
-)
-
-Un esempio di questo caso potrebbe essere l'assenza del verificatore nel momento in cui questa attività è necessaria, rendendo impossibile portare avanti il ​​progetto o costringendo diverse persone a dover assumere tale ruolo e informarsi su come svolgerlo al meglio, causando un ritardo.
-#v(0.5cm)
-== Rischi legati alle persone 
-Questi rischi si riferiscono alle limitazioni o ai problemi legati al personale coinvolto, come disponibilità ridotta o mancanza di competenze specifiche.
-
-- *Disponibilità del team*
-
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Gli impegni personali dei membri del team potrebbero influire negativamente sulla loro capacità di partecipare al progetto.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Pianificare un programma flessibile che consenta di adattarsi agli impegni dei membri del gruppo.]
-),
-caption: [Rischi legati alle persone: Disponibilità del team],
-)
- #v(2cm)
-- *Mancanza di competenze tecniche*
-
-#figure(
-  table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Alcuni membri del team potrebbero non possedere una conoscenza approfondita delle tecnologie chiave necessarie per il progetto.],
-  [
-    *Probabilità*
-  ],
-  [Alta],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Ogni membro del team condividerà le proprie conoscenze con gli altri membri del gruppo nelle modalità stabilite nelle norme di progetto]
-),
-caption: [Rischi legati alle persone: Mancanza di competenze tecniche],
-)
-#v(0.5cm)
 == Rischi finanziari
-I rischi finanziari si manifestano quando i costi del progetto superano il budget previsto, compromettendo la sostenibilità economica del progetto.
-
-- *Superamento dei costi di sviluppo*
 
 #figure(
   table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Si potrebbe andare in contro ad un superamento del budget],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Medio],
-  [
-    *Precauzioni*
-  ],
-  [Rendicontazione oraria delle figure del progetto in modo da monitorare i costi]
-),
-caption: [Rischi finanziari: Superamento dei costi di sviluppo],
-)
+  columns: (0.5fr, 1fr, 1fr, 1fr),
+  align: horizon,
+  fill: (x,y) => if y == 0 {blue.lighten(90%) },
+  
+  [*Codice*], 
+  [*Rischio*], 
+  [*Descrizione*], 
+  [*Mitigazione*],
+  [RF_001],
+  [*Superamento budget*],
+  [Rallentameni dovuti a cause interne o esterne potrebbero portare al superamento del monte ore preventivato],
+  [Monitorare correttamente e costantemente il lavoro dei membri del gruppo attraverso strumenti di rendicontazione oraria],
+  ),
+  caption: [Rischi finanziari]
+  )
 
-#v(0.5cm)
-== Rischi per l'utente finale
-Questi rischi riguardano l'esperienza dell'utente finale, come difficoltà nell'uso del prodotto o mancata soddisfazione delle aspettative.
+ 
+== Tabella riassuntiva
+Nella seguente tabella vengono descritti: 
+- L'*occorrenza*: rappresenta la probabilità che il rischio si verifichi. Un rischio con alta occorrenza è molto probabile e deve essere monitorato con attenzione, mentre un rischio con bassa occorrenza è meno preoccupante, ma comunque da considerare.
+- L'*impatto*: misura la gravità delle conseguenze che il rischio potrebbe avere sul progetto. Un rischio con alto impatto può compromettere seriamente il raggiungimento degli obiettivi, mentre un impatto basso causa problemi gestibili senza significativi rallentamenti o costi aggiuntivi.
+- L'*_efficacia_*#super[G]: indica quanto le azioni di mitigazione adottate siano in grado di ridurre l'impatto del rischio. Un valore alto significa che le contromisure sono efficaci e il rischio è ben gestito, mentre un valore basso indica che il rischio rimane problematico nonostante gli sforzi.
 
-- *Bassa usabilità del plug-in*
+I possibili valori delle celle sono "Basso", "Medio" o "Alto".
 
 #figure(
   table(
-  columns: 2,
-  fill: (x,y) => if x == 0 {blue.lighten(90%) },
-  [
-    *Descrizione*
-  ],
-  [Un'interfaccia poco intuitiva può influire sull'usabilità del prodotto.],
-  [
-    *Probabilità*
-  ],
-  [Media],
-  [
-    *Impatto*
-  ],
-  [Alto],
-  [
-    *Precauzioni*
-  ],
-  [Eseguire test di usabilità fin dalle prime fasi.]
-),
-caption: [Rischi per l'utente finale: Bassa usabilità del plug-in],
+    columns: (0.5fr, 2fr, 1fr, 1fr, 1fr),
+    align: horizon,
+    fill: (x,y) => if y == 0 {blue.lighten(90%) },
+     
+    [*Codice rischio*],
+    [*Titolo rischio*],
+    [*occorrenza*],
+    [*Impatto*],
+    [*Efficacia*],
+    [RI_001], [*Mancanza di coordinamento del gruppo di progetto*], [Medio], [Alto], [Alto],
+    [RI_003], [*Disponibilità dei membri del gruppo di progetto*], [Alto], [Alto], [Medio],
+    [RI_004], [*Contrasti interni al gruppo di progetto*], [Medio], [Alto], [Alto],
+    [RT_001], [*Prestazioni dei modelli LLM*], [Basso], [Alto], [Alto],
+    [RT_002], [*Obsolescenza tecnologica*], [Medio], [Medio], [Medio],
+    [RT_003], [*Mancanza di conoscenze*], [Medio], [Medio], [Alto],
+    [RC_001], [*Ambiguità dei requisiti*], [Basso], [Alto], [Medio],
+    [RC_002], [*Modifiche al capitolato in corso d'opera*], [Basso], [Alto], [Alto],
+    [RC_003], [*Disallineamento tra capitolato e vincoli tecnici*], [Basso], [Medio], [Alto],
+    [RC_004], [*Divergenze tra le aspettative del committente e l'interpretazione del gruppo*], [Basso], [Alto], [Alto],
+    [RF_001], [*Superamento budget*], [Medio], [Alto], [Medio],
+  ),
+  caption: [Tabella riassuntiva dei rischi],
 )
-
-#pagebreak()
 = Modello di sviluppo
 
-La scelta di un approccio metodologico adeguato garantisce che le attività del progetto siano organizzate in modo strutturato e produttivo. Vengono stabiliti i principi e le tecniche operative per assicurare un avanzamento coerente con gli obiettivi.
+In questo capitolo viene illustrato il modello di sviluppo scelto per il progetto, ovvero l'approccio _Agile_#super[G]. Vengono descritti i concetti chiave, come le _retrospettive_#super[G], che permettono di riflettere e migliorare continuamente il processo, e il _backlog_#super[G], che rappresenta la lista delle attività da completare, prioritarizzate in base alle esigenze del gruppo.
 
-Per il progetto è stato scelto il modello di sviluppo agile....
 
-- Scelta del Modello Agile:
-        + Ogni fase del progetto produce un incremento funzionale del prodotto.
-        + Le iterazioni permettono di integrare continuamente il feedback.
-        + La modularità del plug-in permette di sviluppare le componenti in modo indipendente, riducendo il rischio di blocchi.
 
-- Strumenti e Metodologie:
+== Scelta del Modello
 
-        + Utilizzo di GitHub Projects per la gestione dei task e la pianificazione.
-        + Strumenti di collaborazione come Discord e Notion per mantenere una comunicazione fluida tra i membri del team.
+Per questo progetto è stato adottato il modello Agile, che consente lo sviluppo del prodotto attraverso la suddivisione del periodo temporale in _sprint_#super[G]. Questa scelta permette di migliorare la gestione dei rischi e di adattare lo sviluppo in base ai feedback ricevuti.
 
-(da migliorare)
+- Ogni sprint produce valore verificabile.
+
+- Sprint planning: ogni sprint viene pianificato in anticipo, definendo gli obiettivi e i task principali durante la riunione interna di inizio sprint.
+
+=== Gestione del backlog
+
+Un aspetto importante del modello agile è il backlog. Esso costituisce un elenco di attività, requisiti e funzionalità da sviluppare all'interno del progetto. Rappresenta la lista di cose da fare ed è costantemente aggiornato e riorganizzato in base alle priorità del progetto.
+
+Il backlog viene gestito attraverso _GitHub Projects_#super[G], utilizzando le _issue_#super[G] per tracciare le attività da svolgere. Ogni elemento del backlog può includere nuove aggiunte, bug da risolvere o miglioramenti dalle verifiche fatte. Viene quindi creata una issue con descrizione chiara e presa in carico da un membro del gruppo. Durante lo sprint planning, le issues più prioritarie vengono decise e suddivise, vengono inoltre chiariti punti ambigui e programmate le attività di quel periodo.
+
+=== Retrospettiva
+
+Al termine di ogni sprint, viene pianificata una retrospettiva per analizzare l'andamento del lavoro svolto, identificare possibili miglioramenti e fare il punto della situazione di cosa manca. Durante questa fase, ogni membro del gruppo presenta quanto fatto, quali difficoltà sono emerse e quali aspetti richiedono un'ulteriore approvazione.
+
+La retrospettiva viene svolta nel seguente modo: si analizzano gli obiettivi dello sprint appena concluso, si valutano i risultati ottenuti e si raccolgono feedback. Gli eventuali problemi riscontrati o ritardi nello sviluppo vengono discussi in modo collaborativo e vengono proposte soluzioni da applicare nei prossimi sprint.
 
 = Pianificazione
 
-La pianificazione permette di suddividere il progetto in fasi operative chiare, definendo risorse, tempistiche e responsabilità. Questo approccio assicura il coordinamento tra i membri del team e il rispetto delle scadenze.
+La pianificazione permette di suddividere il progetto in fasi operative chiare, definendone risorse e tempistiche. Questo approccio assicura il coordinamento tra i membri del gruppo e il rispetto delle scadenze.
 
-== Fasi del progetto
+Per la pianificazione abbiamo considerato il periodo dal 16/11/2024 al 16/04/2025. Escludendo il periodo dal 17/01/2025 al 7/02/2025, nel quale ci sarà la sessione d'esami, il tempo restante per il progetto è stato suddiviso in 8 sprint bisettimanali e 2 sprint della durata di una settimana singola.
 
-=== Fase 1 : Analisi iniziale e definizione dei requisiti
+L'organizazione degli sprint sarà la seguente:
+== Sprint 1 - Acquisizione di conoscenze
 
-Periodo: Novembre 2024 - Dicembre 2024
+*Periodo*: 16/11/2024 - 30/11/2024
 
-Obiettivi:
-- Definizione del way of working del gruppo
-- Creare una visione condivisa del progetto con gli stakeholder
-- Iniziare l'analisi dei requisiti
-- Iniziare la stesura dei documenti RTB
+In questo sprint iniziale, data la scarsa conoscenza delle tecnologie richieste, sarà predisposto un periodo di studio di esse con lo scopo di formazione del gruppo.
 
-=== Fase 2: Progettazione
+=== Obiettivo
 
-Periodo: Dicembre 2024 - Gennaio 2025
+L'obiettivo è l'acquisizione delle conoscenze utili per lo svolgimento _milestone_#super[G] RTB usando _Notion_#super[G] per formare tutti i membri del progetto, in modo da raggiungere un livello di conoscenza uniforme.
 
-Obiettivi:
+=== Attività
 
-- Creare un'architettura modulare per il plug-in.
-- Progettare l'integrazione con Visual Studio Code. 
-- Sviluppo dei diagrammi UML (casi d'uso, attività).
-- Redazione dei documenti iniziali: Analisi dei Requisiti, Glossario e Norme di Progetto.
-- Stesura del Piano di Progetto e Piano di Qualifica.
+Il completamento di questo sprint prevede la preparazione della repository per la documentazione della milestone RTB e l'acquisizione della conoscienza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
 
-=== Fase 3: Sviluppo
+== Sprint 2 - Analisi e documentazione
 
-Periodo: Gennaio 2025 - Marzo 2025
+*Periodo*: 01/12/2024 - 15/12/2024
 
-Obiettivi:
-- Implementare le funzionalità principali del plug-in.
-  Garantire la compatibilità con le tecnologie richieste (NodeJS, TypeScript). 
-- Sviluppo incrementale dei moduli principali.
-- Test funzionali per ogni iterazione.
+In questo sprint ci si focalizzerà sulla documentazione. Poiché il gruppo avrà ormai acquisito familiarità con il processo, l'attenzione sarà rivolta alla creazione di un template comune per tutti i documenti e alla stesura di una loro versione iniziale. 
 
-=== Fase 4: Testing e Validazione
+=== Obiettivo
 
-Periodo: Febbraio 2025 - Aprile 2025
+L'obiettivo di questa fase è appunto l'inizio dello sviluppo dei documenti riguardanti la milestone RTB, definendone inizialmente la struttura e le sezioni principali. I documenti sono:
 
-Obiettivi:
+- *Analisi dei Requisiti*: compilato dagli Analisti, contiene i casi d'uso analizzati e i requisiti del prodotto
 
-- Garantire che il prodotto soddisfi i requisiti definiti.
-- Migliorare l'usabilità del plug-in. 
-- Esecuzione di test di integrazione e di usabilità.
-- Correzione dei bug rilevati durante il testing.
+- *Piano di Progetto*: compilato dal Responsabile e dagli Amministratori, contiene la divisione delle risorse, il piano di preventivo e consuntivo e la pianificazione dei periodi
 
-=== Fase 5: Rilascio e Consegna
+- *Piano di Qualifica*: compilato dagli Amministratori e Progettisti, contiene i modelli, indici e metriche scelte per raggiungere gli obiettivi di economicità
 
-Periodo: Aprile 2025
+- *Norme di Progetto*: compilato dagli Amministratori, contiene le principali decisioni riguardanti il way of working
 
-Obiettivi:
+- *Glossario*: il suo contenuto viene aggiornato in parallelo con il resto dei documenti, contiene una definizione chiara di tutti i termini tecnici ambigui presenti nei documenti
 
-- Rilasciare il prodotto finale al cliente.
-- Documentare le funzionalità sviluppate. 
-- Consegna della documentazione tecnica e del plug-in.
-- Sessione di formazione per il cliente sull'utilizzo del plug-in.
+=== Attività
+
+L'attività assegnata al secondo sprint consiste principalmente nella redazione della documentazione. Per ciascun documento viene definita una struttura iniziale, suddividendo il lavoro e assegnando le sezioni rimanenti ai rispettivi ruoli di competenza. Trattandosi di una prima stesura, i documenti verranno migliorati e integrati nei successivi sprint.
 
 
-Questa suddivisione in fasi garantisce un flusso di lavoro organizzato, con la possibilità di monitorare i progressi e intervenire tempestivamente in caso di imprevisti. 
+== Sprint 3 - Knowledge Baseline
 
-#figure(
-  table(
-  columns: 3,
-  table.cell(fill: rgb("#0096c7"))[*Milestone*],table.cell(fill: rgb("#0096c7"))[*Data*],table.cell(fill: rgb("#0096c7"))[*Obiettivi raggiunti*],
-  [Fine analisi iniziale],[Dicembre 2024/Gennaio 2025],[Conclusione della definizione dei requisiti.],
-  [Progettazione completata],[Marzo 2025],[],
-  [Proof of Concept completato],[Marzo 2025],[],
-  [Sviluppo completato],[Marzo 2025/Aprile 2025],[Implementazione di tutte le funzionalità.],
-  [Testing e validazione completati],[Aprile 2025],[Prodotto pronto per il rilascio.],
-  [Consegna finale],[Aprile 2025],[Consegna al cliente],
+*Periodo*: 16/12/2024 - 03/01/2024
 
-), 
-caption: "Tabella riassuntiva delle fasi del progetto"
-)
+Questo sprint è dedicato alla continuazione dello sprint precedente, con particolare attenzione alla stesura dell'analisi dei requisiti a seguito della riunione con il proponente e delle decisioni prese durante alcuni incontri svolti durante questo periodo. Vengono descritte in ottica più approfondita anche le metriche riguardanti i test e il codice.
 
-== Periodi
+=== Obiettivo
 
-=== Periodo 1 : Organizzazione Iniziale
+L'obiettivo di questo sprint, oltre alla continuazione della documentazione, è quindi lo svolgimento di un'analisi delle tecnologie necessarie
+per lo svolgimento dell'analisi dei requisiti.
+=== Attività
 
-*Durata:* 28/10/2024 - 12/11/2024
+Le attività principali sono:
 
-Durante questo periodo, il team si è concentrato sulla definizione delle basi organizzative del progetto. Sono stati definiti elementi essenziali come il nome del gruppo, il logo, l'email e i canali di comunicazione (Discord, WhatsApp), oltre alla selezione di strumenti per il versionamento (GitHub) e la documentazione (Drive, GitHub, Typst). È stata inoltre avviata un'analisi preliminare dei capitolati e sono stati redatti i primi verbali interni ed esterni. Infine, è stata strutturata la repository su GitHub e pianificato un primo incontro con l'azienda per discutere dettagli tecnici e organizzativi
+- Redazione delle metriche del PdQ, includendo le formule dei vari indici, le soglie limite e le relative tabelle
+- Applicazione del nuovo template alla documentazione
+- Avanzamento analisi dei requisiti
 
-=== Periodo 2: Analisi dei Requisiti e Tecnologie
+== Sprint 4 - Baseline PoC
 
-*Durata:* 12/11/2024 - 2/12/2024
+*Periodo*: 04/01/2025 - 17/01/2025
 
-In questa fase, il team ha approfondito lo studio delle tecnologie richieste, come NodeJS, TypeScript, Ollama e strumenti relativi a LLM open source, utilizzando Miro per favorire la collaborazione. È stata avviata la stesura delle Norme di Progetto e l'analisi iniziale dei requisiti, integrando il feedback ricevuto durante gli incontri con l'azienda. Inoltre, sono stati implementati GitHub Projects per la gestione dei compiti e per facilitare l'organizzazione interna del lavoro.
+Questo sprint prevede la progettazione e lo sviluppo di una bozza del PoC, il quale verrà sviluppato parallelamente nel frontend e nel backend. Siccome si tratterà di una bozza, l'integrazione tra frontend e backend avverrà in un secondo momento.
 
-=== Periodo 3: Consolidamento dell'Analisi e Diagrammi
 
-*Durata:* 2/12/2024 - 18/12/2024
 
-Il team si è focalizzato sulla realizzazione di una prima versione di documenti chiave, come le Norme di Progetto, il Piano di Progetto e il Piano di Qualifica. Parallelamente, sono stati sviluppati diagrammi preliminari di attività e valutati rischi organizzativi e tecnologici. È stato anche introdotto un sistema per centralizzare la conoscenza attraverso strumenti come Notion, facilitando la sincronizzazione delle informazioni all'interno del gruppo.
+=== Obiettivo
 
-=== Periodo 4: Presentazione dell'Analisi e Proposta Tecnica
+L'obiettivo è avere una grafica del plug-in funzionante integrata con le chiamate di Ollama in grado di soddisfare le prime richieste di test su dei requisiti d'esempio.
 
-*Durata:* 18/12/2024 - 15/01/2025
+=== Attività
 
-In questa fase, il team ha organizzato un incontro con l'azienda per presentare i requisiti definiti, discutere possibili rischi e raccogliere feedback. Sulla base delle raccomandazioni ricevute, sono stati effettuati aggiustamenti ai documenti RTB, come il Piano di Progetto e il Piano di Qualifica. Infine, sono stati perfezionati aspetti tecnologici attraverso prove e studi avanzati per garantire la fattibilità tecnica del progetto.
+Oltre alla continuazione della documentazione, le attività da svolgere per il completamento di questo sprint sono:
 
-#pagebreak()
+- Sviluppo interfaccia grafica
+- Sviluppo chiamate API ai modelli LLM
+- Integrazione codice in preparazione alla fase di test
+
+== Sprint 5 - Baseline Documentazione
+
+*Periodo*: 07/02/2025 - 21/02/2025
+
+In questo sprint viene portata avanti la documentazione, cercando di arrivare al completamento dell'AdR in
+vista dei colloqui con il Professor Cardin e per la presentazione al proponente.
+
+=== Obiettivo
+
+L'obiettivo è il completamento dell'AdR, con particolare attenzione alla definizione dei casi d'uso e dei requisiti.
+Inoltre, sarà necessario  ultimare la documentazione in vista della revisione della milestone RTB.
+
+=== Attività
+Le attività che verranno svolte durante questo sprint consistono principalmente nell'avanzamento della stesura della documentazione, con particolare attenzione all'AdR.
+
+== Sprint 6 - Verifica finale del PoC e documentazione
+
+*Periodo*: 22/02/2025 - 8/03/2025
+
+Questo sprint è focalizzato sulla validazione del PoC e della documentazione. Comprende la verifica della conformità del sistema ai requisiti, la correzione di eventuali anomalie e la preparazione della versione 1.0.0 della documentazione. 
+
+=== Obiettivo
+
+L'obiettivo è assicurare che il prodotto e la documentazione siano pronti per il rilascio. Verrà richiesto un incontro con l'azienda per mostrare il PoC completo e ottenere feedback sul miglioramento.
+
+=== Attività
+Le attività da svolgere sono:
+
+- Ultimare il PoC, correggendo eventuali bug e migliorando l'usabilità
+- Verificare l'ultima versione di tutta la documentazione integrata delle novità dallo sprint precedente
+- Fissare un incontro con l'azienda
+== Sprint 7 - Stesura Documentazione PB
+
+*Periodo*: 09/03/2025 - 20/03/2025
+
+Questo sprint è dedicato alla stesura della documentazione per la Product Baseline.
+
+=== Obiettivo
+
+L'obiettivo è principalmente la stesura iniziale della documentazione PB, nello specifico:
+- *Manuale Utente*: fornire una guida dettagliata per l'utilizzo del plug-in
+- *Specifica Tecnica*: descrivere le funzionalità e l'architettura del sistema
+
+Si prevede di arrivare alla stesura delle sezioni più generiche, in quanto comunque verrà riutilizzato il PoC per il completamento dell'_MVP_#super[G].
+=== Attività
+
+La principale attività di questo sprint sono:
+- L'analisi dell'architettura PoC per il suo adattamento all'MVP e avvio della stesura della specifica tecnica e del manuale utente.
+- L'avanzamento nella documentazione RTB al fine della pubblicazione della versione 2.0.0 
+
+
+== Sprint 8 - Codifica MVP e Testing
+
+*Periodo*: 21/03/2025 - 02/04/2025
+
+Questo sprint si concentra sulla codifica e testing del Minimum Viable Product (MVP).
+
+=== Obiettivo
+
+L'obiettivo è arrivare ad una versione stabile dell'MVP partendo dal PoC e assicurarsi che tutte le funzionalità essenziali siano funzionanti.
+
+=== Attività
+
+- Implementazione di alcune delle funzionalità mancanti del prodotto finale
+  - Riuso del PoC 
+- Esecuzione di alcuni dei test definiti nel piano di progetto
+  - Eventuale correzione dei bug riscontrati durante i test
+- Stesura graduale del manuale utente e delle specifiche tecniche
+== Sprint 9 - Baseline Documentazione
+
+*Periodo*: 02/04/2025 - 08/04/2025
+
+Questo sprint è dedicato al completamento della documentazione per la Product Baseline.
+
+=== Obiettivo
+
+L'obiettivo è portare tutta la documentazione necessaria per la milestone PB alla versione subito precedente a quella finale, in modo che possa essere validata definitivamente nello sprint successivo.
+
+=== Attività
+
+La principale attività di questo sprint sarà la  preparazione della documentazione per la consegna.
+
+== Sprint 10 - Validazione finale e rilascio
+
+*Periodo*: 09/04/2025 - 16/04/2025
+
+Questo sprint è dedicato alla validazione finale del sistema e della documentazione, nonché alla preparazione per la consegna finale.
+
+=== Obiettivo
+
+L'obiettivo è validare il sistema e la documentazione, assicurandosi che siano pronti per il rilascio. Inoltre, sarà necessario preparare la presentazione finale.
+
+=== Attività
+
+- Validazione finale del sistema
+- Correzione di eventuali bug residui
+- Revisione finale della documentazione
+- Preparazione della presentazione finale
+
 = Preventivo
 == Descrizione del Preventivo
 
-Il preventivo include una distribuzione dettagliata delle ore lavorative assegnate ai vari ruoli, una stima dei costi associati e le giustificazioni delle scelte effettuate. La ripartizione delle ore tiene conto delle competenze del team e delle richieste specifiche del progetto.
+Il preventivo include una distribuzione dettagliata delle ore lavorative assegnate ai vari ruoli, una stima dei costi associati e le giustificazioni delle scelte effettuate.
 
 - *Totale Ore Lavorative:* 540
-- *Costo Totale Stimato: * 10.980,00 €
+- *Costo Totale Stimato:* 10.980,00 €
 
 == Ruoli e Distribuzione delle Ore
+La seguente tabella riporta il costo orario per ciascun ruolo e la distribuzione delle ore lavorative previste per ogni membro del gruppo.
+#figure(
+table(
+  columns: 3,
+  fill: (x,y) => if y == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Costo Unitario (€)*], [*Ore totali per ruolo*],
+  [*Responsabile*], [30 €/ora],[52],
+  [*Amministratore*], [20 €/ora],[60], 
+  [*Analista*], [25 €/ora], [113], 
+  [*Progettista*], [25 €/ora],[108], 
+  [*Programmatore*], [15 €/ora], [135],
+  [*Verificatore*], [15 €/ora], [72]
+  ),
+  caption: "Ruoli e Distribuzione delle Ore"
+)
 
-Responsabile
+Come gruppo abbiamo deciso di mirare al completamento delle ore designate per il progetto senza dividerle equamente, al fine di garantire una distribuzione del lavoro e un'efficienza ottimale relative alle disponibilità temporali di ciascun membro del gruppo. Questa decisione è dovuta al fatto di essere un gruppo ad intensità media, e anche per venire incontro alle esigenze personali e lavorative di ciascun membro del gruppo.
 
-Il responsabile coordina il progetto, supervisiona le attività e garantisce il rispetto delle scadenze e dei requisiti.
-- *Costo Unitario:*  30 €/ora
+== Prospetti Orario ed Economici
+Nella seguente sezione verrà preventivato per intero il prospetto orario ed economico di ogni sprint pianificato.
+=== Sprint 1
+*Periodo:* 16/11/2024 - 30/11/2024
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [6], [180],
+    [*Amministratore*], [8], [160],
+    [*Analista*], [15], [375],
+    [*Progettista*], [17], [425],
+    [*Programmatore*], [-], [-],
+    [*Verificatore*], [2], [30],
+    [*Totale*], [*48*], [*1170*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 1"
+)
+=== Sprint 2
+*Periodo:* 01/12/2024 - 15/12/2024
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [6], [180],
+    [*Amministratore*], [7], [140],
+    [*Analista*], [15], [375],
+    [*Progettista*], [17], [425],
+    [*Programmatore*], [-], [-],
+    [*Verificatore*], [2], [30],
+    [*Totale*], [*47*], [*1150*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 2"
+)
+=== Sprint 3
+*Periodo:* 16/12/2024 - 03/01/2025
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [10], [300],
+    [*Amministratore*], [10], [200],
+    [*Analista*], [14], [350],
+    [*Progettista*], [12], [300],
+    [*Programmatore*], [-], [-],
+    [*Verificatore*], [2], [30],
+    [*Totale*], [*48*], [*1180*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 3"
+)
+=== Sprint 4
+*Periodo:* 04/01/2025 - 17/01/2025
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [5], [150],
+    [*Amministratore*], [5], [100],
+    [*Analista*], [12], [300],
+    [*Progettista*], [10], [250],
+    [*Programmatore*], [40], [600],
+    [*Verificatore*], [14], [210],
+    [*Totale*], [*86*], [*1610*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 4"
+)
+=== Sprint 5
+*Periodo:* 07/02/2025 - 20/02/2025
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [2], [60],
+    [*Amministratore*], [5], [100],
+    [*Analista*], [5], [125],
+    [*Progettista*], [5], [125],
+    [*Programmatore*], [30], [450],
+    [*Verificatore*], [8], [120],
+    [*Totale*], [*55*], [*980*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 5"
+)
+=== Sprint 6
+*Periodo:* 21/02/2025 - 08/03/2025
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [8], [240],
+    [*Amministratore*], [8], [160],
+    [*Analista*], [20], [500],
+    [*Progettista*], [16], [400],
+    [*Programmatore*], [26], [390],
+    [*Verificatore*], [23], [345],
+    [*Totale*], [*101*], [*2035*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 6"
+)
+=== Sprint 7
+*Periodo:* 09/03/2025 - 20/03/2025 
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [5], [150],
+    [*Amministratore*], [5], [100],
+    [*Analista*], [8], [200],
+    [*Progettista*], [8], [200],
+    [*Programmatore*], [10], [150],
+    [*Verificatore*], [4], [60],
+    [*Totale*], [*40*], [*860*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 7"
+)
+=== Sprint 8
+*Periodo:* 21/03/2025 - 02/04/2025
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [4], [120],
+    [*Amministratore*], [3], [60],
+    [*Analista*], [5], [125],
+    [*Progettista*], [5], [125],
+    [*Programmatore*], [17], [255],
+    [*Verificatore*], [5], [75],
+    [*Totale*], [*39*], [*760*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 8"
+)
+=== Sprint 9
+*Periodo:* 03/04/2025 - 08/04/2025
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [4], [120],
+    [*Amministratore*], [3], [60],
+    [*Analista*], [4], [100],
+    [*Progettista*], [4], [100],
+    [*Programmatore*], [15], [225],
+    [*Verificatore*], [10], [150],
+    [*Totale*], [*40*], [*755*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 9"
+)
+=== Sprint 10
+*Periodo:* 9/04/2025 - 16/04/2025
+==== Prospetto economico
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [5], [150],
+    [*Amministratore*], [3], [60],
+    [*Analista*], [-], [-],
+    [*Progettista*], [-], [-],
+    [*Programmatore*], [4], [60],
+    [*Verificatore*], [15], [225],
+    [*Totale*], [*27*], [*495*]
+  ),
+  caption: "Prospetto economico preventivato per lo Sprint 10"
+)
+ 
 
-Amministratore
-
-L'amministratore si occupa della gestione documentale e della comunicazione con gli stakeholder.
-- *Costo Unitario:* 20 €/ora
-
-Analista
-
-L'analista analizza i requisiti e assicura che siano chiari, completi e implementabili.
-- *Costo Unitario:* 25 €/ora
-
-Progettista
-
-Il progettista sviluppa l'architettura del sistema e traduce i requisiti in specifiche tecniche.
-
-- *Costo Unitario:* 25 €/ora
-
-Programmatore
-
-Il programmatore realizza il software, assicurandosi che soddisfi i requisiti funzionali e qualitativi.
-- *Costo Unitario:* 15 €/ora
-
-Verificatore
-
-Il verificatore testa il prodotto per garantire che rispetti i requisiti e sia privo di difetti.
-- *Costo Unitario:* 15 €/ora
 == Riepilogo prospetto economico e prospetto orario
 
-Per poter analizzare meglio i costi, abbiamo suddiviso questa analisi nelle diverse parti del progetto, che sono RTB, PB e CA
-=== Riepilogo prospetto economico e prospetto orario parziale - RTB
-Questa sezione comprende i primi 4 periodi del progetto
-#figure(
-    table(
-      columns: 9,
-      fill: (x,y) => if x == 0 {blue.lighten(90%) },
-      table.cell(fill: rgb("#0096c7"))[*Membro*] , table.cell(fill: rgb("#0096c7"))[*Re*] , table.cell(fill: rgb("#0096c7"))[*Am*], table.cell(fill: rgb("#0096c7"))[*An*], table.cell(fill: rgb("#0096c7"))[*Prj*], table.cell(fill: rgb("#0096c7"))[*Prg*], table.cell(fill: rgb("#0096c7"))[*Ver*], table.cell(fill: rgb("#0096c7"))[*Totale*], table.cell(fill: rgb("#0096c7"))[*Costo Totale (€)*],
-      [*Maria Fuensanta*], ["14"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"],
-      [*Marco*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"],
-      [
-        *Ion*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"
-      ],
-      [
-        *Stefano*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"
-      ],
-      [
-        *Malik*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"
-      ],
-      [
-        *Luca*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"
-      ]
-    ),
-    caption: "Preventivo per RTB",
-)
+= Consuntivo di periodo
+Questa sezione confronta la pianificazione iniziale di ogni sprint con i risultati ottenuti a monte della retrospettiva. Si analizzano eventuali variazioni nei tempi e nei costi, identificandone le cause e le azioni correttive adottate.
+In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le attività svolte.
 
+== RTB
+
+=== Sprint 1 - Acquisizione di conoscenze
+
+*Periodo*: 16/11/2024 - 30/11/2024
+
+==== Rendicontazione oraria
 #figure(
   table(
-  columns: 9,
-    [
-    *Totale ore ruolo*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], [""
-  ],
-  [
-    *Costo orario (€)*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], [""], [""
-  ],
-  [
-    *Costo totale ruolo (€)*], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"], ["\*"
-  ]
-),
-caption: "Calcoli totali per RTB",
-)
-=== Riepilogo prospetto economico e prospetto orario parziale - PB
-
-=== Riepilogo prospetto economico e prospetto orario parziale - CA
-
-#pagebreak()
-= Consuntivo
-Questa sezione confronta la pianificazione iniziale con i risultati effettivi ottenuti durante lo sviluppo. Si analizzano eventuali variazioni di tempi e costi, insieme alle cause che le hanno determinate e alle azioni correttive adottate.
-
-== Resconto 
-#pagebreak()
-= Mitigazione dei Rischi 
-
-Questa sezione dettaglia le strategie messe in atto per gestire i rischi individuati. Vengono evidenziate le azioni preventive adottate per ridurre l'impatto dei problemi durante lo sviluppo.
-#v(0.25cm)
-== Rischi tecnologici
-- *Disponibilità e compatibilità con le API di IA* 
-#figure(
-  table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      L'integrazione con modelli di IA potrebbe fallire a causa di limitazioni tecniche.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Creare un livello di astrazione tra il sistema e le API esterne per ridurre la dipendenza e pianificare test periodici per garantire l'affidabilità.
-    ]
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [2], [-], [1], [3], [-], [1],
+    [*Ion*], [2], [1], [2], [1], [-], [2],
+    [*Maria Fuensanta*], [-], [2], [-], [-], [-], [2],
+    [*Stefano*], [1], [2], [-], [5], [-], [2],
+    [*Marco*], [1], [1], [1], [3], [-], [1],
+    [*Luca*], [-], [2], [1], [1], [-], [2],
   ),
-  caption: [Rischio tecnologico: Disponibilità e compatibilità con le API di IA]
+  caption: "Rendicontazione Sprint 1",
 )
-
-- *Limitazioni dei modelli di intelligenza artificiale*
+==== Prospetto economico
 #figure(
   table(
-    columns: 2,
-    fill: (x, y) => if x == 0 {blue.lighten(90%)},
-    [
-      *Descrizione*
-    ],
-    [
-      I modelli di IA potrebbero non elaborare dati specifici o di bassa qualità.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Addestrare i modelli con dati pertinenti, eseguire convalide manuali.
-    ]
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [6], [180],
+  [*Amministratore*], [8], [160],
+  [*Analista*], [5], [125],
+  [*Progettista*], [13], [325],
+  [*Programmatore*], [-], [-],
+  [*Verificatore*], [10], [150],
+  [*Totale*], [*42*], [*940*]
   ),
-  caption: [Rischio tecnologico: Limitazioni dei modelli di intelligenza artificiale]
+  caption: "Prospetto economico Sprint 1"
 )
 
-- *Compatibilità con Visual Studio Code*
+==== Rischi Occorsi
+- *RI_003*: La disponibilità dei membri del gruppo di progetto è stata limitata a causa di impegni personali, ma abbiamo mitigato il rischio utilizzando task asincrone per migliorare il lavoro.
+
+=== Sprint 2 - Analisi e documentazione
+
+*Periodo*: 01/12/2024 - 20/12/2024
+
+==== Rendicontazione oraria
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Le modifiche a Visual Studio Code potrebbero causare incompatibilità.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Monitorare regolarmente gli aggiornamenti di Visual Studio Code e mantenere la documentazione aggiornata. Condurre test di regressione per ogni aggiornamento.
-    ]
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [-], [2], [-], [4], [-], [2],
+    [*Ion*], [3], [-], [2], [3], [-], [-],
+    [*Maria Fuensanta*], [2], [-], [2], [-], [-], [1],
+    [*Stefano*], [-], [1], [-], [4], [-], [2],
+    [*Marco*], [1], [1], [-], [1], [-], [-],
+    [*Luca*], [-], [2], [2], [1], [-], [2],
   ),
-  caption: [Rischio tecnologico: Compatibilità con Visual Studio Code]
+  caption: "Rendicontazione Sprint 2",
 )
-
-#v(0.5cm)
-== Rischi legati ai requisiti
-
-- *Ambiguità dei requisiti*
+==== Prospetto economico
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Requisiti mal definiti possono complicare l'implementazione.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Utilizzare tecniche di elicitation e convalidare regolarmente i requisiti con il cliente. Aggiornare la documentazione con revisioni iterative.
-    ]
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [6], [180],
+  [*Amministratore*], [6], [120],
+  [*Analista*], [6], [150],
+  [*Progettista*], [13], [325],
+  [*Programmatore*], [-], [-],
+  [*Verificatore*], [2], [105],
+  [*Totale*], [*38*], [*880*]
   ),
-  caption: [Rischio legato ai requisiti: Ambiguità dei requisiti]
+  caption: "Prospetto economico Sprint 2"
 )
 
-- *Modifiche frequenti ai requisiti* 
+==== Rischi Occorsi
+- *RI_001*: La mancanza di coordinamento del gruppo ha causato ritardi nelle attività.
+- *RI_003*: La disponibilità limitata dei membri del gruppo ha prolungato lo sprint.
+
+=== Sprint 3 - Knowledge Baseline
+*Periodo*: 21/12/2024 - 03/01/2024
+
+==== Rendicontazione oraria
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Cambiamenti continui ai requisiti possono aumentare i costi e i tempi.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Progettare un'architettura modulare e adottare strumenti di versionamento per tracciare e gestire i cambiamenti.
-    ]
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [2], [3], [-], [2], [-], [1],
+    [*Ion*], [2], [1], [3], [-], [-], [2],
+    [*Maria Fuensanta*], [-], [1], [2], [-], [-], [2],
+    [*Stefano*], [1], [2], [-], [-], [-], [2],
+    [*Marco*], [2], [-], [2], [2], [-], [-],
+    [*Luca*], [-], [2], [3], [1], [-], [-],
   ),
-  caption: [Rischio legato ai requisiti: Modifiche frequenti ai requisiti]
+  caption: "Rendicontazione Sprint 3",
 )
-#v(0.5cm)
-== Rischi organizzativi
-- *Mancanza di coordinamento del team* 
+==== Prospetto economico
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      La scarsa comunicazione può rallentare il progetto.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Utilizzare piattaforme di collaborazione (ad esempio Slack, Trello) per centralizzare le comunicazioni e organizzare riunioni settimanali per aggiornare il progresso del progetto.
-    ]
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [7], [210],
+  [*Amministratore*], [9], [180],
+  [*Analista*], [10], [250],
+  [*Progettista*], [5], [125],
+  [*Programmatore*], [-], [-],
+  [*Verificatore*], [7], [105],
+  [*Totale*], [*38*], [*870*]
   ),
-  caption: [Rischio organizzativo: Mancanza di coordinamento del team]
+  caption: "Prospetto economico Sprint 3"
 )
 
-- *Dipendenza da risorse chiave*
+==== Rischi Occorsi
+- *RC_001*: La mancanza di alcuni colloqui con il proponente ha causato un rallentamento nella stesura dell'AdR.
+
+=== Sprint 4 - Baseline PoC
+*Periodo*: 04/01/2025 - 17/01/2025
+
+==== Rendicontazione oraria
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      L'assenza di membri chiave del team può causare ritardi.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Pianificare risorse di backup per i ruoli critici e documentare dettagliatamente i processi.
-    ]
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [1], [3.5], [2], [2], [-], [2],
+    [*Ion*], [1], [-], [2], [2], [15], [1],
+    [*Maria Fuensanta*], [-], [-], [2], [-], [-], [2],
+    [*Stefano*], [1], [1], [2], [3], [-], [2],
+    [*Marco*], [1], [-], [3], [2], [7], [3],
+    [*Luca*], [-], [1], [1], [1], [7], [2],
   ),
-  caption: [Rischio organizzativo: Dipendenza da risorse chiave]
+  caption: "Rendicontazione Sprint 4",
 )
-
-
-#v(0.5cm)
-== Rischi legati al team
-
-- *Disponibilità del team* 
+==== Prospetto economico
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Impegni personali dei membri del team possono influire negativamente sul lavoro.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Creare un calendario flessibile e assegnare prioritarie responsabilità critiche a risorse disponibili.
-    ]
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [4], [120],
+  [*Amministratore*], [5.5], [110],
+  [*Analista*], [12], [300],
+  [*Progettista*], [10], [250],
+  [*Programmatore*], [29], [435],
+  [*Verificatore*], [12], [180],
+  [*Totale*], [*72.5*], [*1395*]
   ),
-  caption: [Rischio legato al team: Disponibilità del team]
+  caption: "Prospetto economico Sprint 4"
 )
 
-- *Mancanza di competenze tecniche*
+==== Rischi Occorsi
+- *RC_001*: L'AdR non è stata ultimata a causa di ambiguità nei requisiti. Mentre per il PoC erano sorti dubbi riguardanti il formato CSV per l'importazione dei dati e l'interfaccia grafica.
+=== Sprint 5 - Baseline Documentazione
+*Periodo*: 07/02/2025 - 20/02/2025
+==== Rendicontazione oraria
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Alcuni membri del team potrebbero non possedere le competenze richieste.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Fornire formazione mirata, materiali di apprendimento e sessioni di mentoring per migliorare le competenze del team.
-    ]
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [2], [1], [2], [1], [5], [2],
+    [*Ion*], [1], [1], [-], [1], [15], [2],
+    [*Maria Fuensanta*], [-], [-], [-], [-], [-], [-],
+    [*Stefano*], [1], [1], [2], [2], [2], [2],
+    [*Marco*], [-], [-], [-], [-], [-], [2],
+    [*Luca*], [-], [1], [3], [1], [3], [1],
   ),
-  caption: [Rischio legato al team: Mancanza di competenze tecniche]
+  caption: "Rendicontazione Sprint 5",
 )
-#v(0.5cm)
-== Rischi finanziari
-- *Superamento dei costi di sviluppo*
+==== Prospetto economico
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Le funzionalità avanzate possono richiedere risorse aggiuntive.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Monitorare regolarmente il budget e rivedere le priorità in caso di eccedenze. Concentrarsi sulle funzionalità essenziali per rispettare il budget.
-    ]
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [4], [120],
+  [*Amministratore*], [4], [80],
+  [*Analista*], [7], [175],
+  [*Progettista*], [5], [125],
+  [*Programmatore*], [25], [375],
+  [*Verificatore*], [9], [135],
+  [*Totale*], [*54*], [*1010*]
   ),
-  caption: [Rischio finanziario: Superamento dei costi di sviluppo]
+  caption: "Prospetto economico Sprint 5"
 )
+==== Rischi Occorsi
+- *RI_001*: la distribuzione sbilanciata del lavoro tra i membri del gruppo ha causato difficoltà nell'organizzazione e ritardi nella documentazione. Il tentativo di mitigazione non è servito a risolvere il problema.
+- *RT_002*: un aggiornamento improvviso di _Typst_#super[G] ha causato problemi di compilazione all'interno della repository. Come mitigazione abbiamo deciso di utilizzare una sua versione stabile per evitare simili problemi futuri. 
 
-#v(0.5cm)
-== Rischi per l'utente finale
-- *Bassa usabilità del plug-in*
+=== Sprint 6 - Verifica finale del prodotto e documentazione
+*Periodo*: 21/02/2025 - 8/03/2025
+==== Rendicontazione oraria
 #figure(
   table(
-    columns: 2,
-    fill: (x,y) => if x == 0 {blue.lighten(90%) },
-    [
-      *Descrizione*
-    ],
-    [
-      Interfaccia poco intuitiva potrebbe ridurre l'adozione.
-    ],
-    [
-      *Mitigazione*
-    ],
-    [
-      Condurre test di usabilità con utenti target e incorporare il feedback per migliorare il design dell'interfaccia e l'esperienza utente.
-    ]
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [2], [1], [3], [2], [5], [4],
+    [*Ion*], [1], [1], [3], [3], [10], [4],
+    [*Maria Fuensanta*], [-], [2], [3], [3], [-], [2],
+    [*Stefano*], [3], [2], [2], [2], [-], [3],
+    [*Marco*], [1], [1], [2], [2], [-], [3],
+    [*Luca*], [1], [1], [2], [2], [-], [3],
   ),
-  caption: [Rischio per l'utente finale: Bassa usabilità del plug-in]
+  caption: "Rendicontazione Sprint 6",
 )
-#pagebreak()
-= Conclusioni
+==== Prospetto economico
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [8], [240],
+  [*Amministratore*], [8], [160],
+  [*Analista*], [15], [375],
+  [*Progettista*], [14], [350],
+  [*Programmatore*], [15], [225],
+  [*Verificatore*], [19], [285],
+  [*Totale*], [*79*], [*1635*]
+  ),
+  caption: "Prospetto economico Sprint 6"
+)
+==== Rischi Occorsi
+- *RI_001*: alcuni membri del gruppo non sono stati abbastanza produttivi, causando ritardi e difficoltà nella verifica finale. 
+=== Riepilogo RTB
+==== Prospetto economico
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [35], [1050],
+  [*Amministratore*], [40.5], [810],
+  [*Analista*], [55], [1375],
+  [*Progettista*], [60], [1500],
+  [*Programmatore*], [69], [1035],
+  [*Verificatore*], [64], [680],
+  [*Totale*], [*324*], [*6730*]
+  ),
+  caption: "Prospetto economico Totale Sprint RTB"
+)
