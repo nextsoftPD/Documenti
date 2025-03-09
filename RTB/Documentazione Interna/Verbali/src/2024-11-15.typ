@@ -4,7 +4,7 @@
   title: "Incontro di avviamento\nalla Milestone RTB",
   redattori: ("Malik Giafar Mohamed","Ion Cainareanu"),
   verifica: ("Marco Perazzolo","Luca Parise",),
-  approvazione: (),
+  approvazione: ("Luca Parise",),
   uso: "Interno",
   version: "1.0",
   timebegin: "15:00",

@@ -4,7 +4,7 @@
   title: "Verbale incontro interno",
   redattori: ("Luca Parise",),
   verifica: ("Malik Giafar Mohamed",),
-  approvazione: ("",),
+  approvazione: ("Luca Parise",),
   uso: "Interno",
   version: "1.0",
   timebegin: "21:30",
