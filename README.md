@@ -11,9 +11,9 @@ In questa repository sono contenuti tutti i documenti prodotti dal gruppo NextSo
   - [Piano di Qualifica](/RTB/Documentazione%20Esterna/Piano_di_Qualifica_v1.0.0.pdf) (V1.0.0)
   - [Glossario](/RTB/Documentazione%20Esterna/Glossario_v1.0.0.pdf) (V1.0.0)
   - Verbali
-    - [Verbale esterno del 25 Novembre 2024](/RTB/Documentazione%20Esterna/Verbali/2024-11-25.pdf)
-    - [Verbale esterno del 24 Dicembre 2024](/RTB/Documentazione%20Esterna/Verbali/2024-12-24.pdf)
-    - [Verbale esterno del 25 Febbraio 2025](/RTB/Documentazione%20Esterna/Verbali/2025-02-25.pdf)
+    - [Verbale esterno del 25 Novembre 2024](/RTB/Documentazione%20Esterna/Verbali/2024_11_25_firmato.pdf)
+    - [Verbale esterno del 24 Dicembre 2024](/RTB/Documentazione%20Esterna/Verbali/2024_12_24_firmato.pdf)
+    - [Verbale esterno del 25 Febbraio 2025](/RTB/Documentazione%20Esterna/Verbali/2025-02-25_firmato.pdf)
 
 - Documentazione Interna
   - [Norme di Progetto](/RTB/Documentazione%20Interna/Norme_di_Progetto_v1.0.0.pdf) (V1.0.0)
