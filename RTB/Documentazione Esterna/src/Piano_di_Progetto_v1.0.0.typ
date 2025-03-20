@@ -683,6 +683,22 @@ Nella seguente sezione verrà preventivato per intero il prospetto orario ed eco
 
 == Riepilogo prospetto economico e prospetto orario
 
+#figure(
+  table(
+    columns: 3,
+    fill: (x,y) => if x == 0 {blue.lighten(70%) },
+    [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+    [*Responsabile*], [55], [1650],
+    [*Amministratore*], [57], [1140],
+    [*Analista*], [98], [2450],
+    [*Progettista*], [94], [2350],
+    [*Programmatore*], [142], [2130],
+    [*Verificatore*], [85], [1275],
+    [*Totale*], [*531*], [*10995*]
+  ),
+  caption: "Riepilogo prospetto economico preventivato"
+)
+
 = Consuntivo di periodo
 Questa sezione confronta la pianificazione iniziale di ogni sprint con i risultati ottenuti a monte della retrospettiva. Si analizzano eventuali variazioni nei tempi e nei costi, identificandone le cause e le azioni correttive adottate.
 In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le attività svolte.
