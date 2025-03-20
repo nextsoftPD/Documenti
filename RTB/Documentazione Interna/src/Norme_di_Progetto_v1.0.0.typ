@@ -8,7 +8,7 @@
   verifica: ("Malik Giafar Mohamed","Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu", "Stefano Baso"),
   approvazione: ("Luca Parise",),
   uso: "Interno",
-  version: "0.4.1",
+  version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
     "1.0.0", "07/03/2025", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",

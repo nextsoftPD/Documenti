@@ -7,7 +7,7 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.0.1",
+  version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
     "1.0.0", "04/03/2025", "Stefano Baso", "Aggiunti grafici e fix nomeclatura", "Malik Giafar Mohamed",
