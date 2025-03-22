@@ -107,8 +107,7 @@
       align(left)[#render-names("Redattori", redattori)],
       align(left)[#render-names("Verifica", verifica)],
       align(left)[#render-names("Approvazione", approvazione)],
-      align(left)[#strong([Uso]) #h(1fr) uso],
-
+      align(left)[#strong([Uso]) #h(1fr) #uso],
       v(3em),
       link(email),
       v(2em)
@@ -129,7 +128,7 @@
   verifica: ("Stefano Baso",),
   approvazione: ("Luca Parise",),
   uso: ("Esterno"),
-  date: "8/03/2025",
+  date: "08/03/2025",
   timebegin: "",
   timeend: "",
   versionamento: (),
