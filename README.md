@@ -1,6 +1,33 @@
 # Documentazione
 In questa repository sono contenuti tutti i documenti prodotti dal gruppo NextSoft
 
+## RTB
+
+- [Lettera di Presentazione](/RTB/Lettera_di_Presentazione.pdf)
+
+- Documentazione Esterna
+  - [Analisi dei Requisiti](/RTB/Documentazione%20Esterna/Analisi_dei_Requisiti_v1.0.0.pdf) (V1.0.0)
+  - [Piano di Progetto](/RTB/Documentazione%20Esterna/Piano_di_Progetto_v1.0.0.pdf) (V1.0.0)
+  - [Piano di Qualifica](/RTB/Documentazione%20Esterna/Piano_di_Qualifica_v1.0.0.pdf) (V1.0.0)
+  - [Glossario](/RTB/Documentazione%20Esterna/Glossario_v1.0.0.pdf) (V1.0.0)
+  - Verbali
+    - [Verbale esterno del 25 Novembre 2024](/RTB/Documentazione%20Esterna/Verbali/2024_11_25_firmato.pdf)
+    - [Verbale esterno del 24 Dicembre 2024](/RTB/Documentazione%20Esterna/Verbali/2024_12_24_firmato.pdf)
+    - [Verbale esterno del 25 Febbraio 2025](/RTB/Documentazione%20Esterna/Verbali/2025-02-25_firmato.pdf)
+
+- Documentazione Interna
+  - [Norme di Progetto](/RTB/Documentazione%20Interna/Norme_di_Progetto_v1.0.0.pdf) (V1.0.0)
+  - Verbali
+    - [Verbale interno del 15 Novembre 2024](/RTB/Documentazione%20Interna/Verbali/2024-11-15.pdf)
+    - [Verbale interno del 24 Novembre 2024](/RTB/Documentazione%20Interna/Verbali/2024-11-24.pdf)
+    - [Verbale interno del 9 Dicembre 2024](/RTB/Documentazione%20Interna/Verbali/2024-12-09.pdf)
+    - [Verbale interno del 18 Dicembre 2024](/RTB/Documentazione%20Interna/Verbali/2024-12-18.pdf)
+    - [Verbale interno del 3 Gennaio 2025](/RTB/Documentazione%20Interna/Verbali/2025-01-03.pdf)
+    - [Verbale interno del 10 Gennaio 2025](/RTB/Documentazione%20Interna/Verbali/2025-01-10.pdf)
+    - [Verbale interno del 19 Gennaio 2025](/RTB/Documentazione%20Interna/Verbali/2025-01-19.pdf)
+    - [Verbale interno dell'8 Febbraio 2025](/RTB/Documentazione%20Interna/Verbali/2025-02-08.pdf)
+    - [Verbale interno del 20 Febbraio 2025](/RTB/Documentazione%20Interna/Verbali/2025-02-20.pdf)
+    - [Verbale interno del 7 Marzo 2025](/RTB/Documentazione%20Interna/Verbali/2025-03-07.pdf)
 
 ## Candidatura
 

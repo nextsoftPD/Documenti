@@ -1,0 +1,88 @@
+name: Compile Typst files to PDF
+
+on:
+  push:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2
+      - name: Install Typst
+        run: |
+          mkdir -p $HOME/.local/bin
+          echo $HOME/.local/bin >> $GITHUB_PATH
+          wget https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz -O /tmp/typst-x86_64-unknown-linux-musl.tar.xz
+          tar xf /tmp/typst-x86_64-unknown-linux-musl.tar.xz -C $HOME/.local/bin --strip-components=1 typst-x86_64-unknown-linux-musl/typst
+      
+      # Step 3
+      - name: Remove old PDF files
+        run: |
+          find . -name "*.pdf" -not -name "*firmato*.pdf" -exec rm {} \;
+      
+      # Step 4
+      - name: Compile all Typst files to PDF
+        run: |
+          find . -name "*.typ" -print0 | while IFS= read -r -d '' file; do
+            # se il file contiene template nel nome, ignoralo
+            if [[ "$file" == *template* ]]; then continue; fi
+            typst compile --root . "$file" "${file%.typ}.pdf"
+          done
+      
+      # Step 5
+      - name: Move PDF files to parent directory
+        run: |
+            find . -name "*.pdf" -not -name "*firmato*.pdf" -exec sh -c 'mv "$0" "$(dirname "$0")/../"' {} \;
+      
+      # Step 6
+      - name: Commit and push compiled PDFs
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add '**/*.pdf'
+          git commit -m "Update compiled PDFs"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Step 7
+      - name: Upload all PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: Compiled-PDFs
+          path: '**/*.pdf'
+
+  # generate-xml:
+  #     needs: build-pdf
+  #     runs-on: ubuntu-latest
+  #     steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v2
+
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: '3.x'
+
+  #     - name: Install dependencies
+  #       run: |
+  #         python -m pip install --upgrade pip
+  #         pip install xmltodict
+
+  #     - name: Generate XML structure
+  #       run: |
+  #         python assets/utils/xml_script.py
+
+  #     - name: Commit and push changes
+  #       run: |
+  #         git config --global user.name 'github-actions[bot]'
+  #         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+  #         git add directory_structure.xml
+  #         git commit -m 'XML structure generation'
+  #         git push
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

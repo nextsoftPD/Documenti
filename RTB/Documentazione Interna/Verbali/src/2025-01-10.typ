@@ -6,7 +6,7 @@
   verifica: ("Stefano Baso",),
   approvazione: ("Malik Giafar Mohamed",),
   uso: "Interno",
-  version: "1.3",
+  version: "1.0.0",
   timebegin: "21:30",
   timeend: "23:30",
   date: "10/01/2025",
