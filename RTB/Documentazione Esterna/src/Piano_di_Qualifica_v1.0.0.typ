@@ -445,35 +445,35 @@ Le specifiche riguardanti i test descritti verranno definite nelle successive ve
 
 #figure(
   image("img/PdQ/Ac_etc.png", width: 100%),
-  caption: [Grafo Actual Cost e Estimated to Completion],
+  caption: [Grafico Actual Cost e Estimated to Completion],
 )
 
 == MPC03 - MPC04: Earned Value e Planned Value
 
 #figure(
   image("img/PdQ/Ev_pv.png", width: 100%),
-  caption: [Grafo Earned Value e Planned Value],
+  caption: [Grafico Earned Value e Planned Value],
 )
 
 == MPC07: Schedule Variance
 
 #figure(
   image("img/PdQ/Sv.png", width: 100%),
-  caption: [Grafo Schedule Variance],
+  caption: [Grafico Schedule Variance],
 )
 
 == MPC06: Cost Variance
 
 #figure(
   image("img/PdQ/Cv.png", width: 100%),
-  caption: [Grafo Cost Variance],
+  caption: [Grafico Cost Variance],
 )
 
 == MPC01: Estimated at Completion
 
 #figure(
   image("img/PdQ/Eac.png", width: 100%),
-  caption: [Grafo Estimated at Completion],
+  caption: [Grafico Estimated at Completion],
 )
 
 ==  MPC12: Indice di Gulpease
