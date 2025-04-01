@@ -7,7 +7,7 @@
   verifica: ("Ion Cainareanu",),
   approvazione: ("",),
   uso: "Esterno",
-  version: "1.0",
+  version: "1.0.0",
   timebegin: "14:00",
   timeend: "14:45",
   date: "25/11/2024",
