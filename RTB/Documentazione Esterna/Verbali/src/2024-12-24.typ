@@ -6,7 +6,7 @@
   verifica: ("Marco Perazzolo","Luca Parise",),
   approvazione: ("Ion Cainareanu",),
   uso: "Esterno",
-  version: "1.0",
+  version: "1.0.0",
   timebegin: "15:45",
   timeend: "16:51",
   date: "24/12/2024",
