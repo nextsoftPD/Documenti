@@ -362,7 +362,8 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Estensioni:*
 - *UC_5.1 - Visualizzazione errore risultati non disponibili*: Se i risultati dell'analisi non sono disponibili, il sistema mostra un messaggio d'errore specifico.  
 - *UC_4.1 - Visualizzazione errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
-- *UC_3.1 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
+- *UC_4.2 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
+
 
 \
 == UC_5.1 - Visualizzazione errore risultati non disponibili
