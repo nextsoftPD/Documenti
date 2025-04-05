@@ -288,7 +288,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Estensioni:*
 - *UC_4.1 - Visualizzazione errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
-- *UC_3.1 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
+- *UC_4.2 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
 
 \
 == UC_4.1 - Visualizzazione errore di salvataggio
@@ -306,6 +306,21 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 2. Il sistema tenta di salvare il file CSV.  
 3. Si verifica un errore durante il salvataggio.  
 4. Il sistema mostra un messaggio d'errore e consente di riprovare.
+
+\
+== UC_4.2 - Visualizzazione errore tracciamento mancante
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*  
+- Durante l'esportazione [UC_4], il sistema rileva che il mapping (tracciamento del codice) non è disponibile.
+
+*Postcondizioni:*  
+- Il sistema visualizza un messaggio d'errore che informa l'utente dell'assenza del tracciamento.
+
+*Scenario principale:*  
+1. Durante l'esecuzione di [UC_4], il sistema verifica la presenza del mapping.  
+2. Se il mapping risulta mancante, il sistema mostra un messaggio d'errore specifico.
 
 \
 == UC_5 - Esportazione del tracciamento e dei risultati
@@ -335,7 +350,8 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Estensioni:*
 - *UC_5.1 - Visualizzazione errore risultati non disponibili*: Se i risultati dell'analisi non sono disponibili, il sistema mostra un messaggio d'errore specifico.  
 - *UC_4.1 - Visualizzazione errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
-- *UC_3.1 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
+- *UC_4.2 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
+
 
 \
 == UC_5.1 - Visualizzazione errore risultati non disponibili
@@ -530,8 +546,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Scenario principale:*  
 1. Il sistema visualizza la riga di fine dell'intervallo di tracciamento del requisito.
 
-#pagebreak()
-
+\
 == UC_8 - Visualizzazione risultati requisito
 
 #figure(
@@ -713,7 +728,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Scenario principale:*
 1. Il sistema visualizza il singolo problema, che può essere un problema di implementazione o di coerenza del requisito.
 
-\
+#pagebreak()
 == UC_9 - Filtraggio dei requisiti
 
 #figure(
@@ -734,8 +749,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 2. Il sistema filtra la lista dei requisiti in base al campo inserito.  
 3. Il sistema visualizza la lista dei requisiti filtrati.
 
-#pagebreak()
-
+\
 == UC_10 - Analisi di un singolo requisito
 #figure(
   image("./img/AdR/UC10.png", width: 100%),
@@ -762,8 +776,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - *UC_3.2 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_3.3 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 
-#pagebreak()
-
+\
 == UC_11 - Tracciamento dei requisiti nel codice
 #figure(
   image("./img/AdR/UC11.png", width: 100%),
@@ -794,8 +807,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - *UC_3.3 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_3.4 - Visualizzazione errore codice non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente.
 
-#pagebreak()
-
+\
 == UC_12 - Configurazione dei path da ignorare
 #figure(
   image("./img/AdR/UC12.png", width: 75%),
