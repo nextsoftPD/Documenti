@@ -9,6 +9,7 @@
   version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
+    "1.1.0","05/04/2025","Malik Giafar Mohamed, Luca Parise, Marco Perazzolo","Modifiche generali agli use cases e aggiornamento del relativo tracciamento","",
     "1.0.1","27/03/2025","Marco Perazzolo","Correzione di casi d'uso e requisiti post-incontro RTB","",
     "1.0.0","08/03/2025","Ion Cainareanu","Aggiunti i termini del glossario e rilasciata la versione 1.0.0 del documento","Marco Perazzolo",
     "0.6.3","07/03/2025","Marco Perazzolo","Affinamento degli extension points nei diagrammi UML","Stefano Baso",
