@@ -1059,7 +1059,7 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO021],
     [Obbligatorio],
     [Il sistema, nel caso vengano inseriti dei requisiti non tracciati, deve mostrare un messaggio che informi l'utente sul loro mancato tracciamento],
-    [UC_3.1],
+    [UC_3.1, UC_4.2],
     /*----------------------------------------------------*/
     [RFO022],
     [Obbligatorio],
@@ -1277,6 +1277,7 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [UC_3.4], [RFO024],
     [UC_4],   [RFO025],
     [UC_4.1], [RFO026],
+    [UC_4.2], [RFO021],
     [UC_5],   [RFO027, RFO028],
     [UC_5.1], [RFO028],
     [UC_6],   [RFO014],
