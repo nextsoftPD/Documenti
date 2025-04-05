@@ -1,16 +1,4 @@
 #import "../../../assets/template_v2.0.0.typ": project;
-#let frame(stroke) = (x, y) => (
-  left: if x > 0 { 0pt } else { stroke },
-  right: stroke,
-  top: if y < 2 { stroke } else { 0pt },
-  bottom: stroke,
-)
-
-
-#set table(
-  fill: (rgb("#ffffff"), none),
-  stroke: frame(rgb("21222C")),
-)
 
 #show: project.with(
   title: "Analisi dei Requisiti",
@@ -950,126 +938,209 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 == Introduzione
 Il gruppo NextSoft, a seguita di una attenta analisi dichiara che i requisiti che il prodotto finale andrà a soddisfare sono i seguenti. Questi vengono mostrati di seguito in forma tabellare, seguendo quanto detto all'interno del documento #text(style: "italic", [Norme di Progetto])
 
-
 == Requisiti Funzionali 
 
 Questi requisiti descrivono cosa il sistema deve fare 
 #figure(
   table(
 
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
+    align: center + horizon,
     /*----------------------------------------------------*/
     table.header([*Codice*], [*Classificazione*],[*Descrizione*],[*Fonti*]),
     /*----------------------------------------------------*/
     [RFO001],
-    [_Obbligatorio_#super("G")],
-    [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_#super("G")],
-    [Capitolato, UC_1, UC_1.1, UC_1.3, Proponente],
+    [Obbligatorio],
+    [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
+    [UC_3],
     /*----------------------------------------------------*/
     [RFO002],
     [Obbligatorio],
-    [Il sistema deve visualizzare i requisiti caricati in una vista strutturata ad albero],
-    [UC_9, UC_9.1, UC_9.1.1, UC_9.1.1.1, UC_9.1.1.2, UC_9.1.2, UC_9.1.2.1, UC_9.1.2.2, UC_9.1.2.3],
-
+    [Il sistema deve visualizzare graficamente i risultati delle analisi integrandoli nella lista dei requisiti],
+    [UC_8, UC_8.1, UC_8.1.1, UC_8.1.2, UC_8.2, UC_8.3, UC_8.4, UC_8.4.1, UC_8.5, UC_8.5.1],
     /*----------------------------------------------------*/
     [RFO003],
     [Obbligatorio],
-    [Il sistema deve validare i requisiti inseriti all'interno del file CSV],
-    [UC_1, UC_1.4],
+    [Il sistema deve informare l'utente nel caso, a seguito di un'analisi, non ci siano risultati],  
+    [UC_5.1],
     /*----------------------------------------------------*/
-    [RFO004],
-    [Obbligatorio],
-    [Il sistema deve informare l'utente se il file CSV caricato non è valido in caso di colonne id e descrizione mancanti],
-    [UC_1.4],
-    /*----------------------------------------------------*/
-    [RFO005],
-    [Obbligatorio],
-    [Il sistema deve fornire una valutazione dei requisiti in termini di completezza, coerenza e adderenza al codice],
-    [UC_2, UC_2.1, UC_2.2, Capitolato],
-    /*----------------------------------------------------*/
-    [RFO006],
-    [Obbligatorio],
-    [L'utente deve ricevere suggerimenti su come rendere i requisiti più specifici, misurabili, realizzabili e pertinenti],
-    [Capitolato, UC_4.1.1.5],
-    /*----------------------------------------------------*/
-    [RFO007],
-    [Obbligatorio],
-    [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
-    [UC_2],
-
-    /*----------------------------------------------------*/
-    [RFO008],
-    [Obbligatorio ],
-    [Il sistema deve tracciare l'implementazione dei requisiti nel codice e verificarne la copertura],
-    [Capitolato, UC_2.2, UC_7],
-    /*----------------------------------------------------*/
-    
-    [RFO009],
-    [Obbligatorio],
-    [Il sistema deve consentire l'esportazione dei dati in formato CSV ],
-    [UC_3, UC_3.1, UC_3.2],
-    
-    /*----------------------------------------------------*/
-    [RFO010],
-    [Obbligatorio],
-    [Il sistema deve visualizzare graficamente i risultati delle analisi integrandoli nella lista dei requisiti],
-    [UC_4, UC_4.1, UC_4.1.1, UC_4.1.1.1, UC_4.1.1.4, UC_4.1.1.5, UC_4.1.1.6],
-    /*----------------------------------------------------*/
-    [RFO011],
-    [Obbligatorio],
-    [Il sistema deve filtrare i risultati delle analisi in base ai criteri specificati dall'utente (ID, descrizione, file di implementazione)],
-    [UC_5],
-    /*----------------------------------------------------*/
-    [RFO012],
-    [Obbligatorio],
-    [Il sistema deve consentire l'analisi di un singolo requisito],
-    [UC_6],
-    /*----------------------------------------------------*/
-    [RFO013],
-    [Obbligatorio],
-    [Il sistema deve informare l'utente nel caso, a seguito di un analisi, non ci siano risultati],
-    [UC_4.1.1.6],
-    /*----------------------------------------------------*/
-    [RFF014],
+    [RFF004],
     [_Facoltativo_#super("G")],
-    [Il codice relativo ad un requisito da analizzare può essere presente in file diversi],
+    [Il codice relativo a un requisito da analizzare può essere presente in file diversi],
     [Proponente],
     /*----------------------------------------------------*/
-    [RFO015],
-    [Obbligatorio],
-    [L'utente deve essere in grado di scegliere il modello da utilizzare prima dell'analisi],
-    [UC_10, Proponente],
-      /*----------------------------------------------------*/
-    [RFF016],
+    [RFF005],
     [Facoltativo],
     [L'utente deve essere in grado di configurare il modello utilizzato per l'analisi],
     [Proponente],
-
+    /*----------------------------------------------------*/
+    [RFO007],
+    [Obbligatorio],
+    [L'estensione di Visual Studio Code deve essere in inglese],
+    [Proponente],
+    /*----------------------------------------------------*/
+    [RFD008],
+    [_Desiderabile_#super("G")],
+    [Il sistema deve informare l'utente in caso di rallentamenti dovuti a una connessione lenta (risposte con tempo di attesa >20s) o a un modello troppo grande (_prompt_#super("G") maggiore di 6000 _token_#super("G") e/o velocità di risposta < 20 token/s)],
+    [DA METTERE],
+    /*----------------------------------------------------*/
+    [RFO009],
+    [Obbligatorio],
+    [Il sistema deve permettere l'importazione di file CSV],
+    [UC_1, UC_2],
+    /*----------------------------------------------------*/
+    [RFO010],
+    [Obbligatorio],
+    [Il sistema deve restituire un errore in caso il file CSV importato non sia valido],
+    [UC_1.2],
+    /*----------------------------------------------------*/
+    [RFO011],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di verificare la validità del file CSV da importare, effettuando controlli sui campi del file],
+    [UC_1, UC_1.2, UC_2],
+    /*----------------------------------------------------*/
+    [RFO012],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_#super("G")],
+    [Capitolato, UC_1, UC_2, UC_1.1, UC_1.3, Proponente],
+    /*----------------------------------------------------*/
+    [RFO013],
+    [Obbligatorio],
+    [Il sistema deve avvisare l'utente in caso il file CSV caricato non sia valido e permettere all'utente di riprovare],
+    [UC_1.2],
+    /*----------------------------------------------------*/
+    [RFO014],
+    [Obbligatorio],
+    [Il sistema deve visualizzare le informazioni relative ai requisiti da analizzare, con o senza tracciamento, all'interno di un elenco annidato (nome del file in cui il codice sorgente è stato tracciato e le relative righe di codice, se presenti)],
+    [UC_1, UC_2, UC_6, UC_6.1, UC_6.1.1, UC_7],
+    /*----------------------------------------------------*/
+    [RFO015],
+    [Obbligatorio],
+    [Per ogni requisito presente nella lista caricata sarà presente un'icona predisposta ad avviare l'analisi del singolo requisito quando necessario],
+    [UC_6.1.2],
+    /*----------------------------------------------------*/
+    [RFO016],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di reperire le porzioni di codice tracciate all'interno del file CSV importato, e deve essere in grado di utilizzarle nell'analisi dei requisiti],
+    [UC_2, UC_3, UC_11],
     /*----------------------------------------------------*/
     [RFO017],
     [Obbligatorio],
-    [L'utente deve essere in grado di configurare l'endpoint di ollama ],
-    [UC_11, Proponente],
+    [Il sistema deve fornire una valutazione generica (per esempio, "Result: passed/not passed") per indicare se il requisito è stato rispettato],
+    [UC_3, UC_8.1, UC_8.1.2, UC_8.1.1],
     /*----------------------------------------------------*/
     [RFO018],
     [Obbligatorio],
-    [L'utente deve essere in grado di configurare la soglia del quality score accettabile],
-    [UC_12, Proponente],
+    [Il sistema deve fornire una valutazione da 0 a 100 sull'aderenza della porzione di codice analizzata al rispettivo requisito],
+    [UC_3, UC_8.2],
     /*----------------------------------------------------*/
-    [RVF019],
-    [Facoltativo],
-    [Il sistema deve informare l'utente in caso di mancanza del codice sorgente con un messaggio di errore],
-    [UC_2.6],
+    [RFO019],
+    [Obbligatorio],
+    [Il sistema deve fornire una valutazione testuale del codice, fornendo i problemi trovati e gli eventuali suggerimenti per migliorare il codice (se presenti)],
+    [UC_8.4, UC_8, UC_3, UC_8.4.1, UC_8.5, UC_8.5.1],
     /*----------------------------------------------------*/
     [RFO020],
     [Obbligatorio],
-    [Il sistema deve permettere l'esclusione dall'analisi di alcuni file, indicati all'interno di un documento (file .reqignore)],
-    [UC_8, Proponente],
+    [Il sistema deve essere in grado di aggiornare la vista dei requisiti, aggiungendo i risultati delle analisi],
+    [UC_8],
+    /*----------------------------------------------------*/
+    [RFO021],
+    [Obbligatorio],
+    [Il sistema, nel caso vengano inseriti dei requisiti non tracciati, deve mostrare un messaggio che informi l'utente sul loro mancato tracciamento],
+    [UC_3.1],
+    /*----------------------------------------------------*/
+    [RFO022],
+    [Obbligatorio],
+    [Il sistema, in caso la comunicazione con il modello LLM venga interrotta (es. timeout, connessione interrotta), deve informare l'utente],
+    [UC_3.2],
+    /*----------------------------------------------------*/
+    [RFO023],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di misurare i tempi di risposta di Ollama, e restituire un errore in caso questi superino una soglia limite prestabilita],
+    [UC_3.3],
+    /*----------------------------------------------------*/
+    [RFO024],
+    [Obbligatorio],
+    [Il sistema, nel caso il progetto non contenga il file con il codice sorgente associato a uno specifico requisito, informa l'utente di tale mancanza],
+    [UC_3.4],
+    /*----------------------------------------------------*/
+    [RFO025],
+    [Obbligatorio],
+    [Il sistema, una volta eseguita l'analisi, deve essere in grado di esportare il tracciamento dei requisiti in formato CSV, i quali conterranno esclusivamente l'ID, la descrizione e il tracciamento],
+    [UC_4],
+    /*----------------------------------------------------*/
+    [RFO026],
+    [Obbligatorio],
+    [Il sistema, nel caso fallisse nell'operazione di esportazione dei requisiti (es. spazio esaurito o permessi insufficienti), informerà l'utente con un messaggio di errore e permetterà di riprovare],
+    [UC_4.1],
+    /*----------------------------------------------------*/
+    [RFO027],
+    [Obbligatorio],
+    [Il sistema, una volta eseguita l'analisi, deve essere in grado di esportare sia il tracciamento dei requisiti sia i risultati dell'analisi],
+    [UC_5],
+    /*----------------------------------------------------*/
+    [RFO028],
+    [Obbligatorio],
+    [Il sistema, nel caso si voglia esportare il tracciamento dei requisiti (e dell'analisi) quando queste non sono presenti, informerà l'utente con un messaggio di errore],
+    [UC_5.1, UC_3.1],
+    /*----------------------------------------------------*/
+    [RFO029],
+    [Obbligatorio],
+    [Il sistema, una volta selezionato un requisito dalla lista, deve mostrarlo in una sottolista dove vengono specificati la descrizione del requisito stesso e, se presente, il suo tracciamento nel codice sorgente],
+    [UC_7, UC_7.1, UC_7.2],
+    /*----------------------------------------------------*/
+    [RFO030],
+    [Obbligatorio],
+    [Il sistema, quando mostra la visualizzazione di dettaglio di un requisito, deve mostrare il nome del file in cui si trova il codice sorgente associato al requisito],
+    [UC_7.2.1],
+    /*----------------------------------------------------*/
+    [RFO031],
+    [Obbligatorio],
+    [Il sistema deve permettere all'utente di filtrare i requisiti in base ai campi ID, descrizione e file sorgente],
+    [UC_9],
+    /*----------------------------------------------------*/
+    [RFO032],
+    [Obbligatorio],
+    [Il sistema, in presenza di più requisiti caricati, deve essere in grado di eseguire l'analisi di un requisito specifico],
+    [UC_10],
+    /*----------------------------------------------------*/
+    [RFO033],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di associare ai requisiti non mappati il relativo codice sorgente che lo implementi attraverso una richiesta di analisi all'LLM, quindi registrare le righe di codice relative e mostrarle nella vista insieme ai requisiti],
+    [UC_11],
+    /*----------------------------------------------------*/
+    [RFO034],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di escludere dall'analisi e dal tracciamento dei requisiti tutti i file elencati in un apposito file di configurazione (chiamato .reqignore) contenente i percorsi dei file associati al progetto. Se il file di configurazione include percorsi non validi, il sistema deve notificare l'errore all'utente, senza però interrompere l'analisi, che deve comunque procedere sui file validi],
+    [UC_12, UC_12.1],
+    /*----------------------------------------------------*/
+    [RFO035],
+    [Obbligatorio],
+    [Il sistema deve permettere la configurazione del modello o dei modelli LLM che saranno utilizzati per l'analisi dei requisiti],
+    [UC_13, Proponente],
+    /*----------------------------------------------------*/
+    [RFO036],
+    [Obbligatorio],
+    [Il sistema deve permettere di configurare l'endpoint del server Ollama],
+    [UC_14, Proponente],
+    /*----------------------------------------------------*/
+    [RFO037],
+    [Obbligatorio],
+    [Il sistema deve essere in grado di ripetere l'analisi di uno o più requisiti],
+    [UC_10],
+    /*----------------------------------------------------*/
+    [RFO038],
+    [Obbligatorio],
+    [Il sistema deve permettere all'utente di modificare la soglia di accettazione di un requisito, la quale permette ad esso di essere identificato come rispettato],
+    [UC_15, Proponente],
+    /*----------------------------------------------------*/
+    [RFO039],
+    [Obbligatorio],
+    [Il sistema, nel caso venga inserito un valore "soglia" (di accettazione) non valido, ossia che non rientra nei parametri stabiliti, deve visualizzare un messaggio di errore specifico e permettere all'utente di modificarlo],
+    [UC_15.1, UC_15],
   ),
   caption: [Requisiti Funzionali]
 )
-
-
 
 \
 
@@ -1077,7 +1148,8 @@ Questi requisiti descrivono cosa il sistema deve fare
 Questi requisiti riguardano le caratteristiche qualitative del sistema
 #figure(
   table(
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
+    align: center + horizon,
     /*----------------------------------------------------*/
     table.header(
     [*Codice*],
@@ -1088,18 +1160,22 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
     /*----------------------------------------------------*/
     [RQO001],
     [Obbligatorio],
-    [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove _feature_#super("G") in base a esigenze o aggiornamenti futuri del progetto],
+    [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove _feature_#super("G") in base a esigenze o aggiornamenti futuri del progetto. ],
     [Capitolato],
     /*----------------------------------------------------*/
+    [RQF001],
+    [Facoltativo],
+    [Il sistema deve essere compatibile con Visual Studio Code con versione >= 1.98 e Ollama con versione >=0.6.4],
+    [DA METTERE],
     [RQO002],
     [Obbligatorio],
-    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme di Progetto]],
-    [#text(style:"italic")[Norme di Progetto]],
+    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme_di_Progetto_v1.0.0]],
+    [#text(style:"italic")[Norme_di_Progetto_v1.0.0]],
     /*----------------------------------------------------*/
     [RQO003],
     [Obbligatorio],
-    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Piano di Progetto]],
-    [#text(style:"italic")[Piano di Progetto]],
+    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Piano_di_Progetto_v1.0.0]],
+    [#text(style:"italic")[Piano_di_Progetto_v1.0.0]],
 ),
   caption: [Requisiti di Qualità]
 )
@@ -1113,7 +1189,8 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
 Questi requisiti specificano limiti tecnici o di conformità 
 #figure(
   table(
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
+    align: center + horizon,
     /*----------------------------------------------------*/
     table.header(
     [*Codice*],
@@ -1124,12 +1201,12 @@ Questi requisiti specificano limiti tecnici o di conformità
     /*----------------------------------------------------*/
     [RVO001],
     [Obbligatorio],
-    [Deve supportare i linguaggi C/C++],
+    [il sistema deve essere in grado di analizzare codice nei linguaggi C e C++],
     [Capitolato],
     /*----------------------------------------------------*/
     [RVF002],
     [Facoltativo],
-    [Deve supportare altri linguaggi oltre a C/C++],
+    [il sistema deve poter supportare altri linguaggi oltre a C e C++],
     [Capitolato],
     /*----------------------------------------------------*/
     [RVF003],
@@ -1137,15 +1214,7 @@ Questi requisiti specificano limiti tecnici o di conformità
     [Il sistema deve fornire valutazioni conformi alle normative sulla sicurezza funzionale (ISO 26262 o IEC 61508)],
     [Capitolato],
     /*----------------------------------------------------*/
-    [RVO004],
-    [Obbligatorio],
-    [Il sistema deve comunicare con un modello LLM attraverso una REST API ],
-    [UC_2],
-      /*----------------------------------------------------*/
-    [RVO005],
-    [Obbligatorio],
-    [L'estensione di Visual Studio Code deve essere in inglese],
-    [Proponente],
+
     
   ),
   caption: [Requisiti di Vincolo]
@@ -1160,88 +1229,69 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
 
 #figure(
   table(
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
+    align: center + horizon,
     /*----------------------------------------------------*/
     table.header(
     [*Codice*],
     [*Classificazione*],
     [*Descrizione*],
-    [*Fonti*],
+    [*Fonti*]
     ),
-    /*----------------------------------------------------*/
-    [RPD001],
-    [_Desiderabile_#super("G")],
-    [Il sistema deve informare l'utente in caso di rallentamenti dovuti ad una connessione lenta (risposte con tempo di attesa >20s)  o a un modello troppo grande (_prompt_#super("G") maggiore di 6000 _token_#super("G") e/o velocità di risposta < 20 token/s)],
-    [UC_2.4, UC_2.5],
-    /*----------------------------------------------------*/
-    [RPO002],
-    [Obbligatorio],
-    [Il sistema deve informare l'utente in caso di errore di connessione e consentire di riprovare],
-    [UC_2.4],
-  
-  ),
+    [RPF001],
+    [Facoltativo],
+    [Il sistema deve essere in grado di gestire file CSV di grandi dimensioni (ad esempio >100MB) senza subire rallentamenti],
+    [Proponente],
+    ),
   caption: [Requisiti Prestazionali]
 )
 
 \
 \
-
 == Tracciamento dei Requisiti
 
 #figure(
   table(
     columns: (auto, auto),
     table.header([*Fonte*], [*Requisiti*]),
-    [UC_1],   [RFO001, RFO003],
-    [UC_1.3], [RFO001],
-    [UC_1.1], [RFO001],
-    [UC_1.2], [],
-    [UC_1.4], [RFO003, RFO004],
-    [UC_2],   [RFO005, RVO004],
-    [UC_2.1], [RFO005],
-    [UC_2.2], [RFO005],
-    [UC_2.3], [],
-    [UC_2.4], [RPD001,RPO002],
-    [UC_2.5], [RPD001],
-    [UC_2.6], [RVF019],
-    [UC_3],   [RFO009],
-    [UC_3.1], [RFO009],
-    [UC_3.2], [RFO009],
-    [UC_3.3], [],
-    [UC_4],   [RFO010],
-    [UC_4.1], [RF010],
-    [UC_4.1.1], [RFO010],
-    [UC_4.1.1.1], [RFO010],
-    [UC_4.1.1.2], [],
-    [UC_4.1.1.3], [],
-    [UC_4.1.1.4], [RFO010],
-    [UC_4.1.1.5], [RFO006, RFO010],
-    [UC_4.1.1.6], [RFO010, RFO013],
-    [UC_4.1.1.5.1], [],
-    [UC_4.1.1.5.2], [],
-    [UC_4.1.1.5.3], [],
-    [UC_4.1.1.6.1], [],
-    [UC_4.1.1.6.2], [],
-    [UC_4.1.1.6.3], [],
-    [UC_5],   [RFO011],
-    [UC_6],   [RFO012],
-    [UC_7],   [RFO008],
-    [UC_8],   [RFO020],
-    [UC_8.1], [],
-    [UC_9],   [RFO002],
-    [UC_9.1], [RFO002],
-    [UC_9.1.1], [RFO002],
-    [UC_9.1.1.1], [RFO002],
-    [UC_9.1.1.2], [RFO002],
-    [UC_9.1.2], [RFO002],
-    [UC_9.1.2.1], [RFO002],
-    [UC_9.1.2.2], [RFO002],
-    [UC_9.1.2.3], [RFO003],
-    [UC_10],[RFO015],
-    [UC_11],[RFO017],
-    [UC_12],[RFO018],
-    [UC_12.1],[]
-),
+    [UC_1],   [RFO009, RFO010, RFO011, RFO012, RFO013],
+    [UC_1.1], [RFO012],
+    [UC_1.2], [RFO010, RFO013],
+    [UC_2],   [RFO009, RFO016],
+    [UC_3],   [RFO001, RFO017, RFO018, RFO019, RFO022, RFO023, RFO024],
+    [UC_3.1], [RFO021],
+    [UC_3.2], [RFO022],
+    [UC_3.3], [RFO023],
+    [UC_3.4], [RFO024],
+    [UC_4],   [RFO025],
+    [UC_4.1], [RFO026],
+    [UC_5],   [RFO027, RFO028],
+    [UC_5.1], [RFO028],
+    [UC_6],   [RFO014],
+    [UC_6.1], [RFO014, RFO015],
+    [UC_6.1.1], [RFO014],
+    [UC_6.1.2], [RFO015],
+    [UC_7],   [RFO029],
+    [UC_7.1], [RFO029],
+    [UC_7.2], [RFO029],
+    [UC_7.2.1], [RFO030],
+    [UC_8],   [RFO002, RFO020],
+    [UC_8.1], [RFO017],
+    [UC_8.2], [RFO018],
+    [UC_8.4], [RFO019],
+    [UC_8.5], [RFO019],
+    [UC_9],   [RFO031],
+    [UC_10],  [RFO032, RFO037],
+    [UC_11],  [RFO033],
+    [UC_12],  [RFO034],
+    [UC_12.1], [RFO034],
+    [UC_13],  [RFO035],
+    [UC_14],  [RFO036],
+    [UC_15],  [RFO038],
+    [UC_15.1], [RFO039],
+    [Proponente], [RFF004, RFF005, RFO007, RFD008, RFO012, RFO035, RFO036, RFO038, RQO001, RVF001, RVF002, RVF003, RFO001],
+    [Capitolato], [RVO001, RVF002, RVF003, RQO001, RQO002, RQO003]
+  ),
   caption: [Tracciamento dei Requisiti]
 )
 
@@ -1254,15 +1304,12 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     align: (center),
     columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
     [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Facoltativo*],[*Totale*],
-    [_Funzionale_#super("G")],   [18],               [],               [2],           [20],
-
-    [_Di Qualità_#super("G")],   [3],               [],               [],           [3],
-
-    [_Di Vincolo_#super("G")],    [3],               [],               [3],           [6],
-    
-    [Prestazionale],  [1],               [1],               [],           [2],
-),
-  caption: [Repilogo]
+    [_Funzionale_#super("G")],   [36],               [1],               [2],           [39],
+    [_Di Qualità_#super("G")],   [3],               [],               [1],           [4],
+    [_Di Vincolo_#super("G")],    [1],               [],               [2],           [3],
+    [Prestazionale],  [0],               [0],               [1],           [1],
+  ),
+  caption: [Riepilogo]
 )
 
 #pagebreak()
