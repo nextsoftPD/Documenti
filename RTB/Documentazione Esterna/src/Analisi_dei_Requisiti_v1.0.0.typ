@@ -1,16 +1,4 @@
 #import "../../../assets/template_v2.0.0.typ": project;
-#let frame(stroke) = (x, y) => (
-  left: if x > 0 { 0pt } else { stroke },
-  right: stroke,
-  top: if y < 2 { stroke } else { 0pt },
-  bottom: stroke,
-)
-
-
-#set table(
-  fill: (rgb("#ffffff"), none),
-  stroke: frame(rgb("21222C")),
-)
 
 #show: project.with(
   title: "Analisi dei Requisiti",
@@ -36,7 +24,16 @@
   )
 )
 
+#outline(
+  title: [Elenco delle immagini],
+  target: figure.where(kind: image),
+)
 
+#outline(
+  title: [Elenco delle tabelle],
+  target: figure.where(kind: table),
+)
+#pagebreak()
 = Introduzione
 == Scopo del documento
 Lo scopo del presente documento è fornire una descrizione completa e dettagliata degli obiettivi, delle funzionalità e delle caratteristiche tecniche del progetto *Requirement Tracker - Visual Studio Code Plug-in*, con particolare attenzione all'utilizzo dell'_UML_#super("G") per la modellazione dei _casi d'uso_#super("G"). Il documento funge da riferimento per tutti gli _stakeholder_#super("G") coinvolti, descrivendo il contesto operativo, i requisiti funzionali e non funzionali, nonché le linee guida tecnologiche necessarie per lo sviluppo del _plug-in_#super("G"). I casi d'uso saranno descritti utilizzando una struttura standardizzata, che includerà il nominativo del caso, gli attori principali, le _precondizioni_#super("G"), le _postcondizioni_#super("G"), lo _scenario principale_#super("G") e gli eventuali _scenari alternativi_#super("G") o sottocasi. Questa struttura garantisce chiarezza e coerenza, facilitando la comprensione e la tracciabilità delle funzionalità principali del sistema. Il documento intende inoltre fornire una visione condivisa del progetto, ponendo le basi per una _pianificazione_#super("G") e un'implementazione efficaci.
@@ -111,7 +108,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 1. In base all'opzione di importazione selezionata dall'utente, il sistema applica una delle seguenti specializzazioni:  
     - Se l'utente seleziona la voce "Importa requisiti", il flusso procede con [UC_1.1].  
     - Se l'utente seleziona la voce "Importa requisiti con tracciamento", il flusso procede con [UC_1.2].
-
+#pagebreak()
 *Estensioni:*
 - *UC_1.4 - Visualizza errore file* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
 
@@ -147,7 +144,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Postcondizioni:*  
 - I requisiti e le relative informazioni di tracciamento sono importate e visualizzabili nel sistema.
-
+#pagebreak()
 *Scenario principale:*  
 1. L'utente seleziona l'opzione "Importa requisiti con tracciamento".
 2. Il sistema apre un file explorer.
@@ -225,7 +222,6 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - *UC_2.5 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_2.6 - Visualizzazione errore codice sorgente non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente, il sistema mostra un messaggio di errore.
 
-#pagebreak()
 
 == UC_2.1 - Analisi semantica dei requisiti
 
@@ -252,7 +248,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Attori:* Programmatore.
 
 *Attore secondario:* Modello LLM.
-
+#pagebreak()
 *Precondizioni:*  
 - I requisiti sono stati importati [UC_1].  
 - È disponibile il mapping dei requisiti nel codice (ottenuto da [UC_1.2] oppure dopo [UC_7]).
@@ -456,7 +452,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Postcondizioni:*  
 - I risultati dell'analisi vengono integrati nel menu ad albero di ogni requisito [UC_9.1] in una sezione dedicata e sono visualizzabili.
-
+#pagebreak()
 *Scenario principale:*  
 1. L'utente seleziona un requisito dal menu ad albero [UC_9].
 2. Il sistema espande il menu con la visualizzazione del requisito [UC_9.1] e la visualizzazione del risultato [UC_4.1].
@@ -485,7 +481,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Postcondizioni:*  
 - I risultati dell'analisi vengono integrati nel menu di dettaglio requisito [UC_4.1.1] e sono visualizzabili.
-
+#pagebreak()
 *Scenario principale:*  
 1. Il sistema espande il menu con la visualizzazione del requisito [UC_9.1] e la visualizzazione del risultato [UC_4.1].
 2. L'utente seleziona la voce relativa alla visualizzazione del risultato [UC_4.1]
@@ -509,7 +505,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Postcondizioni:*  
 - Il sistema mostra una lista di sotto-elementi relativi al risultato dell'analisi per il requisito selezionato.
-
+#pagebreak()
 *Scenario principale:*  
 1. Il sistema visualizza i seguenti elementi nel dettaglio:  
     - [UC_4.1.1.1] Stato di conformità (_passed_/_not passed_).  
@@ -642,7 +638,6 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - *UC_2.4 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_2.5 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 
-#pagebreak()
 
 == UC_7 - Tracciamento dei requisiti nel codice
 #figure(
@@ -674,7 +669,6 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - *UC_2.5 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_2.6 - Visualizzazione errore codice non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente.
 
-#pagebreak()
 
 == UC_8 - Configurazione dei path da ignorare
 #figure(
@@ -822,7 +816,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 )
 \
 *Attori:* Programmatore.
-
+#pagebreak()
 *Precondizioni:*  
 - Il requisito selezionato è espanso nella vista di dettaglio [UC_9.1.1].
 - Il requisito selezionato dispone di informazioni di tracciamento, importate da [UC_1.2] oppure generate da [UC_7].
@@ -978,14 +972,14 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 == Introduzione
 Il gruppo NextSoft, a seguita di una attenta analisi dichiara che i requisiti che il prodotto finale andrà a soddisfare sono i seguenti. Questi vengono mostrati di seguito in forma tabellare, seguendo quanto detto all'interno del documento #text(style: "italic", [Norme di Progetto])
 
-
+#pagebreak()
 == Requisiti Funzionali 
 
 Questi requisiti descrivono cosa il sistema deve fare 
 #figure(
   table(
 
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
     /*----------------------------------------------------*/
     table.header([*Codice*], [*Classificazione*],[*Descrizione*],[*Fonti*]),
     /*----------------------------------------------------*/
@@ -1097,15 +1091,13 @@ Questi requisiti descrivono cosa il sistema deve fare
   caption: [Requisiti Funzionali]
 )
 
-
-
 \
 
 == Requisiti di qualità
 Questi requisiti riguardano le caratteristiche qualitative del sistema
 #figure(
   table(
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
     /*----------------------------------------------------*/
     table.header(
     [*Codice*],
@@ -1131,17 +1123,12 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
 ),
   caption: [Requisiti di Qualità]
 )
-
-
-
-\
-\
-
+#pagebreak()
 == Requisiti di vincolo 
 Questi requisiti specificano limiti tecnici o di conformità 
 #figure(
   table(
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
     /*----------------------------------------------------*/
     table.header(
     [*Codice*],
@@ -1179,7 +1166,7 @@ Questi requisiti specificano limiti tecnici o di conformità
   caption: [Requisiti di Vincolo]
 )
 
-\
+
 \
 
 == Requisiti Prestazionali 
@@ -1188,7 +1175,7 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
 
 #figure(
   table(
-    columns: (0.5fr,1fr,3.5fr,1fr),
+    columns: 4,
     /*----------------------------------------------------*/
     table.header(
     [*Codice*],
@@ -1291,16 +1278,4 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [Prestazionale],  [1],               [1],               [],           [2],
 ),
   caption: [Repilogo]
-)
-
-#pagebreak()
-
-#outline(
-  title: [Elenco delle immagini],
-  target: figure.where(kind: image),
-)
-
-#outline(
-  title: [Elenco delle tabelle],
-  target: figure.where(kind: table),
 )

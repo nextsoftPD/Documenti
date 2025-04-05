@@ -23,12 +23,29 @@
   // Impostazioni documento
   set document(title: title)
   set page(
-    margin: (left: 20mm, right: 20mm, top: 20mm, bottom: 20mm),
-    numbering: "1",
-    number-align: right,
-    
+    margin: (left: 25mm, right: 25mm, top: 50mm, bottom: 40mm),
+    header: {
+      set text(10pt)
+      grid(
+      columns: (33%, 34%, 33%),
+      align(left)[#text(company)],
+      align(center)[#text(title)],
+      align(right)[#text("v. " + version)]
+      )
+      line(length: 100%, stroke: 0.3pt + gray)
+    },
+    footer: {
+      set text(10pt)
+      line(length: 100%, stroke: 0.3pt + gray)
+      grid(
+      columns: (33%, 34%, 33%),
+      align(left)[#text(email)],
+      [],
+      align(right)[#context[ #text[#counter(page).display("1")/#counter(page).final().at(0)] ]]
+      )
+    },
   )
-
+  set text(12pt)
   // Impostazione dei paragrafi giustificati
   set par(justify: false)
 
@@ -39,7 +56,9 @@
     spacing: 1em
   )
 
+  // abbellimento grafico delle liste numerate
   set enum(
+    numbering: "1.i.a.",
     indent: 1em,
     spacing: 1em
   )
@@ -56,12 +75,12 @@
     numbering: "1.1.1",
   )
 
-  // show heading: it => {
-  //   text()[#it.numbering #h(0.5em) #it.body]
-  //   body
-  // }
   // Frontespizio
-  page()[
+  page(
+    margin: (left: 25mm, right: 25mm, top: 25mm, bottom: 25mm),
+    header: [],
+    footer: []
+  )[
     #grid(
       columns: 1,
       gutter: 0.8em,
@@ -77,7 +96,7 @@
       align(center)[
         #v(2em)
         #if versionamento == () {
-          version = "1.0"
+          version = "1.0.0"
           grid(
             columns: (1fr,1fr,1fr,1fr),
             [],
@@ -135,7 +154,11 @@
   ]
   
   // Pagina indice con outline nestato
-  page()[    
+  page(
+    margin: (left: 25mm, right: 25mm, top: 25mm, bottom: 25mm),
+    header: [],
+    footer: []
+  )[    
     #if versionamento != () {
       text(size: 1.4em, weight: "bold")[Registro dei cambiamenti]
       table(
@@ -176,23 +199,13 @@
       depth: 3  // Mostra fino a 3 livelli di nesting
     )
     // versionamento
-    \
+
   ]
   
 
 
   // Impostazione intestazione per le pagine successive
-  set page(
-    header: {
-      set text(10pt)
-      grid(
-        columns: (33%, 34%, 33%),
-        align(left)[#text(company)],
-        align(center)[#text(title)],
-        align(right)[#text("v. " + version)]
-      )
-      line(length: 100%, stroke: 0.3pt + gray)
-    }
-  )
+
   body
+
 }
