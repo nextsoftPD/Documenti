@@ -47,7 +47,7 @@ jobs:
           git commit -m "Update compiled PDFs"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       # Step 7
       - name: Upload all PDFs
