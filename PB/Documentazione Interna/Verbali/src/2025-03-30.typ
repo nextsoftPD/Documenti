@@ -68,7 +68,7 @@ Di seguito le decisioni prese durante l'incontro:
 
 
 
-#pagebreak()
+
 = Prossimi passi 
 - Creazione milestone PB
 - Creazione dei branch relativi ai documenti e delle altre attività preparatorie alla PB
