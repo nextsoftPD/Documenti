@@ -6,7 +6,7 @@
   title: "Verbale interno 30/03/2025",
   redattori: ("Luca Parise",),
   verifica: ("Malik Giafar Mohamed",),
-  approvazione: ("",),
+  approvazione: ("Ion Cainareanu",),
   uso: "Interno",
   version: "1.0.0",
   timebegin: "20:00",
