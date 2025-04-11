@@ -164,7 +164,7 @@ Quindi, cliccate sull'icona del plug-in presente nella colonna a sinistra della 
 Per poter usare il plug-in è necessario importare i requisiti da analizzare. Per fare ciò, cliccate
 sull'icona denominata *"Load Requirements"* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/manuale_img/Load_Requirements.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/manuale_img/load_requirements.png", width: 40%),
   caption:"Icona per l'importazione dei requisiti",
 )
 Una volta cliccato sull'icona verrà aperto il file system di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
