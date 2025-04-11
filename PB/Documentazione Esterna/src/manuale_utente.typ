@@ -6,12 +6,12 @@
   verifica: ("",),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.0.2",
+  version: "0.0.3",
   date: "10/04/2026",
   versionamento: (
     "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","",
     "0.0.2","10/04/2025","Luca Parise","Stesura dei capitoli rigurdanti le funzionalità del plug-in","",
-    "","","","","",
+    "0.0.3","11/04/2025","Luca Parise","Modifica alle immagini e continuazione stesura dei vari capitoli","",
     "","","","","",
     "","","","","",
   )
@@ -68,6 +68,27 @@ Sono necessarie le seguenti tecnologie installate:
 === Requisiti minimi
 === Requisiti consigliati 
 
+=== Come creare il file .vsix
+
+Per creare un file *.vsix* (che è il pacchetto installabile della tua estensione per Visual Studio Code), devi usare lo strumento *vsce* (Visual Studio Code Extension Manager). \
+Di seguito i vari passaggi per creare tale pacchetto: 
+
+- *1)* Apri il terminale e installa *vsce* (Visual Studio Code Extension Manager), se ancora non lo hai installato, con il comando:
+
+#align(center, "$ npm install -g vsce" )
+
+- *2)* Naviga con il terminale fino alla cartella della tua estensione. Quindi vai nella cartella in cui si trova il file *package.json* della tua estensione. Puoi usare il seguente comando per navigare nella cartella:
+#align(center, "$ cd /path/to/your/extension" )
+
+- *3)* Costruisci il file .vsix con il seguente comando, il quale genera un file .vsix, ad esempio nome-estensione-0.0.1.vsix: 
+
+#align(center, "$ vsce package" )
+
+
+
+- *4) (Facoltativo)* Ignora i file non necessari. Puoi usare un file .vscodeignore nella root della tua estensione per escludere i file o cartelle (come node_modules, test/, ecc.) dal pacchetto finale. \
+
+#pagebreak()
 
 === Come installare il plug-in
 
@@ -100,7 +121,7 @@ Ora posizionatevi sulla cartella dedicata all'estensione (vsExtensionDev) e apri
 
 
 
-
+#pagebreak()
 /*----------------------------------------------------*/
 /*                                                    */
 /*              CONFIGURAZIONE                        */
@@ -121,10 +142,11 @@ I modelli di Ollama utilizzati sono configurabili tramite un file dedicato: conf
 
 === Come configurare il modello LLM ? 
 Clicca qui > Clicca la > E Uala
+#pagebreak()
 /*----------------------------------------------------*/
 == Soglia di accettazione
 Quando un requisito viene sottoposto ad analisi, il modello LLM ne valuta l'implementazione nel codice sorgente e assegna un punteggio numerico compreso tra 0 e 100. Questo valore indica il grado di conformità del codice rispetto al requisito, fornendo una misura quantitativa della correttezza e completezza dell'implementazione.
-=== Prerequisiti
+
 
 === Come configurare la soglia dei requisiti ? 
 /*----------------------------------------------------*/
@@ -142,7 +164,7 @@ Quindi, cliccate sull'icona del plug-in presente nella colonna a sinistra della 
 Per poter usare il plug-in è necessario importare i requisiti da analizzare. Per fare ciò, cliccate
 sull'icona denominata *"Load Requirements"* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/manuale_img/load_requirements.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/manuale_img/Load_Requirements.png", width: 40%),
   caption:"Icona per l'importazione dei requisiti",
 )
 Una volta cliccato sull'icona verrà aperto il file system di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
@@ -172,7 +194,7 @@ In caso di requisiti molto lunghi o di più righe sarà sufficiente posizionare 
 Una volta importati i requisiti è possibile procedere con l'analisi dell'implementazione. Questa funzionalità serve a tracciare i requisiti nel codice sorgente qualora questi non fossero già tracciati (funziona anche nel caso lo fossero). \ 
 Per farlo, cliccate sull'icona *"Implementation Analysis "* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/manuale_img/implementation.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/manuale_img/implementation_analysis.png", width: 40%),
   caption:"Bottone per l'analisi dell'implementazione",
 )
 Una volta eseguita e completata l'analisi, ad ogni requisito verranno associate delle linee di codice che indicano il tracciamento del requisito all'interno del codice sorgente. \
@@ -187,10 +209,16 @@ La figura seguente mostra il tracciamento nella sezione "Requirements": \
 
 == Analisi dei requisiti
 Questà funzionalità serve a valutare la qualità dei requisiti e il loro grado di implementazione nel codice sorgente. Una volta importati i requisiti, cliccate sull'icona *"Analyze Requirements"* mostrata in figura.
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/Analyze_Requirements.png", width: 40%),
+  caption:"Bottone per l'analisi dei requisiti",
+)
+
+
 In questo modo il plug-in eseguirà un'analisi approfondita dei requisiti. Potrete vedere in basso a destra della finestra un'icona di avanzamento che indica il progresso dell'analisi. \
 #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/analyze.png", width: 70%),
-  caption:"Bottone per l'analisi dei requisiti",
+  caption:"Stato di avanzamento analisi dei requisiti",
 )
 
 Alla fine dell'analisi ogni requisito nella lista verrà aggiornato con i seguenti campi: 
@@ -199,30 +227,87 @@ Alla fine dell'analisi ogni requisito nella lista verrà aggiornato con i seguen
   - Code Compliance: 0-100
   - Issues: 
     - Issue 1
-    - Issue 2
+    - Issue ...
   - Suggestions: 
     - Suggestion 1
-    - Suggestion 2
+    - Suggestion ...
 Inoltre, ad ogni requisito sarà associato un'icona che indica se è passato o meno all'analisi. Di seguito una figura che mostra una generica lista a seguito dell'analisi.
 #figure(
-  image("/PB/Documentazione Esterna/src/manuale_img/analisi_ended.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/manuale_img/analisi_ended.png", width: 50%),
   caption:"Risultato dell'analisi",
 )
 #pagebreak()
 /*----------------------------------------------------*/
 == Esportazione requisiti
 
+Il plug-in presenta anche la funzione di esportazione in formato CSV dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
+sul pulsante *"Export Requirements"* mostrato nella seguente figura. 
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/Export_Requirements.png", width: 50%),
+  caption:"Bottone per l'esportazione dei requisiti",
+)
+Quindi, una volta cliccato sul pulsante, verrà aperto il file system di sistema da cui selezionare la cartella in cui salvare il file CSV. \
+
+
+#pagebreak()
 /*----------------------------------------------------*/
 == Ricerca requisiti 
 
+Il plug-in presenta anche la funzione di ricerca dei requisiti attraverso una barra di ricerca in cui inserire il codice del requisito ricercato. Per farlo, basta cliccare sull'icona *"Search Requirements"* mostrata in figura.
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/search.png", width: 50%),
+  caption:"Campo di input per la ricerca dei requisiti",
+)
+La lista *Requirements* mostrerà solo i requisiti che contengono il codice o parte di esso. \
 /*----------------------------------------------------*/
 == Analisi di un singolo requisito 
+
+Il plug-in offre la possibilità di analizzare un singolo requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera analizzare come mostrato in figura. 
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/analisi_singola.png", width: 50%),
+  caption:"Bottone per l'analisi di un singolo requisito",
+)
+#pagebreak()
 
 /*----------------------------------------------------*/
 == Analisi dell'implementazione di un singolo requisito
 
+Il plug-in offre la possibilità di analizzare l'implementazione di un singolo requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera analizzare come mostrato in figura.
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/implementazione_singola.png", width: 70%),
+  caption:"Bottone per l'analisi dell'implementazione di un singolo requisito",
+)
+
 /*----------------------------------------------------*/
 == Filtraggio dei requisiti 
+
+Oltre a poter cercare i requisiti a seconda del loro codice, è possibile filtrare i requisiti in base al loro codice o al loro stato di analisi. 
+
+Ci sono quattro diversi modi in cui possono essere filtrati i requisiti: 
+- In ordine *crescente* (a seconda del loro codice), premendo il pulsante *"Default Order"* mostrato in figura 
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/default_order.png", width: 70%),
+  caption:"Bottone per organizzare i requisiti in ordine di default",
+)
+#pagebreak()
+
+- In ordine *"decrescente"*, premendo il pulsante *"Sort by ID (descending)"*. Mostrato in figura
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/sort_by_ID.png", width: 70%),
+  caption:"Bottone per organizzare i requisiti in ordine decrescente",
+)
+
+- A seconda del loro *stato di analisi*:
+  - *Analizzati*, usando il bottone *"Show analyzed first"* mostrato in figura
+  #figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/show_analyzed_first.png", width: 70%),
+  caption:"Bottone per organizzare i requisiti in ordine decrescente",
+)
+  - *Non Analizzati*, usando il bottone *"Show unanalyzed first"* mostrato in figura
+  #figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/show_unanalyzed_first.png", width: 70%),
+  caption:"Bottone per organizzare i requisiti in ordine decrescente",
+)
 
 
 
