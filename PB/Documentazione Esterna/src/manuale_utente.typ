@@ -6,13 +6,13 @@
   verifica: ("",),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.0.3",
-  date: "10/04/2026",
+  version: "0.0.4",
+  date: "12/04/2026",
   versionamento: (
     "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","",
     "0.0.2","10/04/2025","Luca Parise","Stesura dei capitoli rigurdanti le funzionalità del plug-in","",
     "0.0.3","11/04/2025","Luca Parise","Modifica alle immagini e continuazione stesura dei vari capitoli","",
-    "","","","","",
+    "0.0.4","12/04/2025","Luca Parise","Aggiunto capitolo per la disinstallazione del prodotto","",
     "","","","","",
   )
 )
@@ -65,12 +65,11 @@ Sono necessarie le seguenti tecnologie installate:
 - Visual Studio Code
 - Ollama attivo sulla porta standard localhost:11434 
 
-=== Requisiti minimi
-=== Requisiti consigliati 
+
 
 === Come creare il file .vsix
 
-Per creare un file *.vsix* (che è il pacchetto installabile della tua estensione per Visual Studio Code), devi usare lo strumento *vsce* (Visual Studio Code Extension Manager). \
+Per creare un file *.vsix* (che è il pacchetto installabile di una estensione per Visual Studio Code), devi usare lo strumento *vsce* (Visual Studio Code Extension Manager). \
 Di seguito i vari passaggi per creare tale pacchetto: 
 
 - *1)* Apri il terminale e installa *vsce* (Visual Studio Code Extension Manager), se ancora non lo hai installato, con il comando:
@@ -92,34 +91,39 @@ Di seguito i vari passaggi per creare tale pacchetto:
 
 === Come installare il plug-in
 
-Dovete inanzitutto scaricare il progetto sul vostro pc dalla cartella MVC su github.
+Una volta creato il pacchetto .vsix come delineato nel capitolo precedente è possibile installare il plug-in in Visual Studio Code. Per farlo, segui questi passaggi: \ \
+- *1)* Apri Visual Studio Code \
+- *2)* Apri un terminale e naviga nella cartella in cui hai salvato il file .vsix. Puoi usare il comando: 
+#align(center, "$ cd /path/to/your/extension" )
+- *3)* Usa il seguente comando per installare il pacchetto .vsix: 
+#align(center, "$ code --install-extension nome-estensione-0.0.1.vsix" )
+- *4)* Se non vedi la estensione installata prova a riavviare Visual Studio Code \
+- *5)* Verifica che l'estensione sia installata correttamente. Puoi farlo andando nella sezione delle estensione di Visual Studio Code e cercando il nome del plug-in oppure via terminale usando il seguente comando: 
+#align(center, "$ code --list-extensions" )
+\
+Ora l'estensione dovrebbe essere stata installata con successo. Per poterla usare avrete anche bisogno di Ollama attivo e configurato con un modello LLM. Per farlo leggete il prossimo capitolo. 
+
+
 
 ==== Attivare Ollama 
 Per usare l'estensione è necessario che Ollama sia attivo e stia ascoltando sulla porta standard 11434.
 Per fare ciò, aprite un terminale e digitate il comando \ \ 
-#{ "$ ollama run nomemodello" }\ \
+#align(center, "$ ollama run nomemodello" ) \
 dove nome modello indica il modello usato. Di base l'estensione usa il modello llama3.2:3b ma potete cambiarlo in qualsiasi momento andando su settings del plug-in. Per fare questo vi rimando al capitolo apposito per la configurazione del modello da usare. 
 
 ==== Attivare il server API 
 Per fare questo dovete posizionarvi nella cartella API in cui troverete il codice in typescript che gestisce il server. Siccome viene usato node sarà necessario convertire il codice in javascript. Per fare ciò aprite un terminale. posizionatevi sulla cartella ed eseguite il comando
 
-#{ "$ npm install" }\
-#{ "$ npx tsc" }\
+#align(center, "$ npm install")
+#align(center, "$ npx tsc")
 
 Questi comandi installeranno le dipendenze e convertiranno il codice typescript in codice javascript in una cartella chiamata dist. 
 Quindi per avviare il server spostatevi dal terminale sulla cartella dist e cercate il file main.js. Quindi eseguite il comando
 
-#{ "$ node main.js" }
+#align(center, "$ node main.js")
 
 Questo comando avvierà il server che rimarrà in ascolto delle richieste e le invierà ad Ollama. 
 Se tutto è andato liscio, potete proseguire. 
-
-==== Attivare l'estensione
-Ora posizionatevi sulla cartella dedicata all'estensione (vsExtensionDev) e aprite un terminale. Dal terminale usate il comando 
-#{ "$npm install " } 
-
-
-
 
 #pagebreak()
 /*----------------------------------------------------*/
@@ -160,7 +164,7 @@ Quindi, cliccate sull'icona del plug-in presente nella colonna a sinistra della 
   caption:"Icona del plug-in",
 ) 
 /*----------------------------------------------------*/
-== Importazione requisiti  
+== Importazione dei requisiti  
 Per poter usare il plug-in è necessario importare i requisiti da analizzare. Per fare ciò, cliccate
 sull'icona denominata *"Load Requirements"* mostrata in figura.
 #figure(
@@ -188,7 +192,7 @@ In caso di requisiti molto lunghi o di più righe sarà sufficiente posizionare 
 
 
 
-
+#pagebreak()
 /*----------------------------------------------------*/
 == Analisi dell'implementazione
 Una volta importati i requisiti è possibile procedere con l'analisi dell'implementazione. Questa funzionalità serve a tracciare i requisiti nel codice sorgente qualora questi non fossero già tracciati (funziona anche nel caso lo fossero). \ 
@@ -215,7 +219,7 @@ Questà funzionalità serve a valutare la qualità dei requisiti e il loro grado
 )
 
 
-In questo modo il plug-in eseguirà un'analisi approfondita dei requisiti. Potrete vedere in basso a destra della finestra un'icona di avanzamento che indica il progresso dell'analisi. \
+In questo modo il plug-in eseguirà un'analisi approfondita di tutti i requisiti presenti nella lista. Potrete vedere in basso a destra della finestra un'icona di avanzamento che indica il progresso dell'analisi. \
 #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/analyze.png", width: 70%),
   caption:"Stato di avanzamento analisi dei requisiti",
@@ -231,7 +235,7 @@ Alla fine dell'analisi ogni requisito nella lista verrà aggiornato con i seguen
   - Suggestions: 
     - Suggestion 1
     - Suggestion ...
-Inoltre, ad ogni requisito sarà associato un'icona che indica se è passato o meno all'analisi. Di seguito una figura che mostra una generica lista a seguito dell'analisi.
+Inoltre, ad ogni requisito sarà associato un'icona che indica se lo stesso è passato o meno all'analisi. Di seguito una figura che mostra una generica lista a seguito dell'analisi.
 #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/analisi_ended.png", width: 50%),
   caption:"Risultato dell'analisi",
@@ -240,7 +244,7 @@ Inoltre, ad ogni requisito sarà associato un'icona che indica se è passato o m
 /*----------------------------------------------------*/
 == Esportazione requisiti
 
-Il plug-in presenta anche la funzione di esportazione in formato CSV dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
+Il plug-in presenta anche la funzione di esportazione, in formato CSV, dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
 sul pulsante *"Export Requirements"* mostrato nella seguente figura. 
 #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/Export_Requirements.png", width: 50%),
@@ -258,7 +262,7 @@ Il plug-in presenta anche la funzione di ricerca dei requisiti attraverso una ba
   image("/PB/Documentazione Esterna/src/manuale_img/search.png", width: 50%),
   caption:"Campo di input per la ricerca dei requisiti",
 )
-La lista *Requirements* mostrerà solo i requisiti che contengono il codice o parte di esso. \
+La lista *Requirements* mostrerà solo i requisiti che contengono il codice (o parte di esso) inserito nella barra di ricerca. \
 /*----------------------------------------------------*/
 == Analisi di un singolo requisito 
 
@@ -312,7 +316,7 @@ Ci sono quattro diversi modi in cui possono essere filtrati i requisiti:
 
 
 
-
+#pagebreak()
 /*----------------------------------------------------*/
 /*                                                    */
 /*                DISINSTALLAZIONE                    */
@@ -321,8 +325,21 @@ Ci sono quattro diversi modi in cui possono essere filtrati i requisiti:
 
 = Disinstallazione del plug-in 
 
+La disinstallazione del plug-in è molto semplice. Per farlo basta usare l'interfaccia di Visual Studio Code. Andate in basso a sinistra e cliccate sull'icona delle impostazioni a forma di ingranaggio e selezionate *"Extensions"*. Fatto ciò, vi comparirà la lista delle estensioni  installate e raccomandate come in figura : 
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/Extensions.png", width:30%),
+  caption:"Icona delle estensioni",
+)
+Quindi, cercate l'estensione *Requirement Tracker* e cliccate sull'icona a forma di ingranaggio vicino ad essa. Vi comparirà un menù a tendina in cui dovrete selezionare *"Uninstall"* come mostrato in figura:
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/Uninstall.png", width:30%),
+  caption:"Icona del plug-in",
+)
+Una volta cliccato Uninstall l'estensione verrà disinstallata e non sarà più visibile nella lista delle estensioni installate. \
 
 
+
+#pagebreak()
 /*----------------------------------------------------*/
 /*                                                    */
 /*                 ELENCO IMMAGINI                    */
