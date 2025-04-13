@@ -11,7 +11,7 @@
   version: "1.1.0",
   date: "23/11/2024",
   versionamento: (
-    "1.0.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "",
+    "1.1.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "",
     "1.0.0", "08/03/2024", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
     "0.5.0", "08/03/2024", "Stefano Baso, Malik Giafar Mohamed, Luca Parise", "Miglioramento sezione rischi, inserimento tabelle preventivo e consuntivo, miglioramento sezione pianificazione", "Ion Cainareanu",
     "0.4.0", "15/02/2024", "Stefano Baso", "Miglioramento sezione periodi", "Ion Cainareanu, Luca Parise",
