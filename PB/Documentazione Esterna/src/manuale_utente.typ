@@ -13,6 +13,10 @@
     "0.0.2","10/04/2025","Luca Parise","Stesura dei capitoli rigurdanti le funzionalità del plug-in","",
     "0.0.3","11/04/2025","Luca Parise","Modifica alle immagini e continuazione stesura dei vari capitoli","",
     "0.0.4","12/04/2025","Luca Parise","Aggiunto capitolo per la disinstallazione del prodotto","",
+    "0.0.5","14/04/2025","Luca Parise, Maria Fuensanta Trigueros Hernandez","Aggiunto capitolo della configurazione","",
+    "","","","","",
+    "","","","","",
+    "","","","","",
     "","","","","",
   )
 )
@@ -59,7 +63,7 @@ Questo documento comprende tutti i termini tecnici scelti dai membri del gruppo 
 == Requisiti
 Sono necessarie le seguenti tecnologie installate:
 
-- Node.js vs>ersione 20.0.0 o superiore
+- Node.js versione 16.0.0 o superiore
 - npm
 - TypeScript (installabile con npm install -g typescript)
 - Visual Studio Code
@@ -105,14 +109,41 @@ Ora l'estensione dovrebbe essere stata installata con successo. Per poterla usar
 
 
 
-==== Attivare Ollama 
-Per usare l'estensione è necessario che Ollama sia attivo e stia ascoltando sulla porta standard 11434.
-Per fare ciò, aprite un terminale e digitate il comando \ \ 
-#align(center, "$ ollama run nomemodello" ) \
-dove nome modello indica il modello usato. Di base l'estensione usa il modello llama3.2:3b ma potete cambiarlo in qualsiasi momento andando su settings del plug-in. Per fare questo vi rimando al capitolo apposito per la configurazione del modello da usare. 
+=== Attivare Ollama 
+Se non avete ancora scaricato ed installato Ollama vi rimando alla documentazione ufficiale che potete trovare al seguente link "https://ollama.com/" (14/04/2025).
 
-==== Attivare il server API 
-Per fare questo dovete posizionarvi nella cartella API in cui troverete il codice in typescript che gestisce il server. Siccome viene usato node sarà necessario convertire il codice in javascript. Per fare ciò aprite un terminale. posizionatevi sulla cartella ed eseguite il comando
+Per usare l'estensione è necessario che Ollama sia attivo e stia ascoltando sulla porta standard 11434.
+Per fare ciò, potete cercare e cliccare sull'icona di Ollama una volta che è stato installato oppure, aprite un terminale e digitate il comando \ \ 
+#align(center, "$ ollama run nome_modello" ) \
+dove "nome_modello" indica il modello usato. Di base l'estensione usa il modello llama3.2:3b ma potete cambiarlo in qualsiasi momento andando su settings del plug-in. Per fare questo vi rimando al capitolo apposito per la configurazione del modello LLM. 
+
+
+=== Installazione dell'immagine docker
+
+
+
+- *1)* Prima di tutto assicurati di aver installato Docker sul tuo sistema. Puoi scaricare Docker Desktop (per windows e macOS) oppure installare Docker Engine (per Linux) seguendo la guida ufficiale disponibile al link "https://docs.docker.com/get-docker/" (14/04/2025).
+Una volta installato, verifica che docker sia correttamente attivo eseguendo da terminale il comando: 
+
+#align(center, "$ docker --version")
+Se il comando restituisce la versione di docker, l'installazione è avvenuta con successo. 
+
+- *2)* Scaricate il Dockerfile presente all'interno della repository del prodotto e costruite localmente l'immagine attraverso il comando (assicuratevi di essere nella directory in cui si trova il file)
+
+#align(center, "$ docker build -t nome_immagine .")
+
+- *3)* Verifica che l'immagine sia presenta usando il comando 
+#align(center, "$ docker images")
+
+- *4)* Per eseguire l'immagine e creare il container usa il comando 
+#align(center, "$ docker run nome_immagine")
+
+
+
+
+==== Attivare il server manualmente
+
+Per fare questo dovete posizionarvi nella cartella API in cui troverete il codice in typescript che gestisce il server. Siccome viene usato node sarà necessario convertire il codice in javascript. Per fare ciò aprite un terminale, posizionatevi sulla cartella del codice ed eseguite il comando
 
 #align(center, "$ npm install")
 #align(center, "$ npx tsc")
@@ -123,7 +154,7 @@ Quindi per avviare il server spostatevi dal terminale sulla cartella dist e cerc
 #align(center, "$ node main.js")
 
 Questo comando avvierà il server che rimarrà in ascolto delle richieste e le invierà ad Ollama. 
-Se tutto è andato liscio, potete proseguire. 
+
 
 #pagebreak()
 /*----------------------------------------------------*/
@@ -135,24 +166,39 @@ Se tutto è andato liscio, potete proseguire.
 /*----------------------------------------------------*/
 ==  Modello LLM
 
-Il modello LLM di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Esamina la qualità testuale dei requisiti e verifica la loro implementazione nel codice sorgente, restituendo un punteggio da 0 a 100 per indicare il grado di conformità. Inoltre, aiuta a identificare le sezioni di codice correlate ai requisiti e consente la configurazione di modelli personalizzati per ottimizzare le prestazioni dell’analisi.
+L'utente può impostare il modello da utilizzare nelle varie operazioni come mostrato in figura: 
+#figure(
+  image("../../../PB/Documentazione Esterna/src/manuale_img/LLM_Configuration_Settings.png", width: 120%),
+  caption: "Configurazione del modell LLM",
+)
+
+Il modello LLM di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Visto il rapido progresso e la continua uscita di nuovi modelli, il plug-in permette all'utente di poter scegliere quale modello utilizzare, purchè questo sia installato all'interno della macchina. \ 
+Il plug-in permette di impostare un modello specifico per ognuna delle seguenti attività
+- per analizzare la "code compliance" 
+- per analizzare l'implementazione 
+- per analizzare la descrizione dei requisiti
+
+Per poter configurare il modello, l'utente deve accedere alle impostazioni della estensione installata ed inserire nei tre campi disponibili il nome del modello che vuole usare, come mostrato nelle figura di seguito :   
+
+#figure(
+  image("../../../PB/Documentazione Esterna/src/manuale_img/Settings.png", width: 100%),
+  caption: "Configurazione del modell LLM",
+)
 
 
-=== Prerequisiti
-I modelli di Ollama utilizzati sono configurabili tramite un file dedicato: config.json. Modello di default: llama3.2:3b \
-- Assicurati che Ollama sia attivo sulla porta 11434 prima di utilizzare l'estensione e che i relativi modelli siano disponibili.\
-- La porta diversa da quella di default si puo' specificare nel file: .env insieme alla porta dell'API.\
-- Nel file config.json del plugin si puo' modificare l'url del server node.
 
-=== Come configurare il modello LLM ? 
-Clicca qui > Clicca la > E Uala
-#pagebreak()
 /*----------------------------------------------------*/
 == Soglia di accettazione
-Quando un requisito viene sottoposto ad analisi, il modello LLM ne valuta l'implementazione nel codice sorgente e assegna un punteggio numerico compreso tra 0 e 100. Questo valore indica il grado di conformità del codice rispetto al requisito, fornendo una misura quantitativa della correttezza e completezza dell'implementazione.
+
+Un'altra configurazione permessa dal plug-in è l'impostazione della soglia di accettazione di un requisito. Ad ogni analisi, infatti, ogni requisito riceve un punteggio da 0-100 e viene considerato "passed" o "not passed" a seconda del superamento di tale soglia. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura : 
+/*
+#figure(
+  image("../../../PB/Documentazione Esterna/src/manuale_img/soglia.png", width: 15%),
+  caption:"Soglia di accettazione",
+)
+*/
 
 
-=== Come configurare la soglia dei requisiti ? 
 /*----------------------------------------------------*/
 #pagebreak()
 = Istruzioni all'uso 
@@ -172,7 +218,7 @@ sull'icona denominata *"Load Requirements"* mostrata in figura.
   caption:"Icona per l'importazione dei requisiti",
 )
 Una volta cliccato sull'icona verrà aperto il file system di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
-E' consigliato, anche se non necessario, aver aperto in Visual Studio Code il progetto contenente il codice sorgente. 
+\
 
 Una volta importati, i requisiti verrano presentati in una lista nella sezione Requirements, come mostrato nella seguente figura: 
 
@@ -305,16 +351,25 @@ Ci sono quattro diversi modi in cui possono essere filtrati i requisiti:
   - *Analizzati*, usando il bottone *"Show analyzed first"* mostrato in figura
   #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/show_analyzed_first.png", width: 70%),
-  caption:"Bottone per organizzare i requisiti in ordine decrescente",
+  caption:"Bottone per mostrare prima i requisiti analizzati",
 )
   - *Non Analizzati*, usando il bottone *"Show unanalyzed first"* mostrato in figura
   #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/show_unanalyzed_first.png", width: 70%),
-  caption:"Bottone per organizzare i requisiti in ordine decrescente",
+  caption:"Bottone per mostrare prima i requisiti non analizzati",
 )
 
 
 
+== Approvazione di un requisito manuale
+
+Il plug-in offre la possibilità di approvare manualmente un requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera approvare come mostrato in figura :
+/*
+#figure(
+  image("/PB/Documentazione Esterna/src/manuale_img/approvazione.png", width: 70%),
+  caption:"Bottone per l'approvazione manuale di un requisito",
+)
+*/
 
 #pagebreak()
 /*----------------------------------------------------*/
@@ -349,6 +404,24 @@ Una volta cliccato Uninstall l'estensione verrà disinstallata e non sarà più 
 = Elenco delle immagini 
 
 
+- Figure : Icona del plug-in
+- Figure : Icona per l'importazione dei requisiti
+- Figure : Requisiti importati
+- Figure : Bottone per l'analisi dell'implementazione
+- Figure : Tracciabilità di un requisito
+- Figure : Bottone per l'analisi dei requisiti
+- Figure : Stato di avanzamento analisi dei requisiti
+- Figure : Risultato dell'analisi
+- Figure : Bottone per l'esportazione dei requisiti
+- Figure : Campo di input per la ricerca dei requisiti
+- Figure : Bottone per l'analisi di un singolo requisito
+- Figure : Bottone per l'analisi dell'implementazione di un singolo requisito
+- Figure : Bottone per organizzare i requisiti in ordine di default
+- Figure : Bottone per organizzare i requisiti in ordine decrescente
+- Figure : Bottone per mostrare prima i requisiti analizzati
+- Figure : Bottone per mostrare prima i requisiti non analizzati
+- Figure : Icona delle estensioni
+- Figure : Icona del plug-in
 
 
 
