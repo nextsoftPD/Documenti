@@ -6,7 +6,7 @@
   verifica: ("",),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.0.4",
+  version: "0.0.5",
   date: "12/04/2026",
   versionamento: (
     "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","",
@@ -20,6 +20,13 @@
     "","","","","",
   )
 )
+
+#outline(
+  title: [Elenco delle immagini],
+  target: figure.where(kind: image),
+)
+
+#pagebreak()
 /*----------------------------------------------------*/
 /*                                                    */
 /*               INTRODUZIONE                         */
@@ -31,7 +38,7 @@
 
 
 == Scopo del documento
-Il seguente manuale fornisce una guida dettagliata all'installazione, configurazione e utilizzo del plug-in. L'obiettivo è consentire agli utenti di comprendere il funzionamento dello strumento e di sfruttarne appieno le funzionalità per il monitoraggio e la valutazione dei requisiti software all'interno del codice sorgente. 
+Il seguente manuale fornisce una guida dettagliata all'installazione, configurazione e utilizzo del plug-in. L'obiettivo è consentire agli utenti di comprendere il funzionamento dello strumento e di sfruttarne le funzionalità per il monitoraggio e la valutazione dei requisiti software all'interno del codice sorgente. 
 \ \
 In particolare, il documento si propone di: 
 
@@ -63,17 +70,17 @@ Questo documento comprende tutti i termini tecnici scelti dai membri del gruppo 
 == Requisiti
 Sono necessarie le seguenti tecnologie installate:
 
-- Node.js versione 16.0.0 o superiore
-- npm
-- TypeScript (installabile con npm install -g typescript)
-- Visual Studio Code
-- Ollama attivo sulla porta standard localhost:11434 
+- _*Node.js*_#super("G") (versione 20.x#super("G") o superiore)
+- _*npm*_#super("G") (versione 10.9.0 o superiore)
+- _*TypeScript*_#super("G") (versione 5.8.2 o superiore)
+- _*Visual Studio Code*_#super("G") (versione 1.95.0 o superiore)
+- _*Ollama*_#super("G") (versione 0.6.5 o superiore) 
 
 
 
 === Come creare il file .vsix
 
-Per creare un file *.vsix* (che è il pacchetto installabile di una estensione per Visual Studio Code), devi usare lo strumento *vsce* (Visual Studio Code Extension Manager). \
+Per creare un _file *.vsix*_#super("G") (che è il pacchetto installabile di una estensione per Visual Studio Code), devi usare lo strumento _*vsce*_#super("G") (Visual Studio Code Extension Manager). \
 Di seguito i vari passaggi per creare tale pacchetto: 
 
 - *1)* Apri il terminale e installa *vsce* (Visual Studio Code Extension Manager), se ancora non lo hai installato, con il comando:
@@ -98,14 +105,16 @@ Di seguito i vari passaggi per creare tale pacchetto:
 Una volta creato il pacchetto .vsix come delineato nel capitolo precedente è possibile installare il plug-in in Visual Studio Code. Per farlo, segui questi passaggi: \ \
 - *1)* Apri Visual Studio Code \
 - *2)* Apri un terminale e naviga nella cartella in cui hai salvato il file .vsix. Puoi usare il comando: 
-#align(center, "$ cd /path/to/your/extension" )
-- *3)* Usa il seguente comando per installare il pacchetto .vsix: 
-#align(center, "$ code --install-extension nome-estensione-0.0.1.vsix" )
-- *4)* Se non vedi la estensione installata prova a riavviare Visual Studio Code \
-- *5)* Verifica che l'estensione sia installata correttamente. Puoi farlo andando nella sezione delle estensione di Visual Studio Code e cercando il nome del plug-in oppure via terminale usando il seguente comando: 
+#align(center, "$ cd /path/to/your/extension" ) 
+
+- *3)* Usa il seguente comando per installare il pacchetto .vsix:  
+#align(center, "$ code --install-extension nome-estensione-0.0.1.vsix" ) 
+
+- *4)* Se non vedi la estensione installata prova a riavviare Visual Studio Code 
+- *5)* Verifica che l'estensione sia installata correttamente. Puoi farlo andando nella sezione delle estensioni di Visual Studio Code e cercando il nome del plug-in oppure, via terminale usando il seguente comando: 
 #align(center, "$ code --list-extensions" )
 \
-Ora l'estensione dovrebbe essere stata installata con successo. Per poterla usare avrete anche bisogno di Ollama attivo e configurato con un modello LLM. Per farlo leggete il prossimo capitolo. 
+Ora l'estensione dovrebbe essere stata installata con successo. Per poterla usare avrete anche bisogno di Ollama attivo e configurato con un _modello LLM_#super("G"). Per farlo leggete il prossimo capitolo. 
 
 
 
@@ -115,12 +124,21 @@ Se non avete ancora scaricato ed installato Ollama vi rimando alla documentazion
 Per usare l'estensione è necessario che Ollama sia attivo e stia ascoltando sulla porta standard 11434.
 Per fare ciò, potete cercare e cliccare sull'icona di Ollama una volta che è stato installato oppure, aprite un terminale e digitate il comando \ \ 
 #align(center, "$ ollama run nome_modello" ) \
-dove "nome_modello" indica il modello usato. Di base l'estensione usa il modello llama3.2:3b ma potete cambiarlo in qualsiasi momento andando su settings del plug-in. Per fare questo vi rimando al capitolo apposito per la configurazione del modello LLM. 
+dove "nome_modello" indica il modello usato. Di base l'estensione usa il modello *llama3.2:3b* ma potete cambiarlo in qualsiasi momento andando sulle impostazioni dell'estensione. Per fare questo vi rimando al capitolo apposito per la configurazione del modello LLM. 
 
 
 === Installazione dell'immagine docker
 
+Per poter utilizzare correttamente il plug-in, è necessario eseguire un _server_#super("G") esterno che gestisca le richieste in arrivo. Questo server è realizzato come una REST API che può essere facilmente avviata e gestita tramite _Docker_#super("G"), una tecnologia che consente di creare ambienti isolati e replicabili chiamati _container_#super(" G").
 
+L’utilizzo di Docker permette di semplificare il processo di configurazione, evitando problemi legati a incompatibilità tra versioni di librerie o ambienti operativi. Seguendo i passaggi descritti in questa sezione, sarai in grado di:
+- Installare Docker sul tuo sistema (se non già presente)
+- Costruire localmente l’_immagine_#super(" G") dell’applicazione partendo da un file _Dockerfile_#super(" G")
+- Verificare che l’immagine sia stata correttamente creata
+- Avviare un container funzionante, pronto a ricevere ed elaborare richieste
+
+L’intera procedura richiede pochi comandi da terminale ed è stata progettata per essere semplice e accessibile anche a chi non ha una lunga esperienza con Docker.
+Assicurati di avere una connessione a internet attiva durante l’installazione e, se lavori su un sistema Linux, di avere i permessi necessari per eseguire i comandi come amministratore.
 
 - *1)* Prima di tutto assicurati di aver installato Docker sul tuo sistema. Puoi scaricare Docker Desktop (per windows e macOS) oppure installare Docker Engine (per Linux) seguendo la guida ufficiale disponibile al link "https://docs.docker.com/get-docker/" (14/04/2025).
 Una volta installato, verifica che docker sia correttamente attivo eseguendo da terminale il comando: 
@@ -128,13 +146,13 @@ Una volta installato, verifica che docker sia correttamente attivo eseguendo da 
 #align(center, "$ docker --version")
 Se il comando restituisce la versione di docker, l'installazione è avvenuta con successo. 
 
-- *2)* Scaricate il Dockerfile presente all'interno della repository del prodotto e costruite localmente l'immagine attraverso il comando (assicuratevi di essere nella directory in cui si trova il file)
+- *2)* Scarica il Dockerfile presente all'interno della repository del prodotto e costruite localmente l'immagine attraverso il comando (assicuratevi di essere nella directory in cui si trova il file)
 
 #align(center, "$ docker build -t nome_immagine .")
 
 - *3)* Verifica che l'immagine sia presenta usando il comando 
 #align(center, "$ docker images")
-
+\ \
 - *4)* Per eseguire l'immagine e creare il container usa il comando 
 #align(center, "$ docker run nome_immagine")
 
@@ -143,7 +161,7 @@ Se il comando restituisce la versione di docker, l'installazione è avvenuta con
 
 ==== Attivare il server manualmente
 
-Per fare questo dovete posizionarvi nella cartella API in cui troverete il codice in typescript che gestisce il server. Siccome viene usato node sarà necessario convertire il codice in javascript. Per fare ciò aprite un terminale, posizionatevi sulla cartella del codice ed eseguite il comando
+Per fare questo dovete posizionarvi nella cartella API in cui troverete il codice in _typescript_#super(" G") che gestisce il server. Poichè viene usato node sarà necessario convertire il codice in _javascript_#super(" G"). Per fare ciò aprite un terminale, posizionatevi sulla cartella del codice ed eseguite il comando
 
 #align(center, "$ npm install")
 #align(center, "$ npx tsc")
@@ -169,7 +187,7 @@ Questo comando avvierà il server che rimarrà in ascolto delle richieste e le i
 L'utente può impostare il modello da utilizzare nelle varie operazioni come mostrato in figura: 
 #figure(
   image("../../../PB/Documentazione Esterna/src/manuale_img/LLM_Configuration_Settings.png", width: 120%),
-  caption: "Configurazione del modell LLM",
+  caption: "Configurazione del modello LLM",
 )
 
 Il modello LLM di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Visto il rapido progresso e la continua uscita di nuovi modelli, il plug-in permette all'utente di poter scegliere quale modello utilizzare, purchè questo sia installato all'interno della macchina. \ 
@@ -182,7 +200,7 @@ Per poter configurare il modello, l'utente deve accedere alle impostazioni della
 
 #figure(
   image("../../../PB/Documentazione Esterna/src/manuale_img/Settings.png", width: 100%),
-  caption: "Configurazione del modell LLM",
+  caption: "Configurazione dei modelli",
 )
 
 
@@ -190,7 +208,7 @@ Per poter configurare il modello, l'utente deve accedere alle impostazioni della
 /*----------------------------------------------------*/
 == Soglia di accettazione
 
-Un'altra configurazione permessa dal plug-in è l'impostazione della soglia di accettazione di un requisito. Ad ogni analisi, infatti, ogni requisito riceve un punteggio da 0-100 e viene considerato "passed" o "not passed" a seconda del superamento di tale soglia. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura : 
+Un'altra configurazione permessa dal plug-in è l'impostazione della _soglia di accettazione_#super("G") di un requisito. Ad ogni analisi, infatti, ogni requisito riceve un punteggio da 0-100 e viene considerato "passed" o "not passed" a seconda del superamento di tale soglia. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura : 
 /*
 #figure(
   image("../../../PB/Documentazione Esterna/src/manuale_img/soglia.png", width: 15%),
@@ -217,7 +235,7 @@ sull'icona denominata *"Load Requirements"* mostrata in figura.
   image("/PB/Documentazione Esterna/src/manuale_img/load_requirements.png", width: 40%),
   caption:"Icona per l'importazione dei requisiti",
 )
-Una volta cliccato sull'icona verrà aperto il file system di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
+Una volta cliccato sull'icona verrà aperto il _file system_#super(" G") di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
 \
 
 Una volta importati, i requisiti verrano presentati in una lista nella sezione Requirements, come mostrato nella seguente figura: 
@@ -290,7 +308,7 @@ Inoltre, ad ogni requisito sarà associato un'icona che indica se lo stesso è p
 /*----------------------------------------------------*/
 == Esportazione requisiti
 
-Il plug-in presenta anche la funzione di esportazione, in formato CSV, dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
+Il plug-in presenta anche la funzione di esportazione, in formato _CSV_#super(" G"), dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
 sul pulsante *"Export Requirements"* mostrato nella seguente figura. 
 #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/Export_Requirements.png", width: 50%),
@@ -322,7 +340,7 @@ Il plug-in offre la possibilità di analizzare un singolo requisito. Per farlo, 
 /*----------------------------------------------------*/
 == Analisi dell'implementazione di un singolo requisito
 
-Il plug-in offre la possibilità di analizzare l'implementazione di un singolo requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera analizzare come mostrato in figura.
+Il plug-in offre la possibilità di analizzare l'implementazione (tracciamento) di un singolo requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera analizzare come mostrato in figura.
 #figure(
   image("/PB/Documentazione Esterna/src/manuale_img/implementazione_singola.png", width: 70%),
   caption:"Bottone per l'analisi dell'implementazione di un singolo requisito",
@@ -394,34 +412,6 @@ Una volta cliccato Uninstall l'estensione verrà disinstallata e non sarà più 
 
 
 
-#pagebreak()
-/*----------------------------------------------------*/
-/*                                                    */
-/*                 ELENCO IMMAGINI                    */
-/*                                                    */
-/*----------------------------------------------------*/
-
-= Elenco delle immagini 
-
-
-- Figure : Icona del plug-in
-- Figure : Icona per l'importazione dei requisiti
-- Figure : Requisiti importati
-- Figure : Bottone per l'analisi dell'implementazione
-- Figure : Tracciabilità di un requisito
-- Figure : Bottone per l'analisi dei requisiti
-- Figure : Stato di avanzamento analisi dei requisiti
-- Figure : Risultato dell'analisi
-- Figure : Bottone per l'esportazione dei requisiti
-- Figure : Campo di input per la ricerca dei requisiti
-- Figure : Bottone per l'analisi di un singolo requisito
-- Figure : Bottone per l'analisi dell'implementazione di un singolo requisito
-- Figure : Bottone per organizzare i requisiti in ordine di default
-- Figure : Bottone per organizzare i requisiti in ordine decrescente
-- Figure : Bottone per mostrare prima i requisiti analizzati
-- Figure : Bottone per mostrare prima i requisiti non analizzati
-- Figure : Icona delle estensioni
-- Figure : Icona del plug-in
 
 
 
