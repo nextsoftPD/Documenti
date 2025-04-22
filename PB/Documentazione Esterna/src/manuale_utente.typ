@@ -15,7 +15,7 @@
     "0.0.4","12/04/2025","Luca Parise","Aggiunto capitolo per la disinstallazione del prodotto","",
     "0.0.5","14/04/2025","Luca Parise, Maria Fuensanta Trigueros Hernandez","Aggiunto capitolo della configurazione","",
     "0.1.0","16/04/2025","Malik Giafar Mohamed, Luca Parise","Modificato il path per le immagini e migliorato il testo","",
-    "","","","","",
+    "0.1.1","19/04/2025","Luca Parise, Malik Giafar Mohamed","Modifica capitolo per installazione immagine docker","",
     "","","","","",
     "","","","","",
     "","","","","",
@@ -151,15 +151,28 @@ Una volta installato, verifica che docker sia correttamente attivo eseguendo da 
 #align(center, "$ docker --version")
 Se il comando restituisce la versione di docker, l'installazione è avvenuta con successo. 
 
-- *2)* Scarica il Dockerfile presente all'interno della repository del prodotto e costruite localmente l'immagine attraverso il comando (assicuratevi di essere nella directory in cui si trova il file)
+- *2)* Spostati nella cartella del codice sorgente del server in cui si trova il file "*Dockerfile*" e il file "*docker-compose.yaml*". Puoi farlo usando il comando cd. Ad esempio, se il codice sorgente si trova in una cartella chiamata "API" all'interno della tua home directory, puoi usare il comando:
+#align(center, "$ cd ~path/del/server/API" )
 
-#align(center, "$ docker build -t nome_immagine .")
+- *3)* Una volta nella cartella del codice  sorgente (all'interno della directory denominata "hexagonalTest" della cartella MVP) devi costruire l'immagine Docker eseguendo il comando:
+
+#align(center, "$ docker build -t requirement-tracker-api")
 
 - *3)* Verifica che l'immagine sia presenta usando il comando 
 #align(center, "$ docker images")
-\ \
+\ 
 - *4)* Per eseguire l'immagine e creare il container usa il comando 
-#align(center, "$ docker run nome_immagine")
+#align(center, "$ docker run -p porta:4000 -e VAR=VAL requirement-tracker-api")
+
+Nel caso il nome dell'immagine sia cambiato, allora sarà necessario cambiare anche il nome nei comandi sopra. Lo stesso vale per la porta. \
+
+
+
+Un'altro metodo per avviare il server tramite docker consiste nel creare un "*docker compose file*".
+Si tratta di un file in formato "yaml" il quale permette di modificare più facilmente i parametri di esecuzione del container con l'immagine del server. Inoltre, consente di configurare modalità di deployment più complesse, come l'uso di più container o l'integrazione con altri servizi. \
+
+Tutto questo non è possibile con il comando "docker run" in quanto questo permette di eseguire solo un container alla volta. 
+
 
 
 
