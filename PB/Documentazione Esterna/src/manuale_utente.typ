@@ -9,7 +9,8 @@
   version: "0.0.5",
   date: "12/04/2026",
   versionamento: (
-    
+
+    "0.1.3","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","",
     "0.1.2","23/04/2025","Luca Parise, Malik Giafar Mohamed","Miglioramento stile del testo nei vari capitoli","",
     "0.1.1","19/04/2025","Luca Parise, Malik Giafar Mohamed","Modifica capitolo per installazione immagine docker","",
     "0.1.0","16/04/2025","Malik Giafar Mohamed, Luca Parise","Modificato il path per le immagini e migliorato il testo","",
@@ -19,7 +20,7 @@
     "0.0.2","10/04/2025","Luca Parise","Stesura dei capitoli rigurdanti le funzionalità del plug-in","",
     "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","",
     
-    "","","","","",
+    
     "","","","","",
     "","","","","",
     "","","","","",
@@ -153,7 +154,7 @@ Se il comando restituisce la versione di Docker, l'installazione risulta complet
 - *2)* Scaricare il Dockerfile presente all'interno della repository del prodotto e costruire localmente l'immagine attraverso il comando (assicurarsi di essere nella directory in cui si trova il file):
 #align(center, "$ cd ~path/del/server/API" )
 
-- *3)* Una volta nella cartella del codice  sorgente (all'interno della directory denominata "hexagonalTest" della cartella MVP) dè necessario costruire l'immagine Docker eseguendo il comando:
+- *3)* Una volta nella cartella del codice  sorgente (all'interno della directory denominata "hexagonalTest" della cartella MVP) è necessario costruire l'immagine Docker eseguendo il comando:
 
 #align(center, "$ docker build -t requirement-tracker-api")
 
@@ -394,16 +395,22 @@ Ci sono quattro diversi modi in cui possono essere filtrati i requisiti:
 )
 
 
+#pagebreak()
+== Approvazione/Disapprovazione di un requisito manuale
 
-== Approvazione di un requisito manuale
+Il plug-in offre la possibilità di approvare o disapprovare manualmente un requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera approvare come mostrato in figura :
 
-Il plug-in offre la possibilità di approvare manualmente un requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera approvare come mostrato in figura :
-/*
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/approvazione.png", width: 70%),
-  caption:"Bottone per l'approvazione manuale di un requisito",
+  image("/PB/Documentazione Esterna/src/MU/approve.png", width: 70%),
+  caption:"Bottone per approvare manualmente un requisito",
 )
-*/
+
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/disapprove.png", width: 70%),
+  caption:"Bottone per disapprovare manualmente un requisito",
+)
+
+Nel caso non sia ancora presente il tracciamento del requisito nel codice sorgente, il plug-in restituirà un messaggio di errore. \
 
 #pagebreak()
 /*----------------------------------------------------*/
