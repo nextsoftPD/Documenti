@@ -3,7 +3,7 @@
 
 
 #show: project.with(
-  title: "Verbale interno 13/04/2025",
+  title: "Verbale interno 05/04/2025",
   redattori: ("Luca Parise",),
   verifica: ("",),
   approvazione: ("",),
@@ -11,7 +11,7 @@
   version: "1.0.0",
   timebegin: "21:00",
   timeend: "22:30",
-  date: "13/04/2025",
+  date: "05/04/2025",
   lista_presenze: (
     "Ion Cainareanu","SI","",
     "Malik Giafar Mohamed","SI","",
@@ -52,6 +52,14 @@ In particolare, il gruppo nel prossimo periodo si concentrerà su:
 - Terminare la scrittura della documentazione necessaria per la PB
 - Contattare l'azienda Bluewind per discutere dei requisiti del progetto
 - Continuare lo sviluppo dell'MVP e del codice sorgente
+#pagebreak()
+= Retrospettiva dell'ultimo periodo 
+
+Nel periodo precedente, il gruppo ha lavorato attivamente su più fronti del progetto, cercando di rispettare le scadenze prefissate e mantenere una buona coordinazione interna. La definizione dell'architettura e la produzione dei relativi diagrammi UML hanno rappresentato un passaggio chiave, che ha permesso di allineare tutti i membri su una visione comune del sistema.
+
+Anche lo sviluppo dell'MVP e la stesura del manuale utente sono progrediti in modo soddisfacente, seppur con alcune difficoltà legate alla gestione dei carichi di lavoro e all'integrazione dei contributi individuali. La creazione dell'immagine Docker ha facilitato i test in ambienti controllati, contribuendo a una maggiore stabilità del codice.
+
+Nel complesso, il gruppo ha mostrato una buona capacità di adattamento e collaborazione, pur evidenziando la necessità di migliorare ulteriormente la pianificazione e la distribuzione delle attività per ottimizzare l'efficienza nelle prossime fasi del progetto.
 
 
 = Conclusione
