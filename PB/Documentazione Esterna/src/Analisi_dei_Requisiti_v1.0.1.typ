@@ -9,6 +9,8 @@
   version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
+    "1.2.1","24/04/2025","Marco Perazzolo","Aggiunti UC_11.1, UC_11.2 e UC di visualizzazione icone_, ","",
+    "1.2.0","15/04/2025","Marco Perazzolo","Modifiche agli UC post incontro con Bluewind","",
     "1.1.0","05/04/2025","Malik Giafar Mohamed, Luca Parise, Marco Perazzolo","Modifiche generali agli use cases e aggiornamento del relativo tracciamento","",
     "1.0.1","27/03/2025","Marco Perazzolo","Correzione di casi d'uso e requisiti post-incontro RTB","",
     "1.0.0","08/03/2025","Ion Cainareanu","Aggiunti i termini del glossario e rilasciata la versione 1.0.0 del documento","Marco Perazzolo",
@@ -29,10 +31,10 @@
 
 = Introduzione
 == Scopo del documento
-Lo scopo del presente documento è fornire una descrizione completa e dettagliata degli obiettivi, delle funzionalità e delle caratteristiche tecniche del progetto *Requirement Tracker - Visual Studio Code Plug-in*, con particolare attenzione all'utilizzo dell'_UML_#super("G") per la modellazione dei _casi d'uso_#super("G"). Il documento funge da riferimento per tutti gli _stakeholder_#super("G") coinvolti, descrivendo il contesto operativo, i requisiti funzionali e non funzionali, nonché le linee guida tecnologiche necessarie per lo sviluppo del _plug-in_#super("G"). I casi d'uso saranno descritti utilizzando una struttura standardizzata, che includerà il nominativo del caso, gli attori principali, le _precondizioni_#super("G"), le _postcondizioni_#super("G"), lo _scenario principale_#super("G") e gli eventuali _scenari alternativi_#super("G") o sottocasi. Questa struttura garantisce chiarezza e coerenza, facilitando la comprensione e la tracciabilità delle funzionalità principali del sistema. Il documento intende inoltre fornire una visione condivisa del progetto, ponendo le basi per una _pianificazione_#super("G") e un'implementazione efficaci.
+Lo scopo del presente documento è fornire una descrizione completa e dettagliata degli obiettivi, delle funzionalità e delle caratteristiche tecniche del progetto *Requirement Tracker - Visual Studio Code Plug-in*, con particolare attenzione all'utilizzo dell'_UML_#super("G") per la modellazione dei _casi d'uso_#super("G"). Il documento funge da riferimento per tutti gli _stakeholder_#super("G") coinvolti, descrivendo il contesto operativo, i requisiti funzionali e non funzionali, nonché le linee guida tecnologiche necessarie per lo sviluppo del _plug-in_#super("G"). I casi d'uso saranno descritti utilizzando una struttura standardizzata, che includerà il nominativo del caso d'uso, gli attori principali, le _precondizioni_#super("G"), le _postcondizioni_#super("G"), lo _scenario principale_#super("G") e gli eventuali _scenari alternativi_#super("G") o sottocasi d'uso. Questa struttura garantisce chiarezza e coerenza, facilitando la comprensione e la tracciabilità delle funzionalità principali del sistema. Il documento intende inoltre fornire una visione condivisa del progetto, ponendo le basi per una _pianificazione_#super("G") e un'implementazione efficaci.
 == Scopo del prodotto
 Lo scopo di *Requirement Tracker - Visual Studio Code Plug-in* è affrontare il problema della complessità nella gestione e nel _tracciamento dei requisiti_#super("G") nei progetti software di grandi dimensioni. Nei _codebase_#super("G") estesi, la verifica manuale della copertura e dell'implementazione dei requisiti è un processo lungo e soggetto a errori, spesso complicato dalla qualità insufficiente con cui i requisiti stessi vengono definiti. Questo può portare a malintesi e problemi durante l'implementazione, compromettendo l'allineamento tra specifiche e funzionalità sviluppate. 
-Il plug-in mira a risolvere queste difficoltà automatizzando il tracciamento dei requisiti nel codice sorgente, migliorando la qualità della loro definizione e semplificando l'identificazione delle aree di mancata o errata implementazione. In particolare, offre strumenti per integrare requisiti tecnici derivati da manuali e datasheet di componenti hardware, fornendo analisi automatizzate e suggerimenti per rendere i requisiti più chiari, specifici e strutturati. Grazie a questo, sviluppatori potranno garantire una gestione più efficace dei requisiti, riducendo errori e aumentando la coerenza tra specifiche e implementazione.
+Il plug-in mira a risolvere queste difficoltà automatizzando il tracciamento dei requisiti nel codice sorgente, fornendo suggerimenti per migliorare la qualità della loro definizione e semplificando l'identificazione delle aree di mancata o errata implementazione. In particolare, fornisce analisi automatizzate del codice mediante l'utilizzo di modelli _LLM_#super("G") e suggerimenti per migliorare il codice e rendere i requisiti più chiari, specifici e strutturati. Grazie a questo, sviluppatori potranno garantire una gestione più efficace dei requisiti, riducendo errori e aumentando la coerenza tra specifiche e implementazione.
 == Glossario
 Per evitare ambiguità relative alle terminologie utilizzate è stato creato un documento denominato *Glossario_v1.0.0*.
 Questo documento comprende tutti i termini tecnici scelti dai membri del gruppo e utilizzati nei
@@ -41,20 +43,22 @@ all'interno del documento con l'apice #super("G") accanto alla parola.
 
 = Descrizione
 == Obiettivi del prodotto 
-L'obiettivo del progetto è realizzare un plug-in per _Visual Studio Code_#super("G") che consenta di tracciare e verificare l'implementazione dei requisiti di progetto, basandosi su analisi automatizzate del codice sorgente e sui requisiti tecnici espressi in documenti di riferimento, mediante l'utilizzo di tecnologie avanzate come modelli _LLM_#super("G") di _AI_#super("G"). Il plug-in sarà supportato da _API REST_#super("G") che si interfacciano con _Ollama_#super("G"), fornendo un'infrastruttura flessibile e scalabile per l'integrazione di modelli di AI e garantendo un'elaborazione efficiente e sicura delle analisi richieste.
+L'obiettivo del progetto è realizzare un plug-in per _Visual Studio Code_#super("G") che consenta di tracciare e verificare l'implementazione dei requisiti di progetto, basandosi su analisi automatizzate del codice sorgente e sui requisiti tecnici espressi in documenti di riferimento, mediante l'utilizzo di tecnologie avanzate come modelli LLM di _AI_#super("G"). Il plug-in sarà supportato da _API REST_#super("G") che si interfacciano con _Ollama_#super("G"), fornendo un'infrastruttura flessibile e scalabile per l'integrazione di modelli di AI e garantendo un'elaborazione efficiente e sicura delle analisi richieste.
 == Funzionalità del prodotto
-Il plug-in sarà utilizzato dal _programmatore_#super("G") per analizzare i requisiti implementati nel codice sorgente. Sia i requisiti che il codice saranno analizzati da vari modelli LLM reperibili attraverso la piattaforma di Ollama, grazie alle API REST che interagiscono con Ollama.\
+Il plug-in sarà utilizzato dal _programmatore_#super("G") per analizzare i requisiti implementati nel codice sorgente. Sia i requisiti che il codice saranno analizzati da vari modelli LLM reperibili attraverso la piattaforma di Ollama, grazie alle API REST che interagiscono con essa.\
 Le funzionalità implementate nell'applicazione includono:
 - Importazione del file dei requisiti in formato _CSV_#super("G");
-- Richiesta di _analisi dei requisiti_#super("G") tramite un modello LLM;
-- Valutazione qualitativa dei requisiti;
-- Visualizzazione grafica dei risultati dell'analisi;
+- Ricerca dell'implementazione dei requisiti nel codice sorgente tramite un modello di embedding.
+- _Analisi semantica_#super("G") dei requisiti tramite un modello LLM;
+- Analisi del codice sorgente per verificare l'implementazione dei requisiti tramite un modello LLM;
+- Valutazione qualitativa dei requisiti e del codice;
+- Visualizzazione dei risultati dell'analisi;
 - Filtraggio dei risultati dell'analisi;
 - Possibilità di eseguire l'analisi su un _requisito_#super("G") specifico;
+- Possibilità di cercare l'implementazione nel codice sorgente di un requisito specifico;
 - Esportazione dei risultati dell'analisi in formato CSV;
-- Ricerca dell'implementazione dei requisiti nel codice sorgente;
-- _Analisi semantica_#super("G") dei requisiti e del codice sorgente;
-- Suggerimenti per migliorare la qualità dei requisiti e del codice;
+- Fornire suggerimenti per migliorare la qualità dei requisiti e del codice;
+- Evidenziare problemi o anomalie nei requisiti o nel codice sorgente;
 - Possibilità di modificare il modello LLM che analizza i requisiti ed il codice;
 - Possibilità di modificare l'_endpoint_#super("G") di collegamento al server Ollama;
 - Possibilità di modificare la soglia di accettazione relativa alla qualità del codice.
@@ -71,11 +75,11 @@ Questa sezione si propone di identificare e descrivere i casi d'uso derivati dal
 L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore*, esso rappresenta un utente che utilizza il plug-in _Requirement Tracker - Visual Studio Code Plug-in_ per importare, analizzare e tracciare l'implementazione dei requisiti software all'interno del codice sorgente di un progetto.
 
 
-\
+#pagebreak()
 == UC_1 - Importazione dei requisiti
 
 #figure(
-  image("./img/AdR/UC1.png", width: 100%),
+  image("./img/AdR/UC_1.png", width: 100%),
   caption: [UC_1 - Importazione dei requisiti da file CSV]
 )
 \
@@ -91,11 +95,11 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - I requisiti vengono importati e sono visualizzabili nel sistema.
 
 *Scenario principale:*  
-1. L'utente seleziona l'opzione "Importa requisiti".
+1. L'utente seleziona l'opzione "Load Requirements".
 2. Il sistema apre un _file explorer_#super("G").
 3. L'utente seleziona il file CSV da importare [UC_1.1] 
 4. Il sistema verifica la validità del file e importa i dati (ID e testo di ogni requisito).
-5. I requisiti importati vengono mostrati in una vista strutturata [UC_6].
+5. I requisiti importati vengono mostrati in una vista strutturata [UC_5].
 
 *Estensioni:*
 - *UC_1.2 - Visualizzazione errore file* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
@@ -115,7 +119,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 1. Il sistema apre il file explorer.
 2. L'utente naviga tra le cartelle e individua il file CSV desiderato.
 3. L'utente seleziona il file CSV.
-4. Il sistema registra la scelta e procede con l'importazione scelta [UC_1] oppure [UC_2].
+4. Il sistema registra la scelta e procede con l'importazione ([UC_1] oppure [UC_2]).
 
 \
 == UC_1.2 - Visualizzazione errore file importazione
@@ -131,13 +135,13 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Scenario principale:*  
 1. Il sistema verifica il file e rileva che è malformato o non valido (per esempio: mancano le colonne ID e descrizione).
 2. L'importazione del file fallisce
-3. Il sistema mostra un messaggio di errore esplicativo e richiede di selezionare un file valido.
+3. Il sistema mostra un messaggio di errore esplicativo.
 
 #pagebreak()
 == UC_2 - Importazione dei requisiti con tracciamento
 
 #figure(
-  image("./img/AdR/UC2.png", width: 100%),
+  image("./img/AdR/UC_2.png", width: 100%),
   caption: [UC_2 - Importazione dei requisiti e del tracciamento da file CSV]
 )
 \
@@ -153,11 +157,11 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - I requisiti e le relative informazioni di tracciamento sono importate e visualizzabili nel sistema.
 
 *Scenario principale:*  
-1. L'utente seleziona l'opzione "Importa requisiti con tracciamento".
+1. L'utente seleziona l'opzione "Load Requirements".
 2. Il sistema apre un file explorer.
 3. L'utente seleziona il file CSV da importare [UC_1.1] 
 4. Il sistema verifica la validità del file e importa i dati (ID, testo, file, intervallo righe di ogni requisito).
-5. I requisiti importati vengono mostrati in una vista strutturata [UC_6].
+5. I requisiti importati vengono mostrati in una vista strutturata [UC_5].
 
 *Estensioni:*
 - *UC_1.2 - Visualizzazione errore file* : Se il file non rispetta il formato previsto o risulta malformato, il sistema notifica l'errore all'utente e richiede di selezionare un file corretto.
@@ -166,7 +170,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 == UC_3 - Analisi dei requisiti e dell'implementazione
 
 #figure(
-  image("./img/AdR/UC3.png", width: 102%),
+  image("./img/AdR/UC_3.png", width: 102%),
   caption: [UC_3 - Analisi dei requisiti e della loro implementazione]
 )
 \
@@ -177,15 +181,15 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Precondizioni:* 
 - I requisiti sono stati importati [UC_1] oppure [UC_2].
-- Il tracciamento dei requisiti nel codice è disponibile, ottenuto direttamente da [UC_2] oppure dopo [UC_11].
+- Il tracciamento di ogni requisito è disponibile, ottenuto direttamente da [UC_2] oppure dopo [UC_12] o [UC_13].
 - La connessione con le API REST di Ollama è attiva e disponibile.
 
 *Postcondizioni:*  
 - Il sistema fornisce una valutazione complessiva per ciascun requisito, integrando l'analisi semantica del testo e la verifica dell'implementazione nel codice.
 
 *Scenario principale:*  
-1. L'utente seleziona "Analisi requisiti".
-2. Il sistema verifica che siano disponibili sia i requisiti che il relativo tracciamento (da [UC_2] o [UC_11]).
+1. L'utente seleziona "Analyze Requirements".
+2. Il sistema verifica, per ogni requisito, che siano disponibili sia la descrizione che il relativo tracciamento (da [UC_2] o [UC_12] o [UC_13]).
 3. Il sistema estrae il testo di ciascun requisito e lo invia al modello LLM per l'analisi semantica.  
 4. Il modello LLM restituisce una valutazione del requisito e dei suggerimenti per migliorarne la chiarezza e la completezza. 
 5. Il sistema raccoglie le informazioni di tracciamento per ciascun requisito.
@@ -195,25 +199,25 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 9. Il sistema registra i dati e li rende disponibili per la visualizzazione ([UC_8]).
 
 *Estensioni:*  
-- *UC_3.1 - Visualizzazione errore tracciamento mancante*: Se il _mapping_#super("G") del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.  
+- *UC_3.1 - isualizzazione errore tracciamento non valido o mancante*: Se il _mapping_#super("G") del codice non è disponibile o non è valido, il sistema visualizza un messaggio d'errore specifico.  
 - *UC_3.2 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_3.3 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_3.4 - Visualizzazione errore codice sorgente non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente, il sistema mostra un messaggio di errore.
 
 \
-== UC_3.1 - Visualizzazione errore tracciamento mancante
+== UC_3.1 - Visualizzazione errore tracciamento non valido o mancante
 
 *Attore primario:* Programmatore.
 
 *Precondizioni:*  
-- Durante l'analisi [UC_3], il sistema rileva che il mapping (tracciamento del codice) non è disponibile.
+- Il sistema rileva che il mapping (tracciamento del codice) non è disponibile o non è valido.
 
 *Postcondizioni:*  
-- Il sistema visualizza un messaggio d'errore che informa l'utente dell'assenza del tracciamento.
+- Il sistema visualizza un messaggio d'errore che informa l'utente dell'assenza del tracciamento o della sua errata configurazione.
 
 *Scenario principale:*  
-1. Durante l'esecuzione di [UC_3], il sistema verifica la presenza del mapping.  
-2. Se il mapping risulta mancante, il sistema mostra un messaggio d'errore specifico.
+1. Il sistema verifica la presenza del mapping.  
+2. Se il mapping risulta mancante o non valido, il sistema mostra un messaggio d'errore specifico.
 
 \
 == UC_3.2 - Visualizzazione errore di connessione
@@ -257,17 +261,17 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - Il sistema informa l'utente della mancanza di codice.
 
 *Scenario principale:*  
-1. L'utente avvia la verifica dell'implementazione dei requisiti [UC_3].
+1. L'utente avvia l'analisi dei requisiti [UC_3].
 2. Il sistema verifica la presenza del codice sorgente.
 3. Il sistema rileva che non è configurato correttamente o non è presente.
 4. Il sistema mostra un messaggio di errore.
 
 
 \
-== UC_4 - Esportazione del tracciamento
+== UC_4 - Esportazione del tracciamento e dei risultati
 
 #figure(
-  image("./img/AdR/UC4.png", width: 80%),
+  image("./img/AdR/UC_4.png", width: 80%),
   caption: [UC_4 - Esportazione del tracciamento su file CSV]
 )
 \
@@ -276,20 +280,21 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Precondizioni:*  
 - I requisiti sono disponibili, importati da [UC_1] oppure [UC_2].  
-- È disponibile il tracciamento dei requisiti nel codice (ottenuto da [UC_2] oppure dopo [UC_11]).
 
 *Postcondizioni:*  
-- I requisiti ed il tracciamento vengono esportati correttamente in un file CSV nel percorso specificato dall'utente.
+- I requisiti, il tracciamento ed i risultati vengono esportati correttamente in un file CSV nel percorso specificato dall'utente.
 
 *Scenario principale:*
-1. L'utente seleziona la voce "Esporta tracciamento" nell'interfaccia di esportazione.
+1. L'utente seleziona la voce "Export Requirements".
 2. Il sistema apre un file explorer per la scelta del percorso di salvataggio.
 3. L'utente conferma il percorso e il nome del file.  
-4. Il sistema salva un file CSV contenente esclusivamente i requisiti ed i relativi dati di tracciamento.
+4. Il sistema salva un file CSV contenente:
+    - Tutti i requisiti importati (ID e testo)
+    - Lo stato e le informazioni di tracciamento (file e intervallo righe) per ogni requisito, se disponibili
+    - I risultati dell'analisi (valutazione e suggerimenti) per ogni requisito, se disponibili.
 
 *Estensioni:*
 - *UC_4.1 - Visualizzazione errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
-- *UC_4.2 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
 
 \
 == UC_4.1 - Visualizzazione errore di salvataggio
@@ -303,83 +308,22 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - Il sistema informa l'utente dell'errore e consente di riprovare o di selezionare un percorso alternativo.
 
 *Scenario principale:*  
-1. L'utente seleziona "Esporta risultati".  
+1. L'utente seleziona "Export Requirements".  
 2. Il sistema tenta di salvare il file CSV.  
 3. Si verifica un errore durante il salvataggio.  
 4. Il sistema mostra un messaggio d'errore e consente di riprovare.
 
 \
-== UC_4.2 - Visualizzazione errore tracciamento mancante
-
-*Attore primario:* Programmatore.
-
-*Precondizioni:*  
-- Durante l'esportazione [UC_4], il sistema rileva che il mapping (tracciamento del codice) non è disponibile.
-
-*Postcondizioni:*  
-- Il sistema visualizza un messaggio d'errore che informa l'utente dell'assenza del tracciamento.
-
-*Scenario principale:*  
-1. Durante l'esecuzione di [UC_4], il sistema verifica la presenza del mapping.  
-2. Se il mapping risulta mancante, il sistema mostra un messaggio d'errore specifico.
-
-\
-== UC_5 - Esportazione del tracciamento e dei risultati
+== UC_5 - Visualizzazione elenco requisiti
 
 #figure(
-  image("./img/AdR/UC5.png", width: 95%),
-  caption: [UC_5 - Esportazione del tracciamento e dei risultati su file CSV]
-)
-\
-
-*Attore primario:* Programmatore.
-
-*Precondizioni:*
-- I requisiti sono disponibili, importati da [UC_1] oppure [UC_2].  
-- Il tracciamento dei requisiti è disponibile (ottenuto da [UC_2] o da [UC_11]).  
-- I risultati dell'analisi sono stati generati [UC_3].
-
-*Postcondizioni:*
-- Il sistema esporta in un file CSV tutti i dati: requisiti, tracciamento e risultati dell'analisi.
-
-*Scenario principale:*
-1. L'utente seleziona la voce "Esporta tracciamento e risultati".  
-2. Il sistema apre un file explorer per la scelta del percorso di salvataggio.  
-3. L'utente conferma il percorso e il nome del file.  
-4. Il sistema salva un file CSV contenente i dati relativi ai requisiti, al mapping e ai risultati.
-
-*Estensioni:*
-- *UC_5.1 - Visualizzazione errore risultati non disponibili*: Se i risultati dell'analisi non sono disponibili, il sistema mostra un messaggio d'errore specifico.  
-- *UC_4.1 - Visualizzazione errore di salvataggio*: Se il salvataggio fallisce (es. permessi insufficienti o spazio esaurito), il sistema notifica l'errore all'utente e permette di riprovare.
-- *UC_4.2 - Visualizzazione errore tracciamento mancante*: Se il mapping del codice non è disponibile, il sistema visualizza un messaggio d'errore specifico.
-
-
-\
-== UC_5.1 - Visualizzazione errore risultati non disponibili
-
-*Attore primario:* Programmatore.
-
-*Precondizioni:*  
-- Durante l'esportazione del tracciamento e dei risultati [UC_5], il sistema rileva che i risultati non sono disponibili.
-
-*Postcondizioni:*  
-- Il sistema visualizza un messaggio d'errore che informa l'utente dell'assenza dei risultati.
-
-*Scenario principale:*  
-1. Durante l'esecuzione di [UC_5], il sistema verifica la presenza dei risultati dell'analisi.  
-2. Se i risultati sono mancanti, il sistema mostra un messaggio d'errore specifico.
-
-\
-== UC_6 - Visualizzazione elenco requisiti
-
-#figure(
-  image("./img/AdR/UC6.png", width: 70%),
-  caption: [UC_6 - Visualizzazione dell'elenco dei requisiti]
+  image("./img/AdR/UC_5.png", width: 70%),
+  caption: [UC_5 - Visualizzazione dell'elenco dei requisiti]
 )
 \
 #figure(
-  image("./img/AdR/UC6 Detail.png", width: 70%),
-  caption: [UC_6 - Dettaglio della visualizzazione elenco requisiti]
+  image("./img/AdR/UC_5 Detail.png", width: 70%),
+  caption: [UC_5 - Dettaglio della visualizzazione elenco requisiti]
 )
 \
 
@@ -393,14 +337,15 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Scenario principale:*  
 1. Il sistema visualizza una lista dei requisiti.
-2. L'utente può selezionare un requisito per visualizzarne il dettaglio [UC_7].
+2. L'utente può selezionare un requisito per visualizzarne il dettaglio [UC_7] oppure i risultati (se disponibili) [UC_8].
 
 \
-== UC_6.1 - Visualizzazione singolo requisito in elenco
+#pagebreak()
+== UC_5.1 - Visualizzazione singolo requisito in elenco
 
 #figure(
-  image("./img/AdR/UC6.1 Detail.png", width: 75%),
-  caption: [UC_6.1 - Visualizzazione singolo requisito in elenco]
+  image("./img/AdR/UC_5.1 Detail.png", width: 75%),
+  caption: [UC_5.1 - Visualizzazione singolo requisito in elenco]
 )
 \
 *Attore primario:* Programmatore.
@@ -409,18 +354,18 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - I requisiti sono stati importati (da [UC_1] oppure [UC_2]) e sono disponibili per la visualizzazione.
 
 *Postcondizioni:*
-- Il sistema mostra il proprio identificativo (ID) che, se premuto, permette la visualizzazione in dettaglio di tutte le informazioni relative al requisito [UC_7], e un icona che permette la ripetizione della funzione di analisi su quel singolo requisito.
+- Il sistema mostra il requisito in elenco con: ID, indicatore di stato e le icone per il tracciamento, analisi, approvazione e non conformità.
 
 *Scenario principale:*
-1. Il sistema visualizza il requisito nell'elenco, mostrandone l'identificativo (ID) e l'icona di ripetizione analisi.
+1. Il sistema visualizza il requisito nell'elenco, mostrandone l'identificativo (ID) e l'indicatore di stato. Inoltre, mostra le icone per il tracciamento, per l'analisi del singolo requisito, per l'approvazione del requisito e per la marcatura del requisito come "non conforme".
 
 \
-== UC_6.1.1 - Visualizzazione ID requisito
+== UC_5.1.1 - Visualizzazione ID requisito
 
 *Attore primario:* Programmatore.
 
 *Precondizioni:*  
-- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_6.1].
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
 
 *Postcondizioni:*  
 - Il sistema mostra il campo "ID" del requisito.
@@ -429,36 +374,223 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 1. Il sistema visualizza l'identificativo univoco del requisito.
 
 \
-== UC_6.1.2 - Visualizzazione icona ripetizione analisi
+== UC_5.1.2 - Visualizzazione indicatore di stato requisito
 
 *Attore primario:* Programmatore.
 
 *Precondizioni:*  
-- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_6.1].
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
 
 *Postcondizioni:*  
-- Il sistema mostra l'icona di una freccia, che permette di ripetere l'analisi del requisito [UC_10].
+- Il sistema mostra l'indicatore di stato del requisito.
 
 *Scenario principale:*  
-1. Il sistema visualizza l'icona di ripetizione analisi requisito.
+1. Il sistema visualizza un indicatore che comunica lo stato del requisito.
+
+*Generalizzazioni*
+- *UC_5.1.2.1 - Visualizzazione stato tracciato*: Se il requisito è stato tracciato ma non ancora analizzato, il sistema mostra un indicatore giallo.
+- *UC_5.1.2.2 - Visualizzazione stato conforme*: Se il requisito è stato analizzato ed il risultato globale è positivo, il sistema mostra un indicatore verde.
+- *UC_5.1.2.3 - Visualizzazione stato non conforme*: Se il requisito è stato analizzato ed il risultato globale è negativo, il sistema mostra un indicatore rosso.
+- *UC_5.1.2.4 - Visualizzazione stato approvato*: Se il requisito è stato analizzato ed il risultato è stato approvato dall'utente, il sistema mostra un indicatore blu.
+
+\
+== UC_5.1.2.1 - Visualizzazione stato tracciato
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*
+- Il sistema mostra l'indicatore di stato del requisito come "tracciato".
+
+*Scenario principale:*
+1. Il sistema visualizza un indicatore giallo per il requisito, che indica che è stato tracciato ma non ancora analizzato.
+
+\
+== UC_5.1.2.2 - Visualizzazione stato conforme
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*
+- Il sistema mostra l'indicatore di stato del requisito come "conforme".
+
+*Scenario principale:*
+1. Il sistema visualizza un indicatore verde per il requisito, che indica che è stato analizzato e il risultato globale è positivo.
+
+\
+== UC_5.1.2.3 - Visualizzazione stato non conforme
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*
+- Il sistema mostra l'indicatore di stato del requisito come "non conforme".
+
+*Scenario principale:*
+1. Il sistema visualizza un indicatore rosso per il requisito, che indica che è stato analizzato e il risultato globale è negativo.
+
+\
+== UC_5.1.2.4 - Visualizzazione stato approvato
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*
+- Il sistema mostra l'indicatore di stato del requisito come "approvato".
+
+*Scenario principale:*
+1. Il sistema visualizza un indicatore blu per il requisito, che indica che è stato analizzato e il risultato è stato approvato dall'utente.
+
+\
+== UC_5.1.3 - Visualizzazione icona tracciamento singolo requisito
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*  
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*  
+- Il sistema mostra l'icona di una lente di ingrandimento, che permette di tracciare un singolo requisito.
+
+*Scenario principale:*  
+1. Il sistema visualizza l'icona di tracciamento requisito che, se premuto, avvia la ricerca dell'implementazione del singolo requisito nel codice[UC_13].
+
+\
+== UC_5.1.4 - Visualizzazione icona analisi singolo requisito
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*  
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*  
+- Il sistema mostra l'icona di un triangolo, che permette di eseguire l'analisi del singolo requisito [UC_10].
+
+*Scenario principale:*  
+1. Il sistema visualizza l'icona di ripetizione analisi requisito che, se premuto, avvia l'analisi del singolo requisito [UC_10].
+
+\
+== UC_5.1.5 - Visualizzazione icona approvazione requisito
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*  
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*  
+- Il sistema mostra l'icona di una spunta, che permette di eseguire l'approvazione del requisito [UC_11.1].
+
+*Scenario principale:*  
+1. Il sistema visualizza l'icona di approvazione requisito che, se premuto, imposta lo stato del requisito come approvato [UC_11.1].
+
+\
+== UC_5.1.6 - Visualizzazione icona marcatura non conformità
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*  
+- Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_5.1].
+
+*Postcondizioni:*  
+- Il sistema mostra l'icona di una croce, che permette di marcare il requisito come non conforme [UC_11.2].
+
+*Scenario principale:*  
+1. Il sistema visualizza l'icona di marcatura non conformità che, se premuto, imposta lo stato del requisito come non conforme [UC_11.2].
+
+\
+== UC_6 - Ordinamento dei requisiti
+#figure(
+  image("./img/AdR/UC_6.png", width: 75%),
+  caption: [UC_6 - Ordinamento dell'elenco dei requisiti]
+)
+\
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- I requisiti sono stati importati (da [UC_1] o [UC_2]) ed è visualizzato l'elenco dei requisiti.
+
+*Postcondizioni:*
+- Il sistema mostra l'elenco dei requisiti ordinato in base al criterio selezionato.
+
+*Scenario principale:*
+1. L'utente seleziona il criterio di ordinamento desiderato (ID crescente, stato conforme, stato non conforme) per l'elenco dei requisiti.
+2. Il sistema ordina i requisiti in base al criterio selezionato e aggiorna la visualizzazione dell'elenco.
+
+*Generalizzazioni:*
+- *UC_6.1 - Ordinamento per ID crescente*: Il sistema ordina i requisiti in ordine crescente in base all'ID.
+- *UC_6.2 - Ordinamento per stato conforme*: Il sistema ordina i requisiti in base allo stato, mostrando prima quelli conformi e poi quelli non conformi.
+- *UC_6.3 - Ordinamento per stato non conforme*: Il sistema ordina i requisiti in base allo stato, mostrando prima quelli non conformi e poi quelli conformi.
+
+\
+== UC_6.1 - Ordinamento per ID crescente
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- I requisiti sono stati importati (da [UC_1] o [UC_2]) ed è visualizzato l'elenco dei requisiti.
+
+*Postcondizioni:*
+- Il sistema visualizza l'elenco dei requisiti ordinato in ordine crescente in base all'ID.
+
+*Scenario principale:*
+1. L'utente seleziona l'opzione di ordinamento per ID crescente.
+2. Il sistema ordina i requisiti in ordine crescente in base all'ID e aggiorna la visualizzazione dell'elenco.
+
+\
+== UC_6.2 - Ordinamento per stato conforme
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- I requisiti sono stati importati (da [UC_1] o [UC_2]) ed è visualizzato l'elenco dei requisiti.
+
+*Postcondizioni:*
+- Il sistema visualizza l'elenco dei requisiti ordinato in base allo stato, mostrando prima quelli conformi e poi quelli non conformi.
+
+*Scenario principale:*
+1. L'utente seleziona l'opzione di ordinamento per stato conforme.
+2. Il sistema ordina i requisiti in base allo stato, mostrando prima quelli conformi e poi quelli non conformi e aggiorna la visualizzazione dell'elenco.
+
+\
+== UC_6.3 - Ordinamento per stato non conforme
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- I requisiti sono stati importati (da [UC_1] o [UC_2]) ed è visualizzato l'elenco dei requisiti.
+
+*Postcondizioni:*
+- Il sistema visualizza l'elenco dei requisiti ordinato in base allo stato, mostrando prima quelli non conformi e poi quelli conformi.
+
+*Scenario principale:*
+1. L'utente seleziona l'opzione di ordinamento per stato non conforme.
+2. Il sistema ordina i requisiti in base allo stato, mostrando prima quelli non conformi e poi quelli conformi e aggiorna la visualizzazione dell'elenco.
 
 \
 == UC_7 - Visualizzazione dettaglio requisito
 
 #figure(
-  image("./img/AdR/UC7.png", width: 70%),
+  image("./img/AdR/UC_7.png", width: 60%),
   caption: [UC_7 - Visualizzazione dettaglio di un requisito]
 )
 \
 #figure(
-  image("./img/AdR/UC7 Detail.png", width: 78%),
+  image("./img/AdR/UC_7 Detail.png", width: 60%),
   caption: [UC_7 - Sottocaso d'uso della visualizzazione in dettaglio di un requisito]
 )
 \
 *Attore primario:* Programmatore.
 
 *Precondizioni:*  
-- L'utente ha premuto sul requisito in elenco, visualizzato in [UC_6.1].
+- L'utente ha premuto sul requisito in elenco, visualizzato in [UC_5.1].
 
 *Postcondizioni:*
 - Il sistema mostra il dettaglio completo del requisito, includendo:  
@@ -466,7 +598,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
   - (Opzionale) Se disponibili, le informazioni di tracciamento [UC_7.2], quali file sorgente e intervallo di righe.
 
 *Scenario principale:*
-1. L'utente preme sul requisito in elenco [UC_6.1].
+1. L'utente preme sul requisito in elenco [UC_5.1].
 2. Il sistema espande il sottomenu di dettaglio, visualizzando il testo descrittivo del requisito [UC_7.1].
 3. Se sono disponibili dati di tracciamento, il sistema visualizza anche il menu delle informazioni di tracciamento [UC_7.2].
 
@@ -488,7 +620,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 == UC_7.2 - Visualizzazione tracciamento requisito
 
 #figure(
-  image("./img/AdR/UC7.2 Detail.png", width: 80%),
+  image("./img/AdR/UC_7.2 Detail.png", width: 60%),
   caption: [UC_7.2 - Visualizzazione del tracciamento di un requisito]
 )
 \
@@ -496,17 +628,21 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 *Precondizioni:*  
 - Il requisito selezionato è espanso nella vista di dettaglio [UC_7].
-- Il requisito selezionato dispone di informazioni di tracciamento, importate da [UC_2] oppure generate da [UC_11].
+- Il requisito selezionato dispone di informazioni di tracciamento, importate da [UC_2] oppure generate da [UC_12] o [UC_13].
 
 *Postcondizioni:*  
 - Il sistema visualizza una menu di tracciamento espandibile che comprende i dettagli del tracciamento, quali file sorgente e intervallo di righe.
 
 *Scenario principale:* 
 1. Nella vista di dettaglio del requisito [UC_7], il sistema verifica la presenza di dati di tracciamento.  
-2. Se presenti, il sistema espande la sezione "Tracciamento" mostrando i dettagli attraverso i sottocasi [UC_7.2.1], [UC_7.2.2] e [UC_7.2.3].
+2. Se presenti, il sistema espande la sezione "Tracciamento" mostrando:
+  - Il percorso del file sorgente [UC_7.2.1].
+  - La riga di inizio dell'intervallo di codice [UC_7.2.2].
+  - La riga di fine dell'intervallo di codice [UC_7.2.3].
+  - Un icona per la modifica del tracciamento [UC_7.2.4].
 
 \
-== UC_7.2.1 - Visualizzazione nome file
+== UC_7.2.1 - Visualizzazione percorso file
 
 *Attore primario:* Programmatore.
 
@@ -514,10 +650,10 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_7.2].
 
 *Postcondizioni:*  
-- Il sistema mostra il campo "Nome File" relativo al file che contiene il codice relativo all'implementazione del requisito.
+- Il sistema mostra il percorso relativo al file che contiene il codice relativo all'implementazione del requisito.
 
 *Scenario principale:*  
-1. Il sistema visualizza il nome del file associato al tracciamento del requisito.
+1. Il sistema visualizza il percorso, incluso il nome e l'estensione, del file associato al tracciamento del requisito.
 
 \
 == UC_7.2.2 - Visualizzazione riga inizio
@@ -548,15 +684,32 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 1. Il sistema visualizza la riga di fine dell'intervallo di tracciamento del requisito.
 
 \
+
+== UC_7.2.4 - Visualizzazione icona modifica tracciamento
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*  
+- La sezione "Tracciamento" del requisito è disponibile ed espansa [UC_7.2].
+
+*Postcondizioni:*  
+- Il sistema mostra l'icona di modifica del tracciamento, che consente di modificare le informazioni di tracciamento del requisito.
+
+*Scenario principale:*  
+1. Il sistema visualizza la riga di fine dell'intervallo di tracciamento del requisito.
+2. Se l'icona di modifica viene premuta, il sistema apre un menu di modifica del tracciamento [UC_14].
+
+\
+#pagebreak()
 == UC_8 - Visualizzazione risultati requisito
 
 #figure(
-  image("./img/AdR/UC8.png", width: 75%),
+  image("./img/AdR/UC_8.png", width: 60%),
   caption: [UC_8 - Visualizzazione dei risultati di un requisito]
 )
 \
 #figure(
-  image("./img/AdR/UC8 Detail.png", width: 99%),
+  image("./img/AdR/UC_8 Detail.png", width: 90%),
   caption: [UC_8 - Dettaglio della visualizzazione dei risultati di un requisito]
 )
 \
@@ -572,14 +725,14 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Scenario principale:*  
 1. L'utente seleziona la voce relativa alla visualizzazione del risultato.
 2. Il sistema espande la visualizzazione dei risultati che mostra:
-  - [UC_8.1] Stato di conformità (_passed_/_not passed_).  
+  - [UC_8.1] Risultato globale (_passed_/_not passed_).  
   - [UC_8.2] Valutazione del requisito in centesimi (0-100).
   - [UC_8.3] Valutazione dell'aderenza del codice in centesimi (0-100).
   - [UC_8.4] Lista dei suggerimenti generati.
   - [UC_8.5] Lista dei problemi riscontrati.
 
 \
-== UC_8.1 - Visualizzazione stato di conformità
+== UC_8.1 - Visualizzazione risultato globale
 
 *Attore primario:* Programmatore.
 
@@ -588,44 +741,46 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - Il menu ad albero relativo alla visualizzazione dei risultati è stato espanso [UC_8].
 
 *Postcondizioni:*  
-- Viene visualizzato lo stato "_passed_" se il requisito è corretto semanticamente e la sua implementazione nel codice soddisfa il requisito, "_not passed_" altrimenti.
+- Viene visualizzato lo stato "_Global result: passed_" se il requisito è corretto semanticamente e la sua implementazione nel codice soddisfa il requisito, "_Global result: not passed_" altrimenti.
 
 *Scenario principale:*  
-1. Il sistema mostra, per ogni requisito, lo stato di conformità basato sui punteggi ottenuti:
-    - Se il risultato è _passed_, visualizza lo stato conforme [UC_8.1.1]
-    - Se il risultato è _not-passed_, visualizza lo stato non conforme [UC_8.1.2]
+1. Il sistema mostra una valutazione globale basata sui punteggi del requisito e del codice ottenuti durante l'analisi.
+
+*Generalizzazioni:*
+- *UC_8.1.1 - Visualizzazione risultato conforme*: Il sistema mostra il risultato globale come "_passed_".
+- *UC_8.1.2 - Visualizzazione risultato non conforme*: Il sistema mostra il risultato globale come "_not passed_".
 
 \
-== UC_8.1.1 - Visualizzazione stato conforme
+== UC_8.1.1 - Visualizzazione risultato conforme
 
 *Attore primario:* Programmatore.
 
 *Precondizioni:*
 - I risultati dell'analisi sono stati generati [UC_3].
 - Il menu ad albero relativo alla visualizzazione dei risultati è stato espanso [UC_8].
-- Il requisito e il codice sono stati valutati come conformi.
+- Il requisito è stato valutato positivamente sia dall'analisi semantica che dall'analisi dell'implementazione nel codice.
 
 *Postcondizioni:*
-- Il sistema mostra lo stato di conformità del requisito.
+- Il sistema mostra lo il risultato conforme del requisito.
 
 *Scenario principale:*
-1. Il sistema visualizza lo stato di conformità come "_passed_".
+1. Il sistema visualizza lo stato di conformità come "_Global result: passed_".
 
 \
-== UC_8.1.2 - Visualizzazione stato non conforme
+== UC_8.1.2 - Visualizzazione risultato non conforme
 
 *Attore primario:* Programmatore.
 
 *Precondizioni:*
 - I risultati dell'analisi sono stati generati [UC_3].
 - Il menu ad albero relativo alla visualizzazione dei risultati è stato espanso [UC_8].
-- Il requisito e il codice sono stati valutati come non conformi.
+- Il requisito è stato valutato negativamente sia dall'analisi semantica che dall'analisi dell'implementazione nel codice.
 
 *Postcondizioni:*
-- Il sistema mostra lo stato di non conformità del requisito.
+- Il sistema mostra lo il risultato non conforme del requisito.
 
 *Scenario principale:*
-1. Il sistema visualizza lo stato di conformità come "_not passed_".
+1. Il sistema visualizza lo stato di conformità come "_Global result: not passed_".
 
 \
 == UC_8.2 - Visualizzazione valutazione requisito
@@ -661,7 +816,7 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 == UC_8.4 - Visualizzazione lista suggerimenti
 
 #figure(
-  image("./img/AdR/UC8.4 Detail.png", width: 75%),
+  image("./img/AdR/UC_8.4 Detail.png", width: 75%),
   caption: [UC_8.4 - Visualizzazione lista dei suggerimenti]
 )
 \
@@ -680,7 +835,11 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 \
 == UC_8.4.1 - Visualizzazione singolo suggerimento
-
+#figure(
+  image("./img/AdR/UC_8.4.1 Detail.png", width: 60%),
+  caption: [UC_8.4.1 - Dettaglio sulla visualizzazione del singolo suggerimento]
+)
+\
 *Attore primario:* Programmatore.
 
 *Precondizioni:*
@@ -694,10 +853,38 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 1. Il sistema visualizza il singolo suggerimento, che può essere un suggerimento di miglioramento del requisito o del codice.
 
 \
+== UC_8.4.1.1 - Visualizzazione numero suggerimento
+
+*Precondizioni:*
+- Il suggerimento selezionato è stato generato durante l'analisi [UC_3].
+- Il menu ad albero relativo alla visualizzazione dei suggerimenti è stato aperto [UC_8.4].
+
+*Postcondizioni:*
+- Il sistema mostra il numero progressivo del suggerimento.
+
+*Scenario principale:*
+1. Il sistema visualizza il numero progressivo del suggerimento, che può essere un suggerimento di miglioramento del requisito o del codice.
+
+\
+== UC_8.4.1.2 - Visualizzazione testo suggerimento
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il suggerimento selezionato è stato generato durante l'analisi [UC_3].
+- Il menu ad albero relativo alla visualizzazione dei suggerimenti è stato aperto [UC_8.4].
+
+*Postcondizioni:*
+- Il sistema mostra il testo del suggerimento.
+
+*Scenario principale:*
+1. Il sistema visualizza il testo descrittivo del suggerimento, che può essere un suggerimento di miglioramento del requisito o del codice.
+
+\
 == UC_8.5 - Visualizzazione lista problemi
 
 #figure(
-  image("./img/AdR/UC8.5 Detail.png", width: 75%),
+  image("./img/AdR/UC_8.5 Detail.png", width: 65%),
   caption: [UC_8.5- Visualizzazione lista dei problemi]
 )
 \
@@ -716,6 +903,11 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 
 \
 == UC_8.5.1 - Visualizzazione singolo problema
+#figure(
+  image("./img/AdR/UC_8.5.1 Detail.png", width: 70%),
+  caption: [UC_8.5.1 - Dettaglio sulla visualizzazione del singolo problema]
+)
+\
 
 *Attore primario:* Programmatore.
 
@@ -729,31 +921,108 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Scenario principale:*
 1. Il sistema visualizza il singolo problema, che può essere un problema di implementazione o di coerenza del requisito.
 
-#pagebreak()
+\
+== UC_8.5.1.1 - Visualizzazione numero problema
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il problema selezionato è stato generato durante l'analisi [UC_3].
+- Il menu ad albero relativo alla visualizzazione dei problemi è stato aperto [UC_8.5].
+
+*Postcondizioni:*
+- Il sistema mostra il numero progressivo del problema.
+
+\
+== UC_8.5.1.2 - Visualizzazione testo problema
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il problema è stato generato durante l'analisi [UC_3].
+- Il menu ad albero relativo alla visualizzazione dei problemi è stato aperto [UC_8.5].
+
+*Postcondizioni:*
+- Il sistema mostra il testo del problema.
+
+*Scenario principale:*
+1. Il sistema visualizza il testo descrittivo del problema, che può essere un problema di implementazione o di coerenza del requisito.
+
+
 == UC_9 - Filtraggio dei requisiti
 
 #figure(
-  image("./img/AdR/UC9.png", width: 75%),
+  image("./img/AdR/UC_9.png", width: 75%),
   caption: [UC9 - Filtraggio dei requisiti]
 )
 \
 *Attore primario:* Programmatore.
 
 *Precondizioni:*  
-- I requisiti importati sono visualizzati [UC_6].
+- I requisiti importati sono visualizzati [UC_5].
 
 *Postcondizioni:*  
-- I risultati vengono filtrati in base ai campi _ID_, _descrizione_,_file sorgente_ .
+- I risultati vengono filtrati in base al campo di ricerca inserito dall'utente.
+- Il sistema mostra la lista dei requisiti filtrati in base al campo di ricerca.
 
 *Scenario principale:*  
-1. L'utente inserisce il testo da ricercare tramite la barra di ricerca.  
-2. Il sistema filtra la lista dei requisiti in base al campo inserito.  
-3. Il sistema visualizza la lista dei requisiti filtrati.
+1. L'utente inserisce un testo nel campo di ricerca.
+2. Il sistema filtra i requisiti in base al testo inserito e mostra solo quelli che corrispondono al filtro.
+
+*Generalizzazioni:*
+- *UC_9.1 - Filtraggio per ID*: Il sistema filtra i requisiti in base all'ID.
+- *UC_9.2 - Filtraggio per descrizione*: Il sistema filtra i requisiti in base alla descrizione.
+- *UC_9.3 - Filtraggio per file tracciamento*: Il sistema filtra i requisiti in base al file sorgente del tracciamento.
+
+\
+== UC_9.1 - Filtraggio per ID
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- I requisiti importati sono visualizzati [UC_5].
+
+*Postcondizioni:*
+- Il sistema mostra la lista dei requisiti filtrati in base all'ID.
+
+*Scenario principale:*
+1. L'utente inserisce un ID nel campo di ricerca.
+2. Il sistema filtra i requisiti in base all'ID inserito e mostra solo quelli che corrispondono al filtro.
+
+\
+== UC_9.2 - Filtraggio per descrizione
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- I requisiti importati sono visualizzati [UC_5].
+
+*Postcondizioni:*
+- Il sistema mostra la lista dei requisiti filtrati in base alla descrizione.
+
+*Scenario principale:*
+1. L'utente inserisce una parte della descrizione nel campo di ricerca.
+2. Il sistema filtra i requisiti in base alla descrizione inserita e mostra solo quelli che corrispondono al filtro.
+
+\
+== UC_9.3 - Filtraggio per file tracciamento
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- I requisiti importati sono visualizzati [UC_5].
+
+*Postcondizioni:*
+- Il sistema mostra la lista dei requisiti filtrati in base al file sorgente del tracciamento.
+
+*Scenario principale:*
+1. L'utente inserisce il nome del file sorgente nel campo di ricerca.
+2. Il sistema filtra i requisiti in base al file sorgente inserito e mostra solo quelli che corrispondono al filtro.
 
 \
 == UC_10 - Analisi di un singolo requisito
 #figure(
-  image("./img/AdR/UC10.png", width: 100%),
+  image("./img/AdR/UC_10.png", width: 100%),
   caption: [UC_10 - Analisi di un singolo requisito]
 )
 \
@@ -762,26 +1031,88 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Attore secondario*: Modello LLM.
 
 *Precondizioni:*
-- Il requisito è visualizzato nell'elenco dei requisiti [UC_6].
-- È stata selezionata la funzione di ripetizione dell'analisi
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- È stata selezionata la funzione di ripetizione dell'analisi [UC_5.1.4].
 
 *Postcondizioni:*  
-- Viene fornita una nuova valutazione per il requisito selezionato.  
+- Viene fornita una nuova valutazione per il requisito selezionato.
 
 *Scenario principale:*  
-1. L'utente clicca sull'icona relativa alla funzione di ripetizione analisi, inserita nella riga del singolo requisito in elenco [UC_6.1.2].
+1. L'utente clicca sull'icona relativa alla funzione di ripetizione analisi [UC_5.1.4], inserita nella riga del singolo requisito in elenco [UC_5.1].
 2. Il sistema invia il requisito ed il relativo codice al modello LLM per una nuova analisi, analogamente ad [UC_3].
 3. I risultati aggiornati vengono registrati e visualizzati per il requisito selezionato [UC_8].
 
-*Estensioni:*  
+*Estensioni:*
+- *UC_3.1 - isualizzazione errore tracciamento non valido o mancante*: Se il _mapping_#super("G") del codice non è disponibile o non è valido, il sistema visualizza un messaggio d'errore specifico.  
 - *UC_3.2 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_3.3 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 
 \
-== UC_11 - Tracciamento dei requisiti nel codice
+== UC_11 - Gestione di un requisito
 #figure(
-  image("./img/AdR/UC11.png", width: 100%),
-  caption: [UC_11 - Funzione di tracciamento dei requisiti]
+  image("./img/AdR/UC_11.png", width: 65%),
+  caption: [UC_11 - Gestione dello stato di un requisito]
+)
+\
+#figure(
+  image("./img/AdR/UC_11 Detail.png", width: 60%),
+  caption: [UC_11 - Dettaglio sulla gestione dello stato di un requisito]
+)
+\
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- Il requisito è stato tracciato tramite [UC_12] o [UC_13].
+
+*Postcondizioni:*
+- Il requisito selezionato è stato approvato o marcato come non conforme.
+
+*Scenario principale:*
+1. L'utente seleziona l'icona di approvazione del requisito [UC_5.1.5] o l'icona di marcatura non conformità [UC_5.1.6].
+2. Il sistema aggiorna lo stato del requisito in base all'azione selezionata.
+3. Il sistema mostra il requisito aggiornato nell'elenco dei requisiti [UC_5].
+
+\
+== UC_11.1 - Approvazione di un requisito
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- Il requisito è stato tracciato tramite [UC_12] o [UC_13].
+
+*Postcondizioni:*
+- Il requisito selezionato è stato approvato e il suo stato è aggiornato di conseguenza.
+
+*Scenario principale:*
+1. L'utente seleziona l'icona di approvazione del requisito [UC_5.1.5].
+2. Il sistema aggiorna lo stato del requisito come approvato.
+3. Il sistema mostra il requisito aggiornato nell'elenco dei requisiti [UC_5].
+
+\
+== UC_11.2 - Marcatura di un requisito come non conforme
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- Il requisito è stato tracciato tramite [UC_12] o [UC_13].
+
+*Postcondizioni:*
+- Il requisito selezionato è stato marcato come non conforme e il suo stato è aggiornato di conseguenza.
+
+*Scenario principale:*
+1. L'utente seleziona l'icona di marcatura non conformità del requisito [UC_5.1.6].
+2. Il sistema aggiorna lo stato del requisito come non conforme.
+3. Il sistema mostra il requisito aggiornato nell'elenco dei requisiti [UC_5].
+
+\
+== UC_12 - Tracciamento dei requisiti nel codice
+#figure(
+  image("./img/AdR/UC_12.png", width: 100%),
+  caption: [UC_12 - Funzione di tracciamento dei requisiti]
 )
 \
 *Attore primario:* Programmatore.
@@ -789,30 +1120,148 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 *Attore secondario:* Modello LLM.
 
 *Precondizioni:*  
-- I requisiti sono stati importati senza informazioni di tracciamento [UC_1].
+- I requisiti sono stati importati (da [UC_1] o [UC_2]) ed è visualizzato l'elenco dei requisiti [UC_5].
 - È disponibile il codice sorgente nel progetto.
 
 *Postcondizioni:*  
-- Il sistema esegue una ricerca nel codice sorgente per associare, a ciascun requisito, la porzione di codice che lo implementa.
+- Il sistema esegue una ricerca nel codice sorgente per associare, a ciascun requisito, la porzione di codice che più verosimilmente lo implementa.
 - Il tracciamento ottenuto viene registrato e reso disponibile nella vista dei requisiti [UC_7.2].
 
 *Scenario principale:*  
-1. L'utente, notando l'assenza del tracciamento, seleziona l'opzione "Tracciamento dei requisiti".
-2. Il sistema invia il codice ed i requisiti al modello LLM per la mappatura.  
-3. Il modello confronta il contenuto del codice con i requisiti inviati e individua le porzioni che li implementano.
-4. Il modello restituisce una possibile mappatura del codice, che include il nome del file e l'intervallo di righe, per ogni requisito.
-5. Il mapping risultante viene registrato e visualizzato insieme ai requisiti.
+1. L'utente, notando l'assenza del tracciamento, seleziona l'opzione "Implementation Analysis".
+2. Il sistema invia il codice ed i requisiti al modello di embedding per la mappatura.
+3. Il modello analizza il codice sorgente e i requisiti, restituendo una mappatura del codice che include il nome del file e l'intervallo di righe per ogni requisito.
+4. Il sistema registra il tracciamento e lo visualizza nella sezione "Tracciamento" del requisito [UC_7.2].
 
-*Estensioni:*  
+*Estensioni:*
 - *UC_3.2 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_3.3 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_3.4 - Visualizzazione errore codice non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente.
 
 \
-== UC_12 - Configurazione dei path da ignorare
+#pagebreak()
+== UC_13 - Tracciamento di un singolo requisito
 #figure(
-  image("./img/AdR/UC12.png", width: 75%),
-  caption: [UC_12 - Configurazione dei path da ignorare]
+  image("./img/AdR/UC_13.png", width: 90%),
+  caption: [UC_13 - Ricerca del tracciamento nel codice di un singolo requisito]
+)
+\
+
+*Attore primario:* Programmatore.
+
+*Attore secondario:* Modello LLM.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+
+*Postcondizioni:*
+- Il requisito selezionato è stato tracciato nel codice e il suo stato è aggiornato di conseguenza.
+
+*Scenario principale:*
+1. L'utente seleziona l'icona di tracciamento del singolo requisito (lente di ingrandimento).
+2. Il sistema invia il requisito al modello di embedding per il tracciamento.
+3. Il modello restituisce il tracciamento del requisito, che include il nome del file e l'intervallo di righe.
+4. Il sistema registra il tracciamento e aggiorna lo stato del requisito come tracciato.
+
+*Estensioni:*
+- *UC_3.2 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
+- *UC_3.3 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
+- *UC_3.4 - Visualizzazione errore codice non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente.
+
+\
+== UC_14 - Impostazione manuale del tracciamento
+#figure(
+  image("./img/AdR/UC_14.png", width: 65%),
+  caption: [UC_14 - Configurazione manuale delle informazioni di tracciamento]
+)
+\
+#figure(
+  image("./img/AdR/UC_14 Detail.png", width: 65%),
+  caption: [UC_14 - Dettaglio sulle informazioni di tracciamento modificabili]
+)
+\
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- Il requisito è stato tracciato automaticamente ed il tracciamento è disponibile ([UC_12] o [UC_13]).
+
+*Postcondizioni:*
+- Le informazioni di tracciamento del requisito sono state aggiornate manualmente.
+- Il sistema mostra il tracciamento aggiornato del requisito.
+
+*Scenario principale:*
+1. L'utente entra nel menu di visualizzazione del dettaglio del requisito [UC_7].
+2. L'utente espande il menu di tracciamento del requisito [UC_7.2].
+3. Il sistema mostra le informazioni di tracciamento, inclusi il percorso del file e l'intervallo di righe.
+4. L'utente seleziona l'icona di modifica del tracciamento [UC_7.2.4].
+5. Il sistema chiede all'utente di inserire manualmente il percorso del file [UC_14.1] e l'intervallo di righe ([UC_14.2] e [UC_14.3]).
+6. L'utente inserisce le informazioni di tracciamento manualmente.
+7. Il sistema aggiorna le informazioni di tracciamento del requisito e mostra il tracciamento aggiornato.
+
+\
+== UC_14.1 - Inserimento percorso file
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- Il requisito è stato tracciato automaticamente ed il tracciamento è disponibile ([UC_12] o [UC_13]).
+- Il menu di tracciamento del requisito è stato espanso [UC_7.2].
+- L'interfaccia di modifica del tracciamento è stata aperta [UC_14].
+
+*Postcondizioni:*
+- Il sistema registra il percorso del file con quello inserito dall'utente.
+
+*Scenario principale:*
+1. Il sistema mostra il campo di input per il percorso del file.
+2. L'utente inserisce il percorso del file sorgente che implementa il requisito, incluso il nome del file e la sua estensione.
+3. Il sistema registra il percorso del file e lo mostra nel menu di tracciamento del requisito.
+
+\
+== UC_14.2 - Inserimento riga inizio
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- Il requisito è stato tracciato automaticamente ed il tracciamento è disponibile ([UC_12] o [UC_13]).
+- Il menu di tracciamento del requisito è stato espanso [UC_7.2].
+- L'interfaccia di modifica del tracciamento è stata aperta [UC_14].
+
+*Postcondizioni:*
+- Il sistema aggiorna la riga di inizio con quella inserita dall'utente.
+
+*Scenario principale:*
+1. Il sistema mostra il campo di input per la riga di inizio.
+2. L'utente inserisce la riga di inizio dell'intervallo di righe del file sorgente che implementa il requisito.
+3. Il sistema registra la riga di inizio e la mostra nel menu di tracciamento del requisito.
+
+\
+== UC_14.3 - Inserimento riga fine
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il requisito è visualizzato nell'elenco dei requisiti [UC_5].
+- Il requisito è stato tracciato automaticamente ed il tracciamento è disponibile ([UC_12] o [UC_13]).
+- Il menu di tracciamento del requisito è stato espanso [UC_7.2].
+- L'interfaccia di modifica del tracciamento è stata aperta [UC_14].
+
+*Postcondizioni:*
+- Il sistema aggiorna la riga di fine con quella inserita dall'utente.
+
+*Scenario principale:*
+1. Il sistema mostra il campo di input per la riga di fine.
+2. L'utente inserisce la riga di fine dell'intervallo di righe del file sorgente che implementa il requisito.
+3. Il sistema registra la riga di fine e la mostra nel menu di tracciamento del requisito.
+
+\
+#pagebreak()
+== UC_15 - Configurazione dei path da ignorare
+#figure(
+  image("./img/AdR/UC_15.png", width: 70%),
+  caption: [UC_15 - Configurazione dei path da ignorare]
 )
 \
 *Attore primario:* Programmatore.  
@@ -822,20 +1271,20 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - Il plug-in è attivo e funzionante.  
 
 *Postcondizioni:*  
-- I path specificati nel file .reqignore vengono esclusi dall'analisi [UC_3] e dal tracciamento dei requisiti [UC_11].  
+- I path specificati nel file .reqignore vengono esclusi dall'analisi e dal tracciamento.
 
 *Scenario principale:*  
 1. L'utente crea o modifica un file .reqignore nel progetto.  
 2. L'utente inserisce nel file .reqignore i path o _pattern_#super("G") relativi ai file o directory da escludere.  
 3. Il sistema rileva automaticamente le modifiche apportate al file .reqignore.  
-4. Durante la l'analisi [UC_3] ed il tracciamento [UC_11], il sistema esclude i path specificati nel file .reqignore.  
+4. Durante l'analisi ([UC_3] o [UC_10]) ed il tracciamento ([UC_12] o [UC_13]), il sistema esclude i path specificati nel file .reqignore.  
 5. L'utente avvia l'analisi o il tracciamento e i path ignorati non vengono considerati.  
 
 *Estensioni:*  
-- *UC_12.1 - Visualizzazione errore path non valido*: Se il path specificato non è valido, il sistema notifica l'utente e ignora l'_entry_#super("G") errata mantenendo valide le altre.  
+- *UC_15.1 - Visualizzazione errore path non valido*: Se il path specificato non è valido, il sistema notifica l'utente e ignora l'_entry_#super("G") errata mantenendo valide le altre.  
 
 \
-== UC_12.1 - Visualizzazione errore path non valido
+== UC_15.1 - Visualizzazione errore path non valido
 
 *Attore primario:* Programmatore.
 
@@ -852,11 +1301,11 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 4. Il sistema ignora l'entry non valida e considera solo i path configurati correttamente.
 
 \
-== UC_13 - Configurazione del modello LLM
+== UC_16 - Configurazione del modello
 
 #figure(
-  image("./img/AdR/UC13.png", width: 70%),
-  caption: [UC_13 - Configurazione del modello LLM per l'analisi]
+  image("./img/AdR/UC_16.png", width: 85%),
+  caption: [UC_16 - Configurazione del modello LLM per l'analisi]
 )
 \
 *Attore primario:* Programmatore.
@@ -866,21 +1315,86 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 - L'utente ha accesso alle impostazioni di Visual Studio Code nel menu "Extensions".
 
 *Postcondizioni:*  
-- Il modello LLM configurato viene salvato e verrà utilizzato dal plug-in per le analisi dei requisiti e del codice [UC_3].
+- Il modello LLM configurato viene salvato e verrà utilizzato dal plug-in per le analisi ([UC_3] e [UC_10]) o per il tracciamento ([UC_12] e [UC_13]).
 
 *Scenario principale:*
 1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
-3. All'interno delle impostazioni del plug-in, l'utente seleziona il campo affianco la voce "Model".  
-4. L'utente inserisce il nome del modello LLM desiderato (es. "llama3.2:3b" o "deepseek-coder:7b").  
-5. Il sistema salva la configurazione e la utilizza per le analisi successive.
+3. All'interno delle impostazioni del plug-in, l'utente seleziona il campo che vuole modificare tra:
+- Implementation Model: il modello di embedding per il tracciamento del codice.
+- Requirement Model: il modello LLM per l'analisi semantica del requisito.
+- Code Model: il modello LLM per l'analisi del codice sorgente.
+4. L'utente inserisce il nome del modello desiderato (es. "llama3.2:3b" o "deepseek-coder:7b").  
+5. Il sistema salva la configurazione e la utilizza per le operazioni successive.
+
+*Generalizzazioni:*
+- *UC_16.1 - Configurazione del modello per il tracciamento*: L'utente seleziona il modello di embedding per il tracciamento del codice.
+- *UC_16.2 - Configurazione del modello per l'analisi semantica*: L'utente seleziona il modello LLM per l'analisi semantica del requisito.
+- *UC_16.3 - Configurazione del modello per l'analisi del codice*: L'utente seleziona il modello LLM per l'analisi del codice sorgente.
 
 \
-== UC_14 - Configurazione dell'endpoint del server Ollama
+== UC_16.1 - Configurazione del modello per il tracciamento
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.
+- L'utente ha accesso alle impostazioni di Visual Studio Code nel menu "Extensions".
+
+*Postcondizioni:*
+- Il modello di embedding per il tracciamento del codice viene salvato e verrà utilizzato dal plug-in per il tracciamento dei requisiti([UC_12] e [UC_13]).
+
+*Scenario principale:*
+1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".
+2. L'utente individua il plug-in "Requirement Tracker Plug-in".
+3. All'interno delle impostazioni del plug-in, l'utente seleziona il campo "Implementation Model".
+4. L'utente inserisce il nome del modello di embedding desiderato (es. "mxbai-embed-large:latest").
+5. Il sistema salva la configurazione e la utilizza per il tracciamento del codice.
+
+\
+== UC_16.2 - Configurazione del modello per l'analisi semantica
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.
+- L'utente ha accesso alle impostazioni di Visual Studio Code nel menu "Extensions".
+
+*Postcondizioni:*
+- Il modello LLM per l'analisi semantica del requisito viene salvato e verrà utilizzato dal plug-in per l'analisi semantica ([UC_3] e [UC_10]).
+
+*Scenario principale:*
+1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".
+2. L'utente individua il plug-in "Requirement Tracker Plug-in".
+3. All'interno delle impostazioni del plug-in, l'utente seleziona il campo "Requirement Model".
+4. L'utente inserisce il nome del modello LLM desiderato (es. "llama3.2:3b").
+5. Il sistema salva la configurazione e la utilizza per l'analisi semantica del requisito.
+
+\
+== UC_16.3 - Configurazione del modello per l'analisi del codice
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*
+- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.
+- L'utente ha accesso alle impostazioni di Visual Studio Code nel menu "Extensions".
+
+*Postcondizioni:*
+- Il modello LLM per l'analisi del codice viene salvato e verrà utilizzato dal plug-in per l'analisi del codice sorgente ([UC_3] e [UC_10]).
+
+*Scenario principale:*
+1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".
+2. L'utente individua il plug-in "Requirement Tracker Plug-in".
+3. All'interno delle impostazioni del plug-in, l'utente seleziona il campo "Code Model".
+4. L'utente inserisce il nome del modello LLM desiderato (es. "deepseek-coder:7b").
+5. Il sistema salva la configurazione e la utilizza per l'analisi del codice sorgente.
+
+\
+== UC_17 - Configurazione dell'endpoint del server Ollama
 
 #figure(
-  image("./img/AdR/UC14.png", width: 70%),
-  caption: [UC_14 - Configurazione dell'endpoint di Ollama]
+  image("./img/AdR/UC_17.png", width: 70%),
+  caption: [UC_17 - Configurazione dell'endpoint di Ollama]
 )
 \
 *Attore primario:* Programmatore.
@@ -900,11 +1414,12 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 5. Il sistema salva l'endpoint e lo utilizza per le chiamate API durante le analisi.
 
 \
-== UC_15 - Configurazione della soglia di conformità
+#pagebreak()
+== UC_18 - Configurazione della soglia di conformità
 
 #figure(
-  image("./img/AdR/UC15.png", width: 75%),
-  caption: [UC_15 - Configurazione della soglia del quality score]
+  image("./img/AdR/UC_18.png", width: 70%),
+  caption: [UC_18 - Configurazione della soglia del quality score]
 )
 \
 *Attore primario:* Programmatore.
@@ -924,15 +1439,15 @@ L'applicazione è progettata con un unico _attore_#super("G"), il *Programmatore
 5. Il sistema salva la soglia e la utilizza per valutare i risultati dell'analisi dei requisiti.
 
 *Estensioni:*
-- *UC_15.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
+- *UC_18.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
 
 \
-== UC_15.1 - Visualizzazione errore valore soglia non valido
+== UC_18.1 - Visualizzazione errore valore soglia non valido
 
 *Attore primario:* Programmatore.
 
 *Precondizioni:*  
-- Durante la configurazione della soglia di conformità in [UC_15], l'utente inserisce un valore non numerico o un valore che non rientra nei limiti previsti.
+- Durante la configurazione della soglia di conformità in [UC_18], l'utente inserisce un valore non numerico o un valore che non rientra nei limiti previsti.
 
 *Postcondizioni:*
 - Il sistema visualizza un messaggio d'errore che informa l'utente dell'inserimento non valido e richiede la correzione del valore.
