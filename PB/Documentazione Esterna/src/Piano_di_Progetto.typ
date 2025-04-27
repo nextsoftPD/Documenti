@@ -11,6 +11,7 @@
   version: "1.1.1",
   date: "23/11/2024",
   versionamento: (
+    "1.2.0", "08/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "",
     "1.1.1", "08/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "",
     "1.1.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "Malik Giafar Mohamed",
     "1.0.0", "08/03/2025", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
@@ -30,7 +31,7 @@
   target: figure.where(kind: table),
   
 )
-#pagebreak()
+
 = Introduzione 
 
 == Scopo del documento
@@ -47,8 +48,6 @@ e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'in
 riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
-Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come _knowledge_#super[G],
-ad esempio datasheet e manuali, permette di garantire una corretta copertura dei requisiti.
 
 == Struttura del documento
 
@@ -56,13 +55,16 @@ Il contenuto del documento è organizzato nelle seguenti sezioni:
 
 - *Rischi Attesi e Mitigazione:* identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo, insieme alle strategie applicate per ridurre o eliminare il loro impatto.
 
-- *Modello di sviluppo:* descrizione delle metodologie e degli approcci adottati.
+- *Modello di sviluppo:* descrizione delle modello di sviluppo adottato per il progetto, con dettagli sulle fasi e le attività previste.
 
 - *Pianificazione:* dettagli sulle fasi, le risorse e i tempi necessari per la realizzazione del progetto.
 
 - *Preventivo:*  dettagli sui costi stimati per ogni fase del progetto, evidenziando risorse e allocazioni di budget.
 
-- *Consuntivo di periodo:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, spiegando le cause degli scostamenti e le misure correttive adottate.
+- *Consuntivo di periodo:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, citando il vebrale che conterrà la retrospettiva del periodo produttivo. Verranno inoltre riportati i rischi occorsi durante ogni sprint.
+=== Aggiornamento a seguito della revisione RTB
+
+In seguito al colloquio di revisione RTB, sono stati suggeriti dei miglioramenti da attuare al seguente documento in vista della successiva revisione, tali cambiamenti riguardano la sua riorganizzazione per renderlo più utile alla guida dell'avanzamento del progetto. Siccome tali suggerimenti sono stati presi in considerazione tra la fine dell'RTB e l'inizio della PB, gli ultimi sprint (dal 7 al 10) presenteranno delle discrepanze nei contenuti e nella loro forma, nonché in alcuni dettagli della struttura del documento. Alcuni esempi sono la discrepanza delle date degli sprint a causa del cambiamento della data di consegna, oppure l'introduzione dei rischi attesi nella pianificazione degli sprint.
 
 == Glossario
 I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
@@ -90,7 +92,7 @@ Questa sezione identifica i potenziali _rischi_#super[G] di diversa natura e des
 I rischi si dividono nel seguente modo: 
 - *Rischi interni ed organizzativi*:
   sono tutti i possibili rischi che possono sorgere all'interno del gruppo di progetto e nella gestione del lavoro, influenzando la produttività, la comunicazione, il coordinamento e la distribuzione delle risorse. Questi rischi includono la scarsa definizione degli obiettivi, la mancanza di competenze, conflitti tra membri, difficoltà nella pianificazione e nei cambiamenti dei requisiti, con potenziali impatti negativi sulle tempistiche e sul successo del progetto.
-#pagebreak()
+
 - *Rischi tecnologici*: sono legati agli strumenti, alle tecnologie e alle infrastrutture utilizzate durante lo sviluppo di un progetto. Questi rischi possono derivare da incompatibilità software, malfunzionamenti hardware, limitazioni delle tecnologie adottate, aggiornamenti non previsti, vulnerabilità di sicurezza o difficoltà nell'integrazione con sistemi esterni. Se non gestiti correttamente, possono compromettere le prestazioni, l'affidabilità e l'efficacia del prodotto finale.
 - *Rischi di capitolato*: 
   derivano dalla definizione, interpretazione e gestione dei requisiti del progetto. Questi rischi possono includere ambiguità o incompletezza delle specifiche, modifiche frequenti ai requisiti, disallineamento tra le aspettative del _proponente_#super[G] e l'implementazione, o difficoltà nella comprensione delle richieste. Una gestione inefficace di questi aspetti può portare a ritardi, aumento dei costi e necessità di revisioni significative nel progetto.
@@ -130,17 +132,33 @@ Dove:
     [Ogni membro del gruppo deve mantenere un coinvolgimento attivo nel progetto, restando aggiornato su ogni fase dello sviluppo. Sarà responsabilità di ognuno sollecitare il contributo da parte di membri poco produttivi per garantire il rispetto degli impegni e delle scadenze.
     ],
     [RI_002],
-    [*Abbandono di un membro del gruppo* ],
-    [Un membro del gruppo potrebbe lasciare il progetto per motivi personali o professionali, compromettendo lo svolgimento delle attività.],
+    [*Membri del gruppo improduttivi* ],
+    [Un membro del gruppo potrebbe smettere di partecipare al progetto per motivi personali o professionali, compromettendo lo svolgimento delle attività.],
     [Il gruppo dovrà redistribuire il carico di lavoro tra i membri rimanenti. Inoltre, in collaborazione con il proponente, sarà necessario ridefinire la suddivisione delle attività per non superare il monte ore stabilito e quindi ridefinire le aspettative stabilite in precedenza. ],
     [RI_003],
-    [*Disponibilità dei membri del gruppo di progetto*],
+    [*Poca disponibilità dei membri del gruppo*],
     [A causa di impegni personali o lavorativi, alcuni membri del gruppo potrebbero essere indisponibili in determinati periodi, causando un rallentamento nel raggiungimento degli obiettivi prefissati.],
     [Il gruppo si impegnerà a suddividere le attività in modo strategico, assegnando le _task_#super[G] in base alla loro priorità e alla disponibilità dei membri, così da minimizzare eventuali ritardi.],
     [RI_004],
-    [*Contrasti interni al gruppo di progetto*],
+    [*Contrasti interni al gruppo*],
     [Durante lo svolgimento del progetto potrebbero emergere conflitti tra i membri del gruppo, causando rallentamenti nel completamento delle attività.],
     [I membri del gruppo cercheranno di risolvere i contrasti attraverso una discussione collettiva. Se ciò non fosse sufficiente, il responsabile del progetto interverrà per mediare il conflitto, eventualmente ricorrendo a sondaggi per facilitare la decisione. Qualora il problema persistesse, si consulterà il committente per trovare una soluzione definitiva.],
+    [RI_005],
+    [*Completamento di task prioritarie in sospeso*],
+    [Alcune task del progetto potrebbero non venir completate all'interno dello sprint nel quale sono state designate, causando ritardi e rallentamenti nel completamento delle altre attività.],
+    [I membri del gruppo daranno la priorità a completare le attività in sospeso più critiche, completando in un secondo momento quelle che non siano ritenute essenziali per l'avanzamento del progetto.],
+    [RI_006],
+    [*Completamento mancante o parziale di una task*],
+    [Una task assegnata potrebbe non essere completata entro la scadenza prevista, causando ritardi nelle attività successive e potenziali sovraccarichi di lavoro per altri membri del gruppo.],
+    [Il gruppo valuterà se il completamento della task sia prorogabile o se sia necessario completarla prima di continuare con altro. In caso di proroga, il gruppo dovrà rivedere le priorità delle attività rimanenti, ricordandosi di non tralasciare la task da completare in sospeso.],
+    [RI_007],
+    [*Sovraccarico di lavoro per alcuni membri*],
+    [La distribuzione non uniforme delle attività tra i membri del gruppo potrebbe portare a un sovraccarico di lavoro per alcuni membri del gruppo.],
+    [I membri del gruppo che si troveranno in questa situazione dovranno avvisare gli altri, per cercare di distribuire equamente le task da svolgere. In caso non ci fosse collaborazione, si dovrà prendere in considerazione di contattare il committente per valutare una soluzione alternativa.],
+    [RI_008],
+    [*Documentazione incompleta*],
+    [La documentazione potrebbe risultare incompleta o da aggiornare a seguito di un'attività di verifica, presentando informazioni sbagliate o non aggiornate rispetto all'attuale stato di avanzamento del progetto.],
+    [I membri del gruppo dovranno correggere tempestivamente gli errori e riportare le informazioni corrette al fine di evitare di consegnare dei documenti non aggiornati.],
   ),
   caption: [Rischi interni e organizzativi]
 )
@@ -170,6 +188,22 @@ Dove:
     [*Mancanza di conoscenze*],
     [Alcuni membri del gruppo potrebbero non possedere le competenze necessarie per svolgere il progetto in modo efficace.],
     [Sarà responsabilità di ogni membro del gruppo con più conoscenze formare e supportare i colleghi meno esperti.],
+    [RT_004],
+    [*Cambio di tecnologie*],
+    [Durante la fase di implementazione del prodotto software si potrebbe scoprire che una determinata tecnologia non è più supportata o non è più in grado di soddisfare le esigenze del progetto.],
+    [Il gruppo dovrà valutare se sia possibile continuare a utilizzare la tecnologia esistente o se sia necessario passare a una nuova tecnologia. Nell'ultimo caso, sarà necessario condurre al più presto un'analisi sulla nuova tecnologia e verificare se possa soddisfare le esigenze implementative o del progetto, per evitare di rifare lo stesso errore.],
+    [RT_005],
+    [*Mancato superamento dei test*],
+    [Alcuni test di potrebbero non essere superati, oppure potrebbero avere una percentuale di superamento non soddisfacente, richiedendo modifiche al codice sorgente.],
+    [I programmatori e i verificatori del gruppo si impegneranno nella correzione dei problemi che impediscono il superamento dei test. In alternativa, si valuterà se il test possa essere considerato superato anche se con una soglia non soddisfacente.],
+    [RT_006],
+    [*Test non adeguato al prodotto software*],
+    [Al seguito di modifiche al codice sorgente o all'architettura del prodotto, si potrebbe scoprire che un determinato test è diventato inadeguato per l'MVP.],
+    [I programmatori e i verificatori del gruppo si impegneranno nella ridefinizione di un test più adeguato al prodotto software.],
+    [RT_007],
+    [*Modifiche architetturali necessarie*],
+    [Al seguito di una verifica durante l'implementazione, si potrebbe scoprire che l'architettura necessiti di modifiche al fine di essere funzionante],
+    [I programmatori, i verificatori e i progettisti del gruppo si impegneranno a modificare l'architettura del prodotto software in modo da renderla funzionante.],
   ),
   caption: [Rischi tecnologici]
 )
@@ -192,7 +226,7 @@ Dove:
     [Il capitolato potrebbe contenere indicazioni poco chiare o ambigue, rendendo difficile la comprensione delle reali esigenze del proponente],
     [Organizzare incontri periodici con proponente per chiarire eventuali dubbi e allineare le aspettative.],
     [RC_002],
-    [*Modifiche al capitolato in corso d'opera*],
+    [*Modifiche ai requisiti in corso d'opera*],
     [Durante lo sviluppo, i requisiti inizialmente concordati potrebbero subire modifiche a causa di fattori interni (nuove esigenze del gruppo) o esterni (richieste del proponente). Questo può portare a ritardi, aumento dei costi o necessità di modificare ulteriormente il codice sorgente del prodotto finale.],
     [Sarà necessario aggiornare il preventivo e rivedere gli accordi precedentemente stabiliti per garantire il rispetto delle scadenze e l’ottimizzazione delle risorse disponibili.],
     [RC_003],
@@ -203,6 +237,10 @@ Dove:
     [*Divergenze tra le aspettative del proponente e l'interpretazione del gruppo*],
     [Il gruppo di progetto potrebbe interpretare diversamente alcune sezioni del capitolato rispetto alle intenzioni originali del proponente.],
     [Mantenere una comunicazione costante con il proponente per condividere e validare le scelte progettuali prima della loro implementazione.],
+    [RC_005],
+    [*Mancata validazione da parte del proponente*],
+    [Il proponente potrebbe non fornire un feedback tempestivo o dettagliato durante le revisioni, causando ritardi nella correzione e nella finalizzazione della documentazione e del prodotto.],
+    [L'intero gruppo dovrà accordare dei nuovi cambiamenti da attuare al prodotto software e adattare la documentazione di conseguenza. Inevitabilmente, il gruppo dovrà rivedere le tempistiche di consegna per garantire il rispetto delle aspettative del proponente.],
   ),
   caption: [Rischi riguardanti il capitolato]
 )
@@ -224,17 +262,22 @@ Dove:
   [*Superamento budget*],
   [Rallentameni dovuti a cause interne o esterne potrebbero portare al superamento del monte ore preventivato],
   [Monitorare correttamente e costantemente il lavoro dei membri del gruppo attraverso strumenti di rendicontazione oraria],
+  [RF_002],
+  [*Aumento dei costi imprevisti*],
+  [Eventuali modifiche ai requisiti o problemi tecnici potrebbero richiedere più ore di lavoro del previsto, portando a un aumento dei costi rispetto al preventivo.],
+  [Le ore aggiuntive svolte verranno sottratte dalle ore preventivate per gli altri sprint, per evitare di superare il budget stabilito.],
   ),
   caption: [Rischi finanziari]
   )
+
 
  
 == Tabella riassuntiva
 Nella seguente tabella vengono descritti: 
 - L'*occorrenza*: rappresenta la probabilità che il rischio si verifichi. Un rischio con alta occorrenza è molto probabile e deve essere monitorato con attenzione, mentre un rischio con bassa occorrenza è meno preoccupante, ma comunque da considerare.
 - L'*impatto*: misura la gravità delle conseguenze che il rischio potrebbe avere sul progetto. Un rischio con alto impatto può compromettere seriamente il raggiungimento degli obiettivi, mentre un impatto basso causa problemi gestibili senza significativi rallentamenti o costi aggiuntivi.
-#pagebreak()
-- L'*_efficacia_*#super[G]: indica quanto le azioni di mitigazione adottate siano in grado di ridurre l'impatto del rischio. Un valore alto significa che le contromisure sono efficaci e il rischio è ben gestito, mentre un valore basso indica che il rischio rimane problematico nonostante gli sforzi.
+
+- L'*_efficacia_*#super[G] della mitigazione: indica quanto le azioni di mitigazione adottate siano in grado di ridurre l'impatto del rischio. Un valore alto significa che le contromisure sono efficaci e il rischio è ben gestito, mentre un valore basso indica che il rischio rimane problematico nonostante gli sforzi.
 
 I possibili valori delle celle sono "Basso", "Medio" o "Alto".
 
@@ -248,19 +291,30 @@ I possibili valori delle celle sono "Basso", "Medio" o "Alto".
     [*Titolo rischio*],
     [*occorrenza*],
     [*Impatto*],
-    [*Efficacia*],
-    [RI_001], [*Mancanza di coordinamento del gruppo di progetto*], [Medio], [Alto], [Alto],
-    [RI_003], [*Disponibilità dei membri del gruppo di progetto*], [Alto], [Alto], [Medio],
-    [RI_004], [*Contrasti interni al gruppo di progetto*], [Medio], [Alto], [Alto],
+    [*Efficacia mitigazione*],
+    [RI_001], [*Mancanza di coordinamento del gruppo *], [Medio], [Medio], [Alto],
+    [RI_002], [*Membri del gruppo improduttivi*], [Medio], [Alto], [Medio],
+    [RI_003], [*Poca disponibilità dei membri del gruppo*], [Alto], [Medio], [Medio],
+    [RI_004], [*Contrasti interni al gruppo*], [Basso], [Alto], [Alto],
+    [RI_005], [*Completamento di task prioritarie in sospeso*], [Medio], [Alto], [Medio],
+    [RI_006], [*Completamento mancante o parziale di una task*], [Medio], [Alto], [Medio],
+    [RI_007], [*Sovraccarico di lavoro per alcuni membri*], [Medio], [Alto], [Medio],
+    [RI_008], [*Documentazione incompleta*], [Medio], [Alto], [Alto],
     [RT_001], [*Prestazioni dei modelli LLM*], [Basso], [Alto], [Alto],
-    [RT_002], [*Obsolescenza tecnologica*], [Medio], [Medio], [Medio],
+    [RT_002], [*Obsolescenza tecnologica*], [Basso], [Medio], [Medio],
     [RT_003], [*Mancanza di conoscenze*], [Medio], [Medio], [Alto],
+    [RT_004], [*Cambio di tecnologie*], [Basso], [Alto], [Medio],
+    [RT_005], [*Mancato superamento dei test*], [Medio], [Alto], [Medio],
+    [RT_006], [*Test non adeguato al prodotto software*], [Basso], [Alto], [Basso],
+    [RT_007], [*Modifiche architetturali necessarie*], [Basso], [Alto], [Basso],
     [RC_001], [*Ambiguità dei requisiti*], [Basso], [Alto], [Medio],
     [RC_002], [*Modifiche al capitolato in corso d'opera*], [Basso], [Alto], [Alto],
     [RC_003], [*Disallineamento tra capitolato e vincoli tecnici*], [Basso], [Medio], [Alto],
     [RC_004], [*Divergenze tra le aspettative del committente e l'interpretazione del gruppo*], [Basso], [Alto], [Alto],
+    [RC_005], [*Mancata validazione da parte del proponente*], [Basso], [Alto], [Basso],
     [RF_001], [*Superamento budget*], [Medio], [Alto], [Medio],
-  ),
+    [RF_002], [*Aumento dei costi imprevisti*], [Medio], [Alto], [Medio],
+    ),
   caption: [Tabella riassuntiva dei rischi],
 )
 = Modello di sviluppo
@@ -292,7 +346,7 @@ La retrospettiva viene svolta nel seguente modo: si analizzano gli obiettivi del
 = Pianificazione
 
 La pianificazione permette di suddividere il progetto in fasi operative chiare, definendone risorse e tempistiche. Questo approccio assicura il coordinamento tra i membri del gruppo e il rispetto delle scadenze.
-#pagebreak()
+
 Per la pianificazione abbiamo considerato il periodo dal 16/11/2024 al 16/04/2025. Escludendo il periodo dal 17/01/2025 al 7/02/2025, nel quale ci sarà la sessione d'esami, il tempo restante per il progetto è stato suddiviso in 8 sprint bisettimanali e 2 sprint della durata di una settimana singola.
 
 L'organizazione degli sprint sarà la seguente:
@@ -308,7 +362,7 @@ L'obiettivo è l'acquisizione delle conoscenze utili per lo svolgimento _milesto
 
 === Attività
 
-Il completamento di questo sprint prevede la preparazione della repository per la documentazione della milestone RTB e l'acquisizione della conoscienza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
+Il completamento di questo sprint prevede la preparazione della repository per la documentazione della milestone RTB e l'acquisizione della conoscenza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
 
 == Sprint 2 - Analisi e documentazione
 
@@ -352,7 +406,7 @@ Le attività principali sono:
 - Redazione delle metriche del PdQ, includendo le formule dei vari indici, le soglie limite e le relative tabelle
 - Applicazione del nuovo template alla documentazione
 - Avanzamento analisi dei requisiti
-#pagebreak()
+
 == Sprint 4 - Baseline PoC
 
 *Periodo*: 04/01/2025 - 17/01/2025
@@ -405,73 +459,115 @@ Le attività da svolgere sono:
 - Verificare l'ultima versione di tutta la documentazione integrata delle novità dallo sprint precedente
 - Fissare un incontro con l'azienda
 
-== Sprint 7 - Stesura Documentazione PB
+=== Sprint 7 - Stesura Documentazione PB
 
 *Periodo*: 22/03/2025 - 05/04/2025
 
 Questo sprint è dedicato alla stesura della documentazione per la Product Baseline.
 
-=== Obiettivo
+==== Obiettivo
 
 L'obiettivo è principalmente la stesura iniziale della documentazione PB, nello specifico:
 - *Manuale Utente*: fornire una guida dettagliata per l'utilizzo del plug-in
 - *Specifica Tecnica*: descrivere le funzionalità e l'architettura del sistema
 
 Si prevede di arrivare alla stesura delle sezioni più generiche, in quanto comunque verrà riutilizzato il PoC per il completamento dell'_MVP_#super[G].
-=== Attività
+==== Attività
 
 La principale attività di questo sprint sono:
 - L'analisi dell'architettura PoC per il suo adattamento all'MVP e avvio della stesura della specifica tecnica e del manuale utente.
 - L'avanzamento nella documentazione RTB al fine della pubblicazione della versione 2.0.0 
-#pagebreak()
 
-== Sprint 8 - Codifica MVP e Testing
+==== Rischi attesi
+I rischi attesi durante questo sprint sono legati alla stesura della documentazione in mancanza di conoscenze specifiche. In particolare, si prevede che i rischi meno banali che si possano verificare siano i seguenti:
+
+- *RI_001 - Poca disponibilità dei membri del gruppo*: Potrebbero verificarsi ritardi a causa di impegni personali o lavorativi di alcuni membri del gruppo assegnati alle task di questo sprint.
+
+- *RT_003 - Mancanza di conoscenze specifiche*: La mancanza di conoscienza sulla struttura della documentazione da creare e la difficoltà intrinseca della creazione di un'architettura per il prodotto finale potrebbero portare a ritardi nel completamento delle task assegnate (causando quindi il rischio *RI_006 - Completamento mancante o parziale di una task*).
+
+=== Sprint 8 - Codifica MVP e Testing
 
 *Periodo*: 06/04/2025 - 20/04/2025
 
 Questo sprint si concentra sulla codifica e testing del Minimum Viable Product (MVP).
 
-=== Obiettivo
+==== Obiettivo
 
 L'obiettivo è arrivare ad una versione stabile dell'MVP partendo dal PoC e assicurarsi che tutte le funzionalità essenziali siano funzionanti.
 
-=== Attività
+==== Attività
 
 - Implementazione di alcune delle funzionalità mancanti del prodotto finale
   - Riuso del PoC 
 - Esecuzione di alcuni dei test definiti nel piano di progetto
   - Eventuale correzione dei bug riscontrati durante i test
 - Stesura graduale del manuale utente e delle specifiche tecniche
-== Sprint 9 - Baseline Documentazione
+==== Rischi attesi
+I rischi attesi durante questo sprint sono legati alla codifica e al testing dell'MVP. In particolare, si prevede i rischi meno banali che si possano verificare siano i seguenti:
+
+- *RT_007 - Modifiche architetturali necessarie*: Esiste la possibile necessità di modifiche architetturali nel caso in cui la codifica effettiva dell'MVP richieda un'architettura diversa rispetto a quella inizialmente prevista.
+
+- *RT_004 - Cambio di tecnologie*: Potrebbe emergere la necessità di modificare le tecnologie utilizzate, per esempio a seguito di scelte tecnolgiche errate per l'implementazione dei test.
+
+- *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività refactoring o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di programmatore con un conseguente aumento dei costi rispetto al preventivo iniziale. 
+
+- *RT_005 - Mancato superamento dei test*: Indubbiamente alcuni test potrebbero non essere superati, in questo caso la mitigazione sar un semplice miglioramento dei moduli che non superano i test.  
+=== Sprint 9 - Baseline Documentazione
 
 *Periodo*: 21/04/2025 - 28/04/2025
 
 Questo sprint è dedicato al completamento della documentazione per la Product Baseline.
 
-=== Obiettivo
+==== Obiettivo
 
 L'obiettivo è portare tutta la documentazione necessaria per la milestone PB alla versione subito precedente a quella finale, in modo che possa essere validata definitivamente nello sprint successivo.
 
-=== Attività
+==== Attività
 
-La principale attività di questo sprint sarà la  preparazione della documentazione per la consegna.
+La principale attività di questo sprint saranno:
+- Aggiornamento specifica tecnica e del manuale utente con le ultime informazioni relative all'MVP
+- Aggiornamento delle metriche del piano di qualifica all'ultima versione ed eventuali revisioni o modifiche al documento
+==== Rischi attesi
+I principali rischi non banali attesi durante questo sprint saranno:
 
-== Sprint 10 - Validazione finale e rilascio
+- *RI_005 - Completamento di task prioritarie in sospeso*: Potrebbero verificarsi ritardi nel completamento dell'attività di codifica.
+
+- *RT_007 - Modifiche architetturali necessarie*: Durante la verifica del codice e dell'architettura per la sua integrazione nella specifica tecnica, potrebbe comunque emergere la necessità di modificare l'architettura del prodotto per adattarla a possibili migliorie o per correggere errori individuati durante un'analisi.
+
+- *RT_006 - Test non adeguato al prodotto software*: A seguito di un'analisi oppure al verificarsi di *RT_005* potrebbe emergere la necessità di modificare i test definiti in precedenza, in quanto non più adeguati al prodotto software finale.
+
+- *RC_004 - Divergenze tra le aspettative del proponente e l'interpretazione del gruppo*: L'MVP, una volta completato, potrebbe non soddisfare pienamente le aspettative del proponente, ad esempio per una difficoltà di utilizzo o per la mancanza di alcune funzionalità.
+
+=== Sprint 10 - Validazione finale e rilascio
 
 *Periodo*: 29/04/2025 - 06/05/2025
 
 Questo sprint è dedicato alla validazione finale del sistema e della documentazione, nonché alla preparazione per la consegna finale.
 
-=== Obiettivo
+==== Obiettivo
 
 L'obiettivo è validare il sistema e la documentazione, assicurandosi che siano pronti per il rilascio. Inoltre, sarà necessario preparare la presentazione finale.
 
-=== Attività
+==== Attività
 
 - Validazione finale del sistema
 - Correzione di eventuali bug residui
 - Revisione finale della documentazione
 - Preparazione della presentazione finale
+==== Rischi attesi
+I rischi attesi durante questo sprint sono legati alla validazione finale del sistema e della documentazione. In particolare, si prevede che i rischi meno banali che si possano verificare siano i seguenti:
+
+- *RI_003 - Poca disponibilità dei membri del gruppo*: La collaborazione in questa fase è essenziale, soprattutto considerando che alcuni membri potrebbero dichiarare il termine delle proprie attività, riducendo la disponibilità complessiva.
+
+- *RI_005 - Completamento di task prioritarie in sospeso*: Potrebbero verificarsi ritardi nel completamento della documentazione o delle attività di validazione, compromettendo la consegna finale.
+
+- *RT_005 - Mancato superamento dei test*: Alcuni test potrebbero non essere superati, richiedendo modifiche al codice o alla documentazione. Nel caso si arrivi in questa situazione verso gli ultimi giorni, il gruppo dovrà decidere se rispettare le scadenze previste o posticipare la consegna finale per risolvere i problemi.
+
+- *RF_001 - Superamento del budget*: Le ore effettivamente lavorate potrebbero superare quelle pianificate, comportando un incremento dei costi rispetto al preventivo iniziale.
+
+- *RI_008 - Documentazione incompleta*: La documentazione potrebbe risultare incompleta o non aggiornata dallo sprint precedente, richiedendo ulteriori revisioni e correzioni.
+
+- *RC_005 - Mancata validazione da parte del proponente*: Il proponente potrebbe non fornire un feedback non tempestivo o negativo del prodotto finale, causando ritardi nella correzione e nella finalizzazione della documentazione e del sistema.
 
 = Preventivo
 == Descrizione del Preventivo
@@ -611,13 +707,9 @@ Nella seguente sezione verrà preventivato per intero il prospetto orario ed eco
   caption: "Prospetto economico preventivato per lo Sprint 6"
 )
 
-== Aggiornamento prospetto da v1.1.0
-
-I seguenti 4 sprint hanno subito una variazione a partire dalla versione 1.1.0. Questo perchè dopo il colloquio di verifica dell'RTB e una successiva riunione interna è stata posticipata la data di consegna quindi i periodi dal 7 al 10 variano sia il periodo temporale sia le ore per ciascuno sprint. Come base oraria per il calcolo degli ultimi 4 sprint viene preso il totale dei primi 6 sprint relativi al consuntivo. Di seguito il nuovo prospetto:
-
 === Sprint 7
-*Periodo:* 09/03/2025 - 20/03/2025 
-==== Prospetto economico
+*Periodo:* 22/03/2025 - 05/04/2025 
+==== Prospetto orario ed economico
 #figure(
   table(
     columns: 3,
@@ -631,11 +723,12 @@ I seguenti 4 sprint hanno subito una variazione a partire dalla versione 1.1.0. 
     [*Verificatore*], [7], [105],
     [*Totale*], [*66.5*], [*1335*]
   ),
-  caption: "Prospetto economico preventivato per lo Sprint 7"
+  caption: "Prospetto orario ed economico preventivato per lo Sprint 7"
 )
+
 === Sprint 8
-*Periodo:* 21/03/2025 - 02/04/2025
-==== Prospetto economico
+*Periodo:* 06/04/2025 - 20/04/2025
+==== Prospetto orario ed economico
 #figure(
   table(
     columns: 3,
@@ -649,11 +742,11 @@ I seguenti 4 sprint hanno subito una variazione a partire dalla versione 1.1.0. 
     [*Verificatore*], [7], [105],
     [*Totale*], [*56*], [*1125*]
   ),
-  caption: "Prospetto economico preventivato per lo Sprint 8"
+  caption: "Prospetto orario ed economico preventivato per lo Sprint 8"
 )
 === Sprint 9
-*Periodo:* 03/04/2025 - 08/04/2025
-==== Prospetto economico
+*Periodo:* 21/04/2025 - 28/04/2025
+==== Prospetto orario ed economico
 #figure(
   table(
     columns: 3,
@@ -667,11 +760,11 @@ I seguenti 4 sprint hanno subito una variazione a partire dalla versione 1.1.0. 
     [*Verificatore*], [15], [225],
     [*Totale*], [*56*], [*1095*]
   ),
-  caption: "Prospetto economico preventivato per lo Sprint 9"
+  caption: "Prospetto orario ed economico preventivato per lo Sprint 9"
 )
 === Sprint 10
-*Periodo:* 9/04/2025 - 16/04/2025
-==== Prospetto economico
+*Periodo:* 29/04/2025 - 06/05/2025
+==== Prospetto orario ed economico
 #figure(
   table(
     columns: 3,
@@ -685,11 +778,10 @@ I seguenti 4 sprint hanno subito una variazione a partire dalla versione 1.1.0. 
     [*Verificatore*], [20], [300],
     [*Totale*], [*38*], [*695*]
   ),
-  caption: "Prospetto economico preventivato per lo Sprint 10"
+  caption: "Prospetto orario ed economico preventivato per lo Sprint 10"
 )
- 
 
-== Riepilogo prospetto economico e prospetto orario
+== Riepilogo prospetto orario ed economico e prospetto orario
 
 #figure(
   table(
@@ -704,7 +796,7 @@ I seguenti 4 sprint hanno subito una variazione a partire dalla versione 1.1.0. 
     [*Verificatore*], [85], [1275],
     [*Totale*], [*531*], [*10995*]
   ),
-  caption: "Riepilogo prospetto economico preventivato"
+  caption: "Riepilogo prospetto orario ed economico preventivato"
 )
 
 = Consuntivo di periodo
@@ -884,7 +976,7 @@ In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le att
   ),
   caption: "Rendicontazione Sprint 5",
 )
-#pagebreak()
+
 ==== Prospetto economico
 #figure(
   table(
@@ -922,7 +1014,7 @@ In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le att
   ),
   caption: "Rendicontazione Sprint 6",
 )
-#pagebreak()
+
 ==== Prospetto economico
 #figure(
   table(
@@ -958,3 +1050,29 @@ In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le att
   ),
   caption: "Prospetto economico Totale Sprint RTB"
 )
+== PB
+=== Sprint 7 - Stesura Documentazione PB
+*Periodo*: 22/03/2025 - 05/04/2025 \
+*Verbale di Retrospettiva*: VI2025-04-05
+==== Rendicontazione oraria
+==== Prospetto economico
+=== Rischi Occorsi
+Si è verificato il rischio *RI_001* a causa di impegni personali di alcuni membri del gruppo, tuttavia non ha causato ritardi nello sprint attuale.
+
+Durante lo svolgimento dello sprint invece, i rischi *RT_003* e *RI_005* hanno influito sull'inizio della stesura della specifica tecnica, si prevede quindi di completarla nel prossimo sprint.
+
+Si è verificato inoltre il rischio *RI_006*, in quanto non tutta la documentazione è stata completata, tuttavia la documentazione rimanente è facilmente completabile in parallelo alla stesura del codice nel prossimo sprint, quindi non si prevede un impatto significativo nel prossimo sprint.
+
+=== Sprint 8 - Codifica MVP e Testing 
+*Periodo*: 06/04/2025 - 20/04/2025 \
+*Verbale di Retrospettiva*: VI2025-04-19
+==== Rendicontazione oraria
+==== Prospetto economico
+=== Rischi Occorsi
+Durante lo svolgimento dello sprint non si sono verificati problemi di improduttività tra i membri del gruppo, e il lavoro è stato portato avanti in modo collaborativo.
+
+Il rischio *RT_007* si è concretizzato durante l'implementazione di alcune funzionalità, richiedendo interventi per adattare l'architettura alle esigenze emerse durante lo sviluppo.
+
+Si è verificato anche il rischio *RI_006*, in quanto i test non sono ancora stati completamente definiti e il codice rimane da sistemare. Questo aspetto sarà prioritario nel prossimo sprint per garantire la consegna dell'MVP nei tempi previsti.
+
+Gli obiettivi principali dello sprint sono stati comunque raggiunti, e non è necessario applicare correzioni per il futuro. La collaborazione tra i membri del gruppo è stata efficace e ha portato a risultati soddisfacenti.
