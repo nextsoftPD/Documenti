@@ -5,7 +5,7 @@
 #show: project.with(
   title: "Verbale interno 05/04/2025",
   redattori: ("Luca Parise",),
-  verifica: ("",),
+  verifica: ("Stefano Baso",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0.0",
