@@ -12,8 +12,8 @@
   date: "23/11/2024",
   versionamento: (
     "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "",
-    "1.2.0", "08/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "",
-    "1.1.1", "08/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "",
+    "1.2.0", "27/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "Stefano Baso",
+    "1.1.1", "27/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "Stefano Baso",
     "1.1.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "Malik Giafar Mohamed",
     "1.0.0", "08/03/2025", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
     "0.5.0", "08/03/2025", "Stefano Baso, Malik Giafar Mohamed, Luca Parise", "Miglioramento sezione rischi, inserimento tabelle preventivo e consuntivo, miglioramento sezione pianificazione", "Ion Cainareanu",
@@ -133,7 +133,7 @@ Dove:
     [Ogni membro del gruppo deve mantenere un coinvolgimento attivo nel progetto, restando aggiornato su ogni fase dello sviluppo. Sarà responsabilità di ognuno sollecitare il contributo da parte di membri poco produttivi per garantire il rispetto degli impegni e delle scadenze.
     ],
     [RI_002],
-    [*Membri del gruppo improduttivi* ],
+    [*Mancanza di produttività dei membri del gruppo* ],
     [Un membro del gruppo potrebbe smettere di partecipare al progetto per motivi personali o professionali, compromettendo lo svolgimento delle attività.],
     [Il gruppo dovrà redistribuire il carico di lavoro tra i membri rimanenti. Inoltre, in collaborazione con il proponente, sarà necessario ridefinire la suddivisione delle attività per non superare il monte ore stabilito e quindi ridefinire le aspettative stabilite in precedenza. ],
     [RI_003],
@@ -294,7 +294,7 @@ I possibili valori delle celle sono "Basso", "Medio" o "Alto".
     [*Impatto*],
     [*Efficacia mitigazione*],
     [RI_001], [*Mancanza di coordinamento del gruppo *], [Medio], [Medio], [Alto],
-    [RI_002], [*Membri del gruppo improduttivi*], [Medio], [Alto], [Medio],
+    [RI_002], [*Mancanza di produttività dei membri del gruppo*], [Medio], [Alto], [Medio],
     [RI_003], [*Poca disponibilità dei membri del gruppo*], [Alto], [Medio], [Medio],
     [RI_004], [*Contrasti interni al gruppo*], [Basso], [Alto], [Alto],
     [RI_005], [*Completamento di task prioritarie in sospeso*], [Medio], [Alto], [Medio],
