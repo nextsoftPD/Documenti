@@ -8,9 +8,10 @@
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.1.1",
+  version: "1.3.0",
   date: "23/11/2024",
   versionamento: (
+    "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "",
     "1.2.0", "08/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "",
     "1.1.1", "08/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "",
     "1.1.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "Malik Giafar Mohamed",
@@ -1055,7 +1056,40 @@ In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le att
 *Periodo*: 22/03/2025 - 05/04/2025 \
 *Verbale di Retrospettiva*: VI2025-04-05
 ==== Rendicontazione oraria
+
+#figure(
+  table(
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [2], [-], [-], [3], [6], [-],
+    [*Ion*], [-], [0.5], [-], [2], [3], [-],
+    [*Maria Fuensanta*], [1], [3], [3], [2], [3], [3],
+    [*Stefano*], [1], [-], [-], [3], [5], [1],
+    [*Marco*], [1], [-], [2], [3], [5], [2],
+    [*Luca*], [-], [3], [2], [3], [3], [1],
+  ),
+  caption: "Rendicontazione Sprint 7",
+)
+
 ==== Prospetto economico
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [5], [150],
+  [*Amministratore*], [6.5], [130],
+  [*Analista*], [7], [175],
+  [*Progettista*], [16], [400],
+  [*Programmatore*], [25], [375],
+  [*Verificatore*], [7], [105],
+  [*Totale*], [*66.5*], [*1335*]
+  ),
+  caption: "Prospetto economico Sprint 7"
+)
+
 === Rischi Occorsi
 Si è verificato il rischio *RI_001* a causa di impegni personali di alcuni membri del gruppo, tuttavia non ha causato ritardi nello sprint attuale.
 
@@ -1067,7 +1101,40 @@ Si è verificato inoltre il rischio *RI_006*, in quanto non tutta la documentazi
 *Periodo*: 06/04/2025 - 20/04/2025 \
 *Verbale di Retrospettiva*: VI2025-04-19
 ==== Rendicontazione oraria
+
+#figure(
+  table(
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [-], [-], [-], [2], [5], [2],
+    [*Ion*], [-], [-], [-], [2], [5], [-],
+    [*Maria Fuensanta*], [1], [2], [3], [2], [3], [3],
+    [*Stefano*], [-], [1], [3], [-], [5], [1],
+    [*Marco*], [2], [-], [-], [5], [-], [1],
+    [*Luca*], [1], [2], [-], [3], [2], [-],
+  ),
+  caption: "Rendicontazione Sprint 8",
+)
+
 ==== Prospetto economico
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [4], [120],
+  [*Amministratore*], [5], [100],
+  [*Analista*], [6], [150],
+  [*Progettista*], [14], [350],
+  [*Programmatore*], [20], [300],
+  [*Verificatore*], [7], [105],
+  [*Totale*], [*56*], [*1125*]
+  ),
+  caption: "Prospetto economico Sprint 8"
+)
+
 === Rischi Occorsi
 Durante lo svolgimento dello sprint non si sono verificati problemi di improduttività tra i membri del gruppo, e il lavoro è stato portato avanti in modo collaborativo.
 
