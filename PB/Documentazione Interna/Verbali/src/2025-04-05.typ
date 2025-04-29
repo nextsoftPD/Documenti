@@ -31,7 +31,7 @@ Il gruppo si riunisce per fare il punto della situazione sullo stato di avanzame
 I membri del gruppo hanno discusso di quanto è stato fatto nell'ultimo periodo trascorso. In particolare, sono stati presentati i seguenti punti: 
 - Definizione dell'architettura e dei relativi diagrammi UML 
 - Integrazione delle scelte tecnologie nel documento di specifica tecnica
-- Scrittura iniziale del manuale utente
+- Stesura iniziale del manuale utente
 
 
 = Registro delle decisioni 
@@ -39,17 +39,17 @@ Si è deciso di continuare a lavorare in parallelo su più aspetti del progetto,
 In particolare, il gruppo nel prossimo periodo si concentrerà su: 
 - Completare il manuale utente
 - Continuare con la progettazione architetturale dell'MVP
-- Implementare delle funzionalità principali dell'MVP
-- Stendere dei test del prodotto software
+- Implementare le funzionalità principali dell'MVP
+- Stendere i test di unità del prodotto software
 - Verificare le modifiche alla documentazione esistente seguendo le indicazioni fornite dal committente
 
 È stata inoltre presa la decisione di entrare in contatto con l'azienda proponente. L'obiettivo di questo confronto è quello di discutere i requisiti progettuali e ottenere un feedback sul lavoro già svolto, al fine di allineare il progetto alle aspettative del committente.
 
 = Prossimi passi 
 
-- Terminare la scrittura del resto della documentazione necessaria per la PB
+- Terminare la scrittura della documentazione necessaria per la PB (manuale utente e specifica tecnica)
 - Contattare l'azienda proponente per discutere dell'avanzamento del progetto
-- Continuare lo sviluppo dell'MVP e del codice sorgente
+- Continuare lo sviluppo dell'MVP e dei relativi test di unità
 
 = Retrospettiva dell'ultimo periodo 
 
