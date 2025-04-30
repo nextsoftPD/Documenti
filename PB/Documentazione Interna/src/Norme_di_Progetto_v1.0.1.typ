@@ -11,7 +11,7 @@
   version: "1.0.1",
   date: "23/11/2024",
   versionamento: (
-    "1.1.0", "14/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche derivanti dalla correzione dell'RTB", "",
+    "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche derivanti dalla correzione dell'RTB", "",
     "1.0.1", "07/03/2025", "Malik Giafar Mohamed", "Inserimento data di ultimo accesso nelle fonti", "",
   )
 )
@@ -39,7 +39,7 @@ nell'omonimo documento.
   - https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
 - Standard ISO/IEC 12207:1995
   - https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf
-- _Piano di Qualifica_#super("G")
+- _Piano di Qualifica_#super("G") v1.0.0
 
 *Riferimenti Informativi*
 - Materiale didattico del corso di Ingegneria del Software
@@ -55,56 +55,65 @@ nell'omonimo documento.
   - https://code.visualstudio.com/api #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
 - Documentazione _Ollama_#super("G"):
   - https://github.com/ollama/ollama/tree/main/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
-- Documentazione _NodeJS_#super("G"):
-  - https://nodejs.org/en/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
+
+(da migliorare, inserisci tecnologie mancanti)
 = Processi Primari
 ==  Fornitura
-=== Descrizione
-Il processo di _fornitura_#super("G") determina le procedure e le risorse necessarie per gestire
-e garantire la consegna del prodotto. Tale processo è iniziato con l'aggiudicazione dell'appalto da parte di _NextSoft_#super("G").
+=== descrizione
+Secondo lo standard ISO/IEC 12207:1995, il processo di fornitura comprende le attività e i compiti svolti dal fornitore.
+
+Il processo può essere avviato da una decisione di preparare una proposta in risposta a una richiesta di proposta da parte dell'acquirente, 
+nel nostro caso quindi l'avvio di tale processo è attribuito all'aggiudicazione dell'appalto dell'azienda proponente da parte del gruppo.
+
+Il processo prosegue con la determinazione delle procedure e delle risorse necessarie per gestire e rilasciare il progetto, inclusa la pianificazione e l'esecuzione dei piani fino alla consegna del sistema, del prodotto software o del servizio software all'acquirente. Questo documento.
 === Comunicazione con il proponente
-Il proponente#super("G") mette a disposizione alcuni canali di comunicazione
-tramite i quali chiarire eventuali dubbi e stabilire nuovi incontri telematici.
-La cadenza dei meeting non è regolare, ma viene fissata in base alle necessità del gruppo
-o dell'azienda. I meeting sono tenuti da uno o più membri del team, i quali hanno il compito
-di riportare le informazioni per cui è necessario un confronto con il proponente.
-Tra i motivi di discussione figurano:
-- Chiarimenti relativi a requisiti o vincoli del _capitolato_#super("G");
-- Dubbi sulla gestione delle tecnologie utilizzate;
-- Richiesta di feedback su quanto prodotto.
+Il proponente#super("G") metterà a disposizione alcuni canali di comunicazione
+tramite i quali chiarire eventuali dubbi e stabilire nuove riunioni.
+La cadenza di queste riunioni non sarà regolare, ma verrà fissata in base alle necessità del gruppo
+o dell'azienda. Le riunioni possono essere richieste per discutere i seguenti argomenti:
+- Chiarimenti relativi a requisiti o vincoli del _capitolato_#super("G")
+- Dubbi sulla gestione delle tecnologie utilizzate
+- Richiesta di feedback su quanto prodotto
 
 Per ogni colloquio con il proponente verrà steso un resoconto nel _Verbale Esterno_#super("G") che
-riporta la data in cui tale incontro è avvenuto. Per ogni _baseline_#super("G"), i verbali redatti
-potranno essere visualizzati nella cartella che ne riporta il nome nel repository#super("G") documentale, al percorso: `"NomeBaseline"/Documentazione Esterna/Verbali`.
+riporterà la data in cui tale incontro è avvenuto. Per ogni _baseline_#super("G"), i verbali redatti
+potranno essere visualizzati nella cartella che ne riporta la data nella repository#super("G") documentale, al percorso: `"NomeBaseline"/Documentazione Esterna/Verbali`.
 === Documentazione fornita
-La docuentazione che verrà consegnata al proponente sarà la seguente:
+La documentazione che verrà consegnata al proponente sarà la seguente:
 - *Analisi dei Requisiti v2.0.0*: descrive dettagliatamente i requisiti funzionali e non funzionali del progetto. Include una lista dettagliata di requisiti e tutti i _casi d'uso_#super("G") necessari per descrivere al meglio le esigenze del proponente sul prodotto software. Questo documento è fondamentale per comprendere a fondo le necessità del proponente e per fornire una base solida per la progettazione e lo sviluppo del prodotto.
 
-- *Piano di Qualifica v2.0.0*: definisce le strategie e le metodologie di _verifica_#super("G") e _validazione_#super("G") adottate dal gruppo. Include le _metriche_#super("G") di qualità, i _test_#super("G") pianificati e le procedure per garantire che il prodotto finale soddisfi i requisiti. In questo modo si assicura che il prodotto sia conforme agli standard di qualità e che tutte le funzionalità richieste siano implementate correttamente. 
+- *Piano di Qualifica v2.0.0*: definisce le strategie e le metodologie di _verifica_#super("G") e _validazione_#super("G") adottate dal gruppo. Esso include anche _metriche_#super("G") di qualità, _test_#super("G") pianificati e procedure per garantire che il prodotto software soddisfi tutti i requisiti prefissati. Il piano di qualifica prevederà inoltre un resoconto sull'avanzamento di quanto descritto in precedenza, in questo modo sarà possibile assicurare che prodotti e processi siano conformi agli standard di qualità e che tutte le funzionalità richieste sul prodotto software siano implementate correttamente. 
 
-- *Piano di Progetto v2.0.0*: descrive la _pianificazione_#super("G") temporale e le risorse necessarie per completare il progetto. Esso Include gli orari sia preventivati che effettivi di tutta la durata del progetto. Contiene anche una lista dei rischi possibili o già verificati, insieme alla loro _mitigazione_#super("G") e le strategie per affrontare eventuali imprevisti. Inoltre, le informazioni riportate prima verranno integrate in ogni periodo produttivo.   
+- *Piano di Progetto v2.0.0*: descrive la _pianificazione_#super("G") temporale e le risorse necessarie per completare il progetto. Esso Include gli orari sia preventivati che effettivi di tutta la durata del progetto, e riporterà anche una lista dei rischi possibili o già verificati, insieme alla loro _mitigazione_#super("G"). Tutto questo sarà riportato in ogni sprint per garantire un monitoraggio costante dell'andamento del progetto.
 
-- *_MVP_*#super[G]: il Minimum Valuable Product, ovvero il prodotto software con le funzionalità di base essenziali che verrà presentato al proponente. Esso dovrà soddisfare i requisiti obbligatori e dimostra la fattibilità delle soluzioni proposte. L'MVP è essenziale per ottenere il feedback del proponente e per garantire che il prodotto soddisfi le aspettative.
+- *_MVP_*#super[G]: il Minimum Valuable Product, ovvero il prodotto software con le funzionalità di base essenziali che verrà presentato al proponente. Esso dovrà essere realizzato secondo quanto scritto nel documento di specifica tecnica e soprattutto dovrà essere accettato dall'azienda proponente per essere considerato soddisfacente. Il suo rilascio determinerà la fine del progetto.
 
-- *Glossario v2.0.0*: documento che contiene la definizione dei termini tecnici e delle sigle utilizzate nel progetto. Questo documento è essenziale per garantire che tutti i membri del gruppo e le parti interessate abbiano una comprensione comune dei termini utilizzati nel progetto.
+- *Glossario v2.0.0*: un documento che contiene la definizione dei termini tecnici e delle sigle utilizzate nel progetto. Questo documento è essenziale per garantire che tutti i membri del gruppo e le parti interessate abbiano una comprensione comune dei termini utilizzati nel progetto.
 
-- *Manuale Utente v1.0.0*: un documento che fornisce istruzioni dettagliate su come utilizzare il prodotto software. Include informazioni su come installare, configurare e utilizzare il plug-in, nonché suggerimenti per migliorare l'esperienza dell'utente. Questo documento è fondamentale per garantire che gli utenti siano in grado di utilizzare il prodotto in modo efficace e per massimizzare il valore del software.
+- *Manuale Utente v1.0.0*: un documento che fornisce istruzioni dettagliate su come utilizzare il prodotto software. Nel documento saranno presenti informazioni su come installare, configurare e utilizzare il plug-in. Questo documento è fondamentale per garantire che gli utenti siano in grado di utilizzare il prodotto in modo efficace e per massimizzare il valore del software.
 
-- *Specifica Tecnica v1.0.0*: un documento che fornisce dettagli tecnici sul funzionamento del prodotto software. Include informazioni sull'architettura del sistema, le tecnologie utilizzate e le scelte progettuali adottate. Questo documento è essenziale per garantire che il prodotto sia sviluppato in modo coerente e che tutte le parti interessate abbiano una comprensione chiara delle scelte tecniche effettuate.
+- *Specifica Tecnica v1.0.0*: un documento che fornisce dettagli tecnici sul funzionamento del prodotto software. Esso include diagrammi UML dettagliati dell'architettura del sistema in ogni sua componente, con una descrizione testuale correlata. Sono presenti inoltre l'elenco delle tecnologie utilizzate e quello delle scelte progettuali adottate. Questo documento è essenziale per garantire che il prodotto sia sviluppato in modo coerente e che tutte le parti interessate abbiano una comprensione chiara delle scelte tecniche effettuate.
 
 === Strumenti
-Per la gestione della fornitura del prodotto, il gruppo utilizzerà tutti gli strumenti nella sezione "Strumenti" dei capitoli "Codifica", "Documentazione", "Gestione della configurazione", "Gestione delle comunicazioni".
+Il nostro processo di fornitura prevede l'utilizzo dei seguenti strumenti:
+- *Google Sheets*#super[G]: utilizzato per la gestione di fogli di calcolo tra i membri del gruppo. Viene usato principalmente per la creazione di grafici per la registrazione dell'andamento delle metriche di qualità, e di tabelle per la pianificazione temporale del progetto e la gestione dei requisiti.
+- *Discord*#super[G]: utilizzato come piattaforma di comunicazione per le discussioni interne al gruppo. È utile per organizzare riunioni, discutere problemi tecnici e coordinare le attività in modo informale.
+- *GitLab*#super[G]: piattaforma che permette la gestione di repository Git, verrà utilizzato per ospitare il codice sorgente dell'MVP al rilascio del prodotto.
+- *GitHub*#super[G]: un'altra piattaforma che permette la gestione di repository Git, verrà utilizzato per la gestione della repository documentale e del codice sorgente dei prodotti software non ancora rilasciati.
+- *Typst*#super[G]: È un linguaggio di markup simile a Markdown, che consente di creare documenti strutturati e ben formattati in modo semplice ed efficiente. Esso verrà utilizzato principalmente per la stesura della documentazione.
+
 == Sviluppo
 === Descrizione
-Secondo lo standard ISO/IEC 12207:1995, il processo di sviluppo comprende le attività e i compiti svolti dai _Programmatori_#super("G") e dai _Progettisti_#super("G"). Questo processo include le seguenti attività principali:
+Secondo lo standard ISO/IEC 12207:1995, il processo di sviluppo comprende le attività e i compiti di analisi, progettazione, codifica, integrazione, testing, installazione e accettazione relative ai prodotti software.
+
+Le principali attività del processo di sviluppo del nostro progetto sono:
 - *Analisi dei Requisiti*: definizione e documentazione dei requisiti e dei casi d'uso del sistema, svolta dagli _Analisti_#super("G").
 - *Progettazione*: definizione dell'architettura del sistema e delle scelte tecnologiche, a cura dei _Progettisti_#super("G").
 - *Codifica*: implementazione del prodotto software basata sulla progettazione, realizzata dai _Programmatori_#super("G").
 
 === Analisi dei Requisiti
 Durante l'attività di _analisi dei requisiti_#super("G"),
-svolta dagli _Analisti_#super("G"), vengono definiti e documentati
-i requisiti e i casi d'uso del sistema. I requisiti rappresentano
+svolta dagli _Analisti_#super("G"), vengono definiti e riportati nel relativo documento i requisiti e i casi d'uso del sistema. I requisiti rappresentano
 le caratteristiche e le funzionalità che il sistema deve possedere
 per soddisfare le esigenze degli utenti e degli _stakeholder_#super("G").
 I casi d'uso, invece, descrivono le interazioni tra gli utenti e il sistema,
@@ -116,7 +125,7 @@ Ogni caso d'uso verrà riportato con una denominazione chiara e univoca che iden
 
 Mentre essi saranno strutturati nel seguente modo : 
 - *Denominazione*: codice identificativo del caso d'uso, stabilito come enunciato sopra
-- *Diagramma UML*: diagramma per rappresentare graficamente il caso d'uso (opzionale?)
+- *Diagramma UML*: diagramma per rappresentare graficamente il caso d'uso (opzionale per i sottocasi d'uso).
 - *Attori Principali*: entità esterne al sistema che interagiscono con esso
 - *Precondizioni*: descrivono lo stato del sistema prima del verificarsi del caso d'uso
 - *Postcondizioni*: descrivono lo stato del sistema dopo che si è verificato il caso d'uso
@@ -174,7 +183,7 @@ Durante l'avanzamento di questa baseline, verranno progettati:
 ==== Descrizione
 L'attività di _codifica_#super("G") è legata al ruolo dei _Programmatori_#super("G"), consiste nell'implementazione del prodotto software tenendo conto della progettazione.
 ==== Metodi
-I metodi di un progetto verranno considerati accettabili solamente se brevi. Risulta essere una buona pratica in quanto porta notevoli vantaggi quali:
+I metodi di un programma verranno considerati accettabili solamente se brevi. Risulta essere una buona pratica in quanto porta notevoli vantaggi quali:
 - *Manutenibilità*: sono più facili da mantenere rispetto a metodi lunghi e complessi in quanto il codice è più leggibile e comprensibile. Si ottiene così un codice robusto e meno suscettibile a errori.
 - *Leggibilità*: il codice è reso più accessibile a tutti gli sviluppatori che potrebbero doverlo leggere, comprendere o modificare in futuro.
 - *Debugging*: se un metodo è breve e semplice, è più facile identificare eventuali _bug_#super("G") o problemi nel codice. Questo rende il processo di _debugging_#super("G") più efficiente.
@@ -186,13 +195,19 @@ Tutte le variabili, i metodi e le classi dovranno avere un nome che li distingua
 
 ==== Ricorsione
 La ricorsione può essere un approccio utile per lo sviluppo, però gli svantaggi che porta possono essere maggiori dei vantaggi. È importante valutare attentamente l'utilizzo della ricorsione perché potrebbe comportare alcune sfide e limitazioni, tra cui:
-- *Performance*: la ricorsione può comportare una maggiore complessità computazionale rispetto ad altre soluzioni, poiché ogni chiamata ricorsiva comporta l'aggiunta di un nuovo livello alla pila delle chiamate. Quindi aumenta la quantità di memoria utilizzata e ridurre la velocità di esecuzione del programma.
+- *Performance*: la ricorsione può comportare una maggiore complessità computazionale rispetto ad altre soluzioni, poiché ogni chiamata ricorsiva comporta l'aggiunta di un nuovo livello alla pila delle chiamate. Quindi aumenta la quantità di memoria utilizzata e riduce la velocità di esecuzione del programma.
 - *Debugging*: la ricorsione richiede maggior attenzione durante l'attività di debugging, questo può rendere più complesso capire dove si verifica un errore o dove un problema sta influenzando il comportamento del programma.
 
 Qualora si dovesse ricorrere alla di ricorsione, la decisione dovrà essere adeguatamente giustificata tramite commenti.
 ==== Strumenti
 Per la codifica del prodotto, i principali strumenti adottati saranno:
 - *Visual Studio Code*: in quanto è l'_IDE_#super("G") più consigliato per realizzare proprie estensioni.
+- *Typescript*: linguaggio di programmazione che verrà utilizzato per la realizzazione del plug-in. È un linguaggio di programmazione open source, sviluppato da Microsoft, che estende JavaScript aggiungendo tipizzazione statica e funzionalità orientate agli oggetti. 
+- CSS 
+- vscode extension api
+- Mocha
+- NestJS
+da migliorare
 - *StarUML*: per la creazione dei _diagrammi UML_#super("G")
 
 = Processi di Supporto
@@ -201,13 +216,13 @@ Per la codifica del prodotto, i principali strumenti adottati saranno:
 Secondo lo standard ISO/IEC 12207:1995, il processo di documentazione è un processo per registrare le informazioni prodotte da un processo o attività del ciclo di vita. Il processo comprende un insieme di attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono quei documenti necessari a tutte le parti interessate, come manager, ingegneri e utenti del sistema o del prodotto software.
 === Ciclo di vita del documento
 Il ciclo di vita di un documento è suddiviso nelle seguenti fasi:
-- *Creazione*: in questa fase viene definita la struttura del documento e vengono raccolte le informazioni necessarie per la sua stesura. Viene inoltre assegnato un responsabile per la redazione del documento.
 
-- *Stesura*: redazione o modifica del documento secondo le linee guida e gli standard definiti.
+- *Creazione*: viene definita una struttura di base per il documento, che include le sezioni principali, poi viene svolta un'analisi sulle informazioni di un processo o di un'attivita da includere nel documento, una volta identificate le informazioni da includere si procede con la stesura del documento.
+- *Stesura*: Una volta raccolte le informazioni da aggiungere o da modificare, si procede al loro inserimento all'interno del documento. Durante questa fase, è importante seguire le norme tipografiche e di stile definite in questo documento per garantire coerenza e chiarezza nel contenuto. La stesura può essere effettuata da uno o più redattori, a seconda della complessità del documento e delle informazioni da includere.
 
-- *Verifica*: una volta completata la stesura, il documento viene sottoposto a verifica da parte di uno o più verificatori. Quest'ultimi controllano la correttezza e la completezza del contenuto, segnalando eventuali errori o incongruenze. Eventualmente è possibile un ritorno alla fase di stesura in caso il documento non venga approvato.
+- *Verifica*: una volta completata la stesura, il documento viene sottoposto a verifica da parte di uno o più verificatori. Quest'ultimi controllano la correttezza e la completezza del contenuto, segnalando eventuali errori o incongruenze. Eventualmente è possibile un ritorno alla fase di stesura in caso la verifica abbia esito negativo e sia necessario modificare il contenuto del documento.
 
-- *Approvazione*: una volta completato il documento, l'approvazione finale deve essere effettuata dal _Responsabile di Progetto_#super("G"). Una volta approvato, il documento viene considerato ufficiale e può essere distribuito o utilizzato come riferimento.
+- *Approvazione*: una volta verificata una versione finale del documento, l'approvazione di esso deve essere effettuata dal _Responsabile di Progetto_#super("G"). Una volta approvato, il documento viene considerato ufficiale e può essere distribuito o utilizzato come riferimento.
 
 Ogni fase del ciclo di vita del documento è fondamentale per garantire la qualità e l'accuratezza delle informazioni contenute. È importante seguire rigorosamente queste fasi per assicurare che il documento finale soddisfi tutti i requisiti e gli standard previsti.
 
@@ -228,7 +243,7 @@ I documenti ad uso esterno sono destinati all'uso del committente e agli stakeho
 - Verbali esterni
 
 === Template
-Sono stati creati dei _template_#super("G") per facilitare la stesura dei documenti. Ogni template contiene uno stile unico utilizzato da tutti i documenti che lo importano. Possono esistere molteplici template contemporaneamente; attualmente i principali template sono quello della Candidatura e quello dell'RTB.
+Sono stati creati dei _template_#super("G") per facilitare la stesura dei documenti. Ogni template contiene uno stile unico utilizzato da tutti i documenti che lo importano. Possono esistere molteplici template contemporaneamente; attualmente i principali template di documenti sono quello della Candidatura e quello dell'RTB, il quale viene anche utilizzato per la PB.
 
 === Struttura del documento
 ==== Frontespizio
@@ -267,9 +282,9 @@ In ogni pagina del documento sono presenti i seguenti elementi:
   - Testo del documento
 - *Piè di pagina*
   - Numero di pagina: posizionato in basso a destra della pagina
-
+  - Indirizzo email del gruppo: posizionato in basso a sinistra della pagina
 ==== Verbali
-I verbali sono documenti che riportano le decisioni prese durante le riunioni del gruppo di progetto. I verbali differiscono leggermente nello stile grafico del frontespizio degli altri documenti, e non contengono il registro dei cambiamenti.
+I verbali sono documenti che riassumono le discussioni svolte durante una riunione. Essi differiscono leggermente nello stile grafico del frontespizio degli altri documenti, e non contengono il registro dei cambiamenti.
 
 === Norme Tipografiche
 ==== Nome del documento
@@ -281,14 +296,16 @@ Per la denominazione dei file si fa riferimento alla convenzione _CamelCase_#sup
 
 Per questioni di praticità, questo tipo di nomenclatura vale solo per i documenti ad uso interno ed esterno, non viene applicata ai template, alle immagini e altri tipi di documento. La nomenclatura dei documenti senza versionamento utilizza sempre gli underscore al posto degli spazi, ma senza utilizzare il CamelCase.
 
+I verbali invece, riportano come nome del file la data dell'incontro in formato YYYY-MM-DD. Ad esempio: `2024-04-05` per il verbale del 5 aprile 2024.
+
 ==== Stile del testo
 Il testo dei documenti deve essere scritto in lingua italiana, e utilizzerà i seguenti formati di testo:
 - *Grassetto*: per evidenziare i titoli di sezioni
-- *Corsivo*: per far riferimento alla prima occorrenza di un termine del glossario
-- *Monospace*: per riportare nomi di file, cartelle o elementi che richiamano alla stesura di codice
+- *_Corsivo_*: per far riferimento alla prima occorrenza di un termine del glossario
+- *`Monospace`*: per riportare nomi di file, cartelle o elementi che richiamano alla stesura di codice
 ==== Elenchi
 Gli elenchi seguono le seguenti norme:
-- Il simbolo che scandisce ogni elemento di un elenco puntato è il pallino (•), al secondo e terzo livello si trovano rispettivamente il trattino(-) e il triangolo nero (‣); mentre per le liste numerate si utilizzano i numeri arabi, poi le lettere minuscole e infine i numeri romani
+- Il simbolo che scandisce ogni elemento di un elenco puntato è il pallino (•), al secondo e terzo livello si trovano rispettivamente il trattino(-) e il triangolo nero (‣); mentre per nelle liste numerate si utilizzano i numeri arabi per il primo livello, poi i numeri romani e infine le lettere minuscole
 - Le voci iniziano per lettera maiuscola
 - Le liste del tipo "Termine: descrizione" presentano il termine in grassetto con la prima lettera in maiuscolo
 ==== Sigle
@@ -302,6 +319,13 @@ Le sigle utilizzate sono le seguenti:
   - *PdP*: Piano di Progetto
   - *ST*: Specifica Tecnica
   - *MU*: Manuale Utente
+  - *G*: Glossario
+  - *MVP*: Minimum Valuable Product
+  - *LdP*: Lettera di Presentazione
+  - *VIXXXX-XX-XX*: Verbale Interno del XXXX-XX-XX
+    - dove *XXXX-XX-XX* è la data del verbale in formato YYYY-MM-DD
+  - *VEXXXX-XX-XX*: Verbale Esterno del XXXX-XX-XX
+    - dove *XXXX-XX-XX* è la data del verbale in formato YYYY-MM-DD
   - *VI*: Verbale Interno
   - *VE*: Verbale Esterno
 
@@ -330,6 +354,7 @@ Per la stesura dei documenti finora sono stati utilizzati i seguenti strumenti:
 - *Visual Studio Code*: IDE utilizzato per la scrittura del codice sorgente dei documenti
 - *Typst.app*: sito web utilizzato come alternativa per la stesura dei documenti
 - *GitHub Actions*: utilizzate per la generazione automatica dei file pdf derivanti dal codice sorgente dei documenti
+- *Star UML*: utilizzato per la creazione dei diagrammi UML, i quali verranno poi esportati in formato PNG e inseriti nei documenti
 == Gestione della configurazione
 === Descrizione
 Secondo lo standard ISO/IEC 12207:1995, il processo di gestione della configurazione è un processo
@@ -365,18 +390,18 @@ La repository utilizzata dal gruppo per la creazione dei documenti è strutturat
   - `Documentazione Interna`: contiene i verbali delle riunioni relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei documenti interni relativi all'RTB.
     - `Verbali`: contiene i verbali delle riunioni relative alla milestone RTB.
-- `PB`: contiene i documenti relativi alla milestone PB, quindi la specifica tecnica e il manuale utente.ù
-  - `Documentazione Esterna`: contiene i documenti ad uso interno relative alla milestone PB.
+- `PB`: contiene i documenti relativi alla milestone PB, quindi la specifica tecnica e il manuale utente.
+  - `Documentazione Esterna`: contiene i documenti ad uso interno relativi alla milestone PB.
     - `src`: contiene il codice sorgente dei documenti esterni relativi alla PB.
       - `img`: contiene i file delle immagini a supporto dei documenti, ogni insieme di immagini è raggruppato in una cartella denominata con la sigla del documento al quale essa è associata.
-    - `Verbali`: contiene i verbali esterni fatti con il proponente per discutere del capitolato e del _PoC_#super("G").
+    - `Verbali`: contiene i verbali esterni fatti con il proponente per discutere del capitolato e dell'MVP.
   - `Documentazione Interna`: contiene i verbali delle riunioni relative alla milestone PB.
     - `src`: contiene il codice sorgente dei documenti interni relativi alla PB.
     - `Verbali`: contiene i verbali delle riunioni relative alla milestone PB.
 - `assets`: contiene tutto ciò che è di supporto alla documentazione, come:
   - file di template per i documenti.
   - il logo del gruppo, utilizzato per tutta la repository.
-- `README.md`: file che contiene le informazioni principali della repository, come la struttura e le e la lista dei membri.
+- `README.md`: file che contiene le informazioni principali della repository, come la sua e la lista dei membri del gruppo.
 La repository è pubblica e si può facilmente trovare al seguente link:
 - https://github.com/nextsoftPD/Documenti
 ==== PoC
@@ -384,7 +409,7 @@ La repository del Proof of Concept è strutturata nel seguente modo:
 - `API`: contiene il codice sorgente dell'API utilizzate dal plugin.
 - `Plugin`: contiene il codice sorgente dell'estensione di Visual Studio Code.
 - `TestProject`: contiene un progetto di test utilizzato per verificare il funzionamento del Proof of Concept.
-- `README.md`: file che contiene le informazioni principali della repository, come la struttura e le istruzioni per l'utilizzo del Proof of Concept.
+- `README.md`: file che contiene le informazioni principali della repository, come la sua struttura e le istruzioni per l'utilizzo del Proof of Concept.
 
 La repository è pubblica e si può facilmente trovare al seguente link:
 - https://github.com/nextsoftPD/PoC
@@ -400,8 +425,7 @@ La suddivisione dei branch varia in base allo scopo della repository.
 In nessuna repository è consentito modificare direttamente il branch principale, poiché porterebbe ad un elevato rischio di incongruenze e _merge conflicts_#super("G").
 Si potranno applicare modifiche solo tramite il meccanismo di _pull request_#super("G"), con verifica obbligatoria da parte di un verificatore, in modo da garantire che sia sempre presente una versione verificata e corretta del documento, anche se incompleta. Nel caso di una minor invece, la verifica può essere svolta nel momento stesso in cui viene aggiunta una versione "stabile".
 
-
-Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei verificatori, a patto che sia solo allo scopo di risolvere errori ortografici o per migliorare la comprensibilità alcune frasi senza modificarne il significato logico. Questa decisione è stata presa al fine di evitare la creazione di numerose minor e di poter proseguire più velocemente con la stesura dei documenti.
+Per quanto riguarda cambiamenti minimali (punteggiatura, errori ortografici, ecc.) è permessa la modifica autonoma da parte dei verificatori, a patto che sia solo allo scopo di risolvere errori ortografici o per migliorare la comprensibilità di alcune frasi senza modificarne il significato logico. Questa decisione è stata presa al fine di evitare la creazione di numerose minor e di poter proseguire più velocemente con la stesura dei documenti.
 
 La repository dei documenti è suddivisa in più _branch_#super("G") così definiti:
 
@@ -412,14 +436,13 @@ La repository dei documenti è suddivisa in più _branch_#super("G") così defin
 Mentre le repository contenenti del codice verranno suddivise nel seguente modo:
 
 - *`main`*: il branch principale, che contiene l'ultima versione verificata del codice sorgente
-- *`develop`*: branch secondario utilizzato per lo sviluppo del codice sorgente, qui sarà possibile modificare solo il codice sorgente.
 - *`feature`*: branch secondario utilizzato per lo sviluppo di nuove funzionalità, il nome del branch sarà lo stesso della feature sviluppata e sarà eliminato una volta che la funzionalità è stata implementata e verificata.
 
 === Strumenti
 Per il versionamento e la gestione del codice sorgente, si è scelto di utilizzare i seguenti strumenti:
 
 - *Git*: software di controllo versione distribuito, utilizzato per tracciare le modifiche al codice sorgente.
-- *GitHub*: piattaforma per la gestione dei repository Git, che consente la collaborazione tra i membri del team e l'hosting del codice sorgente.
+- *GitHub*: piattaforma per la gestione dei repository Git, che consente la collaborazione tra i membri del gruppo e l'hosting del codice sorgente.
 - *Visual Studio Code Source Control*: funzionalità integrata in Visual Studio Code per interagire con Git, che permette di gestire le modifiche, effettuare commit, creare branch e risolvere conflitti direttamente dall'IDE.
 
 == Gestione della Qualità
@@ -441,14 +464,18 @@ Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del _ciclo d
 
 - *Act*: si decide se standardizzare le nuove pratiche integrandole nel way of working o apportare ulteriori modifiche. Se i risultati della fase di verifica dimostrano che le azioni intraprese hanno portato a miglioramenti significativi, queste diventano il nuovo standard. Altrimenti, si ritorna alla fase di pianificazione per individuare nuove azioni correttive.
 
+
+=== Strumenti
+Per la gestione della qualità i principali strumenti adottati saranno le metriche definite nel documento di piano di qualifica.
+
 === Denominazione Metriche e Obiettivi
 Metriche e obiettivi sono strumenti importanti per valutare la qualità del prodotto e dei processi. Le metriche sono misurazioni quantitative che forniscono informazioni sui prodotti e sui processi, mentre gli obiettivi sono traguardi specifici che il gruppo si propone di raggiungere. Entrambi sono fondamentali per monitorare le prestazioni e identificare aree di miglioramento.
 Le metriche e gli obiettivi vengono definiti in modo da essere misurabili e quantificabili, in modo da poter monitorare i progressi nel tempo. Le metriche possono riguardare vari aspetti del prodotto, come la qualità del codice, la copertura dei test, il numero di bug trovati e risolti, ecc. Gli obiettivi possono riguardare aspetti come la riduzione dei tempi di sviluppo, l'aumento della soddisfazione del cliente o il miglioramento della qualità del prodotto.
 
 La denominazione delle metriche e degli obiettivi nei vari documenti segue questo formato:
-#align(center)[#strong[Sigla[Categoria][TipoProdotto][Numero]]]
+#align(center)[#strong[[Sigla][Categoria][TipoProdotto][Numero]]]
 dove:
-- *Sigla*: indica che si tratta di una metrica o un obiettivo
+- *[Sigla]*: indica che si tratta di una metrica o un obiettivo
   - *M*: per indicare una metrica
   - *O*: per indicare un obiettivo
 - *[Categoria]*: indica a quale categoria appartiene la metrica, e può assumere i seguenti valori:
@@ -458,7 +485,7 @@ dove:
 - *[TipoProdotto]*: indica se si riferisce a documenti o software ed è presente solo nel caso sia una metrica di prodotto. Può assumere i seguenti valori:
   - *D*: per indicare i documenti
   - *S*: per indicare i prodotti software
-- *Numero*: rappresenta il codice numerico identificativo della metrica o dell'obiettivo, inizia da 1 per ogni tipologia di categoria e prodotto
+- *[Numero]*: rappresenta il codice numerico identificativo della metrica o dell'obiettivo, inizia da 1 per ogni tipologia di categoria e prodotto
 
 == Verifica 
 === Descrizione
@@ -468,9 +495,9 @@ essere integrata, il prima possibile, con il processo che la utilizza  (fornitur
 === Analisi statica
 L'analisi statica è una tecnica di verifica del software che si effettua senza eseguire il codice. Si basa sull'esame del codice sorgente, della documentazione e di altri _artefatti_#super("G") del progetto per individuare errori, violazioni di standard e altre problematiche. Nell'analisi statica si distinguono due tecniche principali:
 
-- *Walkthrough*: consiste in una ricerca generale di errori, analizzando l'insieme di tutti i configuration items. Durante un walkthrough, i membri del team esaminano il codice o i documenti per identificare problemi evidenti, errori di logica, violazioni degli standard di codifica e altre anomalie.
+- *Walkthrough*: consiste in una ricerca generale di errori, analizzando l'insieme di tutti i configuration items. Durante un walkthrough, i membri del gruppo esaminano il codice o i documenti per identificare problemi evidenti, errori di logica, violazioni degli standard di codifica e altre anomalie.
 
-- *Inspection*: consiste nell'eseguire una lettura mirata di una specifica unità di testing. Le inspection sono solitamente più brevi rispetto ai walkthrough. Durante un'inspection, un team di revisori esamina il codice o alcuni paragrafi di documenti, utilizzando una _checklist_#super("G") di criteri predefiniti per identificare difetti. Ogni difetto trovato viene documentato e discusso, e vengono proposte soluzioni per correggerlo.
+- *Inspection*: consiste nell'eseguire una lettura mirata di una specifica unità di testing. Le inspection sono solitamente più brevi rispetto ai walkthrough. Durante un'inspection, un gruppo di revisori esamina il codice o alcuni paragrafi di documenti, utilizzando una _checklist_#super("G") di criteri predefiniti per identificare difetti. Ogni difetto trovato viene documentato e discusso, e vengono proposte soluzioni per correggerlo.
 
 === Analisi dinamica
 L'analisi dinamica è applicabile solo al prodotto software in quanto prevede l'esecuzione di test, cioè prove sul codice in esecuzione. Un test definito correttamente deve:
@@ -479,7 +506,7 @@ L'analisi dinamica è applicabile solo al prodotto software in quanto prevede l'
 - Identificare input e output richiesti
 - Fornire informazioni utili sui risultati dell'esecuzione
 
-Esistono diverse categorie di test, ognuno con uno scopo e oggetto di verifica diverso.
+Esistono diverse categorie di test, ognuno con scopo e oggetto di verifica differente.
 
 ==== Test di unità
 I test di unità verificano la correttezza di una piccola parte di software testabile, chiamata unità, per stabilirne il corretto funzionamento
@@ -493,7 +520,7 @@ I test di regressione servono a testare che gli aggiornamenti o modifiche rilasc
 presenti. Ciò consiste nella ripetizione di test di unità, integrazione e sistema.
 
 === Strumenti
-Non sono ancora stati individuati strumenti per la verifica del codice.
+jest (da migliorare) 
 
 === Codice identificativo dei test
 I test vengono identificati dal codice
@@ -505,12 +532,12 @@ dove:
   - *I* per i test d'integrazione
   - *S* per i test di sistema
   - *R* per i test di regressione
-  - *A* per i test di accettazione.
-- *ID*: codice numerico progressivo che inizia da 1 per ogni tipo d test
+  - *A* per i test di accettazione
+- *ID*: codice numerico progressivo che inizia da 1 per ogni tipo di test.
 
 === Verifica della Documentazione
-Per la verifica della documentazione, si utilizzeranno solamente le tecniche inspection definite in precedenza.
-Quando verrà aggiornato un document, verrà eseguita una lettura mirata ad un singolo paragrafo o ai cambiamenti regstrati dal sistema di versionamento, per una verifica dei documenti più veloce.
+Per la verifica della documentazione, si utilizzeranno solamente le tecniche di inspection definite in precedenza.
+Quando verrà aggiornato un documenti, verrà eseguita una lettura mirata ad un singolo paragrafo o ai cambiamenti registrati dal sistema di versionamento, per una verifica dei documenti più veloce.
 La verifica della documentazione si dice aver esito positivo quando:
 - Il contenuto dei documenti vari documenti è coerente, completo ed esaustivo per tutti gli argomenti trattati da esso.
 - I documenti sono stati redatti secondo le norme di progetto e soddisfano i criteri qualitativi del piano di qualifica.
@@ -528,13 +555,13 @@ dei requisiti. A tale test seguirà il rilascio del prodotto.
 = Processi Organizzativi
 == Gestione dei Processi
 === Descrizione
-Secondo lo standard ISO/IEC 12207:1995, il processo di gestione dei processi identifica le attività e i compiti di progetto necessari per gestire efficacemente i processi utilizzati dal team. Le attività di gestione dei processi definite dallo standard sono le seguenti:
+Secondo lo standard ISO/IEC 12207:1995, il processo di gestione dei processi identifica le attività e i compiti di progetto necessari per gestire efficacemente i processi utilizzati dal gruppo. Le attività di gestione dei processi definite dallo standard sono le seguenti:
 - Assegnazione dei ruoli di progetto
 - Assegnazione delle task
 - Gestione delle comunicazioni
 
 === Ruoli di progetto
-I ruoli di progetto sono assegnati ad ogni periodo produttivo, in modo da garantire una maggiore flessibilità e adattabilità alle esigenze del progetto. Ogni membro del gruppo avrà un ruolo definito in base ad accordi presi sulla ripartizione di determinate _task_#super("G") per quello sprint. 
+Avendo adottato un modello agile per lo sviluppo, i ruoli di progetto sono assegnati ad ogni task, in modo da garantire una maggiore flessibilità e adattabilità alle esigenze del progetto. Ogni membro del gruppo avrà un ruolo definito in base ad accordi presi sulla ripartizione di determinate _task_#super("G") per quello sprint. 
 
 I ruoli che ciascun membro dovrà ricoprire sono i seguenti:
 
@@ -560,30 +587,30 @@ Esegue delle procedure di controllo e amministrazione dell'ambiente di lavoro. I
 Possiede maggiori competenze riguardo il dominio applicativo del problema. Si occupa di:
 - Studiare il problema e il relativo contesto applicativo
 - Comprendere il problema e definire la complessità e i requisiti
-- Svolgere l'Analisi dei Requisiti e redigere il relativo documento
+- Svolgere l'analisi dei requisiti e redigere il relativo documento
 
 *Progettista*
 \
 Gestisce gli aspetti tecnologici e tecnici del progetto. In particolare si occupa di:
 - Effettuare scelte riguardanti gli aspetti tecnici e tecnologici del progetto, favorendone l'efficacia e l'_efficienza_#super("G")
 - Definire un'architettura del prodotto da sviluppare che miri all'economicità e alla manutenibilità a partire dal lavoro svolto dall'analista
-- Redigere la parte pragmatica del Piano di Qualifica
+- Documentare l'architettura descritta in precedenza nel documento di specifica tecnica
+- Redigere la parte pragmatica del piano di qualifica
 
 *Verificatore*
 \
 Verifica il lavoro svolto dagli altri componenti del gruppo, sulla base delle proprie competenze tecniche, esperienza e conoscenza delle norme. In particolare si occupa di:
-- Esaminare i prodotti in fase di revisione, con l'ausilio delle tecniche e degli strumenti definiti nelle Norme di Progetto
+- Esaminare i prodotti in fase di revisione, con l'ausilio delle tecniche e degli strumenti definiti nelle norme di progetto
 - Verificare la conformità dei prodotti ai requisiti funzionali e di qualità
-- Segnalare eventuali errori
+- Segnalare eventuali errori bloccando il processo di verifica
 
 *Programmatore*
 \
 Svolge la fase di codifica del progetto e delle componenti di supporto che verranno utilizzate per eseguire prove di verifica e validazione sul prodotto. In particolare, si occupa di:
-- Scrivere un codice ordinato e facile da mantenere
-- Realizzare gli strumenti per la verifica e la validazione del software
-
+- Scrivere un codice che segui le best practices e gli standard di codifica definiti nel piano di qualifica e in questo documento
+- Realizzare i test di unità, di integrazione, basandosi sull'architettura definita nella specifica tecnica e sulle norme definite in questo documento.
 === Issue Tracking System
-Un _issue tracking system_#super[G] permette di tenere traccia delle attività e dei problemi legati al progetto. Esso consente di monitorare lo stato di avanzamento delle attività, assegnare compiti ai membri del team e gestire le richieste di modifica.
+Un _issue tracking system_#super[G] permette di tenere traccia delle attività e dei problemi legati al progetto. Esso consente di monitorare lo stato di avanzamento delle attività, assegnare compiti ai membri del gruppo e gestire le richieste di modifica.
 Il gruppo adotta _GitHub Projects_#super("G") per  gestione semplice e chiara dei compiti da svolgere. Lo stato di avanzamento è segnato tramite le seguenti colonne:
 - `To do`: contiene la lista delle task create dal responsabile.
 - `In progress`: contiene le task che sono in fase di svolgimento.
@@ -617,7 +644,7 @@ Ogni volta che è necessario portare a termine un compito, si segue questa proce
   - I cambiamenti possono essere richiesti tramite un commento su github o possono essere accordati in una riunione o una breve chiamata
 
 === Gestione delle riunioni
-Le riunioni sono un momento fondamentale per coordinare le attività del gruppo e prendere decisioni importanti. Esse si dividono in:
+Le riunioni sono un momento fondamentale per coordinare le attività del gruppo e prendere decisioni importanti. Esse si dividono in:\
 *Riunioni interne*
 \
 Riservate ai membri del gruppo di progetto e con lo scopo di:
@@ -641,25 +668,27 @@ Per ogni riunione viene redatto un verbale che riporta:
 - Data e ora della riunione
 - Argomenti trattati
 - Decisioni prese
+- Retrospettiva del precedente periodo produttivo
 - Azioni da intraprendere
 - Analisi delle criticità riscontrate
 
 I verbali delle riunioni vengono archiviati e resi disponibili a tutti i membri del gruppo per garantire la trasparenza e la tracciabilità delle decisioni prese.
 ==== Gestione delle comunicazioni
 Le comunicazioni all'interno del gruppo avvengono principalmente attraverso i seguenti canali:
-- *Whatsapp*: per fissare le riunioni
-- *Discord*: per prendere discutere eventuali problemi e definire delle azioni da intraprendere di conseguenza
+- *Whatsapp*: app di messaggistica utilizzata per fissare le riunioni
+- *Discord*: piattaforma di comunicazione utilizzata per discutere eventuali problemi e definire delle azioni da intraprendere di conseguenza
 
 Per le comunicazioni formali con il proponente o altre parti interessate, si utilizzano principalmente:
-- *Email*: per fissare riunioni o per lo scambio di risorse e documenti
+- *Gmail*: client di posta utilizzato dal gruppo per fissare riunioni o per lo scambio di risorse e documenti con l'azienda proponente
 - *Zoom*: per ottenere feedback sull'avanzamento del progetto e discutere eventuali dubbi
 == Strumenti
 Tutti gli strumenti di supporto ai processi organizzativi utilizzati sono stati i seguenti:
-- *GitHub*: per la gestione del repository e il versionamento del codice
+- *GitHub*: per la gestione della repository e il versionamento del codice
 - *GitHub Projects*: per il tracking delle issue e la gestione delle task
 - *Zoom*: per le riunioni con il proponente e altre parti interessate
-- *Whatsapp*: per fissare le riunioni interne
-- *Discord*: per discutere eventuali problemi e definire azioni da intraprendere
+- *Whatsapp*: app di messaggistica utilizzata per fissare le riunioni interne
+- *Discord*: per discutere eventuali problemi e definire delle azioni da intraprendere
+- *Gmail*: client di posta utilizzato dal gruppo per fissare riunioni o per lo scambio di risorse e documenti con l'azienda proponente
 == Formazione del Personale
 I componenti di NextSoft si divideranno in due macrogruppi,
 uno dedito alla ricerca delle tecnologie necessarie per il Capitolato e l'altro dedito al processo di stesura della documentazione e alla discussione delle scelte progettuali proposte.
