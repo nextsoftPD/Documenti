@@ -5,7 +5,7 @@
 #show: project.with(
   title: "Verbale interno 05/04/2025",
   redattori: ("Luca Parise",),
-  verifica: ("Stefano Baso",),
+  verifica: ("",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0.0",
@@ -30,7 +30,7 @@ Il gruppo si riunisce per fare il punto della situazione sullo stato di avanzame
 = Cosa è stato fatto
 I membri del gruppo hanno discusso di quanto è stato fatto nell'ultimo periodo trascorso. In particolare, sono stati presentati i seguenti punti: 
 - Definizione dell'architettura e dei relativi diagrammi UML 
-- Integrazione delle scelte tecnologie nel documento di specifica tecnica
+- Integrazione delle scelte tecnologiche nel documento di specifica tecnica
 - Stesura iniziale del manuale utente
 
 
@@ -40,16 +40,16 @@ In particolare, il gruppo nel prossimo periodo si concentrerà su:
 - Completare il manuale utente
 - Continuare con la progettazione architetturale dell'MVP
 - Implementare le funzionalità principali dell'MVP
-- Stendere i test di unità del prodotto software
+- Progettare e implementare i test di unità del prodotto software
 - Verificare le modifiche alla documentazione esistente seguendo le indicazioni fornite dal committente
 
 È stata inoltre presa la decisione di entrare in contatto con l'azienda proponente. L'obiettivo di questo confronto è quello di discutere i requisiti progettuali e ottenere un feedback sul lavoro già svolto, al fine di allineare il progetto alle aspettative del committente.
 
 = Prossimi passi 
 
-- Terminare la scrittura della documentazione necessaria per la PB (manuale utente e specifica tecnica)
+- Terminare la scrittura della documentazione necessaria per la PB, in particolare le norme di progetto, il piano di progetto e il piano di qualifica
 - Contattare l'azienda proponente per discutere dell'avanzamento del progetto
-- Continuare lo sviluppo dell'MVP e dei relativi test di unità
+- Continuare lo sviluppo dell'MVP
 
 = Retrospettiva dell'ultimo periodo 
 
