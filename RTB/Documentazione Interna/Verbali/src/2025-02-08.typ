@@ -6,7 +6,7 @@
   verifica: ("Ion Cainareanu",),
   approvazione: ("Malik Giafar Mohamed",),
   uso: "Interno",
-  version: "1.0",
+  version: "1.0.0",
   timebegin: "15:00",
   timeend: "16:30",
   date: "08/02/2025",

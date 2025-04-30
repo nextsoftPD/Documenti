@@ -4,9 +4,8 @@ on:
   push:
 
 jobs:
-  build:
+  build-pdf:
     runs-on: ubuntu-latest
-
     steps:
       # Step 1
       - name: Checkout repository
@@ -56,4 +55,3 @@ jobs:
         with:
           name: Compiled-PDFs
           path: '**/*.pdf'
-      

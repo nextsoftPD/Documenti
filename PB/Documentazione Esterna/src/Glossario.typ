@@ -156,10 +156,7 @@
   approvazione: ("Luca Parise",),
   uso: "Esterno",
   versionamento: (
-    "2.0.0", "024/04/2025","Maria Fuensanta Trigueros Hernandez", "Aggiornamento e aggiunta di nuovi termini al glossario", "" ,
-    "1.0.0", "08/03/2025", "Marco Perazzolo", "Aggiornamento e aggiunta di nuovi termini al glossario", "Stefano Baso" ,
-    "0.2.0", "25/01/2025", "Maria Fuensanta Trigueros Hernandez", "Stesura iniziale del glossario", "Marco Perazzolo" ,
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
+    "1.0.1", "024/04/2025","Maria Fuensanta Trigueros Hernandez", "Aggiornamento e aggiunta di nuovi termini al glossario", "" ,
   )
 )
 
