@@ -11,6 +11,7 @@
   version: "1.3.0",
   date: "23/11/2024",
   versionamento: (
+    "1.3.1", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "",
     "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "",
     "1.2.0", "27/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "Stefano Baso",
     "1.1.1", "27/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "Stefano Baso",
@@ -62,7 +63,7 @@ Il contenuto del documento è organizzato nelle seguenti sezioni:
 
 - *Preventivo:*  dettagli sui costi stimati per ogni fase del progetto, evidenziando risorse e allocazioni di budget.
 
-- *Consuntivo di periodo:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, citando il vebrale che conterrà la retrospettiva del periodo produttivo. Verranno inoltre riportati i rischi occorsi durante ogni sprint.
+- *_Consuntivo di periodo_#super[G]:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, citando il vebrale che conterrà la retrospettiva del periodo produttivo. Verranno inoltre riportati i rischi occorsi durante ogni _sprint_#super[G].
 === Aggiornamento a seguito della revisione RTB
 
 In seguito al colloquio di revisione RTB, sono stati suggeriti dei miglioramenti da attuare al seguente documento in vista della successiva revisione, tali cambiamenti riguardano la sua riorganizzazione per renderlo più utile alla guida dell'avanzamento del progetto. Siccome tali suggerimenti sono stati presi in considerazione tra la fine dell'RTB e l'inizio della PB, gli ultimi sprint (dal 7 al 10) presenteranno delle discrepanze nei contenuti e nella loro forma, nonché in alcuni dettagli della struttura del documento. Alcuni esempi sono la discrepanza delle date degli sprint a causa del cambiamento della data di consegna, oppure l'introduzione dei rischi attesi nella pianificazione degli sprint.
@@ -143,7 +144,7 @@ Dove:
     [RI_004],
     [*Contrasti interni al gruppo*],
     [Durante lo svolgimento del progetto potrebbero emergere conflitti tra i membri del gruppo, causando rallentamenti nel completamento delle attività.],
-    [I membri del gruppo cercheranno di risolvere i contrasti attraverso una discussione collettiva. Se ciò non fosse sufficiente, il responsabile del progetto interverrà per mediare il conflitto, eventualmente ricorrendo a sondaggi per facilitare la decisione. Qualora il problema persistesse, si consulterà il committente per trovare una soluzione definitiva.],
+    [I membri del gruppo cercheranno di risolvere i contrasti attraverso una discussione collettiva. Se ciò non fosse sufficiente, il responsabile del progetto interverrà per mediare il conflitto, eventualmente ricorrendo a sondaggi per facilitare la decisione. Qualora il problema persistesse, si consulterà il _committente_#super[G] per trovare una soluzione definitiva.],
     [RI_005],
     [*Completamento di task prioritarie in sospeso*],
     [Alcune task del progetto potrebbero non venir completate all'interno dello sprint nel quale sono state designate, causando ritardi e rallentamenti nel completamento delle altre attività.],
@@ -363,13 +364,13 @@ L'obiettivo è l'acquisizione delle conoscenze utili per lo svolgimento _milesto
 
 === Attività
 
-Il completamento di questo sprint prevede la preparazione della repository per la documentazione della milestone RTB e l'acquisizione della conoscenza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
+Il completamento di questo sprint prevede la preparazione della _repository_#super[G] per la documentazione della milestone RTB e l'acquisizione della conoscenza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
 
 == Sprint 2 - Analisi e documentazione
 
 *Periodo*: 01/12/2024 - 15/12/2024
 
-In questo sprint ci si focalizzerà sulla documentazione. Poiché il gruppo avrà ormai acquisito familiarità con il processo, l'attenzione sarà rivolta alla creazione di un template comune per tutti i documenti e alla stesura di una loro versione iniziale. 
+In questo sprint ci si focalizzerà sulla documentazione. Poiché il gruppo avrà ormai acquisito familiarità con il processo, l'attenzione sarà rivolta alla creazione di un _template_#super[G] comune per tutti i documenti e alla stesura di una loro versione iniziale. 
 
 === Obiettivo
 
@@ -412,7 +413,7 @@ Le attività principali sono:
 
 *Periodo*: 04/01/2025 - 17/01/2025
 
-Questo sprint prevede la progettazione e lo sviluppo di una bozza del PoC, il quale verrà sviluppato parallelamente nel frontend e nel backend. Siccome si tratterà di una bozza, l'integrazione tra frontend e backend avverrà in un secondo momento.
+Questo sprint prevede la progettazione e lo sviluppo di una bozza del PoC, il quale verrà sviluppato parallelamente nel _frontend_#super[G] e nel backend. Siccome si tratterà di una bozza, l'integrazione tra frontend e backend avverrà in un secondo momento.
 
 
 
@@ -447,7 +448,7 @@ Le attività che verranno svolte durante questo sprint consistono principalmente
 
 *Periodo*: 22/02/2025 - 8/03/2025
 
-Questo sprint è focalizzato sulla validazione del PoC e della documentazione. Comprende la verifica della conformità del sistema ai requisiti, la correzione di eventuali anomalie e la preparazione della versione 1.0.0 della documentazione. 
+Questo sprint è focalizzato sulla _validazione_#super[G] del _PoC_#super[G] e della documentazione. Comprende la verifica della conformità del sistema ai requisiti, la correzione di eventuali anomalie e la preparazione della versione 1.0.0 della documentazione. 
 
 === Obiettivo
 
@@ -510,7 +511,7 @@ I rischi attesi durante questo sprint sono legati alla codifica e al testing del
 
 - *RT_004 - Cambio di tecnologie*: Potrebbe emergere la necessità di modificare le tecnologie utilizzate, per esempio a seguito di scelte tecnolgiche errate per l'implementazione dei test.
 
-- *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività refactoring o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di programmatore con un conseguente aumento dei costi rispetto al preventivo iniziale. 
+- *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività _refactoring_#super[G] o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di programmatore con un conseguente aumento dei costi rispetto al preventivo iniziale. 
 
 - *RT_005 - Mancato superamento dei test*: Indubbiamente alcuni test potrebbero non essere superati, in questo caso la mitigazione sar un semplice miglioramento dei moduli che non superano i test.  
 === Sprint 9 - Baseline Documentazione
