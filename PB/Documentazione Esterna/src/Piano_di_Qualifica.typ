@@ -10,6 +10,7 @@
   version: "1.1.0",
   date: "23/11/2024",
   versionamento: (
+    "1.2.0", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "",
     "1.1.0", "05/04/2025", "Stefano Baso", "Aggiunte metriche in qualità di processo", "Malik Giafar Mohamed",
   )
 )
@@ -37,14 +38,14 @@ Il presente documento si propone di:
 Il documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
 
 == Scopo del prodotto
-Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
+Il prodotto, un _plug-in_#super[G] per Visual Studio Code chiamato "Requirement Tracker",
 è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
 con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
 e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
 riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
-Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come knowledge,
+Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come _knowledge_#super[G],
 ad esempio datasheet e manuali, permette di garantire una corretta copertura dei requisiti.
 
 == Glossario
