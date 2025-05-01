@@ -8,11 +8,12 @@
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.3.0",
+  version: "1.4.0",
   date: "23/11/2024",
   versionamento: (
+    "1.4.0", "01/05/2025", "Stefano Baso", "Aggiunto consuntivo sprint 9", "",
     "1.3.1", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "",
-    "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "",
+    "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "Malik Giafar Mohamed",
     "1.2.0", "27/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "Stefano Baso",
     "1.1.1", "27/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "Stefano Baso",
     "1.1.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "Malik Giafar Mohamed",
@@ -1144,3 +1145,43 @@ Il rischio *RT_007* si è concretizzato durante l'implementazione di alcune funz
 Si è verificato anche il rischio *RI_006*, in quanto i test non sono ancora stati completamente definiti e il codice rimane da sistemare. Questo aspetto sarà prioritario nel prossimo sprint per garantire la consegna dell'MVP nei tempi previsti.
 
 Gli obiettivi principali dello sprint sono stati comunque raggiunti, e non è necessario applicare correzioni per il futuro. La collaborazione tra i membri del gruppo è stata efficace e ha portato a risultati soddisfacenti.
+
+=== Sprint 7 - Stesura Documentazione PB
+*Periodo*: 21/04/2025 - 28/04/2025 \
+*Verbale di Retrospettiva*: VI2025-04-28
+==== Rendicontazione oraria
+
+#figure(
+  table(
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [-], [1], [1], [-], [-], [-],
+    [*Ion*], [1], [-], [-], [-], [3], [1],
+    [*Maria Fuensanta*], [2], [-], [-], [4], [3], [2],
+    [*Stefano*], [-], [-], [3], [-], [4], [3],
+    [*Marco*], [1], [2], [-], [5], [2], [4],
+    [*Luca*], [-], [2], [-], [4], [2], [5],
+  ),
+  caption: "Rendicontazione Sprint 9",
+)
+
+==== Prospetto economico
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [4], [120],
+  [*Amministratore*], [5], [100],
+  [*Analista*], [4], [100],
+  [*Progettista*], [13], [325],
+  [*Programmatore*], [14], [210],
+  [*Verificatore*], [15], [225],
+  [*Totale*], [*55*], [*1080*]
+  ),
+  caption: "Prospetto economico Sprint 9"
+)
+
+=== Rischi Occorsi
