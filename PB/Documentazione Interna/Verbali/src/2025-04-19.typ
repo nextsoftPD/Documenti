@@ -1,4 +1,4 @@
-#import "../../../assets/template_v2.0.0.typ": project;
+#import "../../../../assets/template_v2.0.0.typ": project;
 
 #show: project.with(
   title: "Verbale interno 19/04/2025",
