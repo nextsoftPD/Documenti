@@ -5,7 +5,7 @@
 #show: project.with(
   title: "Verbale interno 05/04/2025",
   redattori: ("Luca Parise",),
-  verifica: ("",),
+  verifica: ("Maria Fuensanta Trigueros Hernandez",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0.0",
@@ -16,7 +16,7 @@
     "Ion Cainareanu","SI","",
     "Malik Giafar Mohamed","SI","",
     "Stefano Baso","SI","",
-    "Marco Perazzolo ", "SI", "",
+    "Marco Perazzolo", "SI", "",
     "Luca Parise", "SI","",
     "Maria Fuensanta Trigueros Hernandez","SI","",
     ),
