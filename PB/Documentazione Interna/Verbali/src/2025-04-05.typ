@@ -6,7 +6,7 @@
   title: "Verbale interno 05/04/2025",
   redattori: ("Luca Parise",),
   verifica: ("Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("",),
+  approvazione: ("Marco Perazzolo",),
   uso: "Interno",
   version: "1.0.0",
   timebegin: "21:00",
@@ -30,32 +30,32 @@ Il gruppo si riunisce per fare il punto della situazione sullo stato di avanzame
 = Cosa è stato fatto
 I membri del gruppo hanno discusso di quanto è stato fatto nell'ultimo periodo trascorso. In particolare, sono stati presentati i seguenti punti: 
 - Definizione dell'architettura e dei relativi diagrammi UML 
-- Integrazione delle scelte tecnologiche nel documento di specifica tecnica
-- Stesura iniziale del manuale utente
+- Integrazione delle scelte tecnologiche nel documento di _Specifica tecnica_
+- Stesura iniziale del _Manuale utente_
 
 
 = Registro delle decisioni 
 Si è deciso di continuare a lavorare in parallelo su più aspetti del progetto, per garantire un avanzamento costante e una copertura completa delle attività previste.
 In particolare, il gruppo nel prossimo periodo si concentrerà su: 
-- Completare il manuale utente
+- Completare il _Manuale utente_
 - Continuare con la progettazione architetturale dell'MVP
 - Implementare le funzionalità principali dell'MVP
-- Progettare e implementare i test di unità del prodotto software
+- Progettare ed implementare i test di unità del prodotto software
 - Verificare le modifiche alla documentazione esistente seguendo le indicazioni fornite dal committente
 
 È stata inoltre presa la decisione di entrare in contatto con l'azienda proponente. L'obiettivo di questo confronto è quello di discutere i requisiti progettuali e ottenere un feedback sul lavoro già svolto, al fine di allineare il progetto alle aspettative del committente.
 
-= Prossimi passi 
+= Prossimi passi
 
-- Terminare la scrittura della documentazione necessaria per la PB, in particolare le norme di progetto, il piano di progetto e il piano di qualifica
+- Terminare la scrittura della documentazione necessaria per la PB, in particolare le _Norme di progetto_, il _Piano di progetto_ e il _Piano di qualifica_
 - Contattare l'azienda proponente per discutere dell'avanzamento del progetto
 - Continuare lo sviluppo dell'MVP
 
 = Retrospettiva dell'ultimo periodo 
 
-Le scelte architetturali dell'MVP e la stesura del manuale utente sono progrediti in modo soddisfacente, seppur con alcune difficoltà legate alla gestione dei carichi di lavoro e all'integrazione dei contributi individuali.
+Le scelte architetturali dell'MVP e la stesura del _Manuale utente_ sono progrediti in modo soddisfacente, seppur con alcune difficoltà legate alla gestione dei carichi di lavoro e all'integrazione dei contributi individuali.
 
-Tuttavia, alcuni rischi hanno influito sull'inizio della stesura della specifica tecnica. In particolare, la correzione del documento di analisi dei requisiti ha richiesto più tempo del previsto e l'inizio della stesura effettiva della specifica tecnica ha subito ritardi a causa della mancanza di conoscenze su come strutturare il documento.
+Tuttavia, alcuni rischi hanno influito sull'inizio della stesura della _Specifica tecnica_. In particolare, la correzione del documento di _Analisi dei requisiti_ ha richiesto più tempo del previsto e l'inizio della stesura effettiva della _Specifica tecnica_ ha subito ritardi, dovuti anche alla mancanza di conoscenze su come strutturare il documento.
 
 Nel complesso, il gruppo ha mostrato una buona capacità di adattamento e collaborazione, pur evidenziando la necessità di migliorare ulteriormente la pianificazione e la distribuzione delle attività per ottimizzare l'efficienza nelle prossime fasi del progetto.
 
