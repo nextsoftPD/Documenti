@@ -3,7 +3,7 @@
 #show: project.with(
   title: "Verbale interno 19/04/2025",
   redattori: ("Stefano Baso",),
-  verifica: ("",),
+  verifica: ("Malik Giafar Mohamed",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0.0",
@@ -48,7 +48,7 @@ E' stata approvata la struttura e la suddivisione dei file e componenti del prod
 
 = Retrospettiva dell'ultimo periodo 
 
-Durante questo sprint il gruppo si è concentrato sul terminare la definizione e implementazione della struttura del prodotto software. Questo ha permesso di poter proseguire nella fase successiva con la definizione di test e la verifica dei file.
+Durante questo sprint il gruppo si è concentrato sul terminare l'architettura del prodotto software. Questo ha permesso di poter proseguire nella fase successiva con la definizione di test e la verifica dei file.
 
 A discapito di quanto definito inizialmente, la parte relativa alla documentazione di Manuale Utente e Specifica Tecnica non è stata completata. Il gruppo provvederà a risolvere questo punto nel successivo sprint dedicando maggior tempo alla documentazione.
 
