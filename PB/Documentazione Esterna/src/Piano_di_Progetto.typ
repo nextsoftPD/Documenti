@@ -6,24 +6,17 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", ),
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Luca Parise",),
+  approvazione: ("",),
   uso: "Esterno",
   version: "1.4.0",
   date: "23/11/2024",
   versionamento: (
-    "1.4.0", "01/05/2025", "Stefano Baso", "Aggiunto consuntivo sprint 9", "",
-    "1.3.1", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "",
+    "1.5.0", "02/05/2025", "Malik Giafar Mohamed", "Aggiunti rischi occorsi nello sprint 9", "",
+    "1.4.0", "01/05/2025", "Stefano Baso", "Aggiunto consuntivo sprint 9", "Malik Giafar Mohamed",
+    "1.3.1", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "Malik Giafar Mohamed",
     "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "Malik Giafar Mohamed",
     "1.2.0", "27/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "Stefano Baso",
     "1.1.1", "27/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "Stefano Baso",
-    "1.1.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "Malik Giafar Mohamed",
-    "1.0.0", "08/03/2025", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
-    "0.5.0", "08/03/2025", "Stefano Baso, Malik Giafar Mohamed, Luca Parise", "Miglioramento sezione rischi, inserimento tabelle preventivo e consuntivo, miglioramento sezione pianificazione", "Ion Cainareanu",
-    "0.4.0", "15/02/2025", "Stefano Baso", "Miglioramento sezione periodi", "Ion Cainareanu, Luca Parise",
-    "0.3.2", "06/02/2025", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "Marco Perazzolo",
-    "0.3.1", "12/1/2025", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
-    "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 
@@ -1146,7 +1139,8 @@ Si è verificato anche il rischio *RI_006*, in quanto i test non sono ancora sta
 
 Gli obiettivi principali dello sprint sono stati comunque raggiunti, e non è necessario applicare correzioni per il futuro. La collaborazione tra i membri del gruppo è stata efficace e ha portato a risultati soddisfacenti.
 
-=== Sprint 7 - Stesura Documentazione PB
+=== Sprint 9 - Baseline Documentazione
+
 *Periodo*: 21/04/2025 - 28/04/2025 \
 *Verbale di Retrospettiva*: VI2025-04-28
 ==== Rendicontazione oraria
@@ -1185,3 +1179,10 @@ Gli obiettivi principali dello sprint sono stati comunque raggiunti, e non è ne
 )
 
 === Rischi Occorsi
+Durante lo sprint si è verificato il rischio *RI_004* a causa di alcuni contrasti tra membri del gruppo per il completamento e la suddivisione delle attività. La mitigazione prevista per tale rischio ha funzionato senza la necessità di contattare il committente.
+
+L'implementazione del codice è stata portata avanti in modo costante, riuscendo a terminare il codice e i test di unità e annullando di conseguenza la presenza del rischio *RI_006* causata dagli sprint precedenti.
+
+Si sono verificati i rischi *RI_008* e *RI_005* rispettivamente per la documentazione e per la stesura di test di integrazione, in quanto le seguenti task non sono state completate.
+
+Gli obiettivi dello sprint si dicono ugualmente raggiunti senza necessità di applicare misure correttive per il futuro, in quanto sarà sufficiente eseguire le task di validazione della documentazione e del prodotto software una volta completate le task in sospeso.
