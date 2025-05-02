@@ -1580,17 +1580,17 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO007],
     [Obbligatorio],
     [L'estensione di Visual Studio Code deve essere in inglese],
-    [Proponente],
+    [Proponente, UC_17],
     /*----------------------------------------------------*/
     [RFD008],
     [_Desiderabile_#super("G")],
     [Il sistema deve informare l'utente in caso di rallentamenti dovuti a una connessione lenta (risposte con tempo di attesa >20s) o a un modello troppo grande (_prompt_#super("G") maggiore di 6000 _token_#super("G") e/o velocità di risposta < 20 token/s)],
-    [DA METTERE],
+    [Proponente],
     /*----------------------------------------------------*/
     [RFO009],
     [Obbligatorio],
     [Il sistema deve permettere l'importazione di file CSV],
-    [UC_1, UC_2],
+    [UC_1, UC_2, UC_3],
     /*----------------------------------------------------*/
     [RFO010],
     [Obbligatorio],
@@ -1600,12 +1600,12 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO011],
     [Obbligatorio],
     [Il sistema deve essere in grado di verificare la validità del file CSV da importare, effettuando controlli sui campi del file],
-    [UC_1, UC_1.2, UC_2],
+    [UC_1, UC_1.2, UC_2, UC_3],
     /*----------------------------------------------------*/
     [RFO012],
     [Obbligatorio],
     [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_#super("G")],
-    [Capitolato, UC_1, UC_2, UC_1.1, UC_1.3, Proponente],
+    [Capitolato, UC_1,UC_1.1,UC_1.3, UC_2, UC_3,  Proponente],
     /*----------------------------------------------------*/
     [RFO013],
     [Obbligatorio],
@@ -1615,17 +1615,17 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO014],
     [Obbligatorio],
     [Il sistema deve visualizzare le informazioni relative ai requisiti da analizzare, con o senza tracciamento, all'interno di un elenco annidato (nome del file in cui il codice sorgente è stato tracciato e le relative righe di codice, se presenti)],
-    [UC_1, UC_2, UC_7, UC_7.1, UC_7.1.1, UC_8],
+    [UC_1, UC_2, UC_3, UC_7, UC_7.1, UC_7.1.1, UC_8, UC_9],
     /*----------------------------------------------------*/
     [RFO015],
     [Obbligatorio],
     [Per ogni requisito presente nella lista caricata sarà presente un'icona predisposta ad avviare l'analisi del singolo requisito quando necessario],
-    [UC_7.1.2],
+    [UC_6.1.4],
     /*----------------------------------------------------*/
     [RFO016],
     [Obbligatorio],
     [Il sistema deve essere in grado di reperire le porzioni di codice tracciate all'interno del file CSV importato, e deve essere in grado di utilizzarle nell'analisi dei requisiti],
-    [UC_2, UC_4, UC_12],
+    [UC_2, UC_4],
     /*----------------------------------------------------*/
     [RFO017],
     [Obbligatorio],
@@ -1650,7 +1650,7 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO021],
     [Obbligatorio],
     [Il sistema, nel caso vengano inseriti dei requisiti non tracciati, deve mostrare un messaggio che informi l'utente sul loro mancato tracciamento],
-    [UC_4.1, UC_5.2],
+    [UC_4.1],
     /*----------------------------------------------------*/
     [RFO022],
     [Obbligatorio],
@@ -1669,7 +1669,7 @@ Questi requisiti descrivono cosa il sistema deve fare
     /*----------------------------------------------------*/
     [RFO025],
     [Obbligatorio],
-    [Il sistema, una volta eseguita l'analisi, deve essere in grado di esportare il tracciamento dei requisiti in formato CSV, i quali conterranno esclusivamente l'ID, la descrizione e il tracciamento],
+    [Il sistema, una volta eseguita l'analisi (o il tracciamento) dei requisiti, deve essere in grado di esportare i risultati ottenuti in formato CSV],
     [UC_5],
     /*----------------------------------------------------*/
     [RFO026],
@@ -1680,12 +1680,12 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO027],
     [Obbligatorio],
     [Il sistema, una volta eseguita l'analisi, deve essere in grado di esportare sia il tracciamento dei requisiti sia i risultati dell'analisi],
-    [UC_6],
+    [UC_5],
     /*----------------------------------------------------*/
     [RFO028],
     [Obbligatorio],
     [Il sistema, nel caso si voglia esportare il tracciamento dei requisiti (e dell'analisi) quando queste non sono presenti, informerà l'utente con un messaggio di errore],
-    [UC_6.1, UC_4.1],
+    [UC_4.1],
     /*----------------------------------------------------*/
     [RFO029],
     [Obbligatorio],
@@ -1710,22 +1710,22 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO033],
     [Obbligatorio],
     [Il sistema deve essere in grado di associare ai requisiti non mappati il relativo codice sorgente che lo implementi attraverso una richiesta di analisi all'LLM, quindi registrare le righe di codice relative e mostrarle nella vista insieme ai requisiti],
-    [UC_12],
+    [UC_13, UC_14],
     /*----------------------------------------------------*/
     [RFO034],
     [Obbligatorio],
     [Il sistema deve essere in grado di escludere dall'analisi e dal tracciamento dei requisiti tutti i file elencati in un apposito file di configurazione (chiamato .reqignore) contenente i percorsi dei file associati al progetto. Se il file di configurazione include percorsi non validi, il sistema deve notificare l'errore all'utente, senza però interrompere l'analisi, che deve comunque procedere sui file validi],
-    [UC_13, UC_13.1],
+    [UC_16],
     /*----------------------------------------------------*/
     [RFO035],
     [Obbligatorio],
     [Il sistema deve permettere la configurazione del modello o dei modelli LLM che saranno utilizzati per l'analisi dei requisiti],
-    [UC_14, Proponente],
+    [UC_17, UC_17.1, UC_17.2, UC_17.3, Proponente],
     /*----------------------------------------------------*/
     [RFO036],
     [Obbligatorio],
     [Il sistema deve permettere di configurare l'endpoint del server Ollama],
-    [UC_15, Proponente],
+    [UC_18, Proponente],
     /*----------------------------------------------------*/
     [RFO037],
     [Obbligatorio],
@@ -1735,12 +1735,12 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO038],
     [Obbligatorio],
     [Il sistema deve permettere all'utente di modificare la soglia di accettazione di un requisito, la quale permette ad esso di essere identificato come rispettato],
-    [UC_16, Proponente],
+    [UC_19, Proponente],
     /*----------------------------------------------------*/
     [RFO039],
     [Obbligatorio],
     [Il sistema, nel caso venga inserito un valore "soglia" (di accettazione) non valido, ossia che non rientra nei parametri stabiliti, deve visualizzare un messaggio di errore specifico e permettere all'utente di modificarlo],
-    [UC_16.1, UC_16],
+    [UC_19, UC_19.1],
   ),
   caption: [Requisiti Funzionali]
 )
@@ -1769,7 +1769,7 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
     [RQF001],
     [Facoltativo],
     [Il sistema deve essere compatibile con Visual Studio Code con versione >= 1.98 e Ollama con versione >=0.6.4],
-    [DA METTERE],
+    [Proponente],
     [RQO002],
     [Obbligatorio],
     [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme_di_Progetto_v1.0.0]],
