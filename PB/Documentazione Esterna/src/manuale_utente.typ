@@ -9,6 +9,7 @@
   version: "0.0.9",
   date: "12/04/2026",
   versionamento: (
+    "0.1.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","",
     "0.0.9","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","",
     "0.0.8","23/04/2025","Luca Parise, Malik Giafar Mohamed","Miglioramento stile del testo nei vari capitoli","",
     "0.0.7","19/04/2025","Luca Parise, Malik Giafar Mohamed","Modifica capitolo per installazione immagine docker","",
@@ -20,7 +21,7 @@
     "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","",
     
     
-    "","","","","",
+    
     "","","","","",
     "","","","","",
     "","","","","",
@@ -65,6 +66,7 @@ facilmente adattabile a nuove funzionalità o esigenze future.
 == Glossario 
 I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
 nell'omonimo documento.
+#pagebreak()
 
 /*----------------------------------------------------*/
 /*                                                    */
@@ -88,20 +90,21 @@ Sono necessarie le seguenti tecnologie installate:
 Per creare un _file *.vsix*_#super("G") (che è il pacchetto installabile di una estensione per Visual Studio Code), è necessario usare lo strumento _*vsce*_#super("G") (Visual Studio Code Extension Manager). \
 Di seguito i vari passaggi per creare tale pacchetto: 
 
-- *1)* Aprire il terminale e installare *vsce* (Visual Studio Code Extension Manager), con il comando:
+- *1)* Aprire il terminale e installare vsce (Visual Studio Code Extension Manager).\ Il flag *-g* specifica che l’installazione deve essere globale, rendendo il comando vsce accessibile da qualsiasi directory del sistema. Questo è necessario perché vsce è uno strumento da riga di comando usato per creare e pubblicare estensioni per Visual Studio Code.
 
-#align(center, "$ npm install -g vsce" )
+#align(center, `$ npm install -g vsce` )
+
 
 - *2)* Navigare con il terminale fino alla cartella della tua estensione. Quindi vai nella cartella in cui si trova il file *package.json* della tua estensione. Puoi usare il seguente comando per navigare nella cartella:
-#align(center, "$ cd /path/to/your/extension" )
+#align(center, `$ cd /path/to/your/extension` )
 
-- *3)* Effettuare la _build_#super[G] del file .vsix con il seguente comando, il quale genera un file .vsix, ad esempio nome-estensione-0.0.1.vsix: 
+- *3)* Effettuare la _build_#super[G] del file .vsix con il seguente comando, il quale genera un file .vsix, ad esempio *nome-estensione-0.0.1.vsix*: 
 
-#align(center, "$ vsce package" )
+#align(center, `$ vsce package` )
 
 
 
-- *4)* (Facoltativo) Ignorare i file non necessari. È possibile usare un file .vscodeignore nella _root directory_#super[G] della tua estensione per escludere i file o cartelle (come node_modules, test/, ecc.) dal pacchetto finale. \
+- *4)* (Facoltativo) Ignorare i file non necessari. È possibile usare un file `.vscodeignore` nella _root directory_#super[G] della tua estensione per escludere i file o cartelle (come node_modules, test/, ecc.) dal pacchetto finale. \
 
 #pagebreak()
 
@@ -109,25 +112,25 @@ Di seguito i vari passaggi per creare tale pacchetto:
 
 Una volta creato il pacchetto .vsix come delineato nel capitolo precedente, è possibile installare il plug-in in Visual Studio Code. Per farlo, segui questi passaggi: \ \
 - *1)* Aprire Visual Studio Code \
-- *2)* Aprire un terminale e navigare nella cartella in cui hai salvato il file .vsix. Puoi usare il comando: 
-#align(center, "$ cd /path/to/your/extension" ) 
+- *2)* Aprire un terminale e navigare nella cartella in cui è stato salvato il file generato in formato vsix. Potete farlo usando il seguente comando: 
+#align(center, `$ cd /path/to/your/extension` ) 
 
 - *3)* Usare quindi il seguente comando per installare il pacchetto .vsix:  
-#align(center, "$ code --install-extension nome-estensione-0.0.1.vsix" ) 
+#align(center, `$ code --install-extension nome-estensione-0.0.1.vsix` ) 
 
 - *4)* Se la estensione installata non è visualizzata, provare a riavviare Visual Studio Code 
 - *5)* Verificare che l'estensione sia stata installata correttamente: È possibile farlo accedendo alla sezione delle estensioni di Visual Studio Code e cercando il nome del plug-in oppure, tramite terminale, utilizzando il seguente comando: 
-#align(center, "$ code --list-extensions" )
+#align(center, `$ code --list-extensions` )
 \
 A questo punto, l'estensione dovrebbe risultare installata con successo. Per utilizzarla, è necessario che Ollama sia attivo e configurato con un _modello LLM_#super("G"). Per ulteriori dettagli, consultare il capitolo successivo.  
 
 
 
-=== Attivare Ollama 
+=== Come attivare Ollama 
 Se Ollama non è stato ancora scaricato ed installato, si consiglia di consultare la documentazione ufficiale disponibile al seguente link "https://ollama.com/" (14/04/2025).
 
 Per utilizzare l'estensione, è necessario che Ollama sia attivo e in ascolto sulla porta standard 11434. A tal fine, è possibile cercare e avviare l'icona di Ollama una volta installato oppure, aprire un terminale ed eseguire il comando \ \ 
-#align(center, "$ ollama run nome_modello" ) \
+#align(center, `$ ollama run nome_modello` ) \
 dove "nome_modello" rappresenta il modello utilizzato. Di default, l'estensione utilizza il modello *llama3.2:3b*, ma è possibile modificarlo in qualsiasi momento accedendo alle impostazioni dell'estensione. Per ulteriori dettagli, si rimanda al capitolo dedicato alla configurazione del modello LLM.
 
 
@@ -144,24 +147,24 @@ L'utilizzo di Docker permette di semplificare il processo di configurazione, evi
 L'intera procedura richiede pochi comandi da terminale ed è stata progettata per essere semplice e accessibile anche a chi non ha una lunga esperienza con Docker.
 Assicurati di avere una connessione a internet attiva durante l'installazione e, se lavori su un sistema Linux, di avere i permessi necessari per eseguire i comandi come amministratore.
 
-- *1)* Prima di tutto, è necessario verificare che Docker sia installato sul sistema. È possibile scaricare Docker Desktop (per Windows e macOS) oppure installare Docker Engine (per Linux) seguendo la guida ufficiale disponibile al link "https://docs.docker.com/get-docker/" (14/04/2025).
+- *1)* Prima di tutto, è necessario verificare che Docker sia installato sul sistema. È possibile scaricare Docker Desktop (per Windows e macOS) oppure installare Docker Engine (per Linux) seguendo la guida ufficiale disponibile al link "https://docs.docker.com/get-docker/" (04/05/2025).
 Una volta installato, verificare che Docker sia correttamente attivo eseguendo da terminale il comando: 
 
-#align(center, "$ docker --version")
+#align(center, `$ docker --version`)
 Se il comando restituisce la versione di Docker, l'installazione risulta completata con successo. 
 
 - *2)* Scaricare il Dockerfile presente all'interno della repository del prodotto e costruire localmente l'immagine attraverso il comando (assicurarsi di essere nella directory in cui si trova il file):
-#align(center, "$ cd ~path/del/server/API" )
+#align(center, `$ cd ~path/del/server/API` )
 
 - *3)* Una volta nella cartella del codice  sorgente (all'interno della directory denominata "hexagonalTest" della cartella MVP) è necessario costruire l'immagine Docker eseguendo il comando:
 
-#align(center, "$ docker build -t requirement-tracker-api")
+#align(center, `$ docker build -t requirement-tracker-api`)
 
 - *3)* Verificare che l'immagine sia presente usando il comando 
-#align(center, "$ docker images")
+#align(center, `$ docker images`)
 \ 
 - *4)* Per eseguire l'immagine e creare il container utilizzare il comando: 
-#align(center, "$ docker run -p porta:4000 -e VAR=VAL requirement-tracker-api")
+#align(center, `$ docker run -p porta:4000 -e VAR=VAL requirement-tracker-api`)
 
 Nel caso il nome dell'immagine sia cambiato, allora sarà necessario cambiare anche il nome nei comandi sopra. Lo stesso vale per la porta. \
 
@@ -170,7 +173,7 @@ Nel caso il nome dell'immagine sia cambiato, allora sarà necessario cambiare an
 Un'altro metodo per avviare il server tramite docker consiste nel creare un "*docker compose file*".
 Si tratta di un file in formato "yaml" il quale permette di modificare più facilmente i parametri di esecuzione del container con l'immagine del server. Inoltre, consente di configurare modalità di deployment più complesse, come l'uso di più container o l'integrazione con altri servizi. \
 
-Tutto questo non è possibile con il comando "docker run" in quanto questo permette di eseguire solo un container alla volta. 
+Tutto questo non è possibile con il comando `docker run` in quanto questo permette di eseguire solo un container alla volta. 
 
 
 
@@ -178,15 +181,17 @@ Tutto questo non è possibile con il comando "docker run" in quanto questo perme
 
 ==== Attivare il server manualmente
 
-Per fare questo dovete è necessario posizionarsi nella cartella API in cui si trova il codice in _typescript_#super(" G") che gestisce il server. Poiché viene usato node, sarà necessario convertire il codice in _javascript_#super(" G"). Per fare ciò, aprire un terminale, posizionarsi sulla cartella del codice ed eseguire il comando:
+Per fare questo è necessario posizionarsi nella cartella API in cui si trova il codice in _typescript_#super(" G") che gestisce il server. Poiché viene usato node, sarà necessario convertire il codice in _javascript_#super(" G"). Per fare ciò, aprire un terminale, posizionarsi sulla cartella del codice ed eseguire il comando:
 
-#align(center, "$ npm install")
-#align(center, "$ npx tsc")
+#align(center, `$ npm install`)
 
-Questi comandi installeranno le dipendenze e convertiranno il codice typescript in codice javascript in una cartella chiamata dist. 
-Quindi, per avviare il server, spostarsi dal terminale sulla cartella dist e cercare il file main.js. Quindi eseguire il comando
 
-#align(center, "$ node main.js")
+#align(center, `$ npx tsc`)
+
+Questi comandi installeranno le dipendenze (`npm install`) e convertiranno il codice typescript in codice javascript (`npx tsc`) in una cartella chiamata dist. 
+Quindi, per avviare il server, spostarsi dal terminale sulla cartella `dist/src` e cercare il file `main.js`. Quindi eseguire il comando:
+
+#align(center, `$ node main.js`)
 
 Questo comando avvierà il server che rimarrà in ascolto delle richieste e le invierà ad Ollama. 
 
@@ -213,24 +218,35 @@ Il plug-in permette di impostare un modello specifico per ognuna delle seguenti 
 - per analizzare l'implementazione 
 - per analizzare la descrizione dei requisiti
 
+
 Per poter configurare il modello, l'utente deve accedere alle impostazioni della estensione installata ed inserire nei tre campi disponibili il nome del modello che vuole usare, come mostrato nelle figura di seguito :   
 
 #figure(
-  image("../../../PB/Documentazione Esterna/src/MU/Settings.png", width: 100%),
+  image("../../../PB/Documentazione Esterna/src/MU/Settings.png", width: 60%),
   caption: "Configurazione dei modelli",
 )
 
+La scelta di un modello specifico per ogni attività permette di ottimizzare le prestazioni e i risultati dell'analisi, in quanto diversi modelli possono essere più adatti a compiti specifici. Inoltre, è fondamentale la scelta del modello per l'implementazione, il quale deve fornire una funzione di embedding senza la quale il plug-in potrebbe non funzionare correttamente.\
 
 
+#pagebreak()
 /*----------------------------------------------------*/
 == Soglia di accettazione
 
 Un'altra configurazione permessa dal plug-in è l'impostazione della _soglia di accettazione_#super("G") di un requisito. Ad ogni analisi, infatti, ogni requisito riceve un punteggio da 0-100 e viene considerato "passed" o "not passed" a seconda del superamento di tale soglia. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura : 
 
 #figure(
-  image("../../../PB/Documentazione Esterna/src/MU/soglia.png", width: 100%),
-  caption:"Soglia di accettazione",
+  image("../../../PB/Documentazione Esterna/src/MU/soglia.png", width: 70%),
+  caption:"soglia di accettazione per l'analisi del requisito",
 )
+
+Un'altro tipo di soglia è quella riguardante il testo del requisito, la quale viene usata per valutare la qualità del testo dello stesso. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura :
+
+#figure(
+  image("../../../PB/Documentazione Esterna/src/MU/soglia2.png", width: 70%),
+  caption:"Soglia di accettazione per il testo del requisito",
+)
+
 
 
 /*----------------------------------------------------*/
@@ -257,7 +273,7 @@ Una volta cliccato sull'icona verrà aperto il _file system_#super(" G") di sist
 Una volta importati, i requisiti verrano presentati in una lista nella sezione Requirements, come mostrato nella seguente figura: 
 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/requirements.png", width: 30%),
+  image("/PB/Documentazione Esterna/src/MU/requirements.png", width: 80%),
   caption:"Requisiti importati",
 )
 
@@ -275,17 +291,17 @@ In caso di requisiti molto lunghi o di più righe sarà sufficiente posizionare 
 #pagebreak()
 /*----------------------------------------------------*/
 == Analisi dell'implementazione
-Una volta importati i requisiti è possibile procedere con l'analisi dell'implementazione. Questa funzionalità serve a tracciare i requisiti nel codice sorgente qualora questi non fossero già tracciati (funziona anche nel caso lo fossero). \ 
-Per farlo, cliccate sull'icona *"Implementation Analysis "* mostrata in figura.
+Una volta importati i requisiti è possibile procedere con l'analisi dell'implementazione. Questa funzionalità serve a *tracciare* i requisiti nel codice sorgente qualora questi non fossero già stati tracciati (funziona anche nel caso lo fossero). \ 
+Per farlo, cliccate sull'icona *"Traceability"* mostrata in figura.
 #figure(
   image("/PB/Documentazione Esterna/src/MU/implementation_analysis.png", width: 40%),
-  caption:"Bottone per l'analisi dell'implementazione",
+  caption:"Bottone per l'analisi dell'implementazione (tracciamento)",
 )
 Una volta eseguita e completata l'analisi, ad ogni requisito verranno associate delle linee di codice che indicano il tracciamento del requisito all'interno del codice sorgente. \
 In caso di requisiti non tracciati, il plug-in restituirà un messaggio di errore.
-La figura seguente mostra il tracciamento nella sezione "Requirements": \
+La figura seguente mostra il tracciamento nella sezione "Requirement": \
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/tracciamento.png", width: 29%),
+  image("/PB/Documentazione Esterna/src/MU/tracciamento.png", width: 50%),
   caption:"Tracciabilità di un requisito",
 )
 #pagebreak()
@@ -294,20 +310,21 @@ La figura seguente mostra il tracciamento nella sezione "Requirements": \
 == Analisi dei requisiti
 Questà funzionalità serve a valutare la qualità dei requisiti e il loro grado di implementazione nel codice sorgente. Una volta importati i requisiti, cliccate sull'icona *"Analyze Requirements"* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/Analyze_Requirements.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/MU/Analyze_Requirements.png", width: 45%),
   caption:"Bottone per l'analisi dei requisiti",
 )
 
 
 In questo modo il plug-in eseguirà un'analisi approfondita di tutti i requisiti presenti nella lista. Potrete vedere in basso a destra della finestra un'icona di avanzamento che indica il progresso dell'analisi. \
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/analyze.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/MU/analyze.png", width: 40%),
   caption:"Stato di avanzamento analisi dei requisiti",
 )
-
+#pagebreak()
 Alla fine dell'analisi ogni requisito nella lista verrà aggiornato con i seguenti campi: 
 - Result 
-  - Result: passed/not passed
+  - Global Result: Passed/Not Passed  
+  - Requirement Quality: 0-100
   - Code Compliance: 0-100
   - Issues: 
     - Issue 1
@@ -351,7 +368,7 @@ Il plug-in offre la possibilità di analizzare un singolo requisito. Per farlo, 
   image("/PB/Documentazione Esterna/src/MU/analisi_singola.png", width: 50%),
   caption:"Bottone per l'analisi di un singolo requisito",
 )
-#pagebreak()
+
 
 /*----------------------------------------------------*/
 == Analisi dell'implementazione di un singolo requisito
@@ -361,25 +378,20 @@ Il plug-in offre la possibilità di analizzare l'implementazione (tracciamento) 
   image("/PB/Documentazione Esterna/src/MU/implementazione_singola.png", width: 70%),
   caption:"Bottone per l'analisi dell'implementazione di un singolo requisito",
 )
-
+#pagebreak()
 /*----------------------------------------------------*/
 == Filtraggio dei requisiti 
 
 Oltre a poter cercare i requisiti a seconda del loro codice, è possibile filtrare i requisiti in base al loro codice o al loro stato di analisi. 
 
-Ci sono quattro diversi modi in cui possono essere filtrati i requisiti: 
+Ci sono tre diversi modi in cui possono essere filtrati i requisiti: 
 - In ordine *crescente* (a seconda del loro codice), premendo il pulsante *"Default Order"* mostrato in figura 
 #figure(
   image("/PB/Documentazione Esterna/src/MU/default_order.png", width: 70%),
   caption:"Bottone per organizzare i requisiti in ordine di default",
 )
-#pagebreak()
 
-- In ordine *"decrescente"*, premendo il pulsante *"Sort by ID (descending)"*. Mostrato in figura
-#figure(
-  image("/PB/Documentazione Esterna/src/MU/sort_by_ID.png", width: 70%),
-  caption:"Bottone per organizzare i requisiti in ordine decrescente",
-)
+
 
 - A seconda del loro *stato di analisi*:
   - *Analizzati*, usando il bottone *"Show analyzed first"* mostrato in figura
@@ -387,17 +399,18 @@ Ci sono quattro diversi modi in cui possono essere filtrati i requisiti:
   image("/PB/Documentazione Esterna/src/MU/show_analyzed_first.png", width: 70%),
   caption:"Bottone per mostrare prima i requisiti analizzati",
 )
+
   - *Non Analizzati*, usando il bottone *"Show unanalyzed first"* mostrato in figura
   #figure(
   image("/PB/Documentazione Esterna/src/MU/show_unanalyzed_first.png", width: 70%),
   caption:"Bottone per mostrare prima i requisiti non analizzati",
 )
 
-
 #pagebreak()
+
 == Approvazione/Disapprovazione di un requisito manuale
 
-Il plug-in offre la possibilità di approvare o disapprovare manualmente un requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera approvare come mostrato in figura :
+Il plug-in offre la possibilità di segnare manualmente un requisito come approvato o non approvato. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera approvare come mostrato in figura :
 
 #figure(
   image("/PB/Documentazione Esterna/src/MU/approve.png", width: 70%),
@@ -409,7 +422,17 @@ Il plug-in offre la possibilità di approvare o disapprovare manualmente un requ
   caption:"Bottone per disapprovare manualmente un requisito",
 )
 
-Nel caso non sia ancora presente il tracciamento del requisito nel codice sorgente, il plug-in restituirà un messaggio di errore. \
+Nel caso non sia ancora presente il tracciamento del requisito nel codice sorgente, il plug-in restituirà un messaggio di errore e il requisito non verrà contrassegnato come approvato (o non approvato).
+\
+L'approvazione è segnata da un icona blu mentre la disapprovazione è segnata da un icona rossa come mostrato nelle due figure seguenti:  \
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/approvation_icon.png", width: 20%),
+  caption:"Icona di requisito approvato",
+)
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/disapprovation_icon.png", width: 20%),
+  caption:"Icona di requisito non approvato",
+)
 
 #pagebreak()
 /*----------------------------------------------------*/
