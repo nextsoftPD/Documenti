@@ -5,7 +5,7 @@
 #show: project.with(
   title: "Verbale interno 28/04/2025",
   redattori: ("Maria Fuensanta Trigueros Hernandez",),
-  verifica: ("",),
+  verifica: ("Ion Cainareanu",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0.0",
