@@ -38,7 +38,7 @@ Dal punto di vista del proponente, non sono stati riscontrati malfunzionamenti o
 
 
 = Conclusione 
-L’incontro si è concluso con l’approvazione del prodotto finale da parte dell’azienda. Al termine, i rappresentanti di Bluewind hanno proposto di organizzare un futuro incontro presso la loro sede, con l’obiettivo di presentare il progetto al team di sviluppo interno.
+L'incontro si è concluso con l'approvazione del prodotto finale da parte dell'azienda. Al termine, i rappresentanti di Bluewind hanno proposto di organizzare un futuro incontro presso la loro sede, con l'obiettivo di presentare il progetto al team di sviluppo interno.
 
 
 
