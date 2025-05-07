@@ -5,7 +5,7 @@
 #show: project.with(
   title: "Incontro con Bluewind s.r.l",
   redattori: ("Luca Parise",),
-  verifica: ("",),
+  verifica: ("Stefano Baso",),
   approvazione: ("",),
   uso: "Esterno",
   version: "1.0.0",
