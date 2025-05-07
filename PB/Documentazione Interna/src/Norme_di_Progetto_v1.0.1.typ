@@ -11,7 +11,8 @@
   version: "1.0.1",
   date: "23/11/2024",
   versionamento: (
-    "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche derivanti dalla correzione dell'RTB", "",
+    "1.1.1", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento tecnologie utilizzate e metodologie di testing", "",
+    "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche in tutto il documento derivanti dalla correzione dell'RTB", "",
     "1.0.1", "07/03/2025", "Malik Giafar Mohamed", "Inserimento data di ultimo accesso nelle fonti", "",
   )
 )
@@ -45,18 +46,32 @@ nell'omonimo documento.
 - Materiale didattico del corso di Ingegneria del Software
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/
 - Documentazione _GitHub_#super("G"):
-  - https://help.github.com/en/github #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
+  - https://help.github.com/en/github #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
 - Documentazione _git_#super[G]:
-  - https://git-scm.com/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
+  - https://git-scm.com/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
 - Documentazione Typst:
-  - https://typst.app/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
+  - https://typst.app/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
 - Documentazione Visual Studio Code:
-  - https://code.visualstudio.com/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
-  - https://code.visualstudio.com/api #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
-- Documentazione _Ollama_#super("G"):
-  - https://github.com/ollama/ollama/tree/main/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 5/04/2025 13:06]
-
-(da migliorare, inserisci tecnologie mancanti)
+  - https://code.visualstudio.com/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
+  - https://code.visualstudio.com/api #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
+- Documentazione API _Ollama_#super("G"):
+  - https://github.com/ollama/ollama/blob/main/docs/api.md #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _NestJS_#super("G"):
+  - https://docs.nestjs.com/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _Docker_#super("G"):
+  - https://docs.docker.com/get-started/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _StarUML_#super("G"):
+  - https://staruml.io/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _npm_#super("G"):
+  - https://docs.npmjs.com/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _Typescript_#super("G"):
+  - https://www.typescriptlang.org/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _Mocha_#super("G"):
+  - https://mochajs.org/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _Jest_#super("G"):
+  - https://jestjs.io/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+- Documentazione _SuperTest_#super("G"):
+  - https://www.npmjs.com/package/supertest/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
 = Processi Primari
 ==  Fornitura
 === descrizione
@@ -177,7 +192,7 @@ Lo scopo della Product Baseline è di fornire un prodotto software che verrà va
 Durante l'avanzamento di questa baseline, verranno progettati:
 - *Diagrammi delle classi*: verranno utilizzati per descrivere l'architettura delle classi dell'MVP 
 - *_Design Patterns_*#super("G"): soluzioni di programmazione che consentono di risolvere problemi ricorrenti in modo rapido ed efficace. I design pattern sono schemi riutilizzabili di progettazione illustrati con diagrammi che ne mostrano la struttura
-- *_Test di unità_*#super("G"): ovvero la definizione, l'implementazione e il resoconto dei test eseguiti per verificare che il funzionamento delle classi e dei singoli _moduli_#super("G") che implementano il sistema siano corretti e conformi ai requisiti.
+- *_Test_*#super("G"): ovvero la definizione, l'implementazione e il resoconto dei test eseguiti per verificare che il funzionamento del sistema siano corretti e conformi ai requisiti.
 
 === Codifica
 ==== Descrizione
@@ -203,12 +218,13 @@ Qualora si dovesse ricorrere alla di ricorsione, la decisione dovrà essere adeg
 Per la codifica del prodotto, i principali strumenti adottati saranno:
 - *Visual Studio Code*: in quanto è l'_IDE_#super("G") più consigliato per realizzare proprie estensioni.
 - *Typescript*: linguaggio di programmazione che verrà utilizzato per la realizzazione del plug-in. È un linguaggio di programmazione open source, sviluppato da Microsoft, che estende JavaScript aggiungendo tipizzazione statica e funzionalità orientate agli oggetti. 
-- CSS 
-- vscode extension api
-- Mocha
-- NestJS
-da migliorare
+- *Visual Studio Code Extension API*: utilizzata per lo sviluppo del plug-in, fornisce un set di API che consentono di estendere le funzionalità di Visual Studio Code.
+- *NestJS*: framework per lo sviluppo di applicazioni server-side, utilizzato per la realizzazione del backend del prodotto.
+- *npm*: gestore di pacchetti per nodejs, utilizzato per installare e gestire le dipendenze del progetto.
+- *Visual Studio Code*: IDE utilizzato per la scrittura del codice sorgente e per il debugging del prodotto.
 - *StarUML*: per la creazione dei _diagrammi UML_#super("G")
+- *Ollama API*: utilizzata per la comunicazione tra il modello LLM locale di Ollama e il backend del plugin.
+- *Docker*: piattaforma per lo sviluppo, la distribuzione e l'esecuzione di applicazioni in container, verrà utilizzato per il deployment del server API del backend.
 
 = Processi di Supporto
 == Documentazione
@@ -507,20 +523,23 @@ L'analisi dinamica è applicabile solo al prodotto software in quanto prevede l'
 - Fornire informazioni utili sui risultati dell'esecuzione
 
 Esistono diverse categorie di test, ognuno con scopo e oggetto di verifica differente.
-
 ==== Test di unità
 I test di unità verificano la correttezza di una piccola parte di software testabile, chiamata unità, per stabilirne il corretto funzionamento
-rispetto alle attese. Eventualmente le unità vengono testate con l'ausilio di _driver_#super("G") e _stub_#super("G") che simulano rispettivamente un'unità chiamante e un'unità chiamata che però non sono state ancora implementate del tutto, i driver e gli stub sono utilizzati per testare le unità in modo isolato, senza dipendenze esterne.
+rispetto alle attese. Le unità da noi definite per i test sono rappresentate dalle singole classi presenti nel prodotto software. I nostri test di unità mireranno a verificare il corretto funzionamento di ogni metodo definito in una specifica unità. Nel caso una classe comprenda delle dipendenze esterne, si utilizzeranno dei _mock_#super("G") per simulare il comportamento di tali dipendenze. Ogni test di unità viene riportato all'interno del documento del piano di qualifica.
+
+==== Test di Integrazione
+I test di integrazione verificano il corretto funzionamento tra due o più unità del prodotto software. Questi test sono mirati a verificare che lo scambio di dati tra le istanze delle classi del prodotto software avvenga in modo corretto. Siccome questi test comprenderanno un gruppo di unità, è comunque possibile che vi siano dipendenze esterne inutili al fine della verifica del test. Di conseguenza abbiamo deciso di adottare comunque l'utilizzo di mock per simulare il comportamento di tali dipendenze. Ogni test di integrazione viene riportato all'interno del documento del piano di qualifica.
+
 ==== Test di Sistema
 I test di sistema verificano il sistema completo del prodotto software, prendendo in considerazione tutti i componenti e interfacce con altri
-sistemi. Questi test controllano che il software rispetti tutti i requisiti prestabiliti e che sia adatto all'uso in produzione.
-
-==== Test di Regressione
-I test di regressione servono a testare che gli aggiornamenti o modifiche rilasciati nel software non incidano negativamente sulle funzioni già
-presenti. Ciò consiste nella ripetizione di test di unità, integrazione e sistema.
+sistemi. Nel nostro caso, verrà verificata la corretta integrazione tra frontend, backend e il server di Ollama. Tali test verranno eseguiti manualmente, in quanto non è possibile automatizzarli. Ogni test di sistema viene riportato all'interno del documento del piano di qualifica.
 
 === Strumenti
-jest (da migliorare) 
+Gli strumenti non banali a supporto del processo di verifica sono i seguenti:
+- *Jest*: Framework di testing JavaScript, utilizzato per eseguire test unitari e di integrazione nel backend.
+- *Mocha*: framework di testing utilizzato per l'esecuzione dei test di integrazione nel frontend, è stato scelto in quanto supportato nativamente da Visual studio code per i test di unità e di integrazione.
+- *Supertest*: utilizzato per il testing delle richieste API. È stato utilizzato per i test di integrazione riguardanti il funzionamento del server API.
+- *NestJS*: È stato utilizzato sia per i test di integrazione sia per quelli di unità, in quanto riesce a fornire dei mock di alcuni moduli utilizzati come dipendenze esterne. Il suo utilizzo come strumento per i test è anche dovuto al fatto che il framework è stato utilizzato per la realizzazione del backend stesso.
 
 === Codice identificativo dei test
 I test vengono identificati dal codice
@@ -531,7 +550,6 @@ dove:
   - *U* per i test di unità
   - *I* per i test d'integrazione
   - *S* per i test di sistema
-  - *R* per i test di regressione
   - *A* per i test di accettazione
 - *ID*: codice numerico progressivo che inizia da 1 per ogni tipo di test.
 
@@ -550,7 +568,9 @@ Il processo di validazione è necessario per determinare se il prodotto finale �
 
 ==== Test di Accettazione
 Il test di accettazione o collaudo è un'attività esterna, supervisionata dal committente e consiste nel dimostrare il soddisfacimento
-dei requisiti. A tale test seguirà il rilascio del prodotto.
+dei requisiti. Ogni test da eseguire sarà definito in un apposito documento, il quale riporterà la descrizione del test da effettuare insieme alla sua eventuale accettazione da parte del committente. Tale documento dovrà essere firmato dal rappresentante dell'azienda proponente per essere considerato valido.
+
+Al momento, i test scelti per il collaudo equivalgono a quelli di sistema, il fatto che essi verifichino il corretto funzionamento del sistema nella sua interezza e che non siano automatizzabili li rende la scelta migliore per una revisione insieme all'azienda proponente.
 
 = Processi Organizzativi
 == Gestione dei Processi
