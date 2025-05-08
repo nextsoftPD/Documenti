@@ -7,10 +7,10 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.1.0",
+  version: "1.2.0",
   date: "23/11/2024",
   versionamento: (
-    "1.2.0", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "",
+    "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "",
     "1.1.0", "05/04/2025", "Stefano Baso", "Aggiunte metriche in qualità di processo", "Malik Giafar Mohamed",
   )
 )
@@ -38,14 +38,14 @@ Il presente documento si propone di:
 Il documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
 
 == Scopo del prodotto
-Il prodotto, un _plug-in_#super[G] per Visual Studio Code chiamato "Requirement Tracker",
+Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
 è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
 con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
 e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
 riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
-Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come _knowledge_#super[G],
+Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come knowledge,
 ad esempio datasheet e manuali, permette di garantire una corretta copertura dei requisiti.
 
 == Glossario
@@ -448,14 +448,45 @@ Questo modello prevede una stretta corrispondenza tra sviluppo e testing, assicu
 
 == Tipologie di test
 
+=== Organizzazione dei test:
+I test nel progetto sono suddivisi in due cartelle all'interno della principale `test`:
+- `test/unit`: contiene i test di unità, incentrati sulla verifica dei singoli componenti (modelli, adattatori e servizi) del sistema.
+- `test/integration`: contiene i test di integrazione, che verificano l'interazione tra diversi componenti o tra l'applicazione e servizi esterni.
+
+I file di test seguono la convenzione di denominazione `*.spec.ts` per i test di unità e `*.int.spec.ts` per i test di integrazione.
+
+=== Strumenti Utilizzati e Integrazione di Jest:
+
+- **Jest**: È il framework di testing JavaScript principale utilizzato nel progetto. Jest fornisce:
+ - Un ambiente di esecuzione per i test.
+ - Funzioni globali come `describe()` per raggruppare i test in suite, e `it()` o `test()` per definire i singoli casi di test.
+ - Un potente sistema di asserzioni tramite la funzione `expect()` combinata con vari matchers (es. `toBe()`, `toBeDefined()`, `toContain()`, `toHaveBeenCalledWith()`).
+ - Funzionalità di mocking avanzate, tra cui `jest.mock()` per mockare interi moduli (come `axios`) e `jest.fn()` per creare funzioni mock flessibili che possono tracciare chiamate, definire valori di ritorno e implementazioni simulate.
+ - Gestione di test asincroni tramite `async/await`.
+
+- **@nestjs/testing**: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
+
+- **supertest**: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
+
+- **axios (mockato)**: nei test di integrazione per componenti che interagiscono con API esterne (come `OllamaApiAdapter`), `axios` viene mockato per controllare le risposte delle API e testare il comportamento dell'adapter in diverse condizioni senza effettuare chiamate di rete reali.
+
 === Test di Unità
 
-I _test di unità_#super("G") valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. Attualmente, nella prima versione del Piano di Qualifica, né le unità né i relativi  test corrispondenti sono stati definiti. La definizione delle unità avverrà con l'avvio del processo di progettazione e sviluppo software.
+I _test di unità_#super("G") valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. 
+
+- `adapters/out/json-parser.adapter.spec.ts`: verifica il funzionamento del `JsonParserAdapter`. Utilizza `@nestjs/testing` per creare un modulo di test e istanziare l'adapter.
+- `domain/model/ollama.model.spec.ts`: testa la validità e la struttura dei modelli di richiesta e risposta di Ollama (`OllamaRequestModel`, `OllamaResponseModel`).
+- `domain/model/error.model.spec.ts`: assicura che le classi di errore personalizzate (es. `DomainError`) vengano create correttamente con i messaggi e i nomi attesi.
+- `domain/model/prompt-templates.model.spec.ts`: verifica che le funzioni template per i prompt (come `codePromptTemplate`) generino stringhe di prompt corrette basate sugli input.
+- `requirement-analysis.module.spec.ts`: controlla che il modulo `RequirementAnalysisModule` compili correttamente e che tutte le sue dipendenze (controller, use case, port) siano definite e risolvibili.
 
 === Test di Integrazione
 
 I test di integrazione valutano il corretto funzionamento delle diverse componenti del software e il modo in cui vengono integrate tra loro, evidenziandone eventuali problemi.
-In questa stesura iniziale del Piano di Qualifica non sono state ancora individuate le componenti del prodotto, di conseguenza i test di integrazione non sono ancora stati definiti.
+
+- `application.int.spec.ts`: esegue test end-to-end sull'applicazione. Avvia un'istanza completa dell'applicazione NestJS e utilizza `supertest` per inviare richieste HTTP agli endpoint (come `/requirement/analyze`, `/requirement/embeddings`) e verificare le risposte, inclusi i codici di stato e i payload.
+- `ollama-components.int.spec.ts`: testa l'integrazione di `OllamaApiAdapter` con il client HTTP `axios`, viene mockato usando `jest.mock('axios')` per simulare le risposte dell'API Ollama e verificare che l'adapter gestisca correttamente le chiamate e le risposte (successo ed errore).
+- `requirement-analysis-service.int.spec.ts`: verifica l'integrazione del `RequirementAnalysisService` con le sue dipendenze (port). Le dipendenze come `OllamaApiPort`, `ConfigPort`, e `JsonParserPort` sono mockate usando `jest.fn()` per isolare il servizio e testare la logica.
 
 === Test di Sistema
 
