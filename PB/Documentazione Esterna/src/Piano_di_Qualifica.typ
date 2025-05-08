@@ -458,18 +458,18 @@ I file di test seguono la convenzione di denominazione `*.spec.ts` per i test di
 
 === Strumenti Utilizzati e Integrazione di Jest:
 
-- **Jest**: È il framework di testing JavaScript principale utilizzato nel progetto. Jest fornisce:
+- *Jest*: È il framework di testing JavaScript principale utilizzato nel progetto. Jest fornisce:
  - Un ambiente di esecuzione per i test.
  - Funzioni globali come `describe()` per raggruppare i test in suite, e `it()` o `test()` per definire i singoli casi di test.
  - Un potente sistema di asserzioni tramite la funzione `expect()` combinata con vari matchers (es. `toBe()`, `toBeDefined()`, `toContain()`, `toHaveBeenCalledWith()`).
  - Funzionalità di mocking avanzate, tra cui `jest.mock()` per mockare interi moduli (come `axios`) e `jest.fn()` per creare funzioni mock flessibili che possono tracciare chiamate, definire valori di ritorno e implementazioni simulate.
  - Gestione di test asincroni tramite `async/await`.
 
-- **@nestjs/testing**: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
+- *@nestjs/testing*: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
 
-- **supertest**: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
+- *supertest*: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
 
-- **axios (mockato)**: nei test di integrazione per componenti che interagiscono con API esterne (come `OllamaApiAdapter`), `axios` viene mockato per controllare le risposte delle API e testare il comportamento dell'adapter in diverse condizioni senza effettuare chiamate di rete reali.
+- *axios (mockato)*: nei test di integrazione per componenti che interagiscono con API esterne (come `OllamaApiAdapter`), `axios` viene mockato per controllare le risposte delle API e testare il comportamento dell'adapter in diverse condizioni senza effettuare chiamate di rete reali.
 
 === Test di Unità
 
