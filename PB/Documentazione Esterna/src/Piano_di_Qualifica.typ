@@ -465,7 +465,7 @@ I file di test seguono la convenzione di denominazione `*.spec.ts` per i test di
  - Funzionalità di mocking avanzate, tra cui `jest.mock()` per mockare interi moduli (come `axios`) e `jest.fn()` per creare funzioni mock flessibili che possono tracciare chiamate, definire valori di ritorno e implementazioni simulate.
  - Gestione di test asincroni tramite `async/await`.
 
-- *@nestjs/testing*: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
+- `@nestjs/testing`: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
 
 - *supertest*: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
 
