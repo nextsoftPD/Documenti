@@ -7,9 +7,10 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.2.0",
+  version: "1.2.1",
   date: "23/11/2024",
   versionamento: (
+    "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "",
     "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "",
     "1.1.0", "05/04/2025", "Stefano Baso", "Aggiunte metriche in qualità di processo", "Malik Giafar Mohamed",
   )
@@ -564,11 +565,17 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
     [2025-02-08], [65], [Superato],
     [2025-02-20], [67], [Superato],
     [2025-03-07], [65], [Superato],
+    [2025-03-30], [65], [Superato],
+    [2025-04-05], [61], [Superato],
+    [2025-04-19], [64], [Superato],
+    [2025-04-28], [67], [Superato],
     [2024-11-25], [67], [Superato],
     [2024-12-24], [64], [Superato],
     [2025-02-25], [65], [Superato],
+    [2025-04-11], [67], [Superato],
+    [2025-05-06], [64], [Superato],
   ),
-  caption: [Valutazione documenti fase 1],
+  caption: [Valutazione documenti],
 )
 
 = Valutazioni per il miglioramento
