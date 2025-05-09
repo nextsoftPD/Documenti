@@ -10,6 +10,7 @@
   version: "1.2.1",
   date: "23/11/2024",
   versionamento: (
+    "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione", "",
     "1.3.0", "09/05/2024", "Malik Giafar Mohamed", "Miglioramento sezioni test di unità, di integrazione e di accettazione", "",
     "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "Malik Giafar Mohamed",
     "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "Malik Giafar Mohamed",
@@ -771,92 +772,74 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
     table.header[*Codice*][*Descrizione*][*Esito*][*Fonte*],
     [TA-001],
     [Il plugin deve essere sviluppato come un'estensione installabile per Visual Studio Code],
-    [Il plugin è installabile tramite un file .vsix],
     [Superato],[],
 
     [TA-002],
     [Il server in ascolto delle richieste deve essere installabile e avviabile tramite un'immagine docker o manualmente],
-    [Il backend è installabile tramite file docker oppure avviabile manualmente],
     [Superato],[],
 
     [TA-003],
     [Il sistema deve essere in grado di importare i requisiti e, se presenti, informazioni di tracciamento e risultati di analisi precedenti, da un file in formato .csv],
-    [Funzione accessibile dal pulsante "Import CSV" presente nell'interfaccia del plugin],
     [Superato],[],
 
     [TA-004],
     [Il sistema deve essere in grado di visualizzare i requisiti importati e le relative informazion in una vista ad albero all'interno dell'interfaccia di Visual Studio Code],
-    [Per ogni requisito sono visibili le seguenti informazioni: ID, testo del requisito, stato, tracciamento e risultati di analisi],
     [Superato],[],
 
     [TA-005],
     [L'utente deve essere in grado, in caso di assenza del tracciamento dei requisiti nel file .csv caricato, di tracciare l'implementazione dei requisiti all'interno del codice sorgente],
-    [Funzione accessibile dal pulsante "Traceability" presente nell'interfaccia del plugin],
     [Superato],[],
 
     [TA-006],
     [L'utente deve essere in grado di eseguire il tracciamento di un singolo requisito nel codice sorgente],
-    [Funzione accessibile dal pulsante a forma di lente di ingrandimento presente nella riga del requisito],
     [Superato],[],
 
     [TA-007],
     [L'utente deve essere in grado di condurre un'analisi dei requisiti importati ed ottenere una valutazione complessiva di ognuno di essi],
-    [Funzione accessibile dal pulsante "Analyze" presente nell'interfaccia del plugin],
     [Superato],[],
 
     [TA-008],
     [L'utente deve essere in grado di eseguire l'analisi di un requisito specifico],
-    [Funzione accessibile dal pulsante a triangolo presente nella riga del requisito],
     [Superato],[],
 
     [TA-009],
     [La valutazione di ogni requisito deve ritornare: risultato globale: passato/non passato; valutazione da 0 a 100 della semantica del requisito; valutazione a 0 a 100 dell'implementazione del requisito nel codice; una lista di suggerimenti (se presenti); una lista di problemi riscontrati (se presenti)],
-    [I risultati dell'analisi sono visibili estendendo la voce "Results" nel menu di dettaglio del requisito],
     [Superato],[],
 
     [TA-010],
     [L'utente può ordinare i requisiti in ordine crescente, oppure ordinarli in base alla disponibiltà del risultato dell'analisi (analizzato/non analizzato)],
-    [La funzione è accessibile dal menu ad hamburger a tendina presente nell'interfaccia del plugin],
     [Superato],[],
 
     [TA-011],
     [Il sistema deve essere in grado, in qualsiasi momento dopo l'importazione di esportare i requisiti e le informazioni disponibili in un file in formato CSV],
-    [La funzione è accessibile dal bottone "Export CSV" nella sezione "Search Requirements"],
     [Superato],[],
 
     [TA-012],
     [L'utente deve essere in grado di segnare un requisito come "approvato" o "non approvato"],
-    [La funzione è accessibile tramite i due bottoni presenti nella riga del requisito],
     [Superato],[],
 
     [TA-013],
     [L'utente deve essere in grado di filtrare i requisiti per ID, per descrizione o per file sorgente tramite una barra di ricerca],
-    [Funzione accessibile tramite la barra di ricerca presente nell'interfaccia del plugin],
     [Superato],[],
 
     [TA-014],
     [L'utente deve essere in grado di impostare la soglia di conformità del codice],
-    [Funzionalità accessibile dalla sezione "settings" del plug-in presente nell'interfaccia di Visual Studio Code],
     [Superato],[],
 
     [TA-015],
     [L'utente deve essere in grado di impostare il modello LLM da utilizzare per l'analisi testuale del requisito e per l'implementazione di esso nel codice sorgente],
-    [La funzionalità è accessibile dalla sezione "settings" del plug-in presente nell'interfaccia di Visual Studio Code],
     [Superato],[],
 
     [TA-016],
     [L'utente deve essere in grado di impostare il modello di embedding per il tracciamento],
-    [La funzionalità è accessibile dalla sezione "settings" del plug-in presente nell'interfaccia di Visual Studio Code],
     [Superato],[],
 
     [TA-017],
     [L'utente deve essere in grado di aggiornare manualmente il tracciamento di un requisito nel codice (file, linea di inizio e linea di fine), modificando il relativo campo all'interno del singolo requisito],
-    [Funzionalità accessibile tramite l'icona a forma di matita presente nella sezione tracciamento del requisito],
     [Superato],[],
 
     [TA-018],
     [Il sistema deve essere in grado di disinstallarsi correttamente],
-    [Il plug-in è disinstallabile dall'interfaccia di Visual Studio Code],
     [Superato],[],
   ),
   caption: [Lista di test di accettazione],
