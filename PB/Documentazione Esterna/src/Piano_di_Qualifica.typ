@@ -10,8 +10,8 @@
   version: "1.2.1",
   date: "23/11/2024",
   versionamento: (
-    "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "",
-    "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "",
+    "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "Malik Giafar Mohamed",
+    "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "Malik Giafar Mohamed",
     "1.1.0", "05/04/2025", "Stefano Baso", "Aggiunte metriche in qualità di processo", "Malik Giafar Mohamed",
   )
 )
