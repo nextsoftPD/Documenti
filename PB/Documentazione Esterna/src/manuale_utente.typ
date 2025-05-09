@@ -9,16 +9,16 @@
   version: "0.0.9",
   date: "12/04/2026",
   versionamento: (
-    "0.1.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","",
-    "0.0.9","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","",
-    "0.0.8","23/04/2025","Luca Parise, Malik Giafar Mohamed","Miglioramento stile del testo nei vari capitoli","",
-    "0.0.7","19/04/2025","Luca Parise, Malik Giafar Mohamed","Modifica capitolo per installazione immagine docker","",
-    "0.0.6","16/04/2025","Malik Giafar Mohamed, Luca Parise","Modificato il path per le immagini e migliorato il testo","",
-    "0.0.5","14/04/2025","Luca Parise, Maria Fuensanta Trigueros Hernandez","Aggiunto capitolo della configurazione","",
-    "0.0.4","12/04/2025","Luca Parise","Aggiunto capitolo per la disinstallazione del prodotto","",
-    "0.0.3","11/04/2025","Luca Parise","Modifica alle immagini e continuazione stesura dei vari capitoli","",
-    "0.0.2","10/04/2025","Luca Parise","Stesura dei capitoli rigurdanti le funzionalità del plug-in","",
-    "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","",
+    "0.1.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","Maria Fuensanta Trigueros Hernandez",
+    "0.0.9","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","Maria Fuensanta Trigueros Hernandez",
+    "0.0.8","23/04/2025","Luca Parise, Malik Giafar Mohamed","Miglioramento stile del testo nei vari capitoli","Maria Fuensanta Trigueros Hernandez",
+    "0.0.7","19/04/2025","Luca Parise, Malik Giafar Mohamed","Modifica capitolo per installazione immagine docker","Maria Fuensanta Trigueros Hernandez",
+    "0.0.6","16/04/2025","Malik Giafar Mohamed, Luca Parise","Modificato il path per le immagini e migliorato il testo","Maria Fuensanta Trigueros Hernandez",
+    "0.0.5","14/04/2025","Luca Parise, Maria Fuensanta Trigueros Hernandez","Aggiunto capitolo della configurazione","Maria Fuensanta Trigueros Hernandez",
+    "0.0.4","12/04/2025","Luca Parise","Aggiunto capitolo per la disinstallazione del prodotto","Maria Fuensanta Trigueros Hernandez",
+    "0.0.3","11/04/2025","Luca Parise","Modifica alle immagini e continuazione stesura dei vari capitoli","Maria Fuensanta Trigueros Hernandez",
+    "0.0.2","10/04/2025","Luca Parise","Stesura dei capitoli rigurdanti le funzionalità del plug-in","Maria Fuensanta Trigueros Hernandez",
+    "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","Maria Fuensanta Trigueros Hernandez",
     
     
     
