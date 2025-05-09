@@ -9,10 +9,10 @@
   version: "0.4.0",
   date: "18/03/2025",
   versionamento: (
-    "0.4.0", "02/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura backend di dettaglio", "",
-    "0.3.0", "27/04/2025", "Ion Cainareanu", "Stesura sezione architettura frontend di dettaglio", "",
-    "0.2.0", "24/04/2025", "Marco Perazzolo", "Aggiornamento delle tecnologie utilizzate e aggiunta di diagrammi UML delle classi", "",
-    "0.1.0", "18/03/2025", "Maria Fuensanta Trigueros Hernandez, Marco Perazzolo", "Creazione del documento e stesura dei capitoli Introduzione e Tecnologie", "",
+    "0.4.0", "02/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura backend di dettaglio", "Marco Perazzolo",
+    "0.3.0", "27/04/2025", "Ion Cainareanu", "Stesura sezione architettura frontend di dettaglio", "Luca Parise",
+    "0.2.0", "24/04/2025", "Marco Perazzolo", "Aggiornamento delle tecnologie utilizzate e aggiunta di diagrammi UML delle classi", "Malik Giafar Mohamed",
+    "0.1.0", "18/03/2025", "Maria Fuensanta Trigueros Hernandez, Marco Perazzolo", "Creazione del documento e stesura dei capitoli Introduzione e Tecnologie", "Ion Cainareanu",
   )
 )
 
