@@ -9,7 +9,7 @@
   version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
-    "1.2.3","05/05/2025","Luca Parise", "Modifiche ai requisiti in base a quanto concordato con l'azienda durante l'ultimo incontro", "",  
+    "1.2.3","05/05/2025","Luca Parise", "Modifiche ai requisiti in base a quanto concordato con l'azienda durante l'ultimo incontro", "Marco Perazzolo",  
     "1.2.2","28/04/2025","Marco Perazzolo","Aggiunti UC_3, UC_20, UC_21 e modello di embedding come attore secondario","Luca Parise",
     "1.2.1","24/04/2025","Marco Perazzolo","Aggiunti UC_12.1, UC_12.2 e UC di visualizzazione icone","Luca Parise",
     "1.2.0","15/04/2025","Marco Perazzolo","Modifiche agli UC post incontro con Bluewind","Luca Parise",
