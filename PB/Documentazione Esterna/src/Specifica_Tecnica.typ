@@ -166,9 +166,9 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
     [3.4.2],
     [Formattatore di codice opinato, usato per mantenere uno stile di codice coerente.],
 
-    [ts-jest],
-    [29.2.5],
-    [Preprocessor per Jest che consente di eseguire file TypeScript senza doverli compilare manualmente.]
+    [Mocha],
+    [10.0.10],
+    [Framework di test JavaScript, usato per eseguire test unitari e di integrazione.],
   ),
   caption: [Tecnologie coinvolte nel progetto]
 )
