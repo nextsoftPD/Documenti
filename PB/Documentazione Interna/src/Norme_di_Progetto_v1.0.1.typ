@@ -11,6 +11,7 @@
   version: "1.0.1",
   date: "23/11/2024",
   versionamento: (
+    "1.1.2", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento della procedura di modifica delle pull requests", "",
     "1.1.1", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento tecnologie utilizzate e metodologie di testing", "",
     "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche in tutto il documento derivanti dalla correzione dell'RTB", "",
     "1.0.1", "07/03/2025", "Malik Giafar Mohamed", "Inserimento data di ultimo accesso nelle fonti", "",
@@ -660,6 +661,7 @@ Ogni volta che è necessario portare a termine un compito, si segue questa proce
   - Una pull request può essere approvata dalla persona che l'ha creata, oppure dall'amministratore di progetto in caso sia rimasta aperta per troppo tempo. 
   - Nel caso della verifica dei documenti, il verificatore aggiunge il suo nome nella lista dei verificatori del documento o nella colonna di verifica del versionamento
   - Nel caso un branch contenga troppi errori, o ci siano state molte modifiche ad una pull request molto vecchia, il verificatore può richiedere all'amministratore di chiudere quella pull-request con un commento che ne spiega il motivo
+  - È possibile che il nome e il contenuto di una pull request possa essere modificato in un secondo momento, nel caso in cui si volessero utilizzare una pr già aperta per aggiungervi più task completate da verificare
   - Nel caso in cui la verifica abbia esito negativo, quando verranno effettuate le modifiche, non sarà necessario aumentare di una versione, poiché il configuration item verrà ritenuto valido quando "stabile" e di conseguenza privo di errori o incongruenze
   - I cambiamenti possono essere richiesti tramite un commento su github o possono essere accordati in una riunione o una breve chiamata
 
