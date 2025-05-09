@@ -9,7 +9,8 @@
   version: "1.0.0",
   date: "23/11/2024",
   versionamento: (
-    "1.2.3","05/05/2025","Luca Parise", "Modifiche ai requisiti in base a quanto concordato con l'azienda durante l'ultimo incontro", "Marco Perazzolo",  
+    "1.2.4","09/05/2025","Marco Perazzolo", "Modificato UC_18 e UC_19 e relativi UML", "", 
+    "1.2.3","05/05/2025","Luca Parise", "Modifiche ai requisiti post incontro con Bluewind", "Marco Perazzolo",  
     "1.2.2","28/04/2025","Marco Perazzolo","Aggiunti UC_3, UC_20, UC_21 e modello di embedding come attore secondario","Luca Parise",
     "1.2.1","24/04/2025","Marco Perazzolo","Aggiunti UC_12.1, UC_12.2 e UC di visualizzazione icone","Luca Parise",
     "1.2.0","15/04/2025","Marco Perazzolo","Modifiche agli UC post incontro con Bluewind","Luca Parise",
@@ -206,7 +207,7 @@ Questa sezione si propone di identificare e descrivere i casi d'uso derivati dal
 
 *Precondizioni:*
 - I requisiti sono stati importati [UC_1] oppure [UC_2].
-- Il tracciamento di ogni requisito è disponibile, ottenuto direttamente da [UC_2] oppure dopo [UC_13] o [UC_14].
+- Il tracciamento di almeno un requisito è disponibile, ottenuto direttamente da [UC_2] oppure dopo [UC_13] o [UC_14].
 - La connessione con le API REST di Ollama è attiva e disponibile.
 
 *Postcondizioni:*
@@ -226,7 +227,7 @@ Questa sezione si propone di identificare e descrivere i casi d'uso derivati dal
 9. Il sistema registra i dati e li rende disponibili per la visualizzazione ([UC_9]).
 
 *Estensioni:*
-- *UC_4.1 - Visualizzazione errore tracciamento non valido o mancante*: Se il _mapping_#super("G") del codice non è disponibile o non è valido, il sistema visualizza un messaggio d'errore specifico.  
+- *UC_4.1 - Visualizzazione errore tracciamento non valido o mancante*: Se il _mapping_#super("G") del codice non è disponibile per almeno un requisito, il sistema visualizza un messaggio d'errore specifico.  
 - *UC_4.2 - Visualizzazione errore di connessione*: Se la comunicazione con il modello LLM fallisce (es. timeout o connessione interrotta), il sistema informa l'utente e consente di riprovare.  
 - *UC_4.3 - Visualizzazione avviso performance ridotte*: Se la risposta del modello risulta particolarmente lenta, il sistema mostra un avviso all'utente.
 - *UC_4.4 - Visualizzazione errore codice sorgente non disponibile*: Se il progetto non contiene il file sorgente o non è configurato correttamente, il sistema mostra un messaggio di errore.
@@ -423,9 +424,9 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 1. Il sistema visualizza un indicatore che comunica lo stato del requisito.
 
 *Generalizzazioni*
-- *UC_6.1.2.1 - Visualizzazione stato tracciato*: Se il requisito è stato tracciato ma non ancora analizzato, il sistema mostra un indicatore giallo.
+- *UC_6.1.2.1 - Visualizzazione stato tracciato*: Se il requisito è stato tracciato ma non ancora analizzato, oppure se è stato analizzato ma il risultato globale è negativo, il sistema mostra un indicatore giallo.
 - *UC_6.1.2.2 - Visualizzazione stato conforme*: Se il requisito è stato analizzato ed il risultato globale è positivo, il sistema mostra un indicatore verde.
-- *UC_6.1.2.3 - Visualizzazione stato non conforme*: Se il requisito è stato analizzato ed il risultato globale è negativo, il sistema mostra un indicatore rosso.
+- *UC_6.1.2.3 - Visualizzazione stato non conforme*: Se il requisito è stato analizzato ed è stato contrassegnato come "non conforme", il sistema mostra un indicatore rosso.
 - *UC_6.1.2.4 - Visualizzazione stato approvato*: Se il requisito è stato analizzato ed il risultato è stato approvato dall'utente, il sistema mostra un indicatore blu.
 
 \
@@ -440,7 +441,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - Il sistema mostra l'indicatore di stato del requisito come "tracciato".
 
 *Scenario principale:*
-1. Il sistema visualizza un indicatore giallo per il requisito, che indica che è stato tracciato ma non ancora analizzato.
+1. Il sistema visualizza un indicatore giallo per il requisito, che indica che è stato tracciato ma non ancora analizzato, oppure che è stato analizzato ma il risultato globale è "_not passed_".
 
 \
 == UC_6.1.2.2 - Visualizzazione stato conforme
@@ -468,7 +469,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - Il sistema mostra l'indicatore di stato del requisito come "non conforme".
 
 *Scenario principale:*
-1. Il sistema visualizza un indicatore rosso per il requisito, che indica che è stato analizzato e il risultato globale è negativo.
+1. Il sistema visualizza un indicatore rosso per il requisito, che indica che è stato analizzato e marcato dall'utente come "non conforme".
 
 \
 == UC_6.1.2.4 - Visualizzazione stato approvato
@@ -776,7 +777,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - Il menu ad albero relativo alla visualizzazione dei risultati è stato espanso [UC_9].
 
 *Postcondizioni:*
-- Viene visualizzato lo stato "_Global result: passed_" se il requisito è corretto semanticamente e la sua implementazione nel codice soddisfa il requisito, "_Global result: not passed_" altrimenti.
+- Viene visualizzato lo stato "_Global result: passed_" se il requisito è corretto semanticamente, quindi se la sua valutazione supera la soglia impostata in [UC_18], e se è implementato in modo soddisfacente, ovvero se la valutazione della sua implementazione nel codice supera la soglia impostata in [UC_19], altrimenti mostra "_Global result: not passed_".
 
 *Scenario principale:*
 1. Il sistema mostra una valutazione globale basata sui punteggi del requisito e del codice ottenuti durante l'analisi.
@@ -1425,28 +1426,49 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 5. Il sistema salva la configurazione e la utilizza per l'analisi del codice sorgente.
 
 \
-== UC_18 - Configurazione dell'endpoint del server Ollama
+== UC_18 - Configurazione della soglia di conformità del requisito
 
 #figure(
   image("./img/AdR/UC_18.png", width: 70%),
-  caption: [UC_18 - Configurazione dell'endpoint di Ollama]
+  caption: [UC_18 - Configurazione della soglia del requirement score]
 )
 \
+
 *Attore primario:* Programmatore.
 
 *Precondizioni:*  
 - Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.  
 - L'utente ha accesso alle impostazioni nel menu "Extensions" di Visual Studio Code.
 
-*Postcondizioni:*
-- L'endpoint del server Ollama viene salvato e utilizzato dal plug-in per le chiamate API.
+*Postcondizioni:*  
+- La soglia viene salvata e utilizzata dal plug-in per determinare la conformità semantica di ciascun requisito: se la valutazione (requirement score) restituita dall'analisi semantica del requisito è maggiore o uguale alla soglia impostata, ed anche la valutazione del codice supera la relativa soglia, il requisito viene considerato "passed" (conforme); altrimenti viene considerato "not passed" (non conforme).
 
-*Scenario principale:*  
+*Scenario principale:*
 1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
-3. All'interno delle impostazioni, l'utente seleziona la voce "Ollama Endpoint".  
-4. L'utente inserisce l'indirizzo IP o il link del server Ollama.
-5. Il sistema salva l'endpoint e lo utilizza per le chiamate API durante le analisi.
+3. All'interno delle impostazioni, l'utente seleziona la voce "Quality score threshold".  
+4. L'utente inserisce il valore soglia desiderato (es. 80).  
+5. Il sistema salva la soglia e la utilizza per valutare i risultati dell'analisi del requisito.
+
+*Estensioni:*
+- *UC_18.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
+
+\
+== UC_18.1 - Visualizzazione errore valore soglia non valido
+
+*Attore primario:* Programmatore.
+
+*Precondizioni:*  
+- Durante la configurazione della soglia in [UC_18] o [UC_19], l'utente inserisce un valore non numerico o un valore che non rientra nei limiti previsti.
+
+*Postcondizioni:*
+- Il sistema visualizza un messaggio d'errore che informa l'utente dell'inserimento non valido e richiede la correzione del valore.
+
+*Scenario principale:*  
+1. L'utente inserisce il valore per la soglia di conformità nella sezione "Quality Score threshold" oppure nella sezione "Compliance Score threshold" delle impostazioni del plug-in.  
+2. Il sistema verifica il valore inserito.  
+3. Se il valore non è numerico o non rientra nei limiti previsti, il sistema visualizza un messaggio d'errore specifico.  
+4. Il sistema richiede all'utente di inserire un valore corretto.
 
 \
 == UC_19 - Configurazione della soglia di conformità del codice
@@ -1464,33 +1486,19 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - L'utente ha accesso alle impostazioni nel menu "Extensions" di Visual Studio Code.
 
 *Postcondizioni:*  
-- La soglia viene salvata e utilizzata dal plug-in per determinare la conformità dell'implementazione di ciascun requisito: se la valutazione (code score) restituita dall'analisi del codice è maggiore o uguale alla soglia impostata, il requisito viene considerato "passed" (conforme); altrimenti viene considerato "not passed" (non conforme).
+- La soglia viene salvata e utilizzata dal plug-in per determinare la conformità dell'implementazione di ciascun requisito: se la valutazione (code score) restituita dall'analisi del codice è maggiore o uguale alla soglia impostata, e lo è anche la valutazione del requisito, il requisito viene considerato "passed" (conforme); altrimenti viene considerato "not passed" (non conforme).
 
 *Scenario principale:*
 1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
-3. All'interno delle impostazioni, l'utente seleziona la voce "Requirement threshold".  
+3. All'interno delle impostazioni, l'utente seleziona la voce "Compliance score threshold".  
 4. L'utente inserisce il valore soglia desiderato (es. 80).  
 5. Il sistema salva la soglia e la utilizza per valutare i risultati dell'analisi del codice associato ai requisiti.
 
+*Estensioni:*
+- *UC_18.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
+
 \
-== UC_19.1 - Visualizzazione errore valore soglia non valido
-
-*Attore primario:* Programmatore.
-
-*Precondizioni:*  
-- Durante la configurazione della soglia di conformità in [UC_19], l'utente inserisce un valore non numerico o un valore che non rientra nei limiti previsti.
-
-*Postcondizioni:*
-- Il sistema visualizza un messaggio d'errore che informa l'utente dell'inserimento non valido e richiede la correzione del valore.
-
-*Scenario principale:*  
-1. L'utente inserisce il valore per la soglia di conformità nella sezione "Quality threshold" delle impostazioni del plug-in.  
-2. Il sistema verifica il valore inserito.  
-3. Se il valore non è numerico o non rientra nei limiti previsti, il sistema visualizza un messaggio d'errore specifico.  
-4. Il sistema richiede all'utente di inserire un valore corretto.
-
-
 == UC_20 - Visualizzazione della soglia di conformità del requisito
 
 *Attore primario:* Programmatore.
@@ -1512,11 +1520,11 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 *Estensioni:*
 - *UC_19.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
 
-== UC_21 - Visualizzazione dello stato di progressione
+== UC_21 - Visualizzazione dello stato di progresso
 
 #figure(
-  image("./img/AdR/UC_13.png", width: 70%),
-  caption: [UC_21 - Visualizzazione dello stato di progressione]
+  image("./img/AdR/UC_21.png", width: 70%),
+  caption: [UC_21 - Visualizzazione dello stato di progresso dell'analisi o del tracciamento]
 )
 \
 *Attore primario:* Programmatore.
@@ -1555,132 +1563,132 @@ Questi requisiti descrivono cosa il sistema deve fare
     /*----------------------------------------------------*/
     [RFO001],
     [Obbligatorio],
-    [Il sistema deve comunicare con un modello LLM tramite una REST API per ottenere delle valutazioni],
-    [UC_4],
+    [Il sistema deve inviare richieste HTTP REST ai modelli LLM e ricevere, per ogni requisito, una risposta strutturata contenente: voto in centesimi sul requisito e sul codice, lista di suggerimenti e lista di problemi.],
+    [UC_4, UC_11],
     /*----------------------------------------------------*/
     [RFO002],
     [Obbligatorio],
-    [Il sistema deve visualizzare graficamente i risultati delle analisi integrandoli nella lista dei requisiti],
-    [UC_9, UC_9.1, UC_9.1.1, UC_9.1.2, UC_9.2, UC_9.3, UC_9.4, UC_9.4.1, UC_9.5, UC_9.5.1],
+    [Il sistema deve visualizzare graficamente, per ogni requisito, i relativi risultati delle analisi (valutazione globale, punteggi 0–100 su requisito e codice, suggerimenti, problemi) integrandoli nella lista dei requisiti in tempo reale],
+    [UC_9],
     /*----------------------------------------------------*/
     [RFO003],
     [Obbligatorio],
-    [Il sistema deve informare l'utente nel caso, a seguito di un'analisi, non ci siano risultati],  
-    [UC_6.1],
+    [Durante analisi o tracciamento il sistema deve mostrare una barra di progresso con percentuale globale.],
+    [UC_21],
     /*----------------------------------------------------*/
     [RFF004],
     [_Facoltativo_#super("G")],
-    [Il codice relativo a un requisito da analizzare può essere presente in file diversi],
+    [Il sistema deve supportare tracciamenti composti da più porzioni di codice appartenenti a file diversi, memorizzandole e mostrandole separatamente.],
     [Proponente],
     /*----------------------------------------------------*/
     [RFF005],
     [Facoltativo],
-    [L'utente deve essere in grado di configurare il modello utilizzato per l'analisi],
-    [Proponente],
+    [L’utente deve poter configurare, nelle impostazioni, il modello di AI caricato su Ollama da usare per ciascun tipo di analisi (requisiti, codice, embedding/tracciamento).],
+    [Proponente, UC_17],
     /*----------------------------------------------------*/
     [RFO006],
     [Obbligatorio],
-    [L'estensione di Visual Studio Code deve essere in inglese],
-    [Proponente, UC_17],
+    [L’interfaccia utente ed i messaggi del plug‑in devono essere interamente in lingua inglese.],
+    [Proponente],
     /*----------------------------------------------------*/
     [RFD007],
     [_Desiderabile_#super("G")],
-    [Il sistema deve informare l'utente in caso di rallentamenti dovuti a una connessione lenta (risposte con tempo di attesa >20s) o a un modello troppo grande (_prompt_#super("G") maggiore di 6000 _token_#super("G") e/o velocità di risposta < 20 token/s)],
-    [Proponente],
+    [Se il tempo di risposta di Ollama >20 s oppure il prompt >6000 token oppure la velocità di output < 20 token/s, il sistema deve mostrare un avviso di prestazioni ridotte.],
+    [Proponente, UC_4.3],
     /*----------------------------------------------------*/
     [RFO008],
     [Obbligatorio],
-    [Il sistema deve permettere l'importazione di file CSV],
+    [Il sistema deve consentire l’importazione dei requisiti da file CSV.],
     [UC_1, UC_2, UC_3],
     /*----------------------------------------------------*/
     [RFO009],
     [Obbligatorio],
-    [Il sistema deve restituire un errore in caso il file CSV importato non sia valido],
+    [Se il CSV selezionato non rispetta lo schema previsto, il sistema deve annullare l’importazione e mostrare un messaggio di errore.],
     [UC_1.2],
     /*----------------------------------------------------*/
     [RFO010],
     [Obbligatorio],
-    [Il sistema deve essere in grado di verificare la validità del file CSV da importare, effettuando controlli sui campi del file],
-    [UC_1, UC_1.2, UC_2, UC_3],
+    [Durante l’importazione il sistema deve validare il CSV verificando la presenza delle colonne obbligatorie (ID, description) e la coerenza dei tipi per ogni riga.],
+    [UC_1, UC_2, UC_3],
     /*----------------------------------------------------*/
     [RFO011],
     [Obbligatorio],
     [Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_#super("G")],
-    [Capitolato, UC_1,UC_1.1,UC_1.3, UC_2, UC_3,  Proponente],
+    [Capitolato, UC_1.1],
     /*----------------------------------------------------*/
     [RFO012],
     [Obbligatorio],
-    [Il sistema deve avvisare l'utente in caso il file CSV caricato non sia valido e permettere all'utente di riprovare],
+    [In caso di importazione fallita il sistema deve notificare l’errore e permettere all’utente di selezionare un nuovo file.],
     [UC_1.2],
     /*----------------------------------------------------*/
     [RFO013],
     [Obbligatorio],
-    [Il sistema deve visualizzare le informazioni relative ai requisiti da analizzare, con o senza tracciamento, all'interno di un elenco annidato (nome del file in cui il codice sorgente è stato tracciato e le relative righe di codice, se presenti)],
-    [UC_1, UC_2, UC_3, UC_7, UC_7.1, UC_7.1.1, UC_8, UC_9],
+    [Il sistema deve mostrare i requisiti in una vista ad albero con, per ciascun requisito, sottosezioni per descrizione, tracciamento e risultati.],
+    [UC_6, UC_8, UC_9],
     /*----------------------------------------------------*/
     [RFO014],
     [Obbligatorio],
-    [Per ogni requisito presente nella lista caricata sarà presente un'icona predisposta ad avviare l'analisi del singolo requisito quando necessario],
-    [UC_6.1.4],
+    [Per ogni requisito presente nella lista dev'essere presente un'icona predisposta ad avviare l'analisi del singolo requisito selezionato.],
+    [UC_6.1.4, UC_11],
     /*----------------------------------------------------*/
     [RFO015],
     [Obbligatorio],
-    [Il sistema deve essere in grado di reperire le porzioni di codice tracciate all'interno del file CSV importato, e deve essere in grado di utilizzarle nell'analisi dei requisiti],
-    [UC_2, UC_4],
+    [Se il CSV contiene informazioni di tracciamento, il sistema deve estrarre la porzione di codice indicata (file + righe) e renderla disponibile per l’analisi.],
+    [UC_2, UC_3],
     /*----------------------------------------------------*/
     [RFO016],
     [Obbligatorio],
-    [Il sistema deve fornire una valutazione generica (per esempio, "Result: passed/not passed") per indicare se il requisito è stato rispettato],
-    [UC_4, UC_9.1, UC_9.1.2, UC_9.1.1],
+    [Per ogni requisito analizzato il sistema deve calcolare e memorizzare un risultato globale "passed"/"not passed" in base alle soglie configurate.],
+    [UC_4, UC_11, UC_9.1],
     /*----------------------------------------------------*/
     [RFO017],
     [Obbligatorio],
-    [Il sistema deve fornire una valutazione da 0 a 100 sull'aderenza della porzione di codice analizzata al rispettivo requisito e una seconda valutazione da 0 a 100 sull'aderenza del requisito stesso alla sua descrizione],
-    [UC_4, UC_9.2],
+    [Il sistema deve calcolare due punteggi (0–100): requirement score (chiarezza/coerenza del requisito) e code score (aderenza del codice al requisito).],
+    [UC_4, UC_11, UC_9.2, UC_9.3],
     /*----------------------------------------------------*/
     [RFO018],
     [Obbligatorio],
-    [Il sistema deve fornire una valutazione testuale del codice, fornendo i problemi trovati e gli eventuali suggerimenti per migliorare il codice (se presenti)],
-    [UC_9.4, UC_9, UC_4, UC_9.4.1, UC_9.5, UC_9.5.1],
+    [Per ogni requisito il sistema deve fornire un elenco di suggerimenti e un elenco di problemi rilevati nel requisito e/o nel codice.],
+    [UC_4, UC_11, UC_9.4, UC_9.5],
     /*----------------------------------------------------*/
     [RFO019],
     [Obbligatorio],
-    [Il sistema deve essere in grado di aggiornare la vista dei requisiti, aggiungendo i risultati delle analisi],
+    [Dopo importazione, il tracciamento o l'analisi, la vista requisiti deve aggiornarsi automaticamente senza necessità di refresh manuale.],
     [UC_9],
     /*----------------------------------------------------*/
     [RFO020],
     [Obbligatorio],
-    [Il sistema, nel caso vengano inseriti dei requisiti non tracciati, deve mostrare un messaggio che informi l'utente sul loro mancato tracciamento],
+    [Se un requisito è privo di tracciamento il sistema deve indicarlo con un icona e relativo messaggio informativo nel caso si tenti l'analisi.],
     [UC_4.1],
     /*----------------------------------------------------*/
     [RFO021],
     [Obbligatorio],
-    [Il sistema, in caso la comunicazione con il modello LLM venga interrotta (es. timeout, connessione interrotta), deve informare l'utente],
+    [Il sistema, in caso la comunicazione con il modello LLM venga interrotta (es. timeout, connessione interrotta), deve informare l'utente mostrando un messaggio di errore e permettendo di riprovare.],
     [UC_4.2],
     /*----------------------------------------------------*/
     [RFO022],
     [Obbligatorio],
-    [Il sistema deve essere in grado di misurare i tempi di risposta di Ollama, e restituire un errore in caso questi superino una soglia limite prestabilita],
+    [Il sistema deve essere in grado di misurare i tempi di risposta di Ollama, e restituire un errore in caso questi superino una la soglia limite di 20 secondi per il tracciamento e di 50 secondi per l'analisi.],
     [UC_4.3],
     /*----------------------------------------------------*/
     [RFO023],
     [Obbligatorio],
-    [Il sistema, nel caso il progetto non contenga il file con il codice sorgente associato a uno specifico requisito, informa l'utente di tale mancanza],
+    [Se il file sorgente indicato nel tracciamento non viene trovato all'interno del progetto aperto in VS Code, il sistema deve notificare l’utente.],
     [UC_4.4],
     /*----------------------------------------------------*/
     [RFO024],
     [Obbligatorio],
-    [Il sistema, una volta eseguita l'analisi (o il tracciamento) dei requisiti, deve essere in grado di esportare i risultati ottenuti in formato CSV],
+    [Il sistema deve esportare in formato CSV l’elenco requisiti con eventuali tracciamenti e risultati di ognuno.],
     [UC_5],
     /*----------------------------------------------------*/
     [RFO025],
     [Obbligatorio],
-    [Il sistema, nel caso fallisse nell'operazione di esportazione dei requisiti (es. spazio esaurito o permessi insufficienti), informerà l'utente con un messaggio di errore e permetterà di riprovare],
+    [Se il salvataggio del CSV fallisce, il sistema deve mostrare errore e permettere di riprovare],
     [UC_5.1],
     /*----------------------------------------------------*/
     [RFO026],
     [Obbligatorio],
-    [Il sistema, una volta eseguita l'analisi, deve essere in grado di esportare sia il tracciamento dei requisiti sia i risultati dell'analisi],
+    [Il CSV esportato deve includere ID, descrizione, tracciamento (se presente) e risultati (se presenti) per ogni requisito.],
     [UC_5],
     /*----------------------------------------------------*/
     [RFO027],
@@ -1690,22 +1698,22 @@ Questi requisiti descrivono cosa il sistema deve fare
     /*----------------------------------------------------*/
     [RFO028],
     [Obbligatorio],
-    [Il sistema, quando mostra la visualizzazione di dettaglio di un requisito, deve mostrare il nome del file in cui si trova il codice sorgente associato al requisito],
+    [Il sistema, quando mostra la visualizzazione di dettaglio di un requisito, deve mostrare deve mostrare il percorso, incluso il nome del file e la sua estensione, relativo del file sorgente associato al requisito.],
     [UC_8.2.1],
     /*----------------------------------------------------*/
     [RFO029],
     [Obbligatorio],
     [Il sistema deve permettere all'utente di filtrare i requisiti in base ai campi ID, descrizione e file sorgente],
-    [UC_10],
+    [UC_10, UC_10.1, UC_10.2, UC_10.3],
     /*----------------------------------------------------*/
     [RFO030],
     [Obbligatorio],
-    [Il sistema, in presenza di più requisiti caricati, deve essere in grado di eseguire l'analisi di un requisito specifico],
+    [Il sistema deve consentire l’analisi di un singolo requisito selezionato.],
     [UC_11],
     /*----------------------------------------------------*/
     [RFO031],
     [Obbligatorio],
-    [Il sistema deve essere in grado di associare ai requisiti non mappati il relativo codice sorgente che lo implementi attraverso una richiesta di analisi al modello di embedding, quindi registrare le righe di codice relative e mostrarle nella vista insieme ai requisiti],
+    [Il sistema deve essere in grado di associare ai requisiti non mappati il relativo codice sorgente che lo implementi attraverso una richiesta di analisi al modello di embedding, quindi di registrare il file e le righe di codice relative, aggiornandone la vista],
     [UC_13, UC_14],
     /*----------------------------------------------------*/
     [RFO032],
@@ -1715,13 +1723,13 @@ Questi requisiti descrivono cosa il sistema deve fare
     /*----------------------------------------------------*/
     [RFO033],
     [Obbligatorio],
-    [Il sistema deve permettere la configurazione del modello o dei modelli LLM che saranno utilizzati per l'analisi dei requisiti],
-    [UC_17, UC_17.1, UC_17.2, UC_17.3, Proponente],
+    [Il sistema deve consentire all’utente di approvare manualmente un requisito o marcarlo come "non conforme" e visualizzare lo stato corrispondente.],
+    [UC_6.1.2.3, UC_6.1.2.4, UC_12, UC_12.1, UC_12.2],
     /*----------------------------------------------------*/
     [RFO034],
     [Obbligatorio],
-    [Il sistema deve permettere la configurazione del modello per l'embedding che sarà utilizzato per il tracciamento del codice sorgente],
-    [UC_17, UC_17.1, Proponente],
+    [Il sistema deve permettere la modifica manuale del tracciamento di un requisito (file, riga inizio, riga fine).],
+    [UC_15],
     /*----------------------------------------------------*/
     [RFO035],
     [Obbligatorio],
@@ -1730,13 +1738,20 @@ Questi requisiti descrivono cosa il sistema deve fare
     /*----------------------------------------------------*/
     [RFO036],
     [Obbligatorio],
-    [Il sistema deve permettere all'utente di modificare la soglia di accettazione di un requisito, la quale permette ad esso di essere identificato come rispettato],
-    [UC_19, Proponente],
+    [Il sistema deve permettere all’utente di impostare le soglie(0–100) oltre le quali il code score ed il requirement score sono considerati "passed".],
+    [UC_19, UC_18, Proponente],
     /*----------------------------------------------------*/
     [RFO037],
     [Obbligatorio],
-    [Il sistema, nel caso venga inserito un valore "soglia" (di accettazione) non valido, ossia che non rientra nei parametri stabiliti, deve visualizzare un messaggio di errore specifico e permettere all'utente di modificarlo],
-    [UC_19, UC_19.1],
+    [Se il valore immesso per la soglia del code score o del requirement score non è un numero tra 0 e 100, il sistema deve mostrare un messaggio e richederne l'inserimento.],
+    [UC_19, UC_18, UC_18.1],
+    /*----------------------------------------------------*/
+    [RFO038],
+    [Obbligatorio],
+    [Il sistema deve consentire l’ordinamento dell’elenco requisiti per ID crescente, stato conforme, stato non conforme.],
+    [UC_7, UC_7.1, UC_7.2, UC_7.3],
+    /*----------------------------------------------------*/
+
   ),
   caption: [Requisiti Funzionali]
 )
@@ -1759,27 +1774,26 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
     /*----------------------------------------------------*/
     [RQO001],
     [Obbligatorio],
-    [Il plug-in deve essere modulare per consentire e facilitare l'aggiunta di nuove _feature_#super("G") in base a esigenze o aggiornamenti futuri del progetto. ],
+    [L’architettura deve essere modulare (UI, dominio, infrastruttura) con dipendenze unidirezionali, per facilitare l’aggiunta di nuove funzionalità.],
     [Capitolato],
     /*----------------------------------------------------*/
     [RQF001],
     [Facoltativo],
-    [Il sistema deve essere compatibile con Visual Studio Code con versione >= 1.98 e Ollama con versione >=0.6.4],
+    [Il plug‑in deve funzionare con Visual Studio Code ≥ 1.98 e Ollama ≥ 0.6.4.],
     [Proponente],
+    /*----------------------------------------------------*/
     [RQO002],
     [Obbligatorio],
-    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Norme_di_Progetto_v1.0.0]],
+    [Il prodotto deve essere  rispettare gli standard definiti all'interno del file #text(style:"italic")[Norme_di_Progetto_v1.0.0]],
     [#text(style:"italic")[Norme_di_Progetto_v1.0.0]],
     /*----------------------------------------------------*/
     [RQO003],
     [Obbligatorio],
-    [Il prodotto deve essere sviluppato secondo quanto detto all'interno del file #text(style:"italic")[Piano_di_Progetto_v1.0.0]],
+    [Il processo di sviluppo deve seguire le modalità stabilite all'interno del file #text(style:"italic")[Piano_di_Progetto_v1.0.0]],
     [#text(style:"italic")[Piano_di_Progetto_v1.0.0]],
 ),
   caption: [Requisiti di Qualità]
 )
-
-
 
 \
 \
@@ -1800,17 +1814,17 @@ Questi requisiti specificano limiti tecnici o di conformità
     /*----------------------------------------------------*/
     [RVO001],
     [Obbligatorio],
-    [il sistema deve essere in grado di analizzare codice nei linguaggi C],
+    [Il sistema deve analizzare correttamente codice scritto in linguaggio C.],
     [Capitolato],
     /*----------------------------------------------------*/
     [RVF002],
     [Facoltativo],
-    [il sistema deve poter supportare altri linguaggi oltre a C e RUST],
+    [Il sistema dovrebbe supportare anche altri linguaggi di programmazione (es. Rust, Java, Python).],
     [Capitolato],
     /*----------------------------------------------------*/
     [RVF003],
     [Facoltativo],
-    [Il sistema deve fornire valutazioni conformi alle normative sulla sicurezza funzionale (ISO 26262 o IEC 61508)],
+    [Il sistema deve fornire valutazioni conformi agli standard di sicurezza funzionale (ISO 26262 o IEC 61508).],
     [Capitolato],
     /*----------------------------------------------------*/
 
@@ -1839,7 +1853,7 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     ),
     [RPF001],
     [Facoltativo],
-    [Il sistema deve essere in grado di gestire file CSV di grandi dimensioni (ad esempio >100MB) senza subire rallentamenti],
+    [Il sistema dovrebbe importare e analizzare file CSV >100 MB senza rallentamenti percepibili (>5 s rispetto a file di dimensioni ordinarie).],
     [Proponente],
     ),
   caption: [Requisiti Prestazionali]
@@ -1852,66 +1866,70 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
 #figure(
   table(
     columns: (auto, auto),
+    align: center + horizon,
     table.header([*Fonte*], [*Requisiti*]),
-    [UC_1],   [RFO009, RFO010, RFO011, RFO012, RFO013],
-    [UC_1.1], [RFO012],
-    [UC_1.2], [RFO010, RFO013],
-    [UC_2],   [RFO009, RFO016],
-    [UC_4],   [RFO001, RFO017, RFO018, RFO019, RFO022, RFO023, RFO024],
-    [UC_4.1], [RFO021],
-    [UC_4.2], [RFO022],
-    [UC_4.3], [RFO023],
-    [UC_4.4], [RFO024],
-    [UC_5],   [RFO025],
-    [UC_5.1], [RFO026],
-    [UC_5.2], [RFO021],
-    [UC_6],   [RFO027, RFO028],
-    [UC_6.1], [RFO028],
-    [UC_7],   [RFO014],
-    [UC_7.1], [RFO014, RFO015],
-    [UC_7.1.1], [RFO014],
-    [UC_7.1.2], [RFO015],
-    [UC_8],   [RFO029],
-    [UC_8.1], [RFO029],
-    [UC_8.2], [RFO029],
-    [UC_8.2.1], [RFO030],
-    [UC_9],   [RFO002, RFO020],
-    [UC_9.1], [RFO017],
-    [UC_9.2], [RFO018],
-    [UC_9.4], [RFO019],
-    [UC_9.5], [RFO019],
-    [UC_10],   [RFO031],
-    [UC_11],  [RFO032, RFO037],
+    /*------------------------------------------------*/
+    [UC_1],   [RFO008, RFO009, RFO010, RFO011, RFO012, RFO013],
+    [UC_1.1], [RFO011],
+    [UC_1.2], [RFO009, RFO012],
+    [UC_2],   [RFO008, RFO009, RFO010, RFO015],
+    [UC_3],   [RFO008, RFO010, RFO015, RFO016, RFO017, RFO018],
+    [UC_4],   [RFO001, RFO016, RFO017, RFO018, RFO019, RFO022, RFO023],
+    [UC_4.1], [RFO020],
+    [UC_4.2], [RFO021],
+    [UC_4.3], [RFO022, RFD007],
+    [UC_4.4], [RFO023],
+    [UC_5],   [RFO024, RFO026],
+    [UC_5.1], [RFO025],
+    [UC_6],   [RFO013, RFO027],
+    [UC_6.1], [RFO014, RFO033],
+    [UC_7],   [RFO043],
+    [UC_7.1], [RFO043],
+    [UC_7.2], [RFO043],
+    [UC_7.3], [RFO043],
+    [UC_8],   [RFO027],
+    [UC_8.1], [RFO027],
+    [UC_8.2], [RFO027],
+    [UC_8.2.1], [RFO028],
+    [UC_9],   [RFO002, RFO016, RFO017, RFO018, RFO019],
+    [UC_9.1], [RFO016],
+    [UC_9.2], [RFO017],
+    [UC_9.3], [RFO017],
+    [UC_9.4], [RFO018],
+    [UC_9.5], [RFO018],
+    [UC_10],  [RFO029],
+    [UC_10.1],[RFO029],
+    [UC_10.2],[RFO029],
+    [UC_10.3],[RFO029],
+    [UC_11],  [RFO001, RFO014, RFO016, RFO017, RFO018, RFO035],
     [UC_12],  [RFO033],
-    [UC_13],  [RFO034],
-    [UC_13.1], [RFO034],
-    [UC_14],  [RFO035],
-    [UC_15],  [RFO036],
-    [UC_16],  [RFO038],
-    [UC_16.1], [RFO039],
-    [Proponente], [RFF004, RFF005, RFO007, RFD008, RFO012, RFO035, RFO036, RFO038, RQO001, RVF001, RVF002, RVF003, RFO001],
-    [Capitolato], [RVO001, RVF002, RVF003, RQO001, RQO002, RQO003]
+    [UC_13],  [RFO031],
+    [UC_14],  [RFO031],
+    [UC_15],  [RFO034],
+    [UC_16],  [RFO032],
+    [UC_16.1],[RFO032],
+    [UC_17],  [RFF005],
+    [UC_18],  [RFO036, RFO037],
+    [UC_19],  [RFO036, RFO037],
+    [UC_21],  [RFO003]
   ),
   caption: [Tracciamento dei Requisiti]
 )
 
-\
-\
 == Riepilogo
 
 #figure(
   table(
     align: (center),
     columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
-    [*Tipologia*],  [*Obbligatorio*],[*Desiderabile*],[*Facoltativo*],[*Totale*],
-    [_Funzionale_#super("G")],   [36],               [1],               [2],           [39],
-    [_Di Qualità_#super("G")],   [3],               [],               [1],           [4],
-    [_Di Vincolo_#super("G")],    [1],               [],               [2],           [3],
-    [Prestazionale],  [0],               [0],               [1],           [1],
+    [*Tipologia*],  [*Obbligatorio*], [*Desiderabile*], [*Facoltativo*], [*Totale*],
+    [_Funzionale_#super("G")],   [35], [1], [2], [38],
+    [_Di Qualità_#super("G")],   [3],  [0], [1], [4],
+    [_Di Vincolo_#super("G")],   [1],  [0], [2], [3],
+    [Prestazionale],             [0],  [0], [1], [1],
   ),
   caption: [Riepilogo]
 )
-
 #pagebreak()
 
 #outline(
