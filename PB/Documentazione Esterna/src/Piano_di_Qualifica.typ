@@ -772,75 +772,75 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
     table.header[*Codice*][*Descrizione*][*Esito*][*Fonte*],
     [TA-001],
     [Il plugin deve essere sviluppato come un'estensione installabile per Visual Studio Code],
-    [Superato],[],
+    [Superato],[Capitolato],
 
     [TA-002],
     [Il server in ascolto delle richieste deve essere installabile e avviabile tramite un'immagine docker o manualmente],
-    [Superato],[],
+    [Superato],[Proponente],
 
     [TA-003],
     [Il sistema deve essere in grado di importare i requisiti e, se presenti, informazioni di tracciamento e risultati di analisi precedenti, da un file in formato .csv],
-    [Superato],[],
+    [Superato],[RFO008, RFO010, RFO011, RFO015, RPF001],
 
     [TA-004],
-    [Il sistema deve essere in grado di visualizzare i requisiti importati e le relative informazion in una vista ad albero all'interno dell'interfaccia di Visual Studio Code],
-    [Superato],[],
+    [Il sistema deve essere in grado di visualizzare i requisiti importati e le relative informazioni in una vista ad albero all'interno dell'interfaccia di Visual Studio Code],
+    [Superato],[RFO002, RFO013, RFO027, RFO019 /*RFO038,RFO029*/],
 
     [TA-005],
     [L'utente deve essere in grado, in caso di assenza del tracciamento dei requisiti nel file .csv caricato, di tracciare l'implementazione dei requisiti all'interno del codice sorgente],
-    [Superato],[],
+    [Superato],[RFO031, RFF004],
 
     [TA-006],
     [L'utente deve essere in grado di eseguire il tracciamento di un singolo requisito nel codice sorgente],
-    [Superato],[],
+    [Superato],[RFO030, RFO031, RFO035],
 
     [TA-007],
     [L'utente deve essere in grado di condurre un'analisi dei requisiti importati ed ottenere una valutazione complessiva di ognuno di essi],
-    [Superato],[],
+    [Superato],[RFO002,RFO017,RFO018, RFO030, RFO031, RFO032, RFO037],
 
     [TA-008],
     [L'utente deve essere in grado di eseguire l'analisi di un requisito specifico],
-    [Superato],[],
+    [Superato],[RFO030,RFO035],
 
     [TA-009],
     [La valutazione di ogni requisito deve ritornare: risultato globale: passato/non passato; valutazione da 0 a 100 della semantica del requisito; valutazione a 0 a 100 dell'implementazione del requisito nel codice; una lista di suggerimenti (se presenti); una lista di problemi riscontrati (se presenti)],
-    [Superato],[],
+    [Superato],[RFO002, RFO016, RFO017, RFO018, RFO027],
 
     [TA-010],
     [L'utente può ordinare i requisiti in ordine crescente, oppure ordinarli in base alla disponibiltà del risultato dell'analisi (analizzato/non analizzato)],
-    [Superato],[],
+    [Superato],[RFO038],
 
     [TA-011],
     [Il sistema deve essere in grado, in qualsiasi momento dopo l'importazione di esportare i requisiti e le informazioni disponibili in un file in formato CSV],
-    [Superato],[],
+    [Superato],[RFO024,RFO026],
 
     [TA-012],
     [L'utente deve essere in grado di segnare un requisito come "approvato" o "non approvato"],
-    [Superato],[],
+    [Superato],[RFO016, RFO033, RFO036],
 
     [TA-013],
     [L'utente deve essere in grado di filtrare i requisiti per ID, per descrizione o per file sorgente tramite una barra di ricerca],
-    [Superato],[],
+    [Superato],[RFO029],
 
     [TA-014],
     [L'utente deve essere in grado di impostare la soglia di conformità del codice],
-    [Superato],[],
+    [Superato],[RFO036,RFO037],
 
     [TA-015],
     [L'utente deve essere in grado di impostare il modello LLM da utilizzare per l'analisi testuale del requisito e per l'implementazione di esso nel codice sorgente],
-    [Superato],[],
+    [Superato],[RFF005],
 
     [TA-016],
     [L'utente deve essere in grado di impostare il modello di embedding per il tracciamento],
-    [Superato],[],
+    [Superato],[RFF005],
 
     [TA-017],
     [L'utente deve essere in grado di aggiornare manualmente il tracciamento di un requisito nel codice (file, linea di inizio e linea di fine), modificando il relativo campo all'interno del singolo requisito],
-    [Superato],[],
+    [Superato],[RFF014, RFO034],
 
     [TA-018],
-    [Il sistema deve essere in grado di disinstallarsi correttamente],
-    [Superato],[],
+    [Il sistema deve essere in grado di essere disinstallato correttamente],
+    [Superato],[Propomente],
   ),
   caption: [Lista di test di accettazione],
 )
