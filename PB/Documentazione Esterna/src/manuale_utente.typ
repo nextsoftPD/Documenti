@@ -9,7 +9,8 @@
   version: "0.0.9",
   date: "12/04/2025",
   versionamento: (
-    "0.5.1", "09/05/2025", "Ion Cainareanu", "Correzione errori ortografici e typo sulla data del documento e sul versionamento.", "",
+    "0.5.2","09/05/2025","Luca Parise","Inserimento capitolo mancante sulla modifica della tracciabilità", "",
+    "0.5.1","09/05/2025","Ion Cainareanu","Correzione errori ortografici e typo sulla data del documento e sul versionamento", "Luca Parise",
     "0.5.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","Ion Cainareanu",
     "0.4.4","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","Maria Fuensanta Trigueros Hernandez",
     "0.4.3","23/04/2025","Luca Parise, Malik Giafar Mohamed","Miglioramento stile del testo nei vari capitoli","Maria Fuensanta Trigueros Hernandez",
@@ -322,10 +323,15 @@ Questa funzionalità serve a valutare la qualità dei requisiti e il loro grado 
 )
 
 
-In questo modo il plug-in eseguirà un'analisi approfondita di tutti i requisiti presenti nella lista. Potrete vedere in basso a destra della finestra un'icona di avanzamento che indica il progresso dell'analisi. \
+In questo modo il plug-in eseguirà un'analisi approfondita di tutti i requisiti presenti nella lista. Potrete vedere in basso a destra della finestra un'icona di avanzamento che indica il progresso dell'analisi. 
+Di seguito la figura della barra di progessione e una possibile visualizzazione dei requisiti al termine dell'analisi. \
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/analyze.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/MU/progression_bar.png", width: 60%),
   caption:"Stato di avanzamento analisi dei requisiti",
+)
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/analyze.png", width: 50%),
+  caption:"Visualizzazione tipo del risultato dell'analisi",
 )
 #pagebreak()
 Alla fine dell'analisi ogni requisito nella lista verrà aggiornato con i seguenti campi: 
@@ -439,6 +445,33 @@ L'approvazione è segnata da un icona blu mentre la disapprovazione è segnata d
 #figure(
   image("/PB/Documentazione Esterna/src/MU/disapprovation_icon.png", width: 20%),
   caption:"Icona di requisito non approvato",
+)
+
+#pagebreak()
+
+== Modifica del tracciamento di un requisito 
+Il plug-in offre la possibilità di modificare il tracciamento di un requisito specifico. Per farlo, basta cliccare sull'icona a forma di matita presente vicino al requisito. Più nello specifico, all'interno della sezione *traceability* del requsito stesso, come mostrato in figura:
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/edit.png", width: 40%),
+  caption:"Bottone per modificare il tracciamento di un requisito",
+) 
+La funzionalità pemette di modificare tre parametri:
+- il percorso del file associato al requisito
+- il numero di riga iniziale del requisito
+- il numero di riga finale del requisito
+Una volta cliccato sull'icona, il plug-in posizionerà il focus dell'utente sulla "*command palette*" di Visual Studio Code, permettendo di modificare i tre parametri. Una volta inserito il nuovo valore, premere "Invio" per confermare la modifica.
+Di seguito un esempio di come apparirà la command palette una volta cliccato sull'icona:
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/edit_src.png", width: 70%),
+  caption:"Command palette per la modifica del percorso del file",
+)
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/edit_start.png", width: 70%),
+  caption:"Command palette per la modifica della linea di inizio del requisito",
+)
+#figure(
+  image("/PB/Documentazione Esterna/src/MU/edit_end.png", width: 70%),
+  caption:"Command palette per la modifica della linea di fine del requisito",
 )
 
 #pagebreak()
