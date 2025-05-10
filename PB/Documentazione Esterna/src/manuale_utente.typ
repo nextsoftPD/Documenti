@@ -2,30 +2,24 @@
 
 #show: project.with(
   title: "Manuale Utente",
-  redattori: ("Luca Parise",),
-  verifica: ("",),
+  redattori: ("Luca Parise", "Maria Fuensanta Trigueros Hernandez", "Malik Giafar Mohamed", "Ion Cainareanu"),
+  verifica: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
   approvazione: ("",),
   uso: "Esterno",
   version: "0.0.9",
-  date: "12/04/2026",
+  date: "12/04/2025",
   versionamento: (
-    "0.1.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","Maria Fuensanta Trigueros Hernandez",
-    "0.0.9","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","Maria Fuensanta Trigueros Hernandez",
-    "0.0.8","23/04/2025","Luca Parise, Malik Giafar Mohamed","Miglioramento stile del testo nei vari capitoli","Maria Fuensanta Trigueros Hernandez",
-    "0.0.7","19/04/2025","Luca Parise, Malik Giafar Mohamed","Modifica capitolo per installazione immagine docker","Maria Fuensanta Trigueros Hernandez",
-    "0.0.6","16/04/2025","Malik Giafar Mohamed, Luca Parise","Modificato il path per le immagini e migliorato il testo","Maria Fuensanta Trigueros Hernandez",
-    "0.0.5","14/04/2025","Luca Parise, Maria Fuensanta Trigueros Hernandez","Aggiunto capitolo della configurazione","Maria Fuensanta Trigueros Hernandez",
-    "0.0.4","12/04/2025","Luca Parise","Aggiunto capitolo per la disinstallazione del prodotto","Maria Fuensanta Trigueros Hernandez",
-    "0.0.3","11/04/2025","Luca Parise","Modifica alle immagini e continuazione stesura dei vari capitoli","Maria Fuensanta Trigueros Hernandez",
-    "0.0.2","10/04/2025","Luca Parise","Stesura dei capitoli rigurdanti le funzionalità del plug-in","Maria Fuensanta Trigueros Hernandez",
-    "0.0.1","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","Maria Fuensanta Trigueros Hernandez",
-    
-    
-    
-    "","","","","",
-    "","","","","",
-    "","","","","",
-    "","","","","",
+    "0.5.1", "09/05/2025", "Ion Cainareanu", "Correzione errori ortografici e typo sulla data del documento e sul versionamento.", "",
+    "0.5.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","Ion Cainareanu",
+    "0.4.4","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","Maria Fuensanta Trigueros Hernandez",
+    "0.4.3","23/04/2025","Luca Parise, Malik Giafar Mohamed","Miglioramento stile del testo nei vari capitoli","Maria Fuensanta Trigueros Hernandez",
+    "0.4.2","19/04/2025","Luca Parise, Malik Giafar Mohamed","Modifica capitolo per installazione immagine docker","Maria Fuensanta Trigueros Hernandez",
+    "0.4.1","16/04/2025","Malik Giafar Mohamed, Luca Parise","Modificato il path per le immagini e migliorato il testo","Maria Fuensanta Trigueros Hernandez",
+    "0.4.0","14/04/2025","Luca Parise, Maria Fuensanta Trigueros Hernandez","Aggiunto capitolo della configurazione","Malik Giafar Mohamed",
+    "0.3.0","12/04/2025","Luca Parise","Aggiunto capitolo per la disinstallazione del prodotto","Maria Fuensanta Trigueros Hernandez",
+    "0.2.1","11/04/2025","Luca Parise","Modifica alle immagini e continuazione stesura dei vari capitoli","Maria Fuensanta Trigueros Hernandez",
+    "0.2.0","10/04/2025","Luca Parise","Stesura dei capitoli riguardanti le funzionalità del plug-in","Maria Fuensanta Trigueros Hernandez",
+    "0.1.0","19/03/2025","Luca Parise","Creazione documento, stesura introduzione e altri capitoli","Maria Fuensanta Trigueros Hernandez",
   )
 )
 
@@ -83,6 +77,17 @@ Sono necessarie le seguenti tecnologie installate:
 - _*Visual Studio Code*_#super("G") (versione 1.95.0 o superiore)
 - _*Ollama*_#super("G") (versione 0.6.5 o superiore) 
 
+=== Preparazione per l'installazione dell'estensione
+Prima di procedere con la creazione del file .vsix, è necessario:
+- *1)* Posizionarsi nella cartella del codice sorgente dell'estensione denominata "Requirement Tracker - Plugin":
+
+- *2)* Installare i moduli `node_modules` necessari per il funzionamento dell'estensione eseguendo il comando:
+
+#align(center, `$ npm install`)
+
+- *3)* Convertire il codice _typescript_#super("G") in _javascript_#super("G") eseguendo il comando:
+
+#align(center, `$ npx tsc`)
 
 
 === Come creare il file .vsix
@@ -98,13 +103,13 @@ Di seguito i vari passaggi per creare tale pacchetto:
 - *2)* Navigare con il terminale fino alla cartella della tua estensione. Quindi vai nella cartella in cui si trova il file *package.json* della tua estensione. Puoi usare il seguente comando per navigare nella cartella:
 #align(center, `$ cd /path/to/your/extension` )
 
-- *3)* Effettuare la _build_#super[G] del file .vsix con il seguente comando, il quale genera un file .vsix, ad esempio *nome-estensione-0.0.1.vsix*: 
+- *3)* Effettuare la _build_#super("G") del file .vsix con il seguente comando, il quale genera un file .vsix, ad esempio *nome-estensione-1.0.0.vsix*: 
 
 #align(center, `$ vsce package` )
 
 
 
-- *4)* (Facoltativo) Ignorare i file non necessari. È possibile usare un file `.vscodeignore` nella _root directory_#super[G] della tua estensione per escludere i file o cartelle (come node_modules, test/, ecc.) dal pacchetto finale. \
+- *4)* (Facoltativo) Ignorare i file non necessari. È possibile usare un file `.vscodeignore` nella _root directory_#super("G") della tua estensione per escludere i file o cartelle (come node_modules, test/, ecc.) dal pacchetto finale. \
 
 #pagebreak()
 
@@ -116,9 +121,9 @@ Una volta creato il pacchetto .vsix come delineato nel capitolo precedente, è p
 #align(center, `$ cd /path/to/your/extension` ) 
 
 - *3)* Usare quindi il seguente comando per installare il pacchetto .vsix:  
-#align(center, `$ code --install-extension nome-estensione-0.0.1.vsix` ) 
+#align(center, `$ code --install-extension nome-estensione-1.0.0.vsix` ) 
 
-- *4)* Se la estensione installata non è visualizzata, provare a riavviare Visual Studio Code 
+- *4)* Se l'estensione installata non è visualizzata, provare a riavviare Visual Studio Code 
 - *5)* Verificare che l'estensione sia stata installata correttamente: È possibile farlo accedendo alla sezione delle estensioni di Visual Studio Code e cercando il nome del plug-in oppure, tramite terminale, utilizzando il seguente comando: 
 #align(center, `$ code --list-extensions` )
 \
@@ -127,7 +132,7 @@ A questo punto, l'estensione dovrebbe risultare installata con successo. Per uti
 
 
 === Come attivare Ollama 
-Se Ollama non è stato ancora scaricato ed installato, si consiglia di consultare la documentazione ufficiale disponibile al seguente link "https://ollama.com/" (14/04/2025).
+Se Ollama non è stato ancora scaricato ed installato, si consiglia di consultare la documentazione ufficiale disponibile al seguente link "https://ollama.com/" (10/05/2025).
 
 Per utilizzare l'estensione, è necessario che Ollama sia attivo e in ascolto sulla porta standard 11434. A tal fine, è possibile cercare e avviare l'icona di Ollama una volta installato oppure, aprire un terminale ed eseguire il comando \ \ 
 #align(center, `$ ollama run nome_modello` ) \
@@ -136,11 +141,11 @@ dove "nome_modello" rappresenta il modello utilizzato. Di default, l'estensione 
 
 === Installazione dell'immagine docker
 
-Per poter utilizzare correttamente il plug-in, è necessario eseguire un _server_#super("G") esterno che gestisca le richieste in arrivo. Questo server è realizzato come una REST API che può essere facilmente avviata e gestita tramite _Docker_#super("G"), una tecnologia che consente di creare ambienti isolati e replicabili chiamati _container_#super(" G").
+Per poter utilizzare correttamente il plug-in, è necessario eseguire un _server_#super("G") esterno che gestisca le richieste in arrivo. Questo server è realizzato come una REST API che può essere facilmente avviata e gestita tramite _Docker_#super("G"), una tecnologia che consente di creare ambienti isolati e replicabili chiamati _container_#super("G").
 
 L'utilizzo di Docker permette di semplificare il processo di configurazione, evitando problemi legati a incompatibilità tra versioni di librerie o ambienti operativi. Seguendo i passaggi descritti in questa sezione, sarai in grado di:
 - Installare Docker sul tuo sistema (se non già presente)
-- Costruire localmente l'_immagine_#super(" G") dell'applicazione partendo da un file _Dockerfile_#super(" G")
+- Costruire localmente l'_immagine_#super("G") dell'applicazione partendo da un file _Dockerfile_#super("G")
 - Verificare che l'immagine sia stata correttamente creata
 - Avviare un container funzionante, pronto a ricevere ed elaborare richieste
 
@@ -154,23 +159,23 @@ Una volta installato, verificare che Docker sia correttamente attivo eseguendo d
 Se il comando restituisce la versione di Docker, l'installazione risulta completata con successo. 
 
 - *2)* Scaricare il Dockerfile presente all'interno della repository del prodotto e costruire localmente l'immagine attraverso il comando (assicurarsi di essere nella directory in cui si trova il file):
-#align(center, `$ cd ~path/del/server/API` )
+#align(center, `$ cd /path/del/server/Requirement Tracker - API` )
 
-- *3)* Una volta nella cartella del codice  sorgente (all'interno della directory denominata "hexagonalTest" della cartella MVP) è necessario costruire l'immagine Docker eseguendo il comando:
+- *3)* Una volta nella cartella del codice  sorgente (all'interno della directory denominata "Requirement Tracker - API") è necessario costruire l'immagine Docker eseguendo il comando:
 
 #align(center, `$ docker build -t requirement-tracker-api`)
 
-- *3)* Verificare che l'immagine sia presente usando il comando 
+- *4)* Verificare che l'immagine sia presente usando il comando 
 #align(center, `$ docker images`)
 \ 
-- *4)* Per eseguire l'immagine e creare il container utilizzare il comando: 
+- *5)* Per eseguire l'immagine e creare il container utilizzare il comando: 
 #align(center, `$ docker run -p porta:4000 -e VAR=VAL requirement-tracker-api`)
 
 Nel caso il nome dell'immagine sia cambiato, allora sarà necessario cambiare anche il nome nei comandi sopra. Lo stesso vale per la porta. \
 
 
 
-Un'altro metodo per avviare il server tramite docker consiste nel creare un "*docker compose file*".
+Un altro metodo per avviare il server tramite docker consiste nel creare un "*docker compose file*".
 Si tratta di un file in formato "yaml" il quale permette di modificare più facilmente i parametri di esecuzione del container con l'immagine del server. Inoltre, consente di configurare modalità di deployment più complesse, come l'uso di più container o l'integrazione con altri servizi. \
 
 Tutto questo non è possibile con il comando `docker run` in quanto questo permette di eseguire solo un container alla volta. 
@@ -181,19 +186,21 @@ Tutto questo non è possibile con il comando `docker run` in quanto questo perme
 
 ==== Attivare il server manualmente
 
-Per fare questo è necessario posizionarsi nella cartella API in cui si trova il codice in _typescript_#super(" G") che gestisce il server. Poiché viene usato node, sarà necessario convertire il codice in _javascript_#super(" G"). Per fare ciò, aprire un terminale, posizionarsi sulla cartella del codice ed eseguire il comando:
+Per fare questo è necessario posizionarsi nella cartella Requirement Tracker - API in cui si trova il codice in _typescript_#super("G") che gestisce il server. Poiché viene usato node, sarà necessario convertire il codice in _javascript_#super("G"). Per fare ciò, aprire un terminale, posizionarsi sulla cartella del codice ed eseguire il comando:
 
 #align(center, `$ npm install`)
 
 
-#align(center, `$ npx tsc`)
+#align(center, `$ npm run build`)
 
-Questi comandi installeranno le dipendenze (`npm install`) e convertiranno il codice typescript in codice javascript (`npx tsc`) in una cartella chiamata dist. 
-Quindi, per avviare il server, spostarsi dal terminale sulla cartella `dist/src` e cercare il file `main.js`. Quindi eseguire il comando:
+Questi comandi installeranno le dipendenze (`npm install`) e convertiranno il codice typescript in codice javascript (`npx run build`) in una cartella chiamata dist. 
 
-#align(center, `$ node main.js`)
+#align(center, `$ npm run start:prod`)
 
-Questo comando avvierà il server che rimarrà in ascolto delle richieste e le invierà ad Ollama. 
+Questo comando avvierà il server in modalità production che rimarrà in ascolto delle richieste e le invierà ad Ollama. Per le modalità alternative come sviluppo o debug ci sono i comandi:
+
+#align(center, `$ npm run start:dev`)
+#align(center, `$ npm run start:debug`)
 
 
 #pagebreak()
@@ -215,7 +222,7 @@ L'utente può impostare il modello da utilizzare nelle varie operazioni come mos
 Il modello LLM di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Visto il rapido progresso e la continua uscita di nuovi modelli, il plug-in permette all'utente di poter scegliere quale modello utilizzare, purchè questo sia installato all'interno della macchina. \ 
 Il plug-in permette di impostare un modello specifico per ognuna delle seguenti attività
 - per analizzare la "code compliance" 
-- per analizzare l'implementazione 
+- per analizzare l'implementazione il quale deve essere un modello che supporti la funzione di embedding ( nomic-embed-text:latest o simili)
 - per analizzare la descrizione dei requisiti
 
 
@@ -240,7 +247,7 @@ Un'altra configurazione permessa dal plug-in è l'impostazione della _soglia di 
   caption:"soglia di accettazione per l'analisi del requisito",
 )
 
-Un'altro tipo di soglia è quella riguardante il testo del requisito, la quale viene usata per valutare la qualità del testo dello stesso. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura :
+Un'altro tipo di soglia è quella riguardante la descrizione testuale del requisito, la quale viene usata per valutare la qualità del testo dello stesso. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura :
 
 #figure(
   image("../../../PB/Documentazione Esterna/src/MU/soglia2.png", width: 70%),
@@ -262,15 +269,15 @@ Quindi, cliccare sull'icona del plug-in presente nella colonna a sinistra della 
 /*----------------------------------------------------*/
 == Importazione dei requisiti  
 Per poter usare il plug-in è necessario importare i requisiti da analizzare. Per fare ciò, cliccate
-sull'icona denominata *"Load Requirements"* mostrata in figura.
+sull'icona denominata *"Load CSV"* mostrata in figura.
 #figure(
   image("/PB/Documentazione Esterna/src/MU/load_requirements.png", width: 40%),
   caption:"Icona per l'importazione dei requisiti",
 )
-Una volta cliccato sull'icona verrà aperto il _file system_#super(" G") di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
+Una volta cliccato sull'icona verrà aperto il _file system_#super("G") di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
 \
 
-Una volta importati, i requisiti verrano presentati in una lista nella sezione Requirements, come mostrato nella seguente figura: 
+Una volta importati, i requisiti verranno presentati in una lista nella sezione Requirements, come mostrato nella seguente figura: 
 
 #figure(
   image("/PB/Documentazione Esterna/src/MU/requirements.png", width: 80%),
@@ -308,7 +315,7 @@ La figura seguente mostra il tracciamento nella sezione "Requirement": \
 
 
 == Analisi dei requisiti
-Questà funzionalità serve a valutare la qualità dei requisiti e il loro grado di implementazione nel codice sorgente. Una volta importati i requisiti, cliccate sull'icona *"Analyze Requirements"* mostrata in figura.
+Questa funzionalità serve a valutare la qualità dei requisiti e il loro grado di implementazione nel codice sorgente. Una volta importati i requisiti, cliccate sull'icona *"Analyze"* mostrata in figura.
 #figure(
   image("/PB/Documentazione Esterna/src/MU/Analyze_Requirements.png", width: 45%),
   caption:"Bottone per l'analisi dei requisiti",
@@ -341,8 +348,8 @@ Inoltre, ad ogni requisito sarà associato un'icona che indica se lo stesso è p
 /*----------------------------------------------------*/
 == Esportazione requisiti
 
-Il plug-in presenta anche la funzione di esportazione, in formato _CSV_#super(" G"), dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
-sul pulsante *"Export Requirements"* mostrato nella seguente figura. 
+Il plug-in presenta anche la funzione di esportazione, in formato _CSV_#super("G"), dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
+sul pulsante *"Export CSV"* mostrato nella seguente figura. 
 #figure(
   image("/PB/Documentazione Esterna/src/MU/Export_Requirements.png", width: 50%),
   caption:"Bottone per l'esportazione dei requisiti",
@@ -354,7 +361,7 @@ Quindi, una volta cliccato sul pulsante, verrà aperto il file system di sistema
 /*----------------------------------------------------*/
 == Ricerca requisiti 
 
-Il plug-in presenta anche la funzione di ricerca dei requisiti attraverso una barra di ricerca in cui inserire il codice del requisito ricercato. Per farlo, basta cliccare sull'icona *"Search Requirements"* mostrata in figura.
+Il plug-in presenta anche la funzione di ricerca dei requisiti attraverso una barra di ricerca in cui inserire il codice del requisito ricercato. Per farlo, basta cliccare sul campo di input *"Search Requirements"* mostrata in figura.
 #figure(
   image("/PB/Documentazione Esterna/src/MU/search.png", width: 50%),
   caption:"Campo di input per la ricerca dei requisiti",
@@ -382,10 +389,10 @@ Il plug-in offre la possibilità di analizzare l'implementazione (tracciamento) 
 /*----------------------------------------------------*/
 == Filtraggio dei requisiti 
 
-Oltre a poter cercare i requisiti a seconda del loro codice, è possibile filtrare i requisiti in base al loro codice o al loro stato di analisi. 
+È possibile filtrare i requisiti in base al loro codice o al loro stato di analisi. 
 
 Ci sono tre diversi modi in cui possono essere filtrati i requisiti: 
-- In ordine *crescente* (a seconda del loro codice), premendo il pulsante *"Default Order"* mostrato in figura 
+- In ordine *Default* (a seconda del loro codice), premendo il pulsante *"Default Order"* mostrato in figura 
 #figure(
   image("/PB/Documentazione Esterna/src/MU/default_order.png", width: 70%),
   caption:"Bottone per organizzare i requisiti in ordine di default",
