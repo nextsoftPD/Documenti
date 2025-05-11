@@ -11,7 +11,8 @@
   version: "1.0.1",
   date: "23/11/2024",
   versionamento: (
-    "1.1.2", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento della procedura di modifica delle pull requests", "",
+    "1.1.3", "11/05/2025", "Malik Giafar Mohamed", "Modifica sezione descrizione dei test", "",
+    "1.1.2", "09/05/2025", "Malik Giafar Mohamed", "Aggiornamento della procedura di modifica delle pull requests", "",
     "1.1.1", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento tecnologie utilizzate e metodologie di testing", "",
     "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche in tutto il documento derivanti dalla correzione dell'RTB", "",
     "1.0.1", "07/03/2025", "Malik Giafar Mohamed", "Inserimento data di ultimo accesso nelle fonti", "",
@@ -533,7 +534,7 @@ I test di integrazione verificano il corretto funzionamento tra due o più unit�
 
 ==== Test di Sistema
 I test di sistema verificano il sistema completo del prodotto software, prendendo in considerazione tutti i componenti e interfacce con altri
-sistemi. Nel nostro caso, verrà verificata la corretta integrazione tra frontend, backend e il server di Ollama. Tali test verranno eseguiti manualmente, in quanto non è possibile automatizzarli. Ogni test di sistema viene riportato all'interno del documento del piano di qualifica.
+sistemi. Nel nostro caso, verrà verificata la corretta integrazione tra frontend, backend e il server di Ollama tramite i requisiti esistenti sul documento di _Analisi dei requisiti v2.0.0_. Tali test verranno eseguiti manualmente, in quanto non è possibile automatizzarli. Ogni test di sistema viene riportato all'interno del documento del piano di qualifica, e perchè si consideri superato, il sistema dovrà avere la capacità di soddisfare i requisiti associati a quel determinato test.
 
 === Strumenti
 Gli strumenti non banali a supporto del processo di verifica sono i seguenti:
@@ -570,8 +571,6 @@ Il processo di validazione è necessario per determinare se il prodotto finale �
 ==== Test di Accettazione
 Il test di accettazione o collaudo è un'attività esterna, supervisionata dal committente e consiste nel dimostrare il soddisfacimento
 dei requisiti. Ogni test da eseguire sarà definito in un apposito documento, il quale riporterà la descrizione del test da effettuare insieme alla sua eventuale accettazione da parte del committente. Tale documento dovrà essere firmato dal rappresentante dell'azienda proponente per essere considerato valido.
-
-Al momento, i test scelti per il collaudo equivalgono a quelli di sistema, il fatto che essi verifichino il corretto funzionamento del sistema nella sua interezza e che non siano automatizzabili li rende la scelta migliore per una revisione insieme all'azienda proponente.
 
 = Processi Organizzativi
 == Gestione dei Processi
