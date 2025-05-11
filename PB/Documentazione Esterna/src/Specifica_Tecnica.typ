@@ -6,10 +6,10 @@
   verifica: ("",),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.4.0",
+  version: "0.4.1",
   date: "18/03/2025",
   versionamento: (
-    "0.4.1", "06/05/2025", "Marco Perazzolo", "Migliorato lo stile del documento e aggiornati i diagrammi UML", "",
+    "0.4.1", "06/05/2025", "Marco Perazzolo", "Migliorato lo stile del documento e aggiornati i diagrammi UML", "Stefano Baso",
     "0.4.0", "02/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura backend di dettaglio", "Marco Perazzolo",
     "0.3.0", "27/04/2025", "Ion Cainareanu", "Stesura sezione architettura frontend di dettaglio", "Luca Parise",
     "0.2.0", "24/04/2025", "Marco Perazzolo", "Aggiornamento delle tecnologie utilizzate e aggiunta di diagrammi UML delle classi", "Malik Giafar Mohamed",
@@ -106,7 +106,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
     [CSS],
     [3],
-    [Linguaggio di stile utilizzato per descrivere l'aspetto e la formattazione di interfacce web o appicazioni. Nel nostro caso serve a definire lo stile dell'interfaccia del plug-in.],
+    [Linguaggio di stile utilizzato per descrivere l'aspetto e la formattazione di interfacce web o applicazioni. Nel nostro caso serve a definire lo stile dell'interfaccia del plug-in.],
     
   table.cell(colspan: 3, fill: blue.lighten(80%), [*Strumenti*] ),
 
