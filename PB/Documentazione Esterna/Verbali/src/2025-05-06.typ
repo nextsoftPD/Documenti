@@ -6,7 +6,7 @@
   title: "Incontro con Bluewind s.r.l",
   redattori: ("Luca Parise",),
   verifica: ("Stefano Baso",),
-  approvazione: ("",),
+  approvazione: ("Marco Perazzolo",),
   uso: "Esterno",
   version: "1.0.0",
   timebegin: "15:00",
