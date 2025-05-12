@@ -174,7 +174,7 @@ Indice per la media del numero di metodi presenti in ogni _package_#super("G"), 
 
 ==== Copertura dei test
 
-Percentuale di elementi del sistema come funzionalità o casi d’uso verificati tramite test automatici o manuali. Valutare la qualità della fase di validazione e per identificare eventuali aree del prodotto non ancora testate.
+Percentuale di elementi del sistema come funzionalità o casi d'uso verificati tramite test automatici o manuali. Valutare la qualità della fase di validazione e per identificare eventuali aree del prodotto non ancora testate.
 
 #figure(
   table(
@@ -193,7 +193,7 @@ Indica il rapporto tra il numero di requisiti implementati rispetto al totale de
 
 ==== Indice di variazione dei requisiti
 
-Monitora il numero e l’entità delle modifiche apportate ai requisiti nel corso del progetto. Una variazione eccessiva può indicare problemi nelle fasi iniziali di analisi o una cattiva gestione delle aspettative.
+Monitora il numero e l'entità delle modifiche apportate ai requisiti nel corso del progetto. Una variazione eccessiva può indicare problemi nelle fasi iniziali di analisi o una cattiva gestione delle aspettative.
 
 ==== Percentuale di attività completate nei tempi previsti
 
@@ -441,7 +441,7 @@ Il modello è suddiviso in tre parti:
 
  - Unit Testing: Test sui singoli moduli.
  - Integration Testing: Verifica dell'integrazione tra i moduli.
- - System Testing: Validazione dell’intero sistema.
+ - System Testing: Validazione dell'intero sistema.
  - Acceptance Testing: Verifica finale rispetto ai requisiti del cliente.
 
 #figure(
@@ -671,7 +671,7 @@ I _test di unità_#super("G") valutano il corretto funzionamento delle singole u
     [TU-186],[`FileReaderService` deve propagare errori da getFilesContent],[Superato],
     [TU-187],[`FileReaderService` deve restituire un oggetto vuoto quando non vengono trovati file C],[Superato],
     [TU-188],[`FileReaderService` deve convertire correttamente vari pattern],[Superato],
-    [TU-189],[`FileReaderService` deve gestire correttamente i pattern che terminano con **],[Superato],
+    [TU-189],[`FileReaderService` deve gestire correttamente i pattern che terminano con \*\*],[Superato],
     [TU-190],[`FileReaderService` deve gestire i pattern con estensioni di file],[Superato],
     [TU-191],[`FileReaderService` deve gestire pattern senza wildcard ma con estensioni],[Superato],
     [TU-192],[`CsvService` deve restituire stringhe vuote per tracciabilità vuota],[Superato],
@@ -692,6 +692,47 @@ I _test di unità_#super("G") valutano il corretto funzionamento delle singole u
     [TU-207],[`CsvService` deve contare correttamente i requisiti analizzati],[Superato],
     [TU-208],[`CsvService` deve gestire errori di lettura file],[Superato],
     [TU-209],[`CsvService` deve gestire errori di parsing CSV],[Superato],
+    [TU-210],[`AppModule` deve importare `RequirementAnalysisModule`],[Superato],
+    [TU-211],[L'entità `Main` del backend deve ascoltare sulla porta predefinita quando la variabile `PORT` non è impostata],[Superato],
+    [TU-212],[`RequirementAnalysisModule` deve compilare il modulo],[Superato],
+    [TU-213],[`RequirementAnalysisController.analyzeRequirement` deve invocare il metodo di `RequirementAnalysisUseCase` e restituire la risposta di analisi],[Superato],
+    [TU-214],[`RequirementAnalysisController.getEmbedding` deve invocare il metodo di `RequirementAnalysisUseCase` e restituire la risposta di embedding],[Superato],
+    [TU-215],[`RequirementAnalysisService.analyzeRequirement` deve analizzare correttamente requisiti e codice],[Superato],
+    [TU-216],[`RequirementAnalysisService.getEmbedding` deve ottenere correttamente l'embedding],[Superato],
+    [TU-217],[`RequirementAnalysisService.analyzeRequirement` deve gestire errori di parsing JSON],[Superato],
+    [TU-218],[`RequirementAnalysisService.getEmbedding` deve gestire errori],[Superato],
+    [TU-219],[`DomainError` deve essere creato con un messaggio personalizzato e impostare il nome],[Superato],
+    [TU-220],[`ParseError` deve essere creato con il messaggio predefinito],[Superato],
+    [TU-221],[`ParseError` deve essere creato con un messaggio personalizzato],[Superato],
+    [TU-222],[`ExternalServiceError` deve essere creato con il messaggio predefinito],[Superato],
+    [TU-223],[`ExternalServiceError` deve essere creato con un messaggio personalizzato],[Superato],
+    [TU-224],[`PromptTemplates.requirementContext` deve contenere le istruzioni di valutazione richieste],[Superato],
+    [TU-225],[`PromptTemplates.codeContext` deve contenere i criteri di valutazione richiesti],[Superato],
+    [TU-226],[`PromptTemplates.codePromptTemplate` deve generare un prompt corretto con requisito e codice],[Superato],
+    [TU-227],[`OllamaModels.OllamaRequestModel` deve creare un modello di richiesta valido],[Superato],
+    [TU-228],[`OllamaModels.RequirementAnalysisModel` deve gestire un risultato di analisi valido],[Superato],
+    [TU-229],[`OllamaModels.RequirementAnalysisModel` deve gestire un errore di parsing],[Superato],
+    [TU-230],[`OllamaModels.OllamaResponseModel` deve gestire una risposta valida],[Superato],
+    [TU-231],[`OllamaModels.CodeAnalysisModel` deve gestire un risultato di analisi del codice valido],[Superato],
+    [TU-232],[`OllamaModels.CodeAnalysisModel` deve gestire un errore di parsing],[Superato],
+    [TU-233],[`OllamaModels.AnalysisResponseModel` deve gestire una risposta di analisi valida],[Superato],
+    [TU-234],[`OllamaModels.OllamaEmbeddingResponse` deve gestire una risposta di embedding valida],[Superato],
+    [TU-235],[`ConfigModels.OllamaConfig` deve creare un oggetto `OllamaConfig` valido],[Superato],
+    [TU-236],[`ConfigModels.AppConfig` deve creare un oggetto `AppConfig` valido con `OllamaConfig`],[Superato],
+    [TU-237],[`OllamaApiAdapter.sendMessageToOllama` deve inviare un messaggio a Ollama e restituire la risposta],[Superato],
+    [TU-238],[`OllamaApiAdapter.getEmbedding` deve ottenere l'embedding e restituire un array di numeri],[Superato],
+    [TU-239],[`OllamaApiAdapter.getEmbedding` deve generare un errore ExternalServiceError quando la chiamata API fallisce],[Superato],
+    [TU-240],[`OllamaApiAdapter.sendMessageToOllama` deve gestire errori non axios],[Superato],
+    [TU-241],[`OllamaApiAdapter.sendMessageToOllama` deve gestire errori axios],[Superato],
+    [TU-242],[`OllamaApiAdapter.getEmbedding` deve gestire una risposta embedding non valida],[Superato],
+    [TU-243],[`OllamaApiAdapter.getEmbedding` deve gestire errori axios],[Superato],
+    [TU-244],[`OllamaApiAdapter.getEmbedding` deve gestire una risposta embedding non array],[Superato],
+    [TU-245],[`ConfigAdapter` deve restituire la configurazione predefinita quando non sono impostate variabili di ambiente],[Superato],
+    [TU-246],[`ConfigAdapter` deve utilizzare le variabili di ambiente quando sono impostate],[Superato],
+    [TU-247],[`JsonParserAdapter.parseJson` deve analizzare correttamente una stringa JSON valida],[Superato],
+    [TU-248],[`JsonParserAdapter.parseJson` deve restituire `null` per una stringa JSON non valida],[Superato],
+    [TU-249],[`JsonParserAdapter.parseJson` deve gestire una stringa vuota],[Superato],
+    [TU-250],[`JsonParserAdapter.parseJson` deve gestire JSON complessi e annidati],[Superato],
   ),
   caption: [Lista di test di unità],
 )
@@ -705,7 +746,7 @@ I test di integrazione individuati sono i seguenti:
   table(
     columns: 3,
     table.header[*Codice*][*Descrizione*][*Esito*],
-    [TI-001],[VS Code dovrebbe essere attualmente in esecuzione],[Superato],
+    [TI-001],[VS Code deve essere attualmente in esecuzione],[Superato],
     [TI-002],[Il frontend deve essere in grado di accedere alle configurazioni],[Superato],
     [TI-003],[Il frontend deve essere in grado di eseguire comandi inviati dall'utente],[Superato],
     [TI-004],[Il frontend deve registrare ed eseguire il comando di analisi di tutti i requisiti],[Superato],
@@ -749,7 +790,7 @@ I test di integrazione individuati sono i seguenti:
     [TI-042],[L'entità `OllamaApiAdapter` deve generare ExternalServiceError quando la richiesta all'API di Ollama fallisce],[Superato],
     [TI-043],[L'entità `OllamaApiAdapter` deve ottenere correttamente embeddings dall'API di Ollama],[Superato],
     [TI-044],[L'entità `OllamaApiAdapter` deve utilizzare il modello di embedding predefinito quando non fornito],[Superato],
-    [TI-045],['entità `Application` Il modulo di analisi dei requisiti dovrebbe essere definito],[Superato],
+    [TI-045],['entità `Application` Il modulo di analisi dei requisiti deve essere definito],[Superato],
     [TI-046],[L'entità `Application` deve essere accessibile tramite una richiesta HTTP  POST su `/requirement/analyze`],[Superato],
     [TI-047],[L'entità `Application` deve essere accessibile tramite una richiesta HTTP  POST su `/requirement/embedding`],[Superato],
     [TI-048],[L'entità `Application` deve chiamare `analyzeRequirement` del servizio `RequirementAnalysisService` iniettato],[Superato],
@@ -760,7 +801,60 @@ I test di integrazione individuati sono i seguenti:
 
 === Test di Sistema
 
-I test di sistema verificano il sistema completo del prodotto software, prendendo in considerazione tutti i componenti e interfacce con altri sistemi. Questi test controllano che il software rispetti tutti i requisiti prestabiliti e che sia adatto all'uso in produzione. 
+I test di sistema verificano il sistema completo del prodotto software, prendendo in considerazione tutti i componenti e interfacce con altri sistemi. Questi test controllano che il software rispetti tutti i requisiti prestabiliti e che sia adatto all'uso in produzione.
+#figure(
+  table(
+    columns: 4,
+    table.header[*Codice*][*Descrizione*][*Requisito*][*Esito*],
+    [TS-001],[Il sistema deve inviare richieste HTTP REST ai modelli LLM e ricevere, per ogni requisito, una risposta strutturata contenente: voto in centesimi sul requisito e sul codice, lista di suggerimenti e lista di problemi.],[RFO001],[Superato],
+    [TS-002],[Il sistema deve visualizzare graficamente, per ogni requisito, i relativi risultati delle analisi (valutazione globale, punteggi 0-100 su requisito e codice, suggerimenti, problemi) integrandoli nella lista dei requisiti in tempo reale],[RFO002],[Superato],
+    [TS-003],[Durante analisi o tracciamento il sistema deve mostrare una barra di progresso con percentuale globale.],[RFO003],[Superato],
+    [TS-004],[Il sistema deve supportare tracciamenti composti da più porzioni di codice appartenenti a file diversi, memorizzandole e mostrandole separatamente.],[RFF004],[Superato],
+    [TS-005],[L'utente deve poter configurare, nelle impostazioni, il modello di AI caricato su Ollama da usare per ciascun tipo di analisi (requisiti, codice, embedding/tracciamento).],[RFF005],[Superato],
+    [TS-006],[L'interfaccia utente ed i messaggi del plug-in devono essere interamente in lingua inglese.],[RFO006],[Superato],
+    [TS-007],[Se il tempo di risposta di Ollama >20 s oppure il prompt >6000 token oppure la velocità di output < 20 token/s, il sistema deve mostrare un avviso di prestazioni ridotte.],[RFD007],[Superato],
+    [TS-008],[Il sistema deve consentire l'importazione dei requisiti da file CSV.],[RFO008],[Superato],
+    [TS-009],[Se il CSV selezionato non rispetta lo schema previsto, il sistema deve annullare l'importazione e mostrare un messaggio di errore.],[RFO009],[Superato],
+    [TS-010],[Durante l'importazione il sistema deve validare il CSV verificando la presenza delle colonne obbligatorie (ID, description) e la coerenza dei tipi per ogni riga.],[RFO010],[Superato],
+    [TS-011],[Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_],[RFO011],[Superato],
+    [TS-012],[In caso di importazione fallita il sistema deve notificare l'errore e permettere all'utente di selezionare un nuovo file.],[RFO012],[Superato],
+    [TS-013],[Il sistema deve mostrare i requisiti in una vista ad albero con, per ciascun requisito, sottosezioni per descrizione, tracciamento e risultati.],[RFO013],[Superato],
+    [TS-014],[Per ogni requisito presente nella lista dev'essere presente un'icona predisposta ad avviare l'analisi del singolo requisito selezionato.],[RFO014],[Superato],
+    [TS-015],[Se il CSV contiene informazioni di tracciamento, il sistema deve estrarre la porzione di codice indicata (file + righe) e renderla disponibile per l'analisi.],[RFO015],[Superato],
+    [TS-016],[Per ogni requisito analizzato il sistema deve calcolare e memorizzare un risultato globale "passed"/"not passed" in base alle soglie configurate.],[RFO016],[Superato],
+    [TS-017],[Il sistema deve calcolare due punteggi (0-100): requirement score (chiarezza/coerenza del requisito) e code score (aderenza del codice al requisito).],[RFO017],[Superato],
+    [TS-018],[Per ogni requisito il sistema deve fornire un elenco di suggerimenti e un elenco di problemi rilevati nel requisito e/o nel codice.],[RFO018],[Superato],
+    [TS-019],[Dopo importazione, il tracciamento o l'analisi, la vista requisiti deve aggiornarsi automaticamente senza necessità di refresh manuale.],[RFO019],[Superato],
+    [TS-020],[Se un requisito è privo di tracciamento il sistema deve indicarlo con un icona e relativo messaggio informativo nel caso si tenti l'analisi.],[RFO020],[Superato],
+    [TS-021],[Il sistema, in caso la comunicazione con il modello LLM venga interrotta (es. timeout, connessione interrotta), deve informare l'utente mostrando un messaggio di errore e permettendo di riprovare.],[RFO021],[Superato],
+    [TS-022],[Il sistema deve essere in grado di misurare i tempi di risposta di Ollama, e restituire un errore in caso questi superino una la soglia limite di 20 secondi per il tracciamento e di 50 secondi per l'analisi.],[RFO022],[Superato],
+    [TS-023],[Se il file sorgente indicato nel tracciamento non viene trovato all'interno del progetto aperto in VS Code, il sistema deve notificare l'utente.],[RFO023],[Superato],
+    [TS-024],[Il sistema deve esportare in formato CSV l'elenco requisiti con eventuali tracciamenti e risultati di ognuno.],[RFO024],[Superato],
+    [TS-025],[Se il salvataggio del CSV fallisce, il sistema deve mostrare errore e permettere di riprovare],[RFO025],[Superato],
+    [TS-026],[Il CSV esportato deve includere ID, descrizione, tracciamento (se presente) e risultati (se presenti) per ogni requisito.],[RFO026],[Superato],
+    [TS-027],[Il sistema, una volta selezionato un requisito dalla lista, deve mostrarlo in una sottolista dove vengono specificati la descrizione del requisito stesso e, se presente, il suo tracciamento nel codice sorgente],[RFO027],[Superato],
+    [TS-028],[Il sistema, quando mostra la visualizzazione di dettaglio di un requisito, deve mostrare deve mostrare il percorso, incluso il nome del file e la sua estensione, relativo del file sorgente associato al requisito.],[RFO028],[Superato],
+    [TS-029],[Il sistema deve permettere all'utente di filtrare i requisiti in base ai campi ID, descrizione e file sorgente],[RFO029],[Superato],
+    [TS-030],[Il sistema deve consentire l'analisi di un singolo requisito selezionato.],[RFO030],[Superato],
+    [TS-031],[Il sistema deve essere in grado di associare ai requisiti non mappati il relativo codice sorgente che lo implementi attraverso una richiesta di analisi al modello di embedding, quindi di registrare il file e le righe di codice relative, aggiornandone la vista],[RFO031],[Superato],
+    [TS-032],[Il sistema deve essere in grado di escludere dall'analisi e dal tracciamento dei requisiti tutti i file elencati in un apposito file di configurazione (chiamato .reqignore) contenente i percorsi dei file associati al progetto. Se il file di configurazione include percorsi non validi, il sistema deve notificare l'errore all'utente, senza però interrompere l'analisi, che deve comunque procedere sui file validi],[RFO032],[Superato],
+    [TS-033],[Il sistema deve consentire all'utente di approvare manualmente un requisito o marcarlo come "non conforme" e visualizzare lo stato corrispondente.],[RFO033],[Superato],
+    [TS-034],[Il sistema deve permettere la modifica manuale del tracciamento di un requisito (file, riga inizio, riga fine).],[RFO034],[Superato],
+    [TS-035],[Il sistema deve essere in grado di ripetere l'analisi di uno o più requisiti],[RFO035],[Superato],
+    [TS-036],[Il sistema deve permettere all'utente di impostare le soglie(0-100) oltre le quali il code score ed il requirement score sono considerati "passed".],[RFO036],[Superato],
+    [TS-037],[Se il valore immesso per la soglia del code score o del requirement score non è un numero tra 0 e 100, il sistema deve mostrare un messaggio e richederne l'inserimento.],[RFO037],[Superato],
+    [TS-038],[Il sistema deve consentire l'ordinamento dell'elenco requisiti per ID crescente, stato conforme, stato non conforme.],[RFO038],[Superato],
+    [TS-039],[L'architettura deve essere modulare (UI, dominio, infrastruttura) con dipendenze unidirezionali, per facilitare l'aggiunta di nuove funzionalità.],[RQO001],[Superato],
+    [TS-040],[Il plug-in deve funzionare con Visual Studio Code ≥ 1.98 e Ollama ≥ 0.6.4.],[RQF001],[Superato],
+    [TS-041],[Il prodotto deve essere  rispettare gli standard definiti all'interno del file #text(style:"italic")[Norme_di_Progetto_v1.0.0]],[RQO002],[Superato],
+    [TS-042],[Il processo di sviluppo deve seguire le modalità stabilite all'interno del file #text(style:"italic")[Piano_di_Progetto_v1.0.0]],[RQO003],[Superato],
+    [TS-043],[Il sistema deve analizzare correttamente codice scritto in linguaggio C.],[RVO001],[Superato],
+    [TS-044],[Il sistema dovrebbe supportare anche altri linguaggi di programmazione (es. Rust, Java, Python).],[RVF002],[Superato],
+    [TS-045],[Il sistema deve fornire valutazioni conformi agli standard di sicurezza funzionale (ISO 26262 o IEC 61508).],[RVF003],[Superato],
+    [TS-046],[Il sistema dovrebbe importare e analizzare file CSV >100 MB senza rallentamenti percepibili (>5 s rispetto a file di dimensioni ordinarie).],[RPF001],[Superato]
+  ),
+  caption: [Lista di test di sistema],
+)
 
 === Test di Accettazione
 
@@ -780,7 +874,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-003],
     [Il sistema deve essere in grado di importare i requisiti e, se presenti, informazioni di tracciamento e risultati di analisi precedenti, da un file in formato .csv],
-    [Superato],[RFO008, RFO010, RFO011, RFO015, RPF001],
+    [Superato],[RFO008, RFO010, RFO011, RFO015,\ RPF001],
 
     [TA-004],
     [Il sistema deve essere in grado di visualizzare i requisiti importati e le relative informazioni in una vista ad albero all'interno dell'interfaccia di Visual Studio Code],
@@ -788,7 +882,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-005],
     [L'utente deve essere in grado, in caso di assenza del tracciamento dei requisiti nel file .csv caricato, di tracciare l'implementazione dei requisiti all'interno del codice sorgente],
-    [Superato],[RFO031, RFF004],
+    [Superato],[RFO031, \ RFF004],
 
     [TA-006],
     [L'utente deve essere in grado di eseguire il tracciamento di un singolo requisito nel codice sorgente],
@@ -796,11 +890,11 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-007],
     [L'utente deve essere in grado di condurre un'analisi dei requisiti importati ed ottenere una valutazione complessiva di ognuno di essi],
-    [Superato],[RFO002,RFO017,RFO018, RFO030, RFO031, RFO032, RFO037],
+    [Superato],[RFO002, RFO017, RFO018, RFO030, RFO031, RFO032, RFO037],
 
     [TA-008],
     [L'utente deve essere in grado di eseguire l'analisi di un requisito specifico],
-    [Superato],[RFO030,RFO035],
+    [Superato],[RFO030, RFO035],
 
     [TA-009],
     [La valutazione di ogni requisito deve ritornare: risultato globale: passato/non passato; valutazione da 0 a 100 della semantica del requisito; valutazione a 0 a 100 dell'implementazione del requisito nel codice; una lista di suggerimenti (se presenti); una lista di problemi riscontrati (se presenti)],
@@ -812,7 +906,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-011],
     [Il sistema deve essere in grado, in qualsiasi momento dopo l'importazione di esportare i requisiti e le informazioni disponibili in un file in formato CSV],
-    [Superato],[RFO024,RFO026],
+    [Superato],[RFO024, RFO026],
 
     [TA-012],
     [L'utente deve essere in grado di segnare un requisito come "approvato" o "non approvato"],
@@ -824,7 +918,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-014],
     [L'utente deve essere in grado di impostare la soglia di conformità del codice],
-    [Superato],[RFO036,RFO037],
+    [Superato],[RFO036, RFO037],
 
     [TA-015],
     [L'utente deve essere in grado di impostare il modello LLM da utilizzare per l'analisi testuale del requisito e per l'implementazione di esso nel codice sorgente],
@@ -836,7 +930,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-017],
     [L'utente deve essere in grado di aggiornare manualmente il tracciamento di un requisito nel codice (file, linea di inizio e linea di fine), modificando il relativo campo all'interno del singolo requisito],
-    [Superato],[RFF014, RFO034],
+    [Superato],[RFF014,\ RFO034],
 
     [TA-018],
     [Il sistema deve essere in grado di essere disinstallato correttamente],
