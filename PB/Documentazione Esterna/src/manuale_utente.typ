@@ -3,13 +3,14 @@
 #show: project.with(
   title: "Manuale Utente",
   redattori: ("Luca Parise", "Maria Fuensanta Trigueros Hernandez", "Malik Giafar Mohamed", "Ion Cainareanu"),
-  verifica: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
+  verifica: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu", "Malik Giafar Mohamed"),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.0.9",
+  version: "1.0.0",
   date: "12/04/2025",
   versionamento: (
-    "0.5.2","09/05/2025","Luca Parise","Inserimento capitolo mancante sulla modifica della tracciabilità", "",
+    "1.0.0","12/05/2025","Ion Cainareanu","Rilascio della versione 1.0.0 e alcune correzioni finali", "",
+    "0.5.2","09/05/2025","Luca Parise","Inserimento capitolo mancante sulla modifica della tracciabilità","Ion Cainareanu",
     "0.5.1","09/05/2025","Ion Cainareanu","Correzione errori ortografici e typo sulla data del documento e sul versionamento", "Luca Parise",
     "0.5.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","Ion Cainareanu",
     "0.4.4","23/04/2025","Luca Parise","Correzione errori ortografici e inserimento/aggiornamento delle immagini","Maria Fuensanta Trigueros Hernandez",
@@ -80,7 +81,7 @@ Sono necessarie le seguenti tecnologie installate:
 
 === Preparazione per l'installazione dell'estensione
 Prima di procedere con la creazione del file .vsix, è necessario:
-- *1)* Posizionarsi nella cartella del codice sorgente dell'estensione denominata "Requirement Tracker - Plugin":
+- *1)* Posizionarsi nella cartella del codice sorgente dell'estensione denominata "Requirement Tracker - Plugin"
 
 - *2)* Installare i moduli `node_modules` necessari per il funzionamento dell'estensione eseguendo il comando:
 
@@ -220,7 +221,7 @@ L'utente può impostare il modello da utilizzare nelle varie operazioni come mos
   caption: "Configurazione del modello LLM",
 )
 
-Il modello LLM di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Visto il rapido progresso e la continua uscita di nuovi modelli, il plug-in permette all'utente di poter scegliere quale modello utilizzare, purchè questo sia installato all'interno della macchina. \ 
+Il modello LLM di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Visto il rapido progresso e la continua uscita di nuovi modelli, il plug-in permette all'utente di poter scegliere quale modello utilizzare, purché questo sia installato all'interno della macchina. \ 
 Il plug-in permette di impostare un modello specifico per ognuna delle seguenti attività
 - per analizzare la "code compliance" 
 - per analizzare l'implementazione il quale deve essere un modello che supporti la funzione di embedding ( nomic-embed-text:latest o simili)
@@ -248,7 +249,7 @@ Un'altra configurazione permessa dal plug-in è l'impostazione della _soglia di 
   caption:"soglia di accettazione per l'analisi del requisito",
 )
 
-Un'altro tipo di soglia è quella riguardante la descrizione testuale del requisito, la quale viene usata per valutare la qualità del testo dello stesso. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura :
+Un altro tipo di soglia è quella riguardante la descrizione testuale del requisito, la quale viene usata per valutare la qualità del testo dello stesso. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura :
 
 #figure(
   image("../../../PB/Documentazione Esterna/src/MU/soglia2.png", width: 70%),
@@ -450,12 +451,12 @@ L'approvazione è segnata da un icona blu mentre la disapprovazione è segnata d
 #pagebreak()
 
 == Modifica del tracciamento di un requisito 
-Il plug-in offre la possibilità di modificare il tracciamento di un requisito specifico. Per farlo, basta cliccare sull'icona a forma di matita presente vicino al requisito. Più nello specifico, all'interno della sezione *traceability* del requsito stesso, come mostrato in figura:
+Il plug-in offre la possibilità di modificare il tracciamento di un requisito specifico. Per farlo, basta cliccare sull'icona a forma di matita presente vicino al requisito. Più nello specifico, all'interno della sezione *traceability* del requisito stesso, come mostrato in figura:
 #figure(
   image("/PB/Documentazione Esterna/src/MU/edit.png", width: 40%),
   caption:"Bottone per modificare il tracciamento di un requisito",
 ) 
-La funzionalità pemette di modificare tre parametri:
+La funzionalità permette di modificare tre parametri:
 - il percorso del file associato al requisito
 - il numero di riga iniziale del requisito
 - il numero di riga finale del requisito
