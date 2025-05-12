@@ -4,10 +4,10 @@
   title: "Manuale Utente",
   redattori: ("Luca Parise", "Maria Fuensanta Trigueros Hernandez", "Malik Giafar Mohamed", "Ion Cainareanu"),
   verifica: ("Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu", "Malik Giafar Mohamed"),
-  approvazione: ("",),
+  approvazione: ("Maria Fuensanta Trigueros Hernandez",),
   uso: "Esterno",
   version: "1.0.0",
-  date: "12/04/2025",
+  date: "19/03/2025",
   versionamento: (
     "1.0.0","12/05/2025","Ion Cainareanu","Rilascio della versione 1.0.0 e alcune correzioni finali", "Malik Giafar Mohamed",
     "0.5.2","09/05/2025","Luca Parise","Inserimento capitolo mancante sulla modifica della tracciabilità","Ion Cainareanu",
