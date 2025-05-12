@@ -9,7 +9,7 @@
   version: "1.0.0",
   date: "12/04/2025",
   versionamento: (
-    "1.0.0","12/05/2025","Ion Cainareanu","Rilascio della versione 1.0.0 e alcune correzioni finali", "",
+    "1.0.0","12/05/2025","Ion Cainareanu","Rilascio della versione 1.0.0 e alcune correzioni finali", "Malik Giafar Mohamed",
     "0.5.2","09/05/2025","Luca Parise","Inserimento capitolo mancante sulla modifica della tracciabilità","Ion Cainareanu",
     "0.5.1","09/05/2025","Ion Cainareanu","Correzione errori ortografici e typo sulla data del documento e sul versionamento", "Luca Parise",
     "0.5.0","04/05/2025","Luca Parise","Sostituite le immagini a seguito di cambiamenti estetici del prodotto","Ion Cainareanu",
