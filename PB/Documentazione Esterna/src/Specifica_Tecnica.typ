@@ -9,6 +9,7 @@
   version: "0.4.1",
   date: "18/03/2025",
   versionamento: (
+    "0.5.0", "12/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura di deployment", "",
     "0.4.1", "06/05/2025", "Marco Perazzolo", "Migliorato lo stile del documento e aggiornati i diagrammi UML", "Stefano Baso",
     "0.4.0", "02/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura backend di dettaglio", "Marco Perazzolo",
     "0.3.0", "27/04/2025", "Ion Cainareanu", "Stesura sezione architettura frontend di dettaglio", "Luca Parise",
@@ -80,7 +81,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
 #pagebreak()
 
-= Tecnologie
+= Tecnologie utilizzate
 \
 
 #figure(
@@ -175,26 +176,43 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
 #pagebreak()
 
-= Architettura
+= Architettura di deployment
+Nel definire l'architettura per il deployment del prodotto, sono state valutate principalmente due opzioni: l'architettura monolitica o a microservizi.
+
+L'architettura a microservizi permette di scomporre il sistema in componenti autonome e indipendenti, facilitando la scalabilità, la manutenzione e l'evoluzione del prodotto. Nel nostro caso, abbiamo assunto dall'inizio che il sistema del prodotto software finale sarebbe stato costituito da due componenti: il plugin VS Code, installabile localmente sui singoli client, e un server backend API RESTful, containerizzato tramite Docker per garantire portabilità, scalabilità e facilità di configurazione. La scelta finale quindi è ricaduta su un'architettura a microservizi con un funzionamento simile al sistema client-server. Il plugin agisce come client leggero, interfacciandosi con il server backend che espone un'unica API REST per l'analisi dei requisiti. Questa soluzione consente di mantenere una chiara separazione delle responsabilità, di sfruttare i vantaggi della containerizzazione per il backend e di garantire una distribuzione flessibile del plugin sui client.
+
+In sintesi, l'adozione di questa architettura permette di bilanciare modularità, scalabilità e semplicità di deployment, risultando particolarmente adatta alle esigenze del progetto.
+
+= Architettura logica
 L'architettura del prodotto _Requirement Tracker Plug-in_ è composta da due parti principali:
 
-- *Frontend:* L'estensione per Visual Studio Code è stata sviluppata utilizzando una _layered architecture_, in modo da separare le responsabilità in moduli distinti. Il frontend è il responsabile dell'interfaccia utente e della comunicazione con il backend tramite API RESTful. Utilizza le _VS Code Extension API_ per interagire con l'editor e fornire funzionalità come la visualizzazione dei requisiti e la generazione di suggerimenti.
+- *Frontend:* L'estensione per Visual Studio Code è stata sviluppata utilizzando una _layered architecture_, in modo da separare le responsabilità in moduli distinti. Il frontend è il responsabile dell'interfaccia utente e della comunicazione con il backend tramite API RESTful. Utilizza le _VS Code Extension API_ per interagire con l'editor e fornire funzionalità come la visualizzazione dei requisiti e la generazione di suggerimenti.\ La decisione di applicare il pattern architetturale _Layered Architecture_ per il frontend è stata motivata da diversi fattori:
+  + *Separazione delle responsabilità:* La _Layered Architecture_ consente di separare le diverse responsabilità del sistema in moduli distinti, facilitando la comprensione e la manutenibilità del codice. Ogni layer ha compiti specifici e può essere sviluppato e testato in modo indipendente.
+  + *Estensibilità:* La struttura modulare consente di aggiungere nuove funzionalità o modificare quelle esistenti senza influire su altre parti del sistema. Ad esempio, è possibile aggiungere nuovi servizi o componenti visivi senza dover riscrivere l'intero codice.
+  + *Testabilità:* La separazione dei layer facilita il testing, poiché ogni layer può essere testato in modo indipendente. Questo consente di identificare e risolvere i problemi più rapidamente, migliorando la qualità del codice.
+  + *Manutenibilità:* La _Layered Architecture_ rende il codice più manutenibile, poiché le modifiche possono essere apportate a un layer senza influire sugli altri. Questo è particolarmente utile in progetti complessi, dove le modifiche possono avere effetti a catena su altre parti del sistema.
+  + *Facilità di integrazione:* La struttura modulare facilita l'integrazione con altre librerie o strumenti, consentendo di sfruttare le funzionalità esistenti senza dover riscrivere il codice.
+  + *Chiarezza:* La _Layered Architecture_ offre una chiara separazione tra i vari livelli del sistema, rendendo più facile per gli sviluppatori comprendere come funziona il sistema e come interagiscono le diverse parti.
 
-- *Backend:* Il server NestJS è stato sviluppato con un _architettura esagonale_ ed è il responsabile della logica di business e dell'interazione con il modello LLM. Comunica con il frontend esponendo API RESTful e gestisce le richieste provenienti dall'estensione. Utilizza librerie come _Axios_ per effettuare chiamate HTTP verso il server Ollama, che espone API per l'interazione con i modelli di AI (LLM e di embedding). Il server è progettato per essere facilmente estensibile e manutenibile, consentendo l'aggiunta di nuove funzionalità in modo semplice.
 
+- *Backend:* Il server NestJS è stato sviluppato con un _architettura esagonale_ ed è il responsabile della logica di business e dell'interazione con il modello LLM. Comunica con il frontend esponendo API RESTful e gestisce le richieste provenienti dall'estensione. Utilizza librerie come _Axios_ per effettuare chiamate HTTP verso il server Ollama, che espone API per l'interazione con i modelli di AI (LLM e di embedding). Il server è progettato per essere facilmente estensibile e manutenibile, consentendo l'aggiunta di nuove funzionalità in modo semplice.\ Questo tipo di architettura porta numerosi vantaggi:
+  - *Isolamento della logica di business:* La logica di business è separata dalle tecnologie esterne, facilitando la manutenibilità e il testing.
+  - *Facilità di test:* La separazione tra _dominio_ e _adapter_ consente di testare la logica di business in modo isolato, senza dipendenze esterne. Questo semplifica la scrittura di test unitari e di integrazione.
+  - *Modularità:* L'architettura esagonale consente di aggiungere o modificare facilmente gli _adapter_ senza influire sulla logica di business. Questo facilita l'integrazione con nuove tecnologie o servizi esterni.
 
-== Pattern utilizzati
-=== Dependency Injection (DI)
+= Pattern utilizzati
+== Dependency Injection (DI)
 _Dependency Injection_ è un pattern di progettazione ampiamente adottato per implementare efficacemente il principio di inversione delle dipendenze (_Dependency Inversion Principle_). Questo pattern si basa sul fornire a un oggetto (il "dipendente") le dipendenze di cui necessita dall'esterno, invece di lasciare che sia l'oggetto stesso a crearle o a cercarle attivamente al suo interno. Le dipendenze possono essere "iniettate" in vari modi, i più comuni dei quali includono l'iniezione tramite costruttore, l'iniezione tramite metodo setter o l'iniezione tramite interfaccia. L'utilizzo della _DI_ semplifica notevolmente la gestione delle dipendenze, facilita l'isolamento dei componenti per i test unitari (consentendo l'uso di _mock_ o _stub_) e promuove un'architettura software più pulita e basata sull'interazione tra astrazioni piuttosto che su implementazioni concrete rigidamente accoppiate. Nel progetto è stato utilizzato il pattern di _dependency injection_ tramite costruttore.
 
-=== Facade
+== Facade
 
 Il pattern _Facade_ è un design pattern strutturale che fornisce un'interfaccia semplice per interagire con un sistema complesso. Aiuta a ridurre la complessità nascondendo i dettagli interni e fornendo un unico punto di accesso.
 L'uso del pattern _Facade_ migliora la leggibilità del codice e semplifica l'interazione dei client con il sistema, promuovendo una chiara separazione tra le componenti interne e l'accesso esterno. 
 
-=== Adapter Pattern
+== Adapter Pattern
 L'_Adapter Pattern_ è un design pattern strutturale che consente a classi con interfacce incompatibili di lavorare assieme. Funziona come un intermediario, traducendo le chiamate tra due interfacce diverse in modo che possano comunicare senza modifiche al codice esistente.
 
+= Architettura di dettaglio
 == Frontend
 === Architettura a strati
 #figure(
@@ -973,15 +991,6 @@ Implementa l'interfaccia `IParseCodeService` per gestire il parsing del codice s
 - *`ignoredPaths`*: 
   Array di pattern di percorsi da ignorare durante la ricerca dei file.
 
-=== Motivi della scelta dell'architettura
-La decisione di applicare il pattern architetturale _Layered Architecture_ per il frontend è stata motivata da diversi fattori:
-1. *Separazione delle responsabilità:* La _Layered Architecture_ consente di separare le diverse responsabilità del sistema in moduli distinti, facilitando la comprensione e la manutenibilità del codice. Ogni layer ha compiti specifici e può essere sviluppato e testato in modo indipendente.
-2. *Estensibilità:* La struttura modulare consente di aggiungere nuove funzionalità o modificare quelle esistenti senza influire su altre parti del sistema. Ad esempio, è possibile aggiungere nuovi servizi o componenti visivi senza dover riscrivere l'intero codice.
-3. *Testabilità:* La separazione dei layer facilita il testing, poiché ogni layer può essere testato in modo indipendente. Questo consente di identificare e risolvere i problemi più rapidamente, migliorando la qualità del codice.
-4. *Manutenibilità:* La _Layered Architecture_ rende il codice più manutenibile, poiché le modifiche possono essere apportate a un layer senza influire sugli altri. Questo è particolarmente utile in progetti complessi, dove le modifiche possono avere effetti a catena su altre parti del sistema.
-5. *Facilità di integrazione:* La struttura modulare facilita l'integrazione con altre librerie o strumenti, consentendo di sfruttare le funzionalità esistenti senza dover riscrivere il codice.
-6. *Chiarezza:* La _Layered Architecture_ offre una chiara separazione tra i vari livelli del sistema, rendendo più facile per gli sviluppatori comprendere come funziona il sistema e come interagiscono le diverse parti.
-
 #pagebreak()
 == Backend
 === Architettura Esagonale
@@ -1234,12 +1243,6 @@ Questo è il punto di ingresso dell'applicazione. Si occupa di avviare l'applica
 \
 ==== Modulo: `RequirementAnalysisModule`
 Modulo specifico per la gestione dell'analisi dei requisiti. Contiene la configurazione dei _servizi_, dei _ports_ e degli _adapter_ relativi all'analisi dei requisiti. Questo modulo garantisce che tutte le dipendenze necessarie per l'analisi siano correttamente iniettate e configurate.
-
-=== Motivi della scelta dell'architettura
-Questo tipo di architettura porta numerosi vantaggi:
-- *Isolamento della logica di business:* La logica di business è separata dalle tecnologie esterne, facilitando la manutenibilità e il testing.
-- *Facilità di test:* La separazione tra _dominio_ e _adapter_ consente di testare la logica di business in modo isolato, senza dipendenze esterne. Questo semplifica la scrittura di test unitari e di integrazione.
-- *Modularità:* L'architettura esagonale consente di aggiungere o modificare facilmente gli _adapter_ senza influire sulla logica di business. Questo facilita l'integrazione con nuove tecnologie o servizi esterni.
 
 === Utility
 
