@@ -10,7 +10,8 @@
   version: "1.2.1",
   date: "23/11/2024",
   versionamento: (
-    "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione", "",
+    "1.3.2", "09/05/2024", "Malik Giafar Mohamed", "Correzione tracciamento requisiti nei test di sistema", "",
+    "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione e stesura test di sistema", "",
     "1.3.0", "09/05/2024", "Malik Giafar Mohamed", "Miglioramento sezioni test di unità, di integrazione e di accettazione", "",
     "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "Malik Giafar Mohamed",
     "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "Malik Giafar Mohamed",
@@ -458,11 +459,9 @@ I test nel progetto sono suddivisi in due cartelle all'interno della principale 
 - `test/unit`: contiene i test di unità, incentrati sulla verifica dei singoli componenti (modelli, adattatori e servizi) del sistema.
 - `test/integration`: contiene i test di integrazione, che verificano l'interazione tra diversi componenti o tra l'applicazione e servizi esterni.
 
-I file di test seguono la convenzione di denominazione `*.spec.ts` per i test di unità e `*.int.spec.ts` per i test di integrazione.
-
 === Strumenti Utilizzati e Integrazione di Jest:
 
-- *Jest*: È il framework di testing JavaScript principale utilizzato nel progetto. Jest fornisce:
+- *`Jest`*: È il framework di testing JavaScript principale utilizzato nel progetto. Jest fornisce:
  - Un ambiente di esecuzione per i test.
  - Funzioni globali come `describe()` per raggruppare i test in suite, e `it()` o `test()` per definire i singoli casi di test.
  - Un potente sistema di asserzioni tramite la funzione `expect()` combinata con vari matchers (es. `toBe()`, `toBeDefined()`, `toContain()`, `toHaveBeenCalledWith()`).
@@ -471,9 +470,9 @@ I file di test seguono la convenzione di denominazione `*.spec.ts` per i test di
 
 - `@nestjs/testing`: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
 
-- *supertest*: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
+- *`supertest`*: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
 
-- *axios (mockato)*: nei test di integrazione per componenti che interagiscono con API esterne (come `OllamaApiAdapter`), `axios` viene mockato per controllare le risposte delle API e testare il comportamento dell'adapter in diverse condizioni senza effettuare chiamate di rete reali.
+- *`axios` (mockato)*: nei test di integrazione per componenti che interagiscono con API esterne (come `OllamaApiAdapter`), `axios` viene mockato per controllare le risposte delle API e testare il comportamento dell'adapter in diverse condizioni senza effettuare chiamate di rete reali.
 
 === Test di Unità
 
@@ -812,7 +811,7 @@ I test di sistema verificano il sistema completo del prodotto software, prendend
     [TS-004],[Il sistema deve supportare tracciamenti composti da più porzioni di codice appartenenti a file diversi, memorizzandole e mostrandole separatamente.],[RFF004],[Superato],
     [TS-005],[L'utente deve poter configurare, nelle impostazioni, il modello di AI caricato su Ollama da usare per ciascun tipo di analisi (requisiti, codice, embedding/tracciamento).],[RFF005],[Superato],
     [TS-006],[L'interfaccia utente ed i messaggi del plug-in devono essere interamente in lingua inglese.],[RFO006],[Superato],
-    [TS-007],[Se il tempo di risposta di Ollama >20 s oppure il prompt >6000 token oppure la velocità di output < 20 token/s, il sistema deve mostrare un avviso di prestazioni ridotte.],[RFD007],[Superato],
+    [TS-007],[Se il tempo di risposta di Ollama >20 s oppure il prompt >6000 token oppure la velocità di output < 20 token/s, il sistema deve mostrare un avviso di prestazioni ridotte.],[RFD007],[Non implementato],
     [TS-008],[Il sistema deve consentire l'importazione dei requisiti da file CSV.],[RFO008],[Superato],
     [TS-009],[Se il CSV selezionato non rispetta lo schema previsto, il sistema deve annullare l'importazione e mostrare un messaggio di errore.],[RFO009],[Superato],
     [TS-010],[Durante l'importazione il sistema deve validare il CSV verificando la presenza delle colonne obbligatorie (ID, description) e la coerenza dei tipi per ogni riga.],[RFO010],[Superato],
@@ -833,25 +832,25 @@ I test di sistema verificano il sistema completo del prodotto software, prendend
     [TS-025],[Se il salvataggio del CSV fallisce, il sistema deve mostrare errore e permettere di riprovare],[RFO025],[Superato],
     [TS-026],[Il CSV esportato deve includere ID, descrizione, tracciamento (se presente) e risultati (se presenti) per ogni requisito.],[RFO026],[Superato],
     [TS-027],[Il sistema, una volta selezionato un requisito dalla lista, deve mostrarlo in una sottolista dove vengono specificati la descrizione del requisito stesso e, se presente, il suo tracciamento nel codice sorgente],[RFO027],[Superato],
-    [TS-028],[Il sistema, quando mostra la visualizzazione di dettaglio di un requisito, deve mostrare deve mostrare il percorso, incluso il nome del file e la sua estensione, relativo del file sorgente associato al requisito.],[RFO028],[Superato],
+    [TS-028],[Il sistema, quando mostra la visualizzazione di dettaglio di un requisito, deve mostrare il percorso relativo del file sorgente associato al requisito.],[RFO028],[Superato],
     [TS-029],[Il sistema deve permettere all'utente di filtrare i requisiti in base ai campi ID, descrizione e file sorgente],[RFO029],[Superato],
     [TS-030],[Il sistema deve consentire l'analisi di un singolo requisito selezionato.],[RFO030],[Superato],
     [TS-031],[Il sistema deve essere in grado di associare ai requisiti non mappati il relativo codice sorgente che lo implementi attraverso una richiesta di analisi al modello di embedding, quindi di registrare il file e le righe di codice relative, aggiornandone la vista],[RFO031],[Superato],
-    [TS-032],[Il sistema deve essere in grado di escludere dall'analisi e dal tracciamento dei requisiti tutti i file elencati in un apposito file di configurazione (chiamato .reqignore) contenente i percorsi dei file associati al progetto. Se il file di configurazione include percorsi non validi, il sistema deve notificare l'errore all'utente, senza però interrompere l'analisi, che deve comunque procedere sui file validi],[RFO032],[Superato],
+    [TS-032],[Il sistema deve essere in grado di escludere dall'analisi e dal tracciamento dei requisiti tutti i file elencati in un apposito file di configurazione (chiamato `.reqignore`) contenente i percorsi dei file associati al progetto. Se il file di configurazione include percorsi non validi, il sistema deve notificare l'errore all'utente, senza però interrompere l'analisi, che deve comunque procedere sui file validi],[RFO032],[Superato],
     [TS-033],[Il sistema deve consentire all'utente di approvare manualmente un requisito o marcarlo come "non conforme" e visualizzare lo stato corrispondente.],[RFO033],[Superato],
-    [TS-034],[Il sistema deve permettere la modifica manuale del tracciamento di un requisito (file, riga inizio, riga fine).],[RFO034],[Superato],
+    [TS-034],[Il sistema deve permettere la modifica manuale del tracciamento di un requisito (riga inizio, riga fine).],[RFO034],[Superato],
     [TS-035],[Il sistema deve essere in grado di ripetere l'analisi di uno o più requisiti],[RFO035],[Superato],
     [TS-036],[Il sistema deve permettere all'utente di impostare le soglie(0-100) oltre le quali il code score ed il requirement score sono considerati "passed".],[RFO036],[Superato],
     [TS-037],[Se il valore immesso per la soglia del code score o del requirement score non è un numero tra 0 e 100, il sistema deve mostrare un messaggio e richederne l'inserimento.],[RFO037],[Superato],
     [TS-038],[Il sistema deve consentire l'ordinamento dell'elenco requisiti per ID crescente, stato conforme, stato non conforme.],[RFO038],[Superato],
     [TS-039],[L'architettura deve essere modulare (UI, dominio, infrastruttura) con dipendenze unidirezionali, per facilitare l'aggiunta di nuove funzionalità.],[RQO001],[Superato],
     [TS-040],[Il plug-in deve funzionare con Visual Studio Code ≥ 1.98 e Ollama ≥ 0.6.4.],[RQF001],[Superato],
-    [TS-041],[Il prodotto deve essere  rispettare gli standard definiti all'interno del file #text(style:"italic")[Norme_di_Progetto_v1.0.0]],[RQO002],[Superato],
-    [TS-042],[Il processo di sviluppo deve seguire le modalità stabilite all'interno del file #text(style:"italic")[Piano_di_Progetto_v1.0.0]],[RQO003],[Superato],
+    [TS-041],[Il prodotto deve essere  rispettare gli standard definiti all'interno del file _Norme_di_Progetto_v1.0.0_],[RQO002],[Superato],
+    [TS-042],[Il processo di sviluppo deve seguire le modalità stabilite all'interno del file _Piano_di_Progetto_v1.0.0_],[RQO003],[Superato],
     [TS-043],[Il sistema deve analizzare correttamente codice scritto in linguaggio C.],[RVO001],[Superato],
-    [TS-044],[Il sistema dovrebbe supportare anche altri linguaggi di programmazione (es. Rust, Java, Python).],[RVF002],[Superato],
-    [TS-045],[Il sistema deve fornire valutazioni conformi agli standard di sicurezza funzionale (ISO 26262 o IEC 61508).],[RVF003],[Superato],
-    [TS-046],[Il sistema dovrebbe importare e analizzare file CSV >100 MB senza rallentamenti percepibili (>5 s rispetto a file di dimensioni ordinarie).],[RPF001],[Superato]
+    [TS-044],[Il sistema dovrebbe supportare anche altri linguaggi di programmazione (es. Rust, Java, Python).],[RVF002],[Non implementato],
+    [TS-045],[Il sistema deve fornire valutazioni conformi agli standard di sicurezza funzionale (ISO 26262 o IEC 61508).],[RVF003],[Non implementato],
+    [TS-046],[Il sistema dovrebbe importare e analizzare file CSV >100 MB senza rallentamenti percepibili (>5 s rispetto a file di dimensioni ordinarie).],[RPF001],[Non implementato]
   ),
   caption: [Lista di test di sistema],
 )
