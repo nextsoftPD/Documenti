@@ -2,14 +2,15 @@
 
 #show: project.with(
   title: "Specifica Tecnica",
-  redattori: ("Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Ion Cainareanu", "Malik Giafar Mohamed", ),
+  redattori: ("Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Ion Cainareanu", "Malik Giafar Mohamed", "Luca Parise", ),
   verifica: ("Ion Cainareanu", "Malik Giafar Mohamed","Luca Parise", "Marco Perazzolo", "Stefano Baso", ),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.5.1",
+  version: "1.0.0",
   date: "18/03/2025",
   versionamento: (
-    "0.5.1", "12/05/2025", "Marco Perazzolo, Ion Cainareanu", "Aggiornamento dei diagrammi UML del frontend e correzione di errori relativi alle tecnologie utilizzate", "",
+    "1.0.0", "13/05/2025", "Luca Parise", "Rilascio 1.0.0", "",
+    "0.5.1", "12/05/2025", "Marco Perazzolo, Ion Cainareanu", "Aggiornamento dei diagrammi UML del frontend e correzione di errori relativi alle tecnologie utilizzate", "Luca Parise",
     "0.5.0", "12/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura di deployment", "Marco Perazzolo, Ion Cainareanu",
     "0.4.1", "06/05/2025", "Marco Perazzolo", "Migliorato lo stile del documento e aggiornati i diagrammi UML", "Stefano Baso",
     "0.4.0", "02/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura backend di dettaglio", "Marco Perazzolo",
