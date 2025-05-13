@@ -45,5 +45,5 @@ Per quest'ultimo periodo del progetto il gruppo si concentrerà principalmente s
 Durante l'ultimo periodo, si sono verificati dei ritardi nel completamento delle task a causa di alcune attività in sospeso dal precendente sprint, come per esempio la stesura della specifica tecnica. Tuttavia, il gruppo ha lavorato in modo efficiente e ha raggiunto gli obiettivi prefissati, riuscendo a far validare il prodotto software dal proponente e completando la documentazione necessaria.
 
 = Conclusione
-Con il completamento di questo sprint, ogni membro del gruppo ha raggiunto il fine attività a causa del superamento del budget.
+Con il completamento di questo sprint, ogni membro del gruppo ha raggiunto il fine attività a causa del raggiungimento del budget.
 
