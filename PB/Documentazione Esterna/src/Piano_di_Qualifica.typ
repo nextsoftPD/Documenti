@@ -7,9 +7,10 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.2.1",
+  version: "1.4.0",
   date: "23/11/2024",
   versionamento: (
+    "1.4.0", "10/05/2024", "Stefano Baso", "Aggiornamento grafici per metriche", "",
     "1.3.2", "09/05/2024", "Malik Giafar Mohamed", "Correzione tracciamento requisiti nei test di sistema", "",
     "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione e stesura test di sistema", "",
     "1.3.0", "09/05/2024", "Malik Giafar Mohamed", "Miglioramento sezioni test di unità, di integrazione e di accettazione", "",
@@ -181,7 +182,7 @@ Percentuale di elementi del sistema come funzionalità o casi d'uso verificati t
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC12], [Copertura dei test], [>= 70%], [>= 90%],
+    [MPC12], [Copertura dei test], [>= 80%], [>= 90%],
   ),
   caption: [Copertura dei test],
 )
@@ -239,7 +240,7 @@ Il punteggio varia da 0 a 100, dove valori alti indicano maggiore leggibilità. 
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC12], [Indice di leggibilità di Gulpease], [GULP ≥ 40], [GULP ≥ 60],
+    [MPC16], [Indice di leggibilità di Gulpease], [GULP ≥ 40], [GULP ≥ 60],
   ),
   caption: [Obiettivo di leggibilità],
 )
@@ -252,7 +253,7 @@ Per raggiungere l'ottimo anche nella documentazione bisogna raggiungere la massi
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPC13], [Numero errori ortografici], [0], [0],
+    [MPC17], [Numero errori ortografici], [0], [0],
   ),
   caption: [Obiettivo di leggibilità],
 )
@@ -296,7 +297,7 @@ Questa rappresenta la velocità con cui l'utente trova quello che sta cercando, 
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS01], [Facilità di utilizzo], [FU ≤ 3], [FU ≤ 5],
+    [MPDS02], [Facilità di utilizzo], [FU ≤ 3], [FU ≤ 5],
   ),
   caption: [Obiettivo di usabilità],
 )
@@ -342,11 +343,11 @@ in cui:
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS02], [Profondità di gerarchia], [PG <= 3], [PG <= 2],
-    [MPDS03], [Parametri per metodo], [PPM <= 8], [PPM <= 4],
-    [MPDS04], [Complessità ciclomatica], [CC <= 20], [CC <= 10],
-    [MPDS05], [Code smell], [CS <= 50], [CS <= 10],
-    [MPDS06], [Facilità di comprensione], [FC >= 0.10], [FC >= 0.20],
+    [MPDS03], [Profondità di gerarchia], [PG <= 3], [PG <= 2],
+    [MPDS04], [Parametri per metodo], [PPM <= 8], [PPM <= 4],
+    [MPDS05], [Complessità ciclomatica], [CC <= 20], [CC <= 10],
+    [MPDS06], [Code smell], [CS <= 50], [CS <= 10],
+    [MPDS07], [Facilità di comprensione], [FC >= 0.10], [FC >= 0.20],
   ),
   caption: [Metriche di manutenibilità],
 )
@@ -381,11 +382,11 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS07], [Code Coverage], [CC >= 75%], [100%],
-    [MPDS08], [Presenza di vulnerabilità], [VLN <= 2], [0],
-    [MPDS09], [Presenza di bug], [BUG <= 20%], [BUG <= 5%],
-    [MPDS10], [Branch Coverage], [BC >= 75%], [100%],
-    [MPDS11], [Successo dei test], [>= 75%], [100%],
+    [MPDS08], [Code Coverage], [CC >= 75%], [100%],
+    [MPDS09], [Presenza di vulnerabilità], [VLN <= 2], [0],
+    [MPDS10], [Presenza di bug], [BUG <= 20%], [BUG <= 5%],
+    [MPDS11], [Branch Coverage], [BC >= 75%], [100%],
+    [MPDS12], [Successo dei test], [>= 75%], [100%],
   ),
   caption: [Metriche di affidabilità],
 )
@@ -417,8 +418,8 @@ $ "RC" = (R#sub[ROS])/(R#sub[ROT]) 100 $
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS12], [_Requirement coverage_#super("G")], [RC >= 75%], [100%],
-    [MPDS13], [Requisiti obbligatori soddisfatti], [100%], [100%],
+    [MPDS13], [_Requirement coverage_#super("G")], [RC >= 75%], [100%],
+    [MPDS14], [Requisiti obbligatori soddisfatti], [100%], [100%],
   ),
   caption: [Obiettivo di usabilità],
 )
@@ -947,39 +948,72 @@ Le specifiche riguardanti i test descritti verranno definite nelle successive ve
 == MPC05 - MPC02: Actual Cost e Estimated to Completion
 
 #figure(
-  image("img/PdQ/Ac_etc.png", width: 100%),
+  image("img/PdQ/ac_etc_2.png", width: 100%),
   caption: [Grafico Actual Cost e Estimated to Completion],
 )
 
 == MPC03 - MPC04: Earned Value e Planned Value
 
 #figure(
-  image("img/PdQ/Ev_pv.png", width: 100%),
+  image("img/PdQ/ev_pv_2.png", width: 100%),
   caption: [Grafico Earned Value e Planned Value],
 )
 
 == MPC07: Schedule Variance
 
 #figure(
-  image("img/PdQ/Sv.png", width: 100%),
+  image("img/PdQ/sv_2.png", width: 100%),
   caption: [Grafico Schedule Variance],
 )
 
 == MPC06: Cost Variance
 
 #figure(
-  image("img/PdQ/Cv.png", width: 100%),
+  image("img/PdQ/cv_2.png", width: 100%),
   caption: [Grafico Cost Variance],
 )
 
 == MPC01: Estimated at Completion
 
 #figure(
-  image("img/PdQ/Eac.png", width: 100%),
+  image("img/PdQ/eac_2.png", width: 100%),
   caption: [Grafico Estimated at Completion],
 )
 
-==  MPC12: Indice di Gulpease
+== MPC12, MPDS08, MPDS11, MPDS12: Copertura dei test
+
+#figure(
+  image("img/PdQ/test_coverage.png", width: 100%),
+  caption: [Grafico Copertura dei test],
+)
+
+== MPC09: Numero medio di metodi per package
+
+#figure(
+  image("img/PdQ/metodi_package.png", width: 100%),
+  caption: [Grafico Media metodi per package],
+)
+
+== MPC11: Numero di variabili non usate o non definite
+
+#figure(
+  table(
+    columns: 2,
+    table.header[*Cartella*][*Variabili non usate*],
+    [RequirementTrackerAPI (BE)], [0],
+    [RequirementTrackerPlugin (FE)], [0]
+  ),
+  caption: [Risultato test variabili non usate],
+)
+
+== MPC15: Attività completate
+
+#figure(
+  image("img/PdQ/completamento_attivita.png", width: 100%),
+  caption: [Grafico Percentuale completamento attività],
+)
+
+==  MPC16: Indice di Gulpease
 
 Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di Gulpease. Come metro di valutazione del documento viene esclusa la prima pagina che, trattandosi dell'intestazione, potrebbe portare ad un risultato inesatto.
 
@@ -991,6 +1025,8 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
     [Piano di qualifica], [84], [Superato],
     [Piano di Progetto], [80], [Superato],
     [Norme di Progetto], [75], [Superato],
+    [Manuale Utente], [79], [Superato],
+    [Specifica Tecnica], [80], [Superato],
     [Glossario], [83], [Superato],
     [2024-11-15], [68], [Superato],
     [2024-11-24], [66], [Superato],
@@ -1013,6 +1049,30 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
     [2025-05-06], [64], [Superato],
   ),
   caption: [Valutazione documenti],
+)
+
+== MPDS02: Facilità di utilizzo
+
+#figure(
+  table(
+    columns: 2,
+    table.header[*Cartella*][*Numero massimo di click*],
+    [RequirementTrackerPlugin (FE)], [5]
+  ),
+  caption: [Risultato test variabili non usate],
+)
+
+== MPDS03: Profondità massima di gerarchia
+
+#figure(
+  image("img/PdQ/gerarchia.png", width: 100%),
+  caption: [Grafico Profondità di gerarchia],
+)
+
+== MPDS05: Complessità ciclomatica
+#figure(
+  image("img/PdQ/complessita_ciclomatica.png", width: 100%),
+  caption: [Grafico Complessità ciclomatica],
 )
 
 = Valutazioni per il miglioramento
