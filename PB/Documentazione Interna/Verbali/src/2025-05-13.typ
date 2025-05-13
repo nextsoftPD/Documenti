@@ -6,7 +6,7 @@
   title: "Verbale interno 13/05/2025",
   redattori: ("Malik Giafar Mohamed",),
   verifica: ("Luca Parise",),
-  approvazione: ("",),
+  approvazione: ("Stefano Baso",),
   uso: "Interno",
   version: "1.0.0",
   timebegin: "15:30",
@@ -42,7 +42,7 @@ Per quest'ultimo periodo del progetto il gruppo si concentrerà principalmente s
 
 = Retrospettiva dell'ultimo periodo 
 
-Durante l'ultimo periodo, si sono verificati dei ritardi nel completamento delle task a causa di alcune attività in sospeso dal precendente sprint, come per esempio la stesura della specifica tecnica. Tuttavia, il gruppo ha lavorato in modo efficiente e ha raggiunto gli obiettivi prefissati, riuscendo a far validare il prodotto software dal proponente e completando la documentazione necessaria.
+Durante l'ultimo periodo si sono verificati dei ritardi nel completamento delle task a causa di alcune attività in sospeso dal precendente sprint, come per esempio la stesura della specifica tecnica. Tuttavia, il gruppo ha lavorato in modo efficiente e ha raggiunto gli obiettivi prefissati, riuscendo a far validare il prodotto software dal proponente e completando la documentazione necessaria.
 
 = Conclusione
 Con il completamento di questo sprint, ogni membro del gruppo ha raggiunto il fine attività a causa del raggiungimento del budget.
