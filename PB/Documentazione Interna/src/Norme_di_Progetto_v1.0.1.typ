@@ -11,7 +11,7 @@
   version: "1.0.1",
   date: "23/11/2024",
   versionamento: (
-    "1.1.3", "11/05/2025", "Malik Giafar Mohamed", "Modifica sezione descrizione dei test", "",
+    "1.1.3", "11/05/2025", "Malik Giafar Mohamed", "Modifica sezione descrizione dei test", "Marco Perazzolo",
     "1.1.2", "09/05/2025", "Malik Giafar Mohamed", "Aggiornamento della procedura di modifica delle pull requests", "",
     "1.1.1", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento tecnologie utilizzate e metodologie di testing", "",
     "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche in tutto il documento derivanti dalla correzione dell'RTB", "",
@@ -21,7 +21,12 @@
 = Introduzione
 == Scopo del documento
 Il presente documento ha lo scopo di definire in modo dettagliato le _best practice_#super("G")
-e il _way of working_#super("G") del nostro gruppo per il progetto al fine di garantire qualità e coerenza nel lavoro svolto. Il documento sarà quindi soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
+e il _way of working_#super("G") del nostro gruppo per il progetto al fine di garantire qualità e coerenza nel lavoro svolto. 
+(Questa prossima parte è da togliere) 
+Il documento sarà quindi soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
+(Inserisci una frase sostituiva dato che abbiamo finito il progetto)
+Il documento è destinato all'uso interno del gruppo e sarà condiviso con il proponente solo in caso di necessità.
+
 
 == Scopo del prodotto
 Il prodotto, un _plug-in_#super("G") per _Visual Studio Code_#super("G") chiamato _"Requirement Tracker"_#super("G"),
@@ -48,35 +53,35 @@ nell'omonimo documento.
 - Materiale didattico del corso di Ingegneria del Software
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/
 - Documentazione _GitHub_#super("G"):
-  - https://help.github.com/en/github #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
+  - https://help.github.com/en/github #h(1fr)#text(size: 8pt)[ultimo accesso: 05/04/2025 13:06]
 - Documentazione _git_#super[G]:
-  - https://git-scm.com/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
+  - https://git-scm.com/docs #h(1fr)#text(size: 8pt)[ultimo accesso: 05/04/2025 13:06]
 - Documentazione Typst:
-  - https://typst.app/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
+  - https://typst.app/docs/ #h(1fr)#text(size: 8pt)[ultimo accesso: 05/04/2025 13:06]
 - Documentazione Visual Studio Code:
-  - https://code.visualstudio.com/docs #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
-  - https://code.visualstudio.com/api #h(1fr)#text(size: 8pt)[ultumo acceso: 05/04/2025 13:06]
+  - https://code.visualstudio.com/docs #h(1fr)#text(size: 8pt)[ultimo accesso: 05/04/2025 13:06]
+  - https://code.visualstudio.com/api #h(1fr)#text(size: 8pt)[ultimo accesso: 05/04/2025 13:06]
 - Documentazione API _Ollama_#super("G"):
-  - https://github.com/ollama/ollama/blob/main/docs/api.md #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://github.com/ollama/ollama/blob/main/docs/api.md #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _NestJS_#super("G"):
-  - https://docs.nestjs.com/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://docs.nestjs.com/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _Docker_#super("G"):
-  - https://docs.docker.com/get-started/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://docs.docker.com/get-started/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _StarUML_#super("G"):
-  - https://staruml.io/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://staruml.io/docs/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _npm_#super("G"):
-  - https://docs.npmjs.com/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://docs.npmjs.com/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _Typescript_#super("G"):
-  - https://www.typescriptlang.org/docs/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://www.typescriptlang.org/docs/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _Mocha_#super("G"):
-  - https://mochajs.org/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://mochajs.org/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _Jest_#super("G"):
-  - https://jestjs.io/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://jestjs.io/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 - Documentazione _SuperTest_#super("G"):
-  - https://www.npmjs.com/package/supertest/ #h(1fr)#text(size: 8pt)[ultumo acceso: 07/05/2025 15:50]
+  - https://www.npmjs.com/package/supertest/ #h(1fr)#text(size: 8pt)[ultimo accesso: 07/05/2025 15:50]
 = Processi Primari
 ==  Fornitura
-=== descrizione
+=== Descrizione
 Secondo lo standard ISO/IEC 12207:1995, il processo di fornitura comprende le attività e i compiti svolti dal fornitore.
 
 Il processo può essere avviato dalla decisione di preparare una proposta che risponda a una richiesta formale da parte dell'acquirente,
@@ -107,7 +112,7 @@ La documentazione che verrà consegnata al proponente sarà la seguente:
 
 - *Glossario v2.0.0*: un documento che contiene la definizione dei termini tecnici e delle sigle utilizzate nel progetto. Questo documento è essenziale per garantire che tutti i membri del gruppo e le parti interessate abbiano una comprensione comune dei termini utilizzati nel progetto.
 
-- *Manuale Utente v1.0.0*: in questo documento saranno presenti informazioni su come installare, configurare e utilizzare il plug-in. Questo documento è fondamentale per garantire che gli utenti siano in grado di utilizzare il prodotto in modo efficace e per massimizzare il valore del software.
+- *Manuale Utente v1.0.0*: in questo documento saranno presenti informazioni su come installare, configurare e utilizzare il plug-in. Questo documento è fondamentale per garantire che gli utenti siano in grado di utilizzare il prodotto in modo corretto ed efficace, in modo da massimizzare il valore del software.
 
 - *Specifica Tecnica v1.0.0*: un documento che fornisce dettagli tecnici sulla struttura e sul funzionamento del prodotto software. Esso include diagrammi UML dettagliati dell'architettura del sistema in ogni sua componente, con una descrizione testuale correlata. Sono presenti inoltre l'elenco delle tecnologie utilizzate e delle scelte progettuali adottate. Questo documento è essenziale per garantire che il prodotto sia sviluppato in modo coerente e che tutte le parti interessate abbiano una comprensione chiara delle scelte tecniche effettuate.
 
@@ -144,12 +149,13 @@ Ogni caso d'uso verrà riportato con una denominazione chiara e univoca che lo i
 Mentre essi saranno strutturati nel seguente modo : 
 - *Denominazione*: codice identificativo del caso d'uso, stabilito come enunciato sopra
 - *Diagramma UML*: diagramma per rappresentare graficamente il caso d'uso (opzionale per i sottocasi d'uso).
-- *Attori P
-principali*: entità esterne al sistema che interagiscono con esso
+- *Attori principali*: entità esterne al sistema che interagiscono con esso
 - *Precondizioni*: descrivono lo stato del sistema prima del verificarsi del caso d'uso
 - *Postcondizioni*: descrivono lo stato del sistema dopo che si è verificato il caso d'uso
 - *Scenario principale*: elenco puntato che descrive il flusso degli eventi del caso d'uso
-- *Estensioni*: elenco puntato di sottocasi d'uso, o di specializzazioni del caso d'uso principale, che descrivono il flusso degli eventi dopo un evento imprevisto che lo ha deviato dal caso principale. Possono non esserci o possono essercene varie.
+- *Estensioni*: elenco puntato di casi d'uso che descrivono il flusso degli eventi dopo un evento imprevisto che lo ha deviato dallo scenario principale. Possono non esserci o possono essercene varie.
+- *Generalizzazioni*: elenco puntato di casi d'uso che descrivono delle specializzazioni del caso d'uso principale. Possono non esserci o possono essercene varie.
+
 
 ==== Denominazione dei requisiti
 Ogni requisito verrà riportato nel seguente formato:
@@ -174,9 +180,9 @@ L'attività di progettazione è legata al ruolo dei _Progettisti_#super("G"),
 consiste nel definire l'architettura della soluzione considerando i requisiti
 derivanti dall'analisi fatta in precedenza. La progettazione si articola in due fasi principali:
 
-- *Progettazione logica*: in questa fase si definisce l'architettura generale del sistema, identificando i componenti principali, le interazioni tra di essi e con chi utilizzerà il prodotto. In questa fase vengono documentati i requisiti nel relativo documento e vengono creati i diagrammi UML per rappresentare graficamente le interazioni con il sistema da parte dell'utente.
+- *Progettazione logica*: questa fase ha come obiettivo la definizione dell’architettura generale del sistema. In particolare, vengono identificati e descritti i componenti principali, le loro responsabilità e le modalità con cui interagiscono tra loro e con il mondo esterno. Per rappresentare queste interazioni, vengono utilizzati specificamente diagrammi UML di casi d'uso, che chiariscono graficamente le azioni svolte dagli utenti, le risposte del sistema e i flussi di interazione che si verificano durante l’utilizzo del prodotto.
 
-- *Progettazione di dettaglio*: in questa fase si approfondiscono i dettagli tecnici di ciascun componente, definendo design patterns, best practices e diagrammi UML per descrivere l'architettura delle classi. Tutte le scelte riportate dovranno poi essere implementate nella programmazione e riportate nel documento di specifica tecnica.
+- *Progettazione di dettaglio*: in questa fase si approfondiscono i dettagli tecnici di ciascun componente, definendo design patterns, best practices e diagrammi UML per descrivere l'architettura delle classi. Tutte le scelte riportate dovranno poi essere implementate nel codice e riportate nel documento di specifica tecnica.
 
 ==== Requirements and Technology Baseline
 Lo scopo della _Requirements and Technology Baseline_#super("G") è di fornire una base solida per la progettazione e lo sviluppo del prodotto, dimostrando la fattibilità delle soluzioni proposte e garantendo che le tecnologie scelte siano adeguate per soddisfare i requisiti del proponente.
@@ -190,7 +196,7 @@ In questa _baseline_#super("G") dovranno essere forniti:
 - *Diagrammi dei casi d'uso*: verranno utilizzati per rappresentare graficamente le interazioni tra gli utenti e il sistema. Questi diagrammi sono fondamentali per comprendere le esigenze degli utenti e per garantire che il prodotto soddisfi i requisiti richiesti.
 
 ==== Product Baseline
-Lo scopo della Product Baseline è di fornire un prodotto software che verrà valutato come MVP. Esso dovrà soddisfare i requisiti obbligatori definiti nel capitolato e nel documento di analisi dei requisiti, dovrà essere implementato secondo quanto scritto nel documento di specifica tecnica e soprattutto dovrà essere accettato dall'azienda proponente per essere considerato soddisfacente.
+Lo scopo della Product Baseline è di fornire un prodotto software che verrà valutato come MVP. Esso dovrà soddisfare i requisiti obbligatori definiti nel capitolato e nel documento di analisi dei requisiti, dovrà essere implementato secondo quanto indicato nel documento di specifica tecnica e soprattutto dovrà essere accettato dall'azienda proponente per essere considerato soddisfacente.
 
 Inoltre, durante l'avanzamento di questa baseline, verranno progettati:
 - *Diagrammi delle classi*: verranno utilizzati per descrivere l'architettura logica e di dettaglio dell'MVP.
@@ -240,7 +246,7 @@ Il ciclo di vita di un documento è suddiviso nelle seguenti fasi:
 Ogni fase del ciclo di vita del documento è fondamentale per garantire la qualità e l'accuratezza delle informazioni contenute. È importante seguire rigorosamente queste fasi per assicurare che il documento finale soddisfi tutti i requisiti e gli standard previsti.
 
 === Tipologie di documenti
-==== Documenti ad uso Iinterno
+==== Documenti ad uso interno
 I documenti ad uso interno sono destinati all'uso esclusivo dei membri del gruppo di progetto e del _committente_#super("G"). I principali documenti ad uso interno sono:
 - Norme di Progetto
 - Verbali interni
@@ -298,7 +304,7 @@ In ogni pagina del documento sono presenti i seguenti elementi:
   - Numero di pagina: posizionato in basso a destra della pagina
   - Indirizzo email del gruppo: posizionato in basso a sinistra della pagina
 ==== Verbali
-I verbali sono documenti che riassumono una riunione. Essi differiscono leggermente nello stile grafico del frontespizio degli altri documenti, e non contengono il registro dei cambiamenti.
+I verbali sono documenti che riassumono una riunione. Essi differiscono leggermente nello stile grafico del frontespizio rispetto agli altri documenti, e non contengono il registro dei cambiamenti.
 
 === Norme Tipografiche
 ==== Nome del documento
@@ -404,7 +410,7 @@ La repository utilizzata dal gruppo per la creazione dei documenti è strutturat
   - `Documentazione Interna`: contiene i verbali delle riunioni relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei documenti interni relativi all'RTB.
     - `Verbali`: contiene i verbali delle riunioni relative alla milestone RTB.
-- `PB`: contiene i documenti relativi alla milestone PB, quindi la specifica tecnica, il manuale utente, e la versione di rilascio successiva a quella della documentazione dell'RTB.
+- `PB`: contiene i documenti relativi alla milestone PB, quindi la specifica tecnica, il manuale utente, e la versione di rilascio successiva dei rimanenti documenti (AdR, NdP, PdP, PdQ).
   - `Documentazione Esterna`: contiene i documenti ad uso interno relativi alla milestone PB.
     - `src`: contiene il codice sorgente dei documenti esterni relativi alla PB.
       - `img`: contiene i file delle immagini a supporto dei documenti, ogni insieme di immagini è raggruppato in una cartella denominata con la sigla del documento al quale essa è associata.
@@ -416,7 +422,7 @@ La repository utilizzata dal gruppo per la creazione dei documenti è strutturat
   - file di template per i documenti.
   - il logo del gruppo, utilizzato per tutta la repository.
 - `README.md`: file che contiene le informazioni principali della repository, come la sua e la lista dei membri del gruppo.
-La repository è pubblica e si può facilmente trovare al seguente link:
+La repository è pubblica e si può facilmente raggiungere al seguente link:
 - https://github.com/nextsoftPD/Documenti
 ==== PoC
 La repository del Proof of Concept è strutturata nel seguente modo:
@@ -429,7 +435,8 @@ La repository è pubblica e si può facilmente raggiungere al seguente link:
 - https://github.com/nextsoftPD/PoC
 
 ==== MVP
-La repository dell'MVP è stata resa disponinibile solo al referente dell'azienda proponente, dunque non avrebbe senso spiegarne la struttura o includere il link.
+La repository dell'MVP è stata resa disponinibile unicamente al referente dell'azienda proponente, pertanto non è opportuno descriverne la struttura o includerne il collegamento.
+
 === Branch
 Tutte le repository del gruppo si compongono di più _branch_#super[G], suddivisi ad hoc, in modo da garantire una separazione tra ciò che è stabile e verificato e ciò che è in fase di sviluppo. Ogni membro può fare delle modifiche in un branch specifico a patto che esse siano relative solo ai _configuration items_#super("G") modificabili in quello specifico branch.
 
@@ -447,7 +454,7 @@ La repository dei documenti è suddivisa in più _branch_#super("G") così defin
 - *`nome_documento`*: branch che assume il nome del documento a cui fa riferimento, qui sarà possibile modificare solo il documento in questione.
 - *`bugfix`*: branch secondario utilizzato per la correzione di errori di vario genere.
 
-Mentre le repository contenenti del codice verranno suddivise nel seguente modo:
+Mentre le repository contenenti il codice verranno suddivise nel seguente modo:
 
 - *`main`*: il branch principale, che contiene l'ultima versione verificata del codice sorgente
 - *`feature`*: branch secondario utilizzato per lo sviluppo di nuove funzionalità, il nome del branch sarà lo stesso della feature sviluppata e sarà eliminato una volta che la funzionalità è stata implementata e verificata.
@@ -469,7 +476,7 @@ validazione adottate dal gruppo, verrà quindi utilizzato come riferimento per g
 di gestione della qualità raggiunga l'_economicità_#super("G").
 
 === Ciclo di Deming
-Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del _ciclo di Deming_#super("G") (o PDCA),un approccio continuo e costante al miglioramento della qualità dei processi e dei prodotti, basandosi su uno schema sistematico e iterativo che consiste di quattro punti:
+Per mantenere un'alta qualità di lavoro si è stabilito l'utilizzo del _ciclo di Deming_#super("G") (o PDCA), un approccio continuo e costante al miglioramento della qualità dei processi e dei prodotti, basandosi su uno schema sistematico e iterativo che consiste di quattro punti:
 
 - *Plan*: Si identificano gli obiettivi di miglioramento e si pianificano le azioni necessarie per raggiungerli. Si analizzano i processi attuali, si raccolgono dati e si individuano le aree che necessitano di miglioramenti. Il principale strumento utilizzato per la decisione e la pianificazione delle modifiche saranno i verbali interni.
 - *Do*: si implementano le azioni pianificate nella fase precedente. Si eseguono le attività necessarie per apportare i miglioramenti, raccogliendo dati e documentando i risultati ottenuti.
@@ -537,7 +544,7 @@ Gli strumenti principali a supporto del processo di verifica sono i seguenti:
 - *Jest*: framework di testing JavaScript, utilizzato per eseguire test unitari e di integrazione nel backend.
 - *Mocha*: framework di testing utilizzato per l'esecuzione dei test di integrazione nel frontend, è stato scelto in quanto supportato nativamente da Visual Studio Code per i test di unità e di integrazione.
 - *Supertest*: utilizzato per il testing delle richieste API. È stato utilizzato per i test di integrazione riguardanti il funzionamento del server API.
-- *NestJS*: è stato utilizzato sia per i test di integrazione sia per quelli di unità, in quanto riesce a fornire dei mock di alcuni moduli utilizzati come dipendenze esterne. Il suo utilizzo come strumento per i test è anche dovuto al fatto che il framework è stato utilizzato per la realizzazione del backend stesso.
+- *NestJS*: utilizzato sia per i test di integrazione sia per quelli di unità, in quanto riesce a fornire dei mock di alcuni moduli utilizzati come dipendenze esterne. Il suo utilizzo come strumento per i test è anche dovuto al fatto che il framework è stato utilizzato per la realizzazione del backend stesso.
 
 === Codice identificativo dei test
 I test vengono identificati dal codice
@@ -564,7 +571,7 @@ La verifica della documentazione si dice aver esito positivo quando:
 Il processo di validazione è necessario per determinare se il prodotto finale è pronto per l'utilizzo,
 è quindi necessario il superamento di tutti i test definiti nella fase di verifica per assicurare che il prodotto implementi correttamente tutte le funzionalità richieste dal proponente, in modo da essere ritenuto accettabile come MVP.
 
-==== Test di Accettazione
+==== Test di accettazione
 Il test di accettazione o collaudo è un'attività esterna, supervisionata dal committente e consiste nel dimostrare il soddisfacimento
 dei requisiti. Ogni test da eseguire sarà definito in un apposito documento, il quale riporterà la descrizione del test da effettuare insieme alla sua eventuale accettazione da parte del committente. Tale documento dovrà essere firmato dal rappresentante dell'azienda proponente per essere considerato valido.
 
@@ -672,13 +679,13 @@ Riservate ai membri del gruppo di progetto e con lo scopo di:
 
 *Riunioni esterne*
 \
-Che coinvolgono anche il Proponente o altre parti interessate e hanno lo scopo di:
+Che coinvolgono anche il proponente o altre parti interessate e hanno lo scopo di:
 - Presentare lo stato di avanzamento del progetto
 - Discutere e approvare le decisioni importanti
 - Ricevere feedback dal Proponente
 
 
-La frequenza delle riunioni dipende dalle esigenze del progetto e può variare nel tempo. Nel nostro caso, le riunioni con il proponente vengono fissate quando si registrano avanzamenti significativi nel progetto o quando sorgono dubbi sulla progettazione o sull'implementazione del prodotto software. 
+La frequenza delle riunioni dipende dalle esigenze del progetto e può variare nel tempo. Nel nostro caso, le riunioni con il proponente vengono fissate nel momento in cui si registrano avanzamenti significativi nel progetto o quando sorgono dubbi sulla progettazione o sull'implementazione del prodotto software. 
 
 
 Per ogni riunione viene redatto un verbale che riporta:
