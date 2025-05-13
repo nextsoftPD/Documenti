@@ -11,7 +11,7 @@
   versionamento: (
     "1.2.4","09/05/2025","Marco Perazzolo", "Modificato UC_18 e UC_19 e relativi UML", "", 
     "1.2.3","05/05/2025","Luca Parise", "Modifiche ai requisiti post incontro con Bluewind", "Marco Perazzolo",  
-    "1.2.2","28/04/2025","Marco Perazzolo","Aggiunti UC_3, UC_20, UC_21 e modello di embedding come attore secondario","Luca Parise",
+    "1.2.2","28/04/2025","Marco Perazzolo","Aggiunti UC_3, UC_20 e modello di embedding come attore secondario","Luca Parise",
     "1.2.1","24/04/2025","Marco Perazzolo","Aggiunti UC_12.1, UC_12.2 e UC di visualizzazione icone","Luca Parise",
     "1.2.0","15/04/2025","Marco Perazzolo","Modifiche agli UC post incontro con Bluewind","Luca Parise",
     "1.1.0","05/04/2025","Malik Giafar Mohamed, Luca Parise, Marco Perazzolo","Modifiche generali agli use cases e aggiornamento del relativo tracciamento","Maria Fuensanta Trigueros Hernandez",
@@ -50,7 +50,7 @@ L'obiettivo del progetto è realizzare un plug-in per _Visual Studio Code_#super
 Il plug-in sarà utilizzato dal _programmatore_#super("G") per analizzare i requisiti implementati nel codice sorgente. Sia i requisiti che il codice saranno analizzati da vari modelli LLM reperibili attraverso la piattaforma di Ollama, grazie alle API REST che interagiscono con essa.\
 
 Le funzionalità implementate nell'applicazione includono:
-- Importazione del file sdei requisiti in formato _CSV_#super("G")
+- Importazione del file dei requisiti in formato _CSV_#super("G")
 - Ricerca dell'implementazione dei requisiti nel codice sorgente tramite un modello di embedding
 - _Analisi semantica_#super("G") dei requisiti tramite un modello LLM
 - Analisi del codice sorgente per verificare l'implementazione dei requisiti tramite un modello LLM
@@ -260,7 +260,7 @@ Questa sezione si propone di identificare e descrivere i casi d'uso derivati dal
 
 *Scenario principale:*
 1. Durante l'invio dei dati al modello di intelligenza artificiale (LLM o di embedding) il sistema rileva un problema di connessione.  
-2. Il sistema visualizza un messaggio d'errore dettagliato e consente all'utente di riprovare.
+2. Il sistema visualizza un messaggio d'errore e consente all'utente di riprovare.
 
 \
 == UC_4.3 - Visualizzazione avviso performance ridotte
@@ -426,7 +426,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 *Generalizzazioni*
 - *UC_6.1.2.1 - Visualizzazione stato tracciato*: Se il requisito è stato tracciato ma non ancora analizzato, oppure se è stato analizzato ma il risultato globale è negativo, il sistema mostra un indicatore giallo.
 - *UC_6.1.2.2 - Visualizzazione stato conforme*: Se il requisito è stato analizzato ed il risultato globale è positivo, il sistema mostra un indicatore verde.
-- *UC_6.1.2.3 - Visualizzazione stato non conforme*: Se il requisito è stato analizzato ed è stato contrassegnato come "non conforme", il sistema mostra un indicatore rosso.
+- *UC_6.1.2.3 - Visualizzazione stato non conforme*: Se il requisito è stato analizzato ed è stato contrassegnato dall'utente come "non conforme", il sistema mostra un indicatore rosso.
 - *UC_6.1.2.4 - Visualizzazione stato approvato*: Se il requisito è stato analizzato ed il risultato è stato approvato dall'utente, il sistema mostra un indicatore blu.
 
 \
@@ -436,12 +436,13 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 
 *Precondizioni:*
 - Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_6.1].
+- Il requisito è stato tracciato ma non ancora analizzato, oppure è stato analizzato ma il risultato globale è "_not passed_".
 
 *Postcondizioni:*
 - Il sistema mostra l'indicatore di stato del requisito come "tracciato".
 
 *Scenario principale:*
-1. Il sistema visualizza un indicatore giallo per il requisito, che indica che è stato tracciato ma non ancora analizzato, oppure che è stato analizzato ma il risultato globale è "_not passed_".
+1. Il sistema visualizza un indicatore a forma di triangolo arancione per il requisito, che indica che è stato tracciato ma non ancora analizzato, oppure che è stato analizzato ma il risultato globale è "_not passed_".
 
 \
 == UC_6.1.2.2 - Visualizzazione stato conforme
@@ -450,12 +451,13 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 
 *Precondizioni:*
 - Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_6.1].
+- Il requisito è stato analizzato [UC_4] ed il risultato globale è positivo.
 
 *Postcondizioni:*
 - Il sistema mostra l'indicatore di stato del requisito come "conforme".
 
 *Scenario principale:*
-1. Il sistema visualizza un indicatore verde per il requisito, che indica che è stato analizzato e il risultato globale è positivo.
+1. Il sistema visualizza un indicatore a forma di spunta di colore verde per il requisito, che indica che è stato analizzato e il risultato globale è positivo.
 
 \
 == UC_6.1.2.3 - Visualizzazione stato non conforme
@@ -464,12 +466,13 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 
 *Precondizioni:*
 - Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_6.1].
+- Il requisito è stato contrassegnato dall'utente come "non conforme" [UC_12.2].
 
 *Postcondizioni:*
 - Il sistema mostra l'indicatore di stato del requisito come "non conforme".
 
 *Scenario principale:*
-1. Il sistema visualizza un indicatore rosso per il requisito, che indica che è stato analizzato e marcato dall'utente come "non conforme".
+1. Il sistema visualizza un indicatore a forma di croce di colore rosso per il requisito, che indica che è stato analizzato e marcato dall'utente come "non conforme".
 
 \
 == UC_6.1.2.4 - Visualizzazione stato approvato
@@ -478,12 +481,13 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 
 *Precondizioni:*
 - Il requisito selezionato è stato importato (da [UC_1] o [UC_2]) ed è visualizzabile in elenco [UC_6.1].
+- Il requisito è stato approvato dall'utente [UC_12.1].
 
 *Postcondizioni:*
 - Il sistema mostra l'indicatore di stato del requisito come "approvato".
 
 *Scenario principale:*
-1. Il sistema visualizza un indicatore blu per il requisito, che indica che è stato analizzato e il risultato è stato approvato dall'utente.
+1. Il sistema visualizza un indicatore a forma di spunta di colore blu per il requisito, che indica che è stato analizzato e il risultato è stato approvato dall'utente.
 
 \
 == UC_6.1.3 - Visualizzazione icona tracciamento singolo requisito
@@ -557,13 +561,13 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - Il sistema mostra l'elenco dei requisiti ordinato in base al criterio selezionato.
 
 *Scenario principale:*
-1. L'utente seleziona il criterio di ordinamento desiderato (ID crescente, stato conforme, stato non conforme) per l'elenco dei requisiti.
+1. L'utente seleziona il criterio di ordinamento desiderato (ID crescente, requisito analizzato, requisito non analizzato) per l'elenco dei requisiti.
 2. Il sistema ordina i requisiti in base al criterio selezionato e aggiorna la visualizzazione dell'elenco.
 
 *Generalizzazioni:*
 - *UC_7.1 - Ordinamento per ID crescente*: Il sistema ordina i requisiti in ordine crescente in base all'ID.
-- *UC_7.2 - Ordinamento per stato conforme*: Il sistema ordina i requisiti in base allo stato, mostrando prima quelli conformi e poi quelli non conformi.
-- *UC_7.3 - Ordinamento per stato non conforme*: Il sistema ordina i requisiti in base allo stato, mostrando prima quelli non conformi e poi quelli conformi.
+- *UC_7.2 - Ordinamento per requisito analizzato*: Il sistema ordina i requisiti in base ai risultati dell'analisi, mostrando prima quelli analizzati e poi quelli non analizzati.
+- *UC_7.3 - Ordinamento per requisito non analizzato*: Il sistema ordina i requisiti in base ai risultati dell'analisi, mostrando prima quelli non analizzati e poi quelli analizzati.
 
 \
 == UC_7.1 - Ordinamento per ID crescente
@@ -581,7 +585,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 2. Il sistema ordina i requisiti in ordine crescente in base all'ID e aggiorna la visualizzazione dell'elenco.
 
 \
-== UC_7.2 - Ordinamento per stato conforme
+== UC_7.2 - Ordinamento per requisito analizzato
 
 *Attore primario:* Programmatore.
 
@@ -589,14 +593,14 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - I requisiti sono stati importati (da [UC_1] o [UC_2]) ed è visualizzato l'elenco dei requisiti.
 
 *Postcondizioni:*
-- Il sistema visualizza l'elenco dei requisiti ordinato in base allo stato, mostrando prima quelli conformi e poi quelli non conformi.
+- Il sistema visualizza l'elenco dei requisiti ordinato in base alla disponibilità dei risultati, mostrando prima quelli analizzati e poi quelli non analizzati.
 
 *Scenario principale:*
-1. L'utente seleziona l'opzione di ordinamento per stato conforme.
-2. Il sistema ordina i requisiti in base allo stato, mostrando prima quelli conformi e poi quelli non conformi e aggiorna la visualizzazione dell'elenco.
+1. L'utente seleziona l'opzione di ordinamento per requisito analizzato ("_Show analyzed first_").
+2. Il sistema  ordina i requisiti in base ai risultati, mostrando prima quelli analizzati e poi quelli non analizzati e aggiorna la visualizzazione dell'elenco.
 
 \
-== UC_7.3 - Ordinamento per stato non conforme
+== UC_7.3 - Ordinamento per requisito non analizzato
 
 *Attore primario:* Programmatore.
 
@@ -604,11 +608,11 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - I requisiti sono stati importati (da [UC_1] o [UC_2]) ed è visualizzato l'elenco dei requisiti.
 
 *Postcondizioni:*
-- Il sistema visualizza l'elenco dei requisiti ordinato in base allo stato, mostrando prima quelli non conformi e poi quelli conformi.
+- Il sistema visualizza l'elenco dei requisiti ordinato in base alla disponibilità dei risultati, mostrando prima quelli non analizzati e poi quelli analizzati.
 
 *Scenario principale:*
-1. L'utente seleziona l'opzione di ordinamento per stato non conforme.
-2. Il sistema ordina i requisiti in base allo stato, mostrando prima quelli non conformi e poi quelli conformi e aggiorna la visualizzazione dell'elenco.
+1. L'utente seleziona l'opzione di ordinamento per requisito non analizzato ("_Show unanalyzed first_").
+2. Il sistema ordina i requisiti in base ai risultati, mostrando prima quelli non analizzati e poi quelli analizzati e aggiorna la visualizzazione dell'elenco.
 
 \
 == UC_8 - Visualizzazione dettaglio requisito
@@ -626,7 +630,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 *Attore primario:* Programmatore.
 
 *Precondizioni:*
-- L'utente ha premuto sul requisito in elenco, visualizzato in [UC_6.1].
+- L'utente ha premuto sul requisito in elenco, visualizzato in [UC_6.1], selezionando quindi la voce "Requirement".
 
 *Postcondizioni:*
 - Il sistema mostra il dettaglio completo del requisito, includendo:  
@@ -635,7 +639,8 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 
 *Scenario principale:*
 1. L'utente preme sul requisito in elenco [UC_6.1].
-2. Il sistema espande il sottomenu di dettaglio, visualizzando il testo descrittivo del requisito [UC_8.1].
+2. L'utente seleziona la voce "Requirement" per visualizzare il dettaglio del requisito.
+3. Il sistema espande il sottomenu di dettaglio, visualizzando il testo descrittivo del requisito [UC_8.1].
 3. Se sono disponibili dati di tracciamento, il sistema visualizza anche il menu delle informazioni di tracciamento [UC_8.2].
 
 \
@@ -1316,26 +1321,6 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 4. Durante l'analisi ([UC_4] o [UC_11]) ed il tracciamento ([UC_13] o [UC_14]), il sistema esclude i path specificati nel file .reqignore.  
 5. L'utente avvia l'analisi o il tracciamento e i path ignorati non vengono considerati.  
 
-*Estensioni:*  
-- *UC_16.1 - Visualizzazione errore path non valido*: Se il path specificato non è valido, il sistema notifica l'utente e ignora l'_entry_#super("G") errata mantenendo valide le altre.  
-
-\
-== UC_16.1 - Visualizzazione errore path non valido
-
-*Attore primario:* Programmatore.
-
-*Precondizioni:*
-- L'utente inserisce un path o pattern non valido nel file .reqignore.  
-
-*Postcondizioni:*
-- Il sistema ignora il path non valido e prosegue con le configurazioni valide.
-
-*Scenario principale:*  
-1. L'utente modifica il file .reqignore e inserisce un path o pattern non valido.  
-2. Il sistema rileva l'entry non valida durante la verifica del file.  
-3. Il sistema notifica l'utente dell'errore e fornisce dettagli sul path non valido.  
-4. Il sistema ignora l'entry non valida e considera solo i path configurati correttamente.
-
 \
 == UC_17 - Configurazione del modello di AI
 
@@ -1446,7 +1431,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 *Scenario principale:*
 1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
-3. All'interno delle impostazioni, l'utente seleziona la voce "Quality score threshold".  
+3. All'interno delle impostazioni, l'utente seleziona la voce "Quality Score Threshold".  
 4. L'utente inserisce il valore soglia desiderato (es. 80).  
 5. Il sistema salva la soglia e la utilizza per valutare i risultati dell'analisi del requisito.
 
@@ -1465,7 +1450,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - Il sistema visualizza un messaggio d'errore che informa l'utente dell'inserimento non valido e richiede la correzione del valore.
 
 *Scenario principale:*  
-1. L'utente inserisce il valore per la soglia di conformità nella sezione "Quality Score threshold" oppure nella sezione "Compliance Score threshold" delle impostazioni del plug-in.  
+1. L'utente inserisce il valore per la soglia di conformità nella sezione "Quality Score Threshold" oppure nella sezione "Compliance Score Threshold" delle impostazioni del plug-in.  
 2. Il sistema verifica il valore inserito.  
 3. Se il valore non è numerico o non rientra nei limiti previsti, il sistema visualizza un messaggio d'errore specifico.  
 4. Il sistema richiede all'utente di inserire un valore corretto.
@@ -1491,7 +1476,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 *Scenario principale:*
 1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
 2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
-3. All'interno delle impostazioni, l'utente seleziona la voce "Compliance score threshold".  
+3. All'interno delle impostazioni, l'utente seleziona la voce "Compliance Score Threshold".  
 4. L'utente inserisce il valore soglia desiderato (es. 80).  
 5. Il sistema salva la soglia e la utilizza per valutare i risultati dell'analisi del codice associato ai requisiti.
 
@@ -1499,32 +1484,12 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - *UC_18.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
 
 \
-== UC_20 - Visualizzazione della soglia di conformità del requisito
 
-*Attore primario:* Programmatore.
-
-*Precondizioni:*  
-- Il plug-in "Requirement Tracker Plug-in" è installato e attivo in Visual Studio Code.  
-- L'utente ha accesso alle impostazioni nel menu "Extensions" di Visual Studio Code.
-
-*Postcondizioni:*  
-- La soglia viene salvata e utilizzata dal plug-in per determinare la conformità semantica di ciascun requisito: se la valutazione (requirement score) restituita dall'analisi è maggiore o uguale alla soglia impostata, il requisito viene considerato "passed" (conforme); altrimenti viene considerato "not passed" (non conforme).
-
-*Scenario principale:*
-1. L'utente apre le impostazioni di Visual Studio Code e naviga nel menu "Extensions".  
-2. L'utente individua il plug-in "Requirement Tracker Plug-in".  
-3. All'interno delle impostazioni, l'utente seleziona la voce "Requirement threshold".  
-4. L'utente inserisce il valore soglia desiderato (es. 80).  
-5. Il sistema salva la soglia e la utilizza per valutare i risultati dell'analisi semantica dei requisiti
-
-*Estensioni:*
-- *UC_19.1 - Visualizza errore valore soglia non valido*: Se il valore inserito per la soglia non è numerico o non rientra nei limiti previsti, il sistema notifica l'errore all'utente e richiede di inserire un valore corretto.
-
-== UC_21 - Visualizzazione dello stato di progresso
+== UC_20 - Visualizzazione dello stato di progresso
 
 #figure(
-  image("./img/AdR/UC_21.png", width: 70%),
-  caption: [UC_21 - Visualizzazione dello stato di progresso dell'analisi o del tracciamento]
+  image("./img/AdR/UC_20.png", width: 70%),
+  caption: [UC_20 - Visualizzazione dello stato di progresso dell'analisi o del tracciamento]
 )
 \
 *Attore primario:* Programmatore.
@@ -1574,11 +1539,11 @@ Questi requisiti descrivono cosa il sistema deve fare
     [RFO003],
     [Obbligatorio],
     [Durante analisi o tracciamento il sistema deve mostrare una barra di progresso con percentuale globale.],
-    [UC_21],
+    [UC_20],
     /*----------------------------------------------------*/
     [RFF004],
     [_Facoltativo_#super("G")],
-    [Il sistema deve supportare tracciamenti composti da più porzioni di codice appartenenti a file diversi, memorizzandole e mostrandole separatamente.],
+    [Il sistema deve supportare tracciamenti composti da più porzioni di codice appartenenti a file diversi, mostrandoli separatamente.],
     [Proponente],
     /*----------------------------------------------------*/
     [RFF005],
@@ -1748,7 +1713,7 @@ Questi requisiti descrivono cosa il sistema deve fare
     /*----------------------------------------------------*/
     [RFO038],
     [Obbligatorio],
-    [Il sistema deve consentire l’ordinamento dell’elenco requisiti per ID crescente, stato conforme, stato non conforme.],
+    [Il sistema deve consentire l’ordinamento dell’elenco requisiti per ID crescente, stato analizzato, stato non analizzato.],
     [UC_7, UC_7.1, UC_7.2, UC_7.3],
     /*----------------------------------------------------*/
 
@@ -1907,11 +1872,10 @@ Questi requisiti descrivono aspetti legati alla velocità e alle prestazioni del
     [UC_14],  [RFO031],
     [UC_15],  [RFO034],
     [UC_16],  [RFO032],
-    [UC_16.1],[RFO032],
     [UC_17],  [RFF005],
     [UC_18],  [RFO036, RFO037],
     [UC_19],  [RFO036, RFO037],
-    [UC_21],  [RFO003]
+    [UC_20],  [RFO003]
   ),
   caption: [Tracciamento dei Requisiti]
 )
