@@ -8,10 +8,11 @@
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez", "Stefano Baso"),
   approvazione: ("",),
   uso: "Esterno",
-  version: "1.6.1",
+  version: "1.6.2",
   date: "23/11/2024",
   versionamento: (
-    "1.6.1", "13/05/2025", "Ion Cainareanu", "Correzione di errori ortografici minori e fix del versionamento incompleto", "",
+    "1.6.2", "13/05/2025", "Stefano Baso", "Aggiunto totale ore per membro e aggiornata tabella totale", "",
+    "1.6.1", "13/05/2025", "Ion Cainareanu", "Correzione di errori ortografici minori e fix del versionamento incompleto", "Stefano Baso",
     "1.6.0", "13/05/2025", "Stefano Baso", "Aggiunta sprint 10 e totali periodi", "Ion Cainareanu",
     "1.5.0", "02/05/2025", "Malik Giafar Mohamed", "Aggiunti rischi occorsi nello sprint 9", "Ion Cainareanu",
     "1.4.0", "01/05/2025", "Stefano Baso", "Aggiunto consuntivo sprint 9", "Malik Giafar Mohamed",
@@ -69,7 +70,7 @@ Il contenuto del documento è organizzato nelle seguenti sezioni:
 - *_Consuntivo di periodo_#super[G]:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, citando il vebrale che conterrà la retrospettiva del periodo produttivo. Verranno inoltre riportati i rischi occorsi durante ogni _sprint_#super[G].
 === Aggiornamento a seguito della revisione RTB
 
-In seguito al colloquio di revisione RTB, sono stati suggeriti dei miglioramenti da attuare al seguente documento in vista della successiva revisione, tali cambiamenti riguardano la sua riorganizzazione per renderlo più utile alla guida dell'avanzamento del progetto. Siccome tali suggerimenti sono stati presi in considerazione tra la fine dell'RTB e l'inizio della PB, gli ultimi sprint (dal 7 al 10) presenteranno delle discrepanze nei contenuti e nella loro forma, nonché in alcuni dettagli della struttura del documento. Alcuni esempi sono la discrepanza delle date degli sprint a causa del cambiamento della data di consegna, oppure l'introduzione dei rischi attesi nella pianificazione degli sprint.
+In seguito al colloquio di revisione RTB, sono stati suggeriti dei miglioramenti da attuare al seguente documento in vista della successiva revisione, tali cambiamenti riguardano la sua riorganizzazione per renderlo più utile alla guida dell'avanzamento del progetto. Siccome tali suggerimenti sono stati presi in considerazione tra la fine dell'RTB e l'inizio della PB, gli ultimi sprint (dal 7 al 10) presenteranno delle discrepanze nei contenuti e nella loro forma, nonché in alcuni dettagli della struttura del documento. Alcuni esempi sono la discrepanza delle date degli sprint a causa del cambiamento della data di consegna, oppure l'introduzione dei rischi attesi nella pianificazione degli sprint. Inoltre il preventivo totale sarà quindi dato dal consuntivo dei primi sei sprint e il preventivo a finire degli ultimi quattro.
 
 == Glossario
 I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
@@ -793,13 +794,13 @@ Nella seguente sezione verrà preventivato per intero il prospetto orario ed eco
     columns: 3,
     fill: (x,y) => if x == 0 {blue.lighten(70%) },
     [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
-    [*Responsabile*], [55], [1650],
-    [*Amministratore*], [57], [1140],
-    [*Analista*], [98], [2450],
-    [*Progettista*], [94], [2350],
-    [*Programmatore*], [142], [2130],
-    [*Verificatore*], [85], [1275],
-    [*Totale*], [*531*], [*10995*]
+    [*Responsabile*], [52], [1560],
+    [*Amministratore*], [60], [1200],
+    [*Analista*], [72], [1800],
+    [*Progettista*], [108], [2700],
+    [*Programmatore*], [135], [2025],
+    [*Verificatore*], [113], [1695],
+    [*Totale*], [*540*], [*10980*]
   ),
   caption: "Riepilogo prospetto orario ed economico preventivato"
 )
@@ -1209,10 +1210,10 @@ Gli obiettivi dello sprint si dicono ugualmente raggiunti senza necessità di ap
     [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
     [*Malik*], [-], [-], [-], [1], [-], [5],
     [*Ion*], [-], [-], [-], [2], [-], [2],
-    [*Maria Fuensanta*], [-], [1], [-], [-], [-], [2],
+    [*Maria Fuensanta*], [1], [-], [-], [-], [-], [2],
     [*Stefano*], [1], [-], [-], [-], [2], [5],
     [*Marco*], [1], [1], [-], [2], [4], [4],
-    [*Luca*], [1], [1], [-], [-], [2], [3],
+    [*Luca*], [-], [2], [-], [-], [2], [3],
   ),
   caption: "Rendicontazione Sprint 10",
 )
@@ -1237,11 +1238,11 @@ Gli obiettivi dello sprint si dicono ugualmente raggiunti senza necessità di ap
 
 === Rischi Occorsi
 
-In questo sprint durante la fase di richiesta di incontro con l'azienda per la validazione del prodotto finale si è verificato il rischio *RC_005*, posticipando l'incontro previsto di una settimana.
+In questo sprint durante la fase di richiesta di incontro con l'azienda per la validazione del prodotto finale non si è verificato il rischio *RC_005*, ci sono stati comunque dei ritardi per la disponibilità del committente, ma non sono stati significativi.
 
 Il completamento di task rimasti in sospeso come il termine dello sviluppo dei test di integrazione ha permesso di annullare il rischio *RI_005*, ma ciò ha causato un ulteriore *RI_008* per il termine della documentazione e relativa verifica.
 
-L'obbiettivo dello sprint risulta raggiunto seppur con ritardi dovuti a fattori interni ed esterni. 
+L'obiettivo dello sprint risulta raggiunto seppur con ritardi dovuti a fattori interni, permettendo a tutti i membri del gruppo di raggiungere il fine attività.
 
 === Riepilogo PB
 
@@ -1262,6 +1263,21 @@ L'obbiettivo dello sprint risulta raggiunto seppur con ritardi dovuti a fattori 
 )
 
 == Consuntivo totale Sprint
+
+#figure(
+  table(
+    columns: 2,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Ore totali*] ,
+    [*Malik*], [91.5],
+    [*Ion*], [91.5],
+    [*Maria Fuensanta*], [88],
+    [*Stefano*], [91],
+    [*Marco*], [90],
+    [*Luca*], [89]
+  ),
+  caption: "Totale ore consuntivo per membro",
+)
 
 #figure(
   table(
