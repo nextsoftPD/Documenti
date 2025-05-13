@@ -4,22 +4,28 @@
 #show: project.with(
   title: "Piano di Progetto",
   //subtitle: "Sottotitolo del Documento",
-  redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", ),
-  verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
-  approvazione: ("Luca Parise",),
+  redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
+  verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez", "Stefano Baso"),
+  approvazione: ("Luca Parise","Marco Perazzolo",),
   uso: "Esterno",
-  version: "1.3.0",
+  version: "2.0.0",
   date: "23/11/2024",
   versionamento: (
-    "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "",
+    "2.0.0", "13/05/2025", "Ion Cainareanu", "Rilascio versione 2.0.0", "Stefano Baso",
+    "1.6.2", "13/05/2025", "Stefano Baso", "Aggiunto totale ore per membro e aggiornata tabella totale", "Ion Cainareanu",
+    "1.6.1", "13/05/2025", "Ion Cainareanu", "Correzione di errori ortografici minori e fix del versionamento incompleto", "Stefano Baso",
+    "1.6.0", "13/05/2025", "Stefano Baso", "Aggiunta sprint 10 e totali periodi", "Ion Cainareanu",
+    "1.5.0", "02/05/2025", "Malik Giafar Mohamed", "Aggiunti rischi occorsi nello sprint 9", "Ion Cainareanu",
+    "1.4.0", "01/05/2025", "Stefano Baso", "Aggiunto consuntivo sprint 9", "Malik Giafar Mohamed",
+    "1.3.1", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "Malik Giafar Mohamed",
+    "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "Malik Giafar Mohamed",
     "1.2.0", "27/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "Stefano Baso",
     "1.1.1", "27/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "Stefano Baso",
-    "1.1.0", "08/04/2025", "Stefano Baso", "Nuova versione del prospetto", "Malik Giafar Mohamed",
-    "1.0.0", "08/03/2025", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
-    "0.5.0", "08/03/2025", "Stefano Baso, Malik Giafar Mohamed, Luca Parise", "Miglioramento sezione rischi, inserimento tabelle preventivo e consuntivo, miglioramento sezione pianificazione", "Ion Cainareanu",
-    "0.4.0", "15/02/2025", "Stefano Baso", "Miglioramento sezione periodi", "Ion Cainareanu, Luca Parise",
-    "0.3.2", "06/02/2025", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "Marco Perazzolo",
-    "0.3.1", "12/1/2025", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
+    "1.0.0", "08/03/2024", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
+    "0.5.0", "08/03/2024", "Stefano Baso, Malik Giafar Mohamed, Luca Parise", "Miglioramento sezione rischi, inserimento tabelle preventivo e consuntivo, miglioramento sezione pianificazione", "Ion Cainareanu",
+    "0.4.0", "15/02/2024", "Stefano Baso", "Miglioramento sezione periodi", "Ion Cainareanu, Luca Parise",
+    "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "Marco Perazzolo",
+    "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
     "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
@@ -62,10 +68,10 @@ Il contenuto del documento è organizzato nelle seguenti sezioni:
 
 - *Preventivo:*  dettagli sui costi stimati per ogni fase del progetto, evidenziando risorse e allocazioni di budget.
 
-- *Consuntivo di periodo:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, citando il vebrale che conterrà la retrospettiva del periodo produttivo. Verranno inoltre riportati i rischi occorsi durante ogni sprint.
+- *_Consuntivo di periodo_#super[G]:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, citando il vebrale che conterrà la retrospettiva del periodo produttivo. Verranno inoltre riportati i rischi occorsi durante ogni _sprint_#super[G].
 === Aggiornamento a seguito della revisione RTB
 
-In seguito al colloquio di revisione RTB, sono stati suggeriti dei miglioramenti da attuare al seguente documento in vista della successiva revisione, tali cambiamenti riguardano la sua riorganizzazione per renderlo più utile alla guida dell'avanzamento del progetto. Siccome tali suggerimenti sono stati presi in considerazione tra la fine dell'RTB e l'inizio della PB, gli ultimi sprint (dal 7 al 10) presenteranno delle discrepanze nei contenuti e nella loro forma, nonché in alcuni dettagli della struttura del documento. Alcuni esempi sono la discrepanza delle date degli sprint a causa del cambiamento della data di consegna, oppure l'introduzione dei rischi attesi nella pianificazione degli sprint.
+In seguito al colloquio di revisione RTB, sono stati suggeriti dei miglioramenti da attuare al seguente documento in vista della successiva revisione, tali cambiamenti riguardano la sua riorganizzazione per renderlo più utile alla guida dell'avanzamento del progetto. Siccome tali suggerimenti sono stati presi in considerazione tra la fine dell'RTB e l'inizio della PB, gli ultimi sprint (dal 7 al 10) presenteranno delle discrepanze nei contenuti e nella loro forma, nonché in alcuni dettagli della struttura del documento. Alcuni esempi sono la discrepanza delle date degli sprint a causa del cambiamento della data di consegna, oppure l'introduzione dei rischi attesi nella pianificazione degli sprint. Inoltre il preventivo totale sarà quindi dato dal consuntivo dei primi sei sprint e il preventivo a finire degli ultimi quattro.
 
 == Glossario
 I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
@@ -143,7 +149,7 @@ Dove:
     [RI_004],
     [*Contrasti interni al gruppo*],
     [Durante lo svolgimento del progetto potrebbero emergere conflitti tra i membri del gruppo, causando rallentamenti nel completamento delle attività.],
-    [I membri del gruppo cercheranno di risolvere i contrasti attraverso una discussione collettiva. Se ciò non fosse sufficiente, il responsabile del progetto interverrà per mediare il conflitto, eventualmente ricorrendo a sondaggi per facilitare la decisione. Qualora il problema persistesse, si consulterà il committente per trovare una soluzione definitiva.],
+    [I membri del gruppo cercheranno di risolvere i contrasti attraverso una discussione collettiva. Se ciò non fosse sufficiente, il responsabile del progetto interverrà per mediare il conflitto, eventualmente ricorrendo a sondaggi per facilitare la decisione. Qualora il problema persistesse, si consulterà il _committente_#super[G] per trovare una soluzione definitiva.],
     [RI_005],
     [*Completamento di task prioritarie in sospeso*],
     [Alcune task del progetto potrebbero non venir completate all'interno dello sprint nel quale sono state designate, causando ritardi e rallentamenti nel completamento delle altre attività.],
@@ -350,7 +356,7 @@ La pianificazione permette di suddividere il progetto in fasi operative chiare, 
 
 Per la pianificazione abbiamo considerato il periodo dal 16/11/2024 al 16/04/2025. Escludendo il periodo dal 17/01/2025 al 7/02/2025, nel quale ci sarà la sessione d'esami, il tempo restante per il progetto è stato suddiviso in 8 sprint bisettimanali e 2 sprint della durata di una settimana singola.
 
-L'organizazione degli sprint sarà la seguente:
+L'organizzazione degli sprint sarà la seguente:
 == Sprint 1 - Acquisizione di conoscenze
 
 *Periodo*: 16/11/2024 - 30/11/2024
@@ -363,13 +369,13 @@ L'obiettivo è l'acquisizione delle conoscenze utili per lo svolgimento _milesto
 
 === Attività
 
-Il completamento di questo sprint prevede la preparazione della repository per la documentazione della milestone RTB e l'acquisizione della conoscenza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
+Il completamento di questo sprint prevede la preparazione della _repository_#super[G] per la documentazione della milestone RTB e l'acquisizione della conoscenza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
 
 == Sprint 2 - Analisi e documentazione
 
 *Periodo*: 01/12/2024 - 15/12/2024
 
-In questo sprint ci si focalizzerà sulla documentazione. Poiché il gruppo avrà ormai acquisito familiarità con il processo, l'attenzione sarà rivolta alla creazione di un template comune per tutti i documenti e alla stesura di una loro versione iniziale. 
+In questo sprint ci si focalizzerà sulla documentazione. Poiché il gruppo avrà ormai acquisito familiarità con il processo, l'attenzione sarà rivolta alla creazione di un _template_#super[G] comune per tutti i documenti e alla stesura di una loro versione iniziale. 
 
 === Obiettivo
 
@@ -412,7 +418,7 @@ Le attività principali sono:
 
 *Periodo*: 04/01/2025 - 17/01/2025
 
-Questo sprint prevede la progettazione e lo sviluppo di una bozza del PoC, il quale verrà sviluppato parallelamente nel frontend e nel backend. Siccome si tratterà di una bozza, l'integrazione tra frontend e backend avverrà in un secondo momento.
+Questo sprint prevede la progettazione e lo sviluppo di una bozza del PoC, il quale verrà sviluppato parallelamente nel _frontend_#super[G] e nel backend. Siccome si tratterà di una bozza, l'integrazione tra frontend e backend avverrà in un secondo momento.
 
 
 
@@ -447,7 +453,7 @@ Le attività che verranno svolte durante questo sprint consistono principalmente
 
 *Periodo*: 22/02/2025 - 8/03/2025
 
-Questo sprint è focalizzato sulla validazione del PoC e della documentazione. Comprende la verifica della conformità del sistema ai requisiti, la correzione di eventuali anomalie e la preparazione della versione 1.0.0 della documentazione. 
+Questo sprint è focalizzato sulla _validazione_#super[G] del _PoC_#super[G] e della documentazione. Comprende la verifica della conformità del sistema ai requisiti, la correzione di eventuali anomalie e la preparazione della versione 1.0.0 della documentazione. 
 
 === Obiettivo
 
@@ -508,9 +514,9 @@ I rischi attesi durante questo sprint sono legati alla codifica e al testing del
 
 - *RT_007 - Modifiche architetturali necessarie*: Esiste la possibile necessità di modifiche architetturali nel caso in cui la codifica effettiva dell'MVP richieda un'architettura diversa rispetto a quella inizialmente prevista.
 
-- *RT_004 - Cambio di tecnologie*: Potrebbe emergere la necessità di modificare le tecnologie utilizzate, per esempio a seguito di scelte tecnolgiche errate per l'implementazione dei test.
+- *RT_004 - Cambio di tecnologie*: Potrebbe emergere la necessità di modificare le tecnologie utilizzate, per esempio a seguito di scelte tecnologiche errate per l'implementazione dei test.
 
-- *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività refactoring o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di programmatore con un conseguente aumento dei costi rispetto al preventivo iniziale. 
+- *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività _refactoring_#super[G] o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di programmatore con un conseguente aumento dei costi rispetto al preventivo iniziale. 
 
 - *RT_005 - Mancato superamento dei test*: Indubbiamente alcuni test potrebbero non essere superati, in questo caso la mitigazione sar un semplice miglioramento dei moduli che non superano i test.  
 === Sprint 9 - Baseline Documentazione
@@ -789,13 +795,13 @@ Nella seguente sezione verrà preventivato per intero il prospetto orario ed eco
     columns: 3,
     fill: (x,y) => if x == 0 {blue.lighten(70%) },
     [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
-    [*Responsabile*], [55], [1650],
-    [*Amministratore*], [57], [1140],
-    [*Analista*], [98], [2450],
-    [*Progettista*], [94], [2350],
-    [*Programmatore*], [142], [2130],
-    [*Verificatore*], [85], [1275],
-    [*Totale*], [*531*], [*10995*]
+    [*Responsabile*], [52], [1560],
+    [*Amministratore*], [60], [1200],
+    [*Analista*], [72], [1800],
+    [*Progettista*], [108], [2700],
+    [*Programmatore*], [135], [2025],
+    [*Verificatore*], [113], [1695],
+    [*Totale*], [*540*], [*10980*]
   ),
   caption: "Riepilogo prospetto orario ed economico preventivato"
 )
@@ -1143,3 +1149,149 @@ Il rischio *RT_007* si è concretizzato durante l'implementazione di alcune funz
 Si è verificato anche il rischio *RI_006*, in quanto i test non sono ancora stati completamente definiti e il codice rimane da sistemare. Questo aspetto sarà prioritario nel prossimo sprint per garantire la consegna dell'MVP nei tempi previsti.
 
 Gli obiettivi principali dello sprint sono stati comunque raggiunti, e non è necessario applicare correzioni per il futuro. La collaborazione tra i membri del gruppo è stata efficace e ha portato a risultati soddisfacenti.
+
+=== Sprint 9 - Baseline Documentazione
+
+*Periodo*: 21/04/2025 - 28/04/2025 \
+*Verbale di Retrospettiva*: VI2025-04-28
+==== Rendicontazione oraria
+
+#figure(
+  table(
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [-], [1], [1], [-], [-], [-],
+    [*Ion*], [1], [-], [-], [-], [3], [1],
+    [*Maria Fuensanta*], [2], [-], [-], [4], [3], [2],
+    [*Stefano*], [-], [-], [3], [-], [4], [3],
+    [*Marco*], [1], [2], [-], [5], [2], [4],
+    [*Luca*], [-], [2], [-], [4], [2], [5],
+  ),
+  caption: "Rendicontazione Sprint 9",
+)
+
+==== Prospetto economico
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [4], [120],
+  [*Amministratore*], [5], [100],
+  [*Analista*], [4], [100],
+  [*Progettista*], [13], [325],
+  [*Programmatore*], [14], [210],
+  [*Verificatore*], [15], [225],
+  [*Totale*], [*55*], [*1080*]
+  ),
+  caption: "Prospetto economico Sprint 9"
+)
+
+=== Rischi Occorsi
+Durante lo sprint si è verificato il rischio *RI_004* a causa di alcuni contrasti tra membri del gruppo per il completamento e la suddivisione delle attività. La mitigazione prevista per tale rischio ha funzionato senza la necessità di contattare il committente.
+
+L'implementazione del codice è stata portata avanti in modo costante, riuscendo a terminare il codice e i test di unità e annullando di conseguenza la presenza del rischio *RI_006* causata dagli sprint precedenti.
+
+Si sono verificati i rischi *RI_008* e *RI_005* rispettivamente per la documentazione e per la stesura di test di integrazione, in quanto le seguenti task non sono state completate.
+
+Gli obiettivi dello sprint si dicono ugualmente raggiunti senza necessità di applicare misure correttive per il futuro, in quanto sarà sufficiente eseguire le task di validazione della documentazione e del prodotto software una volta completate le task in sospeso.
+
+=== Sprint 10 - Validazione finale e rilascio
+
+*Periodo*: 29/04/2025 - 13/05/2025 \
+*Verbale di Retrospettiva*: VI2025-05-13
+==== Rendicontazione oraria
+
+#figure(
+  table(
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [-], [-], [-], [1], [-], [5],
+    [*Ion*], [-], [-], [-], [2], [-], [2],
+    [*Maria Fuensanta*], [1], [-], [-], [-], [-], [2],
+    [*Stefano*], [1], [-], [-], [-], [2], [5],
+    [*Marco*], [1], [1], [-], [2], [4], [4],
+    [*Luca*], [-], [2], [-], [-], [2], [3],
+  ),
+  caption: "Rendicontazione Sprint 10",
+)
+
+==== Prospetto economico
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [3], [90],
+  [*Amministratore*], [3], [60],
+  [*Analista*], [0], [0],
+  [*Progettista*], [5], [125],
+  [*Programmatore*], [8], [120],
+  [*Verificatore*], [21], [315],
+  [*Totale*], [*40*], [*710*]
+  ),
+  caption: "Prospetto economico Sprint 10"
+)
+
+=== Rischi Occorsi
+
+In questo sprint durante la fase di richiesta di incontro con l'azienda per la validazione del prodotto finale non si è verificato il rischio *RC_005*, ci sono stati comunque dei ritardi per la disponibilità del committente, ma non sono stati significativi.
+
+Il completamento di task rimasti in sospeso come il termine dello sviluppo dei test di integrazione ha permesso di annullare il rischio *RI_005*, ma ciò ha causato un ulteriore *RI_008* per il termine della documentazione e relativa verifica.
+
+L'obiettivo dello sprint risulta raggiunto seppur con ritardi dovuti a fattori interni, permettendo a tutti i membri del gruppo di raggiungere il fine attività.
+
+=== Riepilogo PB
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [16], [480],
+  [*Amministratore*], [19.5], [390],
+  [*Analista*], [17], [425],
+  [*Progettista*], [48], [1200],
+  [*Programmatore*], [67], [1005],
+  [*Verificatore*], [50], [750],
+  [*Totale*], [*217.5*], [*4250*]
+  ),
+  caption: "Prospetto economico totale PB"
+)
+
+== Consuntivo totale Sprint
+
+#figure(
+  table(
+    columns: 2,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Ore totali*] ,
+    [*Malik*], [91.5],
+    [*Ion*], [91.5],
+    [*Maria Fuensanta*], [88],
+    [*Stefano*], [91],
+    [*Marco*], [90],
+    [*Luca*], [89]
+  ),
+  caption: "Totale ore consuntivo per membro",
+)
+
+#figure(
+  table(
+  columns: 5,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Differenze ore da preventivo*], [*Costo Totale (€)*], [*Differenze Costo Totale*],
+  [*Responsabile*], [51], [-1], [1530], [-30],
+  [*Amministratore*], [60], [0], [1200], [0],
+  [*Analista*], [72], [0], [1800], [0],
+  [*Progettista*], [108], [0], [2700], [0],
+  [*Programmatore*], [136], [1], [2040], [15],
+  [*Verificatore*], [114], [1], [1710], [15],
+  [*Totale*], [*541*], [*1*], [*10980*], [*0*]
+  ),
+  caption: "Totale prospetto economico"
+)
