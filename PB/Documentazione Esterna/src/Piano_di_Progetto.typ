@@ -4,20 +4,28 @@
 #show: project.with(
   title: "Piano di Progetto",
   //subtitle: "Sottotitolo del Documento",
-  redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", ),
-  verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
+  redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
+  verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez", "Stefano Baso"),
   approvazione: ("",),
   uso: "Esterno",
-  version: "1.6.0",
+  version: "1.6.1",
   date: "23/11/2024",
   versionamento: (
-    "1.6.0", "13/05/2025", "Stefano Baso", "Aggiunta sprint 10 e totali periodi", "",
-    "1.5.0", "02/05/2025", "Malik Giafar Mohamed", "Aggiunti rischi occorsi nello sprint 9", "",
+    "1.6.1", "13/05/2025", "Ion Cainareanu", "Correzione di errori ortografici minori e fix del versionamento incompleto", "",
+    "1.6.0", "13/05/2025", "Stefano Baso", "Aggiunta sprint 10 e totali periodi", "Ion Cainareanu",
+    "1.5.0", "02/05/2025", "Malik Giafar Mohamed", "Aggiunti rischi occorsi nello sprint 9", "Ion Cainareanu",
     "1.4.0", "01/05/2025", "Stefano Baso", "Aggiunto consuntivo sprint 9", "Malik Giafar Mohamed",
     "1.3.1", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "Malik Giafar Mohamed",
     "1.3.0", "29/04/2025", "Stefano Baso", "Aggiunto consuntivo sprint 7 e 8", "Malik Giafar Mohamed",
     "1.2.0", "27/04/2025", "Malik Giafar Mohamed", "Aggiunti nuovi rischi, aggiunta sezione rischi attesi nella pianificazione e modificata la sezione del consuntivo degli sprint PB", "Stefano Baso",
     "1.1.1", "27/04/2025", "Malik Giafar Mohamed", "Correzione errori minori", "Stefano Baso",
+    "1.0.0", "08/03/2024", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
+    "0.5.0", "08/03/2024", "Stefano Baso, Malik Giafar Mohamed, Luca Parise", "Miglioramento sezione rischi, inserimento tabelle preventivo e consuntivo, miglioramento sezione pianificazione", "Ion Cainareanu",
+    "0.4.0", "15/02/2024", "Stefano Baso", "Miglioramento sezione periodi", "Ion Cainareanu, Luca Parise",
+    "0.3.2", "06/02/2024", "Malik Giafar Mohamed", "Miglioramento sezione rischi", "Marco Perazzolo",
+    "0.3.1", "12/1/2024", "Maria Fuensanta Trigueros Hernandez", "Continuazione e completamento di tutte le parti relative a RTB", "Marco Perazzolo",
+    "0.2.0", "19/12/2024", "Maria Fuensanta Trigueros Hernandez", "Creazione della struttura e avvio della stesura del documento", "Ion Cainareanu",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 
@@ -346,7 +354,7 @@ La pianificazione permette di suddividere il progetto in fasi operative chiare, 
 
 Per la pianificazione abbiamo considerato il periodo dal 16/11/2024 al 16/04/2025. Escludendo il periodo dal 17/01/2025 al 7/02/2025, nel quale ci sarà la sessione d'esami, il tempo restante per il progetto è stato suddiviso in 8 sprint bisettimanali e 2 sprint della durata di una settimana singola.
 
-L'organizazione degli sprint sarà la seguente:
+L'organizzazione degli sprint sarà la seguente:
 == Sprint 1 - Acquisizione di conoscenze
 
 *Periodo*: 16/11/2024 - 30/11/2024
@@ -504,7 +512,7 @@ I rischi attesi durante questo sprint sono legati alla codifica e al testing del
 
 - *RT_007 - Modifiche architetturali necessarie*: Esiste la possibile necessità di modifiche architetturali nel caso in cui la codifica effettiva dell'MVP richieda un'architettura diversa rispetto a quella inizialmente prevista.
 
-- *RT_004 - Cambio di tecnologie*: Potrebbe emergere la necessità di modificare le tecnologie utilizzate, per esempio a seguito di scelte tecnolgiche errate per l'implementazione dei test.
+- *RT_004 - Cambio di tecnologie*: Potrebbe emergere la necessità di modificare le tecnologie utilizzate, per esempio a seguito di scelte tecnologiche errate per l'implementazione dei test.
 
 - *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività _refactoring_#super[G] o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di programmatore con un conseguente aumento dei costi rispetto al preventivo iniziale. 
 
