@@ -7,9 +7,10 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.4.0",
+  version: "1.4.1",
   date: "23/11/2024",
   versionamento: (
+    "1.4.1", "13/05/2024", "Stefano Baso", "Aggiunto indice di gulpease su ultimo verbale e fix versionamento", "",
     "1.4.0", "10/05/2024", "Stefano Baso", "Aggiornamento grafici per metriche", "",
     "1.3.2", "09/05/2024", "Malik Giafar Mohamed", "Correzione tracciamento requisiti nei test di sistema", "",
     "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione e stesura test di sistema", "",
@@ -17,6 +18,12 @@
     "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "Malik Giafar Mohamed",
     "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "Malik Giafar Mohamed",
     "1.1.0", "05/04/2025", "Stefano Baso", "Aggiunte metriche in qualità di processo", "Malik Giafar Mohamed",
+    "1.0.0", "04/03/2025", "Stefano Baso", "Aggiunti grafici e fix nomeclatura", "Malik Giafar Mohamed",
+    "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "Ion Cainareanu",
+    "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
+    "0.3.0", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
+    "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
   )
 )
 
@@ -1042,6 +1049,7 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
     [2025-04-05], [61], [Superato],
     [2025-04-19], [64], [Superato],
     [2025-04-28], [67], [Superato],
+    [2025-05-13], [66], [Superato],
     [2024-11-25], [67], [Superato],
     [2024-12-24], [64], [Superato],
     [2025-02-25], [65], [Superato],
