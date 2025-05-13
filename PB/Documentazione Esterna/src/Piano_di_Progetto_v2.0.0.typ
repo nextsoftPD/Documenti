@@ -8,10 +8,11 @@
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez", "Stefano Baso"),
   approvazione: ("",),
   uso: "Esterno",
-  version: "1.6.2",
+  version: "2.0.0",
   date: "23/11/2024",
   versionamento: (
-    "1.6.2", "13/05/2025", "Stefano Baso", "Aggiunto totale ore per membro e aggiornata tabella totale", "",
+    "2.0.0", "13/05/2025", "Ion Cainareanu", "Rilascio versione 2.0.0", "",
+    "1.6.2", "13/05/2025", "Stefano Baso", "Aggiunto totale ore per membro e aggiornata tabella totale", "Ion Cainareanu",
     "1.6.1", "13/05/2025", "Ion Cainareanu", "Correzione di errori ortografici minori e fix del versionamento incompleto", "Stefano Baso",
     "1.6.0", "13/05/2025", "Stefano Baso", "Aggiunta sprint 10 e totali periodi", "Ion Cainareanu",
     "1.5.0", "02/05/2025", "Malik Giafar Mohamed", "Aggiunti rischi occorsi nello sprint 9", "Ion Cainareanu",
