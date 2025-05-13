@@ -11,7 +11,7 @@
   version: "2.0.0",
   date: "23/11/2024",
   versionamento: (
-    "2.0.0", "13/05/2025", "Malik Giafar Mohamed", "Versione finale","",
+    "2.0.0", "13/05/2025", "Malik Giafar Mohamed", "Versione finale","Marco Perazzolo",
     "1.1.3", "11/05/2025", "Malik Giafar Mohamed", "Modifica sezione descrizione dei test", "Marco Perazzolo",
     "1.1.2", "09/05/2025", "Malik Giafar Mohamed", "Aggiornamento della procedura di modifica delle pull requests", "Marco Perazzolo",
     "1.1.1", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento tecnologie utilizzate e metodologie di testing", "Marco Perazzolo",
