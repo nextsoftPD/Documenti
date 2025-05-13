@@ -2,13 +2,14 @@
 
 #show: project.with(
   title: "Specifica Tecnica",
-  redattori: ("Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", ),
-  verifica: ("",),
+  redattori: ("Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Ion Cainareanu", "Malik Giafar Mohamed", ),
+  verifica: ("Ion Cainareanu", "Malik Giafar Mohamed","Luca Parise", "Marco Perazzolo", "Stefano Baso", ),
   approvazione: ("",),
   uso: "Esterno",
-  version: "0.4.1",
+  version: "0.5.1",
   date: "18/03/2025",
   versionamento: (
+    "0.5.1", "12/05/2025", "Marco Perazzolo, Ion Cainareanu", "Aggiornamento dei diagrammi UML del frontend e correzione di errori relativi alle tecnologie utilizzate", "",
     "0.5.0", "12/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura di deployment", "Marco Perazzolo, Ion Cainareanu",
     "0.4.1", "06/05/2025", "Marco Perazzolo", "Migliorato lo stile del documento e aggiornati i diagrammi UML", "Stefano Baso",
     "0.4.0", "02/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura backend di dettaglio", "Marco Perazzolo",
@@ -56,8 +57,8 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 === Riferimenti normativi
 - Capitolato C8 : Requirement Tracker - Plug-in VS Code
   - https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
-- Norme di Progetto v1.0.0
-- Analisi dei Requisiti v1.0.0
+- Norme di Progetto v2.0.0
+- Analisi dei Requisiti v2.0.0
 
 === Riferimenti informativi
 - Progettazione e programmazione: Diagrammi delle classi (UML)
@@ -98,7 +99,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
     
     [TypeScript],
-    [5.6.3],
+    [5.8.2],
     [Linguaggio di programmazione ad alto livello, _open-source_#super("G"), che estende JavaScript aggiungendo _tipizzazione statica_#super("G"), _interfacce_#super("G") e controllo statico degli errori.],
     
     [HTML],
@@ -113,10 +114,10 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
     [Visual Studio Code],
     [1.95.0],
-    [Editor di codice gratuito sviluppato da Microsoft, utilizzato per scrivere, testare e fare _debugging_#super("G") di codice. Permette l'installazioni di estensioni per estendere le funzionalità dell'editor.],
+    [Editor open source di codice sviluppato da Microsoft, utilizzato per scrivere, testare e fare _debugging_#super("G") di codice. Permette l'installazione di estensioni per estendere le funzionalità dell'editor.],
 
     [npm],
-    [10.9.2],
+    [10.9.0],
     [Gestore di pacchetti che consente di gestire librerie e _dipendenze_#super("G") in JavaScript.],
 
     [Node.js], 
@@ -135,18 +136,26 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
     [11.0.0],
     [Interfaccia a riga di comando ufficiale di NestJS per generare progetti, moduli, controller e servizi.],
 
+    [Docker],
+    [28.0.1],
+    [Piattaforma per sviluppare, spedire ed eseguire applicazioni in container. Permette di isolare le dipendenze e semplificare il deployment.],
+    
+    [Docker Compose],
+    [2.33.1],
+    [Strumento per definire e gestire applicazioni multi-container. Permette di configurare i servizi, le reti e i volumi necessari per l'applicazione.],
+
     table.cell(colspan: 3, fill: blue.lighten(80%), [*Librerie e Framework*] ),
 
     [NestJS],
     [11.0.1],
-    [Framework progressivo per costruire applicazioni server-side efficienti e scalabili con Node.js e TypeScript.],
+    [Framework progressivo per costruire applicazioni server-side efficienti e scalabili per Node.js con TypeScript.],
 
     [Ollama],
-    [0.6.0],
+    [0.6.5],
     [_Framework_#super("G") open-source che permette di eseguire modelli _LLM_#super("G") in locale.],
 
     [Axios],
-    [1.7.9],
+    [1.9.0],
     [Libreria JavaScript per effettuare richieste HTTP da browser e Node.js, permette la gestione di richieste asincrone.],
 
     table.cell(colspan: 3, fill: blue.lighten(80%), [*Testing e Qualità del Codice*] ),
@@ -157,7 +166,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
     [Supertest],
     [7.0.0],
-    [Libreria per testare API HTTP in Node.js, usata nei test end-to-end di NestJS.],
+    [Libreria per testare API HTTP in Node.js, usata nei test di integrazione di NestJS.],
 
     [ESLint],
     [9.18.0],
@@ -169,7 +178,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
     [Mocha],
     [10.0.10],
-    [Framework di test JavaScript, usato per eseguire test unitari e di integrazione.],
+    [Framework di test JavaScript, usato per eseguire test di integrazione per il plugin di VS Code. Attualmente, è l'unico framework di test di integrazione supportato da VS Code Extension API.],
   ),
   caption: [Tecnologie coinvolte nel progetto]
 )
@@ -177,11 +186,11 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 #pagebreak()
 
 = Architettura di deployment
-Il sistema è basato su un’architettura distribuita client-server a due tier, in cui la logica applicativa è suddivisa tra due componenti distinti: un client, ovvero l’estensione per Visual Studio Code, e un server, ovvero un’applicazione backend sviluppata con il framework NestJS.
+Il sistema è basato su un’architettura distribuita _client-server_#super("G") a due tier, in cui la logica applicativa è suddivisa tra due componenti distinti: un client, ovvero l’estensione per Visual Studio Code, e un server, ovvero un’applicazione backend sviluppata con il framework NestJS.
 
-Il tier client è rappresentato dall’estensione VS Code, installabile localmente sull’ambiente di sviluppo dell’utente. Questa componente si occupa della gestione dell’interfaccia utente, dell’interazione con l’utente e di una parte della logica applicativa, organizzata secondo un’architettura a livelli. In particolare, il client include un core layer che implementa alcune regole di dominio e funzionalità specifiche dell’estensione.
+Il client è rappresentato dall’estensione VS Code, installabile localmente sull’ambiente di sviluppo dell’utente. Questa componente si occupa della gestione dell’interfaccia utente, dell’interazione con l’utente e di una parte della logica applicativa, organizzata secondo un’architettura a livelli. In particolare, il client include un core layer che implementa alcune regole di dominio e funzionalità specifiche dell’estensione.
 
-Il tier server consiste in un’applicazione backend realizzata con NestJS e containerizzata tramite Docker. Questa componente centralizza la logica di dominio principale e funge da punto di accesso per l’intero ecosistema attraverso un’interfaccia RESTful. Il backend segue un’architettura esagonale, in cui il dominio è isolato dagli aspetti infrastrutturali tramite l’uso di porte e adattatori, garantendo modularità, manutenibilità e testabilità. Il servizio è pensato per essere eseguito in un container dedicato, facilitando il deployment.
+Il server consiste in un’applicazione backend realizzata con NestJS e containerizzata tramite Docker. Questa componente centralizza la logica di dominio principale e funge da punto di accesso per l’intero ecosistema attraverso un’interfaccia RESTful. Il servizio è pensato per essere eseguito in un container dedicato, facilitando il deployment.
 
 La comunicazione tra i due tier avviene attraverso richieste HTTP, in particolare tramite API REST esposte dal backend. Questa separazione consente di distribuire e aggiornare in modo indipendente il client e il server. Inoltre, l’approccio distribuito facilita il debugging, l’estensibilità e l’evoluzione del sistema nel tempo.
 
@@ -190,7 +199,7 @@ Sebbene non si tratti di un'architettura a microservizi, la soluzione adottata o
 = Architettura logica
 L'architettura del prodotto _Requirement Tracker Plug-in_ è composta da due parti principali:
 
-- *Frontend:* L'estensione per Visual Studio Code è stata sviluppata utilizzando una _layered architecture_, in modo da separare le responsabilità in moduli distinti. Il frontend è il responsabile dell'interfaccia utente e della comunicazione con il backend tramite API RESTful. Utilizza le _VS Code Extension API_ per interagire con l'editor e fornire funzionalità come la visualizzazione dei requisiti e la generazione di suggerimenti.\ La decisione di applicare il pattern architetturale _Layered Architecture_ per il frontend è stata motivata da diversi fattori:
+- *Frontend:* L'estensione per Visual Studio Code è stata sviluppata utilizzando una _layered architecture_#super("G"), in modo da separare le responsabilità in moduli distinti. Il frontend è il responsabile dell'interfaccia utente e della comunicazione con il backend tramite API RESTful. Utilizza le _VS Code Extension API_ per interagire con l'editor e fornire funzionalità come la visualizzazione dei requisiti e la generazione di suggerimenti.\ La decisione di applicare il pattern architetturale _Layered Architecture_ per il frontend è stata motivata da diversi fattori:
   + *Separazione delle responsabilità:* La _Layered Architecture_ consente di separare le diverse responsabilità del sistema in moduli distinti, facilitando la comprensione e la manutenibilità del codice. Ogni layer ha compiti specifici e può essere sviluppato e testato in modo indipendente.
   + *Estensibilità:* La struttura modulare consente di aggiungere nuove funzionalità o modificare quelle esistenti senza influire su altre parti del sistema. Ad esempio, è possibile aggiungere nuovi servizi o componenti visivi senza dover riscrivere l'intero codice.
   + *Testabilità:* La separazione dei layer facilita il testing, poiché ogni layer può essere testato in modo indipendente. Questo consente di identificare e risolvere i problemi più rapidamente, migliorando la qualità del codice.
@@ -199,7 +208,7 @@ L'architettura del prodotto _Requirement Tracker Plug-in_ è composta da due par
   + *Chiarezza:* La _Layered Architecture_ offre una chiara separazione tra i vari livelli del sistema, rendendo più facile per gli sviluppatori comprendere come funziona il sistema e come interagiscono le diverse parti.
 
 
-- *Backend:* Il server NestJS è stato sviluppato con un _architettura esagonale_ ed è il responsabile della logica di business e dell'interazione con il modello LLM. Comunica con il frontend esponendo API RESTful e gestisce le richieste provenienti dall'estensione. Utilizza librerie come _Axios_ per effettuare chiamate HTTP verso il server Ollama, che espone API per l'interazione con i modelli di AI (LLM e di embedding). Il server è progettato per essere facilmente estensibile e manutenibile, consentendo l'aggiunta di nuove funzionalità in modo semplice.\ Questo tipo di architettura porta numerosi vantaggi:
+- *Backend:* Il server NestJS è stato sviluppato con un _architettura esagonale_#super("G") ed è il responsabile della logica di _business_ e dell'interazione con il modello LLM. Comunica con il frontend esponendo API RESTful e gestisce le richieste provenienti dall'estensione. Utilizza librerie come _Axios_ per effettuare chiamate HTTP verso il server Ollama, che espone API per l'interazione con i modelli di _AI_#super("G") (LLM e di _embedding_#super("G")). Il server è progettato per essere facilmente estensibile e manutenibile, consentendo l'aggiunta di nuove funzionalità in modo semplice.\ Questo tipo di architettura porta numerosi vantaggi:
   - *Isolamento della logica di business:* La logica di business è separata dalle tecnologie esterne, facilitando la manutenibilità e il testing.
   - *Facilità di test:* La separazione tra _dominio_ e _adapter_ consente di testare la logica di business in modo isolato, senza dipendenze esterne. Questo semplifica la scrittura di test unitari e di integrazione.
   - *Modularità:* L'architettura esagonale consente di aggiungere o modificare facilmente gli _adapter_ senza influire sulla logica di business. Questo facilita l'integrazione con nuove tecnologie o servizi esterni.
@@ -214,13 +223,13 @@ Il pattern _Facade_ è un design pattern strutturale che fornisce un'interfaccia
 L'uso del pattern _Facade_ migliora la leggibilità del codice e semplifica l'interazione dei client con il sistema, promuovendo una chiara separazione tra le componenti interne e l'accesso esterno. 
 
 == Adapter Pattern
-L'_Adapter Pattern_ è un design pattern strutturale che consente a classi con interfacce incompatibili di lavorare assieme. Funziona come un intermediario, traducendo le chiamate tra due interfacce diverse in modo che possano comunicare senza modifiche al codice esistente.
+L'_Adapter Pattern_ è un design pattern strutturale che consente a classi con interfacce incompatibili di lavorare insieme. Funziona come un intermediario, traducendo le chiamate tra due interfacce diverse in modo che possano comunicare senza modifiche al codice esistente.
 
 = Architettura di dettaglio
 == Frontend
 === Architettura a strati
 #figure(
-  image("img/ST/Frontend - Minimal v0.2.2.svg"),
+  image("img/ST/Frontend - Minimal v0.2.3.svg"),
   caption: [Diagramma generale del Frontend]
 )
 L'architettura a strati è organizzata in quattro livelli principali: _Presentation_, _Application_, _Core_ e _Infrastructure_. Ogni strato ha responsabilità specifiche per garantire una separazione delle responsabilità e facilitare la manutenibilità e l'estensibilità del sistema.
@@ -233,20 +242,20 @@ L'architettura a strati è organizzata in quattro livelli principali: _Presentat
 
 - *Infrastructure Layer*: Fornisce servizi tecnici e interfacce per l'accesso ai dati, la comunicazione con servizi esterni e altre funzionalità infrastrutturali. È l'unico strato che comunica direttamente con i sistemi esterni, mantenendo gli altri strati isolati da dettagli implementativi.
 
-L'ordine delle dipendenze è strettamente controllato: ogni strato può dipendere solo dagli strati sottostanti, prevenendo accoppiamenti ciclici e garantendo un'architettura scalabile e facilmente manutenibile.
+L'ordine delle dipendenze è strettamente controllato: ogni strato può dipendere solo dallo strato sottostante, prevenendo accoppiamenti ciclici e garantendo un'architettura scalabile e facilmente manutenibile.
 
 #pagebreak()
 
 === Presentation Layer
 #figure(
-  image("img/ST/Dettaglio Presentation 0.2.2.svg"),
+  image("img/ST/Dettaglio Presentation 0.2.3.svg"),
   caption: [Diagramma dello strato Presentation]
 )
 Il _Presentation Layer_ è responsabile dell'interfaccia utente e dell'interazione con l'utente finale. Questo strato gestisce la visualizzazione dei dati e la raccolta degli input, comunicando con l'_Application Layer_ per eseguire le operazioni richieste. Nel contesto dell'estensione VS Code, il _Presentation Layer_ include i componenti che interagiscono direttamente con l'API di VS Code per fornire funzionalità di visualizzazione e interazione.
 
 \
 ==== Classe: `RequirementsTreeDataProvider`
-Implementa l'interfaccia `vscode.TreeDataProvider` per fornire i dati necessari alla visualizzazione dell'albero dei requisiti nell'interfaccia di VS Code. Funge da ponte tra l'interfaccia utente (il plugin) e il layer applicativo, delegando le operazioni al `RequirementsService`. Utilizza _dependency injection_ per ricevere le dipendenze tramite il costruttore. Aggiunge la visualizzazione degli errori e dei messaggi di avviso rispetto alle operazioni.
+Implementa l'interfaccia `vscode.TreeDataProvider` per fornire i dati necessari alla visualizzazione dell'albero dei requisiti nell'interfaccia di VS Code. Funge da ponte tra l'interfaccia utente (il plugin) e il layer applicativo, delegando le operazioni al `RequirementsService`. Utilizza _dependency injection_ per ricevere le dipendenze tramite il costruttore. Aggiunge la visualizzazione degli errori e dei messaggi di avviso relativi alle operazioni.
 
 *Metodi*:
 - *`getTreeItem`*: 
@@ -692,7 +701,7 @@ Gestisce lo stato di approvazione dei requisiti.
 === Core Layer
 
 #figure(
-  image("img/ST/Dettaglio Core 0.2.2.svg"),
+  image("img/ST/Dettaglio Core 0.2.3.svg"),
   caption: [Diagramma dello strato Core]
 )
 
@@ -816,12 +825,6 @@ Definisce i modelli di dati fondamentali utilizzati nell'applicazione per rappre
 - *`EmbeddingResponse`*
   Rappresenta la risposta a una richiesta di embedding.
   - *`embedding`*: Vettore di embedding risultante.
-
-- *`ImplementationRequest`*
-  Rappresenta una richiesta di analisi dell'implementazione.
-  - *`requirement`*: Testo del requisito.
-  - *`cFiles`*: File C da analizzare.
-  - *`implementationModel`*: Modello da utilizzare per l'analisi.
 
 - *`ImplementationResponse`*
   Rappresenta la risposta a una richiesta di analisi dell'implementazione.
@@ -1002,19 +1005,19 @@ Implementa l'interfaccia `IParseCodeService` per gestire il parsing del codice s
   image("img/ST/Backend - Minimal v0.1.4.svg", width: 80%),
   caption: [Diagramma dell'architettura esagonale del backend],
 )
-L'architettura del backend è basata sul pattern architetturale _Hexagonal Architecture_ (o _Ports and Adapters_), che consente di separare la logica di business dalle tecnologie esterne. Questa scelta architetturale facilita la manutenibilità e l'estensibilità del codice, consentendo di apportare modifiche senza influire su altre parti del sistema. La struttura del backend è organizzata in diversi layer, ognuno con compiti specifici.
+L'architettura del backend è basata sul pattern architetturale _Hexagonal Architecture_ (o _Ports and Adapters_), che consente di separare la logica di business dalle tecnologie esterne. Questa scelta architetturale facilita la manutenibilità e l'estensibilità del codice, consentendo di apportare modifiche senza influire su altre parti del sistema. La struttura del backend è organizzata in diversi livelli, ognuno con compiti specifici.
+\
+\
 
-#pagebreak()
 === Domain
 #figure(
   image("img/ST/Dettaglio Domain v0.1.4.svg"),
   caption: [Diagramma architetturale del Domain]
 )
-Il _Domain_ dell'architettura esagonale racchiude tutta la business logic dell'MVP, che include i modelli e i servizi. Il dominio è indipendente dalle tecnologie esterne e può essere testato in modo isolato.
+Il _Domain_ dell'architettura esagonale racchiude tutta la business logic del backend, che include i modelli e i servizi per l'analisi. Il dominio è indipendente dalle tecnologie esterne e può essere testato in modo isolato.
 
 ==== Domain Services
-Un service del dominio è una classe che utilizza la logica di business per fornire un servizio. I services del dominio sono responsabili dell'implementazione degli _inbound port_ e della gestione delle interazioni tra i models. Nel nostro caso, esiste solo un servizio a livello di dominio.
-
+Un servizio del dominio è una classe che utilizza la logica di business per fornire un servizio. I servizi del dominio sono responsabili dell'implementazione degli _inbound port_ e della gestione delle interazioni tra i modeli. Nel nostro caso, esiste solo un servizio a livello di dominio.
 \
 ===== Classe: `RequirementAnalysisService`
 Questo servizio gestisce l'analisi dei requisiti e del codice, l'embedding e l'interpretazione delle risposte da parte del server di Ollama.
@@ -1105,8 +1108,7 @@ Modello che rappresenta la configurazione di Ollama. Contiene informazioni relat
 - *`defaultRequirementModel`*: Modello predefinito per l'analisi dei requisiti.
 - *`defaultCodeModel`*: Modello predefinito per l'analisi del codice.
 - *`defaultEmbeddingModel`*: Modello predefinito per l'embedding.
-
-#pagebreak()
+\
 === DTO 
 I _Data Transfer Objects_ sono oggetti utilizzati per trasferire dati tra `ports` e `adapters`. I principali _DTO_ sono i seguenti.
 
@@ -1135,7 +1137,6 @@ DTO che rappresenta la risposta contenente gli embedding ottenuti.
 *Campi*
 - *`embedding`*: Array di numeri che rappresentano gli embedding calcolati.
 
-#pagebreak()
 === Ports
 I _Ports_ sono interfacce che definiscono le operazioni che mettono in comunicazione il _domain_ con l'esterno, come per esempio la comunicazione con Ollama per l'analisi dei requisiti. I _ports_ fungono da contratti tra il _dominio_ e gli _adapter_, consentendo inoltre di aggiungere o modificare l'implementazione di alcune operazioni senza influire sulla business logic.
 
@@ -1172,8 +1173,7 @@ Interfaccia per la gestione della configurazione del server API.
 Interfaccia che offre metodi per il parsing JSON.  
 *Metodi*:
 - *`parseJson`*: Metodo per deserializzare una stringa JSON in un oggetto.
-
-#pagebreak()
+\
 === Adapters
 #figure(
   image("img/ST/Dettaglio Adapters v0.1.4.svg"),
