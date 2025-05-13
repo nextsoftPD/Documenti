@@ -8,9 +8,10 @@
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
   approvazione: ("",),
   uso: "Esterno",
-  version: "1.4.0",
+  version: "1.6.0",
   date: "23/11/2024",
   versionamento: (
+    "1.6.0", "13/05/2025", "Stefano Baso", "Aggiunta sprint 10 e totali periodi", "",
     "1.5.0", "02/05/2025", "Malik Giafar Mohamed", "Aggiunti rischi occorsi nello sprint 9", "",
     "1.4.0", "01/05/2025", "Stefano Baso", "Aggiunto consuntivo sprint 9", "Malik Giafar Mohamed",
     "1.3.1", "30/04/2025", "Maria Fuensanta Trigueros Hernandez", "Marcatura delle parole trovate nel glossario", "Malik Giafar Mohamed",
@@ -1186,3 +1187,86 @@ L'implementazione del codice è stata portata avanti in modo costante, riuscendo
 Si sono verificati i rischi *RI_008* e *RI_005* rispettivamente per la documentazione e per la stesura di test di integrazione, in quanto le seguenti task non sono state completate.
 
 Gli obiettivi dello sprint si dicono ugualmente raggiunti senza necessità di applicare misure correttive per il futuro, in quanto sarà sufficiente eseguire le task di validazione della documentazione e del prodotto software una volta completate le task in sospeso.
+
+=== Sprint 10 - Validazione finale e rilascio
+
+*Periodo*: 29/04/2025 - 13/05/2025 \
+*Verbale di Retrospettiva*: VI2025-05-13
+==== Rendicontazione oraria
+
+#figure(
+  table(
+    columns: 7,
+    fill: (x,y) => if y == 0 {blue.lighten(70%) },
+    [*Membro*] , [*Re*] , [*Am*], [*An*], [*Prj*], [*Prg*], [*Ver*],
+    [*Malik*], [-], [-], [-], [1], [-], [5],
+    [*Ion*], [-], [-], [-], [2], [-], [2],
+    [*Maria Fuensanta*], [-], [1], [-], [-], [-], [2],
+    [*Stefano*], [1], [-], [-], [-], [2], [5],
+    [*Marco*], [1], [1], [-], [2], [4], [4],
+    [*Luca*], [1], [1], [-], [-], [2], [3],
+  ),
+  caption: "Rendicontazione Sprint 10",
+)
+
+==== Prospetto economico
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [3], [90],
+  [*Amministratore*], [3], [60],
+  [*Analista*], [0], [0],
+  [*Progettista*], [5], [125],
+  [*Programmatore*], [8], [120],
+  [*Verificatore*], [21], [315],
+  [*Totale*], [*40*], [*710*]
+  ),
+  caption: "Prospetto economico Sprint 10"
+)
+
+=== Rischi Occorsi
+
+In questo sprint durante la fase di richiesta di incontro con l'azienda per la validazione del prodotto finale si è verificato il rischio *RC_005*, posticipando l'incontro previsto di una settimana.
+
+Il completamento di task rimasti in sospeso come il termine dello sviluppo dei test di integrazione ha permesso di annullare il rischio *RI_005*, ma ciò ha causato un ulteriore *RI_008* per il termine della documentazione e relativa verifica.
+
+L'obbiettivo dello sprint risulta raggiunto seppur con ritardi dovuti a fattori interni ed esterni. 
+
+=== Riepilogo PB
+
+#figure(
+  table(
+  columns: 3,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Costo Totale (€)*],
+  [*Responsabile*], [16], [480],
+  [*Amministratore*], [19.5], [390],
+  [*Analista*], [17], [425],
+  [*Progettista*], [48], [1200],
+  [*Programmatore*], [67], [1005],
+  [*Verificatore*], [50], [750],
+  [*Totale*], [*217.5*], [*4250*]
+  ),
+  caption: "Prospetto economico totale PB"
+)
+
+== Consuntivo totale Sprint
+
+#figure(
+  table(
+  columns: 5,
+  fill: (x,y) => if x == 0 {blue.lighten(70%) },
+  [*Ruolo*], [*Ore Totali*], [*Differenze ore da preventivo*], [*Costo Totale (€)*], [*Differenze Costo Totale*],
+  [*Responsabile*], [51], [-1], [1530], [-30],
+  [*Amministratore*], [60], [0], [1200], [0],
+  [*Analista*], [72], [0], [1800], [0],
+  [*Progettista*], [108], [0], [2700], [0],
+  [*Programmatore*], [136], [1], [2040], [15],
+  [*Verificatore*], [114], [1], [1710], [15],
+  [*Totale*], [*541*], [*1*], [*10980*], [*0*]
+  ),
+  caption: "Totale prospetto economico"
+)
