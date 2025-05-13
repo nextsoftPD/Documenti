@@ -9,7 +9,7 @@
   version: "1.0.0",
   date: "18/03/2025",
   versionamento: (
-    "1.0.0", "13/05/2025", "Luca Parise", "Rilascio 1.0.0", "",
+    "1.0.0", "13/05/2025", "Luca Parise", "Rilascio 1.0.0", "Marco Perazzolo",
     "0.5.1", "12/05/2025", "Marco Perazzolo, Ion Cainareanu", "Aggiornamento dei diagrammi UML del frontend e correzione di errori relativi alle tecnologie utilizzate", "Luca Parise",
     "0.5.0", "12/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura di deployment", "Marco Perazzolo, Ion Cainareanu",
     "0.4.1", "06/05/2025", "Marco Perazzolo", "Migliorato lo stile del documento e aggiornati i diagrammi UML", "Stefano Baso",
