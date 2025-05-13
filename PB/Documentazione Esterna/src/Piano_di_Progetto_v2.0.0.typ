@@ -6,7 +6,7 @@
   //subtitle: "Sottotitolo del Documento",
   redattori: ("Malik Giafar Mohamed","Stefano Baso","Luca Parise", "Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu"),
   verifica: ("Ion Cainareanu" ,"Luca Parise","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez", "Stefano Baso"),
-  approvazione: ("",),
+  approvazione: ("Luca Parise","Marco Perazzolo",),
   uso: "Esterno",
   version: "2.0.0",
   date: "23/11/2024",
