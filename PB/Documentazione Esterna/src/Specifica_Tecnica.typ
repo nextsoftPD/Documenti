@@ -9,7 +9,7 @@
   version: "0.4.1",
   date: "18/03/2025",
   versionamento: (
-    "0.5.0", "12/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura di deployment", "",
+    "0.5.0", "12/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura di deployment", "Marco Perazzolo, Ion Cainareanu",
     "0.4.1", "06/05/2025", "Marco Perazzolo", "Migliorato lo stile del documento e aggiornati i diagrammi UML", "Stefano Baso",
     "0.4.0", "02/05/2025", "Malik Giafar Mohamed", "Stesura sezione architettura backend di dettaglio", "Marco Perazzolo",
     "0.3.0", "27/04/2025", "Ion Cainareanu", "Stesura sezione architettura frontend di dettaglio", "Luca Parise",
@@ -177,11 +177,15 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 #pagebreak()
 
 = Architettura di deployment
-Nel definire l'architettura per il deployment del prodotto, sono state valutate principalmente due opzioni: l'architettura monolitica o a microservizi.
+Il sistema è basato su un’architettura distribuita client-server a due tier, in cui la logica applicativa è suddivisa tra due componenti distinti: un client, ovvero l’estensione per Visual Studio Code, e un server, ovvero un’applicazione backend sviluppata con il framework NestJS.
 
-L'architettura a microservizi permette di scomporre il sistema in componenti autonome e indipendenti, facilitando la scalabilità, la manutenzione e l'evoluzione del prodotto. Nel nostro caso, abbiamo assunto dall'inizio che il sistema del prodotto software finale sarebbe stato costituito da due componenti: il plugin VS Code, installabile localmente sui singoli client, e un server backend API RESTful, containerizzato tramite Docker per garantire portabilità, scalabilità e facilità di configurazione. La scelta finale quindi è ricaduta su un'architettura a microservizi con un funzionamento simile al sistema client-server. Il plugin agisce come client leggero, interfacciandosi con il server backend che espone un'unica API REST per l'analisi dei requisiti. Questa soluzione consente di mantenere una chiara separazione delle responsabilità, di sfruttare i vantaggi della containerizzazione per il backend e di garantire una distribuzione flessibile del plugin sui client.
+Il tier client è rappresentato dall’estensione VS Code, installabile localmente sull’ambiente di sviluppo dell’utente. Questa componente si occupa della gestione dell’interfaccia utente, dell’interazione con l’utente e di una parte della logica applicativa, organizzata secondo un’architettura a livelli. In particolare, il client include un core layer che implementa alcune regole di dominio e funzionalità specifiche dell’estensione.
 
-In sintesi, l'adozione di questa architettura permette di bilanciare modularità, scalabilità e semplicità di deployment, risultando particolarmente adatta alle esigenze del progetto.
+Il tier server consiste in un’applicazione backend realizzata con NestJS e containerizzata tramite Docker. Questa componente centralizza la logica di dominio principale e funge da punto di accesso per l’intero ecosistema attraverso un’interfaccia RESTful. Il backend segue un’architettura esagonale, in cui il dominio è isolato dagli aspetti infrastrutturali tramite l’uso di porte e adattatori, garantendo modularità, manutenibilità e testabilità. Il servizio è pensato per essere eseguito in un container dedicato, facilitando il deployment.
+
+La comunicazione tra i due tier avviene attraverso richieste HTTP, in particolare tramite API REST esposte dal backend. Questa separazione consente di distribuire e aggiornare in modo indipendente il client e il server. Inoltre, l’approccio distribuito facilita il debugging, l’estensibilità e l’evoluzione del sistema nel tempo.
+
+Sebbene non si tratti di un'architettura a microservizi, la soluzione adottata offre una chiara separazione dei ruoli, garantendo una distribuzione efficace delle responsabilità. Questo approccio combina semplicità di gestione con modularità e scalabilità, rendendo l'intero sistema un esempio di architettura distribuita adatta a progetti in continua evoluzione.
 
 = Architettura logica
 L'architettura del prodotto _Requirement Tracker Plug-in_ è composta da due parti principali:
