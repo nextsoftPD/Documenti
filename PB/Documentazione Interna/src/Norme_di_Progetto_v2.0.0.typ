@@ -4,18 +4,28 @@
 #show: project.with(
   title: "Norme di Progetto",
   //subtitle: "Sottotitolo del Documento",
-  redattori: ("Malik Giafar Mohamed",),
-  verifica: (""),
-  approvazione: ("",),
+  redattori: ("Malik Giafar Mohamed", "Ion Cainareanu", "Stefano Baso", "Luca Parise"),
+  verifica: ("Malik Giafar Mohamed","Maria Fuensanta Trigueros Hernandez", "Ion Cainareanu", "Stefano Baso", "Marco Perazzolo"),
+  approvazione: ("Luca Parise",),
   uso: "Interno",
-  version: "1.0.1",
+  version: "2.0.0",
   date: "23/11/2024",
   versionamento: (
+    "2.0.0", "13/05/2025", "Malik Giafar Mohamed", "Versione finale","",
     "1.1.3", "11/05/2025", "Malik Giafar Mohamed", "Modifica sezione descrizione dei test", "Marco Perazzolo",
-    "1.1.2", "09/05/2025", "Malik Giafar Mohamed", "Aggiornamento della procedura di modifica delle pull requests", "",
-    "1.1.1", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento tecnologie utilizzate e metodologie di testing", "",
-    "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche in tutto il documento derivanti dalla correzione dell'RTB", "",
-    "1.0.1", "07/03/2025", "Malik Giafar Mohamed", "Inserimento data di ultimo accesso nelle fonti", "",
+    "1.1.2", "09/05/2025", "Malik Giafar Mohamed", "Aggiornamento della procedura di modifica delle pull requests", "Marco Perazzolo",
+    "1.1.1", "08/05/2025", "Malik Giafar Mohamed", "Aggiornamento tecnologie utilizzate e metodologie di testing", "Marco Perazzolo",
+    "1.1.0", "30/04/2025", "Malik Giafar Mohamed", "Introduzione modifiche in tutto il documento derivanti dalla correzione dell'RTB", "Marco Perazzolo",
+    "1.0.1", "07/03/2025", "Malik Giafar Mohamed", "Inserimento data di ultimo accesso nelle fonti", "Luca Parise",
+    "1.0.0", "07/03/2025", "Malik Giafar Mohamed", "Versione finale", "Marco Perazzolo",
+    "0.6.0", "01/03/2025", "Ion Cainareanu", "Miglioramenti per varie sezioni", "Malik Giafar Mohamed",
+    "0.5.0", "28/02/2025", "Malik Giafar Mohamed, Stefano Baso", "Modifiche generali alle sezioni del documento", "Ion Cainareanu",
+    "0.4.1", "11/02/2025", "Malik Giafar Mohamed","Integrazione di alcune specifiche relative al way of working","Ion Cainareanu",
+    "0.4.0", "11/01/2025", "Malik Giafar Mohamed","Integrazione parti mancanti del documento","Marco Perazzolo, Stefano Baso",
+    "0.3.0", "05/01/2025", "Malik Giafar Mohamed", "Stesura sezione Documentazione fino a Norme Tipografiche", "Ion Cainareanu, Stefano Baso",
+    "0.2.0", "15/12/2024", "Malik Giafar Mohamed", "Stesura fino a sezione 2.1.2.2","Ion Cainareanu",
+    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Stesura Prima Versione", "Maria Fuensanta Trigueros Hernandez, Ion Cainareanu",
+
   )
 )
 = Introduzione
