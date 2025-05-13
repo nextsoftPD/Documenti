@@ -4,7 +4,7 @@
   title: "Specifica Tecnica",
   redattori: ("Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Ion Cainareanu", "Malik Giafar Mohamed", "Luca Parise", ),
   verifica: ("Ion Cainareanu", "Malik Giafar Mohamed","Luca Parise", "Marco Perazzolo", "Stefano Baso", ),
-  approvazione: ("",),
+  approvazione: ("Maria Fuensanta Trigueros Hernandez",),
   uso: "Esterno",
   version: "1.0.0",
   date: "18/03/2025",
