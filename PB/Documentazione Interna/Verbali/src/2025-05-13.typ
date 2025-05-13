@@ -5,7 +5,7 @@
 #show: project.with(
   title: "Verbale interno 13/05/2025",
   redattori: ("Malik Giafar Mohamed",),
-  verifica: ("",),
+  verifica: ("Luca Parise",),
   approvazione: ("",),
   uso: "Interno",
   version: "1.0.0",
@@ -34,8 +34,7 @@ Nel corso dell'incontro, i membri del team hanno esaminato le attività completa
 - Tutti i membri del team hanno completato le ore di attività richieste per il raggiungimento del budget
 
 = Registro delle decisioni 
-Per quest'ultimo periodo del progetto il gruppo si concentrerà principalmente su due punti:
-- Preparazione per il colloquio con gli insegnanti
+Per quest'ultimo periodo del progetto il gruppo si concentrerà principalmente sulla preparazione per il colloquio con i professori.
 
 = Prossimi passi 
 - Realizzare una presentazione per mostrare i progressi fatti durante la fase finale del progetto
@@ -43,8 +42,8 @@ Per quest'ultimo periodo del progetto il gruppo si concentrerà principalmente s
 
 = Retrospettiva dell'ultimo periodo 
 
-Durante l'ultimo periodo, si sono verificati dei ritardi nel completamento delle task a causa di alcune task in sospeso dal precendente sprint, come per esempio la stesura della specifica tecnica. Tuttavia, il gruppo ha lavorato in modo efficiente e ha raggiunto gli obiettivi prefissati, riuscendo a far validare il prodotto software dal proponente e completando la documentazione necessaria.
+Durante l'ultimo periodo, si sono verificati dei ritardi nel completamento delle task a causa di alcune attività in sospeso dal precendente sprint, come per esempio la stesura della specifica tecnica. Tuttavia, il gruppo ha lavorato in modo efficiente e ha raggiunto gli obiettivi prefissati, riuscendo a far validare il prodotto software dal proponente e completando la documentazione necessaria.
 
 = Conclusione
-Con il completamento di questo sprint, ogni membro del gruppo ha raggiunto il fine attività a casusa del superamento del budget.
+Con il completamento di questo sprint, ogni membro del gruppo ha raggiunto il fine attività a causa del superamento del budget.
 
