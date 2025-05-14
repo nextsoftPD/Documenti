@@ -126,7 +126,7 @@
   email: "nextsoftpadova@gmail.com",
   redattori: ("Ion Cainareanu",),
   version: "1.0.0",
-  verifica: ("",),
+  verifica: ("Luca Parise",),
   approvazione: ("",),
   uso: ("Esterno"),
   date: "13/05/2025",
