@@ -34,7 +34,7 @@
 
 
 = Introduzione
-"*Requirement Tracker per Visual Studio Code*" è un plug-in progettato per l'omonimo editor, con l'obiettivo di supportare l'analisi dei requisiti software. Dato un insieme di requisiti, sia tracciati che non tracciati, il plug-in esegue un'analisi approfondita e fornisce una valutazione del loro grado di implementazione all'interno del codice sorgente.
+"*Requirement Tracker per Visual Studio Code*" è un plug-in progettato per l'omonimo editor, con l'obiettivo di supportare l'analisi dei _requisiti_#super[G] software. Dato un insieme di requisiti, sia tracciati che non tracciati, il plug-in esegue un'analisi approfondita e fornisce una valutazione del loro grado di implementazione all'interno del codice sorgente.
 
 
 == Scopo del documento
@@ -51,10 +51,10 @@ In particolare, il documento si propone di:
 
 == Scopo del prodotto  
 Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
-è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
+è progettato per automatizzare il _tracciamento dei requisiti_#super("G") nei progetti software complessi,
 con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
-e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
-riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
+e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'_intelligenza artificiale_#super[G],
+riducendo al contempo i tempi e gli errori legati alla _verifica_#super[G] manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
 
@@ -80,7 +80,7 @@ Sono necessarie le seguenti tecnologie installate:
 - _*Ollama*_#super("G") (versione 0.6.5 o superiore) 
 
 === Preparazione per l'installazione dell'estensione
-Prima di procedere con la creazione del file .vsix, è necessario:
+Prima di procedere con la creazione del file ._vsix_#super[G], è necessario:
 - *1)* Posizionarsi nella cartella del codice sorgente dell'estensione denominata "Requirement Tracker - Plugin"
 
 - *2)* Installare i moduli `node_modules` necessari per il funzionamento dell'estensione eseguendo il comando:
@@ -141,18 +141,18 @@ Per utilizzare l'estensione, è necessario che Ollama sia attivo e in ascolto su
 dove "nome_modello" rappresenta il modello utilizzato. Di default, l'estensione utilizza il modello *llama3.2:3b*, ma è possibile modificarlo in qualsiasi momento accedendo alle impostazioni dell'estensione. Per ulteriori dettagli, si rimanda al capitolo dedicato alla configurazione del modello LLM.
 
 
-=== Installazione dell'immagine docker
+=== Installazione dell'_immagine docker_#super[G]
 
-Per poter utilizzare correttamente il plug-in, è necessario eseguire un _server_#super("G") esterno che gestisca le richieste in arrivo. Questo server è realizzato come una REST API che può essere facilmente avviata e gestita tramite _Docker_#super("G"), una tecnologia che consente di creare ambienti isolati e replicabili chiamati _container_#super("G").
+Per poter utilizzare correttamente il plug-in, è necessario eseguire un _server_#super("G") esterno che gestisca le richieste in arrivo. Questo server è realizzato come una REST _API_#super[G] che può essere facilmente avviata e gestita tramite _Docker_#super("G"), una tecnologia che consente di creare ambienti isolati e replicabili chiamati _container_#super("G").
 
-L'utilizzo di Docker permette di semplificare il processo di configurazione, evitando problemi legati a incompatibilità tra versioni di librerie o ambienti operativi. Seguendo i passaggi descritti in questa sezione, sarai in grado di:
+L'utilizzo di Docker permette di semplificare il processo di configurazione, evitando problemi legati a incompatibilità tra versioni di _librerie_#super[G] o ambienti operativi. Seguendo i passaggi descritti in questa sezione, sarai in grado di:
 - Installare Docker sul tuo sistema (se non già presente)
 - Costruire localmente l'_immagine_#super("G") dell'applicazione partendo da un file _Dockerfile_#super("G")
 - Verificare che l'immagine sia stata correttamente creata
 - Avviare un container funzionante, pronto a ricevere ed elaborare richieste
 
 L'intera procedura richiede pochi comandi da terminale ed è stata progettata per essere semplice e accessibile anche a chi non ha una lunga esperienza con Docker.
-Assicurati di avere una connessione a internet attiva durante l'installazione e, se lavori su un sistema Linux, di avere i permessi necessari per eseguire i comandi come amministratore.
+Assicurati di avere una connessione a internet attiva durante l'installazione e, se lavori su un sistema _Linux_#super[G], di avere i permessi necessari per eseguire i comandi come amministratore.
 
 - *1)* Prima di tutto, è necessario verificare che Docker sia installato sul sistema. È possibile scaricare Docker Desktop (per Windows e macOS) oppure installare Docker Engine (per Linux) seguendo la guida ufficiale disponibile al link "https://docs.docker.com/get-docker/" (04/05/2025).
 Una volta installato, verificare che Docker sia correttamente attivo eseguendo da terminale il comando: 
@@ -160,7 +160,7 @@ Una volta installato, verificare che Docker sia correttamente attivo eseguendo d
 #align(center, `$ docker --version`)
 Se il comando restituisce la versione di Docker, l'installazione risulta completata con successo. 
 
-- *2)* Scaricare il Dockerfile presente all'interno della repository del prodotto e costruire localmente l'immagine attraverso il comando (assicurarsi di essere nella directory in cui si trova il file):
+- *2)* Scaricare il Dockerfile presente all'interno della _repository_#super[G] del prodotto e costruire localmente l'immagine attraverso il comando (assicurarsi di essere nella directory in cui si trova il file):
 #align(center, `$ cd /path/del/server/Requirement Tracker - API` )
 
 - *3)* Una volta nella cartella del codice  sorgente (all'interno della directory denominata "Requirement Tracker - API") è necessario costruire l'immagine Docker eseguendo il comando:
@@ -178,7 +178,7 @@ Nel caso il nome dell'immagine sia cambiato, allora sarà necessario cambiare an
 
 
 Un altro metodo per avviare il server tramite docker consiste nel creare un "*docker compose file*".
-Si tratta di un file in formato "yaml" il quale permette di modificare più facilmente i parametri di esecuzione del container con l'immagine del server. Inoltre, consente di configurare modalità di deployment più complesse, come l'uso di più container o l'integrazione con altri servizi. \
+Si tratta di un file in formato _yaml_#super[G] il quale permette di modificare più facilmente i _parametri_#super[G] di esecuzione del container con l'immagine del server. Inoltre, consente di configurare modalità di _deployment_#super[G] più complesse, come l'uso di più container o l'integrazione con altri servizi. \
 
 Tutto questo non è possibile con il comando `docker run` in quanto questo permette di eseguire solo un container alla volta. 
 
@@ -195,11 +195,11 @@ Per fare questo è necessario posizionarsi nella cartella Requirement Tracker - 
 
 #align(center, `$ npm run build`)
 
-Questi comandi installeranno le dipendenze (`npm install`) e convertiranno il codice typescript in codice javascript (`npx run build`) in una cartella chiamata dist. 
+Questi comandi installeranno le _dipendenze_#super[G] (`npm install`) e convertiranno il codice typescript in codice javascript (`npx run build`) in una cartella chiamata dist. 
 
 #align(center, `$ npm run start:prod`)
 
-Questo comando avvierà il server in modalità production che rimarrà in ascolto delle richieste e le invierà ad Ollama. Per le modalità alternative come sviluppo o debug ci sono i comandi:
+Questo comando avvierà il server in modalità production che rimarrà in ascolto delle richieste e le invierà ad Ollama. Per le modalità alternative come sviluppo o _debug_#super[G] ci sono i comandi:
 
 #align(center, `$ npm run start:dev`)
 #align(center, `$ npm run start:debug`)
@@ -221,7 +221,7 @@ L'utente può impostare il modello da utilizzare nelle varie operazioni come mos
   caption: "Configurazione del modello LLM",
 )
 
-Il modello LLM di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Visto il rapido progresso e la continua uscita di nuovi modelli, il plug-in permette all'utente di poter scegliere quale modello utilizzare, purché questo sia installato all'interno della macchina. \ 
+Il modello _LLM_#super[G] di Requirement Tracker per Visual Studio Code viene eseguito tramite Ollama, permettendo un'analisi locale dei requisiti software. Visto il rapido progresso e la continua uscita di nuovi modelli, il plug-in permette all'utente di poter scegliere quale modello utilizzare, purché questo sia installato all'interno della macchina. \ 
 Il plug-in permette di impostare un modello specifico per ognuna delle seguenti attività
 - per analizzare la "code compliance" 
 - per analizzare l'implementazione il quale deve essere un modello che supporti la funzione di embedding ( nomic-embed-text:latest o simili)
@@ -276,7 +276,7 @@ sull'icona denominata *"Load CSV"* mostrata in figura.
   image("/PB/Documentazione Esterna/src/MU/load_requirements.png", width: 40%),
   caption:"Icona per l'importazione dei requisiti",
 )
-Una volta cliccato sull'icona verrà aperto il _file system_#super("G") di sistema da cui selezionare il *file CSV* contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
+Una volta cliccato sull'icona verrà aperto il _file system_#super("G") di sistema da cui selezionare il *file _CSV_*#super[G] contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
 \
 
 Una volta importati, i requisiti verranno presentati in una lista nella sezione Requirements, come mostrato nella seguente figura: 
@@ -355,7 +355,7 @@ Inoltre, ad ogni requisito sarà associato un'icona che indica se lo stesso è p
 /*----------------------------------------------------*/
 == Esportazione requisiti
 
-Il plug-in presenta anche la funzione di esportazione, in formato _CSV_#super("G"), dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
+Il plug-in presenta anche la funzione di esportazione, in formato CSV, dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
 sul pulsante *"Export CSV"* mostrato nella seguente figura. 
 #figure(
   image("/PB/Documentazione Esterna/src/MU/Export_Requirements.png", width: 50%),

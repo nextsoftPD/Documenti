@@ -35,19 +35,17 @@
 = Introduzione 
 
 == Scopo del documento
-L'obiettivo di questo documento è fornire una descrizione dettagliata e completa dell'architettura del prodotto sviluppato. Sono incluse le tecnologie utilizzate e i requisiti necessari per il suo funzionamento.
+L'obiettivo di questo documento è fornire una descrizione dettagliata e completa dell'architettura del prodotto sviluppato. Sono incluse le tecnologie utilizzate e i _requisiti_#super[G] necessari per il suo funzionamento.
 
-Il documento presenta la struttura del prodotto attraverso diagrammi delle classi. Inoltre, giustifica l'uso di alcuni pattern di progettazione impiegati nell'implementazione
+Il documento presenta la struttura del prodotto attraverso diagrammi delle classi. Inoltre, giustifica l'uso di alcuni _pattern_#super[G] di progettazione impiegati nell'implementazione
 
 == Scopo del prodotto
 Il prodotto, un _plug-in_#super("G") per _Visual Studio Code_#super("G") chiamato "Requirement Tracker Plug-in",
-è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
+è progettato per automatizzare il _tracciamento dei requisiti_#super("G") nei progetti software complessi,
 con un focus particolare sull'ambito _embedded_#super("G"). L'obiettivo principale è migliorare la qualità
-e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'_intelligenza artificiale_#super("G"), riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
+e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'_intelligenza artificiale_#super("G"), riducendo al contempo i tempi e gli errori legati alla _verifica_#super[G] manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
-Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come _knowledge_#super[G],
-ad esempio datasheet e manuali, in modo da garantire una corretta implementazione dei requisiti.
 
 
 == Glossario
@@ -56,13 +54,13 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
 == Riferimenti
 === Riferimenti normativi
-- Capitolato C8 : Requirement Tracker - Plug-in VS Code
+- _Capitolato_#super[G] C8 : Requirement Tracker - Plug-in VS Code
   - https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C8.pdf
 - Norme di Progetto v2.0.0
 - Analisi dei Requisiti v2.0.0
 
 === Riferimenti informativi
-- Progettazione e programmazione: Diagrammi delle classi (UML)
+- Progettazione e programmazione: Diagrammi delle classi (_UML_#super[G])
   - https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf
 - Progettazione: I pattern architetturali
   - https://www.math.unipd.it/~rcardin/swea/2022/Software%20Architecture%20Patterns.pdf
@@ -101,7 +99,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
     
     [TypeScript],
     [5.8.2],
-    [Linguaggio di programmazione ad alto livello, _open-source_#super("G"), che estende JavaScript aggiungendo _tipizzazione statica_#super("G"), _interfacce_#super("G") e controllo statico degli errori.],
+    [Linguaggio di programmazione ad alto livello, _open-source_#super("G"), che estende _JavaScript_#super[G] aggiungendo _tipizzazione statica_#super("G"), _interfacce_#super("G") e controllo statico degli errori.],
     
     [HTML],
     [5],
@@ -117,19 +115,19 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
     [1.95.0],
     [Editor open source di codice sviluppato da Microsoft, utilizzato per scrivere, testare e fare _debugging_#super("G") di codice. Permette l'installazione di estensioni per estendere le funzionalità dell'editor.],
 
-    [npm],
+    [_npm_#super[G]],
     [10.9.0],
-    [Gestore di pacchetti che consente di gestire librerie e _dipendenze_#super("G") in JavaScript.],
+    [Gestore di pacchetti che consente di gestire _librerie_#super[G] e _dipendenze_#super("G") in JavaScript.],
 
-    [Node.js], 
+    [_Node.js_#super[G]], 
     [20.x],
-    [Ambiente di esecuzione JavaScript multipiattaforma e open-source, utilizzato per sviluppare applicazioni lato server ed _API_ #super("G").],
+    [Ambiente di esecuzione JavaScript multipiattaforma e open-source, utilizzato per sviluppare applicazioni lato _server_#super[G] ed _API_ #super("G").],
 
     [VS Code Extension API],
     [1.95.0],
     [API ufficiale di Visual Studio Code per creare estensioni che interagiscono e si integrano con l'editor.],
 
-    [Git], 
+    [_Git_#super[G]], 
     [2.42.0],
     [Git è un sistema di controllo di versione distribuito, utilizzato per la gestione del codice.],
 
@@ -137,9 +135,9 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
     [11.0.0],
     [Interfaccia a riga di comando ufficiale di NestJS per generare progetti, moduli, controller e servizi.],
 
-    [Docker],
+    [_Docker_#super[G]],
     [28.0.1],
-    [Piattaforma per sviluppare, spedire ed eseguire applicazioni in container. Permette di isolare le dipendenze e semplificare il deployment.],
+    [Piattaforma per sviluppare, spedire ed eseguire applicazioni in _container_#super[G]. Permette di isolare le dipendenze e semplificare il deployment.],
     
     [Docker Compose],
     [2.33.1],
@@ -151,7 +149,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
     [11.0.1],
     [Framework progressivo per costruire applicazioni server-side efficienti e scalabili per Node.js con TypeScript.],
 
-    [Ollama],
+    [_Ollama_#super[G]],
     [0.6.5],
     [_Framework_#super("G") open-source che permette di eseguire modelli _LLM_#super("G") in locale.],
 
@@ -161,9 +159,9 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 
     table.cell(colspan: 3, fill: blue.lighten(80%), [*Testing e Qualità del Codice*] ),
 
-    [Jest],
+    [_Jest_#super[G]],
     [29.7.0],
-    [Framework di testing JavaScript, utilizzato per eseguire test unitari e di integrazione. Integrato con NestJS.],
+    [Framework di testing JavaScript, utilizzato per eseguire _test_#super[G] unitari e di integrazione. Integrato con NestJS.],
 
     [Supertest],
     [7.0.0],
@@ -177,7 +175,7 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
     [3.4.2],
     [Formattatore di codice opinato, usato per mantenere uno stile di codice coerente.],
 
-    [Mocha],
+    [_Mocha_#super[G]],
     [10.0.10],
     [Framework di test JavaScript, usato per eseguire test di integrazione per il plugin di VS Code. Attualmente, è l'unico framework di test di integrazione supportato da VS Code Extension API.],
   ),
@@ -187,20 +185,20 @@ I termini che potrebbero risultare ambigui sono contrassegnati alla loro prima a
 #pagebreak()
 
 = Architettura di deployment
-Il sistema è basato su un’architettura distribuita _client-server_#super("G") a due tier, in cui la logica applicativa è suddivisa tra due componenti distinti: un client, ovvero l’estensione per Visual Studio Code, e un server, ovvero un’applicazione backend sviluppata con il framework NestJS.
+Il sistema è basato su un'architettura distribuita _client-server_#super("G") a due tier, in cui la logica applicativa è suddivisa tra due componenti distinti: un client, ovvero l'estensione per Visual Studio Code, e un server, ovvero un'applicazione _backend_#super[G] sviluppata con il framework NestJS.
 
-Il client è rappresentato dall’estensione VS Code, installabile localmente sull’ambiente di sviluppo dell’utente. Questa componente si occupa della gestione dell’interfaccia utente, dell’interazione con l’utente e di una parte della logica applicativa, organizzata secondo un’architettura a livelli. In particolare, il client include un core layer che implementa alcune regole di dominio e funzionalità specifiche dell’estensione.
+Il client è rappresentato dall'estensione VS Code, installabile localmente sull'ambiente di sviluppo dell'utente. Questa componente si occupa della gestione dell'interfaccia utente, dell'interazione con l'utente e di una parte della logica applicativa, organizzata secondo un'architettura a livelli. In particolare, il client include un core layer che implementa alcune regole di dominio e funzionalità specifiche dell'estensione.
 
-Il server consiste in un’applicazione backend realizzata con NestJS e containerizzata tramite Docker. Questa componente centralizza la logica di dominio principale e funge da punto di accesso per l’intero ecosistema attraverso un’interfaccia RESTful. Il servizio è pensato per essere eseguito in un container dedicato, facilitando il deployment.
+Il server consiste in un'applicazione backend realizzata con NestJS e containerizzata tramite Docker. Questa componente centralizza la logica di dominio principale e funge da punto di accesso per l'intero ecosistema attraverso un'interfaccia RESTful. Il servizio è pensato per essere eseguito in un container dedicato, facilitando il deployment.
 
-La comunicazione tra i due tier avviene attraverso richieste HTTP, in particolare tramite API REST esposte dal backend. Questa separazione consente di distribuire e aggiornare in modo indipendente il client e il server. Inoltre, l’approccio distribuito facilita il debugging, l’estensibilità e l’evoluzione del sistema nel tempo.
+La comunicazione tra i due tier avviene attraverso richieste HTTP, in particolare tramite API REST esposte dal backend. Questa separazione consente di distribuire e aggiornare in modo indipendente il client e il server. Inoltre, l'approccio distribuito facilita il debugging, l'estensibilità e l'evoluzione del sistema nel tempo.
 
 Sebbene non si tratti di un'architettura a microservizi, la soluzione adottata offre una chiara separazione dei ruoli, garantendo una distribuzione efficace delle responsabilità. Questo approccio combina semplicità di gestione con modularità e scalabilità, rendendo l'intero sistema un esempio di architettura distribuita adatta a progetti in continua evoluzione.
 
 = Architettura logica
 L'architettura del prodotto _Requirement Tracker Plug-in_ è composta da due parti principali:
 
-- *Frontend:* L'estensione per Visual Studio Code è stata sviluppata utilizzando una _layered architecture_#super("G"), in modo da separare le responsabilità in moduli distinti. Il frontend è il responsabile dell'interfaccia utente e della comunicazione con il backend tramite API RESTful. Utilizza le _VS Code Extension API_ per interagire con l'editor e fornire funzionalità come la visualizzazione dei requisiti e la generazione di suggerimenti.\ La decisione di applicare il pattern architetturale _Layered Architecture_ per il frontend è stata motivata da diversi fattori:
+- *_Frontend_#super[G]:* L'estensione per Visual Studio Code è stata sviluppata utilizzando una _layered architecture_#super("G"), in modo da separare le responsabilità in moduli distinti. Il frontend è il responsabile dell'interfaccia utente e della comunicazione con il backend tramite API RESTful. Utilizza le _VS Code Extension API_ per interagire con l'editor e fornire funzionalità come la visualizzazione dei requisiti e la generazione di suggerimenti.\ La decisione di applicare il pattern architetturale _Layered Architecture_ per il frontend è stata motivata da diversi fattori:
   + *Separazione delle responsabilità:* La _Layered Architecture_ consente di separare le diverse responsabilità del sistema in moduli distinti, facilitando la comprensione e la manutenibilità del codice. Ogni layer ha compiti specifici e può essere sviluppato e testato in modo indipendente.
   + *Estensibilità:* La struttura modulare consente di aggiungere nuove funzionalità o modificare quelle esistenti senza influire su altre parti del sistema. Ad esempio, è possibile aggiungere nuovi servizi o componenti visivi senza dover riscrivere l'intero codice.
   + *Testabilità:* La separazione dei layer facilita il testing, poiché ogni layer può essere testato in modo indipendente. Questo consente di identificare e risolvere i problemi più rapidamente, migliorando la qualità del codice.
@@ -216,11 +214,11 @@ L'architettura del prodotto _Requirement Tracker Plug-in_ è composta da due par
 
 = Pattern utilizzati
 == Dependency Injection (DI)
-_Dependency Injection_ è un pattern di progettazione ampiamente adottato per implementare efficacemente il principio di inversione delle dipendenze (_Dependency Inversion Principle_). Questo pattern si basa sul fornire a un oggetto (il "dipendente") le dipendenze di cui necessita dall'esterno, invece di lasciare che sia l'oggetto stesso a crearle o a cercarle attivamente al suo interno. Le dipendenze possono essere "iniettate" in vari modi, i più comuni dei quali includono l'iniezione tramite costruttore, l'iniezione tramite metodo setter o l'iniezione tramite interfaccia. L'utilizzo della _DI_ semplifica notevolmente la gestione delle dipendenze, facilita l'isolamento dei componenti per i test unitari (consentendo l'uso di _mock_ o _stub_) e promuove un'architettura software più pulita e basata sull'interazione tra astrazioni piuttosto che su implementazioni concrete rigidamente accoppiate. Nel progetto è stato utilizzato il pattern di _dependency injection_ tramite costruttore.
+_Dependency Injection_ è un pattern di progettazione ampiamente adottato per implementare efficacemente il principio di inversione delle dipendenze (_Dependency Inversion Principle_). Questo pattern si basa sul fornire a un oggetto (il "dipendente") le dipendenze di cui necessita dall'esterno, invece di lasciare che sia l'oggetto stesso a crearle o a cercarle attivamente al suo interno. Le dipendenze possono essere "iniettate" in vari modi, i più comuni dei quali includono l'iniezione tramite costruttore, l'iniezione tramite metodo setter o l'iniezione tramite interfaccia. L'utilizzo della _DI_ semplifica notevolmente la gestione delle dipendenze, facilita l'isolamento dei componenti per i test unitari (consentendo l'uso di _mock_#super[G] o _stub_#super[G]) e promuove un'architettura software più pulita e basata sull'interazione tra astrazioni piuttosto che su implementazioni concrete rigidamente accoppiate. Nel progetto è stato utilizzato il pattern di _dependency injection_ tramite costruttore.
 
 == Facade
 
-Il pattern _Facade_ è un design pattern strutturale che fornisce un'interfaccia semplice per interagire con un sistema complesso. Aiuta a ridurre la complessità nascondendo i dettagli interni e fornendo un unico punto di accesso.
+Il pattern _Facade_ è un _design pattern_#super[G] strutturale che fornisce un'interfaccia semplice per interagire con un sistema complesso. Aiuta a ridurre la complessità nascondendo i dettagli interni e fornendo un unico punto di accesso.
 L'uso del pattern _Facade_ migliora la leggibilità del codice e semplifica l'interazione dei client con il sistema, promuovendo una chiara separazione tra le componenti interne e l'accesso esterno. 
 
 == Adapter Pattern
@@ -228,7 +226,7 @@ L'_Adapter Pattern_ è un design pattern strutturale che consente a classi con i
 
 = Architettura di dettaglio
 == Frontend
-=== Architettura a strati
+=== _Architettura a strati_#super[G]
 #figure(
   image("img/ST/Frontend - Minimal v0.2.3.svg"),
   caption: [Diagramma generale del Frontend]
@@ -412,7 +410,7 @@ Modulo che registra tutti i comandi dell'estensione con l'API di VS Code. Questi
   image("img/ST/Dettaglio Application 0.2.2.svg"),
   caption: [Diagramma dello strato Application]
 )
-L'_Application Layer_ funge da intermediario tra il _Presentation Layer_ e il _Core Layer_. Questo strato coordina le operazioni dell'applicazione, applica la logica specifica dei casi d'uso e gestisce il flusso di dati tra i vari strati. Implementa il pattern _Facade_ per semplificare l'interazione con i _servizi_ sottostanti e organizza la logica in _manager_ specializzati.
+L'_Application Layer_ funge da intermediario tra il _Presentation Layer_ e il _Core Layer_. Questo strato coordina le operazioni dell'applicazione, applica la logica specifica dei _casi d'uso_#super[G] e gestisce il flusso di dati tra i vari strati. Implementa il pattern _Facade_ per semplificare l'interazione con i _servizi_ sottostanti e organizza la logica in _manager_ specializzati.
 
 \
 ==== Interfaccia: `IRequirementsService`
@@ -760,7 +758,7 @@ Definisce il contratto per il servizio di importazione ed esportazione di dati i
 \
 ==== Interfaccia: `IFileReaderService`
 
-Definisce il contratto per il servizio di lettura dei file. Questa interfaccia permette di accedere al filesystem in modo indipendente dall'implementazione specifica.
+Definisce il contratto per il servizio di lettura dei file. Questa interfaccia permette di accedere al _filesystem_#super[G] in modo indipendente dall'implementazione specifica.
 
 *Metodi*:
 - *`getIgnorePatterns`*: 
@@ -898,7 +896,7 @@ Implementa l'interfaccia `IRequirementsApiService` per gestire le comunicazioni 
 
 *Metodi*:
 - *`getEmbedding`*: 
-  Invia una richiesta per ottenere un embedding vettoriale per un testo. Gestisce la comunicazione HTTP con l'endpoint appropriato dell'API e restituisce la risposta formattata.
+  Invia una richiesta per ottenere un embedding vettoriale per un testo. Gestisce la comunicazione HTTP con l'_endpoint_#super[G] appropriato dell'API e restituisce la risposta formattata.
 
 - *`analyzeRequirement`*: 
   Invia una richiesta di analisi dei requisiti all'API. Gestisce la comunicazione HTTP con l'endpoint appropriato dell'API e restituisce la risposta formattata.
@@ -978,7 +976,7 @@ Implementa l'interfaccia `IFileReaderService` per gestire la lettura dei file da
 
 *Campi*:
 - *`defaultIgnorePatterns`*: 
-  Array di pattern predefiniti da ignorare per i progetti C, come cartelle di build, bin, lib, ecc.
+  Array di pattern predefiniti da ignorare per i progetti C, come cartelle di _build_#super[G], bin, lib, ecc.
 
 \
 ==== Classe: `ParseCodeService`
@@ -1001,7 +999,7 @@ Implementa l'interfaccia `IParseCodeService` per gestire il parsing del codice s
 
 #pagebreak()
 == Backend
-=== Architettura Esagonale
+=== _Architettura Esagonale_#super[G]
 #figure(
   image("img/ST/Backend - Minimal v0.1.4.svg", width: 80%),
   caption: [Diagramma dell'architettura esagonale del backend],
@@ -1080,7 +1078,7 @@ Modello che rappresenta una richiesta inviata all'API Ollama.
 
 *Campi*:
 - *`model`*: Modello utilizzato per l'analisi del requisito.
-- *`prompt`*: Prompt inviato all'API.
+- *`prompt`*: _Prompt_#super[G] inviato all'API.
 - *`system`*: _system prompt_ utilizzato per l'analisi.
 - *`format`*: Formato della risposta richiesta. Il formato di default utilizzato è il JSON.
 - *`stream`*: Campo booleano per indicare se inviare la risposta in uno stream di oggetti o in un unico oggetto che rappresenti una risposta, nel nostro caso sarà sempre la seconda opzione.
@@ -1209,7 +1207,7 @@ Gli _outbound adapters_ sono implementazioni concrete degli _outbound ports_ che
 *Campi*
 - *`client`*: Oggetto di tipo `AxiosInstance` che rappresenterà l'API rest di Ollama.
 - *`embeddingsClient`*: Oggetto di tipo `AxiosInstance` che rappresenterà l'API rest di Ollama utilizzata esclusivamente per gli embeddings.
-- *`configPort`*: Oggetto di tipo `ConfigPort` iniettato tramite _dependency injection_, che servirà per ottenere i parametri di configurazione del server API necessari per utilizzarli nella comunicazione con Ollama
+- *`configPort`*: Oggetto di tipo `ConfigPort` iniettato tramite _dependency injection_, che servirà per ottenere i _parametri_#super[G] di configurazione del server API necessari per utilizzarli nella comunicazione con Ollama
 
 \
 ===== Classe: `ConfigAdapter`
@@ -1249,7 +1247,7 @@ Questo è il punto di ingresso dell'applicazione. Si occupa di avviare l'applica
 ==== Modulo: `RequirementAnalysisModule`
 Modulo specifico per la gestione dell'analisi dei requisiti. Contiene la configurazione dei _servizi_, dei _ports_ e degli _adapter_ relativi all'analisi dei requisiti. Questo modulo garantisce che tutte le dipendenze necessarie per l'analisi siano correttamente iniettate e configurate.
 
-=== Utility
+=== _Utility_#super[G]
 
 ==== Gestione degli errori
 La gestione degli errori è un aspetto cruciale per garantire la robustezza del backend. Le classi per la gestione degli errori forniscono un meccanismo strutturato per identificare e gestire i problemi che possono verificarsi durante l'esecuzione. Queste includono:
@@ -1258,7 +1256,7 @@ La gestione degli errori è un aspetto cruciale per garantire la robustezza del 
 - *`ParseError`*: Estende `DomainError` e rappresenta un errore specifico che si verifica durante il parsing dei dati, come JSON non valido.
 - *`ExternalServiceError`*: Estende `DomainError` e rappresenta un errore che si verifica durante la comunicazione con servizi esterni, come l'API Ollama.
 
-==== Prompt Templates
+==== Prompt _Templates_#super[G]
 I modelli di prompt sono utilizzati per generare input strutturati per l'API Ollama. Questi modelli includono:
 
 - *`requirementContext`*: Contesto predefinito per l'analisi dei requisiti.

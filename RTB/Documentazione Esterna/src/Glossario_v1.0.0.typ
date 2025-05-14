@@ -174,6 +174,7 @@
   approvazione: ("Luca Parise",),
   uso: "Esterno",
   versionamento: (
+    "2.0.0", "024/04/2025","Maria Fuensanta Trigueros Hernandez", "Aggiornamento e aggiunta di nuovi termini al glossario", "" ,
     "1.0.0", "08/03/2025", "Marco Perazzolo", "Aggiornamento e aggiunta di nuovi termini al glossario", "Stefano Baso" ,
     "0.2.0", "25/01/2025", "Maria Fuensanta Trigueros Hernandez", "Stesura iniziale del glossario", "Marco Perazzolo" ,
     "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
@@ -203,8 +204,6 @@ Valutazione del contenuto testuale dei requisiti per verificarne chiarezza, coer
 Figura professionale che individua e definisce i casi d'uso ed i requisiti del prodotto software.
 == API (Application Programming Interface)
 Interfaccia di programmazione che consente a software diversi di comunicare tra loro, scambiandosi funzionalità, servizi, tecnologie e dati.
-== Approvatore
-Figura responsabile della validazione finale dei documenti e delle specifiche di progetto.
 == Artefatti
 Documenti, codice, e altri output generati durante lo sviluppo del software.
 == Attore
@@ -224,6 +223,8 @@ Ramo indipendente di sviluppo in un sistema di controllo di versione, utilizzata
 Stima dei costi necessari per realizzare un progetto.
 == Bug
 Errore o malfunzionamento in un software.
+== Build 
+Processo di compilazione e preparazione del codice sorgente in una versione eseguibile o distribuibile.
 
 #pagebreak()
 = C
@@ -248,7 +249,9 @@ Elementi di configurazione che devono essere gestiti e controllati nel progetto.
 == Consuntivo di Periodo 
 Analisi delle variazioni di pianificazione e costi rispetto alle stime iniziali, con indicazione delle misure correttive adottate.
 == CSV (Comma-Separated Values)
-Formato di file utilizzato per archiviare dati strutturati, come elenchi di requisiti.
+Formato di file di testo che rappresenta dati tabellari separati da virgole.
+== Container
+Ambiente isolato che contiene tutto il necessario per eseguire un'applicazione.
 
 #pagebreak()
 = D
@@ -266,6 +269,10 @@ Rappresentazione grafica della struttura e del comportamento di un sistema softw
 Relazione in cui la modifica di un modulo o componente necessita della modifica di un altro modulo o componente del software.
 == Driver
 Software che controlla e gestisce l'interazione con hardware o altri sistemi.
+== Docker
+Piattaforma di containerizzazione che consente di creare, distribuire e gestire ambienti isolati.
+== Dockerfile
+File di testo che contiene istruzioni su come creare un'immagine Docker.
 
 #pagebreak()
 = E
@@ -300,6 +307,8 @@ Correzione di un malfunzionamento o di un errore in un documento o nel codice so
 Processo di consegna del software al cliente, inclusi test finali e rilascio della documentazione.
 == Frontend
 La parte del software che interagisce direttamente con l'utente, tipicamente l'interfaccia grafica. Nel nostro caso, il frontend è rappresentato da Visual Studio Code.
+== File System
+Struttura dati deputata alla gestione e all'archiviazione dei file su un computer. 
 
 #pagebreak()
 = G
@@ -325,6 +334,8 @@ Sistema utilizzato per il tracciamento delle issue del progetto.
 
 #pagebreak()
 = J
+== JavaScript
+Linguaggio di programmazione multi paradigma orientato agli eventi.
 
 #pagebreak()
 = K
@@ -364,7 +375,10 @@ Versione minima di un prodotto con funzionalità essenziali per testarne la fatt
 #pagebreak()
 = N
 == NodeJS 
-Ambiente di runtime per JavaScript lato server.
+Ambiente di esecuzione open source per JavaScript, progettato per creare applicazioni scalabili lato server.
+
+== Npm
+Gestore di pacchetti per Node.js, utilizzato per installare librerie e strumenti.
 
 #pagebreak()
 = O
@@ -422,7 +436,7 @@ Documento che sintetizza i risultati di un'analisi o di un processo.
 == Repository
 Archivio di codice sorgente o di documenti, gestito con strumenti come GitHub
 == Requisito
-Condizione o capacità necessaria affinché un sistema software soddisfi le esigenze degli stakeholder.
+Condizioni o capacità necessarie che un sistema o prodotto deve possedere per soddisfare esigenze o vincoli specifici.
 == Requisito Desiderabile
 Requisito non indispensabile, ma la cui implementazione è raccomandata poiché apporta valore aggiunto in termini di usabilità, efficienza o qualità.
 == Requisito di Qualità
@@ -441,6 +455,8 @@ Definisce vincoli relativi alle prestazioni del sistema, come tempi di risposta,
 Plug-in per Visual Studio Code che automatizza il tracciamento dei requisiti nel codice sorgente.
 == Responsabile di progetto
 Figura incaricata di gestire e coordinare le attività e le risorse del progetto.
+== Root directory
+Cartella principale di un progetto, da cui si parte per organizzare tutti i file e le sottocartelle.
 
 #pagebreak()
 = S
@@ -460,7 +476,10 @@ Persona o gruppo interessato all’andamento e ai risultati del progetto.
 Implementazione minima usata come sostituto per un componente durante il testing.
 == SV (Schedule Variance)
 Differenza tra il valore guadagnato (EV) e il valore pianificato (PV), indica eventuali ritardi o anticipi.
-
+== Server 
+Dispositivo fisico o sistema informatico di elaborazione e gestione del traffico di informazioni, fornisce, a livello logico e fisico, un qualunque tipo di servizio ad altre componenti.
+== Soglia di accettazione
+Valore numerico che definisce il punteggio minimo affinché un requisito venga considerato "passato" dopo un'analisi.
 #pagebreak()
 = T
 == Task
@@ -509,6 +528,8 @@ Editor di codice sviluppato da Microsoft, utilizzato per la programmazione e la 
 Numero di vulnerabilità di sicurezza ancora presenti nel codice.
 == Validazione  
 Processo che assicura che il prodotto soddisfi i bisogni e le aspettative dell'utente finale.
+== Vsce
+Strumento a riga di comando per creare e gestire pacchetti .vsix per Visual Studio Code.
 
 #pagebreak()
 = W
@@ -523,3 +544,7 @@ Modalità di organizzazione e gestione delle attività all'interno di un progett
 
 #pagebreak()
 = Z
+#pagebreak()
+= .
+== .vsix
+Formato di pacchetto utilizzato per distribuire estensioni su Visual Studio Code.
