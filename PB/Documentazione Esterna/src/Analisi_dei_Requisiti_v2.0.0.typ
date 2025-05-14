@@ -9,8 +9,8 @@
   version: "2.0.0",
   date: "23/11/2024",
   versionamento: (
-    "2.0.0","13/05/2025","Malik Giafar Mohamed", "versione finale", "", 
-    "1.2.5","13/05/2025","Malik Giafar Mohamed", "Modificato Tracciamento dei requisiti", "", 
+    "2.0.0","13/05/2025","Malik Giafar Mohamed", "versione finale", "Ion Cainareanu", 
+    "1.2.5","13/05/2025","Malik Giafar Mohamed", "Modificato Tracciamento dei requisiti", "Ion Cainareanu", 
     "1.2.4","09/05/2025","Marco Perazzolo", "Modificato UC_18 e UC_19 e relativi UML", "Malik Giafar Mohamed", 
     "1.2.3","05/05/2025","Luca Parise", "Modifiche ai requisiti post incontro con Bluewind", "Marco Perazzolo",  
     "1.2.2","28/04/2025","Marco Perazzolo","Aggiunti UC_3, UC_20 e modello di embedding come attore secondario","Luca Parise",
@@ -673,7 +673,7 @@ _ - Se un requisito ha anche i risultati di analisi, vengono esportati ID, testo
 - Il requisito selezionato dispone di informazioni di tracciamento, importate da [UC_2] oppure generate da [UC_13] o [UC_14].
 
 *Postcondizioni:*
-- Il sistema visualizza una menu di tracciamento espandibile che comprende i dettagli del tracciamento, quali file sorgente e intervallo di righe.
+- Il sistema visualizza un menu di tracciamento espandibile che comprende i dettagli del tracciamento, quali file sorgente e intervallo di righe.
 #pagebreak()
 *Scenario principale:*
 1. Nella vista di dettaglio del requisito [UC_8], il sistema verifica la presenza di dati di tracciamento.  
@@ -1750,12 +1750,12 @@ Questi requisiti riguardano le caratteristiche qualitative del sistema
     /*----------------------------------------------------*/
     [RQO002],
     [Obbligatorio],
-    [Il prodotto deve essere  rispettare gli standard definiti all'interno del file #text(style:"italic")[Norme_di_Progetto_v1.0.0]],
+    [Il prodotto deve rispettare gli standard definiti all'interno del file #text(style:"italic")[Norme_di_Progetto_v2.0.0]],
     [#text(style:"italic")[Norme_di_Progetto_v2.0.0]],
     /*----------------------------------------------------*/
     [RQO003],
     [Obbligatorio],
-    [Il processo di sviluppo deve seguire le modalità stabilite all'interno del file #text(style:"italic")[Piano_di_Progetto_v1.0.0]],
+    [Il processo di sviluppo deve seguire le modalità stabilite all'interno del file #text(style:"italic")[Piano_di_Progetto_v2.0.0]],
     [#text(style:"italic")[Piano_di_Progetto_v2.0.0]],
 ),
   caption: [Requisiti di Qualità]
