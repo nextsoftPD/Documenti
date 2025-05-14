@@ -127,7 +127,7 @@
   redattori: ("Ion Cainareanu",),
   version: "1.0.0",
   verifica: ("Luca Parise",),
-  approvazione: ("",),
+  approvazione: ("Marco Perazzolo",),
   uso: ("Esterno"),
   date: "13/05/2025",
   timebegin: "",
