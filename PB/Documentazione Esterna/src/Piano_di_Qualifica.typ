@@ -7,15 +7,10 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.0.0",
+  version: "1.1.0",
   date: "23/11/2024",
   versionamento: (
-    "1.0.0", "04/03/2025", "Stefano Baso", "Aggiunti grafici e fix nomeclatura", "Malik Giafar Mohamed",
-    "0.5.0", "26/02/2025", "Malik Giafar Mohamed", "Aggiunte formule per calcolo metriche e sezione valutazione lavoro", "Ion Cainareanu",
-    "0.4.0", "15/01/2025", "Stefano Baso", "Aggiunta test documenti", "Ion Cainareanu, Marco Perazzolo",
-    "0.3.0", "14/01/2025", "Stefano Baso", "Continuo aggiunta schema sezioni e tabelle", "Marco Perazzolo",
-    "0.2.0", "13/12/2024", "Stefano Baso", "Aggiunta schema sezioni", "Ion Cainareanu",
-    "0.1.0", "23/11/2024", "Malik Giafar Mohamed", "Creazione Documento", "Ion Cainareanu, Maria Fuensanta Trigueros Hernandez",
+    "1.1.0", "05/04/2025", "Stefano Baso", "Aggiunte metriche in qualità di processo", "Malik Giafar Mohamed",
   )
 )
 
@@ -169,6 +164,44 @@ Indice per la media del numero di metodi presenti in ogni _package_#super("G"), 
     [MPC11], [Variabili non utilizzate e non definite], [0], [0],
   ),
   caption: [Metriche di codifica],
+)
+
+==== Copertura dei test
+
+Percentuale di elementi del sistema come funzionalità o casi d’uso verificati tramite test automatici o manuali. Valutare la qualità della fase di validazione e per identificare eventuali aree del prodotto non ancora testate.
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
+    [MPC12], [Copertura dei test], [>= 70%], [>= 90%],
+  ),
+  caption: [Copertura dei test],
+)
+
+=== Conformità ai requisiti
+
+==== Percentuale di requisiti soddisfatti
+
+Indica il rapporto tra il numero di requisiti implementati rispetto al totale dei requisiti previsti. Il valore dell'indice valuta quanto il processo di sviluppo sia stato in grado di coprire le esigenze richieste inizialmente. 
+
+==== Indice di variazione dei requisiti
+
+Monitora il numero e l’entità delle modifiche apportate ai requisiti nel corso del progetto. Una variazione eccessiva può indicare problemi nelle fasi iniziali di analisi o una cattiva gestione delle aspettative.
+
+==== Percentuale di attività completate nei tempi previsti
+
+Rappresenta il rapporto tra il numero di attività concluse entro le scadenze pianificate e il totale delle attività previste. indica l'efficienza organizzativa e la capacità del team di rispettare i tempi definiti nella fase di pianificazione.
+
+#figure(
+  table(
+    columns: 4,
+    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
+    [MPC13], [Percentuale di requisiti soddisfatti], [>= 90%], [100%],
+    [MPC14], [Indice di variazione dei requisiti], [<= 20%], [<= 10%],
+    [MPC15], [Attività completate nei tempi previsti], [≥ 85%], [>= 95%],
+  ),
+  caption: [Conformità ai requisiti],
 )
 
 == Processi di supporto

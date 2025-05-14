@@ -13,6 +13,7 @@
   timebegin: "",
   timeend: "",
   versionamento: (),
+  lista_presenze: (), 
   body
 ) = {
   // Definizione colori
@@ -173,6 +174,24 @@
         ..versionamento
       )
     }
+    #if lista_presenze!=() {
+      text(size: 1.4em, weight: "bold")[Registro delle presenze]
+      
+      align(center)[
+        #table(
+          stroke: (x,y) => (paint: black),
+        align: center, 
+        inset: 8pt,
+        columns: (auto, auto, auto),
+        
+        table.header([*Membro*],[*Presente*],[*Motivazione*]),
+        
+        //righe di dati 
+        ..lista_presenze
+        )
+      ]
+    }
+    
 
     #outline(
       title: [Indice],
@@ -183,6 +202,8 @@
 
   ]
   
+
+
   // Impostazione intestazione per le pagine successive
 
   body
