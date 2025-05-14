@@ -150,13 +150,13 @@
   subtitle: "Glossario Tecnico del capitolato\ndi Ing. del Software 2024-2025",
   company: "NextSoft",
   email: "nextsoftpadova@gmail.com",
-  version: "1.0.0",
+  version: "2.0.0",
   redattori: ("Malik Giafar Mohamed","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
   verifica: ("Ion Cainareanu","Maria Fuensanta Trigueros Hernandez","Stefano Baso",),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
   versionamento: (
-    "2.0.0", "14/05/2025", "Malik Giafar Mohamed", "versione finale", "",
+    "2.0.0", "14/05/2025", "Malik Giafar Mohamed", "Versione finale", "Maria Fuensanta Trigueros Hernandez",
     "1.1.0", "13/05/2025","Marco Perazzolo", "Aggiunta di nuovi termini al glossario in seguito all'aggiornamento dei documenti", "Malik Giafar Mohamed",
     "1.0.1", "24/04/2025","Maria Fuensanta Trigueros Hernandez", "Aggiornamento e aggiunta di nuovi termini al glossario", "Marco Perazzolo" ,
     "1.0.0", "08/03/2025", "Marco Perazzolo", "Aggiornamento e aggiunta di nuovi termini al glossario", "Stefano Baso" ,
@@ -390,7 +390,7 @@ Foglio di calcolo online usato per metriche, budget e reporting.
 == IDE
 Ambiente integrato che fornisce editor, debugger e tooling per lo sviluppo (es. VS Code, IntelliJ).
 
-== Immagine docker(Docker Image)
+== Immagine docker (Docker Image)
 Snapshot immutabile che include codice, runtime e dipendenze necessarie ad avviare un container.
 
 == Intelligenza Artificiale / Artificial Intelligence / AI
