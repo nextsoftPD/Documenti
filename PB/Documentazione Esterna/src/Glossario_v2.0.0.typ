@@ -153,7 +153,7 @@
   version: "2.0.0",
   redattori: ("Malik Giafar Mohamed","Marco Perazzolo","Maria Fuensanta Trigueros Hernandez",),
   verifica: ("Ion Cainareanu","Maria Fuensanta Trigueros Hernandez","Stefano Baso",),
-  approvazione: ("Luca Parise",),
+  approvazione: ("Luca Parise","Marco Perazzolo"),
   uso: "Esterno",
   versionamento: (
     "2.0.0", "14/05/2025", "Malik Giafar Mohamed", "Versione finale", "Maria Fuensanta Trigueros Hernandez",
