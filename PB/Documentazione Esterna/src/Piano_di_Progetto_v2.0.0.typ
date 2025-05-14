@@ -43,16 +43,16 @@
 
 == Scopo del documento
 
-Questo documento descrive la pianificazione dello sviluppo del plugin Requirement Tracker per Visual Studio Code. Ha lo scopo di fornire un quadro chiaro per comprendere come verrà realizzato il progetto, comprese le strategie, i rischi e le risorse necessarie per l'implementazione. 
+Questo documento descrive la _pianificazione_#super[G] dello sviluppo del _plugin_#super[G] Requirement Tracker per _Visual Studio Code_#super[G]. Ha lo scopo di fornire un quadro chiaro per comprendere come verrà realizzato il progetto, comprese le strategie, i _rischi_#super[G] e le risorse necessarie per l'implementazione. 
 
 Il documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
 
 == Scopo del prodotto
 Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
-è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
+è progettato per automatizzare il _tracciamento dei requisiti_#super("G") nei progetti software complessi,
 con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
-e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
-riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
+e la chiarezza dei _requisiti_#super[G], fornendo suggerimenti basati sull'analisi di un'_intelligenza artificiale_#super[G],
+riducendo al contempo i tempi e gli errori legati alla _verifica_#super[G] manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
 
@@ -62,11 +62,11 @@ Il contenuto del documento è organizzato nelle seguenti sezioni:
 
 - *Rischi Attesi e Mitigazione:* identificazione e valutazione dei possibili problemi che possono insorgere durante lo sviluppo, insieme alle strategie applicate per ridurre o eliminare il loro impatto.
 
-- *Modello di sviluppo:* descrizione delle modello di sviluppo adottato per il progetto, con dettagli sulle fasi e le attività previste.
+- *Modello di sviluppo:* descrizione del _modello di sviluppo_#super[G] adottato per il progetto, con dettagli sulle fasi e le attività previste.
 
 - *Pianificazione:* dettagli sulle fasi, le risorse e i tempi necessari per la realizzazione del progetto.
 
-- *Preventivo:*  dettagli sui costi stimati per ogni fase del progetto, evidenziando risorse e allocazioni di budget.
+- *_Preventivo_#super[G]:*  dettagli sui costi stimati per ogni fase del progetto, evidenziando risorse e allocazioni di _budget_#super[G].
 
 - *_Consuntivo di periodo_#super[G]:* dettagli sulle variazioni di pianificazione e costi rispetto alle stime iniziali, citando il vebrale che conterrà la retrospettiva del periodo produttivo. Verranno inoltre riportati i rischi occorsi durante ogni _sprint_#super[G].
 === Aggiornamento a seguito della revisione RTB
@@ -200,17 +200,17 @@ Dove:
     [Durante la fase di implementazione del prodotto software si potrebbe scoprire che una determinata tecnologia non è più supportata o non è più in grado di soddisfare le esigenze del progetto.],
     [Il gruppo dovrà valutare se sia possibile continuare a utilizzare la tecnologia esistente o se sia necessario passare a una nuova tecnologia. Nell'ultimo caso, sarà necessario condurre al più presto un'analisi sulla nuova tecnologia e verificare se possa soddisfare le esigenze implementative o del progetto, per evitare di rifare lo stesso errore.],
     [RT_005],
-    [*Mancato superamento dei test*],
+    [*Mancato superamento dei _test_#super[G]*],
     [Alcuni test di potrebbero non essere superati, oppure potrebbero avere una percentuale di superamento non soddisfacente, richiedendo modifiche al codice sorgente.],
     [I programmatori e i verificatori del gruppo si impegneranno nella correzione dei problemi che impediscono il superamento dei test. In alternativa, si valuterà se il test possa essere considerato superato anche se con una soglia non soddisfacente.],
     [RT_006],
     [*Test non adeguato al prodotto software*],
-    [Al seguito di modifiche al codice sorgente o all'architettura del prodotto, si potrebbe scoprire che un determinato test è diventato inadeguato per l'MVP.],
+    [Al seguito di modifiche al codice sorgente o all'architettura del prodotto, si potrebbe scoprire che un determinato test è diventato inadeguato per l'_MVP_#super[G].],
     [I programmatori e i verificatori del gruppo si impegneranno nella ridefinizione di un test più adeguato al prodotto software.],
     [RT_007],
     [*Modifiche architetturali necessarie*],
     [Al seguito di una verifica durante l'implementazione, si potrebbe scoprire che l'architettura necessiti di modifiche al fine di essere funzionante],
-    [I programmatori, i verificatori e i progettisti del gruppo si impegneranno a modificare l'architettura del prodotto software in modo da renderla funzionante.],
+    [I programmatori, i verificatori e i _progettisti_#super[G] del gruppo si impegneranno a modificare l'architettura del prodotto software in modo da renderla funzionante.],
   ),
   caption: [Rischi tecnologici]
 )
@@ -245,8 +245,8 @@ Dove:
     [Il gruppo di progetto potrebbe interpretare diversamente alcune sezioni del capitolato rispetto alle intenzioni originali del proponente.],
     [Mantenere una comunicazione costante con il proponente per condividere e validare le scelte progettuali prima della loro implementazione.],
     [RC_005],
-    [*Mancata validazione da parte del proponente*],
-    [Il proponente potrebbe non fornire un feedback tempestivo o dettagliato durante le revisioni, causando ritardi nella correzione e nella finalizzazione della documentazione e del prodotto.],
+    [*Mancata _validazione_#super[G] da parte del proponente*],
+    [Il proponente potrebbe non fornire un _feedback_#super[G] tempestivo o dettagliato durante le revisioni, causando ritardi nella correzione e nella finalizzazione della documentazione e del prodotto.],
     [L'intero gruppo dovrà accordare dei nuovi cambiamenti da attuare al prodotto software e adattare la documentazione di conseguenza. Inevitabilmente, il gruppo dovrà rivedere le tempistiche di consegna per garantire il rispetto delle aspettative del proponente.],
   ),
   caption: [Rischi riguardanti il capitolato]
@@ -342,7 +342,7 @@ Per questo progetto è stato adottato il modello Agile, che consente lo sviluppo
 
 Un aspetto importante del modello agile è il backlog. Esso costituisce un elenco di attività, requisiti e funzionalità da sviluppare all'interno del progetto. Rappresenta la lista di cose da fare ed è costantemente aggiornato e riorganizzato in base alle priorità del progetto.
 
-Il backlog viene gestito attraverso _GitHub Projects_#super[G], utilizzando le _issue_#super[G] per tracciare le attività da svolgere. Ogni elemento del backlog può includere nuove aggiunte, bug da risolvere o miglioramenti dalle verifiche fatte. Viene quindi creata una issue con descrizione chiara e presa in carico da un membro del gruppo. Durante lo sprint planning, le issues più prioritarie vengono decise e suddivise, vengono inoltre chiariti punti ambigui e programmate le attività di quel periodo.
+Il backlog viene gestito attraverso _GitHub Projects_#super[G], utilizzando le _issue_#super[G] per tracciare le attività da svolgere. Ogni elemento del backlog può includere nuove aggiunte, _bug_#super[G] da risolvere o miglioramenti dalle verifiche fatte. Viene quindi creata una issue con descrizione chiara e presa in carico da un membro del gruppo. Durante lo sprint planning, le issues più prioritarie vengono decise e suddivise, vengono inoltre chiariti punti ambigui e programmate le attività di quel periodo.
 
 === Retrospettiva
 
@@ -369,7 +369,7 @@ L'obiettivo è l'acquisizione delle conoscenze utili per lo svolgimento _milesto
 
 === Attività
 
-Il completamento di questo sprint prevede la preparazione della _repository_#super[G] per la documentazione della milestone RTB e l'acquisizione della conoscenza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i parametri, risultati e chiamate API per prendere familiarità con queste tecnologie.
+Il completamento di questo sprint prevede la preparazione della _repository_#super[G] per la documentazione della milestone RTB e l'acquisizione della conoscenza da parte del gruppo delle tecnologie da usare. Quindi verranno fatti dei test in locale di varie tecnologie concordate con il proponente e di vari LLM, testandone i _parametri_#super[G], risultati e chiamate _API_#super[G] per prendere familiarità con queste tecnologie.
 
 == Sprint 2 - Analisi e documentazione
 
@@ -381,13 +381,13 @@ In questo sprint ci si focalizzerà sulla documentazione. Poiché il gruppo avr�
 
 L'obiettivo di questa fase è appunto l'inizio dello sviluppo dei documenti riguardanti la milestone RTB, definendone inizialmente la struttura e le sezioni principali. I documenti sono:
 
-- *Analisi dei Requisiti*: compilato dagli Analisti, contiene i casi d'uso analizzati e i requisiti del prodotto
+- *Analisi dei Requisiti*: compilato dagli Analisti, contiene i _casi d'uso_#super[G] analizzati e i requisiti del prodotto
 
 - *Piano di Progetto*: compilato dal Responsabile e dagli Amministratori, contiene la divisione delle risorse, il piano di preventivo e consuntivo e la pianificazione dei periodi
 
-- *Piano di Qualifica*: compilato dagli Amministratori e Progettisti, contiene i modelli, indici e metriche scelte per raggiungere gli obiettivi di economicità
+- *_Piano di Qualifica_#super[G]*: compilato dagli Amministratori e Progettisti, contiene i modelli, indici e metriche scelte per raggiungere gli obiettivi di _economicità_#super[G].
 
-- *Norme di Progetto*: compilato dagli Amministratori, contiene le principali decisioni riguardanti il way of working
+- *Norme di Progetto*: compilato dagli Amministratori, contiene le principali decisioni riguardanti il _way of working_#super[G].
 
 - *Glossario*: il suo contenuto viene aggiornato in parallelo con il resto dei documenti, contiene una definizione chiara di tutti i termini tecnici ambigui presenti nei documenti
 
@@ -396,7 +396,7 @@ L'obiettivo di questa fase è appunto l'inizio dello sviluppo dei documenti rigu
 L'attività assegnata al secondo sprint consiste principalmente nella redazione della documentazione. Per ciascun documento viene definita una struttura iniziale, suddividendo il lavoro e assegnando le sezioni rimanenti ai rispettivi ruoli di competenza. Trattandosi di una prima stesura, i documenti verranno migliorati e integrati nei successivi sprint.
 
 
-== Sprint 3 - Knowledge Baseline
+== Sprint 3 - _Knowledge_#super[G] _Baseline_#super[G]
 
 *Periodo*: 16/12/2024 - 03/01/2024
 
@@ -424,7 +424,7 @@ Questo sprint prevede la progettazione e lo sviluppo di una bozza del PoC, il qu
 
 === Obiettivo
 
-L'obiettivo è avere una grafica del plug-in funzionante integrata con le chiamate di Ollama in grado di soddisfare le prime richieste di test su dei requisiti d'esempio.
+L'obiettivo è avere una grafica del plug-in funzionante integrata con le chiamate di _Ollama_#super[G] in grado di soddisfare le prime richieste di test su dei requisiti d'esempio.
 
 === Attività
 
@@ -462,7 +462,7 @@ L'obiettivo è assicurare che il prodotto e la documentazione siano pronti per i
 === Attività
 Le attività da svolgere sono:
 
-- Ultimare il PoC, correggendo eventuali bug e migliorando l'usabilità
+- Ultimare il PoC, correggendo eventuali bug e migliorando l'_usabilità_#super[G]
 - Verificare l'ultima versione di tutta la documentazione integrata delle novità dallo sprint precedente
 - Fissare un incontro con l'azienda
 
@@ -470,7 +470,7 @@ Le attività da svolgere sono:
 
 *Periodo*: 22/03/2025 - 05/04/2025
 
-Questo sprint è dedicato alla stesura della documentazione per la Product Baseline.
+Questo sprint è dedicato alla stesura della documentazione per la _Product Baseline_#super[G].
 
 ==== Obiettivo
 
@@ -496,7 +496,7 @@ I rischi attesi durante questo sprint sono legati alla stesura della documentazi
 
 *Periodo*: 06/04/2025 - 20/04/2025
 
-Questo sprint si concentra sulla codifica e testing del Minimum Viable Product (MVP).
+Questo sprint si concentra sulla _codifica_#super[G] e testing del Minimum Viable Product (MVP).
 
 ==== Obiettivo
 
@@ -516,7 +516,7 @@ I rischi attesi durante questo sprint sono legati alla codifica e al testing del
 
 - *RT_004 - Cambio di tecnologie*: Potrebbe emergere la necessità di modificare le tecnologie utilizzate, per esempio a seguito di scelte tecnologiche errate per l'implementazione dei test.
 
-- *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività _refactoring_#super[G] o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di programmatore con un conseguente aumento dei costi rispetto al preventivo iniziale. 
+- *RF_002* - *Aumento dei costi imprevisti*: L'attività di programmazione, sia per la stesura dei test che per quella dell'MVP, potrebbe dilungarsi troppo a causa di molteplici attività _refactoring_#super[G] o di perfezionamento del codice, portando all'utilizzo intensivo del ruolo di _programmatore_#super[G] con un conseguente aumento dei costi rispetto al preventivo iniziale. 
 
 - *RT_005 - Mancato superamento dei test*: Indubbiamente alcuni test potrebbero non essere superati, in questo caso la mitigazione sar un semplice miglioramento dei moduli che non superano i test.  
 === Sprint 9 - Baseline Documentazione
@@ -593,7 +593,7 @@ table(
   [*Ruolo*], [*Costo Unitario (€)*], [*Ore totali per ruolo*],
   [*Responsabile*], [30 €/ora],[52],
   [*Amministratore*], [20 €/ora],[60], 
-  [*Analista*], [25 €/ora], [72], 
+  [*_Analista_#super[G]*], [25 €/ora], [72], 
   [*Progettista*], [25 €/ora],[108], 
   [*Programmatore*], [15 €/ora], [135],
   [*Verificatore*], [15 €/ora], [113]
@@ -601,7 +601,7 @@ table(
   caption: "Ruoli e Distribuzione delle Ore"
 )
 
-Come gruppo abbiamo deciso di mirare al completamento delle ore designate per il progetto senza dividerle equamente, al fine di garantire una distribuzione del lavoro e un'efficienza ottimale relative alle disponibilità temporali di ciascun membro del gruppo. Questa decisione è dovuta al fatto di essere un gruppo ad intensità media, e anche per venire incontro alle esigenze personali e lavorative di ciascun membro del gruppo.
+Come gruppo abbiamo deciso di mirare al completamento delle ore designate per il progetto senza dividerle equamente, al fine di garantire una distribuzione del lavoro e un'_efficienza_#super[G] ottimale relative alle disponibilità temporali di ciascun membro del gruppo. Questa decisione è dovuta al fatto di essere un gruppo ad intensità media, e anche per venire incontro alle esigenze personali e lavorative di ciascun membro del gruppo.
 
 == Prospetti Orario ed Economici
 Nella seguente sezione verrà preventivato per intero il prospetto orario ed economico di ogni sprint pianificato.
@@ -965,7 +965,7 @@ In ogni sprint verrà elencato il periodo di svolgimento, gli obiettivi e le att
 )
 
 ==== Rischi Occorsi
-- *RC_001*: L'AdR non è stata ultimata a causa di ambiguità nei requisiti. Mentre per il PoC erano sorti dubbi riguardanti il formato CSV per l'importazione dei dati e l'interfaccia grafica.
+- *RC_001*: L'AdR non è stata ultimata a causa di ambiguità nei requisiti. Mentre per il PoC erano sorti dubbi riguardanti il formato _CSV_#super[G] per l'importazione dei dati e l'interfaccia grafica.
 === Sprint 5 - Baseline Documentazione
 *Periodo*: 07/02/2025 - 20/02/2025
 ==== Rendicontazione oraria
@@ -1192,7 +1192,7 @@ Gli obiettivi principali dello sprint sono stati comunque raggiunti, e non è ne
 === Rischi Occorsi
 Durante lo sprint si è verificato il rischio *RI_004* a causa di alcuni contrasti tra membri del gruppo per il completamento e la suddivisione delle attività. La mitigazione prevista per tale rischio ha funzionato senza la necessità di contattare il committente.
 
-L'implementazione del codice è stata portata avanti in modo costante, riuscendo a terminare il codice e i test di unità e annullando di conseguenza la presenza del rischio *RI_006* causata dagli sprint precedenti.
+L'implementazione del codice è stata portata avanti in modo costante, riuscendo a terminare il codice e i _test di unità_#super[G] e annullando di conseguenza la presenza del rischio *RI_006* causata dagli sprint precedenti.
 
 Si sono verificati i rischi *RI_008* e *RI_005* rispettivamente per la documentazione e per la stesura di test di integrazione, in quanto le seguenti task non sono state completate.
 

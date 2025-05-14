@@ -42,7 +42,7 @@
 #pagebreak()
 = Scopo del documento
 
-Il _Piano di Qualifica_#super("G") è un documento finalizzato principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
+Il _Piano di Qualifica_#super("G") è un documento finalizzato principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai _requisiti_#super[G] e alle aspettative del _proponente_#super[G], con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
 
 Il presente documento si propone di:
 
@@ -51,11 +51,11 @@ Il presente documento si propone di:
 - Descrivere l'applicazione dei test e documentarne i risultati, valutando la conformità rispetto alle attese e alle metriche definite.
 
 == Scopo del prodotto
-Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
-è progettato per automatizzare il tracciamento dei _requisiti_#super("G") nei progetti software complessi,
+Il prodotto, un plug-in per _Visual Studio Code_#super[G] chiamato "Requirement Tracker",
+è progettato per automatizzare il _tracciamento_#super[G] dei _requisiti_#super("G") nei progetti software complessi,
 con un focus particolare sull'ambito embedded. L'obiettivo principale è migliorare la qualità
-e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'intelligenza artificiale,
-riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
+e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'_intelligenza artificiale_#super[G],
+riducendo al contempo i tempi e gli errori legati alla _verifica_#super[G] manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
 
@@ -79,7 +79,7 @@ Materiale didattico del corso
 - Indice di Gulpease
   - https://www.ilc.cnr.it/dylanlab/apps/texttools/ #h(1fr)#text(size: 8pt)[ultimo accesso: 13/05/2025 11:30]
 
-= Qualità di processo
+= _Qualità di processo_#super[G]
 
 == Scopo ed obiettivi
 
@@ -95,22 +95,22 @@ In questa fase del processo vengono analizzate tutte le scelte effettuate durant
 
 Di seguito sono descritte le principali metriche e calcoli associati che verranno riportati nella tabella sottostante mettendo in relazione il valore plausibile e il valore ottimale:
 
-- BAC (Budget At Completion): Costo totale preventivato per il completamento del progetto.
+- BAC (_Budget_#super[G] At Completion): Costo totale preventivato per il completamento del progetto.
 $ "BAC" = sum "costi previsti" $
 
-- EAC (Estimated At Completion): Revisione del valore economico stimato per la realizzazione del progetto.
+- _EAC_#super[G] (Estimated At Completion): Revisione del valore economico stimato per la realizzazione del progetto.
 $ "EAC" = "BAC"/"CPI" $
 
 - CPI (Cost Performance Index): Indice di prestazione dei costi, misura l'#text(style: "italic")[efficienza]#super("G") con cui il _budget_#super("G") viene utilizzato. Un valore > 1 indica che il progetto sta spendendo meno del previsto, mentre un valore < 1 indica che sta spendendo di più del previsto.
 $ "CPI" = "EV"/"AC" $
 
-- ETC (Estimated To Completion): Stima del costo finale aggiornato alla data di misurazione.
+- _ETC_#super[G] (Estimated To Completion): Stima del costo finale aggiornato alla data di misurazione.
 $ "ETC" = "EAC" - "AC" $
 
-- EV (Earned Value): Guadagno ottenuto fino al momento attuale.
+- _EV_#super[G] (Earned Value): Guadagno ottenuto fino al momento attuale.
 $ "EV" = ("% lavoro svolto" / 100) * "EAC" $
 
-- PV (Planned Value): Costo pianificato fino al momento attuale.
+- _PV_#super[G] (Planned Value): Costo pianificato fino al momento attuale.
 $ "PV" = ("% lavoro pianificato" / 100) * "BAC" $
 
 - AC (Actual Cost): Budget effettivamente speso fino al momento attuale.
@@ -119,7 +119,7 @@ $ "AC" = sum "costi effettivi" $
 - CV (Cost Variance): Differenza tra il valore ottenuto (EV) e il costo effettivo (AC).
 $ "CV" = "EV" - "AC" $
 
-- SV (Schedule Variance): Differenza tra il valore ottenuto (EV) e quello pianificato (PV). Un valore negativo indica un ritardo rispetto alla pianificazione.
+- _SV_#super[G] (Schedule Variance): Differenza tra il valore ottenuto (EV) e quello pianificato (PV). Un valore negativo indica un ritardo rispetto alla pianificazione.
 $ "SV" = "EV" - "PV" $
 
 - BV (Budget Variance): Differenza rispetto al budget preventivato.
@@ -158,7 +158,7 @@ Indice per la media del numero di metodi presenti in ogni _package_#super("G"), 
   caption: [Metriche di progettazione di dettaglio],
 )
 
-==== Codifica
+==== _Codifica_#super[G]
 
 - *BLC* (Bugs for Line of Code) = indice per il numero di righe di codice che possono contenere #text(style: "italic")[bug]#super[G] o errori.
 
@@ -176,7 +176,7 @@ Indice per la media del numero di metodi presenti in ogni _package_#super("G"), 
 
 ==== Copertura dei test
 
-Percentuale di elementi del sistema come funzionalità o casi d'uso verificati tramite test automatici o manuali. Valutare la qualità della fase di validazione e per identificare eventuali aree del prodotto non ancora testate.
+Percentuale di elementi del sistema come funzionalità o casi d'uso verificati tramite test automatici o manuali. Valutare la qualità della fase di _validazione_#super[G] e per identificare eventuali aree del prodotto non ancora testate.
 
 #figure(
   table(
@@ -199,7 +199,7 @@ Monitora il numero e l'entità delle modifiche apportate ai requisiti nel corso 
 
 ==== Percentuale di attività completate nei tempi previsti
 
-Rappresenta il rapporto tra il numero di attività concluse entro le scadenze pianificate e il totale delle attività previste. indica l'efficienza organizzativa e la capacità del team di rispettare i tempi definiti nella fase di pianificazione.
+Rappresenta il rapporto tra il numero di _attività_#super[G] concluse entro le scadenze pianificate e il totale delle attività previste. indica l'efficienza organizzativa e la capacità del _team_#super[G] di rispettare i tempi definiti nella fase di pianificazione.
 
 #figure(
   table(
@@ -303,7 +303,7 @@ La manutenibilità del software è la facilità con cui può essere modificato, 
 )
 
 === Metriche
-- *Complessità ciclomatica*: misura la complessità strutturale di un programma basandosi sul grafo di controllo del flusso del codice. In particolare, rappresenta il numero di cammini _linearmente indipendenti_#super("G") attraverso il codice sorgente. Viene calcolata con la seguente formula:
+- *Complessità ciclomatica*: misura la complessità strutturale di un programma basandosi sul grafo di controllo del flusso del codice. In particolare, rappresenta il numero di _cammini linearmente indipendenti_#super("G") attraverso il codice sorgente. Viene calcolata con la seguente formula:
 
 $ V(G) = E - N +2P $
 
@@ -312,7 +312,7 @@ in cui:
 - N è il numero di nodi (blocchi di codice o decision points),
 - P è il numero di componenti connesse (tipicamente P = 1 per un singolo metodo o funzione)
 \
-- *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una #text(style: "italic")[gerarchia]#super[G] di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il rischio di propagazione degli errori. Per un _design_#super("G") più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
+- *Profondità della gerarchia*: indica il numero massimo di livelli di ereditarietà in una #text(style: "italic")[gerarchia]#super[G] di classi. Una gerarchia più profonda può favorire il riuso del codice ma aumenta la complessità e il _rischio_#super[G] di propagazione degli errori. Per un _design_#super("G") più manutenibile, è preferibile mantenere la profondità entro limiti ragionevoli (3-4 livelli), favorendo la composizione rispetto a una struttura gerarchica troppo profonda.
 
 - *Parametri per metodo*: indica il numero di parametri per metodo. Un indice basso rappresenta un numero basso di parametri richiesti dal metodo, di conseguenza risulta di più facile comprensione e utilizzo.
 
@@ -369,7 +369,7 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
     [MPDS07], [Code Coverage], [CC >= 75%], [100%],
-    [MPDS08], [Presenza di vulnerabilità], [VLN <= 2], [0],
+    [MPDS08], [Presenza di vulnerabilità], [_VLN_#super[G] <= 2], [0],
     [MPDS09], [Presenza di bug], [BUG <= 20%], [BUG <= 5%],
     [MPDS10], [Branch Coverage], [BC >= 75%], [100%],
     [MPDS11], [Successo dei test], [>= 75%], [100%],
@@ -394,7 +394,7 @@ La funzionalità è la capacità di fornire funzioni / azioni per ogni esigenza 
 
 -  *Requirement coverage*: indice della copertura dei requisiti descritti nell'_Analisi dei Requisiti_#super("G"). Viene calcolato con il rapporto percentuale tra numero di requisiti rispettati e numero di requisiti totali, con la formula:
 
-$ "RC" = (R#sub[RISP])/(R#sub[TOT]) 100 $
+$ "RC"#super[G] = (R#sub[RISP])/(R#sub[TOT]) 100 $
 
 - *Requisiti obbligatori soddisfatti*: indice della copertura dei _requisiti obbligatori_#super("G") descritti nell'Analisi dei Requisiti. Viene calcolato con il rapporto percentuale tra numero di requisiti rispettati e numero di requisiti totali, con la formula:
 
@@ -443,27 +443,27 @@ Questo modello prevede una stretta corrispondenza tra sviluppo e testing, assicu
 
 === Organizzazione dei test:
 I test nel progetto sono suddivisi in due cartelle all'interno della principale `test`:
-- `test/unit`: contiene i test di unità, incentrati sulla verifica dei singoli componenti (modelli, adattatori e servizi) del sistema.
+- `test/unit`: contiene i _test di unità_#super[G], incentrati sulla verifica dei singoli componenti (modelli, adattatori e servizi) del sistema.
 - `test/integration`: contiene i test di integrazione, che verificano l'interazione tra diversi componenti o tra l'applicazione e servizi esterni.
 
 === Strumenti Utilizzati e Integrazione di Jest:
 
-- *`Jest`*: È il framework di testing JavaScript principale utilizzato nel progetto. Jest fornisce:
+- *`_Jest_`*#super[G]: È il framework di testing _JavaScript_#super[G] principale utilizzato nel progetto. Jest fornisce:
  - Un ambiente di esecuzione per i test.
  - Funzioni globali come `describe()` per raggruppare i test in suite, e `it()` o `test()` per definire i singoli casi di test.
  - Un potente sistema di asserzioni tramite la funzione `expect()` combinata con vari matchers (es. `toBe()`, `toBeDefined()`, `toContain()`, `toHaveBeenCalledWith()`).
  - Funzionalità di mocking avanzate, tra cui `jest.mock()` per mockare interi moduli (come `axios`) e `jest.fn()` per creare funzioni mock flessibili che possono tracciare chiamate, definire valori di ritorno e implementazioni simulate.
  - Gestione di test asincroni tramite `async/await`.
 
-- *`@nestjs/testing`*: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
+- *`@nestjs/testing`*: questa _libreria_#super[G] di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
 
-- *`supertest`*: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
+- *`supertest`*: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli _endpoint_#super[G] _API_#super[G].
 
 - *`axios` (mockato)*: nei test di integrazione per componenti che interagiscono con API esterne (come `OllamaApiAdapter`), `axios` viene mockato per controllare le risposte delle API e testare il comportamento dell'adapter in diverse condizioni senza effettuare chiamate di rete reali.
 
 === Test di Unità
 
-I _test di unità_#super("G") valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. I test di unità svolti sono stati i seguenti:
+I test di unità valutano il corretto funzionamento delle singole unità di codice all'interno del software. Un'unità di codice è una funzione, una classe o qualsiasi componente che svolge un'attività specifica in modo indipendente rispetto al resto del sistema. I test di unità svolti sono stati i seguenti:
 
 #figure(
   table(
@@ -596,8 +596,8 @@ I _test di unità_#super("G") valutano il corretto funzionamento delle singole u
     [TU-125],[`RequirementsApiService` deve chiamare l'API con i parametri corretti e restituire l'embedding],[Superato],
     [TU-126],[`RequirementsApiService` deve gestire errori API con risposta 500],[Superato],
     [TU-127],[`RequirementsApiService` deve gestire errori API con risposta 400],[Superato],
-    [TU-128],[`RequirementsApiService` deve gestire errori di timeout],[Superato],
-    [TU-129],[`RequirementsApiService` deve gestire errori di server non disponibile],[Superato],
+    [TU-128],[`RequirementsApiService` deve gestire errori di _timeout_#super[G]],[Superato],
+    [TU-129],[`RequirementsApiService` deve gestire errori di _server_#super[G] non disponibile],[Superato],
     [TU-130],[`RequirementsApiService` deve gestire errori di rete senza risposta],[Superato],
     [TU-131],[`RequirementsApiService` deve gestire errori generici],[Superato],
     [TU-132],[`RequirementsApiService` deve chiamare l'API con i parametri corretti e restituire il risultato dell'analisi],[Superato],
@@ -664,7 +664,7 @@ I _test di unità_#super("G") valutano il corretto funzionamento delle singole u
     [TU-193],[`CsvService` deve formattare correttamente i dati di tracciabilità],[Superato],
     [TU-194],[`CsvService` deve mostrare un messaggio di errore se non ci sono requisiti da esportare],[Superato],
     [TU-195],[`CsvService` non deve fare nulla se l'utente annulla la finestra di salvataggio],[Superato],
-    [TU-196],[`CsvService` deve esportare i requisiti su file CSV],[Superato],
+    [TU-196],[`CsvService` deve esportare i requisiti su file _CSV_#super[G]],[Superato],
     [TU-197],[`CsvService` deve gestire errori di scrittura file],[Superato],
     [TU-198],[`CsvService` deve lanciare errore per dati CSV vuoti],[Superato],
     [TU-199],[`CsvService` deve lanciare errore per intestazioni richieste mancanti],[Superato],
@@ -679,7 +679,7 @@ I _test di unità_#super("G") valutano il corretto funzionamento delle singole u
     [TU-208],[`CsvService` deve gestire errori di lettura file],[Superato],
     [TU-209],[`CsvService` deve gestire errori di parsing CSV],[Superato],
     [TU-210],[`AppModule` deve importare `RequirementAnalysisModule`],[Superato],
-    [TU-211],[L'entità `Main` del backend deve ascoltare sulla porta predefinita quando la variabile `PORT` non è impostata],[Superato],
+    [TU-211],[L'entità `Main` del _backend_#super[G] deve ascoltare sulla porta predefinita quando la variabile `PORT` non è impostata],[Superato],
     [TU-212],[`RequirementAnalysisModule` deve compilare il modulo],[Superato],
     [TU-213],[`RequirementAnalysisController.analyzeRequirement` deve invocare il metodo di `RequirementAnalysisUseCase` e restituire la risposta di analisi],[Superato],
     [TU-214],[`RequirementAnalysisController.getEmbedding` deve invocare il metodo di `RequirementAnalysisUseCase` e restituire la risposta di embedding],[Superato],
@@ -694,7 +694,7 @@ I _test di unità_#super("G") valutano il corretto funzionamento delle singole u
     [TU-223],[`ExternalServiceError` deve essere creato con un messaggio personalizzato],[Superato],
     [TU-224],[`PromptTemplates.requirementContext` deve contenere le istruzioni di valutazione richieste],[Superato],
     [TU-225],[`PromptTemplates.codeContext` deve contenere i criteri di valutazione richiesti],[Superato],
-    [TU-226],[`PromptTemplates.codePromptTemplate` deve generare un prompt corretto con requisito e codice],[Superato],
+    [TU-226],[`PromptTemplates.codePromptTemplate` deve generare un _prompt_#super[G] corretto con requisito e codice],[Superato],
     [TU-227],[`OllamaModels.OllamaRequestModel` deve creare un modello di richiesta valido],[Superato],
     [TU-228],[`OllamaModels.RequirementAnalysisModel` deve gestire un risultato di analisi valido],[Superato],
     [TU-229],[`OllamaModels.RequirementAnalysisModel` deve gestire un errore di parsing],[Superato],
@@ -705,7 +705,7 @@ I _test di unità_#super("G") valutano il corretto funzionamento delle singole u
     [TU-234],[`OllamaModels.OllamaEmbeddingResponse` deve gestire una risposta di embedding valida],[Superato],
     [TU-235],[`ConfigModels.OllamaConfig` deve creare un oggetto `OllamaConfig` valido],[Superato],
     [TU-236],[`ConfigModels.AppConfig` deve creare un oggetto `AppConfig` valido con `OllamaConfig`],[Superato],
-    [TU-237],[`OllamaApiAdapter.sendMessageToOllama` deve inviare un messaggio a Ollama e restituire la risposta],[Superato],
+    [TU-237],[`OllamaApiAdapter.sendMessageToOllama` deve inviare un messaggio a _Ollama_#super[G] e restituire la risposta],[Superato],
     [TU-238],[`OllamaApiAdapter.getEmbedding` deve ottenere l'embedding e restituire un array di numeri],[Superato],
     [TU-239],[`OllamaApiAdapter.getEmbedding` deve generare un errore ExternalServiceError quando la chiamata API fallisce],[Superato],
     [TU-240],[`OllamaApiAdapter.sendMessageToOllama` deve gestire errori non axios],[Superato],
@@ -733,7 +733,7 @@ I test di integrazione individuati sono i seguenti:
     columns: 3,
     table.header[*Codice*][*Descrizione*][*Esito*],
     [TI-001],[VS Code deve essere attualmente in esecuzione],[Superato],
-    [TI-002],[Il frontend deve essere in grado di accedere alle configurazioni],[Superato],
+    [TI-002],[Il _frontend_#super[G] deve essere in grado di accedere alle configurazioni],[Superato],
     [TI-003],[Il frontend deve essere in grado di eseguire comandi inviati dall'utente],[Superato],
     [TI-004],[Il frontend deve registrare ed eseguire il comando di analisi di tutti i requisiti],[Superato],
     [TI-005],[Il frontend deve registrare ed eseguire il comando di filtro],[Superato],
@@ -771,7 +771,7 @@ I test di integrazione individuati sono i seguenti:
     [TI-037],[L'entità `RequirementAnalysisService` deve gestire gli errori di parsing JSON in modo appropriato],[Superato],
     [TI-038],[L'entità `RequirementAnalysisService` deve utilizzare modelli personalizzati quando forniti],[Superato],
     [TI-039],[L'entità `RequirementAnalysisService` deve integrarsi correttamente con le dipendenze per ottenere embeddings],[Superato],
-    [TI-040],[L'entità `RequirementAnalysisService` deve utilizzare un modello di embedding personalizzato quando fornito],[Superato],
+    [TI-040],[L'entità `RequirementAnalysisService` deve utilizzare un _modello di embedding_#super[G] personalizzato quando fornito],[Superato],
     [TI-041],[L'entità `OllamaApiAdapter` deve inviare correttamente un messaggio all'API di Ollama e restituire la risposta],[Superato],
     [TI-042],[L'entità `OllamaApiAdapter` deve generare ExternalServiceError quando la richiesta all'API di Ollama fallisce],[Superato],
     [TI-043],[L'entità `OllamaApiAdapter` deve ottenere correttamente embeddings dall'API di Ollama],[Superato],
@@ -792,17 +792,17 @@ I test di sistema verificano il sistema completo del prodotto software, prendend
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Requisito*][*Esito*],
-    [TS-001],[Il sistema deve inviare richieste HTTP REST ai modelli LLM e ricevere, per ogni requisito, una risposta strutturata contenente: voto in centesimi sul requisito e sul codice, lista di suggerimenti e lista di problemi.],[RFO001],[Superato],
+    [TS-001],[Il sistema deve inviare richieste HTTP REST ai modelli _LLM_#super[G] e ricevere, per ogni requisito, una risposta strutturata contenente: voto in centesimi sul requisito e sul codice, lista di suggerimenti e lista di problemi.],[RFO001],[Superato],
     [TS-002],[Il sistema deve visualizzare graficamente, per ogni requisito, i relativi risultati delle analisi (valutazione globale, punteggi 0-100 su requisito e codice, suggerimenti, problemi) integrandoli nella lista dei requisiti in tempo reale],[RFO002],[Superato],
     [TS-003],[Durante analisi o tracciamento il sistema deve mostrare una barra di progresso con percentuale globale.],[RFO003],[Superato],
     [TS-004],[Il sistema deve supportare tracciamenti composti da più porzioni di codice appartenenti a file diversi, memorizzandole e mostrandole separatamente.],[RFF004],[Superato],
     [TS-005],[L'utente deve poter configurare, nelle impostazioni, il modello di AI caricato su Ollama da usare per ciascun tipo di analisi (requisiti, codice, embedding/tracciamento).],[RFF005],[Superato],
     [TS-006],[L'interfaccia utente ed i messaggi del plug-in devono essere interamente in lingua inglese.],[RFO006],[Superato],
-    [TS-007],[Se il tempo di risposta di Ollama >20 s oppure il prompt >6000 token oppure la velocità di output < 20 token/s, il sistema deve mostrare un avviso di prestazioni ridotte.],[RFD007],[Non implementato],
+    [TS-007],[Se il tempo di risposta di Ollama >20 s oppure il prompt >6000 _token_#super[G] oppure la velocità di output < 20 token/s, il sistema deve mostrare un avviso di prestazioni ridotte.],[RFD007],[Non implementato],
     [TS-008],[Il sistema deve consentire l'importazione dei requisiti da file CSV.],[RFO008],[Superato],
     [TS-009],[Se il CSV selezionato non rispetta lo schema previsto, il sistema deve annullare l'importazione e mostrare un messaggio di errore.],[RFO009],[Superato],
     [TS-010],[Durante l'importazione il sistema deve validare il CSV verificando la presenza delle colonne obbligatorie (ID, description) e la coerenza dei tipi per ogni riga.],[RFO010],[Superato],
-    [TS-011],[Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_],[RFO011],[Superato],
+    [TS-011],[Il sistema deve essere in grado di caricare il file dei requisiti in formato CSV dal _filesystem_#super[G]],[RFO011],[Superato],
     [TS-012],[In caso di importazione fallita il sistema deve notificare l'errore e permettere all'utente di selezionare un nuovo file.],[RFO012],[Superato],
     [TS-013],[Il sistema deve mostrare i requisiti in una vista ad albero con, per ciascun requisito, sottosezioni per descrizione, tracciamento e risultati.],[RFO013],[Superato],
     [TS-014],[Per ogni requisito presente nella lista dev'essere presente un'icona predisposta ad avviare l'analisi del singolo requisito selezionato.],[RFO014],[Superato],
@@ -855,7 +855,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
     [Superato],[Capitolato],
 
     [TA-002],
-    [Il server in ascolto delle richieste deve essere installabile e avviabile tramite un'immagine docker o manualmente],
+    [Il server in ascolto delle richieste deve essere installabile e avviabile tramite un'_immagine docker_#super[G] o manualmente],
     [Superato],[Proponente],
 
     [TA-003],
@@ -920,14 +920,10 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-018],
     [Il sistema deve essere in grado di essere disinstallato correttamente],
-    [Superato],[Propomente],
+    [Superato],[Proponente],
   ),
   caption: [Lista di test di accettazione],
 )
-
-=== Sviluppo
-
-Le specifiche riguardanti i test descritti verranno definite nelle successive versioni del Piano di Qualifica
 
 = Resoconto delle attività di verifica
 

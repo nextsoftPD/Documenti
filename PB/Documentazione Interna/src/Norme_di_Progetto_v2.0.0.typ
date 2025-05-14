@@ -94,7 +94,7 @@ Secondo lo standard ISO/IEC 12207:1995, il processo di fornitura comprende le at
 Il processo può essere avviato dalla decisione di preparare una proposta che risponda a una richiesta formale da parte dell'acquirente,
 nel nostro caso quindi l'avvio di tale processo è attribuito all'aggiudicazione dell'appalto dell'azienda proponente da parte del gruppo.
 
-Il processo prosegue con la determinazione delle procedure e delle risorse necessarie per gestire e far avanzare il progetto, inclusa la pianificazione e l'esecuzione dei piani, fino alla consegna del sistema, del prodotto software o del servizio software all'acquirente.
+Il processo prosegue con la determinazione delle procedure e delle risorse necessarie per gestire e far avanzare il progetto, inclusa la _pianificazione_#super[G] e l'esecuzione dei piani, fino alla consegna del sistema, del prodotto software o del servizio software all'acquirente.
 
 === Comunicazione con il proponente
 Il proponente#super("G") metterà a disposizione alcuni canali di comunicazione
@@ -103,9 +103,9 @@ La cadenza di questi incontri non sarà regolare, ma verrà fissata in base alle
 o dell'azienda. Gli incontri possono essere richieste per discutere i seguenti argomenti:
 - Chiarimenti relativi a requisiti o vincoli del _capitolato_#super("G")
 - Dubbi sulla gestione delle tecnologie utilizzate
-- Richiesta di feedback su quanto prodotto
+- Richiesta di _feedback_#super[G] su quanto prodotto
 
-Per ogni colloquio con il proponente verrà steso un resoconto nel _Verbale Esterno_#super("G") che includerà la data in cui tale incontro è avvenuto. Per ogni _baseline_#super("G"), i verbali redatti potranno essere visualizzati in un'apposita cartella nella repository#super("G") documentale, al percorso: `"NomeBaseline"/Documentazione Esterna/Verbali`.
+Per ogni colloquio con il proponente verrà steso un resoconto nel _Verbale Esterno_#super("G") che includerà la data in cui tale incontro è avvenuto. Per ogni _baseline_#super("G"), i verbali redatti potranno essere visualizzati in un'apposita cartella nella _repository_#super("G") documentale, al percorso: `"NomeBaseline"/Documentazione Esterna/Verbali`.
 
 === Documentazione fornita
 La documentazione che verrà consegnata al proponente sarà la seguente:
@@ -113,7 +113,7 @@ La documentazione che verrà consegnata al proponente sarà la seguente:
 
 - *Piano di Qualifica v2.0.0*: definisce le strategie e le metodologie di _verifica_#super("G") e _validazione_#super("G") adottate dal gruppo, includendo _metriche_#super("G") di qualità, _test_#super("G") pianificati e procedure per garantire che il prodotto software soddisfi tutti i requisiti prefissati. Inoltre, il piano di qualifica fornirà un resoconto sull'avanzamento delle attività descritte, assicurando che i prodotti e i processi siano conformi agli standard di qualità e che tutte le funzionalità richieste siano implementate correttamente nel prodotto software.
 
-- *Piano di Progetto v2.0.0*: descrive la _pianificazione_#super("G") temporale e le risorse necessarie per completare il progetto. Esso include gli orari sia preventivati che effettivi di tutta la durata del progetto, e riporterà anche una lista dei rischi possibili o già verificati, insieme alla loro _mitigazione_#super("G"). Tutto questo sarà riportato in ogni sprint per garantire un monitoraggio costante dell'andamento del progetto.
+- *Piano di Progetto v2.0.0*: descrive la _pianificazione_#super("G") temporale e le risorse necessarie per completare il progetto. Esso include gli orari sia preventivati che effettivi di tutta la durata del progetto, e riporterà anche una lista dei _rischi_#super[G] possibili o già verificati, insieme alla loro _mitigazione_#super("G"). Tutto questo sarà riportato in ogni sprint per garantire un monitoraggio costante dell'andamento del progetto.
 
 - *_MVP_*#super[G]: il Minimum Viable Product, ovvero un prodotto software funzionante che implementi tutte le funzionalità di base essenziali, il quale verrà presentato al proponente. Esso dovrà essere realizzato secondo quanto scritto nel documento di specifica tecnica e soprattutto dovrà essere accettato dall'azienda proponente per essere considerato soddisfacente. Il suo rilascio determinerà la fine del progetto.
 
@@ -121,10 +121,10 @@ La documentazione che verrà consegnata al proponente sarà la seguente:
 
 - *Manuale Utente v1.0.0*: in questo documento saranno presenti informazioni su come installare, configurare e utilizzare il plug-in. Questo documento è fondamentale per garantire che gli utenti siano in grado di utilizzare il prodotto in modo corretto ed efficace, in modo da massimizzare il valore del software.
 
-- *Specifica Tecnica v1.0.0*: un documento che fornisce dettagli tecnici sulla struttura e sul funzionamento del prodotto software. Esso include diagrammi UML dettagliati dell'architettura del sistema in ogni sua componente, con una descrizione testuale correlata. Sono presenti inoltre l'elenco delle tecnologie utilizzate e delle scelte progettuali adottate. Questo documento è essenziale per garantire che il prodotto sia sviluppato in modo coerente e che tutte le parti interessate abbiano una comprensione chiara delle scelte tecniche effettuate.
+- *Specifica Tecnica v1.0.0*: un documento che fornisce dettagli tecnici sulla struttura e sul funzionamento del prodotto software. Esso include _diagrammi UML_#super[G] dettagliati dell'architettura del sistema in ogni sua componente, con una descrizione testuale correlata. Sono presenti inoltre l'elenco delle tecnologie utilizzate e delle scelte progettuali adottate. Questo documento è essenziale per garantire che il prodotto sia sviluppato in modo coerente e che tutte le parti interessate abbiano una comprensione chiara delle scelte tecniche effettuate.
 
 === Strumenti
-Il nostro processo di fornitura prevede l'utilizzo dei seguenti strumenti:
+Il nostro processo di _fornitura_#super[G] prevede l'utilizzo dei seguenti strumenti:
 - *Google Sheets*#super[G]: utilizzato per la gestione di fogli di calcolo tra i membri del gruppo. Viene usato principalmente per la creazione di grafici per la registrazione dell'andamento delle metriche di qualità, e di tabelle per la pianificazione temporale del progetto e la gestione dei requisiti.
 - *Discord*#super[G]: utilizzato come piattaforma di comunicazione per le discussioni interne al gruppo. È utile per organizzare riunioni, discutere problemi tecnici e coordinare le attività in modo informale.
 - *GitLab*#super[G]: piattaforma che permette la gestione di repository Git, verrà utilizzato per ospitare il codice sorgente dell'MVP al rilascio del prodotto.
@@ -157,9 +157,9 @@ Mentre essi saranno strutturati nel seguente modo :
 - *Denominazione*: codice identificativo del caso d'uso, stabilito come enunciato sopra
 - *Diagramma UML*: diagramma per rappresentare graficamente il caso d'uso (opzionale per i sottocasi d'uso).
 - *Attori principali*: entità esterne al sistema che interagiscono con esso
-- *Precondizioni*: descrivono lo stato del sistema prima del verificarsi del caso d'uso
-- *Postcondizioni*: descrivono lo stato del sistema dopo che si è verificato il caso d'uso
-- *Scenario principale*: elenco puntato che descrive il flusso degli eventi del caso d'uso
+- *_Precondizioni_#super[G]*: descrivono lo stato del sistema prima del verificarsi del caso d'uso
+- *_Postcondizioni_#super[G]*: descrivono lo stato del sistema dopo che si è verificato il caso d'uso
+- *_Scenario principale_#super[G]*: elenco puntato che descrive il flusso degli eventi del caso d'uso
 - *Estensioni*: elenco puntato di casi d'uso che descrivono il flusso degli eventi dopo un evento imprevisto che lo ha deviato dallo scenario principale. Possono non esserci o possono essercene varie.
 - *Generalizzazioni*: elenco puntato di casi d'uso che descrivono delle specializzazioni del caso d'uso principale. Possono non esserci o possono essercene varie.
 
@@ -189,7 +189,7 @@ derivanti dall'analisi fatta in precedenza. La progettazione si articola in due 
 
 - *Progettazione logica*: questa fase ha come obiettivo la definizione dell’architettura generale del sistema. In particolare, vengono identificati e descritti i componenti principali, le loro responsabilità e le modalità con cui interagiscono tra loro e con il mondo esterno. Per rappresentare queste interazioni, vengono utilizzati specificamente diagrammi UML di casi d'uso, che chiariscono graficamente le azioni svolte dagli utenti, le risposte del sistema e i flussi di interazione che si verificano durante l’utilizzo del prodotto.
 
-- *Progettazione di dettaglio*: in questa fase si approfondiscono i dettagli tecnici di ciascun componente, definendo design patterns, best practices e diagrammi UML per descrivere l'architettura delle classi. Tutte le scelte riportate dovranno poi essere implementate nel codice e riportate nel documento di specifica tecnica.
+- *Progettazione di dettaglio*: in questa fase si approfondiscono i dettagli tecnici di ciascun componente, definendo _design patterns_#super[G], best practices e diagrammi UML per descrivere l'architettura delle classi. Tutte le scelte riportate dovranno poi essere implementate nel codice e riportate nel documento di specifica tecnica.
 
 ==== Requirements and Technology Baseline
 Lo scopo della _Requirements and Technology Baseline_#super("G") è di fornire una base solida per la progettazione e lo sviluppo del prodotto, dimostrando la fattibilità delle soluzioni proposte e garantendo che le tecnologie scelte siano adeguate per soddisfare i requisiti del proponente.
@@ -203,7 +203,7 @@ In questa _baseline_#super("G") dovranno essere forniti:
 - *Diagrammi dei casi d'uso*: verranno utilizzati per rappresentare graficamente le interazioni tra gli utenti e il sistema. Questi diagrammi sono fondamentali per comprendere le esigenze degli utenti e per garantire che il prodotto soddisfi i requisiti richiesti.
 
 ==== Product Baseline
-Lo scopo della Product Baseline è di fornire un prodotto software che verrà valutato come MVP. Esso dovrà soddisfare i requisiti obbligatori definiti nel capitolato e nel documento di analisi dei requisiti, dovrà essere implementato secondo quanto indicato nel documento di specifica tecnica e soprattutto dovrà essere accettato dall'azienda proponente per essere considerato soddisfacente.
+Lo scopo della _Product Baseline_#super[G] è di fornire un prodotto software che verrà valutato come MVP. Esso dovrà soddisfare i requisiti obbligatori definiti nel capitolato e nel documento di analisi dei requisiti, dovrà essere implementato secondo quanto indicato nel documento di specifica tecnica e soprattutto dovrà essere accettato dall'azienda proponente per essere considerato soddisfacente.
 
 Inoltre, durante l'avanzamento di questa baseline, verranno progettati:
 - *Diagrammi delle classi*: verranno utilizzati per descrivere l'architettura logica e di dettaglio dell'MVP.
@@ -227,14 +227,14 @@ Tutte le variabili, i metodi e le classi dovranno avere un nome che li distingua
 ==== Strumenti
 Per la codifica del prodotto, i principali strumenti adottati saranno:
 - *Visual Studio Code*: in quanto è l'_IDE_#super("G") più consigliato per realizzare proprie estensioni.
-- *Typescript*: linguaggio di programmazione che verrà utilizzato per la realizzazione del plug-in. È un linguaggio di programmazione open source, sviluppato da Microsoft, che estende JavaScript aggiungendo tipizzazione statica e funzionalità orientate agli oggetti. 
-- *Visual Studio Code Extension API*: utilizzata per lo sviluppo del plug-in, fornisce un set di API che consentono di estendere le funzionalità di Visual Studio Code.
+- *Typescript*: linguaggio di programmazione che verrà utilizzato per la realizzazione del plug-in. È un linguaggio di programmazione open source, sviluppato da Microsoft, che estende _JavaScript_#super[G] aggiungendo tipizzazione statica e funzionalità orientate agli oggetti. 
+- *Visual Studio Code Extension API*: utilizzata per lo sviluppo del plug-in, fornisce un set di _API_#super[G] che consentono di estendere le funzionalità di Visual Studio Code.
 - *NestJS*: framework per lo sviluppo di applicazioni server-side, utilizzato per la realizzazione del backend del prodotto.
-- *npm*: gestore di pacchetti per nodejs, utilizzato per installare e gestire le dipendenze del progetto.
-- *Visual Studio Code*: IDE utilizzato per la scrittura del codice sorgente e per il debugging del prodotto.
+- *npm*: gestore di pacchetti per _nodejs_#super[G], utilizzato per installare e gestire le _dipendenze_ #super[G] del progetto.
+- *Visual Studio Code*: _IDE_#super[G] utilizzato per la scrittura del codice sorgente e per il debugging del prodotto.
 - *StarUML*: per la creazione dei _diagrammi UML_#super("G")
-- *Ollama API*: utilizzata per la comunicazione tra il modello LLM locale di Ollama e il backend del plugin.
-- *Docker*: piattaforma per lo sviluppo, la distribuzione e l'esecuzione di applicazioni in container, verrà utilizzato per il deployment del server API del backend.
+- *Ollama API*: utilizzata per la comunicazione tra il modello _LLM_#super[G] locale di Ollama e il backend del _plugin_#super[G].
+- *Docker*: piattaforma per lo sviluppo, la distribuzione e l'esecuzione di applicazioni in _container_#super[G], verrà utilizzato per il _deployment_#super[G] del server API del backend.
 
 = Processi di Supporto
 == Documentazione
@@ -321,7 +321,7 @@ I verbali come nome file hanno la data del relativo incontro in formato YYYY-MM-
 
 Per la denominazione dei file si fa riferimento alla convenzione _CamelCase_#super("G"), le parole verranno separate dal carattere "\_" (underscore) e la versione sarà indicata con la lettera "v" seguita dal numero di versione, specificato a sua volta nel paragrafo  del Versionamento.
 
-Per questioni di praticità, questo tipo di nomenclatura vale solo per i documenti ad uso interno ed esterno, non viene applicata ai template, alle immagini e altri tipi di documento. La nomenclatura dei documenti senza versionamento utilizza sempre gli underscore al posto degli spazi, ma senza utilizzare il CamelCase.
+Per questioni di praticità, questo tipo di nomenclatura vale solo per i documenti ad uso interno ed esterno, non viene applicata ai template, alle immagini e altri tipi di documento. La nomenclatura dei documenti senza _versionamento_#super[G] utilizza sempre gli underscore al posto degli spazi, ma senza utilizzare il CamelCase.
 
 I verbali invece, riportano come nome del file la data dell'incontro in formato YYYY-MM-DD. Ad esempio: `2024-04-05` per il verbale del 5 aprile 2024.
 
@@ -409,7 +409,7 @@ La repository utilizzata dal gruppo per la creazione dei documenti è strutturat
 - `Candidatura`: contiene i documenti relativi alla candidatura del gruppo per il capitolato.
   - `src`: contiene il codice sorgente documenti relativi alla candidatura.
   - `Verbali`: contiene i verbali esterni ed interni delle riunioni relativi alla candidatura.
-- `RTB`: contiene i documenti relativi alla milestone RTB, quindi le norme di progetto, il piano di progetto e di qualifica, l'analisi dei requisiti e il glossario.
+- `RTB`: contiene i documenti relativi alla _milestone_#super[G] RTB, quindi le norme di progetto, il piano di progetto e di qualifica, l'analisi dei requisiti e il glossario.
   - `Documentazione Esterna`: contiene i documenti ad uso interno relative alla milestone RTB.
     - `src`: contiene il codice sorgente dei documenti esterni relativi all'RTB.
       - `img`: contiene i file delle immagini a supporto dei documenti, ogni insieme di immagini è raggruppato in una cartella denominata con la sigla del documento al quale essa è associata.
@@ -464,14 +464,14 @@ La repository dei documenti è suddivisa in più _branch_#super("G") così defin
 Mentre le repository contenenti il codice verranno suddivise nel seguente modo:
 
 - *`main`*: il branch principale, che contiene l'ultima versione verificata del codice sorgente
-- *`feature`*: branch secondario utilizzato per lo sviluppo di nuove funzionalità, il nome del branch sarà lo stesso della feature sviluppata e sarà eliminato una volta che la funzionalità è stata implementata e verificata.
+- *`feature`*: branch secondario utilizzato per lo sviluppo di nuove funzionalità, il nome del branch sarà lo stesso della _feature_#super[G] sviluppata e sarà eliminato una volta che la funzionalità è stata implementata e verificata.
 
 === Strumenti
 Per il versionamento e la gestione del codice sorgente, si è scelto di utilizzare i seguenti strumenti:
 
 - *Git*: software di controllo versione distribuito, utilizzato per tracciare le modifiche al codice sorgente.
 - *GitHub*: piattaforma per la gestione dei repository Git, che consente la collaborazione tra i membri del gruppo e l'hosting del codice sorgente.
-- *Visual Studio Code Source Control*: funzionalità integrata in Visual Studio Code per interagire con Git, che permette di gestire le modifiche, effettuare commit, creare branch e risolvere conflitti direttamente dall'IDE.
+- *Visual Studio Code Source Control*: funzionalità integrata in Visual Studio Code per interagire con Git, che permette di gestire le modifiche, effettuare _commit_#super[G], creare branch e risolvere conflitti direttamente dall'IDE.
 
 == Gestione della Qualità
 === Descrizione
@@ -544,7 +544,7 @@ I test di integrazione verificano il corretto funzionamento tra due o più unit�
 
 ==== Test di sistema
 I test di sistema verificano il sistema completo del prodotto software, prendendo in considerazione tutti i componenti e interfacce con altri
-sistemi. Nel nostro caso, verrà verificata la corretta integrazione tra frontend, backend e il server di Ollama, basandosi sui requisiti esistenti sul documento di _Analisi dei requisiti v2.0.0_. Tali test verranno eseguiti manualmente, in quanto non è possibile automatizzarli. Ogni test di sistema viene riportato all'interno del documento del piano di qualifica, e perchè si consideri superato, il sistema dovrà avere la capacità di soddisfare i requisiti associati a quel determinato test.
+sistemi. Nel nostro caso, verrà verificata la corretta integrazione tra _frontend_#super[G], backend e il server di Ollama, basandosi sui requisiti esistenti sul documento di _Analisi dei requisiti v2.0.0_. Tali test verranno eseguiti manualmente, in quanto non è possibile automatizzarli. Ogni test di sistema viene riportato all'interno del documento del piano di qualifica, e perchè si consideri superato, il sistema dovrà avere la capacità di soddisfare i requisiti associati a quel determinato test.
 
 === Strumenti
 Gli strumenti principali a supporto del processo di verifica sono i seguenti:
@@ -587,11 +587,11 @@ dei requisiti. Ogni test da eseguire sarà definito in un apposito documento, il
 === Descrizione
 Secondo lo standard ISO/IEC 12207:1995, il processo di gestione dei processi identifica le attività e i compiti di progetto necessari per gestire efficacemente i processi utilizzati dal gruppo. Le attività di gestione dei processi definite dallo standard sono le seguenti:
 - Assegnazione dei ruoli di progetto
-- Assegnazione delle task
+- Assegnazione delle _task_#super[G]
 - Gestione delle comunicazioni
 
 === Ruoli di progetto
-Avendo adottato un modello agile per lo sviluppo, i ruoli di progetto sono assegnati ad ogni task, in modo da garantire una maggiore flessibilità e adattabilità alle esigenze del progetto. Ogni membro del gruppo avrà un ruolo definito in base ad accordi presi sulla ripartizione di determinate _task_#super("G") per quello sprint. 
+Avendo adottato un modello _agile_#super[G] per lo sviluppo, i ruoli di progetto sono assegnati ad ogni task, in modo da garantire una maggiore flessibilità e adattabilità alle esigenze del progetto. Ogni membro del gruppo avrà un ruolo definito in base ad accordi presi sulla ripartizione di determinate _task_#super("G") per quello sprint. 
 
 I ruoli che ciascun membro dovrà ricoprire sono i seguenti:
 
@@ -617,7 +617,7 @@ Esegue delle procedure di controllo e amministrazione dell'ambiente di lavoro. I
 Possiede maggiori competenze riguardo il dominio applicativo del problema. Si occupa di:
 - Studiare il problema e il relativo contesto applicativo
 - Comprendere il problema e definire la complessità e i requisiti
-- Svolgere l'analisi dei requisiti e redigere il relativo documento
+- Svolgere l'_analisi dei requisiti_#super[G] e redigere il relativo documento
 
 *Progettista*
 \
@@ -711,7 +711,7 @@ Le comunicazioni all'interno del gruppo avvengono principalmente attraverso i se
 
 Per le comunicazioni formali con il proponente o altre parti interessate, si utilizzano principalmente:
 - *Gmail*: client di posta utilizzato dal gruppo per fissare riunioni o per lo scambio di risorse e documenti con l'azienda proponente
-- *Zoom*: per ottenere feedback sull'avanzamento del progetto e discutere eventuali dubbi
+- *_Zoom_*#super[G]: per ottenere feedback sull'avanzamento del progetto e discutere eventuali dubbi
 == Strumenti
 Tutti gli strumenti di supporto ai processi organizzativi utilizzati sono stati i seguenti:
 - *GitHub*: per la gestione della repository e il versionamento del codice

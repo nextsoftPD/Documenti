@@ -81,7 +81,7 @@ Il processo di fornitura prevede la produzione dei seguenti documenti:
 
 - *Piano di Qualifica*: definisce le strategie e le metodologie di _verifica_#super("G") e _validazione_#super("G") adottate dal gruppo. Include le _metriche_#super("G") di qualità, i _test_#super("G") pianificati e le procedure per garantire che il prodotto finale soddisfi i requisiti. Questo documento è essenziale per assicurare che il prodotto sia conforme agli standard di qualità e che tutte le funzionalità richieste siano implementate correttamente. 
 
-- *Piano di Progetto*: descrive la _pianificazione_#super("G") temporale e le risorse necessarie per completare il progetto. Esso Include gli orari sia preventivati che effettivi di tutta la durata del progetto. Contiene anche l'analisi dei rischi, insieme alla loro _mitigazione_#super("G"). Questo documento è cruciale per garantire che il progetto sia completato nei tempi previsti e che tutte le risorse siano utilizzate in modo efficiente. 
+- *Piano di Progetto*: descrive la _pianificazione_#super("G") temporale e le risorse necessarie per completare il progetto. Esso Include gli orari sia preventivati che effettivi di tutta la durata del progetto. Contiene anche l'_analisi dei rischi_#super[G], insieme alla loro _mitigazione_#super("G"). Questo documento è cruciale per garantire che il progetto sia completato nei tempi previsti e che tutte le risorse siano utilizzate in modo efficiente. 
 
 - *Proof of Concept*: un prodotto software temporaneo creato per dimostrare la fattibilità del progetto. Viene utilizzato per verificare che le idee e le tecnologie proposte siano in grado di soddisfare i requisiti del progetto prima di procedere con lo sviluppo del prodotto finale. 
 
