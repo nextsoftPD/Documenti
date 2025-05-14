@@ -283,7 +283,7 @@ Questa rappresenta la velocità con cui l'utente trova quello che sta cercando, 
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS01], [Facilità di utilizzo], [FU ≤ 3], [FU ≤ 5],
+    [MPDS01], [Facilità di utilizzo], [FU ≤ 5], [FU ≤ 3],
   ),
   caption: [Obiettivo di usabilità],
 )
