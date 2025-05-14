@@ -32,9 +32,6 @@
 == Scopo del documento
 Il presente documento ha lo scopo di definire in modo dettagliato le _best practice_#super("G")
 e il _way of working_#super("G") del nostro gruppo per il progetto al fine di garantire qualità e coerenza nel lavoro svolto. 
-(Questa prossima parte è da togliere) 
-Il documento sarà quindi soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
-(Inserisci una frase sostituiva dato che abbiamo finito il progetto)
 Il documento è destinato all'uso interno del gruppo e sarà condiviso con il proponente solo in caso di necessità.
 
 
