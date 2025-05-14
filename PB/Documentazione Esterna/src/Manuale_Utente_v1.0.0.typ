@@ -217,7 +217,7 @@ Questo comando avvierà il server in modalità production che rimarrà in ascolt
 
 L'utente può impostare il modello da utilizzare nelle varie operazioni come mostrato in figura: 
 #figure(
-  image("../../../PB/Documentazione Esterna/src/MU/LLM_Configuration_Settings.png", width: 120%),
+  image("../../../PB/Documentazione Esterna/src/img/MU/LLM_Configuration_Settings.png", width: 120%),
   caption: "Configurazione del modello LLM",
 )
 
@@ -231,7 +231,7 @@ Il plug-in permette di impostare un modello specifico per ognuna delle seguenti 
 Per poter configurare il modello, l'utente deve accedere alle impostazioni della estensione installata ed inserire nei tre campi disponibili il nome del modello che vuole usare, come mostrato nelle figura di seguito :   
 
 #figure(
-  image("../../../PB/Documentazione Esterna/src/MU/Settings.png", width: 60%),
+  image("../../../PB/Documentazione Esterna/src/img/MU/Settings.png", width: 60%),
   caption: "Configurazione dei modelli",
 )
 
@@ -245,14 +245,14 @@ La scelta di un modello specifico per ogni attività permette di ottimizzare le 
 Un'altra configurazione permessa dal plug-in è l'impostazione della _soglia di accettazione_#super("G") di un requisito. Ad ogni analisi, infatti, ogni requisito riceve un punteggio da 0-100 e viene considerato "passed" o "not passed" a seconda del superamento di tale soglia. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura : 
 
 #figure(
-  image("../../../PB/Documentazione Esterna/src/MU/soglia.png", width: 70%),
+  image("../../../PB/Documentazione Esterna/src/img/MU/soglia.png", width: 70%),
   caption:"soglia di accettazione per l'analisi del requisito",
 )
 
 Un altro tipo di soglia è quella riguardante la descrizione testuale del requisito, la quale viene usata per valutare la qualità del testo dello stesso. Per impostarla, andate sulle impostazioni ("Settings") del plug-in e inserite nel campo riguardante la soglia il valore che preferite come mostrato di seguito in figura :
 
 #figure(
-  image("../../../PB/Documentazione Esterna/src/MU/soglia2.png", width: 70%),
+  image("../../../PB/Documentazione Esterna/src/img/MU/soglia2.png", width: 70%),
   caption:"Soglia di accettazione per il testo del requisito",
 )
 
@@ -265,7 +265,7 @@ Un altro tipo di soglia è quella riguardante la descrizione testuale del requis
 Se si è arrivati qui, allora il plug-in risulta installato e pronto per l'uso. \ 
 Quindi, cliccare sull'icona del plug-in presente nella colonna a sinistra della finestra di Visual Studio Code per aprire la finestra di analisi dei requisiti. L'icona è mostrata nella figura sottostante.
 #figure(
-  image("../../../PB/Documentazione Esterna/src/MU/logo.png", width: 15%),
+  image("../../../PB/Documentazione Esterna/src/img/MU/logo.png", width: 15%),
   caption:"Icona del plug-in",
 ) 
 /*----------------------------------------------------*/
@@ -273,7 +273,7 @@ Quindi, cliccare sull'icona del plug-in presente nella colonna a sinistra della 
 Per poter usare il plug-in è necessario importare i requisiti da analizzare. Per fare ciò, cliccate
 sull'icona denominata *"Load CSV"* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/load_requirements.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/img/MU/load_requirements.png", width: 40%),
   caption:"Icona per l'importazione dei requisiti",
 )
 Una volta cliccato sull'icona verrà aperto il _file system_#super("G") di sistema da cui selezionare il *file _CSV_*#super[G] contenente i requisiti. In caso venga selezionato un file di formato diverso o non valido, il plug-in restituirà un messaggio di errore. \
@@ -282,7 +282,7 @@ Una volta cliccato sull'icona verrà aperto il _file system_#super("G") di siste
 Una volta importati, i requisiti verranno presentati in una lista nella sezione Requirements, come mostrato nella seguente figura: 
 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/requirements.png", width: 80%),
+  image("/PB/Documentazione Esterna/src/img/MU/requirements.png", width: 80%),
   caption:"Requisiti importati",
 )
 
@@ -303,14 +303,14 @@ In caso di requisiti molto lunghi o di più righe sarà sufficiente posizionare 
 Una volta importati i requisiti è possibile procedere con l'analisi dell'implementazione. Questa funzionalità serve a *tracciare* i requisiti nel codice sorgente qualora questi non fossero già stati tracciati (funziona anche nel caso lo fossero). \ 
 Per farlo, cliccate sull'icona *"Traceability"* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/implementation_analysis.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/img/MU/implementation_analysis.png", width: 40%),
   caption:"Bottone per l'analisi dell'implementazione (tracciamento)",
 )
 Una volta eseguita e completata l'analisi, ad ogni requisito verranno associate delle linee di codice che indicano il tracciamento del requisito all'interno del codice sorgente. \
 In caso di requisiti non tracciati, il plug-in restituirà un messaggio di errore.
 La figura seguente mostra il tracciamento nella sezione "Requirement": \
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/tracciamento.png", width: 50%),
+  image("/PB/Documentazione Esterna/src/img/MU/tracciamento.png", width: 50%),
   caption:"Tracciabilità di un requisito",
 )
 #pagebreak()
@@ -319,7 +319,7 @@ La figura seguente mostra il tracciamento nella sezione "Requirement": \
 == Analisi dei requisiti
 Questa funzionalità serve a valutare la qualità dei requisiti e il loro grado di implementazione nel codice sorgente. Una volta importati i requisiti, cliccate sull'icona *"Analyze"* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/Analyze_Requirements.png", width: 45%),
+  image("/PB/Documentazione Esterna/src/img/MU/Analyze_Requirements.png", width: 45%),
   caption:"Bottone per l'analisi dei requisiti",
 )
 
@@ -327,11 +327,11 @@ Questa funzionalità serve a valutare la qualità dei requisiti e il loro grado 
 In questo modo il plug-in eseguirà un'analisi approfondita di tutti i requisiti presenti nella lista. Potrete vedere in basso a destra della finestra un'icona di avanzamento che indica il progresso dell'analisi. 
 Di seguito la figura della barra di progessione e una possibile visualizzazione dei requisiti al termine dell'analisi. \
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/progression_bar.png", width: 60%),
+  image("/PB/Documentazione Esterna/src/img/MU/progression_bar.png", width: 60%),
   caption:"Stato di avanzamento analisi dei requisiti",
 )
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/analyze.png", width: 50%),
+  image("/PB/Documentazione Esterna/src/img/MU/analyze.png", width: 50%),
   caption:"Visualizzazione tipo del risultato dell'analisi",
 )
 #pagebreak()
@@ -348,7 +348,7 @@ Alla fine dell'analisi ogni requisito nella lista verrà aggiornato con i seguen
     - Suggestion ...
 Inoltre, ad ogni requisito sarà associato un'icona che indica se lo stesso è passato o meno all'analisi. Di seguito una figura che mostra una generica lista a seguito dell'analisi.
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/analisi_ended.png", width: 50%),
+  image("/PB/Documentazione Esterna/src/img/MU/analisi_ended.png", width: 50%),
   caption:"Risultato dell'analisi",
 )
 #pagebreak()
@@ -358,7 +358,7 @@ Inoltre, ad ogni requisito sarà associato un'icona che indica se lo stesso è p
 Il plug-in presenta anche la funzione di esportazione, in formato CSV, dei risultati dell'analisi, qualora voleste salvarli. Per fare ciò premete 
 sul pulsante *"Export CSV"* mostrato nella seguente figura. 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/Export_Requirements.png", width: 50%),
+  image("/PB/Documentazione Esterna/src/img/MU/Export_Requirements.png", width: 50%),
   caption:"Bottone per l'esportazione dei requisiti",
 )
 Quindi, una volta cliccato sul pulsante, verrà aperto il file system di sistema da cui selezionare la cartella in cui salvare il file CSV. \
@@ -370,7 +370,7 @@ Quindi, una volta cliccato sul pulsante, verrà aperto il file system di sistema
 
 Il plug-in presenta anche la funzione di ricerca dei requisiti attraverso una barra di ricerca in cui inserire il codice del requisito ricercato. Per farlo, basta cliccare sul campo di input *"Search Requirements"* mostrata in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/search.png", width: 50%),
+  image("/PB/Documentazione Esterna/src/img/MU/search.png", width: 50%),
   caption:"Campo di input per la ricerca dei requisiti",
 )
 La lista *Requirements* mostrerà solo i requisiti che contengono il codice (o parte di esso) inserito nella barra di ricerca. \
@@ -379,7 +379,7 @@ La lista *Requirements* mostrerà solo i requisiti che contengono il codice (o p
 
 Il plug-in offre la possibilità di analizzare un singolo requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera analizzare come mostrato in figura. 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/analisi_singola.png", width: 50%),
+  image("/PB/Documentazione Esterna/src/img/MU/analisi_singola.png", width: 50%),
   caption:"Bottone per l'analisi di un singolo requisito",
 )
 
@@ -389,7 +389,7 @@ Il plug-in offre la possibilità di analizzare un singolo requisito. Per farlo, 
 
 Il plug-in offre la possibilità di analizzare l'implementazione (tracciamento) di un singolo requisito. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera analizzare come mostrato in figura.
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/implementazione_singola.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/implementazione_singola.png", width: 70%),
   caption:"Bottone per l'analisi dell'implementazione di un singolo requisito",
 )
 #pagebreak()
@@ -401,7 +401,7 @@ Il plug-in offre la possibilità di analizzare l'implementazione (tracciamento) 
 Ci sono tre diversi modi in cui possono essere filtrati i requisiti: 
 - In ordine *Default* (a seconda del loro codice), premendo il pulsante *"Default Order"* mostrato in figura 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/default_order.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/default_order.png", width: 70%),
   caption:"Bottone per organizzare i requisiti in ordine di default",
 )
 
@@ -410,13 +410,13 @@ Ci sono tre diversi modi in cui possono essere filtrati i requisiti:
 - A seconda del loro *stato di analisi*:
   - *Analizzati*, usando il bottone *"Show analyzed first"* mostrato in figura
   #figure(
-  image("/PB/Documentazione Esterna/src/MU/show_analyzed_first.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/show_analyzed_first.png", width: 70%),
   caption:"Bottone per mostrare prima i requisiti analizzati",
 )
 
   - *Non Analizzati*, usando il bottone *"Show unanalyzed first"* mostrato in figura
   #figure(
-  image("/PB/Documentazione Esterna/src/MU/show_unanalyzed_first.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/show_unanalyzed_first.png", width: 70%),
   caption:"Bottone per mostrare prima i requisiti non analizzati",
 )
 
@@ -427,12 +427,12 @@ Ci sono tre diversi modi in cui possono essere filtrati i requisiti:
 Il plug-in offre la possibilità di segnare manualmente un requisito come approvato o non approvato. Per farlo, basta cliccare sull'icona presente vicino al requisito che si desidera approvare come mostrato in figura :
 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/approve.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/approve.png", width: 70%),
   caption:"Bottone per approvare manualmente un requisito",
 )
 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/disapprove.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/disapprove.png", width: 70%),
   caption:"Bottone per disapprovare manualmente un requisito",
 )
 
@@ -440,11 +440,11 @@ Nel caso non sia ancora presente il tracciamento del requisito nel codice sorgen
 \
 L'approvazione è segnata da un icona blu mentre la disapprovazione è segnata da un icona rossa come mostrato nelle due figure seguenti:  \
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/approvation_icon.png", width: 20%),
+  image("/PB/Documentazione Esterna/src/img/MU/approvation_icon.png", width: 20%),
   caption:"Icona di requisito approvato",
 )
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/disapprovation_icon.png", width: 20%),
+  image("/PB/Documentazione Esterna/src/img/MU/disapprovation_icon.png", width: 20%),
   caption:"Icona di requisito non approvato",
 )
 
@@ -453,7 +453,7 @@ L'approvazione è segnata da un icona blu mentre la disapprovazione è segnata d
 == Modifica del tracciamento di un requisito 
 Il plug-in offre la possibilità di modificare il tracciamento di un requisito specifico. Per farlo, basta cliccare sull'icona a forma di matita presente vicino al requisito. Più nello specifico, all'interno della sezione *traceability* del requisito stesso, come mostrato in figura:
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/edit.png", width: 40%),
+  image("/PB/Documentazione Esterna/src/img/MU/edit.png", width: 40%),
   caption:"Bottone per modificare il tracciamento di un requisito",
 ) 
 La funzionalità permette di modificare tre parametri:
@@ -463,15 +463,15 @@ La funzionalità permette di modificare tre parametri:
 Una volta cliccato sull'icona, il plug-in posizionerà il focus dell'utente sulla "*command palette*" di Visual Studio Code, permettendo di modificare i tre parametri. Una volta inserito il nuovo valore, premere "Invio" per confermare la modifica.
 Di seguito un esempio di come apparirà la command palette una volta cliccato sull'icona:
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/edit_src.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/edit_src.png", width: 70%),
   caption:"Command palette per la modifica del percorso del file",
 )
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/edit_start.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/edit_start.png", width: 70%),
   caption:"Command palette per la modifica della linea di inizio del requisito",
 )
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/edit_end.png", width: 70%),
+  image("/PB/Documentazione Esterna/src/img/MU/edit_end.png", width: 70%),
   caption:"Command palette per la modifica della linea di fine del requisito",
 )
 
@@ -486,12 +486,12 @@ Di seguito un esempio di come apparirà la command palette una volta cliccato su
 
 La disinstallazione del plug-in risulta molto semplice. Per procedere, è necessario utilizzare l'interfaccia di Visual Studio Code. In basso a sinistra, cliccare sull'icona delle impostazioni a forma di ingranaggio e selezionare *"Extensions"*. A questo punto, comparirà la lista delle estensioni installate e raccomandate come mostrato in figura: 
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/Extensions.png", width:30%),
+  image("/PB/Documentazione Esterna/src/img/MU/Extensions.png", width:30%),
   caption:"Icona delle estensioni",
 )
 Successivamente, individuare l'estensione *Requirement Tracker* e cliccare sull'icona a forma di ingranaggio vicino ad essa. Verrà visualizzato un menù a tendina in cui selezionare *"Uninstall"* come mostrato in figura:
 #figure(
-  image("/PB/Documentazione Esterna/src/MU/Uninstall.png", width:30%),
+  image("/PB/Documentazione Esterna/src/img/MU/Uninstall.png", width:30%),
   caption:"Icona del plug-in",
 )
 Dopo aver cliccato su Uninstall, l'estensione verrà disinstallata e non sarà più visibile nella lista delle estensioni installate. \
