@@ -7,14 +7,15 @@
   verifica: ("Ion Cainareanu", "Maria Fuensanta Trigueros Hernandez", "Marco Perazzolo", "Malik Giafar Mohamed"),
   approvazione: ("Luca Parise",),
   uso: "Esterno",
-  version: "1.4.1",
+  version: "2.0.0",
   date: "23/11/2024",
   versionamento: (
-    "1.4.1", "13/05/2024", "Stefano Baso", "Aggiunto indice di gulpease su ultimo verbale e fix versionamento", "",
-    "1.4.0", "10/05/2024", "Stefano Baso", "Aggiornamento grafici per metriche", "",
-    "1.3.2", "09/05/2024", "Malik Giafar Mohamed", "Correzione tracciamento requisiti nei test di sistema", "",
-    "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione e stesura test di sistema", "",
-    "1.3.0", "09/05/2024", "Malik Giafar Mohamed", "Miglioramento sezioni test di unità, di integrazione e di accettazione", "",
+    "2.0.0", "13/05/2024", "Malik Giafar Mohamed", "versione finale", "",
+    "1.4.1", "13/05/2024", "Stefano Baso", "Aggiunto indice di gulpease su ultimo verbale e fix versionamento", "Malik Giafar Mohamed",
+    "1.4.0", "10/05/2024", "Stefano Baso", "Aggiornamento grafici per metriche", "Malik Giafar Mohamed",
+    "1.3.2", "09/05/2024", "Malik Giafar Mohamed", "Correzione tracciamento requisiti nei test di sistema", "Stefano Baso",
+    "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione e stesura test di sistema", "Stefano Baso",
+    "1.3.0", "09/05/2024", "Malik Giafar Mohamed", "Miglioramento sezioni test di unità, di integrazione e di accettazione", "Stefano Baso",
     "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "Malik Giafar Mohamed",
     "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "Malik Giafar Mohamed",
     "1.1.0", "05/04/2025", "Stefano Baso", "Aggiunte metriche in qualità di processo", "Malik Giafar Mohamed",
@@ -41,15 +42,13 @@
 #pagebreak()
 = Scopo del documento
 
-Il _Piano di Qualifica_#super("G") è un documento soggetto a modifiche incrementali, finalizzate principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
+Il _Piano di Qualifica_#super("G") è un documento finalizzato principalmente alla definizione delle #text(style: "italic")[metriche]#super[G] di valutazione del prodotto. Tali metriche saranno stabilite in conformità ai requisiti e alle aspettative del proponente, con l'obiettivo di determinare correttamente la qualità del prodotto attraverso un processo di miglioramento continuo. Questo approccio tende ad evolversi nel tempo, in particolare una volta stabilita una linea guida.
 
 Il presente documento si propone di:
 
 - Definire le metriche e le metodologie di controllo e misurazione.
 - Stabilire quantità, qualità dei #text(style: "italic")[test]#super[G] e relative metriche.
 - Descrivere l'applicazione dei test e documentarne i risultati, valutando la conformità rispetto alle attese e alle metriche definite.
-
-Il documento sarà soggetto a modifiche e integrazioni durante il corso del progetto, in particolare durante le fasi di analisi e progettazione, e quindi non può essere considerato come definitivo.
 
 == Scopo del prodotto
 Il prodotto, un plug-in per Visual Studio Code chiamato "Requirement Tracker",
@@ -59,19 +58,16 @@ e la chiarezza dei requisiti, fornendo suggerimenti basati sull'analisi di un'in
 riducendo al contempo i tempi e gli errori legati alla verifica manuale dell'implementazione nel codice
 sorgente. Il plug-in adotta un'architettura modulare che consente un'estensibilità semplice, rendendolo
 facilmente adattabile a nuove funzionalità o esigenze future.
-Inoltre, supporta gli sviluppatori avendo la capacità di utilizzare documenti tecnici come knowledge,
-ad esempio datasheet e manuali, permette di garantire una corretta copertura dei requisiti.
 
 == Glossario
-I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico
-nell'omonimo documento.
+I termini ambigui che necessitano di una spiegazione sono contrassegnati da una #super("G") come apice alla loro prima occorrenza nei documenti. Tutti i termini da glossario sono riportati in ordine alfabetico nell'omonimo documento.
 
 == Riferimenti
 #pagebreak()
 === Riferimenti normativi
 
-- Analisi dei Requisiti v2.0.0
-- Norme di Progetto v2.0.0
+- _Analisi dei Requisiti v2.0.0_
+- _Norme di Progetto v2.0.0_
 
 === Riferimenti informativi
 
@@ -81,8 +77,7 @@ Materiale didattico del corso
 - Qualità di processo
   - https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf
 - Indice di Gulpease
-  - https://www.ilc.cnr.it/dylanlab/apps/texttools/
-- ISO/IEC 9126
+  - https://www.ilc.cnr.it/dylanlab/apps/texttools/ #h(1fr)#text(size: 8pt)[ultimo accesso: 13/05/2025 11:30]
 
 = Qualità di processo
 
@@ -98,14 +93,12 @@ Di seguito, vengono presentati i processi identificati e i corrispondenti livell
 
 In questa fase del processo vengono analizzate tutte le scelte effettuate durante lo sviluppo, verificandone la conformità con gli obiettivi stabiliti nelle diverse fasi del progetto. Vengono definite le misure da implementare, assicurando il rispetto dei termini e delle condizioni prestabiliti. L'obiettivo principale è garantire che la _fornitura_#super("G") sia allineata alle aspettative, sia in termini di risorse impiegate che di risultati ottenuti.
 
-Un concetto chiave in questo contesto è l'MPC (Minimum Predictive Capability), una metrica fondamentale per valutare l'affidabilità di un modello di apprendimento automatico nel generare risultati accurati. L'MPC rappresenta il livello minimo di precisione che un modello deve raggiungere per essere considerato accettabile, contribuendo a garantire che le previsioni siano coerenti con gli standard richiesti.
-
 Di seguito sono descritte le principali metriche e calcoli associati che verranno riportati nella tabella sottostante mettendo in relazione il valore plausibile e il valore ottimale:
 
 - BAC (Budget At Completion): Costo totale preventivato per il completamento del progetto.
 $ "BAC" = sum "costi previsti" $
 
-- EAC (Estimated At Completion): Valore stimato per i compiti rimanenti.
+- EAC (Estimated At Completion): Revisione del valore economico stimato per la realizzazione del progetto.
 $ "EAC" = "BAC"/"CPI" $
 
 - CPI (Cost Performance Index): Indice di prestazione dei costi, misura l'#text(style: "italic")[efficienza]#super("G") con cui il _budget_#super("G") viene utilizzato. Un valore > 1 indica che il progetto sta spendendo meno del previsto, mentre un valore < 1 indica che sta spendendo di più del previsto.
@@ -114,10 +107,10 @@ $ "CPI" = "EV"/"AC" $
 - ETC (Estimated To Completion): Stima del costo finale aggiornato alla data di misurazione.
 $ "ETC" = "EAC" - "AC" $
 
-- EV (Earned Value): Valore ottenuto fino al momento attuale.
+- EV (Earned Value): Guadagno ottenuto fino al momento attuale.
 $ "EV" = ("% lavoro svolto" / 100) * "EAC" $
 
-- PV (Planned Value): Valore pianificato fino al momento attuale.
+- PV (Planned Value): Costo pianificato fino al momento attuale.
 $ "PV" = ("% lavoro pianificato" / 100) * "BAC" $
 
 - AC (Actual Cost): Budget effettivamente speso fino al momento attuale.
@@ -222,8 +215,7 @@ Rappresenta il rapporto tra il numero di attività concluse entro le scadenze pi
 == Processi di supporto
 
 === Documentazione
-
-La documentazione ha ruolo di supporto, in particolare definisce le norme da seguire durante lo sviluppo, la divisione delle risorse e responsabilità. E' necessario quindi definire una linea guida anche per la redazione dei documenti per evitare ambiguità e renderli chiari
+È fondamentale stabilire una linea guida chiara e dettagliata per la redazione dei documenti, al fine di eliminare ambiguità, garantire uniformità e migliorarne la comprensione. Le metrice identificative per la documentazione sono le seguenti:
 
 #figure(
   table(
@@ -267,21 +259,8 @@ Per raggiungere l'ottimo anche nella documentazione bisogna raggiungere la massi
 
 = Qualità del prodotto
 
-Per mantenere ed assicurare la qualità del prodotto software il gruppo ha adottato il modello di qualità stabilito dallo standard ISO/IEC 9126, adattandolo alle esigenze e requisiti del progetto. Tale standard propone una serie di metriche e regole per migliorare l'organizzazione dei processi e di conseguenza la qualità del prodotto.
+Per mantenere ed assicurare la qualità del prodotto software il gruppo ha adottato una serie di metriche e regole per migliorare l'organizzazione dei processi e di conseguenza la qualità del prodotto.
 Di seguito verranno elencate e descritte le metriche che verranno utilizzate.
-
-== Efficienza
-
-L'efficienza indica il tempo di elaborazione della richiesta da parte del software per raggiungere il risultato.
-
-#figure(
-  table(
-    columns: 4,
-    table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS01], [Tempo di risposta medio], [3 secondi], [2 secondi],
-  ),
-  caption: [Metriche di tempo medio],
-)
 
 == Usabilità
 
@@ -290,8 +269,8 @@ L'#text(style: "italic")[usabilità]#super[G] riguarda l'esperienza dell'utente 
 #figure(
   table(
     columns: 4,
-    table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
-    [OPDS01], [Usabilità del prodotto], [Il prodotto deve essere facilmente usabile dall'utente in modo da raggiungere il più velocemente possibile quello che cerca], [MPDS01],
+    table.header[*Codice*][*Nome*][*Descrizione*],
+    [OPDS01], [Usabilità del prodotto], [Il prodotto deve essere facilmente usabile dall'utente in modo da raggiungere il più velocemente possibile quello che cerca],
   ),
   caption: [Obiettivo di funzionalità],
 )
@@ -304,7 +283,7 @@ Questa rappresenta la velocità con cui l'utente trova quello che sta cercando, 
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS02], [Facilità di utilizzo], [FU ≤ 3], [FU ≤ 5],
+    [MPDS01], [Facilità di utilizzo], [FU ≤ 3], [FU ≤ 5],
   ),
   caption: [Obiettivo di usabilità],
 )
@@ -317,8 +296,8 @@ La manutenibilità del software è la facilità con cui può essere modificato, 
   table(
     columns: 4,
     table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
-    [OPDS02], [Analizzabilità del prodotto], [Una facile analisi del codice permette di localizzare in tempi minimi il blocco di codice che riguarda l'errore o l'aggiornamento], [MPDS03 \ MPDS04 \ MPDS06],
-    [OPDS03], [Modificabilità del prodotto], [Permette una manutenzione più agevolata per la correzione ], [MPDS05 \ MPDS02],
+    [OPDS02], [Analizzabilità del prodotto], [Una facile analisi del codice permette di localizzare in tempi minimi il blocco di codice che necessita di modifiche], [MPDS02 \ MPDS03 \ MPDS05],
+    [OPDS03], [Modificabilità del prodotto], [Permette una manutenzione più agevolata per la correzione ], [MPDS04 \ MPDS01],
   ),
   caption: [Obiettivo di manutenibilità],
 )
@@ -337,7 +316,7 @@ in cui:
 
 - *Parametri per metodo*: indica il numero di parametri per metodo. Un indice basso rappresenta un numero basso di parametri richiesti dal metodo, di conseguenza risulta di più facile comprensione e utilizzo.
 
-- *Code Smell*: indice che  rappresenta indicatori qualitativi di potenziali problemi nel codice. E' utile per valutare la leggibilità, la modificabilità, e la testabilità del codice. Si dividono in:
+- *Code Smell*: indice che  rappresenta indicatori qualitativi di potenziali problemi nel codice. È utile per valutare la leggibilità, la modificabilità, e la testabilità del codice. Si dividono in:
   - Duplicated Code: frammenti di codice identici o simili in più punti, che aumentano i costi di manutenzione perché le modifiche devono essere replicate ovunque.
   - Long Methods: metodi eccessivamente lunghi, che riducono la leggibilità e la comprensione del codice.
   - God Class: una classe con troppe responsabilità (violazione del _principio di Single Responsibility_#super("G")), difficile da testare e modificare.
@@ -350,11 +329,11 @@ in cui:
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS03], [Profondità di gerarchia], [PG <= 3], [PG <= 2],
-    [MPDS04], [Parametri per metodo], [PPM <= 8], [PPM <= 4],
-    [MPDS05], [Complessità ciclomatica], [CC <= 20], [CC <= 10],
-    [MPDS06], [Code smell], [CS <= 50], [CS <= 10],
-    [MPDS07], [Facilità di comprensione], [FC >= 0.10], [FC >= 0.20],
+    [MPDS02], [Profondità di gerarchia], [PG <= 3], [PG <= 2],
+    [MPDS03], [Parametri per metodo], [PPM <= 8], [PPM <= 4],
+    [MPDS04], [Complessità ciclomatica], [CC <= 20], [CC <= 10],
+    [MPDS05], [Code smell], [CS <= 50], [CS <= 10],
+    [MPDS06], [Facilità di comprensione], [FC >= 0.10], [FC >= 0.20],
   ),
   caption: [Metriche di manutenibilità],
 )
@@ -367,8 +346,8 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
   table(
     columns: 4,
     table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
-    [OPDS04], [Prodotto maturo], [Evita errori o malfunzionamenti durante l'utilizzo], [MPDS07 \ MPDS10],
-    [OPDS05], [Tolleranza agli errori], [Mantiene il livello di prestazioni anche durante un uso scorretto o in presenza di errori], [MPDS11 \ MPDS08 \ MPDS09],
+    [OPDS04], [Prodotto maturo], [Evita errori o malfunzionamenti durante l'utilizzo], [MPDS06 \ MPDS09],
+    [OPDS05], [Tolleranza agli errori], [Mantiene il livello di prestazioni anche durante un uso scorretto o in presenza di errori], [MPDS10 \ MPDS07 \ MPDS08],
   ),
   caption: [Obiettivo di affidabilità],
 )
@@ -389,11 +368,11 @@ L'affidabilità riguarda il livello minimo di prestazioni da mantenere durante l
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS08], [Code Coverage], [CC >= 75%], [100%],
-    [MPDS09], [Presenza di vulnerabilità], [VLN <= 2], [0],
-    [MPDS10], [Presenza di bug], [BUG <= 20%], [BUG <= 5%],
-    [MPDS11], [Branch Coverage], [BC >= 75%], [100%],
-    [MPDS12], [Successo dei test], [>= 75%], [100%],
+    [MPDS07], [Code Coverage], [CC >= 75%], [100%],
+    [MPDS08], [Presenza di vulnerabilità], [VLN <= 2], [0],
+    [MPDS09], [Presenza di bug], [BUG <= 20%], [BUG <= 5%],
+    [MPDS10], [Branch Coverage], [BC >= 75%], [100%],
+    [MPDS11], [Successo dei test], [>= 75%], [100%],
   ),
   caption: [Metriche di affidabilità],
 )
@@ -406,7 +385,7 @@ La funzionalità è la capacità di fornire funzioni / azioni per ogni esigenza 
   table(
     columns: 4,
     table.header[*Codice*][*Nome*][*Descrizione*][*Metriche associate*],
-    [OPDS06], [Appropriatezza del prodotto], [Fornire le funzioni richieste ed essere in linea con i requisiti fissati nell'Analisi dei Requisiti], [MPDS12 \ MPDS13],
+    [OPDS06], [Appropriatezza del prodotto], [Fornire le funzioni richieste ed essere in linea con i requisiti fissati nell'Analisi dei Requisiti], [MPDS11 \ MPDS12],
   ),
   caption: [Obiettivo di funzionalità],
 )
@@ -425,8 +404,8 @@ $ "RC" = (R#sub[ROS])/(R#sub[ROT]) 100 $
   table(
     columns: 4,
     table.header[*Codice*][*Descrizione*][*Soglia accettabile*][*Ottimo*],
-    [MPDS13], [_Requirement coverage_#super("G")], [RC >= 75%], [100%],
-    [MPDS14], [Requisiti obbligatori soddisfatti], [100%], [100%],
+    [MPDS12], [_Requirement coverage_#super("G")], [RC >= 75%], [100%],
+    [MPDS13], [Requisiti obbligatori soddisfatti], [100%], [100%],
   ),
   caption: [Obiettivo di usabilità],
 )
@@ -476,7 +455,7 @@ I test nel progetto sono suddivisi in due cartelle all'interno della principale 
  - Funzionalità di mocking avanzate, tra cui `jest.mock()` per mockare interi moduli (come `axios`) e `jest.fn()` per creare funzioni mock flessibili che possono tracciare chiamate, definire valori di ritorno e implementazioni simulate.
  - Gestione di test asincroni tramite `async/await`.
 
-- `@nestjs/testing`: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
+- *`@nestjs/testing`*: questa libreria di NestJS facilita il testing dei componenti NestJS (moduli, controller, provider). La classe `Test` e il metodo `createTestingModule()` sono usati per creare un ambiente di test che rispecchia il sistema di dependency injection di NestJS, permettendo di istanziare e testare i componenti in modo isolato o integrato.
 
 - *`supertest`*: utilizzato nei test di integrazione a livello applicativo (`application.int.spec.ts`) per effettuare richieste HTTP all'applicazione in esecuzione e verificare le risposte. Semplifica il testing degli endpoint API.
 
@@ -761,9 +740,9 @@ I test di integrazione individuati sono i seguenti:
     [TI-006],[Il frontend deve registrare ed eseguire il comando di analisi del requisito],[Superato],
     [TI-007],[Il frontend deve registrare ed eseguire il comando di caricamento],[Superato],
     [TI-008],[Il frontend deve registrare ed eseguire il comando di analisi della tracciabilità],[Superato],
-    [TI-009],[Il frontend deve  registrare ed eseguire il comando `setSortMode`],[Superato],
-    [TI-010],[Il frontend deve  registrare ed eseguire il comando `setSortAnalyzedFirst`],[Superato],
-    [TI-011],[Il frontend deve  registrare ed eseguire il comando setSortUnanalyzedFirst],[Superato],
+    [TI-009],[Il frontend deve registrare ed eseguire il comando `setSortMode`],[Superato],
+    [TI-010],[Il frontend deve registrare ed eseguire il comando `setSortAnalyzedFirst`],[Superato],
+    [TI-011],[Il frontend deve registrare ed eseguire il comando setSortUnanalyzedFirst],[Superato],
     [TI-012],[Il frontend deve registrare ed eseguire il comando `approveRequirement`],[Superato],
     [TI-013],[Il frontend deve registrare ed eseguire il comando `refuseRequirement`],[Superato],
     [TI-014],[Il frontend deve registrare ed eseguire il comando `editTraceability`],[Superato],
@@ -885,7 +864,7 @@ I test di accettazione assicurano che il software soddisfi i requisiti e paramet
 
     [TA-004],
     [Il sistema deve essere in grado di visualizzare i requisiti importati e le relative informazioni in una vista ad albero all'interno dell'interfaccia di Visual Studio Code],
-    [Superato],[RFO002, RFO013, RFO027, RFO019 /*RFO038,RFO029*/],
+    [Superato],[RFO002, RFO013, RFO027, RFO019],
 
     [TA-005],
     [L'utente deve essere in grado, in caso di assenza del tracciamento dei requisiti nel file .csv caricato, di tracciare l'implementazione dei requisiti all'interno del codice sorgente],
@@ -987,7 +966,7 @@ Le specifiche riguardanti i test descritti verranno definite nelle successive ve
   caption: [Grafico Estimated at Completion],
 )
 
-== MPC12, MPDS08, MPDS11, MPDS12: Copertura dei test
+== MPC12, MPDS07, MPDS10, MPDS11: Copertura dei test
 
 #figure(
   image("img/PdQ/test_coverage.png", width: 100%),
@@ -1059,7 +1038,7 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
   caption: [Valutazione documenti],
 )
 
-== MPDS02: Facilità di utilizzo
+== MPDS01: Facilità di utilizzo
 
 #figure(
   table(
@@ -1070,14 +1049,14 @@ Di seguito la tabella con i risultati ottenuti dai documenti secondo l'indice di
   caption: [Risultato test variabili non usate],
 )
 
-== MPDS03: Profondità massima di gerarchia
+== MPDS02: Profondità massima di gerarchia
 
 #figure(
   image("img/PdQ/gerarchia.png", width: 100%),
   caption: [Grafico Profondità di gerarchia],
 )
 
-== MPDS05: Complessità ciclomatica
+== MPDS04: Complessità ciclomatica
 #figure(
   image("img/PdQ/complessita_ciclomatica.png", width: 100%),
   caption: [Grafico Complessità ciclomatica],
