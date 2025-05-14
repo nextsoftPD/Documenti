@@ -10,11 +10,11 @@
   version: "2.0.0",
   date: "23/11/2024",
   versionamento: (
-    "2.0.0", "13/05/2024", "Malik Giafar Mohamed", "versione finale", "",
+    "2.0.0", "13/05/2024", "Malik Giafar Mohamed", "Versione finale", "Parise Luca",
     "1.4.1", "13/05/2024", "Stefano Baso", "Aggiunto indice di gulpease su ultimo verbale e fix versionamento", "Malik Giafar Mohamed",
     "1.4.0", "10/05/2024", "Stefano Baso", "Aggiornamento grafici per metriche", "Malik Giafar Mohamed",
     "1.3.2", "09/05/2024", "Malik Giafar Mohamed", "Correzione tracciamento requisiti nei test di sistema", "Stefano Baso",
-    "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "correzione formato test di accettazione e stesura test di sistema", "Stefano Baso",
+    "1.3.1", "09/05/2024", "Malik Giafar Mohamed", "Correzione formato test di accettazione e stesura test di sistema", "Stefano Baso",
     "1.3.0", "09/05/2024", "Malik Giafar Mohamed", "Miglioramento sezioni test di unità, di integrazione e di accettazione", "Stefano Baso",
     "1.2.1", "04/05/2025", "Stefano Baso", "Aggiornamento ultimi verbali per indice di glupease", "Malik Giafar Mohamed",
     "1.2.0", "04/05/2025", "Stefano Baso", "Aggiunta test di unità e integrazione", "Malik Giafar Mohamed",
