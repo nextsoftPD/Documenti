@@ -1,6 +1,29 @@
 # Documentazione
 In questa repository sono contenuti tutti i documenti prodotti dal gruppo NextSoft
 
+## PB
+- [Lettera di Presentazione](/PB/Lettera_di_Presentazione.pdf)
+
+- Documentazione Esterna
+  - [Analisi dei Requisiti](/PB/Documentazione%20Esterna/Analisi_dei_Requisiti_v2.0.0.pdf) (V2.0.0)
+  - [Piano di Progetto](/PB/Documentazione%20Esterna/Piano_di_Progetto_v2.0.0.pdf) (V2.0.0)
+  - [Piano di Qualifica](/PB/Documentazione%20Esterna/Piano_di_Qualifica_v2.0.0.pdf) (V2.0.0)
+  - [Specifica Tecnica](/PB/Documentazione%20Esterna/Specifica_Tecnica_v1.0.0.pdf) (V1.0.0)
+  - [Manuale Utente](/PB/Documentazione%20Esterna/Manuale_Utente_v1.0.0.pdf) (V1.0.0)
+  - [Glossario](/PB/Documentazione%20Esterna/Glossario_v2.0.0.pdf) (V2.0.0)
+  - Verbali
+    - [Verbale esterno dell'11 Aprile 2025](/PB/Documentazione%20Esterna/Verbali/2025_04_11_firmato.pdf)
+    - [Verbale esterno del 6 Maggio 2025](/PB/Documentazione%20Esterna/Verbali/2025-05-06_firmato.pdf)
+
+- Documentazione Interna
+  - [Norme di Progetto](/PB/Documentazione%20Interna/Norme_di_Progetto_v2.0.0.pdf) (V2.0.0)
+  - Verbali
+    - [Verbale interno del 30 Marzo 2025](/PB/Documentazione%20Interna/Verbali/2025-03-30.pdf)
+    - [Verbale interno del 5 Aprile 2025](/PB/Documentazione%20Interna/Verbali/2025-04-05.pdf)
+    - [Verbale interno del 19 Aprile 2025](/PB/Documentazione%20Interna/Verbali/2025-04-19.pdf)
+    - [Verbale interno del 28 Aprile 2025](/PB/Documentazione%20Interna/Verbali/2025-04-28.pdf)
+    - [Verbale interno del 13 Maggio 2025](/PB/Documentazione%20Interna/Verbali/2025-05-13.pdf)
+
 ## RTB
 
 - [Lettera di Presentazione](/RTB/Lettera_di_Presentazione.pdf)
